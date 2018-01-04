@@ -4,7 +4,7 @@
 
 ### Year 3 Semester 2
 
-- 3S03 Software Testing
+- [3S03 Software Testing](3S03.md)
 - 3A04 Software Design III 
 - 2B03 Engineering Economics
 - 3I03 Communication Skills
