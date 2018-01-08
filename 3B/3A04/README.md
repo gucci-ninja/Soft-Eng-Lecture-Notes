@@ -45,4 +45,14 @@
 ### Textbook
 Software Architecture and Design Illuminated
   
- 
+## Day 2 Jan 8, 2018
+
+**What is Design**
+- not easy to define
+- can be seen in ny human artefact and in nature
+- objective and subjective
+  - aesthetic (look and feel) vs functional (speed performance)
+
+**Deterministic Finite Automata**
+- take in strings of binary with even number of 0 and numberof 1s is multiple of 3
+- Product Construction: when you have 2 machines 
