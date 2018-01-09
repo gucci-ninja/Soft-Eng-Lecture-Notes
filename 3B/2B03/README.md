@@ -1,6 +1,4 @@
 # 2B03 Engineering Economics
-
-## Day 1 Jan 4, 2018
  
 Professor email: church@mcmaster.ca
 
@@ -81,7 +79,7 @@ of costs and benefits of project over time
 
 ![](Day2/stool.PNG)
 
-### Case Study - Interface Carpets
+### Case Study Interface Carpets
 - cut down ecologcal footprint by 1/3
 - claims to be world's first sustainable corporation
 - over 5 billion pounds of carpet now in landfills
@@ -141,7 +139,36 @@ of costs and benefits of project over time
 #### Compound Interest
 - results in a lot more money
 
+## Day 3 Jan 9, 2018
 
+- Amortization Period
+	- the duration over which a loan is calculated to be re-paid
 
+### Simple Interest vs Compund Interest
+- Simple Interest - method of computing interest where interest earned during interest period is **NOT** added to principal amount used to calculate interest in next period
+- Compound - standard method of computing interest where interest accumulated in one interest period is added to principal amount used to calculate for next period
+	- F = P(1 + i)<sup>N</sup> OR
+	- P = F/(1 + i)<sup>N</sup>
+	- I<sub>C</sub> = P(1 + i)<sup>N</sup> - P
+	- F is future worth
+	- P is principal 
+	- i is interest rate/compunding period
+	- N is number of compounding periods
 
+#### Interest Rate Terms
+- compounding period:time between points when interest is computed and added to initial amount
+- Annual Percentage Rate (APR) - this is what you see in commercials
+	- nominal interest rate on yearly basis
+	- Cdn Tire is 25% per year
+
+#### Sample Question
+- if 5000 invested in savings account at nominal 4% compunded yearly, what is future worth in 3 years.
+```
+P = $5000
+i = 4%
+N=3
+
+F = P(1+i)^N 
+  = (5000)(1 + 0.04)^3
+```
 

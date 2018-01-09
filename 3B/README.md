@@ -1,5 +1,17 @@
 # 3DX4 Dynamic Systems and Control
 
+## Table of Contents
+- [Grading](#grading)
+- [Textbook](#textbook)
+- [Software](#software)
+- [What is a Control System](#what-is-a-control-system)
+- [Why Need?](#why-need)
+- [System Configurations](#system-configurations)
+- [Closed-Loop System](#closed-loop-system)
+- [Transient and Steady-State Response](#transient-and-steady-state-response)
+- [Stability](#stability)
+- [Modelling in the Frequency Domain](#modelling-in-the-frequency-domain)
+
 ## Day 1 Jan 4, 2018
 
 ### Grading
@@ -87,7 +99,7 @@ Total response = Natural response + Forced response
 
 - calculating controlled output to make motor go proportionally faster
 - open loop version: apply step voltage to motor
-   - through feedback, you can put more energy into the system “cranking up the gain” enough so that it doesnt go unstable or start to oscillate
+   - through feedback, you can put more energy into the system �cranking up the gain� enough so that it doesnt go unstable or start to oscillate
 - makes things go faster
 
 ##### Integral Control System
@@ -184,22 +196,4 @@ a<sub>0</sub>c(t)
    - pole zero cancellayion, when both denom and numerator have same pole
    - so when you expand the term with s - 1 wont be there
 
-## Day 3 Jan 9, 2018
-
-### Written Examples
-- **take pic of note**
-
-### MatLab Commands
-- define F = blah blah blah
-- define syms s, t, etc
-- ```ilaplace```
-
-### Partial Fractions Decomposition
-1. Divide if improper, degree of numerator is denominator
-	- do long division
-2. Factor denominator
-3. Linear factors
-	- if you have (s+a)<sup>m</sup>, include A/(s+a) ... A<sub>m</sub>/(s+a)<sup>m</sup>
-4. Quadratic factors
-5. Determine unknowns
 

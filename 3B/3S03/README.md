@@ -58,3 +58,19 @@ A | Given | Due
     - Nature of development process
 - Budget and time should be considered together
     - budget cuts usually alleviating by removing testing and/or requirements phase
+
+## Day 3 Jan 9, 2018
+_Tutorials start next week_
+
+**Excercise**
+- write test cases to test simple java program about triangles
+- program takes in 3 integers as sides) and returns scale, isoceles, equilateral
+- what kind of information does tester need to know?
+    - domain knowledge - geometry of triangles
+    - precise requirements (speed)
+- test cases
+    - check if it is a valid triangle (1, 2, 4 wouldn't be valid)
+    - non-integer values
+    - values greater than 0, less than 0
+
+
