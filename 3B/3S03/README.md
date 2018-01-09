@@ -1,5 +1,14 @@
 # 3S03 Software Testing 
 
+## Table of Contents
+- [Textbooks](#textbooks)
+- [Language](#language)
+- [Assignments](#assignments)
+- [Breakdown](#breakdown)
+- [Software Testing](#software-testing)
+- [Testing and Measurement](#testing-and-measurement)
+- [Testing and Measurement](#testing-and-measurement)
+
 ## Day 1 - Jan 4, 2018 
 
 ### Textbooks

@@ -1,5 +1,12 @@
 # 3A04 Software Design III 
 
+## Table of Contents
+- [Course Breakdown](#course-breakdown)
+- [Last Year Final Exam](#last-year-final-exam)
+- [Grading](#grading)
+- [Textbook](#textbook)
+- [Textbook](#textbook)
+
 ## Day 1 Jan 5, 2018
 
 - Fridays are for problem solving :relieved:

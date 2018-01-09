@@ -1,15 +1,50 @@
 # 3DB3 Databases
 
+## Table of Contents
+- [Database](#database)
+- [Data Independence](#data-independence)
+- [ER Model](#er-model)
+- [Relationship](#relationship)
+- [Relational Model](#relational-model)
+- [Integrity Constraints](#integrity-constraints)
+- [Database](#database)
+- [Data Independence](#data-independence)
+- [ER Model](#er-model)
+- [Relationship](#relationship)
+- [Relational Model](#relational-model)
+- [Integrity Constraints](#integrity-constraints)
+- [Foreign keys](#foreign-keys)
+- [Participation Constraints](#participation-constraints)
+- [Views](#views)
+- [Relational Algebra](#relational-algebra)
+- [Extended Algebra](#extended-algebra)
+- [SQL](#sql)
+- [Storage and Indexing](#storage-and-indexing)
+- [Design](#design)
+- [1NF First Normal Form](#1nf-first-normal-form)
+- [2NF Second Normal Form](#2nf-second-normal-form)
+- [3NF Third Normal Form](#3nf-third-normal-form)
+- [BCNF Boyce-Codd Normal Form](#bcnf-boyce-codd-normal-form)
+- [Functional Dependency](#functional-dependency)
+- [Transactions and Concurrency](#transactions-and-concurrency)
+- [Acid Properties](#acid-properties)
+- [Precedence Graph](#precedence-graph)
+- [Locks](#locks)
+- [Isolation Levels](#isolation-levels)
+- [Deadlock Detection](#deadlock-detection)
+- [Deadlock Prevention](#deadlock-prevention)
+- [Deadlock Prevention](#deadlock-prevention)
+
 ## Introduction
 
 ### Database
 A collection of data organized to be easily accessible, managed and updated.
 
-### Database Management System
+#### Database Management System
 - software that helps in processing and organizing data
 - advantage: data independence, efficient data access, data integrity, security
 
-### Data Model
+#### Data Model
 - collection of concepts that provide abstraction
 - entities model classes of concrete or abstract objects of interest
 - semantic data models include ER model
@@ -18,7 +53,7 @@ A collection of data organized to be easily accessible, managed and updated.
     - schema is a description: student(sid: string)
     - has integrity constraints to be satisfied
 
-### 3 Levels of Abstraction
+#### 3 Levels of Abstraction
 - conceptual/global view - DDL
 - physical/internal view - storage
 - external/user view
@@ -29,13 +64,13 @@ A collection of data organized to be easily accessible, managed and updated.
 
 -------------------------
 
-## ER Model
+### ER Model
 
-### Entity
+#### Entity
 
 ![](img/entity.PNG)
 
-### Keys
+#### Keys
 - key: _minimal set of attributes whose values uniquely define entity in set_
 - candidate key: _possible primary primary keys, is a key_
 - primary key
@@ -66,7 +101,7 @@ partial key: _when attribute discriminates between entities in set, eg weak enti
 - basically bold the line for whatever entity must participate
     ![](img/participation.PNG)
 
-### Weak Entity Set
+#### Weak Entity Set
 - no primary key and needs an identifying/owner entity
 - must have partial key for identifying among entities
 - double diamond, double rectangle
@@ -74,15 +109,15 @@ partial key: _when attribute discriminates between entities in set, eg weak enti
 - key = its own underlined attribute + keys from parents
     ![](img/weakentity.PNG)
 
-### Subclasses
+#### Subclasses
 - entity sets sharing common properties
 - ISA - inherit attributes
     ![](img/isa.PNG)
 
-### Aggregation
+#### Aggregation
 - dashed box around collection of entities and relationships
 
-### Design with ER Model
+#### Design with ER Model
 - avoid redundancy
 - entity vs attribute vs relation
     - minimize number of entities
@@ -92,14 +127,14 @@ partial key: _when attribute discriminates between entities in set, eg weak enti
 
 --------------------------
 
-## Relational Model
+### Relational Model
 
 - relation schema: name + attributes
 - relation: set of tuples conforming to schema
 - DB: set of relations with names
 - DB schema: set of schemas for all relations - can be in SQL, DDL, DML
 
-### Syntax
+#### Syntax
 ```
 CREATE TABLE <name> (
     SID CHAR(8),
@@ -185,13 +220,13 @@ CREATE TABLE Enrolled (
     );
     ```
 
-### Attribute Rules
+#### Attribute Rules
 - Composite attributes are not supported by relational model (attribute that has multiple attributes coming out of it)
 - Multivalued attributes not supported in relational model
 
-### Relationships
+#### Relationships
 
-#### Without Constraints (many-many)
+##### Without Constraints (many-many)
 ```
 CREATE TABLE Takes (
     mn CHAR(8),
@@ -203,7 +238,7 @@ CREATE TABLE Takes (
 );
 ```
 
-#### Cyclic Relationships
+##### Cyclic Relationships
 ![](img/cyclic_relation.PNG)
 ```
 CREATE TABLE Reports_To (
@@ -218,7 +253,7 @@ CREATE TABLE Reports_To (
 - if one to one mapping then primaary key can consist of either entity, needs foreign key from each entity
 - if many to one, primary key of the **'many'** side
 
-#### Foreign keys
+### Foreign keys
 
 Method 1 
 - relationship can be merged with the entity on the 'many' side in 1-1 or many-1
@@ -258,57 +293,57 @@ FROM Students S, Enrolled E,
 WHERE S.id = E.sid
 ```
 
-## Relational Algebra
+### Relational Algebra
 - SQL engine takes SQL query and uses relational algebra which is an optimized plan that gets executed
 - procedural computation
 - relational calculus is declarative
 
-### Sets
+#### Sets
 - unique
 - Union: {1,2,3} and {2,3,4} = {1,2,3,4}
 - Intersection: {1,2,3} and {2,4} = {2}
 - Disjoint: no commonality
 - Union, intersection, difference all require same attribute mapping
 
-### Renaming
+#### Renaming
 - ρ(R, E): rename relation E as R
 - ρ(R(A1..An), E): rename relation E as R and rename attributes
 - ρ(A1 --> B1, E): Just rename an attribute
 
-### Selection
+#### Selection
 - σ<sub>c</sub>(R)
 - returns a selection (relation) that satisfies a condition
 ![](img/selection.PNG)
 
-### Projection
+#### Projection
 - π<sub>y</sub>(R)
 - y is the attributes you wish to return
 - returns relation that is a subset of original attributes
 ![](img/projection.PNG)
 
-#### Extended Projection
+##### Extended Projection
 - can do arithmetic on attributes
 - π<sub>A+B->C</sub>(R)
 
-### Cartesian Product
+#### Cartesian Product
 ```R3 := R1 x R2```
 
-### Join
+#### Join
 - connections between sets
 
-#### Theta Join
+##### Theta Join
 - joins on condition
 - ![](img/thetajoin.PNG)
 - take product and apply condition
 
-#### Natural Join
+##### Natural Join
 - joins relations by equating attribute of same name
 - denoted without the <sub>c</sub> from theta join
 
-#### Outerjoin
+##### Outerjoin
 - preserves dangling tuples by padding them with NULL so they don't go away
 
-### Prcedence of operators
+#### Precedence of operators
 - [σ,π,ρ]
 - [x, join]
 - [∩]
@@ -325,7 +360,7 @@ _Can use expression trees to make things easier_
 - γ: grouping and aggregation
     - sum, avg, count, min, max
 --------------------
-## SQL
+### SQL
 
 Structured Query Language
 
@@ -338,15 +373,15 @@ WHERE <conditions>
 
 - select * is for everything in R
 
-### Renaming
+#### Renaming
 - ```SELECT x AS y```
 - ```SELECT x FROM table T```
 
-### Operators
+#### Operators
 - boolean AND, OR, NOT
 - comparison =, <, >, <=, >=
 
-### Patterns
+#### Patterns
 - containing certain string
 - % is any string, zero or more char
 - _ is any one character beside
@@ -357,10 +392,10 @@ FROM Products
 WHERE Pname LIKE '%gizmo%'
 ```
 
-### NULL
+#### NULL
 - anything being operated on by with NULL becomes NULL
 
-### Join in SQL
+#### Join in SQL
 - can do manually as WHERE statement conditions
 - another option
 ```
@@ -370,20 +405,20 @@ JOIN Course ON s_cid = s_cid
 WHERE ...
 ```
 
-### Self-join
+#### Self-join
 ```
 SELECT a.company_name, b.company_name, a.company_city
 FROM company a, company b
 WHERE a.company_city=b.company_city;
 ```
 
-### Subqueries
+#### Subqueries
 - nested queries
 ![](img/subquery.PNG)
 
-### More operators
+#### More operators
 
-#### ALL
+##### ALL
 - compare all values in nested query
 ```
 SELECT name
@@ -396,7 +431,7 @@ WHERE price > ALL (
 
 **Note <> means not equal to**
 
-#### EXISTS
+##### EXISTS
 - find copycat products
 ```
 SELECT p1.name
@@ -410,37 +445,37 @@ WHERE p1maker = 'Gizmo'
     )
 ```
 
-#### ANY
+##### ANY
 - boolean condition that is true if at least one tuple satisfies condition
 
-#### IN
+##### IN
 - find something in a subset
 - val IN subquery true if and only if va was produced by subquery
 - very concise
 
-#### Union, Intersection, Difference
+##### Union, Intersection, Difference
 - query1 UNION query2
 - EXCEPT is used the same way
 - UNION ALL indicated Multiset operations
 
-### Aggregation
+#### Aggregation
 - ```SELECT AVG(Salary) FROM P```
 - COUNT(*)
 - SUM(A)
 
-### Grouping
+#### Grouping
 ```
 SELECT Dept, AVG(Salary)
 FROM Professors
 GROUP BY Dept
 ```
 
-### Removing Duplication
+#### Removing Duplication
 - COUNT ([DISTINCT] A)
 - SUM ([DISTINCT] A)
 - AVG ([DISTINCT] A)
 
-### HAVING Clause
+#### HAVING Clause
 - HAVING \<condition> may follow GROUP BY
 - contains condition on aggregates
 ```
@@ -449,10 +484,10 @@ FROM Purchase
 HAVING SUM(quantity) > 100
 ```
 
-### Sorting
+#### Sorting
 - at the end of SQL statement, ORDER BY attribute DESC or ASC
 
-### Joins
+#### Joins
 - ```R OUTER JOIN S``` is the core of the expression
 - can be modified by adding:
     1. ```NATURAL``` in front of OUTER
@@ -461,9 +496,9 @@ HAVING SUM(quantity) > 100
 
 
 -------------------------
-## Storage and Indexing
+### Storage and Indexing
 
-### Index
+#### Index
 - organize data on disk to optimize operations
 - advantages: access records in multiple ways, more efficiently
 - avoids resorting data each time by having a search key
@@ -475,9 +510,9 @@ HAVING SUM(quantity) > 100
 
 --------------------------
 
-## Design
+### Design
 
-### Redundancy Consequences
+#### Redundancy Consequences
 - redundant storage
 - update anomalies: what if 1 thing is updated but the other isn't
 - insertion anomalies
@@ -520,7 +555,7 @@ non-trivial dependencies X → Y, X is a superkey (X is a Candidate key or
 a superset of one / contains the candidate key)
 - Non trivial dependencies are of the form A → A
 
-### Decomposing Relations
+#### Decomposing Relations
 Sometimes, to achieve a certain Normal Form level, a relation must be
 decomposed into multiple relations
 
@@ -574,10 +609,10 @@ Closure of A
 {A} + = {A,D,E} No more
 So the closure of A is {A,D,E}
 ```
-### Candidate Keys
+#### Candidate Keys
 A candidate key can be determined by computing closure if the closure of the key in question contains all the attributes of the relation
 
-### Minimum Basis
+#### Minimum Basis
 - Try to remove a functional dependency and see if remaining FD's are equivalent to original set
     1. Split all RHS into singletons
     2. For all f in F', test whether J = (F' - f)<sup>+</sup> is still equivalent to F<sup>+</sup>
@@ -590,13 +625,13 @@ A candidate key can be determined by computing closure if the closure of the key
 - find minimal basis M of F
 ![](img/minimalbasis.PNG)
 
-### Projecting Functional Dependencies
+#### Projecting Functional Dependencies
 - Initialize T = {}
 - Create set of attributes of R1 = X
 - Compute closure of X
 - Add to T all nontrivial FD's X --> A such that A is in the closure of X and an attribute of R1
 
-### Decomposition of Schema
+#### Decomposition of Schema
 - lossless, avoid anomalies, preserve functional dependencies
 - decomposing to BCNF
     - look among FD's for violation X --> Y
@@ -606,15 +641,15 @@ A candidate key can be determined by computing closure if the closure of the key
         - R1 = closure of X
         - R2 = R - (X<sup>+</sup> - X)
 
-### Limits of Decomposition
+#### Limits of Decomposition
 - 3NF provides lossless join and dependency preserving schema, NOT anomaly free
 - BCNF provides anomaly-free, lossless join schema, NOT preserving dependencies
 
 --------------------------
 
-## Transactions and Concurrency
+### Transactions and Concurrency
 
-### Transaction
+#### Transaction
 - unit of program execution that accesses and possibly updates data
 - during one, DB may be temporarily inconsistent
 - multiple transactions can execute in parallel
@@ -642,7 +677,7 @@ A candidate key can be determined by computing closure if the closure of the key
 - Durability
     - after successful transactions, updates should persist
 
-### Schedules of Transactions
+#### Schedules of Transactions
 - chronological sequence of concurrent transactions
 - serial schedule - no interleaving, one transaction after another
 - equivalent schedule - effect of executing 1 is same as other
@@ -737,4 +772,3 @@ by any other transaction until Ti either aborts or commits
 ### Deadlock Prevention
 - Wait-Die: if Ti has higher priority, Ti waits for Tj otherwise Ti aborts
 - Wound-Wait: if Ti has higher priority, Tj aborts, otherwise Ti waits
-

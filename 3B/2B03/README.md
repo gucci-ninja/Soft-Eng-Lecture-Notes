@@ -1,4 +1,16 @@
 # 2B03 Engineering Economics
+
+## Table of Contents
+- [Grading](#grading)
+- [Decision Pyramid](#decision-pyramid)
+- [Dealing with Abstractions](#dealing-with-abstractions)
+- [Modelling Process](#modelling-process)
+- [Design Criteria](#design-criteria)
+- [What is Sustainability](#what-is-sustainability)
+- [Case Study Interface Carpets](#case-study-interface-carpets)
+- [Time Value](#time-value)
+- [Interest](#interest)
+- [Simple Interest vs Compund Interest](#simple-interest-vs-compund-interest)
  
 Professor email: church@mcmaster.ca
 
@@ -164,6 +176,8 @@ of costs and benefits of project over time
 #### Sample Question
 - if 5000 invested in savings account at nominal 4% compunded yearly, what is future worth in 3 years.
 ```
+Question 1
+
 P = $5000
 i = 4%
 N=3
@@ -171,4 +185,36 @@ N=3
 F = P(1+i)^N 
   = (5000)(1 + 0.04)^3
 ```
+
+```
+Question 2
+
+1626 to 2018
+i = 6%
+P = 24$
+F = P(1 + i)^N
+     = 1.88 B
+```
+
+#### Credit Card tool
+
+### Cash Flow DIagrams
+- represented by arrows and relevent periods
+- upward arrow = positive flow
+- down arrow = negative flow
+- time 0 is considered **now**
+- ![](Day3/cashflow.PNG)
+
+- can construct table outlining all cashflow activites
+	- won't get marks for it but it helps 
+
+### Nominal Interest Rate
+- conventional method of stating annual interest rate
+- 18% compounded daily --> ```i = 18%/365```
+- ``` i = r/# compounding periods per year ```
+- N --> if nothing is stated, assume yearly **except** in car payments and mortgages - assume monthly
+
+
+
+
 

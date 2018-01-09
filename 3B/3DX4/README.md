@@ -1,5 +1,21 @@
 # 3DX4 Dynamic Systems and Control
 
+## Table of Contents
+- [Grading](#grading)
+- [Textbook](#textbook)
+- [Software](#software)
+- [What is a Control System](#what-is-a-control-system)
+- [Why Need?](#why-need)
+- [System Configurations](#system-configurations)
+- [Closed-Loop System](#closed-loop-system)
+- [Transient and Steady-State Response](#transient-and-steady-state-response)
+- [Stability](#stability)
+- [Modelling in the Frequency Domain](#modelling-in-the-frequency-domain)
+- [Written Examples](#written-examples)
+- [MatLab Commands](#matlab-commands)
+- [Partial Fractions Decomposition](#partial-fractions-decomposition)
+- [Partial Fractions Decomposition](#partial-fractions-decomposition)
+
 ## Day 1 Jan 4, 2018
 
 ### Grading
@@ -87,7 +103,7 @@ Total response = Natural response + Forced response
 
 - calculating controlled output to make motor go proportionally faster
 - open loop version: apply step voltage to motor
-   - through feedback, you can put more energy into the system ‚Äúcranking up the gain‚Äù enough so that it doesnt go unstable or start to oscillate
+   - through feedback, you can put more energy into the system ìcranking up the gainî enough so that it doesnt go unstable or start to oscillate
 - makes things go faster
 
 ##### Integral Control System

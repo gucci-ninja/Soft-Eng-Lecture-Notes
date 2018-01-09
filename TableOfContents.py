@@ -39,7 +39,7 @@ def tocify(filename):
                     toc += ("- ["+header+"](#"+link+")\n")
         with open(filename, "r", encoding="utf8") as f:
             f = f.readlines()[endTOC:]
-        with open(filename, 'w') as new:
+        with open(filename, 'w', encoding="utf8") as new:
             new.write(first_line + "\n" + toc + "".join(f))
                 
 filenames = ["3B/2B03/", "3B/3A04/", "3B/3DX4/", "3B/3I03/", "3B/3S03/",

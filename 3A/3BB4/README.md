@@ -1,5 +1,9 @@
 # 3BB4 Concurrency
 
+## Table of Contents
+- [Basic Statements](#basic-statements)
+- [Basic Statements](#basic-statements)
+
 ## Sequential Programming
 
 ### Basic Statements
