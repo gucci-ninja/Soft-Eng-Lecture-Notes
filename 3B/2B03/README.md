@@ -8,7 +8,7 @@ Professor email: church@mcmaster.ca
 - Midterm 30% (March 6 @ 7-9pm)
 - Quizzes 20% 
 	- (on [Avenue](http://avenue.mcmaster.ca/)) 
-	- open Thursday, due Sunday \*1 attempt
+	- open Thursday, due Sunday - **1 attempt only**
 - Exam 50%
 
 _Final and midterm - 2 sided cribsheet & open textbook (can't print pdf)_

@@ -1,4 +1,5 @@
 # 3I03 Communication Skills
+- Tutorials can be found [here](Tutorials/README.md)
 
 ## Day 1 Jan 4, 2018
 
@@ -31,7 +32,7 @@ Prof email - fchian@mcmaster.ca
 	- who are you?
 	- what do you do?
 	- where are you going?
-	\*supplement with your unique special skills*\
+	- **supplement with your unique special skills**
 - consider employer perspective
 	- what's in it for them?
 	- how will it contribute to the organization
