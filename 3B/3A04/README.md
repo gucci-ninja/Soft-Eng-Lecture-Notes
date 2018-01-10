@@ -5,7 +5,6 @@
 - [Last Year Final Exam](#last-year-final-exam)
 - [Grading](#grading)
 - [Textbook](#textbook)
-- [Textbook](#textbook)
 
 ## Day 1 Jan 5, 2018
 
@@ -63,3 +62,4 @@ Software Architecture and Design Illuminated
 **Deterministic Finite Automata**
 - take in strings of binary with even number of 0 and numberof 1s is multiple of 3
 - Product Construction: when you have 2 machines 
+

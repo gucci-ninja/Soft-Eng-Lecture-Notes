@@ -25,7 +25,7 @@ def tocify(filename):
     except:
         with open(filename, "r", encoding="utf8") as f:
             first_line  = f.readline()
-            endTOC = 1 # index at which current table of contents ends
+            endTOC = 2 # index at which current table of contents ends
             for line in f:
                 if "Table of Contents" in line:
                     endTOC += 1
