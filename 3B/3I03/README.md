@@ -4,7 +4,6 @@
 - [Marking Scheme](#marking-scheme)
 - [Elevator Pitch (sell yourself.. :no_mouth:)](#elevator-pitch-(sell-yourself-:no_mouth:))
 - [Elevator Pitch (business)](#elevator-pitch-(business))
-- Tutorials can be found [here](Tutorials/README.md)
 
 ## Day 1 Jan 4, 2018
 

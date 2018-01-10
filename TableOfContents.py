@@ -8,7 +8,7 @@ def tocify(filename):
     try:
         with open(filename, "r") as f:
             first_line  = f.readline()
-            endTOC = 1 # index at which current table of contents ends
+            endTOC = 2 # index at which current table of contents ends
             for line in f:
                 if "Table of Contents" in line:
                     endTOC += 1
@@ -44,7 +44,6 @@ def tocify(filename):
                 
 filenames = ["3B/2B03/", "3B/3A04/", "3B/3DX4/", "3B/3I03/", "3B/3S03/",
              "3B/4A03/", "3A/3DB3/", "3A/3BB4/"]
-
 
 for filename in filenames:
     print(filename)

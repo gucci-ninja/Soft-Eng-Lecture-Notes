@@ -14,7 +14,6 @@
 - [Written Examples](#written-examples)
 - [MatLab Commands](#matlab-commands)
 - [Partial Fractions Decomposition](#partial-fractions-decomposition)
-- [Partial Fractions Decomposition](#partial-fractions-decomposition)
 
 ## Day 1 Jan 4, 2018
 
