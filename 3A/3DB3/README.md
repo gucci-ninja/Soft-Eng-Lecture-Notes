@@ -8,6 +8,8 @@
 - [Relational Model](#relational-model)
 - [Integrity Constraints](#integrity-constraints)
 - [Foreign keys](#foreign-keys)
+- [Participation Constraints](#participation-constraints)
+- [Views](#views)
 - [Database](#database)
 - [Data Independence](#data-independence)
 - [ER Model](#er-model)

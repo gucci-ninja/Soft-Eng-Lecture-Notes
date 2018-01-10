@@ -5,6 +5,7 @@
 - [Last Year Final Exam](#last-year-final-exam)
 - [Grading](#grading)
 - [Textbook](#textbook)
+- [SDLC V Model](#sdlc-v-model)
 
 ## Day 1 Jan 5, 2018
 
@@ -62,4 +63,29 @@ Software Architecture and Design Illuminated
 **Deterministic Finite Automata**
 - take in strings of binary with even number of 0 and numberof 1s is multiple of 3
 - Product Construction: when you have 2 machines 
+
+## Day 3 Jan 10, 2018
+
+- Next week's project: **identifying objects** :frog:
+- good design in software reduces risks
+- makes system traceable for implementation and testing
+
+### SDLC V Model
+Steps | Relation | Corresponding steps
+------|----------|-----------------
+1. Pre-requirements | <-Cost-> | 9. Production Operation and Maintenance
+2. Production Reqs |<------>| 8. System Testing
+3. Architecture Design |<------>| 7. Integration Testing
+4. Detailed Design |<------> |6. Unit Testing
+  - | 5. Coding | -
+
+#### What is meant by Software Architecture
+- blueprint for developing small and large systems based on requirement analysis
+- highlights early decisions
+- has set of constraints (space, time, budget)
+- Considers separation of concerns
+  - each software component hides something
+- there are connectors between software components
+
+:sleepy:
 
