@@ -4,7 +4,6 @@
     
 def tocify(filename):
     toc = "## Table of Contents\n"
-
     try:
         with open(filename, "r") as f:
             first_line  = f.readline()

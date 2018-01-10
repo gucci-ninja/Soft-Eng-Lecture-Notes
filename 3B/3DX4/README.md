@@ -102,7 +102,7 @@ Total response = Natural response + Forced response
 
 - calculating controlled output to make motor go proportionally faster
 - open loop version: apply step voltage to motor
-   - through feedback, you can put more energy into the system “cranking up the gain” enough so that it doesnt go unstable or start to oscillate
+   - through feedback, you can put more energy into the system ï¿½cranking up the gainï¿½ enough so that it doesnt go unstable or start to oscillate
 - makes things go faster
 
 ##### Integral Control System
@@ -205,9 +205,11 @@ a<sub>0</sub>c(t)
 - **take pic of note**
 
 ### MatLab Commands
-- define F = blah blah blah
-- define syms s, t, etc
-- ```ilaplace```
+- define F
+- define ```syms s, t```, etc
+- ```ilaplace``` - computes laplace
+- ```partfrac(F)``` - gets partial fractions
+- ```pretty(x)``` - makes it pretty
 
 ### Partial Fractions Decomposition
 1. Divide if improper, degree of numerator is denominator
@@ -218,3 +220,9 @@ a<sub>0</sub>c(t)
 4. Quadratic factors
 5. Determine unknowns
 
+#### Cover Up Method
+- neat lil trick for the bois back home
+- say you're solving for A
+	- look at its denominator and find its pole
+	- then cover up that denominator from original
+	- sub in the value of the pole and answer shall be A :information_desk_person:

@@ -5,6 +5,7 @@
 - [Last Year Final Exam](#last-year-final-exam)
 - [Grading](#grading)
 - [Textbook](#textbook)
+- [Textbook](#textbook)
 
 ## Day 1 Jan 5, 2018
 

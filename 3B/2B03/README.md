@@ -13,6 +13,7 @@
 - [Simple Interest vs Compund Interest](#simple-interest-vs-compund-interest)
 - [Cash Flow DIagrams](#cash-flow-diagrams)
 - [Nominal Interest Rate](#nominal-interest-rate)
+- [Nominal Interest Rate](#nominal-interest-rate)
  
 Professor email: church@mcmaster.ca
 
