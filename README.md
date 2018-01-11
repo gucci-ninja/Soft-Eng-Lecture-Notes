@@ -18,6 +18,6 @@
 
 #### To Do
 - [ ] Add examples for 3DX4
-- [ ] Finish Ruby Script
+- [x] Finish Ruby Script
 
 

@@ -13,7 +13,10 @@
 - [Simple Interest vs Compund Interest](#simple-interest-vs-compund-interest)
 - [Cash Flow DIagrams](#cash-flow-diagrams)
 - [Nominal Interest Rate](#nominal-interest-rate)
+- [Timing of Cash Flow and Modelling](#timing-of-cash-flow-and-modelling)
  
+## Day 1 Jan 4, 2018
+
 Professor email: church@mcmaster.ca
 
 ### Grading

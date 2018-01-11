@@ -7,6 +7,7 @@
 - [Breakdown](#breakdown)
 - [Software Testing](#software-testing)
 - [Testing and Measurement](#testing-and-measurement)
+- [Testing Principles](#testing-principles)
 
 ## Day 1 - Jan 4, 2018 
 

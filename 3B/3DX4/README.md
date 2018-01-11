@@ -14,6 +14,10 @@
 - [Written Examples](#written-examples)
 - [MatLab Commands](#matlab-commands)
 - [Partial Fractions Decomposition](#partial-fractions-decomposition)
+- [Stability Analysis](#stability-analysis)
+- [Time Functions ](#time-functions-)
+- [Electric Network Transfer Function](#electric-network-transfer-function)
+- [Equivalent Resistance and Impedence](#equivalent-resistance-and-impedence)
 
 ## Day 1 Jan 4, 2018
 

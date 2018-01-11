@@ -1,5 +1,11 @@
 # 4A03 Sustainability and Ethics in Engineering
 
+## Table of Contents
+- [Definition of Sustainable Development](#definition-of-sustainable-development)
+- [Corporate Social Responsibility CSR](#corporate-social-responsibility-csr)
+- [About Joel Hilchey](#about-joel-hilchey)
+- [First Assignment](#first-assignment)
+
 ## Day 1 Jan 10, 2018
 
 - pass/fail assignments
