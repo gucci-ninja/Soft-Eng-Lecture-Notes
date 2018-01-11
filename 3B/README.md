@@ -89,7 +89,3 @@ Steps | Relation | Corresponding steps
 
 :sleepy:
 
-### Hi
-- fjfkshd
-- fdskjl
-

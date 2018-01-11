@@ -233,12 +233,39 @@ F = P(1 + i)^N
 
 #### Equivalence
 - condition that exists when value of cost is equivalent to another
-1. mathematical equivalence
+1. Mathematical equivalence
 	- million dollars today or million dollars in 10 years -- not equivalent in terms of value
 	- million today or 1.5 mill in 10 years **may** be equivalent
 	
-2. decisional equivalence
+2. Decisional equivalence
 	- indifferent between P dollars now abd F dollars N periods from now
 	- inferring implied interest rate from P, F and N
 
-	
+3. Market equivalence
+	- decision makers can echange different cashflows in market at 0 cost
+	- common when you're shopping around eg mortgages
+
+- if market equivalence holds and decisional can be expressed in monetary terms, then we can assume that mathematical equivalnce can be used
+
+#### Simplification of Cash Flow
+- for when it gets too complex
+- Convention: Sample Factor (compund amount factor)
+	- ```(F/P, i, N)``` = (1+i)<sup>N</sup>
+	- F = P(1+i)<sup>N</sup> = P(F/P, i, N)
+	- P = F/(i+1)<sup>N</sup> = F(P/F,i,N)
+
+##### Assumptions of Compunding Interest Factors
+- if we have N periods, they have to be equally spaced
+- payment at time 0 can be considered at end of period -1: _today_
+```
+@ 2 is end of 2nd month, beginning of 3rd month
+          |
+  --------------
+  0   1   2   3	
+  ```
+
+#### Example
+- present worth P of cashflow with arrows at 3 and 5
+- P = sum of those future amounts 
+= P<sub>0</sub> = F1/(1+im)^3 + F2/(1+im)^5
+- in short form = F1(P/F, im, 3) + F2(p/F, im, 5)
