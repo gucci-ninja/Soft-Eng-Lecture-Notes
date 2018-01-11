@@ -226,3 +226,81 @@ a<sub>0</sub>c(t)
 	- look at its denominator and find its pole
 	- then cover up that denominator from original
 	- sub in the value of the pole and answer shall be A :information_desk_person:
+
+## Day 4 Jan 11, 2018
+
+### Stability Analysis
+- if you have a complex polynomial N(s) and D(s)
+- after expansion, we refer to roots of D(s) as poles
+- if you have some polynomial in matlab, you can do roots([a b c]) with the coefficients of your polynomial ax^2 + bx + c
+- ```s = tf('s')``` - makes it so that s is the variable in transfer function
+- can find poles of G(s), a transfer function by doing the above command and ```pole(G)```
+- if you have distinct poles p1, p2, p3 then you end up with A<sub>1</sub>e<sup>-p<sub>1</sub>t</sup> + A<sub>2</sub>e<sup>-p<sub>2</sub>t</sup> + ... A<sub>n</sub>e<sup>-p<sub>n</sub>t</sup>
+- between G(s) = 1/(s+1) and 1/(s-1), the second one is unstable as it comes to a finite value
+- if ω<sub>i</sub> = 0 then pole is strictly real and corresponds to 
+- if σ<sub>i</sub> then pole is in left side of imaginary plane and response decresaes to zero over time - system is stable
+
+#### Real and Imaginary Roots, Stability Analysis
+- if ω<sub>i</sub> = 0 and σ<sub>i</sub> < 0 then pole is in right side of imaginary plane, response increases over time and system is unstable
+- sometimes you want an oscillation, can tune a system so poles are on imaginary axis
+- if only pure imaginary roots, technically considered stable - called marginally stable because its impulse resposne doesn't blow up - sigma_i = 0 and omega_i != 0
+	- this system has no damping
+
+#### Example of Marginally Stable
+- poles at -3 and +3 on j (imaginary) axis with G(s) = 1/(s<sup>2</sup> + 9)
+- system will blow up with a repeating periodic impulse input
+- bounded input to break system: hit it with oscillation of 3 rad/s
+
+#### Complex Roots
+- if ω<sub>i</sub> and σ<sub>i</sub> both != 0
+
+```
+Unstable
+G = 1/((s-2 +j*3)*(s-2-j*3))
+
+>> impulse(G)
+>> step(G)
+
+starts oscillating a lot and doesn't plateau
+
+----------
+Stable
+G = 1/((s+2 +j*3)*(s+2-j*3))
+
+>> impulse(G)
+>> step(G)
+
+some oscillation, then plateaus out
+```
+
+### Time Functions 
+![](Day4/timefunctions.PNG)
+- in theory, turning up the gain and spending infinite energy will make system respone large
+- on s-plane, things on j plane appear in complex conjugates
+
+### Electric Network Transfer Function
+- impedence is laplace generalization of resistance
+- need Ohm's law: ```v(t) = Ri(t)```
+- impledence: ```Z(s) = V(s)/I(s) = R```
+- admittance: ```Y(s) = !(s)/V(s) = 1/R = G```
+
+#### Impedence of Inductor
+- voltage-current relation of inductor
+- ```v(t) = L di(t)/dt```
+- assume 0 condition when performing Laplace to find transfer function
+- given this cicruit, replace L by Ls
+- ![](Day4/circuit.PNG)
+
+#### Impedence of Capacitor
+- 1/C*S
+
+#### Summary of Circuit Elements
+- things with very low voltage signal use active components - eg cellphone
+- active components inject energy unlike passive componenets (without internal energy source)
+
+### Equivalent Resistance and Impedence
+
+**Example**
+- Simplify circuit to get 6 ohm resistance for left and 12 for right
+
+

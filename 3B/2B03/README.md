@@ -216,7 +216,29 @@ F = P(1 + i)^N
 - ``` i = r/# compounding periods per year ```
 - N --> if nothing is stated, assume yearly **except** in car payments and mortgages - assume monthly
 
+## Day 4 Jan 11, 2018
 
+### Timing of Cash Flow and Modelling
 
+- Discrete Model
+	- models that assume all cash flows occur at ends of conventional periods
+- Continuous Model
+	- not that common
+	- assumes that all cash flow occurs continuously - continuous compund period
 
+- can have discrete _cashflow_ and discrete _compounding_
+- discrete - continuous
+- continuous - continous
+- can't have continuous - discrete (continuous money and monthly period)
 
+#### Equivalence
+- condition that exists when value of cost is equivalent to another
+1. mathematical equivalence
+	- million dollars today or million dollars in 10 years -- not equivalent in terms of value
+	- million today or 1.5 mill in 10 years **may** be equivalent
+	
+2. decisional equivalence
+	- indifferent between P dollars now abd F dollars N periods from now
+	- inferring implied interest rate from P, F and N
+
+	
