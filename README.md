@@ -16,3 +16,8 @@
 - [3DX4 Dynamic Systems and Control](3B/3DX4/README.md)
 - [4A03 Sustainability and Ethics in Engineering](3B/4A03/README.md)
 
+#### To Do
+- [ ] Add examples for 3DX4
+- [ ] Finish Ruby Script
+
+
