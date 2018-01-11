@@ -81,4 +81,35 @@ _Tutorials start next week_
     - non-integer values
     - values greater than 0, less than 0
 
+## Day 4 Jan 11, 2018
+
+**Still on Testing and Measurement**
+- accuraacy of measure depends on measuring instrument and definition of measurement
+- always a margin of error
+- when is a scale acceptable?
+
+### Testing Principles
+
+#### Types of Defects
+1. Software does something it's not supposed to do 
+2. Software does something the specs say it should not do
+3. Software does something that specs doesn't mention
+    - it's a **bug** because it can have side effects
+4. The software does not do something that spec does not mentiion but should
+    - common sense
+    - if x happens, y shoudl happen 
+5. The software is difficult to understand, hard to use, slow or just not right
+
+--------
+1. Necessary part of test case is the definition of the expected output or result
+2. A programmer should avoid attempting to test his/her own program
+    - hard to look at program with destructive eye
+    - will carry same misunderstanding into tests
+3. Programming organizations should not test its own programs
+    - same reasoning as 2
+4. **_got distracted_**
+5. Test cases must be written for input conditions that are invalid and unexpected as well as valid and expected
+
+
+
 

@@ -3,50 +3,52 @@
 # def name(parameters)
 #
 # end
-def tocify(filename)
     # Local vars --- x = 9
     # instance var (of object) --- @Counter
     # Global vars --- $-x OR $name
     # const --- starts with uppercase letter (Pi)
     # .length of strings, arrays
 
-    toc = "## Table of Contents\n"
 
-    # open file to read
-    #f = File.open(filename, "r")
-    f = IO.readlines(filename)
-    first_line = f[0]
+toc = "## Table of Contents\n"
+    
+filename = "3B/README.md"
 
-    # index 
-    iTOC = 2
+f = File.open(filename, 'r')
+first_line = f.readline()
+iTOC = 2
 
-    # until end of file
-    until f.eof()
-        # Read line
+until f.eof()
+    line = f.readline().tr("\n", "")
+    if line["Table of Contents"]
+        iTOC += 1
         line = f.readline()
-        if line.grep("Table of Contents")
+        while line["##"] do
             iTOC += 1
             line = f.readline()
-            while line.grep("##") do
-                iTOC += 1
-                line = f.readline()
-            end
         end
-        if line.count('#') == 3
-            header = line[4..-1].tr("\n", "")
-            temp = header.tr(" ", "-").downcase
-            link = temp.tr("!?,.", "")
-            toc.concat("- ["+header+"](#"+link+")\n")
-        end
-    tempf = IO.readlines(filename)
+    end
+    if line.count('#') == 3
+        header = line[4..-1].tr("\n", "")
+        temp = header.tr(" ", "-").downcase
+        link = temp.tr("!?,.", "")
+        toc.concat("- ["+header+"](#"+link+")\n")
+    end
+end
 
-    f = tempf[iTOC..-1]
+tempf = IO.readlines(filename)
 
-    towrite = File.open(filename, "w")
+puts iTOC
 
-    towrite.puts (first_line + "\n" + toc + f.join(""))
+f = tempf[iTOC..-1]
 
-        
+towrite = File.open(filename, "w")
+
+towrite.puts (first_line + "\n" + toc + f.join(""))
+
+    
+
+
 
 
     

@@ -57,3 +57,6 @@
 - **Discussion** -> what if school was like skill based video game, what about escape rooms
 
 _For kids under 2, no screen time is recommended_
+
+### First Assignment
+- post dated letter written as if it is the end of class
