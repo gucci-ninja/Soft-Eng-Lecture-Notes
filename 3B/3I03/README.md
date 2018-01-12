@@ -2,8 +2,8 @@
 
 ## Table of Contents
 - [Marking Scheme](#marking-scheme)
-- [Elevator Pitch (sell yourself.. :no_mouth:)](#elevator-pitch-(sell-yourself-:no_mouth:))
-- [Elevator Pitch (business)](#elevator-pitch-(business))
+- [Elevator Pitch (sell yourself.. :no_mouth:)](#elevator-pitch-sell-yourself-:no_mouth:)
+- [Elevator Pitch (business)](#elevator-pitch-business)
 - [Resumes and Interviews](#resumes-and-interviews)
 - [Group/Cluster Hiring](#group/cluster-hiring)
 - [What About the Interview?](#what-about-the-interview)

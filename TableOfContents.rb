@@ -33,7 +33,7 @@ def tocify(filename)
         if line.count('#') == 3
             header = line[4..-1].tr("\n", "") #trim off the first characters
             temp = header.tr(" ", "-").downcase # replace spaces and make lowercase
-            link = temp.tr("!?,.", "") # remove punctuation
+            link = temp.tr("!?,.')(", "") # remove punctuation
             toc.concat("- ["+header+"](#"+link+")\n")
         end
     end

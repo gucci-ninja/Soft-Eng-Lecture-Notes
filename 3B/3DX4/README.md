@@ -18,6 +18,12 @@
 - [Time Functions ](#time-functions-)
 - [Electric Network Transfer Function](#electric-network-transfer-function)
 - [Equivalent Resistance and Impedence](#equivalent-resistance-and-impedence)
+- [Kirchhoff's Current Law](#kirchhoffs-current-law)
+- [Kirchhoff's Voltage Law](#kirchhoffs-voltage-law)
+- [Mesh Analysis](#mesh-analysis)
+- [Cramer's Rule](#cramers-rule)
+- [Nodal Analysis](#nodal-analysis)
+- [Operational Amplifiers](#operational-amplifiers)
 
 ## Day 1 Jan 4, 2018
 
@@ -307,4 +313,62 @@ some oscillation, then plateaus out
 **Example**
 - Simplify circuit to get 6 ohm resistance for left and 12 for right
 
+## Day 5 Jan 12, 2018
 
+### Kirchhoff's Current Law
+- point of connection between 2 or more circuit elements is referred to as **node**
+- current flows into node considered positive, leaving the negative node
+- _KCL_ says that the algebraid sum of currents entering any node is 0
+- 5 going in, i going in, -3 going out and -2 going out gives a sum of 0
+- ![](Day5/KCL.PNG)
+
+### Kirchhoff's Voltage Law
+- algebraic sum of voltages around closed loop/path is zero
+- to find voltage across op resistor, we're going from plus to minus so subtract, therefore it's 3 V
+- ![](Day5/KVL.PNG)
+
+#### Example
+- finding transfer function
+- voltage across capacitor varies with integral of v so c becomes 1/cs
+- current = the voltages (in series) + Ls + Lr + 1/Cs
+- voltage = current * impedence
+
+![](Day5/example.PNG)
+
+![](Day5/written_example1.PNG)
+
+### Mesh Analysis
+- if you know the currents in the circuit then you can figure out anything else because current * impedence
+- if you know the voltages, same thing because you can do voltage/impedence
+
+#### Mesh Example
+ ![](Day5/mesh_1.PNG)
+
+ ![](Day5/mesh_2.PNG)
+
+### Cramer's Rule
+- if Ax = B is a system of N linear equations and you wanna solve for N unknowns such that det(A) != 0, then system has unique solution and you can solve for x
+- replace column of A<sub>n</sub> by column of B 
+![](Day5/cramers.PNG)
+- brute force mechanical way of solving matrix
+
+#### Matrix Determinant
+- probably won't have to do a matrix bigger than 3x3
+- might wanna put formulars on cheat sheet 
+
+**Notes: 2 pages of notes**
+
+### Nodal Analysis
+- alternative to mesh analysis
+- start out with circuit
+- replace elements with their laplace equivalent
+- L -> Ls, C -> Cs, etc
+- use kirchhoff's current law for equations for unknown voltages
+
+#### Nodal example
+-
+
+### Operational Amplifiers
+- _op amps_
+
+## Day 6
