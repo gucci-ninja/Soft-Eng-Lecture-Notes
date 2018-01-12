@@ -6,6 +6,8 @@
 - [Grading](#grading)
 - [Textbook](#textbook)
 - [SDLC V Model](#sdlc-v-model)
+- [ Code Structure](#-code-structure)
+- [ Project Runtime Structure](#-project-runtime-structure)
 
 ## Day 1 Jan 5, 2018
 
@@ -89,3 +91,35 @@ Steps | Relation | Corresponding steps
 
 :sleepy:
 
+## Day 4 Jan 12, 2018
+
+**Discussion Day**
+
+- software architecture can be given from several perspectives
+  - software code units (elements are source, binary code, modules)
+  - project's runtime structure (elements are threads, processes, transactions)
+  - allocation structure (project management structure)
+- each structure class uses different connectors and different performance attributes
+- **module** : software component that hides a secret
+  - behaviour hiding
+  - hardware hiding (hide communication between software and hardware)
+    - eg robot's secret is its language
+  - software hiding modules
+    - have secrets like algorithms, data structures (can be generalized to 3 types - tuples, list, sets)
+
+ :cry: :cry: **so hungry** :cry: :cry:
+ 
+ ### Code Structure
+- amount of knowledge that compnents/modules have of each other kept to minimum
+- information flow between compoenents is restricted to flow from method calls
+- connectors in structures have:
+  - direction - if module A invokes a method of module B then A -> B is connected
+  - synchronization
+    - asynchronous - operates independently
+    - synchronous - process runs as result of other processes
+  - sequence - some connectors must be used in particular sequence (label connector with sequence id)
+
+ ## Day 5
+
+ ### Project Runtime Structure
+ 

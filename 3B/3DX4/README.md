@@ -212,7 +212,19 @@ a<sub>0</sub>c(t)
 ## Day 3 Jan 9, 2018
 
 ### Written Examples
-- **take pic of note**
+
+![](Day3/written1.PNG)
+
+- Final Value Theorem is a quick way to look at the system in the long run
+- we know the above is a first order system therefore there are no oscillations
+
+#### Partial Fraction Expansion
+- take transfer function and decompose it to compare to the table
+- refer to [Cover Up Method](#cover-up-method)
+
+![](Day3/written2.PNG)
+
+
 
 ### MatLab Commands
 - define F
