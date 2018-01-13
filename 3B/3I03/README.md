@@ -2,10 +2,10 @@
 
 ## Table of Contents
 - [Marking Scheme](#marking-scheme)
-- [Elevator Pitch (sell yourself.. :no_mouth:)](#elevator-pitch-sell-yourself-:no_mouth:)
+- [Elevator Pitch (sell yourself)](#elevator-pitch-sell-yourself)
 - [Elevator Pitch (business)](#elevator-pitch-business)
 - [Resumes and Interviews](#resumes-and-interviews)
-- [Group/Cluster Hiring](#group/cluster-hiring)
+- [Group and Cluster Hiring](#group-and-cluster-hiring)
 - [What About the Interview?](#what-about-the-interview)
 
 ## Day 1 Jan 4, 2018
@@ -30,8 +30,8 @@ Prof email - fchian@mcmaster.ca
 
 \*_must cite all sources!!!_
  
-### Elevator Pitch (sell yourself.. :no_mouth:)
-
+### Elevator Pitch (sell yourself)
+:no_mouth:
 - 30-90 sec speech that summarizes important points about you
 - give enough info such that they want to know more
 - what do you want them to know about you
@@ -69,6 +69,7 @@ Prof email - fchian@mcmaster.ca
 - key skills, highlight them as you read job description
 
 **T exercise**
+
 What Employer Wants | What you have that matches
 --------------------|-------------------------
 Java | Java, Python
@@ -104,7 +105,7 @@ Java | Java, Python
 - get permission from contact
 - it helps a loooOOoOoT :scream:
 
-### Group/Cluster Hiring
+### Group and Cluster Hiring
 - recent trend to hire small teams
 - benefits: team collegiality, proven track record
 - popular in blockchain area
