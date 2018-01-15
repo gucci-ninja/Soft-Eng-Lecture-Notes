@@ -111,6 +111,8 @@ _Tutorials start next week_
 4. **_got distracted_**
 5. Test cases must be written for input conditions that are invalid and unexpected as well as valid and expected
 
+## Day 5 Jan 15, 2018
 
+- skipped :(
 
-
+## Day 6

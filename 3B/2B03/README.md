@@ -272,3 +272,78 @@ F = P(1 + i)^N
 - P = sum of those future amounts 
 = P<sub>0</sub> = F1/(1+im)^3 + F2/(1+im)^5
 - in short form = F1(P/F, im, 3) + F2(p/F, im, 5)
+
+
+## Day 5 Jan 15, 2018
+
+### Compound Amount Factor
+
+```(F/P, i, N)```
+
+- gives future amount F that is equivalent to present amount P when i interest ate and number of periods is N
+- comes from eqn F=P(1+i)<sup>N</sup>
+- (F/P,i,N) = (1+i)<sup>N</sup>
+- allows you to mve single arrow to the future
+
+#### Example 1
+- loan a friend $5000 and they promise to repay you with interest 4% per year and they'll pay you back in 3 years.
+	- nominal interest rate - 4%
+	- m = 1 
+	- i = f/m = 4%
+	- N = 3 years
+	- P = 5000
+- F = P(1 + i)<sup>N</sup> OR F = P(F/P, i, N)
+- = 5000(1 + 0.04)<sup>3</sup> = $5624.50 - textbook has these factors with 4 significant digits
+
+**First quiz will be up on avenue on thursday! Due Sunday**
+	- everything up to the thursday lecture
+
+#### Example 2
+- same as before, i = 12% monthly, N = number of compunding periods
+	- m = 12
+	- i = f/m = 12%/12 = 1%
+	- N = 24 (in months)
+- F = P(1 + i)<sup>N</sup> OR F = P(F/P, i, N)
+- = 5000(1 + 0.01)<sup>24</sup> = $6348.67
+
+#### Example 3
+- same as first, four years, $5000 deposited at the end of each year. Interet rate is 12% compounded monthly
+	- multiple arrows for this one
+
+```
+       |    |    |    |
+  ---------------------
+  0   12   24   36   48
+
+```
+
+- move all arrows to the future (to 48 months)
+- use equation F = P(1 + i)<sup>N</sup> 4 times
+- 5000(F/P, 0.01, 36) + 5000(F/P, 0.01, 24) + 5000(F/P, 0.01, 12) + 5000
+
+### Present Worth Factor
+
+```(P/F, i, N)``` = 1/(1+i)<sup>N</sup>
+
+- gives present amount from F
+- bringing arrow from future back _N compounding periods_
+
+###E Example 4
+- what amount is desposited today into account bearing 12% nominal interest will give 5000 at the end of 2 years. Interest compunded monthly
+	- i = f/m = 12%/12 = 1%
+	- P = F(i/(1+i)<sup>N</sup>)
+	- P= F(P/F, 1%, 24)
+
+#### Example 5
+- how much would you deposit into savings account at nominal interest rate 6% **yearly** to accumulate $5000 in 3 years
+- P = F(P/F, 6%, 3)
+
+### Textbook
+- find it online and put the formulas in your crib sheet
+- Appendix A - discrete discrete
+- Appendix B and C - continuous - continous, discrete - continuous 
+
+#### Examplw 6
+- using interest tables, 12% nominal interest with monthly compunding (1%), N = 24 months, how much do i deposite today therefore you now F not P
+- look for 1% and N = 24 = 0.7875 (tbh it's easier to calculate :grimacing:)
+

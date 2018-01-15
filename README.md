@@ -17,7 +17,7 @@
 - [4A03 Sustainability and Ethics in Engineering](3B/4A03/README.md)
 
 #### To Do
-- [ ] Add examples for 3DX4
-- [x] Finish Ruby Script
 
+- [ ] 3I03 Assignment 1 due Jan 26
+- [ ] 4A03 Assignent 1 due Jan 16
 

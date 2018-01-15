@@ -107,9 +107,9 @@ Steps | Relation | Corresponding steps
   - software hiding modules
     - have secrets like algorithms, data structures (can be generalized to 3 types - tuples, list, sets)
 
- :cry: :cry: **so hungry** :cry: :cry:
+:cry: :cry: **so hungry** :cry: :cry:
  
- ### Code Structure
+### Code Structure
 - amount of knowledge that compnents/modules have of each other kept to minimum
 - information flow between compoenents is restricted to flow from method calls
 - connectors in structures have:
@@ -119,7 +119,40 @@ Steps | Relation | Corresponding steps
     - synchronous - process runs as result of other processes
   - sequence - some connectors must be used in particular sequence (label connector with sequence id)
 
- ## Day 5
+ ## Day 5 Jan 15, 2018
 
- ### Project Runtime Structure
- 
+- last week we began to look at 3 architectural views - code view, runtime view, management view
+
+- **3 things in architecture** - we give many views that provide 3 things
+  1. components
+  2. connectors
+  3. rationale for having the above to explain non-functional reqs
+
+### Project Runtime Structure
+- many threads can run multiple methods from multiple classes
+- connectors at this level inherit atributes from their cource-code counterparts
+  - **multiplicity** - one element may be connected to multiple other elements if it needs to invoke methods of multiple elements at runtime
+  - **distance and connection media** - two connected elements may communicate in the same process/thread/computer
+    - eg communication by optical cable OR LAN to the media
+  - **universal invokable** - protocol to communicate with an element
+    - software protocol is a way of exchanging information eg bluetooth is 15 dif protocols
+  - **self-descriptive** - allow external software system to invoke its target methods without pre-installation
+
+### Software Management Structure
+- are we skipping this just because???
+
+### Software Elements
+- each one has different synchronization and performance constraints
+- reentrant elements - usually more efficient since they avoid synchronization, can be implemented by any thread or process
+- business logics may not allow some elements to be reentrant since order of operations matters a lot when you have shared resources
+- **rule** if element is reentrant and multiple threads or processes may need to communicate with it, must run on separate threads or processes (thread safety)
+- **rule** if element has high multiplicity and performance is important to global system, use an appliatoin server for implementation
+
+**Basic Guidelines**
+- if heavy coomputations innvolved for deployment at particular location, consider using _cluster of processes_
+  - architecture is master-slave but it will suffer from performance problem if a master is connected to like 1000 slave processors at one layer
+    - if multiple layers it is more manageable
+  - size of cluster is determined by computation load and communication traffic
+- if element is assigned well-defined complex functions and similar off-the-shelf software exists and performance not critical then use **off the shelf solution**
+
+
