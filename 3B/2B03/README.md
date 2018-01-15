@@ -14,6 +14,9 @@
 - [Cash Flow DIagrams](#cash-flow-diagrams)
 - [Nominal Interest Rate](#nominal-interest-rate)
 - [Timing of Cash Flow and Modelling](#timing-of-cash-flow-and-modelling)
+- [Compound Amount Factor](#compound-amount-factor)
+- [Present Worth Factor](#present-worth-factor)
+- [Textbook](#textbook)
  
 ## Day 1 Jan 4, 2018
 
@@ -328,7 +331,7 @@ F = P(1 + i)^N
 - gives present amount from F
 - bringing arrow from future back _N compounding periods_
 
-###E Example 4
+#### Example 4
 - what amount is desposited today into account bearing 12% nominal interest will give 5000 at the end of 2 years. Interest compunded monthly
 	- i = f/m = 12%/12 = 1%
 	- P = F(i/(1+i)<sup>N</sup>)

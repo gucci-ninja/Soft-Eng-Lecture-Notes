@@ -6,8 +6,10 @@
 - [Grading](#grading)
 - [Textbook](#textbook)
 - [SDLC V Model](#sdlc-v-model)
-- [ Code Structure](#-code-structure)
-- [ Project Runtime Structure](#-project-runtime-structure)
+- [Code Structure](#code-structure)
+- [Project Runtime Structure](#project-runtime-structure)
+- [Software Management Structure](#software-management-structure)
+- [Software Elements](#software-elements)
 
 ## Day 1 Jan 5, 2018
 
