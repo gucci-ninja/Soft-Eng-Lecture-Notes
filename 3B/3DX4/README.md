@@ -66,7 +66,7 @@
 - open loop control (cheap, not robust)
 - no way of knowing if expected output is actual output
 
-### Closed-Loop System
+#### Closed-Loop System
 
 ![](Day1/closed_loop_system.PNG)
 - allows you to check output
