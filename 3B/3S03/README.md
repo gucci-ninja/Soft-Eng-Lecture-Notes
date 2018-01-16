@@ -7,7 +7,9 @@
 - [Breakdown](#breakdown)
 - [Software Testing](#software-testing)
 - [Testing and Measurement](#testing-and-measurement)
+- [Types of Defects](#types-of-defects)
 - [Testing Principles](#testing-principles)
+- [Testing Strategies and Plans](#testing-strategies-and-plans)
 
 ## Day 1 - Jan 4, 2018 
 
@@ -121,4 +123,22 @@ _Tutorials start next week_
 8. The probability of the existence of more errors in a section of a program is proportional to the number of errors already found in that section
 9. Testing is an extremely creative and intellectually challenging task
 
-## Day 6
+## Day 6 Jan 16, 2018
+
+- 5-6 quizzes in tutorials, worth 2% extra
+
+### Testing Strategies and Plans
+
+The following may be defects
+- Functionality
+- Communication (intuitive)
+- Command strcture
+- Missing commands
+- Program rigidity
+- Performance
+- Error handling
+- Boundary-related errors
+- Calculation errors
+- Concurrency issues
+
+## Day 7

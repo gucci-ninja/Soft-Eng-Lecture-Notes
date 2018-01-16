@@ -5,9 +5,7 @@
 - [Textbook](#textbook)
 - [Software](#software)
 - [What is a Control System](#what-is-a-control-system)
-- [Why Need?](#why-need)
 - [System Configurations](#system-configurations)
-- [Closed-Loop System](#closed-loop-system)
 - [Transient and Steady-State Response](#transient-and-steady-state-response)
 - [Stability](#stability)
 - [Modelling in the Frequency Domain](#modelling-in-the-frequency-domain)
@@ -24,6 +22,10 @@
 - [Cramer's Rule](#cramers-rule)
 - [Nodal Analysis](#nodal-analysis)
 - [Operational Amplifiers](#operational-amplifiers)
+- [Noninverting Op Amp](#noninverting-op-amp)
+- [Mechanical System](#mechanical-system)
+- [Mass Component](#mass-component)
+- [Translational](#translational)
 
 ## Day 1 Jan 4, 2018
 
@@ -50,7 +52,7 @@
 ![](Day1/control_system.PNG)
 - unity feedback - input 1 output 1
 
-### Why Need?
+#### Why Need?
 
 - power amplification
 - remote control
@@ -112,7 +114,7 @@ Total response = Natural response + Forced response
 
 - calculating controlled output to make motor go proportionally faster
 - open loop version: apply step voltage to motor
-   - through feedback, you can put more energy into the system �cranking up the gain� enough so that it doesnt go unstable or start to oscillate
+   - through feedback, you can put more energy into the system cranking up the gain enough so that it doesnt go unstable or start to oscillate
 - makes things go faster
 
 ##### Integral Control System
@@ -265,7 +267,7 @@ a<sub>0</sub>c(t)
 #### Real and Imaginary Roots, Stability Analysis
 - if ω<sub>i</sub> = 0 and σ<sub>i</sub> < 0 then pole is in right side of imaginary plane, response increases over time and system is unstable
 - sometimes you want an oscillation, can tune a system so poles are on imaginary axis
-- if only pure imaginary roots, technically considered stable - called marginally stable because its impulse resposne doesn't blow up - sigma_i = 0 and omega_i != 0
+- if only pure imaginary roots, technically considered stable - called marginally stable because its impulse resposne doesn't blow up - σ<sub>i</sub> = 0 and ω<sub>i</sub> != 0
 	- this system has no damping
 
 #### Example of Marginally Stable
@@ -361,7 +363,9 @@ some oscillation, then plateaus out
 ### Cramer's Rule
 - if Ax = B is a system of N linear equations and you wanna solve for N unknowns such that det(A) != 0, then system has unique solution and you can solve for x
 - replace column of A<sub>n</sub> by column of B 
+
 ![](Day5/cramers.PNG)
+
 - brute force mechanical way of solving matrix
 
 #### Matrix Determinant
@@ -378,9 +382,118 @@ some oscillation, then plateaus out
 - use kirchhoff's current law for equations for unknown voltages
 
 #### Nodal example
--
+- 
+
+## Day 6 Jan 16, 2018
+
+**Midterm during week before reading week**
 
 ### Operational Amplifiers
 - _op amps_
+- resistors, conductors - passive elements that don't put energy into system
+- you don't get as much out of these systems
+- if you want large gain in system, you need to amplify with _active_ components
+- following characteristics
+	1. v0(t) = A(v2(t) - v1(t))
+	2. high input impedence Zi = infinity
+	3. low output impedence Z0 = 0
+	4. the more current you draw, still basically same voltage: high constant gain A = infinity
 
-## Day 6
+#### Inverting Op Amps
+- 2 marks for writing down voltage - voltage at ground = 0, V1(x) = 0
+	- current flowing in is 0
+	- relation between i1 and i2: i1 = - i2
+	- if A is very large gain, force of the two voltages is equal in example below
+	- since v1 is approx 0, value of current i1 = (input - 0)/zi
+	- i2 = (Vout/z2)
+	- This gives the transfer funtion - V0(s)/Vi(s) = -Z2(s)/Z(s)
+	- should write down this configuration on your cheat sheet
+
+	![](Day6/opamps.PNG)
+
+#### Example
+- impedence in series are aded together, in parallel: 1/z1 + ...
+- Transfer function of the following
+
+![](Day6/opamps_example.PNG)
+
+- multiplying input by s implies derivative
+- division by s corresponds to integral
+- putting those 3 terms together gives you PID controller
+- Gc(s) = K3(s^ + K1s/K3 + K2/K3)/s (as seen earlier)
+
+### Noninverting Op Amp
+- want input to go into positive terminal (unlike previous example)
+- voltage divider circuit
+
+![](Day6/voltage_divider.PNG)
+
+**written example**
+
+### Mechanical System
+
+- once in laplace form, just know transfer function
+
+### Mass Component
+- Newton's second law of motion ```{sum} f = ma```
+- laplace forms for position f(t) = Ma(t) is F(s) = Ms<sup>2</sup>X(s)
+- if you know position, multiply by s to get velocity **(assignment q)**
+
+#### Viscous Damper
+- adds friction to doors so they don't swing open like crazy
+
+![](Day6/viscous_damper.PNG)
+
+- ratio of force to position is F(s) = f<sub>v</sub>sX(s)
+
+#### Spring Constant
+- K
+- f(t) = Kx(t)
+- in laplace: F(s) = KX(s)
+- impedence of that Zm(s) = F(s)/X(s) = K
+- F(s) = K/s*V(s)
+- the derivative/velocity is then K/s
+
+![](Day6/summary.PNG)
+
+### Translational
+- to find transfer function
+	- draw free-body diagram
+	- use f = ma to create force equations
+	- in example there is force acting to right and force Kx as well as fv*x
+	- the m*a component will be left over
+	- assume positive direction of travel is to the right
+	- Kx and fvx pulling you back
+
+	![](Day6/translational.PNG)
+
+	- b) is laplace form
+
+#### Two degrees of motion
+- state space systems, state of a system in the future
+- only care about position and velocity
+- number of equations of motion = number of linerly independent motions
+- in system below, there is a viscous damper between the two masses so they can independently
+	- they interact but if one moves the other can remain stable
+	- therefore 2 degrees of freedom, one for each mass
+
+	![](Day6/dof.PNG)
+
+- Find transfer function of above by using principle of superposition
+- works on linear systems
+1. draw free-body diagram of one object by holding the other object still
+2. draw free-dbody diagram not olding other object still
+3. total force acting on original object is superposition of forces
+
+**M1** 
+- nail M2 to the floor
+- if M1 moves right, viscous damper pushes you back, spring between gets compressed and spring on left getting stretched AND coefficient of friction AND m*a
+
+![](Day6/m1.PNG)
+
+- a) is fbd if only m1 moves independent of m2
+- b) is is m1 when m2 moves
+- c) is the superposition of all forces
+
+## Day 7
+

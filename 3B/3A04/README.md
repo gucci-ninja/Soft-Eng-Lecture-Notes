@@ -10,6 +10,7 @@
 - [Project Runtime Structure](#project-runtime-structure)
 - [Software Management Structure](#software-management-structure)
 - [Software Elements](#software-elements)
+- [Tutorial 1 Jan 16, 2018](#tutorial-1-jan-16-2018)
 
 ## Day 1 Jan 5, 2018
 
@@ -157,4 +158,18 @@ Steps | Relation | Corresponding steps
   - size of cluster is determined by computation load and communication traffic
 - if element is assigned well-defined complex functions and similar off-the-shelf software exists and performance not critical then use **off the shelf solution**
 
+### Tutorial 1 Jan 16, 2018
+
+- identification app for Android
+- can be specific or general
+- need 3 experts that guess what the thing is (experts must be disjoint, communicate with central forum)
+- experts can say I don't know
+- must use some sort of database to store results
+- _keep a log book_
+
+**Deadlines**
+- Feb 9 - SRS Doc (list functional/nf reqs by business event)
+- Mar 9 - Use Case Diagram and SRC Diagram, introduce classes
+- Mar 30 - Code
+- Apr 6 - Final
 
