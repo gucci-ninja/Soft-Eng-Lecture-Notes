@@ -20,4 +20,4 @@
 
 - [ ] 3I03 Assignment 1 due Jan 26
 - [ ] 4A03 Assignent 1 due Jan 16
-
+- [ ] 3DX4 Prelab 1 due Jan 19

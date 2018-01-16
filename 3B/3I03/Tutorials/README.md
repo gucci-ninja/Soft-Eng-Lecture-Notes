@@ -12,6 +12,6 @@ My name is Suhavi and I am a third year software engineering student at McMaster
     - greatst strength
     - weakness
 - Technical part of interview
-    - fizzbuzz efficiently or 1-100
+    - fizzbuzz efficiently
     - string operations (algorithms, memory/time)
     - string theory (concurrency)

@@ -89,9 +89,7 @@ _Tutorials start next week_
 - always a margin of error
 - when is a scale acceptable?
 
-### Testing Principles
-
-#### Types of Defects
+### Types of Defects
 1. Software does something it's not supposed to do 
 2. Software does something the specs say it should not do
 3. Software does something that specs doesn't mention
@@ -101,18 +99,26 @@ _Tutorials start next week_
     - if x happens, y shoudl happen 
 5. The software is difficult to understand, hard to use, slow or just not right
 
---------
+### Testing Principles
+
 1. Necessary part of test case is the definition of the expected output or result
 2. A programmer should avoid attempting to test his/her own program
     - hard to look at program with destructive eye
     - will carry same misunderstanding into tests
 3. Programming organizations should not test its own programs
     - same reasoning as 2
-4. **_got distracted_**
+4. Throughly inspect the resuts of each test
 5. Test cases must be written for input conditions that are invalid and unexpected as well as valid and expected
 
 ## Day 5 Jan 15, 2018
 
-- skipped :(
+**Skipped but I'm guessing we went over the rest of the Principles of Testing**
+
+6. Avoid throwaway test cases unless the program is truly a throwaway program
+7. Do not plan a testing effort under the tacit assumption that no errors will be found
+    - Testing is **not** just the process of showing that the system functions correctly
+    - Testing is the process of executing system with intent of finding functional errors or qualities attribute mismatches
+8. The probability of the existence of more errors in a section of a program is proportional to the number of errors already found in that section
+9. Testing is an extremely creative and intellectually challenging task
 
 ## Day 6
