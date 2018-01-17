@@ -11,6 +11,9 @@
 - [Software Management Structure](#software-management-structure)
 - [Software Elements](#software-elements)
 - [Tutorial 1 Jan 16, 2018](#tutorial-1-jan-16-2018)
+- [Software Connectors](#software-connectors)
+- [Iterative Refinement of an Architecture](#iterative-refinement-of-an-architecture)
+- [Third Slide Set, Models](#third-slide-set-models)
 
 ## Day 1 Jan 5, 2018
 
@@ -172,4 +175,75 @@ Steps | Relation | Corresponding steps
 - Mar 9 - Use Case Diagram and SRC Diagram, introduce classes
 - Mar 30 - Code
 - Apr 6 - Final
+
+## Day 6 Jan 17, 2018
+
+### Software Connectors
+- in abstract form, connector indicates necessity during system execution for 1 element to send message to another elemnt
+- if 2 elements mapped to single process, connector could be mapped to local method invocation
+- if 2 elements mapped to two different processes on same computer, then connector could be mapped to local message queue or an operating system pipe
+- if 2 elements mapped to 2 different computers then remote method invocation or Web service invocation can be used
+
+#### Different attributes of connectors and perspectives
+- synchronization mode - eg sempaphores, blocking/non-blocking
+- initiator
+  - makes request for communication
+  - one-initiator connectors - client initiates communication
+  - two-initiator connectors - if they are non-blocking
+  - callback support - requires two-initiator connectos
+- information carrier perspective
+  - what medium to use
+    - variable (2 threads in same process)
+    - environment resource (register, pipes, file, local message queues)
+    - method invocation and message
+- implementation type 
+  - protocol-based can implement multiple operations
+  - signature-based methods implemnt **one** type of operation
+- Active Time
+  - when you make connection to program
+  - event-driven - when something becomes active, something happens (reactive systems like thermostat)
+- Connective Span Perspective
+  - scope: local or global?
+- Connector fan-out perspective
+  - is it a one-to-one connector or many-to-many
+  - one-many have more important impacts on implementation
+- Connector environment perspective
+  - homogeneous (same programming language and software framework and same OS)
+  - heterogeneous
+
+### Iterative Refinement of an Architecture
+- givem project spec, an absract igh level software architecture is proposed (elements + connectors)
+- goes through mltiple refinement phases
+
+#### Example steps of implementing an architecture
+1. standalone, local system
+2. remote system
+3. refine system by adding protocols
+4. layered architecture
+
+### Third Slide Set, Models
+
+- 4 + 1 models for architecture
+- architecture has components, connections and interactions between these components
+- need to specify configuration toplogy
+  - **Bus** is an infrastructure or more formally, a sofware system
+- the bad thing about the bus infrastructure is that if a single part of the system fails, the inter-related system makes it so that the whole thing fails (most of the time)
+  - **Star** architecture has a central node with things coming into it
+    - not that much differnet from bus
+  - **C4/K4** is like a square with an X in the middle
+    - aka C<sub>N</sub>, every edge has N-1 connections
+    - the good thing is: if one of the nodes fails the system still functiona
+    - bad thing: it is complex so it might require more maintenance as well as redundant information
+
+#### Ways to describe software architecture
+  - formally in ADL and informally in UML
+
+  - Box-and-line diagram
+    - describe business concept
+    - lines indicate relationshp among components (unlike UML)
+    - lines may refer to dependancy, control flw, data flow
+    - lines may be associated with arrows to indicate process direction and sequence
+  - UML is one of the Object-Oriented solutions for software modeling and design
+  - "4+1" view is another way to show different views wit different concerns for dif aspects (F + NF reqs)
+
 
