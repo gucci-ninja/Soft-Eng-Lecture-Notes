@@ -17,6 +17,9 @@
 - [Compound Amount Factor](#compound-amount-factor)
 - [Present Worth Factor](#present-worth-factor)
 - [Textbook](#textbook)
+- [Sinking Fund Factor](#sinking-fund-factor)
+- [Uniform Series Compound Amount Factor](#uniform-series-compound-amount-factor)
+- [ Effective Interest Rate](#-effective-interest-rate)
  
 ## Day 1 Jan 4, 2018
 
@@ -349,4 +352,59 @@ F = P(1 + i)^N
 #### Examplw 6
 - using interest tables, 12% nominal interest with monthly compunding (1%), N = 24 months, how much do i deposite today therefore you now F not P
 - look for 1% and N = 24 = 0.7875 (tbh it's easier to calculate :grimacing:)
+
+## Day 6 Jan 16, 2018
+
+### Sinking Fund Factor
+
+```(A/F, i, n)``` = i/[1+i)<sup>N</sup> - 1]
+
+#### Annuity
+- a series of equal cash flows that start at the end of the first period, continue over N reglarly spaced time intervals
+	- paycheck (in), cellphone bill (out)
+- gives size of annuity that is equivalent to a future amount F
+- N is the number of annuities
+
+#### Example
+- if N = 12, there should be 12 annuities on cash flow diagram
+- Melissa is saving up for server in 3 years. She thinks she neds $5000 and intends to put aside an amount at the end of each year (an annuity). If nominal interest rate is 6%, how much should she put aside each year?
+- r = rate = 6%
+- i = f/m = 6%
+- cashflow diagram would have 3 annuities, totalling on the third one
+- **note**: last annuity has to be on same space as total
+```
+A = F(A/F, i, N)
+  = 5000(A/F, 6, 3)
+```
+
+- however, if her first deposit is today, N=4
+
+### Uniform Series Compound Amount Factor
+
+```(F/A, i, n)```
+
+```F = A(1 + i)```<sup>```N-j```</sup>
+
+- if you have a quetion like what is F at 20 given 10 annual payments of $1000 at an interest rate of 5%. 
+- F20 = 1000(F/A, 5%, 10) **wont** tell you what you have after 20 years, it's only after 10 years
+- To get 20 years, use F given P equation. multiply the above by (F/P, 5%, 10) or if after 15 years, (F/P, 5%, 5)
+- **DON'T WRITE** F20 = 1000(F/A, 5%, 20) because it means you have 20 $1000 payments
+
+#### For Single Transactions
+- Compound Amount Factor (F/P, i, N)
+
+#### Example
+- Bob wants new truck in 3 years. If he saves $25000 each year and puts it in savings w/ annual rat 4% how much will he have in 3 years
+- N = 3, F = ?
+- 25000(1 + 0.04)<sup>3-1</sup> + 25000(1 + 0.04)<sup>3-2</sup> + 25000(1 + 0.04)<sup>3-3</sup>
+ = 27040 + 26000 + 25000 = 78040
+
+ ### Effective Interest Rate
+
+ - actual annual interest rate obtained when the compunding period is less thaan 1 year is called the _effective interest rate/year_
+ - denoted by i<sub>e</sub> (or subscript annual, quarterly, weekly)
+ - if cashflow period is less than compounding period the cashflows will be _collapsed_ to the compounding period
+ - no effective interest rates in first quiz
+	- will be about first lecture, calculations on moving arrows on cashflow diagram, F given A, A given F application
+
 

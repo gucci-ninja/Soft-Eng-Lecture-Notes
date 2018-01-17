@@ -10,6 +10,7 @@
 - [Types of Defects](#types-of-defects)
 - [Testing Principles](#testing-principles)
 - [Testing Strategies and Plans](#testing-strategies-and-plans)
+- [Tutorial 1 Jan 17, 2018](#tutorial-1-jan-17-2018)
 
 ## Day 1 - Jan 4, 2018 
 
@@ -140,5 +141,51 @@ The following may be defects
 - Boundary-related errors
 - Calculation errors
 - Concurrency issues
+
+### Tutorial 1 Jan 17, 2018
+
+- **error**: mistake made my the developer
+- **defect**: mistake made by developer found by tester
+- **bug**: when developer acknowledges mistake that tester found(?)
+- **failure**: when product can't perform the way it is supposed to
+
+- **software tester** - finds bugs
+- **quality assurance** - prevent bugs
+
+#### Characteristics of SQA components
+1. Pre-project component
+    - budget, schedule
+2. Customer Involvement
+    - approvals/rejections
+    - Agile -> has scrum master, 1 task in 2-4 weeks (sprints), continuous custumer involvement
+3. Required teamwork
+4. Cooperation
+5. Show goes on
+    - maintenance
+
+#### SQA Architecture
+- Pre-project -> development plans, commitments
+- SDLC -> planning, analysis, design/build, implement, maintain
+- Quality Infrastructure -> eliminate all errors
+- Standards (like ISO) 
+- All of these are noted on the BRD (Business Requirements Document)
+
+#### Constract Review
+- time, budget, risks, everyone's ability, training
+- **reviews** are conducted after sprints and they can be _formal_ (which are mandatory) or they can be _peer_ reviews
+
+#### Regression Testing
+- when changes are made, quickly test everything that is associated with the change made
+
+#### Infrastructure Components
+- procedure - what methodology
+- templates/checklists
+- staff training
+
+#### Project Progress Control
+- works on deviation of ongoing process
+- takes into account the resource usage, schedule, budget, risk
+- likeeee what do we do if certain things ruin our progress
+- controlled documents also exist
 
 ## Day 7
