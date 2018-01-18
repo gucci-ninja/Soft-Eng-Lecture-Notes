@@ -11,7 +11,8 @@
 - pass/fail assignments
 
 ### Definition of Sustainable Development
-- concepts of responsibility and ethics(?)
+- Sustainable Development is development that meets the needs of the present without compromising the ability of future generations to meet their own needs
+- concepts of responsibility and ethics
 
 ### Corporate Social Responsibility CSR
 - form of self-regulation for companies intgrated into business model

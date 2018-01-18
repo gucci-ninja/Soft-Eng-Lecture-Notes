@@ -189,3 +189,5 @@ The following may be defects
 - controlled documents also exist
 
 ## Day 7
+
+**skipped**

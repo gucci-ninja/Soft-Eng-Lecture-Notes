@@ -7,6 +7,9 @@
 - [Resumes and Interviews](#resumes-and-interviews)
 - [Group and Cluster Hiring](#group-and-cluster-hiring)
 - [What About the Interview?](#what-about-the-interview)
+- [How to Become a More Perfect Candidate](#how-to-become-a-more-perfect-candidate)
+- [Technical Questions](#technical-questions)
+- [How to Approach Problems	 ](#how-to-approach-problems	-)
 
 ## Day 1 Jan 4, 2018
 
@@ -139,3 +142,44 @@ Java | Java, Python
 - skype
 - lunch/dinner
 
+## Day 3 Jan 18, 2018
+
+- dress code for interviews - dress decently :grimacing:
+
+### How to Become a More Perfect Candidate
+- coursera, bootcamps, read lots, write lots
+- hackathons, diversity lanuages, independent projects
+- resumes 1-2 pages, 1-2 points bullet-form
+
+### Technical Questions
+- Knowledge Questions
+	- what is a static class
+	- descreibe graph traversal algorithm
+	- what is your favourite algorithm
+- Design/Scalability 
+	- design database system for distributed system that operates in parallel
+	- scope the problem/ask questions
+	- figure out biggest components (which area has higher load)
+	- discuss tradeoffs, challenges, bottlenecks
+	 
+### How to Approach Problems	 
+1. Listen
+2. Come up with an example - largle cases and general purpose
+	- eg intersection of 2 sorted distinct arrays
+	- look at special cases
+3. brute force if you have to
+4. optimize your solution by walking through brute force solution and pointing out drawbacks and areas of imporovement
+	- BUD: bottlenecks, unecessaary work, duplicated areas
+	- has tables
+	- precomputation/caching
+	- space/time tradeoff
+	- other data structures: heaps, trees, stacks, queues
+5. Walk through your solution before coding
+	- don't rush into coding
+6. Good Coding Style
+	- modular code
+	- think about edge cases
+	- clean and neat, proper variables
+7. Testing
+	- make sure your code makes sense
+	- test your edge cases

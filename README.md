@@ -18,6 +18,8 @@
 
 #### To Do
 
-- [ ] 3I03 Assignment 1 due Jan 26
-- [ ] 4A03 Assignent 1 due Jan 16
+- [ ] 4A03 Assignent 1 due Jan 19
 - [ ] 3DX4 Prelab 1 due Jan 19
+- [ ] 2B03 Quiz 1 due Jan 21
+- [ ] 3I03 Assignment 1 due Jan 26
+
