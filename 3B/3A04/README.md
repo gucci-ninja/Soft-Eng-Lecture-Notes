@@ -43,7 +43,7 @@
 9. Gives context for system, system to allow fire dept to follow fire situation in agricultural, forest, industrial areas. System will have sensors for each area.
     - choose appropriate software architecture
  
-### Grading
+### Grading and Textboook
  
 - Project
   - teams of 4-5 (not chosen by us :cold_sweat:)
@@ -57,19 +57,22 @@
   - eg if 4 quizzes then (40 - 2*3)% = 34%
   - may be oral?????
   
-### Textbook
+**Textbook**
 Software Architecture and Design Illuminated
   
 ## Day 2 Jan 8, 2018
 
-**What is Design**
-- not easy to define
-- can be seen in ny human artefact and in nature
+### Introduction to Software Architecture
+
+#### What is Design
+- can be seen in any human artefact and in nature
 - objective and subjective
   - aesthetic (look and feel) vs functional (speed performance)
+  - artistic or mathematical or both?
+- decomposition of complex systems/artifacts is an aim of design
 
-**Deterministic Finite Automata**
-- take in strings of binary with even number of 0 and numberof 1s is multiple of 3
+#### Design as a mathematical activity
+- Construction of a deterministic finite automata that takes in strings of binary with even number of 0s and number of 1s is a multiple of 3
 - Product Construction: when you have 2 machines 
 
 ## Day 3 Jan 10, 2018
@@ -245,5 +248,31 @@ Steps | Relation | Corresponding steps
     - lines may be associated with arrows to indicate process direction and sequence
   - UML is one of the Object-Oriented solutions for software modeling and design
   - "4+1" view is another way to show different views wit different concerns for dif aspects (F + NF reqs)
+
+
+## Day 7 Jan 19, 2018
+
+### UML for SOftware Architecture
+- Logical View, Process View, Development View, Physical View and most important is the Scenario View is the 4+1 model
+- system within environment has interactions, actors, initiators for events
+- **event** - initializes set of interactions
+- **business event** - is independent from the system. It is from the environment to the system. has an initiator
+  - happening that the system has to deal with outside of the system is followed by interaction between environment and system
+- **scenario** - sereies of interactions between system and environment triggered by business event
+- for every business event, there are view points, each view point is associated with a scenario
+ 
+Scenario View
+
+- BE<sub>2</sub>
+  - VP1
+    - Scenario
+  - VP2
+    - Scenario
+    - ```Scenario has system response and actor and system - should end with system```
+
+...
+
+- BE<sub>n</sub>
+
 
 

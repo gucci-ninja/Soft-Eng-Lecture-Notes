@@ -495,5 +495,30 @@ some oscillation, then plateaus out
 - b) is is m1 when m2 moves
 - c) is the superposition of all forces
 
-## Day 7
+## Day 7 Jan 18, 2018
 
+### Translational Example
+- find transfer function X(s)/F(s)
+
+## Day 8 Jan 19, 2018
+
+- when asked for transfer function for position from velocity - multiply by 1/s
+
+### Rotational Mechanial Systems
+- instead of linear displacement x we have angular displacement θ
+- v(t) becomes ω(t) angular velocty
+- f(t) force becomes T(t) torque
+- impedences are springs (K), viscous dampers (Ds), intertia (Js<sup>2</sup>)
+
+### Rotational Degress of Freedom
+- which mass you can rotate independently
+- in diagram, there are 2 degrees of freedom
+
+#### Homework next wek
+- if you have something that looks like
+**pic**
+- you have additional degree of freedom. add in mass of size 0
+
+
+#### Writing Equations of Motion
+- use same principle as translational motion

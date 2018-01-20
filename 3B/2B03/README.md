@@ -407,4 +407,39 @@ A = F(A/F, i, N)
  - no effective interest rates in first quiz
 	- will be about first lecture, calculations on moving arrows on cashflow diagram, F given A, A given F application
 
+## Day 7 Jan 18, 2018
+
+### Nominal vs Effective Interest
+- nominal - stated rate of interest
+- effecive interest rate
+	- i<sub>e</sub> = effectve i/year
+	- r = nominal i/year
+	- m = # of compounding periods in 1 year
+	- r/m = nominal i/compunding period
+
+Equating future worth after 1 year
+
+```F = P(1 + i```<sub>```e```</sub>```) = P(1 + r/m)```<sup>```m```</sup>
+
+```i```<sub>```e```</sub> ```= (1 + r/m)```<sup>```m```</sup> ``` - 1```
+
+### Efective Interest Examples
+
+#### Example 1 Slide 49
+- r = 6%
+- m = 365
+- i<sub>e</sub> = = (1 + r/m)<sup>m</sup> - 1 = **6.18%**
+
+**\*if i<sub>e</sub> only compounded once a year then it's equivalent to r*\**
+
+**\*if compoounded daily for ex. 6% it becomes 6.18%*\**
+
+#### Example 2 Slide 53
+- single arrow on cashflow diagram
+- (F/P, i N) = (1 + i)<sup>N</sup>
+- F = 5000(1 + 12%/12)<sup>24</sup> = i<sub>e</sub> = (1 + 12%/12) - 1
+- F = 5000(1 + i<sub>e</sub>)<sup>2</sup> = 6348.67
+
+### Effective Interest Rate and Cash Flow Period
+- (F/A, i, N)
 
