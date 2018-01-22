@@ -16,10 +16,10 @@
 - [3DX4 Dynamic Systems and Control](3B/3DX4/README.md)
 - [4A03 Sustainability and Ethics in Engineering](3B/4A03/README.md)
 
-#### To Do
+#### Deadlines
 
 - [x] 4A03 Assignent 1 due Jan 19
 - [x] 3DX4 Prelab 1 due Jan 19
-- [ ] 2B03 Quiz 1 due Jan 21
+- [x] 2B03 Quiz 1 due Jan 21
+- [ ] 3DX4 Assignment 1 due Jan 26
 - [ ] 3I03 Assignment 1 due Jan 26
-

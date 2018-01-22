@@ -23,9 +23,11 @@
  
 ## Day 1 Jan 4, 2018
 
+### Course Outline
+
 Professor email: church@mcmaster.ca
 
-### Grading
+**Grading**
 - Midterm 30% (March 6 @ 7-9pm)
 - Quizzes 20% 
 	- (on [Avenue](http://avenue.mcmaster.ca/)) 
@@ -37,25 +39,36 @@ _will do problems in class_
 
 \*_Sunday March 4th - 2hr tutorial before midterm_*
 
-### Decision Pyramid
+### Making Decisions
 
+**Decision Pyramid**
 ![](Day1/decision_pyramid.PNG)
 
-### Dealing with Abstractions
+**Dealing with Abstractions**
 - engineering econ models typically represent a project through estimates
 of costs and benefits of project over time
 
-### Modelling Process
+**Modelling Process**
 
 ![](Day1/modelling_process.PNG)
 
-### Design Criteria
-- function, cost, safety, sustainability
+**Uncertainty and Sensativity Analysis**
+- engineers make predictions using economic models
+- sensativity analysis can identify _robust_ decisions
+- we use design criteria
+
+**Modern Design Criteria**
+- components are function, cost, safety, sustainability
 
 ## Day 2 Jan 8, 2018
 
 ### What is Sustainability
 
+> "Development that mettes needs of the present generation without compromising the ability of future generations to meet their own needs.
+> SD is not a fixed state of harmony but a process of change in which exploitation of resources, direction of investment, orientation of technological development and institutiona change are made consistent"
+\- UNICED 1987
+
+### Business Models
 - Linear Model
 	- yields a lot of waste
 
@@ -65,6 +78,8 @@ of costs and benefits of project over time
 	- Nothing should be wasted
 
 	![](Day2/closed.PNG)
+
+### Important Variables in Sustainable Development
 
 #### Global Goals
 - Waste nothing
@@ -89,6 +104,7 @@ of costs and benefits of project over time
 	- society
 
 #### Complexity
+- important for engineers to understand that their activites and designs will be operating in very complex systems
 
 #### Triple Bottom Line
 - need to think about social sustainbaility
@@ -103,6 +119,7 @@ of costs and benefits of project over time
 ![](Day2/stool.PNG)
 
 ### Case Study Interface Carpets
+- example of company that has been trying to be more sustainable
 - cut down ecologcal footprint by 1/3
 - claims to be world's first sustainable corporation
 - over 5 billion pounds of carpet now in landfills
@@ -122,54 +139,95 @@ of costs and benefits of project over time
 - inspired Wal-Mart to deploy sustainable practices
 - 72% reduction in waste water
 
-## Engineering Economics
-
-### Time Value
+### Intro, Time Value of Money
 - would rather get a million dollars today vs 10 years
 	- due to inflation
 	- money has earning power over time (investments)
 	- time allows money to earn interest
+- engineering decisions involve analysis of costs and benefits
+- key to this financial analysis and comparison is the **"interest"** 
 
 ### Interest
-- **_compensaion for giving up the use of money_**
-- **_difference between amount of money lent vs paid_**
-
-
-	```future worth = present worth + interest```
-
-	```F = P + I```
+- it is the **_compensation for giving up the use of money_**
+- it is the **_difference between amount of money lent vs paid_**
+- the _difference_ between a present amount of money an future amount is **interest**
+	- ```future worth = present worth + interest```
+	- ```F = P + I```
 	- I = Lump sum interest
 	- i = interest rate
+	- F = future worth
+	- P = present worth
 
-#### Lump-Sum Interest Rate
-- 
+### Lump-Sum Interest Rate
+- when interest is specified as a percentage of the money borrowed (common)
+- then...
+
+```
+I = Pi
+F = P + I
+  = P + Pi
+  = P(1 + i)
+```
+#### Example
+Peter wishes to borrow $50000 from his uncle and promises to pay it back after 3 years. His uncle agrees provided Peter pays 60% interest
 
 **There is a legal interest rate, you can't go over 60%**
 - or you get charged with usury
+- also, lump sum is rarely used
 
-#### Nominal Interest Rate
-- Interest rate - rate of interest charged for use of money, usually expressed as annual rate
-- interest period - base unit over time whihc an interst rate is quoted, usually 1 year
+```
+i = 60%
+I = P*i = 50000*(0.6) = 30000
+Therefore F = P + I = 80000
+```
+
+### Nominal Interest Rate
+- **Interest rate** may be specified for an **interest period**
+
+> Interest rate - rate of interest charged for use of money, usually expressed as annual rate
+
+> interest period - base unit over time which an interest rate is quoted, usually 1 year
 - interest rate specified for one year is a **_nominal interest rate_**
 - same as annual percent rate (APR)
 
-#### Simple Interest
+### Simple Interest
 - rate that doesn't change
 - rarely used in practice
 - I<sub>S</sub> = PiN
 - ``` F = P + PiN```
+- there is also compound interest which results in a lot more money
 
-#### Compound Interest
-- results in a lot more money
+#### Example 1
+If $5000 is invested in a savings account at an interest rate of 4% per year, calculate simple interest earned over 3 years.
+
+```
+P = 5000
+i = 4%
+N = 3
+I = P*i*N
+  = 5000*0.04*3
+  = 600
+```
+
+#### Example 2
+If $5000 is invested in a savings accuont at interest rate of 4% per year, calculate the future worth of investment at the end of 3 years.
+
+```
+F = P + I
+  = P + P*i*N
+P = 5000
+I = calculated as 600 in previous example
+Therefore, F = 5600
+```
 
 ## Day 3 Jan 9, 2018
 
 - Amortization Period
 	- the duration over which a loan is calculated to be re-paid
 
-### Simple Interest vs Compund Interest
-- Simple Interest - method of computing interest where interest earned during interest period is **NOT** added to principal amount used to calculate interest in next period
-- Compound - standard method of computing interest where interest accumulated in one interest period is added to principal amount used to calculate for next period
+### Compound Interest
+- **Simple Interest** - method of computing interest where interest earned during interest period is **NOT** added to principal amount used to calculate interest in next period
+- **Compound** - standard method of computing interest where interest accumulated in one interest period is added to principal amount used to calculate for next period
 	- F = P(1 + i)<sup>N</sup> OR
 	- P = F/(1 + i)<sup>N</sup>
 	- I<sub>C</sub> = P(1 + i)<sup>N</sup> - P
@@ -178,33 +236,61 @@ of costs and benefits of project over time
 	- i is interest rate/compunding period
 	- N is number of compounding periods
 
-#### Interest Rate Terms
+### Interest Rate Terms
 - compounding period:time between points when interest is computed and added to initial amount
+- Payment Period/Cashflow Period - shortest time between payments
+- Nominal Rate (r) - simplified expression of annual cost of money
 - Annual Percentage Rate (APR) - this is what you see in commercials
 	- nominal interest rate on yearly basis
 	- Cdn Tire is 25% per year
+- Effective Rate - is the rate that is used with the table factors or the closed form equations.
+	- it converts nominal rate taking into account both the compounding period and the payment period
 
-#### Sample Question
-- if 5000 invested in savings account at nominal 4% compunded yearly, what is future worth in 3 years.
+#### Sample Question 1
+If $5000 is invested in savings account at nominal interest rate of 4% compunded yearly, what is future worth in 3 years?
+
 ```
-Question 1
-
 P = $5000
 i = 4%
 N=3
 
 F = P(1+i)^N 
   = (5000)(1 + 0.04)^3
+  = 5624.32
 ```
 
-```
-Question 2
+#### Question 2
+If $5000 is invested in a savings account at nominal rate of 4% compounded yearly, calculate the compound interest over 3 years
 
-1626 to 2018
+```
+P = 5000, i = 4%, N=3
+Ic = P(1+i)^N - P
+   = 5624.32 - 5000
+   = 624.32
+```
+#### Question 3
+Manhattan Island was purchased for $24 in 1626. If that was invested at 6% how much would it be today?
+
+```
 i = 6%
 P = 24$
+N = 2018 - 1626
 F = P(1 + i)^N
      = 1.88 B
+```
+#### Question 4
+I borrow $100 now and pay you $1000 4 years from now. WHat is the implied interest rate?
+
+```
+Compound
+F = P(1+i)^N
+1000 = 100*(1+i)^4
+i = 0.778
+
+Simple
+F = P*i*N
+1000 = 100*i*4
+i = 2.5
 ```
 
 #### Credit Card tool

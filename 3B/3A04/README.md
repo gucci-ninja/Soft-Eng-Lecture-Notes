@@ -55,7 +55,7 @@
 - Exam
   - counts for (40 - 2* number of quizzes that count)% of your score
   - eg if 4 quizzes then (40 - 2*3)% = 34%
-  - may be oral?????
+  - may be oral?
   
 **Textbook**
 Software Architecture and Design Illuminated
@@ -73,24 +73,22 @@ Software Architecture and Design Illuminated
 
 #### Design as a mathematical activity
 - Construction of a deterministic finite automata that takes in strings of binary with even number of 0s and number of 1s is a multiple of 3
-- Product Construction: when you have 2 machines 
+- **Design Process**: create a language to satisfy constraints
+- L(M3) is an intersection of 2 languages L(M1) and L(M2) therefore we use product construction
+
+Design coukd be viewed as an activity that translates an idea/goal into a blueprint for an artefact or a process that is fit for its envionment
 
 ## Day 3 Jan 10, 2018
 
-- Next week's project: **identifying objects** :frog:
+- Group project: **identifying objects** :frog:
 - good design in software reduces risks
 - makes system traceable for implementation and testing
 
 ### SDLC V Model
-Steps | Relation | Corresponding steps
-------|----------|-----------------
-1. Pre-requirements | <-Cost-> | 9. Production Operation and Maintenance
-2. Production Reqs |<------>| 8. System Testing
-3. Architecture Design |<------>| 7. Integration Testing
-4. Detailed Design |<------> |6. Unit Testing
-  - | 5. Coding | -
 
-#### What is meant by Software Architecture
+![](img/VModel.PNG)
+
+### What is meant by Software Architecture
 - blueprint for developing small and large systems based on requirement analysis
 - highlights early decisions
 - has set of constraints (space, time, budget)
@@ -99,6 +97,25 @@ Steps | Relation | Corresponding steps
 - there are connectors between software components
 
 :sleepy:
+
+**Must be included in software architecture**
+- specialization of software elements
+- connection types
+- set of constraints (space, time, budget)
+- set of desired quality attributes (eg performance)
+
+#### Architecture Style
+- families of similar architectures
+- represents the way elements are arranged, connections and interactions among elements, quality attributes, etc
+
+#### System Architecture
+- IEEE Std 1471 - "the fundamental organization of a system embodied in its components, their relationships to each other, and to the environment, and the principle guiding its design and evolution"
+
+### Role of Software Architect
+- system static partioning
+- decomposing system into sub-systems
+- establish dynamic control relationships between sub-systems
+- quality attribute tradeoff analysis
 
 ## Day 4 Jan 12, 2018
 
@@ -109,17 +126,17 @@ Steps | Relation | Corresponding steps
   - project's runtime structure (elements are threads, processes, transactions)
   - allocation structure (project management structure)
 - each structure class uses different connectors and different performance attributes
-- **module** : software component that hides a secret
-  - behaviour hiding
-  - hardware hiding (hide communication between software and hardware)
-    - eg robot's secret is its language
-  - software hiding modules
-    - have secrets like algorithms, data structures (can be generalized to 3 types - tuples, list, sets)
 
 :cry: :cry: **so hungry** :cry: :cry:
  
 ### Code Structure
-- amount of knowledge that compnents/modules have of each other kept to minimum
+- **module** : software component that hides a secret - big part of code structure
+  - behaviour hiding modules
+  - hardware hiding modules (hide communication between software and hardware)
+    - eg robot's secret is its language
+  - software hiding modules
+    - have secrets like algorithms, data structures (can be generalized to 3 types - tuples, list, sets)
+- amount of knowledge that component modules have of each other kept to minimum (**high cohesion low coupling**)
 - information flow between compoenents is restricted to flow from method calls
 - connectors in structures have:
   - direction - if module A invokes a method of module B then A -> B is connected
@@ -132,14 +149,18 @@ Steps | Relation | Corresponding steps
 
 - last week we began to look at 3 architectural views - code view, runtime view, management view
 
-- **3 things in architecture** - we give many views that provide 3 things
+### 3 things in architecture
+- we give many views that provide 3 things
   1. components
   2. connectors
   3. rationale for having the above to explain non-functional reqs
 
 ### Project Runtime Structure
-- many threads can run multiple methods from multiple classes
-- connectors at this level inherit atributes from their cource-code counterparts
+- at runtime project can be **threads**, **processes**, **functional units** and **data units**
+- these elements ay run on the same or multiple computers
+- elements in code structures can implement or support multiple runtime elements (modules implement processes)
+- several code structure elements may implement or support single runtime element (many threads in different code units)
+- connectors at this level inherit atributes from their source-code counterparts
   - **multiplicity** - one element may be connected to multiple other elements if it needs to invoke methods of multiple elements at runtime
   - **distance and connection media** - two connected elements may communicate in the same process/thread/computer
     - eg communication by optical cable OR LAN to the media
@@ -148,24 +169,38 @@ Steps | Relation | Corresponding steps
   - **self-descriptive** - allow external software system to invoke its target methods without pre-installation
 
 ### Software Management Structure
-- are we skipping this just because???
+- ~~are we skipping this just because???~~
+- used for project resource allocation
 
 ### Software Elements
+- they have functions and are connected into dependency graphs through connectors
 - each one has different synchronization and performance constraints
-- reentrant elements - usually more efficient since they avoid synchronization, can be implemented by any thread or process
-- business logics may not allow some elements to be reentrant since order of operations matters a lot when you have shared resources
-- **rule** if element is reentrant and multiple threads or processes may need to communicate with it, must run on separate threads or processes (thread safety)
-- **rule** if element has high multiplicity and performance is important to global system, use an appliatoin server for implementation
+- some elements are re-entrant - usually more efficient since they avoid synchronization, therefore can be safely executed concurrently, they can be implemented by any thread or process
 
-**Basic Guidelines**
-- if heavy coomputations innvolved for deployment at particular location, consider using _cluster of processes_
+#### Basic Guidelines for runtime elements
+1. business logics may not allow some elements to be reentrant since order of operations matters a lot when you have shared resources
+2. if element is reentrant and multiple threads or processes may need to communicate with it, must run on separate threads or processes (thread safety)
+3. if element has high multiplicity and performance is important to global system, use an application server for implementation
+4. if heavy computations innvolved for deployment at particular location, consider using _cluster of processes_
   - architecture is master-slave but it will suffer from performance problem if a master is connected to like 1000 slave processors at one layer
-    - if multiple layers it is more manageable
+    - if multiple layers it is mores manageable
   - size of cluster is determined by computation load and communication traffic
-- if element is assigned well-defined complex functions and similar off-the-shelf software exists and performance not critical then use **off the shelf solution**
 
-### Tutorial 1 Jan 16, 2018
+  ![](img/cluster.PNG)
 
+5. if element is assigned well-defined complex functions and similar off-the-shelf software exists and performance not critical then use **off the shelf solution**
+6. complex system can be expanded into sub-system with its own elements and connectors
+7. complex element can be transformed into sequence of layered elements
+  - each layered element hides low-level system details from upper layers
+![](img/layered.PNG)
+
+8. complex element can be transformed into sequence of tiered elements (each interface must be well-defined)
+
+![](img/tiered.PNG)
+
+## Tutorial 1 Jan 16, 2018
+
+### Group Project Overview and Deadlines
 - identification app for Android
 - can be specific or general
 - need 3 experts that guess what the thing is (experts must be disjoint, communicate with central forum)
@@ -183,50 +218,59 @@ Steps | Relation | Corresponding steps
 
 ### Software Connectors
 - in abstract form, connector indicates necessity during system execution for 1 element to send message to another elemnt
-- if 2 elements mapped to single process, connector could be mapped to local method invocation
-- if 2 elements mapped to two different processes on same computer, then connector could be mapped to local message queue or an operating system pipe
-- if 2 elements mapped to 2 different computers then remote method invocation or Web service invocation can be used
+- if those 2 elements mapped to single process, connector could be mapped to local method invocation
+- if those 2 elements mapped to two different processes on same computer, then connector could be mapped to local message queue or an operating system pipe
+- if those 2 elements mapped to 2 different computers then remote method invocation or Web service invocation can be used
 
-#### Different attributes of connectors and perspectives
-- synchronization mode - eg sempaphores, blocking/non-blocking
-- initiator
+#### Software Connector Attributes
+- Synchronization mode - eg sempaphores, blocking/non-blocking
+- Initiator
   - makes request for communication
   - one-initiator connectors - client initiates communication
   - two-initiator connectors - if they are non-blocking
   - callback support - requires two-initiator connectos
-- information carrier perspective
+- Information carrier perspective
   - what medium to use
     - variable (2 threads in same process)
     - environment resource (register, pipes, file, local message queues)
     - method invocation and message
-- implementation type 
+- Implementation type 
   - protocol-based can implement multiple operations
   - signature-based methods implemnt **one** type of operation
 - Active Time
   - when you make connection to program
   - event-driven - when something becomes active, something happens (reactive systems like thermostat)
-- Connective Span Perspective
-  - scope: local or global?
-- Connector fan-out perspective
+- Connective Span (Perspective)
+  - scope: local or global (network)?
+
+  ![](img/elements.PNG)
+
+- Connector fan-out
   - is it a one-to-one connector or many-to-many
   - one-many have more important impacts on implementation
-- Connector environment perspective
+- Connector environment
   - homogeneous (same programming language and software framework and same OS)
   - heterogeneous
 
 ### Iterative Refinement of an Architecture
-- givem project spec, an absract igh level software architecture is proposed (elements + connectors)
-- goes through mltiple refinement phases
+- third part of architecture (elements, connectors, now **iterative refinement**)
+- givem project spec, an absract high level software architecture is proposed (elements + connectors)
+- goes through multiple refinement phases
 
 #### Example steps of implementing an architecture
 1. standalone, local system
+  ![](img/step1_standalone.PNG)
 2. remote system
+  ![](img/step2_network.PNG)
 3. refine system by adding protocols
+  ![](img/step3_http.PNG)
 4. layered architecture
+  ![](img/step4_layered.PNG)
 
-### Third Slide Set, Models
+### Models
+**Third slide set**
 
-- 4 + 1 models for architecture
+- Will discuss the 4 + 1 model for architecture
 - architecture has components, connections and interactions between these components
 - need to specify configuration toplogy
   - **Bus** is an infrastructure or more formally, a sofware system
@@ -240,7 +284,6 @@ Steps | Relation | Corresponding steps
 
 #### Ways to describe software architecture
   - formally in ADL and informally in UML
-
   - Box-and-line diagram
     - describe business concept
     - lines indicate relationshp among components (unlike UML)
@@ -252,16 +295,26 @@ Steps | Relation | Corresponding steps
 
 ## Day 7 Jan 19, 2018
 
-### UML for SOftware Architecture
-- Logical View, Process View, Development View, Physical View and most important is the Scenario View is the 4+1 model
+### 4 plus 1 Model
+- has 5 views
+  1. Logical View - identifies software modules and their boundaries
+  2. Process View - addresses non-functional requirements and performance at runtime
+  3. Development View - organizes software units appropriately
+  4. Physical View - specifies physical software, hardwar, network configuration, installation and deployment
+  5. Scenario/User Interface View - most important, gives look and feel
+
+![](img/4plus1.PNG)
+
+### UML for Software Architecture
+- UML is a graphical language for visualizing, specifying, constructing and documenting software artifacts aka **system's blueprints**
 - system within environment has interactions, actors, initiators for events
 - **event** - initializes set of interactions
 - **business event** - is independent from the system. It is from the environment to the system. has an initiator
   - happening that the system has to deal with outside of the system is followed by interaction between environment and system
-- **scenario** - sereies of interactions between system and environment triggered by business event
+- **scenario** - series of interactions between system and environment triggered by business event
 - for every business event, there are view points, each view point is associated with a scenario
  
-Scenario View
+**Scenario View**
 
 - BE<sub>2</sub>
   - VP1

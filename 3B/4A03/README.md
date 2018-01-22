@@ -11,10 +11,12 @@
 - pass/fail assignments
 
 ### Definition of Sustainable Development
-- Sustainable Development is development that meets the needs of the present without compromising the ability of future generations to meet their own needs
+- Sustainable Development is development that meets the needs of the present without compromising the ability of future generations to meet their own needs - _Brundtlanf Report_
 - concepts of responsibility and ethics
+### Triple Bottom Line
+- social responsability, environmental impact, financial value
 
-### Corporate Social Responsibility CSR
+### CSR Corporate Social Responsibility
 - form of self-regulation for companies intgrated into business model
 - ensures compliance with the spirit of the law, ethical standards and international norms
 - goal is to embrace opportunity and consider all stakeholders
@@ -24,6 +26,17 @@
 - feeling reseponsible means feeling connected to outcome of those events
 - _the sense that we are connected to communities we live in_
 
+### Human Impact
+- IPAT - Impact = Population\*Affluence\*Technology
+- express impact of humans on environment
+- ecological footprint - measure of how much nature is needed to support humans
+    - carbon footprint
+    - land footprint
+    - water footprint
+- LCA Life Cycle Assessment for environmental impact of product, service or activity
+- we use sustainability metrics and indicators to measure degree of sustainability in all 3 areas of triple bottom line
+- result of environmental impact can be climate refugees/environmental migrants that must leave their home due to climate change
+- goal is to work towards **ecological resilience** - have the ability to recover from disasters
 
 ### About Joel Hilchey
 - founder of Beanstalk Project
@@ -65,5 +78,7 @@
 
 _For kids under 2, no screen time is recommended_
 
-### First Assignment
-- post dated letter written as if it is the end of class
+## Day 2 Jan 17, 2018
+- cancelled because prof had twin babies! :baby: :baby:
+
+## Day 3
