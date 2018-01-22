@@ -26,6 +26,9 @@
 - [Mechanical System](#mechanical-system)
 - [Mass Component](#mass-component)
 - [Translational](#translational)
+- [Translational Example](#translational-example)
+- [Rotational Mechanial Systems](#rotational-mechanial-systems)
+- [Rotational Degress of Freedom](#rotational-degress-of-freedom)
 
 ## Day 1 Jan 4, 2018
 
@@ -514,11 +517,10 @@ some oscillation, then plateaus out
 - which mass you can rotate independently
 - in diagram, there are 2 degrees of freedom
 
-#### Homework next wek
+#### Homework next week
 - if you have something that looks like
 **pic**
 - you have additional degree of freedom. add in mass of size 0
-
 
 #### Writing Equations of Motion
 - use same principle as translational motion

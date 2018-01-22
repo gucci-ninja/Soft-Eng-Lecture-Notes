@@ -188,7 +188,12 @@ The following may be defects
 - likeeee what do we do if certain things ruin our progress
 - controlled documents also exist
 
-## Day 7
+## Day 7 Jan 18, 2018
 
 **skipped**
+
+## Day 8 Jan 22, 2018
+
+**skipped**
+
 

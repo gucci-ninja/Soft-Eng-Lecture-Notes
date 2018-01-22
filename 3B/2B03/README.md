@@ -1,25 +1,36 @@
 # 2B03 Engineering Economics
 
 ## Table of Contents
-- [Grading](#grading)
-- [Decision Pyramid](#decision-pyramid)
-- [Dealing with Abstractions](#dealing-with-abstractions)
-- [Modelling Process](#modelling-process)
-- [Design Criteria](#design-criteria)
+- [Course Outline](#course-outline)
+- [Making Decisions](#making-decisions)
 - [What is Sustainability](#what-is-sustainability)
+- [Business Models](#business-models)
+- [Important Variables in Sustainable Development](#important-variables-in-sustainable-development)
 - [Case Study Interface Carpets](#case-study-interface-carpets)
-- [Time Value](#time-value)
+- [Intro, Time Value of Money](#intro-time-value-of-money)
 - [Interest](#interest)
-- [Simple Interest vs Compund Interest](#simple-interest-vs-compund-interest)
-- [Cash Flow DIagrams](#cash-flow-diagrams)
+- [Lump-Sum Interest Rate](#lump-sum-interest-rate)
 - [Nominal Interest Rate](#nominal-interest-rate)
+- [Simple Interest](#simple-interest)
+- [Compound Interest](#compound-interest)
+- [Interest Rate Terms](#interest-rate-terms)
+- [Cash Flow Diagrams](#cash-flow-diagrams)
+- [Nominal Interest Rate Revisited](#nominal-interest-rate-revisited)
 - [Timing of Cash Flow and Modelling](#timing-of-cash-flow-and-modelling)
+- [Comtinuous Compounding](#comtinuous-compounding)
+- [Equivalence](#equivalence)
+- [Simplification of Cash Flow](#simplification-of-cash-flow)
 - [Compound Amount Factor](#compound-amount-factor)
 - [Present Worth Factor](#present-worth-factor)
 - [Textbook](#textbook)
-- [Sinking Fund Factor](#sinking-fund-factor)
+- [Sinking Fund Factor and Annuity](#sinking-fund-factor-and-annuity)
 - [Uniform Series Compound Amount Factor](#uniform-series-compound-amount-factor)
 - [ Effective Interest Rate](#-effective-interest-rate)
+- [Nominal vs Effective Interest](#nominal-vs-effective-interest)
+- [Efective Interest Examples](#efective-interest-examples)
+- [Effective Interest Rate and Cash Flow Period](#effective-interest-rate-and-cash-flow-period)
+- [Critical Point](#critical-point)
+- [What Interest Rate to Use](#what-interest-rate-to-use)
  
 ## Day 1 Jan 4, 2018
 
@@ -279,7 +290,7 @@ F = P(1 + i)^N
      = 1.88 B
 ```
 #### Question 4
-I borrow $100 now and pay you $1000 4 years from now. WHat is the implied interest rate?
+I borrow $100 now and pay you $1000 4 years from now. What is the implied interest rate?
 
 ```
 Compound
@@ -294,22 +305,38 @@ i = 2.5
 ```
 
 #### Credit Card tool
+- and excel
 
-### Cash Flow DIagrams
+### Cash Flow Diagrams
 - represented by arrows and relevent periods
-- upward arrow = positive flow
-- down arrow = negative flow
+- upward arrow = positive flow (receipts)
+- down arrow = negative flow (disbursements)
 - time 0 is considered **now**
 - ![](Day3/cashflow.PNG)
 
 - can construct table outlining all cashflow activites
 	- won't get marks for it but it helps 
+- period from 0 to 1 is period 1, -1 to 0 is period -1
+- end of period means the arrow will be drawn at that period
 
-### Nominal Interest Rate
+### Nominal Interest Rate Revisited
 - conventional method of stating annual interest rate
 - 18% compounded daily --> ```i = 18%/365```
 - ``` i = r/# compounding periods per year ```
 - N --> if nothing is stated, assume yearly **except** in car payments and mortgages - assume monthly
+
+#### Example 1
+How much is accumulated after 2 years when you deposit $900 into a savings plan that is 12% compounded monthly?
+
+```
+P = 900
+N = 2*12 = 24
+i = 12%/12 = 1%
+
+F = P(1+i)^N
+  = 900(1+0.01)^24
+  = 1142.76
+```
 
 ## Day 4 Jan 11, 2018
 
@@ -322,34 +349,48 @@ i = 2.5
 	- assumes that all cash flow occurs continuously - continuous compund period
 
 - can have discrete _cashflow_ and discrete _compounding_
-- discrete - continuous
-- continuous - continous
+- discrete cash flow - continuous compoounding
+- continuous cash flow - continous compounding
 - can't have continuous - discrete (continuous money and monthly period)
 
-#### Equivalence
+### Comtinuous Compounding
+- i<sub>c</sub> = effective compound interest rate/year
+- r = nominal interest rate/year
+- m = number of compounding periods in one year which is approaching infinity
+- ```i = r/m``` and ```F=P(1+i)^n```
+
+![](Day4/compounding.PNG)
+
+#### Example 1
+What is the effective interest rate of an investment with a 6% nominal interest rate, compounded continuously?
+
+```
+using limit: e^0.06 - 1
+```
+
+### Equivalence
 - condition that exists when value of cost is equivalent to another
 1. Mathematical equivalence
 	- million dollars today or million dollars in 10 years -- not equivalent in terms of value
 	- million today or 1.5 mill in 10 years **may** be equivalent
-	
 2. Decisional equivalence
 	- indifferent between P dollars now abd F dollars N periods from now
 	- inferring implied interest rate from P, F and N
-
 3. Market equivalence
 	- decision makers can echange different cashflows in market at 0 cost
 	- common when you're shopping around eg mortgages
 
 - if market equivalence holds and decisional can be expressed in monetary terms, then we can assume that mathematical equivalnce can be used
 
-#### Simplification of Cash Flow
+### Simplification of Cash Flow
 - for when it gets too complex
-- Convention: Sample Factor (compund amount factor)
+- Convention: Sample Factor (compound amount factor)
 	- ```(F/P, i, N)``` = (1+i)<sup>N</sup>
+	- read as F given P, i, N
 	- F = P(1+i)<sup>N</sup> = P(F/P, i, N)
 	- P = F/(i+1)<sup>N</sup> = F(P/F,i,N)
 
-##### Assumptions of Compunding Interest Factors
+#### Assumptions of Compounding Interest Factors
 - if we have N periods, they have to be equally spaced
 - payment at time 0 can be considered at end of period -1: _today_
 ```
@@ -371,99 +412,115 @@ i = 2.5
 ### Compound Amount Factor
 
 ```(F/P, i, N)```
-
-- gives future amount F that is equivalent to present amount P when i interest ate and number of periods is N
-- comes from eqn F=P(1+i)<sup>N</sup>
-- (F/P,i,N) = (1+i)<sup>N</sup>
 - allows you to mve single arrow to the future
 
 #### Example 1
-- loan a friend $5000 and they promise to repay you with interest 4% per year and they'll pay you back in 3 years.
-	- nominal interest rate - 4%
-	- m = 1 
-	- i = f/m = 4%
-	- N = 3 years
-	- P = 5000
-- F = P(1 + i)<sup>N</sup> OR F = P(F/P, i, N)
-- = 5000(1 + 0.04)<sup>3</sup> = $5624.50 - textbook has these factors with 4 significant digits
+If you loan a friend $5000 so that they can buy a portable generator and they promise to repay you with an interest rate of 4% per year, calculate value of your investment in 3 years.
 
-**First quiz will be up on avenue on thursday! Due Sunday**
-	- everything up to the thursday lecture
+```
+P = 5000
+N = 3
+i = 4%
+F = P(1+i)^N
+  = 5000*(1+0.04)^3
+  = 5624.32
+```
 
 #### Example 2
-- same as before, i = 12% monthly, N = number of compunding periods
-	- m = 12
-	- i = f/m = 12%/12 = 1%
-	- N = 24 (in months)
-- F = P(1 + i)<sup>N</sup> OR F = P(F/P, i, N)
-- = 5000(1 + 0.01)<sup>24</sup> = $6348.67
+How much money will be in a bank account at the end of 2 years if $5000 is deposited today? Interest rate is 12% compounded monthly.
+
+```
+P = 5000
+N = 2*12
+i = 12%/12 = 1%
+F = P(1+i)^N
+  = 5000*(1+0.01)^24
+  = 6348.67
+```
 
 #### Example 3
-- same as first, four years, $5000 deposited at the end of each year. Interet rate is 12% compounded monthly
-	- multiple arrows for this one
+How much money will be in a bank account at the end of 4 years if $5000 is deposited at the end of each year? Interest rate is 12% compounded monthly.
+
+- multiple arrows for this one
+- move all arrows to the future (to 48 months)
 
 ```
        |    |    |    |
   ---------------------
   0   12   24   36   48
 
+Use equation 4 times
+P = 5000
+N = 12 24, 36, 48
+i = 12%/12 = 1%
+F = 5000(F/P, 0.01, 36) + 5000(F/P, 0.01, 24) + 5000(F/P, 0.01, 12) + 5000
+
 ```
 
-- move all arrows to the future (to 48 months)
-- use equation F = P(1 + i)<sup>N</sup> 4 times
-- 5000(F/P, 0.01, 36) + 5000(F/P, 0.01, 24) + 5000(F/P, 0.01, 12) + 5000
+**First quiz will be up on avenue on thursday! Due Sunday**
+	- everything up to the thursday lecture
 
 ### Present Worth Factor
 
 ```(P/F, i, N)``` = 1/(1+i)<sup>N</sup>
 
+```P = F/(1+i)^N```
+
 - gives present amount from F
 - bringing arrow from future back _N compounding periods_
 
 #### Example 4
-- what amount is desposited today into account bearing 12% nominal interest will give 5000 at the end of 2 years. Interest compunded monthly
-	- i = f/m = 12%/12 = 1%
-	- P = F(i/(1+i)<sup>N</sup>)
-	- P= F(P/F, 1%, 24)
+What amount desposited today into account bearing 12% nominal interest will give $5000 at the end of 2 years? Interest compunded monthly
+```
+i = f/m = 12%/12 = 1%
+P = F(i/(1+i)^N)
+P = F(P/F, 1%, 24)
+```
 
 #### Example 5
-- how much would you deposit into savings account at nominal interest rate 6% **yearly** to accumulate $5000 in 3 years
-- P = F(P/F, 6%, 3)
+How much would you deposit into savings account at nominal interest rate 6% **yearly** to accumulate $5000 in 3 years
+
+```
+calculating P
+P = F(P/F, 6%, 3)
+```
 
 ### Textbook
 - find it online and put the formulas in your crib sheet
 - Appendix A - discrete discrete
 - Appendix B and C - continuous - continous, discrete - continuous 
 
-#### Examplw 6
-- using interest tables, 12% nominal interest with monthly compunding (1%), N = 24 months, how much do i deposite today therefore you now F not P
+#### Example 6
+Using interest tables, 12% nominal interest with monthly compunding (1%), N = 24 months, how much do I deposit today therefore you know F not P
 - look for 1% and N = 24 = 0.7875 (tbh it's easier to calculate :grimacing:)
 
 ## Day 6 Jan 16, 2018
 
-### Sinking Fund Factor
+### Sinking Fund Factor and Annuity
 
 ```(A/F, i, n)``` = i/[1+i)<sup>N</sup> - 1]
 
-#### Annuity
+**Annuity**
 - a series of equal cash flows that start at the end of the first period, continue over N reglarly spaced time intervals
 	- paycheck (in), cellphone bill (out)
 - gives size of annuity that is equivalent to a future amount F
 - N is the number of annuities
-
-#### Example
 - if N = 12, there should be 12 annuities on cash flow diagram
-- Melissa is saving up for server in 3 years. She thinks she neds $5000 and intends to put aside an amount at the end of each year (an annuity). If nominal interest rate is 6%, how much should she put aside each year?
-- r = rate = 6%
-- i = f/m = 6%
+
+#### Example 1
+Melissa is saving up for server in 3 years. She thinks she needs $5000 and intends to put aside a uniform amount at the end of each year (an annuity). If nominal interest rate is 6%, how much should she put aside each year?
+
 - cashflow diagram would have 3 annuities, totalling on the third one
 - **note**: last annuity has to be on same space as total
+
 ```
+r = rate = 6%
+i = f/m = 6%
 A = F(A/F, i, N)
   = 5000(A/F, 6, 3)
 ```
 
-- however, if her first deposit is today, N=4
+- however, if her first deposit is today, N=4!! **Example 2**
 
 ### Uniform Series Compound Amount Factor
 
@@ -479,11 +536,13 @@ A = F(A/F, i, N)
 #### For Single Transactions
 - Compound Amount Factor (F/P, i, N)
 
-#### Example
-- Bob wants new truck in 3 years. If he saves $25000 each year and puts it in savings w/ annual rat 4% how much will he have in 3 years
+#### Example 3
+Bob wants new truck in 3 years. If he saves $25000 each year and puts it in savings w/ annual rate of 4% how much will he have in 3 years
 - N = 3, F = ?
 - 25000(1 + 0.04)<sup>3-1</sup> + 25000(1 + 0.04)<sup>3-2</sup> + 25000(1 + 0.04)<sup>3-3</sup>
  = 27040 + 26000 + 25000 = 78040
+
+![](Day6/cheatsheet.PNG)
 
  ### Effective Interest Rate
 
@@ -497,35 +556,119 @@ A = F(A/F, i, N)
 
 ### Nominal vs Effective Interest
 - nominal - stated rate of interest
-- effecive interest rate
-	- i<sub>e</sub> = effectve i/year
-	- r = nominal i/year
+- effecive interest rate - rate actually paid or earned because of compounding period less than 1 year
+	- i<sub>e</sub> = effective interest rate/year
+	- r = nominal interest rate/year
 	- m = # of compounding periods in 1 year
 	- r/m = nominal i/compunding period
 
-Equating future worth after 1 year
+**Equating future worth after 1 year**
 
 ```F = P(1 + i```<sub>```e```</sub>```) = P(1 + r/m)```<sup>```m```</sup>
 
-```i```<sub>```e```</sub> ```= (1 + r/m)```<sup>```m```</sup> ``` - 1```
+thus ```i```<sub>```e```</sub> ```= (1 + r/m)```<sup>```m```</sup> ``` - 1```
 
 ### Efective Interest Examples
 
 #### Example 1 Slide 49
-- r = 6%
-- m = 365
-- i<sub>e</sub> = = (1 + r/m)<sup>m</sup> - 1 = **6.18%**
+WHat is the effective interest rate/year of an investment with a 6% nominal interest rate, compounded daily?
+
+```
+r = 6%
+m = 365
+ie = (1 + r/m)^m - 1
+   = 6.18%
+```
 
 **\*if i<sub>e</sub> only compounded once a year then it's equivalent to r*\**
 
-**\*if compoounded daily for ex. 6% it becomes 6.18%*\**
+**\*if compounded daily for ex. 6% it becomes 6.18%*\**
 
 #### Example 2 Slide 53
+How much money will be in a bank account at the end of 2 years if $5000 is deposited today? The interest rate is 12% compounded monthly.
+
 - single arrow on cashflow diagram
-- (F/P, i N) = (1 + i)<sup>N</sup>
-- F = 5000(1 + 12%/12)<sup>24</sup> = i<sub>e</sub> = (1 + 12%/12) - 1
-- F = 5000(1 + i<sub>e</sub>)<sup>2</sup> = 6348.67
+```
+(F/P, i N) = (1 + i)^N
+F = 5000(1 + 12%/12)^24
+
+is equivalent to
+
+ie = (1 + 12%/12) - 1
+F = 5000(1 + ie)^2 
+
+F = 6348.67
+```
 
 ### Effective Interest Rate and Cash Flow Period
-- (F/A, i, N)
+- calculation period other than a year
+	- nominal interest rate (r) is the conventional annual interest rate
+	- compounding period (m) is the period used with compound interest method of computing interest
+	- cash flow period (k) is the base unit of time over which an i<sub>e</sub> rate is calculated (may not be 1 yr)
+		- k is the # compounding periods in 1 cashflow period
 
+Therefore i<sub>e/k</sub> = (1+r/m)<sup>k</sup> - 1
+
+#### Example 3
+An investment earns a 6% nominal interest rate, compounded daily. What is the effective interest rate for a cashflow period of 1 month (30 days)?
+
+```
+ie = (1+r/m)^k - 1
+   = (1+0.06/365)^30 - 1
+   = 0.0049
+   = 0.49%
+```
+
+**continued**
+
+```
+F in 5 years
+F = A(F/A, 6%/365, 60)
+```
+
+### Critical Point
+- when using factors, **n** and **i** must always match
+- ex if using (1+i)<sup>N</sup>, the N and i should both be calculated w.r.t same unit of time
+- **NOTE** 
+	- interest doesn't start accumulating until the money has been invested for the full period
+	- if cashflow period is less than compounding period then add up cashflows in compounding period to a single arrow
+	- ![](Day7/criticalpoint.PNG)
+
+#### Example 4
+A $5000 investment earns a 6% nominal interest rate compounded daily. What is the future worth of the investment after 5 years, using a cash flow period of 1 month?
+
+**30 days is a bankers month**
+
+```
+ie = (1 + r/m)^k - 1
+   = (1 + 0.06/365)^30 - 1
+
+F = 5000*(1 + ie)^60
+  = 6721.46
+```
+
+#### Example 5
+A $5000 investment earns a 6% nominal interest rate, compounded daily. What is the future worth of the investment after 5 years using a cash flow period of 6 months?
+
+```
+ie<month> = (1 = r/m)^k - 1
+Therefore k = 182 and N = 2*5 = 10
+```
+
+#### Example 6
+Suppose you make quarterly deposits in a savings account which earns 9% interest compounded monthly. Compute the effective interest rate per quarter.
+- per quarter = 4 times a year
+
+```
+ie = (1+r/m)^k - 1
+m = 12
+k = # compounding periods in each cashflow period = 3
+
+ie<3 months> = 2.27%
+```
+
+### What Interest Rate to Use
+
+![](Day7/interestrate.PNG)
+
+## Day 8

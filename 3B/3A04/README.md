@@ -3,17 +3,24 @@
 ## Table of Contents
 - [Course Breakdown](#course-breakdown)
 - [Last Year Final Exam](#last-year-final-exam)
-- [Grading](#grading)
-- [Textbook](#textbook)
+- [Grading and Textboook](#grading-and-textboook)
+- [Introduction to Software Architecture](#introduction-to-software-architecture)
 - [SDLC V Model](#sdlc-v-model)
+- [What is meant by Software Architecture](#what-is-meant-by-software-architecture)
+- [Role of Software Architect](#role-of-software-architect)
 - [Code Structure](#code-structure)
+- [3 things in architecture](#3-things-in-architecture)
 - [Project Runtime Structure](#project-runtime-structure)
 - [Software Management Structure](#software-management-structure)
 - [Software Elements](#software-elements)
-- [Tutorial 1 Jan 16, 2018](#tutorial-1-jan-16-2018)
+- [Group Project Overview and Deadlines](#group-project-overview-and-deadlines)
 - [Software Connectors](#software-connectors)
 - [Iterative Refinement of an Architecture](#iterative-refinement-of-an-architecture)
-- [Third Slide Set, Models](#third-slide-set-models)
+- [Models](#models)
+- [4 plus 1 Model](#4-plus-1-model)
+- [UML for Software Architecture](#uml-for-software-architecture)
+- [Surprise Quiz 1](#surprise-quiz-1)
+- [How to find the views](#how-to-find-the-views)
 
 ## Day 1 Jan 5, 2018
 
@@ -292,7 +299,6 @@ Design coukd be viewed as an activity that translates an idea/goal into a bluepr
   - UML is one of the Object-Oriented solutions for software modeling and design
   - "4+1" view is another way to show different views wit different concerns for dif aspects (F + NF reqs)
 
-
 ## Day 7 Jan 19, 2018
 
 ### 4 plus 1 Model
@@ -327,5 +333,48 @@ Design coukd be viewed as an activity that translates an idea/goal into a bluepr
 
 - BE<sub>n</sub>
 
+## Day 8 Jan 22, 2018
+
+### Surprise Quiz 1
+What is a business event?
+- An occurence outside of the environment of the system that initiates some sort of interaction in the system.
+
+What role business events play in determining the scenario view in the 4+1 model?
+- Each business event has view points and each view point has a scenario
+- business events can be modelled using templates such as Volere, IEEE, Boeing, Ministry of Defense of UK
+- systems have modes (assisstants) which denote a set of states of a program
+- these sets of states are encompassed by classes
+- scenarios can be described using modes (a scenario for each mode) - tells you how machine is supposed to work
+  - however each mode can have multiple view points and a scenario for each viewpoint
+  - ex James Bond's car can have a car viewpoint and a submarine view
 
 
+### How to find the views
+- 4+1 model is what most software architectures follow
+
+#### Logical View
+1. Read the scenario
+  - identify the names
+    - ie user, which is outside of the system
+
+    ```
+    Scenario:
+      -------Name 1------
+      -------Name 2------
+    ```
+    - we are looking for if the above name belongs to the environment
+    - if the name belongs to the system then it is potentially a class/module
+  - identify the verbs
+2. Write a diagram
+
+#### Process View
+Looking at logical view we can determine the process view.
+
+#### Development View
+- once you have identified classes and modules
+- this is also known as the source code view
+
+#### Physical View
+- depends on the other views
+- allows you to organize what packages you need (from development view)
+- need to know specifications like concurrency (from process view)

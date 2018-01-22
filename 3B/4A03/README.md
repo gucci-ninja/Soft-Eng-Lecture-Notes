@@ -2,9 +2,10 @@
 
 ## Table of Contents
 - [Definition of Sustainable Development](#definition-of-sustainable-development)
-- [Corporate Social Responsibility CSR](#corporate-social-responsibility-csr)
+- [Triple Bottom Line](#triple-bottom-line)
+- [CSR Corporate Social Responsibility](#csr-corporate-social-responsibility)
+- [Human Impact](#human-impact)
 - [About Joel Hilchey](#about-joel-hilchey)
-- [First Assignment](#first-assignment)
 
 ## Day 1 Jan 10, 2018
 
