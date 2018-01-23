@@ -31,6 +31,9 @@
 - [Effective Interest Rate and Cash Flow Period](#effective-interest-rate-and-cash-flow-period)
 - [Critical Point](#critical-point)
 - [What Interest Rate to Use](#what-interest-rate-to-use)
+- [Capital Recovery Factor](#capital-recovery-factor)
+- [Salvage Value](#salvage-value)
+- [Series Present Worth Factor](#series-present-worth-factor)
  
 ## Day 1 Jan 4, 2018
 
@@ -788,6 +791,120 @@ i = r/m = 16.08%/12
 N = 12
 ```
 
-Hector says e will make the investment for you at fee of 2% of investments total value 1  year from now. What is the effective annual interest rate of this investment after paying Hector's fee?
+## Day 9 Jan 23, 2018
 
-## Day 9
+Discussion on investing in ACB :trollface:
+
+#### When to use effective interest 
+Whenever you have annuity equation, you'll probably have to use effective interest because you have multiple arrows. If single arrow, can use either r/m or effective, it doesn't matter. Best to use the decision flowchart.
+
+**Do problems on Avenue**
+
+#### From last
+
+Hector says he will make the investment for you at fee of 2% of investments total value 1  year from now. What is the effective annual interest rate of this investment after paying Hector's fee?
+
+```
+So you have 58037*0.02 going to Hector
+That leaves 56876 at the end of one year.
+
+F1 = 56876
+P = 50000
+N = 1
+F = P(1+i)^N
+56876 = 50000(1+i)^1 
+i = 13.75%
+```
+
+If your relative, instead of a lump sum, offered you 4 quarterly installments of $12500 each, how much would you have at the end of one year using Hector's investment (disregard Hector's fee). 
+
+```
+F1 = 12500(F/P,i,N) + 12500(F/P,i,N) + 12500(F/P,i,N) + 12500
+15% compounded monthly therefore i = r/m = 15%/12
+N would be 9, 6, and 3.
+
+From original wording -> compouding monthly, cashflow quarterly.
+Since cashflow is not less than compounding period, use effective interest
+
+k = number of compoundng periods in cashflow period = 3
+i_quarterly = (1+r/m)^k - 1
+            = (1+0.15/12)^3
+            = 3.8%
+F = 12500(F/A, 3.8%, 4)
+F = 12500((1+i)^4-1)/i
+F = 12500(4.233)
+F = $52920
+
+If it was semi-annual compounding and cashflow still quarterly, we would do i = r/m because cashflow is less than compounding.
+i = r/m = 15%/2
+
+F = 25000(i+r/m)^1
+OR
+F = 25000(F/A, r/m, 2)
+both give same answer
+```
+
+On test you'll get questions like:
+- If cashflow is daily and compounding is monthly, what is your interest rate?
+
+### Capital Recovery Factor
+
+(A/P, i, N) = (A/F, i, N)\*(F/P, i, N) = i*(1+i)<sup>N</sup>/[1+i]<sup>N</sup>-1]
+
+- how much money do I have to save/make to make my investment worthwhile
+- gives value, A, of the equal periodic payments or receipts that are equivalent to a present amount P, where
+- cashflow diagram starts with initial amount P and you get annuities during the following N periods
+- uses F given P equation and A given F equation
+
+![](Day9/capital_recovery.PNG)
+
+#### Example 1
+You are considering buying a digital camera for $5000 which you will use for 5 years. It has 0 salvage value. If the nominal interest rate is 10%, what is the expected yearly return on the camera.
+- how much money camera needs to bring in to breakeven
+
+```
+A = P(A/P, i, N)
+A = 5000(A/P, 10, 5)
+*compounding and cashflow periods are both annual*
+A = 5000*(0.26380)
+  = 1319
+```
+
+### Salvage Value
+- most assets have a value for which they can be sold for
+- **WONT** be on Quiz 2
+
+		A = P(A/P, i, N) = S(A/F, i, N)
+
+#### Example 2
+You are considering replacing your water heater and buying compact point-of-use water heaters for $5000 with a salvage value of $500 after 5 years. If the nominal interest rate is 10%, what is the expected yearly return on the compact heaters.
+
+```
+A = P(A/P, i, N) - S(A/F, i, N)
+  = 5000(A/P, 10, 5) - 500(A/F, 10, 5)
+  = 1237.10
+
+```
+
+### Series Present Worth Factor
+
+(P/A, i, N)
+
+- when you have annuities and you want to find P
+- reciprocal of the previous equation
+
+#### Example 3
+Repaying your tuition requires 24 montly payments of $565. Interest is charged at an annual rate of 12% compounded monthly. How much is your loan?
+
+```
+(P/A, i, N)
+P = 565
+i = 12%/12
+N = 24 (# of annuities)
+```
+
+Midterm - Mar 6, 7-9
+
+## Day 10
+- no lecture on Thursday!
+- 

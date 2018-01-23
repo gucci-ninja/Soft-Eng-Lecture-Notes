@@ -27,6 +27,7 @@
 - [Translational System](#translational-system)
 - [Translational System Example](#translational-system-example)
 - [Rotational Systems](#rotational-systems)
+- [Rotational Mechanical System with Gears](#rotational-mechanical-system-with-gears)
 
 ## Day 1 Jan 4, 2018
 
@@ -576,3 +577,20 @@ Find transfer function Vo(s)/Vi(s) of the following:
 
 #### Writing Equations of Motion
 - use same principle as translational motion
+
+## Day 9 Jan 23, 2018
+
+**go back and read slides 65-71**
+
+### Rotational Mechanical System with Gears
+
+![](Day9/gears.PNG)
+
+θ<sub>2</sub>/θ<sub>1</sub> = N<sub>1</sub>/N<sub>2</sub> =
+T<sub>1</sub>/T<sub>2</sub>
+
+So T1\*N2 = T2\*N1
+
+- assume negiligable inertia and dampening
+
+

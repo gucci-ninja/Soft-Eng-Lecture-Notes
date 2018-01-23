@@ -21,6 +21,7 @@
 - [UML for Software Architecture](#uml-for-software-architecture)
 - [Surprise Quiz 1](#surprise-quiz-1)
 - [How to find the views](#how-to-find-the-views)
+- [Tutorial 2 Jan 23, 2018](#tutorial-2-jan-23-2018)
 
 ## Day 1 Jan 5, 2018
 
@@ -378,3 +379,13 @@ Looking at logical view we can determine the process view.
 - depends on the other views
 - allows you to organize what packages you need (from development view)
 - need to know specifications like concurrency (from process view)
+
+### Tutorial 2 Jan 23, 2018
+- tips on writing software requirements document
+- user characteristics: who is going to be using your product and what is the scope of their knowledge?
+- constraints: any constraints that you, the team, has that must be abided
+- apportioning of requirements: any requirements you need to cut out (this should **not** be part of this SRS)
+- section 3 - highlight your **innovative idea**, usually the longest section
+- use slide 29, not 30 for the viewpoints (business events followed by viewpoints)
+- you don't need to have political requirement so just say n/a
+- 

@@ -11,6 +11,8 @@
 - [Testing Principles](#testing-principles)
 - [Testing Strategies and Plans](#testing-strategies-and-plans)
 - [Tutorial 1 Jan 17, 2018](#tutorial-1-jan-17-2018)
+- [Testing Strategies and Plans](#testing-strategies-and-plans)
+- [Developing Unit Test Plan](#developing-unit-test-plan)
 
 ## Day 1 - Jan 4, 2018 
 
@@ -195,5 +197,60 @@ The following may be defects
 ## Day 8 Jan 22, 2018
 
 **skipped**
+
+## Day 9 Jan 23, 2018
+
+### Testing Strategies and Plans
+
+1. General Information
+    - Summary
+    - Environment and Pretest Background
+    - Test Objectives 
+        - SMART: Specific, Measurable, 
+    - Expected Defect Rates
+    - References
+        - requirements
+    - Project request authorization
+    - Previously published documents on project
+    - Documentation concerning related projects
+
+2. Plan
+    - Software Description
+    - Test Team (_WHO_ + _ASSIGNMENT_)
+    - Milstones (like in weeks, days)
+    - Budgets
+    - Testing (systems checkpoint)
+        - Schedule (and budget)
+        - should test in order of what depends on what
+
+3. Specification and Evaluation
+    - Specifications
+        - Functional, Structural, Test/Function relationship, progression
+    - Methods and Constraints
+        - Methodology
+        - TEst tools
+        - Extent (total or partial, rationale for partial testing)
+        - Data recording (how are you going to record the data, like a spreadsheet)
+        - Constraints
+    - Evaluation
+        - Criteria, data reduction
+
+4. Test Descriptions
+    - Test (identify unqiuely)
+         - control (manual, semi-automatic, automatic)
+         - inputs/outputs
+         - procedures (test setup, initialization, termination)
+    - Test Cases
+        - start with your requirements/specs/documentation
+        - look for most likely, most visible errors
+            - most often used areas of program
+            - hardest to fix areas of program 
+
+### Developing Unit Test Plan
+- system divided into components
+- same as the Plan from before
+- functions that arent tested
+
+
 
 
