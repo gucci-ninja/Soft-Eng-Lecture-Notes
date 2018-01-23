@@ -8,27 +8,25 @@
 - [System Configurations](#system-configurations)
 - [Transient and Steady-State Response](#transient-and-steady-state-response)
 - [Stability](#stability)
-- [Modelling in the Frequency Domain](#modelling-in-the-frequency-domain)
-- [Written Examples](#written-examples)
-- [MatLab Commands](#matlab-commands)
-- [Partial Fractions Decomposition](#partial-fractions-decomposition)
+- [Lab 1 and Terminology](#lab-1-and-terminology)
+- [PID Controller](#pid-controller)
+- [Laplace Transforms](#laplace-transforms)
+- [Laplace Table](#laplace-table)
+- [Transfer Function](#transfer-function)
+- [Laplace and PartFrac Examples](#laplace-and-partfrac-examples)
+- [Some MatLab Commands](#some-matlab-commands)
 - [Stability Analysis](#stability-analysis)
-- [Time Functions ](#time-functions-)
-- [Electric Network Transfer Function](#electric-network-transfer-function)
-- [Equivalent Resistance and Impedence](#equivalent-resistance-and-impedence)
-- [Kirchhoff's Current Law](#kirchhoffs-current-law)
-- [Kirchhoff's Voltage Law](#kirchhoffs-voltage-law)
+- [Impedence, Electric Network Transfer Function, and Circuits](#impedence-electric-network-transfer-function-and-circuits)
+- [Kirchhoff's Current and Voltage Law](#kirchhoffs-current-and-voltage-law)
 - [Mesh Analysis](#mesh-analysis)
 - [Cramer's Rule](#cramers-rule)
 - [Nodal Analysis](#nodal-analysis)
 - [Operational Amplifiers](#operational-amplifiers)
 - [Noninverting Op Amp](#noninverting-op-amp)
-- [Mechanical System](#mechanical-system)
-- [Mass Component](#mass-component)
-- [Translational](#translational)
-- [Translational Example](#translational-example)
-- [Rotational Mechanial Systems](#rotational-mechanial-systems)
-- [Rotational Degress of Freedom](#rotational-degress-of-freedom)
+- [Mechanical Systems and their Components](#mechanical-systems-and-their-components)
+- [Translational System](#translational-system)
+- [Translational System Example](#translational-system-example)
+- [Rotational Systems](#rotational-systems)
 
 ## Day 1 Jan 4, 2018
 
@@ -56,7 +54,6 @@
 - unity feedback - input 1 output 1
 
 #### Why Need?
-
 - power amplification
 - remote control
 - convenience on input
@@ -70,23 +67,25 @@
 ![](Day1/open_loop_system.PNG)
 - open loop control (cheap, not robust)
 - no way of knowing if expected output is actual output
+- sensitive to disturbances and hard to control
 
 #### Closed-Loop System
 
 ![](Day1/closed_loop_system.PNG)
 - allows you to check output
+- measuring the output response of a system and comparing it to a reference turns open loop system into closed loop
 
 ### Transient and Steady-State Response
 
 ![](Day1/transient_steady_state_response.PNG)
-_tansient = in transition_
+_transient = in transition_
 - transient response tradeoff
 	- if you get where you want really fast (high gain)
 	- oscillates around point and doesn't settle
 	![](Day1/high_gain.PNG)
 	- low gain: doesn't overshoot
 ```	
-overshoot = a/b * 100%
+Percent overshoot = a/b * 100%
 a = x-axis to highest point
 b = x-axis to lowest point
 ```
@@ -102,101 +101,124 @@ Total response = Natural response + Forced response
 - bounded input doesn't create bounded output :dizzy_face:
 - system has to be stable
 
+#### Control Objectives
+1. Stabilize the system
+2. Produce desired transient response
+3. Decrease/eliminate steady state error
+4. Make system robust to withstand disturbances and variations in parameters
+5. Achieve optimal performance
+
 ## Day 2 Jan 5 2018
 
-### Modelling in the Frequency Domain
-
-- Laplace Transform
-- do by hand and by matlab
-
-#### Lab 1: Compensator Terminology
-
+### Lab 1 and Terminology
 - 70% of problems can be solved with PID
+- In Lab 1, you design a PID controller to control position of a DC electric motor's shaft. Criteria for the controller's step response are
+	- settling time less than 0.04s
+	- overshoot less than 16%
+	- system is free of steady-state error
 
-##### Proportional Control System 
-
+#### Proportional Control System 
 - calculating controlled output to make motor go proportionally faster
 - open loop version: apply step voltage to motor
-   - through feedback, you can put more energy into the system cranking up the gain enough so that it doesnt go unstable or start to oscillate
-- makes things go faster
+   - through feedback, you can put more energy into the system cranking up the gain enough so that it doesn't go unstable or start to oscillate
+- makes things go faster by feeding error signal directly to plant
 
-##### Integral Control System
-
-- keep the motor moving in theory
+#### Integral Control System
+- feeds integral of error to plant
+- keeps the motor moving in theory
 - however, not always how it works in practicality therefore, a step voltage doesnt mean anything
 - therefore you need to integrate over time so the voltage becomes big
-- integral gain gets rid of steady state air  
-- gets ready of steady state air
+- integral gain gets rid of steady state error
 
-##### Derivative Control System
-- prevents overshoot or get desired amount of overshoot
+#### Derivative Control System
+- feeds derivative of error to plant
+- prevents overshoot or gets desired amount of overshoot
 - later we will learn the theory to predict the control of systems
 - in practice, requires a lot of tweeking and fine tuning 
-- basically helps to reduce overshoot and improve performance of system
+- improves performance of system
 
-##### More on Lab 1 - underdamped response specifications
+#### Underdamped Response Specifications
+c<sub>final</sub> = lim<sub>t->inf</sub>c(t)
 
-1. Rise time is the time for output to go from 10% (0.1Cfinal) to 90% (0.9Cfinal)
-2. peak time - time required to reach first and largest peak
-3. percent overshoot - %OS percentage that output overshoots final value
+**c(t)** is the output
 
-```
-%OS = ((Cmax - Cfinal)/Cfinal)*100%
-``` 
-4. settling time - is it close enough to do whatever we have to do? (settles within plus or minus 2% of Cfinal
+1. **Rise time** is the time for output to go from 10% (0.1c<sub>final</sub>) to 90% (0.9c<sub>final</sub>)
+2. **Peak time** - time required to reach first and largest peak
+3. **Percent overshoot** - %OS percentage that output overshoots final value
 
-#### PID Controller
+%OS = ((c<sub>max</sub> - c<sub>final</sub>)/c<sub>final</sub>)*100%
 
+4. **Settling time** - is it close enough to do whatever we have to do? (settles within +-2% ofc<sub>final</sub>
+
+### PID Controller
 - transfer function of proportional integral derivative controller
-```
-Gc(s) = K1 + K2/s + K3s = (K3(s^2+(K1/K3)s+K2/K3)/s
-```
+
+![](Day2/PID.PNG)
 
 - first term is proportional, second integral.. etc
+- system has 2 zeros plus a pole at origin
 
 #### Block Diagram Representation of System
+- can use differential equations to represent relationship between input r(t) and output c(t) or a block diagram of subsystems
 
-#### Laplace Transform Review
+### Laplace Transforms
+- modelling in the frequency domain entails laplace transforms
+- can do by hand or using MatLab
+- helps us understand dynamic behaviour of processes
+- time domain vs laplace domain (s-domain)
+- laplace is best used for stability analysis, controller design, block diagrams)
+- **Laplace Transform** - going from time domain differential equation to laplace algebraic equation 
+- **Inverse Laplace transform** - algebraic equation to time domain solution
 
-- time domain vs laplace domain
-- laplace is best used for stability analysis, controller design, block diagrams
-   - polynomial A divided by polynomial B
-   - converts diferential equations (time domain) to algebraic (s-domain)
-
-_Definition_ 
+**_Definition_**
 
 ![](Day2/laplace.PNG)
-
-- ![](Day2/transform_variable.PNG) = Laplace transform variable
+- s = σ + jω is th Laplace transform variable
 - no information for time less than zero so we multiply f(t) by u(t) 
 - but its ok if you write L(1/s^2) = t
 
-##### Common Laplace Transforms
+### Laplace Table
 
 ![](Day2/laplace_transforms.PNG)
 
-##### Important properties of laplace
-
-- linearity
+#### Important properties of laplace
+- linearity - can bring constants out
 - differentiation: limit as t goes to zero
-- frequency shifting: if you multiply by exponential e<sup>-at</sup> you replace F(s) by F(s+a)
+	- laplace of derivative is s*F(s) - f(0-)
+- frequency shifting: if you multiply by exponential e<sup>-at</sup> and take laplace, you replace F(s) by F(s+a)
 
-##### Laplace Transform Theorems
+#### Laplace Transform Theorems
 
 ![](Day2/transform_theorems.PNG)
-
 - #11 could have poles on left side and maybe one at origin but if it doesnt it violates condition and is unstable
 
-##### Transfer Function
+### Transfer Function
+- the box in the middle that transforms input
+- n<sup>th</sup> order LTI differential equation is of the form:
+	![](Day2/LTI.PNG)
+- c(t) is output, r(t) is input, G(S) = C(s)/R(s)
 
-- n<sup>th</sup> order LTI differential equation is of the form a<sub>n-1</sub>*d<sup>n-1</sup>c(t)/dt<sup>n-1</sup> + ... +
-a<sub>0</sub>c(t)
-- c(t) is output, r(t) is input
-- Take Laplace, C(s)/R(s) = G(s)
-- example with differential equation can turn into first order system
-- inverse laplace transform
+#### Example
+```
+Tp*dc(t)/dt + c(t) = kp*r(t)
+------take laplace-----------------
+L(Tp*dc(t)/dt + c(t)) = L(kp*r(t))
+-------linearity---------------------
+Tp*L(dc(t)/dt) + L(c(t)) = kp*L(r(t))
+--------differentiation----------------
+Tp*(s*C(s) - c(0)) + L(c(t)) = kp*L(r(t))
+------apply laplace, assume c(0) = 0----
+Tp*s*C(s) + C(s) = kp*R(s)
+
+--------find G(S)-----------------------
+G(s) = C(s)/R(s) = kp/(Tp*s + 1)
+```
+
+#### Inverse laplace transform
 	- ![](Day2/inverse_laplace.PNG)
-- partial fraction expansion 
+
+#### Partial Fraction Expansion
+- since the system model will most likely of the form F(s) = N(s)/D(s)
    ```
 		s^2 + 2s - 3		       			
 	F(s) = ----------------
@@ -216,7 +238,7 @@ a<sub>0</sub>c(t)
 
 ## Day 3 Jan 9, 2018
 
-### Written Examples
+### Laplace and PartFrac Examples
 
 ![](Day3/written1.PNG)
 
@@ -229,16 +251,14 @@ a<sub>0</sub>c(t)
 
 ![](Day3/written2.PNG)
 
-
-
-### MatLab Commands
+### Some MatLab Commands
 - define F
 - define ```syms s, t```, etc
 - ```ilaplace``` - computes laplace
 - ```partfrac(F)``` - gets partial fractions
 - ```pretty(x)``` - makes it pretty
 
-### Partial Fractions Decomposition
+#### Partial Fractions Decomposition
 1. Divide if improper, degree of numerator is denominator
 	- do long division
 2. Factor denominator
@@ -261,28 +281,30 @@ a<sub>0</sub>c(t)
 - after expansion, we refer to roots of D(s) as poles
 - if you have some polynomial in matlab, you can do roots([a b c]) with the coefficients of your polynomial ax^2 + bx + c
 - ```s = tf('s')``` - makes it so that s is the variable in transfer function
-- can find poles of G(s), a transfer function by doing the above command and ```pole(G)```
+- can find poles of G(s), a transfer function, by doing the above command and ```pole(G)```
 - if you have distinct poles p1, p2, p3 then you end up with A<sub>1</sub>e<sup>-p<sub>1</sub>t</sup> + A<sub>2</sub>e<sup>-p<sub>2</sub>t</sup> + ... A<sub>n</sub>e<sup>-p<sub>n</sub>t</sup>
 - between G(s) = 1/(s+1) and 1/(s-1), the second one is unstable as it comes to a finite value
-- if ω<sub>i</sub> = 0 then pole is strictly real and corresponds to 
-- if σ<sub>i</sub> then pole is in left side of imaginary plane and response decresaes to zero over time - system is stable
 
-#### Real and Imaginary Roots, Stability Analysis
-- if ω<sub>i</sub> = 0 and σ<sub>i</sub> < 0 then pole is in right side of imaginary plane, response increases over time and system is unstable
+#### Real and Imaginary Roots
+If we have poles at s = -p<sub>i</sub> = - σ<sub>i</sub> +- jω<sub>i</sub>
+- if ω<sub>i</sub> = 0 then pole is strictly real 
+- if σ<sub>i</sub> > 0, then pole is in left side of imaginary plane and response decreasess to zero over time - system is **stable**
+- if ω<sub>i</sub> = 0 and σ<sub>i</sub> < 0 then pole is in right side of imaginary plane, response increases over time and system is **unstable**
 - sometimes you want an oscillation, can tune a system so poles are on imaginary axis
-- if only pure imaginary roots, technically considered stable - called marginally stable because its impulse resposne doesn't blow up - σ<sub>i</sub> = 0 and ω<sub>i</sub> != 0
+- if only pure imaginary roots, technically considered stable - called **marginally stable** because its impulse response doesn't blow up - σ<sub>i</sub> = 0 and ω<sub>i</sub> != 0
 	- this system has no damping
 
-#### Example of Marginally Stable
+##### Example of Marginally Stable
 - poles at -3 and +3 on j (imaginary) axis with G(s) = 1/(s<sup>2</sup> + 9)
 - system will blow up with a repeating periodic impulse input
 - bounded input to break system: hit it with oscillation of 3 rad/s
 
 #### Complex Roots
-- if ω<sub>i</sub> and σ<sub>i</sub> both != 0
+Again, if we have poles at s = - σ<sub>i</sub> +- jω<sub>i</sub>
+- if ω<sub>i</sub> and σ<sub>i</sub> both != 0 we have complex roots
 
 ```
-Unstable
+Unstable Example
 G = 1/((s-2 +j*3)*(s-2-j*3))
 
 >> impulse(G)
@@ -291,7 +313,7 @@ G = 1/((s-2 +j*3)*(s-2-j*3))
 starts oscillating a lot and doesn't plateau
 
 ----------
-Stable
+Stable Example
 G = 1/((s+2 +j*3)*(s+2-j*3))
 
 >> impulse(G)
@@ -300,14 +322,15 @@ G = 1/((s+2 +j*3)*(s+2-j*3))
 some oscillation, then plateaus out
 ```
 
-### Time Functions 
+#### Time Functions associated with s-plane
 ![](Day4/timefunctions.PNG)
 - in theory, turning up the gain and spending infinite energy will make system respone large
 - on s-plane, things on j plane appear in complex conjugates
 
-### Electric Network Transfer Function
+### Impedence, Electric Network Transfer Function, and Circuits
 - impedence is laplace generalization of resistance
 - need Ohm's law: ```v(t) = Ri(t)```
+	- Laplace ```V(s) = R!(s)```
 - impledence: ```Z(s) = V(s)/I(s) = R```
 - admittance: ```Y(s) = !(s)/V(s) = 1/R = G```
 
@@ -325,27 +348,32 @@ some oscillation, then plateaus out
 - things with very low voltage signal use active components - eg cellphone
 - active components inject energy unlike passive componenets (without internal energy source)
 
-### Equivalent Resistance and Impedence
+![](Day4/summary.PNG)
 
-**Example**
-- Simplify circuit to get 6 ohm resistance for left and 12 for right
+#### Equivalent Resistance and Impedence
+- resistance in serial can be replaced by equivalent resistor R<sub>s</sub> = R<sub>1</sub> + .. + R<sub>N</sub>
+- same with impedence: Z<sub>s</sub> = Z<sub>1</sub> + .. + Z<sub>N</sub>
+- in parallel resistors are R<sub>p</sub><sup>-1</sup> = R<sub>1</sub><sup>-1</sup> + .. + R<sub>N</sub><sup>-1</sup>
+- same with imepedence: Z<sub>s</sub><sup>-1</sup> = Z<sub>1</sub><sup>-1</sup> + .. + Z<sub>N</sub><sup>-1</sup>
 
 ## Day 5 Jan 12, 2018
 
-### Kirchhoff's Current Law
+### Kirchhoff's Current and Voltage Law
+
+#### Current Law
 - point of connection between 2 or more circuit elements is referred to as **node**
 - current flows into node considered positive, leaving the negative node
 - _KCL_ says that the algebraid sum of currents entering any node is 0
 - 5 going in, i going in, -3 going out and -2 going out gives a sum of 0
 - ![](Day5/KCL.PNG)
 
-### Kirchhoff's Voltage Law
+#### Voltage Law
 - algebraic sum of voltages around closed loop/path is zero
 - to find voltage across op resistor, we're going from plus to minus so subtract, therefore it's 3 V
 - ![](Day5/KVL.PNG)
 
-#### Example
-- finding transfer function
+#### Written Example
+- finding transfer function V<sub>c</sub>(s)/V(s)
 - voltage across capacitor varies with integral of v so c becomes 1/cs
 - current = the voltages (in series) + Ls + Lr + 1/Cs
 - voltage = current * impedence
@@ -370,12 +398,10 @@ some oscillation, then plateaus out
 ![](Day5/cramers.PNG)
 
 - brute force mechanical way of solving matrix
-
-#### Matrix Determinant
 - probably won't have to do a matrix bigger than 3x3
 - might wanna put formulars on cheat sheet 
 
-**Notes: 2 pages of notes**
+**2 pages of notes allowed on midterm**
 
 ### Nodal Analysis
 - alternative to mesh analysis
@@ -385,14 +411,14 @@ some oscillation, then plateaus out
 - use kirchhoff's current law for equations for unknown voltages
 
 #### Nodal example
-- 
+
+![](Day5/nodal.PNG)
 
 ## Day 6 Jan 16, 2018
 
-**Midterm during week before reading week**
+***Midterm during week before reading week\***
 
 ### Operational Amplifiers
-- _op amps_
 - resistors, conductors - passive elements that don't put energy into system
 - you don't get as much out of these systems
 - if you want large gain in system, you need to amplify with _active_ components
@@ -401,6 +427,10 @@ some oscillation, then plateaus out
 	2. high input impedence Zi = infinity
 	3. low output impedence Z0 = 0
 	4. the more current you draw, still basically same voltage: high constant gain A = infinity
+- ideal Op Amp assumptions
+![](Day6/ideal_opamp.PNG)
+	- input voltages are equal: v1(t) = v2(t)
+	- no current flows into inputs i+ = i- = 0
 
 #### Inverting Op Amps
 - 2 marks for writing down voltage - voltage at ground = 0, V1(x) = 0
@@ -409,17 +439,21 @@ some oscillation, then plateaus out
 	- if A is very large gain, force of the two voltages is equal in example below
 	- since v1 is approx 0, value of current i1 = (input - 0)/zi
 	- i2 = (Vout/z2)
-	- This gives the transfer funtion - V0(s)/Vi(s) = -Z2(s)/Z(s)
+	- This gives the transfer function - V0(s)/Vi(s) = -Z2(s)/Z(s)
 	- should write down this configuration on your cheat sheet
 
 	![](Day6/opamps.PNG)
 
 #### Example
-- impedence in series are aded together, in parallel: 1/z1 + ...
-- Transfer function of the following
+Find transfer function Vo(s)/Vi(s) of the following:
 
 ![](Day6/opamps_example.PNG)
 
+- Vo(s)/Vi(s) = -Z2(s)/Z1(s), both of which we need to determine 
+- using parallel inductance, Z1(s)<sup>-1</sup> = C<sub>1</sub>s + R1<sup>-1</sup>
+- Z1(s) = inverse of above
+- using serial inductance rule, Z2(s) = R2 + C<sub>2</sub>s<sup>-1</sup>
+- through substitution we can now find the transfer function
 - multiplying input by s implies derivative
 - division by s corresponds to integral
 - putting those 3 terms together gives you PID controller
@@ -427,27 +461,32 @@ some oscillation, then plateaus out
 
 ### Noninverting Op Amp
 - want input to go into positive terminal (unlike previous example)
+- we know that Vo(s) = A(Vi(s)-V1(s))
+
 - voltage divider circuit
 
 ![](Day6/voltage_divider.PNG)
 
 **written example**
 
-### Mechanical System
+### Mechanical Systems and their Components
+- once in laplace form, we just know transfer function
+- there are 2 types of mechanical systems, **translational** and **rotational**
 
-- once in laplace form, just know transfer function
-
-### Mass Component
+#### Mass Component
+- we wish to find transfer function Z<sub>m</sub>(s) = F(s)/X(s)
 - Newton's second law of motion ```{sum} f = ma```
 - laplace forms for position f(t) = Ma(t) is F(s) = Ms<sup>2</sup>X(s)
 - if you know position, multiply by s to get velocity **(assignment q)**
 
 #### Viscous Damper
-- adds friction to doors so they don't swing open like crazy
+- the things that adds friction to doors so they don't swing open like crazy
+- friction is proportional to velocity
+- middle part is typically moving through some liquid
+- f(t) = f<sub>v</sub>v(t)
+- taking Laplace we get F(s) = f<sub>v</sub>sX(s) -- ratio of force to position
 
 ![](Day6/viscous_damper.PNG)
-
-- ratio of force to position is F(s) = f<sub>v</sub>sX(s)
 
 #### Spring Constant
 - K
@@ -457,9 +496,11 @@ some oscillation, then plateaus out
 - F(s) = K/s*V(s)
 - the derivative/velocity is then K/s
 
+#### Summary of Translational Elements
+
 ![](Day6/summary.PNG)
 
-### Translational
+### Translational System
 - to find transfer function
 	- draw free-body diagram
 	- use f = ma to create force equations
@@ -500,26 +541,37 @@ some oscillation, then plateaus out
 
 ## Day 7 Jan 18, 2018
 
-### Translational Example
+### Translational System Example
 - find transfer function X(s)/F(s)
+
+![](Day7/written1.PNG)
+
+- moving on to more complex example
+
+![](Day7/written2.PNG)
+
+![](Day7/written3.PNG)
+
+![](Day7/written4.PNG)
 
 ## Day 8 Jan 19, 2018
 
 - when asked for transfer function for position from velocity - multiply by 1/s
 
-### Rotational Mechanial Systems
+### Rotational Systems
 - instead of linear displacement x we have angular displacement θ
 - v(t) becomes ω(t) angular velocty
 - f(t) force becomes T(t) torque
 - impedences are springs (K), viscous dampers (Ds), intertia (Js<sup>2</sup>)
 
-### Rotational Degress of Freedom
+#### Rotational Degress of Freedom
 - which mass you can rotate independently
 - in diagram, there are 2 degrees of freedom
 
 #### Homework next week
 - if you have something that looks like
-**pic**
+
+![](Day8/mass.PNG)
 - you have additional degree of freedom. add in mass of size 0
 
 #### Writing Equations of Motion

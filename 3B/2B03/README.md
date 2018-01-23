@@ -25,7 +25,7 @@
 - [Textbook](#textbook)
 - [Sinking Fund Factor and Annuity](#sinking-fund-factor-and-annuity)
 - [Uniform Series Compound Amount Factor](#uniform-series-compound-amount-factor)
-- [ Effective Interest Rate](#-effective-interest-rate)
+- [Effective Interest Rate](#effective-interest-rate)
 - [Nominal vs Effective Interest](#nominal-vs-effective-interest)
 - [Efective Interest Examples](#efective-interest-examples)
 - [Effective Interest Rate and Cash Flow Period](#effective-interest-rate-and-cash-flow-period)
@@ -544,7 +544,7 @@ Bob wants new truck in 3 years. If he saves $25000 each year and puts it in savi
 
 ![](Day6/cheatsheet.PNG)
 
- ### Effective Interest Rate
+### Effective Interest Rate
 
  - actual annual interest rate obtained when the compunding period is less thaan 1 year is called the _effective interest rate/year_
  - denoted by i<sub>e</sub> (or subscript annual, quarterly, weekly)
@@ -671,4 +671,123 @@ ie<3 months> = 2.27%
 
 ![](Day7/interestrate.PNG)
 
-## Day 8
+## Day 8 Jan 22, 2018
+- next quiz will cover Day 9 (effective interest rate)
+
+#### Example 1
+A dot-com company plans to place money in a new venture capital fund that currently returns 18% per year, compounded daily. WHat effecctive rate is the a) yearly, b) semi-annually, c) quarterly, d) monthly?
+
+```
+ie = (1+r/m)^k - 1
+m = 365 -> linked to effective interest rate and won't change
+k = # compounding periods in cashflow period
+
+a) k = 365 days
+ie = 19.716%
+
+b) k = 182 days
+ie = 9.388%
+
+c) k = 91 days
+ie = 4.589%
+
+d) k = 30 days
+ie = 1.49%
+```
+
+#### Example 2 (effective)
+Suppose you make equal quarterly deposits of $1000 into a fund that pays interest at a rate of 12% compounded monthly. Find the balance at the end of year 2.
+- need to figure out k because cashflow period is more than compounding period
+
+```
+m = 12
+i = r/m = 12%/12 = 1%
+k = quarterly = 3
+ie = (1+r/m)^k  - 1
+ie = 3.03%
+
+F = A(F/A, i, N)
+  = 1000*(F/A, 3.03, 8) <--2 years of quarters
+  = $8901.81
+```
+
+#### Example 3 (r/m)
+Suppose you make equal quarterly deposits of $1000 into a fund that pays interest at a rate of 12% compounded quarterly. Find the balance at the end of year 2.
+
+- same cashflow as example 2, different compounding periods. Use flow chart
+- if cashflow period less than compounding period, use i = r/m
+- in this case, cashflow period (quarterly) is same as compounding period
+
+```
+m = 4
+i = 12%/4 = 3%
+```
+
+#### Example 4
+You have a trust fund that will become available to you 3 years from now (at the end of third year). The fund will pay $10000 every 6 months starting at the end of the 3rd year for 10 years (to the end of 13th year). If you invest all this money into a savings acount that has an interest rate of 8% compounded weekly how much money will yu have 30 years from now?
+
+- cashflow and compounding period are different (cashflow is 26 weeks, compounding is weekly, 52)
+
+```
+                  |  |  |  |  |      |
+--------------------------------------
+0  1  2  3  4  5  6        25  26    60
+
+    (semi-annual)
+
+r = 8%
+m = 52
+k = 26
+
+ie = (1+r/m)^k - 1
+   = (1+0.08/52)^26
+   = 0.041
+
+N = the number of arrows on cashflow diagram
+  = by the end of 4th year there will be 3 arrows
+  = by the end of 5th year there will be 5
+  = (year_n - 3)*2 + 1 
+  = 21
+
+F_26(13th year) = 10000*(F/A, ie, 21)
+F = A*i/[(1+i)^N - 1]
+  = 10000*0.041/[(1+0.04)^21 - 1]
+  = 322441.07
+
+Now find future worth
+F = P*(F/P, ie_month, 34)
+  = 1254989.39
+(F/P, ie_weekly(r/m), 884)
+```
+
+#### Example 5
+You recently received $50000 from a relative. Your advisor told you he found a 1-year investment for you that provides 15% interest compounded monthly. 
+
+1. What is the effective annual interest rate based on nominal rate of 15% compounded monthly?
+
+```
+~special case k = m~
+
+ie = (1+r/m)^m - 1
+   = (1+0.15/12)^12 - 1
+   = 0.160755
+```
+
+If you invest $50000 today how much will you have at the end of 1 year?
+```
+i = 16.08%
+N = 1
+
+F = 50000*(F/P, i, N)
+  = 50000*(1+0.1608)^1
+  = 58037.75
+
+OR
+
+i = r/m = 16.08%/12
+N = 12
+```
+
+Hector says e will make the investment for you at fee of 2% of investments total value 1  year from now. What is the effective annual interest rate of this investment after paying Hector's fee?
+
+## Day 9

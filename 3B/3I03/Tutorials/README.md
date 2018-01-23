@@ -15,3 +15,30 @@ My name is Suhavi and I am a third year software engineering student at McMaster
     - fizzbuzz efficiently
     - string operations (algorithms, memory/time)
     - string theory (concurrency)
+
+## Tutorial 3 Jan 22, 2018
+
+Interview: **Feb 5, 3:15-3:30**
+ ### Marking Scheme
+ - 15% soft marks
+    - punctuality, clarity
+- 40% content
+    - STAR method
+- 45% hireability
+    - would you be hired?
+    - answers to technical part
+    - ask interviewer a question
+
+### Sample Questions You Might Be Asked
+- greatest weakeness/strength
+- a time when you failed
+- why did you choose to study software/cs?
+- what motivates you?
+- tell me about your largest software development project
+- describe a situation where you handled a conflict or conflicting priorities
+- why should i consider hiriing you?
+
+### Sample Questions to Ask
+- how did this position develop?
+- how does this role fit into the larger objectives of the department and company?
+- what do you like most about working here?
