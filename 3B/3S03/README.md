@@ -13,6 +13,7 @@
 - [Tutorial 1 Jan 17, 2018](#tutorial-1-jan-17-2018)
 - [Testing Strategies and Plans](#testing-strategies-and-plans)
 - [Developing Unit Test Plan](#developing-unit-test-plan)
+- [Tutorial 2 Jan 24, 2018](#tutorial-2-jan-24-2018)
 
 ## Day 1 - Jan 4, 2018 
 
@@ -217,7 +218,7 @@ The following may be defects
 2. Plan
     - Software Description
     - Test Team (_WHO_ + _ASSIGNMENT_)
-    - Milstones (like in weeks, days)
+    - Milestones (like in weeks, days)
     - Budgets
     - Testing (systems checkpoint)
         - Schedule (and budget)
@@ -225,10 +226,10 @@ The following may be defects
 
 3. Specification and Evaluation
     - Specifications
-        - Functional, Structural, Test/Function relationship, progression
+        - <span style="color:red">business functions</span>, Functional, Structural, Test/Function relationship, progression
     - Methods and Constraints
         - Methodology
-        - TEst tools
+        - Test tools
         - Extent (total or partial, rationale for partial testing)
         - Data recording (how are you going to record the data, like a spreadsheet)
         - Constraints
@@ -251,6 +252,29 @@ The following may be defects
 - same as the Plan from before
 - functions that arent tested
 
+### Tutorial 2 Jan 24, 2018
+- Advantages of Test Plans
+    - Test does not have to determine the process
+    - Test process can be continually improved
+- Guidelines for test plans
+    - Reduce development risk
+    - Testing should be performed effectively
+    - should uncover defects
+    - should use business logic
+    - should be performed throughout development life cycle phases
+    - test both structure and function
+- When testing should occur (6 phases)
+    - requirements phase: accuracy of requirements
+    - design phase: determine consistency and adequecy
+        - where you figure out structural and functional test conditions
+    - implemntation phase: determine adequecy 
+        - where you make functional and structural unit tests
+    - also test phase, installation phase maintenance
 
-
-
+#### Risk Based Testing
+- need to identify risks, prioritize risks and then document risks
+- software can't be completely tested so you gotta test effectively :eyes:
+- structural risks
+    - consider more information that has influence on the project
+- technical risks
+- size risks

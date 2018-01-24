@@ -560,14 +560,23 @@ Find transfer function Vo(s)/Vi(s) of the following:
 - when asked for transfer function for position from velocity - multiply by 1/s
 
 ### Rotational Systems
-- instead of linear displacement x we have angular displacement θ
-- v(t) becomes ω(t) angular velocty
-- f(t) force becomes T(t) torque
-- impedences are springs (K), viscous dampers (Ds), intertia (Js<sup>2</sup>)
+- x(t) --> θ(t) 
+- v(t) --> ω(t) angular velocty
+- f(t) --> T(t) torque
+- M --> J moment of inertia
+	- impedence is Js^2
+- fv --> D viscous damper
+	- impedence is Ds
+- K --> K
+	- impedence is K
+
+![](Day8/rotational.PNG)
 
 #### Rotational Degress of Freedom
 - which mass you can rotate independently
 - in diagram, there are 2 degrees of freedom
+
+![](Day8/dof.PNG)
 
 #### Homework next week
 - if you have something that looks like
@@ -577,6 +586,8 @@ Find transfer function Vo(s)/Vi(s) of the following:
 
 #### Writing Equations of Motion
 - use same principle as translational motion
+- Consider J1 holding J2 still, consider J1 holding J1 still and add them
+- Do the same for J2 and find the sum of torquess
 
 ## Day 9 Jan 23, 2018
 
