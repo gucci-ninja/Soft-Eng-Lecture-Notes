@@ -6,6 +6,12 @@
 - [CSR Corporate Social Responsibility](#csr-corporate-social-responsibility)
 - [Human Impact](#human-impact)
 - [About Joel Hilchey](#about-joel-hilchey)
+- [Group Discussion 1](#group-discussion-1)
+- [Vision for Course](#vision-for-course)
+- [Ethics and Morality in General](#ethics-and-morality-in-general)
+- [Trolley Problems](#trolley-problems)
+- [Group Discussion 2](#group-discussion-2)
+- [Real life examples of Ethics](#real-life-examples-of-ethics)
 
 ## Day 1 Jan 10, 2018
 
@@ -70,6 +76,7 @@
     - divergent thinking (not creativity but a capacity for creativity)
         - thinking laterally, not linearly
 
+### Group Discussion 1
 - not sort children by age but by their skill level and what they're good at
 - integration of subjects
 - different skill evaluation for different subjects
@@ -82,4 +89,114 @@ _For kids under 2, no screen time is recommended_
 ## Day 2 Jan 17, 2018
 - cancelled because prof had twin babies! :baby: :baby:
 
-## Day 3
+## Day 3 Jan 24, 2018
+
+TED Talk on advertising and diamond shreddies :laughing:
+
+**quizzes will be in class component that you will get 15 minutes to do, need notes from group problem-solving**
+
+### Vision for Course
+- better understanding of how the worls is interconencted and have responsability for your actions
+- clearer idea of how you choose to contribute personally and professionally
+
+### Ethics and Morality in General
+- Her Dilemma, Thomas Hardy - intro to ethics
+    - dilemma: choice between 2 imperfect options
+    - the gurl decided to lie and say she loves a guy who was dying, in a church
+    - "De kind wenever possible. It is always possible" - Dalai Lam
+- What is the right thing to do?
+- **naive realism** - the idea that if someone is different belief than you then you believe theyre stupid, missing information or too lazy to come up with the same conclusion as you
+- "Test of first-rate intelligance is the ability to hold 2 opposed idea in the mind and at the same time retain the ability to function" - Scott Fitzgerald
+
+### Trolley Problems
+- There is a runaway trolley headed down a track
+- 5 people are tied to the track by some mad guy
+- you can flip a switch to divert the train but the 1 person tied to other track
+- in ethics there are 3 options
+    - ethically obligatory to pull the switch
+    - ethically forbidden to pull switch
+    - ethically permissible (you could do it but don't have to)
+
+#### Trolley and the Fat Man
+- runaway trolley headed down a track, 5 people are ties to the track
+- you're on a bridge and could drop a fat guy in front of the train to stop it and prevent 5 deaths
+- this time you are directly causing a death so less people would push him
+
+#### The Transplant
+- You're a genius doctor and 5 of your patients need transplants
+- unfortunately no organs are available
+- a healthy traveller comes and he has all da organs
+- assume that nobody will suspect you if you kill the traveler off
+
+#### Why?
+- it matters whether you're directly involved or indirectly
+- in the first example the mad scientist puts lives in danger, not you
+- platinum rule: all people are different
+- does it matter if you know the people?
+- does it matter how many people? is there a threshold?
+
+#### Types of Ethics
+- meta-ethics
+    - how do we understand what's right and wrong?
+- normative ethics
+    - what should we do to be moral?
+- descriptive ethics
+    - by hat values do people actually abide by?
+- moral psychology
+    - how does moral capacity develop, how do we determine morals
+
+#### Ethics Lanuage
+- consequentialism - the morality of an action is to be judged on its consequences
+- deontology - says the morality of an action is to be judged in and of the action itself
+    - opposite of consequentialism
+- stakeholders - who has something to gain or lose from this?
+- utilitarianism - the greatest good for the greatest number of people
+- moral involvement - degree to which someone is involved in moral dillema
+- moral obigation - do you have any sort of duties/respondabilities to people
+- values - a person's principles or stansards of behaviur, judgement of whats important in life
+- intentinoal harm - acting with the will to hurt another. Measuring immorality of decision is a form of deontolgical ethics
+- rights - moral legal entitlements
+- categorical imperative - unconditional moral obligation
+
+##### Things to Abide By
+It's not blac and white always
+undertand the options
+follow you own moral compass (or the one given to you as an engineer)
+
+### Group Discussion 2
+- Rules for a new ideal society
+- Disucss potential rules if we wiped out the law
+- Let's say it's an island with 5000 people with the neccesities to live
+- What must be done?
+    -  democracy
+    - learn about ethics
+    - respect all life forms
+    - share with those in need (people who are sick or too young)
+    - there should be a basic income and simpler tax like percentage of income
+    - be a contributing member of society
+- What is forbidden?
+    - killing people
+    - violence
+    - don't beat your kid
+    - hoarding resources
+- What is permissible?
+    - voting
+    - drugs, can do them but don't have to
+    - religious beliefs
+    - be kind
+    - lying
+- consider a variety of specifics (drugs, violence, honesty)
+
+- drug legalization vs decriminalization
+
+### Real life examples of Ethics
+- Volkwagen Fuel Scandal
+- Hazel McCallion Conflict of Interest
+    - hidden conflict of interest
+- Rob Ford's Conflict of Interest
+- Ontario Gas Plant Scandal
+
+#### Ethical Development
+- avoid punishment
+- follow the rules
+- do what is right (engineers don't have to get to this stage)

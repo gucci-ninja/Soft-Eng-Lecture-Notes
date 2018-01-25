@@ -28,6 +28,8 @@
 - [Deadlock Detection](#deadlock-detection)
 - [Deadlock Prevention](#deadlock-prevention)
 
+_Images are from Dr. Bokhari's Lecture Slides for SFWRENG 3DB3 Databases._
+
 ## Introduction
 
 ### Database

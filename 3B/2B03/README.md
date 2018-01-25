@@ -35,6 +35,8 @@
 - [Salvage Value](#salvage-value)
 - [Series Present Worth Factor](#series-present-worth-factor)
  
+_Images are from Prof Cam Churchill's Lecture Slides for ENG 2B03 Engineering Economics._
+
 ## Day 1 Jan 4, 2018
 
 ### Course Outline

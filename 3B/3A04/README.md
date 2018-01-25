@@ -22,6 +22,8 @@
 - [Surprise Quiz 1](#surprise-quiz-1)
 - [How to find the views](#how-to-find-the-views)
 - [Tutorial 2 Jan 23, 2018](#tutorial-2-jan-23-2018)
+- [Classes and Class Diagrams](#classes-and-class-diagrams)
+- [Structual (Static) and Behavioural (Dynamic) Diagrams](#structual-static-and-behavioural-dynamic-diagrams)
 
 ## Day 1 Jan 5, 2018
 
@@ -370,15 +372,23 @@ What role business events play in determining the scenario view in the 4+1 model
 
 #### Process View
 Looking at logical view we can determine the process view.
+Below is a package diagram for procss view.
+
+![](img/process_view.PNG)
 
 #### Development View
 - once you have identified classes and modules
 - this is also known as the source code view
+- below is an activity diagram for development
+
+![](img/development_view.PNG)
 
 #### Physical View
 - depends on the other views
 - allows you to organize what packages you need (from development view)
 - need to know specifications like concurrency (from process view)
+
+![](img/physical_view.PNG)
 
 ### Tutorial 2 Jan 23, 2018
 - tips on writing software requirements document
@@ -388,4 +398,56 @@ Looking at logical view we can determine the process view.
 - section 3 - highlight your **innovative idea**, usually the longest section
 - use slide 29, not 30 for the viewpoints (business events followed by viewpoints)
 - you don't need to have political requirement so just say n/a
-- 
+
+## Day 9 Jan 24, 2018
+
+#### Logical View
+- will be using UML for this
+- there is a class hierarchy and structure
+- the relationshps between classes include:
+  - inheritance
+    - is-a
+  - aggregation - aka composition
+    - has-a
+  - association
+    - uses-a
+  - messaging
+
+#### Tools for UML
+- Rational Rose, Boland Together, Microsoft Visio
+- might get these in the future
+
+### Classes and Class Diagrams
+- each of the views in the 4+1 model have a class diagram
+- the elements of a class are class name, attributes, operations
+- there are 3 types of classes
+  1. **boundary** - secret of this class is how to communicate with the environment (the edge of the system)
+    - <span style="color:blue">hardware hiding</span>, environment hiding
+    - it is an interface class 
+  2. **entity** - secret is the <span style="color:blue">software-hiding</span> modules (like tuple)  
+  3. **control** - finite state machine
+    - controls flow of system
+    - secret is the algorithm of <span style="color:blue">behaviour-hiding</span>
+  
+### Structual (Static) and Behavioural (Dynamic) Diagrams
+  
+#### Structural (Static) Diagrams
+  - object diagram (objects)
+  - composite structure diagram (inner structure)
+  - component diagram (relationships and interactions)
+  - package diagram (package structure)
+  - deployment diagram (hardware, software, network)
+
+#### Behavioural (Dynamic) Diagrams
+- Use Case Diagrams
+  - it is a visual representation of a scenario
+  - there are actors that are part of the environment outside the system
+  - they trigger business events 
+  - sees the system as a blackbox, doesn't tell you what system does
+
+  ![](img/usecase.PNG)
+- Activity Diagram
+  - 
+
+## Day 10
+- will be doing examples
