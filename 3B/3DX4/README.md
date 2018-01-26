@@ -47,7 +47,7 @@
 - Matlab simulink
 - Labview
 
-[Link to Matlab and Labview](https://virtualdesktop.cas.mcmaster.ca/)
+<a href="https://virtualdesktop.cas.mcmaster.ca/" target="_blank">Link to Matlab and Labview</a>
 
 ### What is a Control System
 - simplest form - output provided for a given input
