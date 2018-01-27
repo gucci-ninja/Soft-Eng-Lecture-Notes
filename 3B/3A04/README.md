@@ -449,5 +449,46 @@ Below is a package diagram for procss view.
 - Activity Diagram
   - 
 
-## Day 10
-- will be doing examples
+## Day 10 Jan 26, 2018
+- looking over at diagrams
+
+**FInite state machine**
+- components are
+  - start state
+  - set of inputs
+  - set of states
+  - language
+
+1. What are the main characteristics that an event needs to satisfy to be considered as a relevent business event. Explain the role played by business events in identifying the functional requirements
+- it needs to be inititaed from outside the system that evokees some resonse from the system
+- each scenario and viewpoint is a functional requirement
+- good starting point for writing functional requirements
+
+2. Read the follwing informal requirements and identify one business event
+> the turnstile consists of a rotating barrier and a coin slot and is fitted with an 
+> electrical interface. The mechanial apparatus has alrady been chosen and the 
+> development project is to provide controling software. To enter the stadium, a vistor
+> must first insert the correct coin into the coin slot and then push the turnstile
+> barrier for access. The turstile is equipped with a locking device, when locked it
+> prevents barrier from rotating. The controlling s/w should only allow the barrier to
+> rotate once when a valid coin has been inserted.
+
+- request to enter the stadium
+
+3. - What are the models of a software system? Give an example of one formal design model and one rigorous design model
+- (partial and approximative) descriptions of different aspects of the system/artefact that put emphasis on some things
+- graph (set of edges and vertices)
+
+4. Software architects initiate their work from the requirements specification document. Explain the influence of the non-functional requirements on the architecture of a system. Can the architect always satisfy the non functional requirements as stipulated in the requirements document and why?
+- in canada the registration system _works_ but it had to be cancelled because a lot of non functional requirements were left out
+- sometimes the architect cannot satisfy nf reqs completely and must compromise
+
+5. WHen designing a trave application, a designer came up with the followin class diagram. (AppClass ---> [trip1, trip2]) However new requirements reveal we can have several other categroies of trips such as land trip, sea trip, river trip that involves a non-empty subset of these catgeories. Propose new class diagram that captures these new requirements and would easily allow addition of new trip categories.
+- System ---> Trip ---> all the different kinds of trips
+
+6. Many to many relationships can be awkward to implement. They can sometimes be simplified thanks to a mediator class or 'event remembered'. Consider a wedding gift registration system. Every store registers many couples Every couple registers with many stores. The Store <---> couple diagram caputres many-to-many. Propose another diagram modeling the system but introduce mediator called _Registration_.
+- Store ------ Registration --------- Couple
+
+7. Name and explain the role of 3 types of classes used in Analysis Class Diagram. Which one has an n-tuple secret
+- boundary, entity, controller
+- entity is tuple

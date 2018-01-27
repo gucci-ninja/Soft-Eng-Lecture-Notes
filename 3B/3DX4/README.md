@@ -28,6 +28,8 @@
 - [Translational System Example](#translational-system-example)
 - [Rotational Systems](#rotational-systems)
 - [Rotational Mechanical System with Gears](#rotational-mechanical-system-with-gears)
+- [Electromechanical Transfer Functions and DC Motors](#electromechanical-transfer-functions-and-dc-motors)
+- [Linear and Nonlinear systems](#linear-and-nonlinear-systems)
 
 ## Day 1 Jan 4, 2018
 
@@ -604,4 +606,152 @@ So T1\*N2 = T2\*N1
 
 - assume negiligable inertia and dampening
 
+## Day 10 Jan 25, 2018
+- Midterm: Feb 8 or 15 5:30 to 7:30
 
+### Electromechanical Transfer Functions and DC Motors
+
+#### DC Motor
+- motor that takes a voltage as input and produces a physical displacement as output
+- we will derive the transfer function for the armature-controlled dc servomott
+- voltage applied -> angular displacement
+- it's armature control because you're applying the voltage across the armature
+
+![](Day10/dcmotor.PNG)
+
+##### DC Motor Principles
+- they have a comutator
+- coil has current flowing up
+- need to use handrule to find direction of magnetic force
+- F = Bli<sub>a</sub>(t)
+
+##### DC Motor Basics
+- contains stationary magentic field provided by permanent or electromagnetic
+- motor contains rotating circuit called the armature (the coils) through which current i<sub>a</sub> flows
+- there is inductance in the coil
+
+#### Back EMF
+- when conductor moves at right angles to magnetic field, it generates voltage at terminals of the conductor (like a generator)
+- since armature is rotating in magnetic field is produces voltage proportional to velocity
+- vb(t) = Kb*dθ<sub>m</sub>/dt
+
+#### Analyzing Armature Ciruit for Transfer Function
+- we wish to find θ<sub>m</sub>(s)/E<sub>a</sub>(s)
+- torque is proportional to curent
+- apply kirchoff's coltage law
+- we end up with equation of motion:
+
+```
+Tm(s) = (Jm*s^2 + Dms)*θm(s)
+
+*m is subscripted
+Dm is viscous damping
+Jm is moment of inertia
+```
+
+This gives us transfer function K/(s(s+α)).
+
+#### Deriving Jm and Dm
+- typical use of motor
+
+![](Day10/motor_use.PNG)
+
+- Ja is moment of inertia, Da is viscous damping
+- we can reflect the lad to get armature inertia, gears: desitination/source gear squared
+
+#### Deriving Electrical Constants
+- dynamometer measures torque and speed of a motor under constant applied voltage
+- previously we derived: ___
+- taking the laplace inverse of that we get ____
+- if we tune our mechanical system we
+- stall point is the maximum torque you can get out of the system
+
+in lab we will apply voltage across motor, it will ramp up (like first order system) then go into steady state and run at steady state velocity
+
+### Linear and Nonlinear systems
+- linear has 2 properties
+	1. Superposition means that the output response to a sum of inputs isequal to the sum of the output response of each individual input that makes up the sum
+	2. Homogeneity - s
+- non-linear
+	- op amps are lnear over given range 
+	- sometimes you can do a [linear approximation](#linearization) of non-linear systems
+
+![](Day10/nonlinear.PNG)
+
+#### Linearization
+1. identify non-linear components and write nonlinear
+2. 
+
+##### Linearizing a Function
+- take first derivitave of function
+- evaluate it at given point (pi/2)
+- slope becomes -5
+
+## Day 11 Jan 26, 2018
+
+**Midterm Prep**
+- 2017 midterm block diagram problem
+- the closed loop in a closed loop in a closed loop
+
+### Reduction of Multiple Systems (Slides 3)
+- multiple block diagrams that require block diagram algebra to perform reduction
+
+#### Block Diagrams
+- there are **summing junctions** that combine 2 or more signals, producing algebraic sum as output
+- depending on the signs on the arrows, your output will be summed
+- there are also **pickoff points** that break the input signal into multiple copies
+
+![](Day11/summing_junction.PNG)
+#### Cascade Form
+- one controller flows into the next in sequence
+- we will do unity feedback ssytem where plants are in line with the controllers
+- in laplace form, cascade is achieved by multiplying all the transfer functions
+
+##### Loading in Cascaded Subsystems
+- seen in assignment 1 circuit analysis question
+- when you have things in parallel the current changes, can't just compute 2 transfer functions independently and multiply them together
+
+![](Day11/loading.PNG)
+
+#### Parallel FOrm
+- sum together all the gains
+
+![](Day11/parallel.PNG)
+
+#### Feedback Form
+- **input transducer** takes input motion from potentiaometer and translates it to voltage
+- **output transducer** - most commonly there are systems with negative feedback
+- the feedback is the output C(s) going through H(s)
+- by substituting E(s) = R(s) +- C(s)H(s) and C(s) = G(s)H(s) we get G<sub>e</sub> = C(s)/R(s) = G(s)/(1 +- G(s)H(s))
+
+![](Day11/feedback.PNG)
+
+#### Moving Blocks to Create Familiar Forms
+- because of distribution, the following 2 are equivalent
+
+![](Day11/equivalence.PNG)
+
+##### Reduction via Familiar Forms Example
+
+![](Day11/reduction.PNG)
+
+- cascade G2 and G3
+- all the summing junctions can be merged into 1 summing junction
+- all H(s) then become parallel so you can sum them
+- multiple ways to do it
+
+![](Day11/reduction_solution.PNG)
+
+#### Reduction By Moving Block
+
+1. move G2 to left of pickoff point creating parallel form
+2. reduce feedback system (G3, H3)
+3. reduce parallel form containing 1/G2(s) and unity
+	- the new block will be (1 + 1/G2(s))
+4. Taking G1(s) and pushing it past summing junction, replace H2(s)/G1(s)
+5. Can also put above and H1(s) in parallel --> they get summed
+6. replace with H2(s)/G1(s) + H1(s)
+
+#### Exam 2016 example
+
+![](Day11/written.PNG)

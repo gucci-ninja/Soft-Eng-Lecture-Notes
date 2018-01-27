@@ -10,6 +10,7 @@
 - [How to Become a More Perfect Candidate](#how-to-become-a-more-perfect-candidate)
 - [Technical Questions](#technical-questions)
 - [How to Approach Problems	 ](#how-to-approach-problems	-)
+- [Machine Learning](#machine-learning)
 
 ## Day 1 Jan 4, 2018
 
@@ -183,3 +184,80 @@ Java | Java, Python
 7. Testing
 	- make sure your code makes sense
 	- test your edge cases
+
+## Day 4 Jan 25, 2018
+
+### Machine Learning
+- learning models from specific examples or experience
+- statistics - inference from a sample
+- efficient algorithms to do things better
+
+#### Why Now?
+- machine learning has been gaining popularity since 2010
+-  due to large amount of data
+- higher computation power
+- demand from industry
+	- the goverment of canada have invested over a hunderd million over the next 5 years to create AI strategy that will help students
+	- to develop techniques and train students to apply machine learning
+- advancements in algorithms and theory
+	- deep learning
+	- predicting what something is using good algorithm
+- demands for self-cutomization to user or environment
+	- very useful since it targets people specifically
+
+#### Growth of ML
+- speech recognition, natural language processing
+	- devices like Google Home, Amazon Echo do this
+- computer vision
+- medical outcomes anlysis
+	- radiology - you take images and the software tries to identify abnoramlities
+- robotics
+- computational biology
+	- looking at DNA, the genome project?
+- customer relations
+
+#### Goal of Machine Learning
+- making predictions or decisions from data
+- three borad areas
+	1. data mining - using data to generate new knowledge
+	2. software applications - autonomous driving, speech recognition, image recognition
+	3. self-learning algorithms - applications that learn your preferences
+
+#### ML Examples
+- 9714 patient data describing pregnancy and birth
+- each patient record has 215 features (age, first pregance, elective/emergency C-section)
+- given this data we can predict the future patients that have a high risk for a C-section
+- if no previous delivery and abnormal 2nd trimester ultrasound and abnormality at admission then the likelihood of C-sectio is 60%
+- self-driving cars
+
+#### ML Framework
+- apply prediction function to a feature representation of the image to get desired output
+- define images as what they are with _labels_
+- y = f(x) where y is the output, f is the prediction function and x is the image feature
+1. **Training** data which is a set of labelled examples (x, y) which will estimate the prediction function f by minimizing the prediction error on the set
+2. **Testing** by applying f to a never before seen test example x
+
+#### Features for Training
+- raw pixels
+- histograms of what you've seen how many times
+- descriptors - boundaries
+
+
+#### Models for training
+1. Classifiers: Linear
+	- used for autonomous vehicles
+	- finding linear function to separate classes/data
+	- used for spam emails by classifying certain words under spam or not spam. 
+	- some examples: SVM, Neural networks, naive bays, bayesian netowrk, logistic regression, randomized forests, boosted decision trees, K-neares neighbour
+	- **Recognition task and supervision** - images in training set must be annotated with the correct model
+		- for motorbike can also annotate important components such as the two wheels
+	- **Spectrum of supervision** - how much annotation there is per image (unsupervised, weakly supervised, fully supervised)
+		- it's very hard to do full supervised
+	- **Generalization** - develop a model that can work on many different kinds of test data
+		- components of generalization error
+			- bias: how much the average model over all training sets differ from true model
+			- variance: how much the model estimates from different training sets that are different from each other (is the model sensitive)
+		- we can have 2 outcomes: 
+			1. **underfitting** model that is too simple to represent all the class and has high bias, low variane, high training error and high test error
+			2. **overfitting** model is too complex and fits irrelevant characteristics (noise) in the data and has low bias, high variance and low training error, high test error
+

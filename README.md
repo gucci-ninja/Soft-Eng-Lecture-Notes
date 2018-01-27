@@ -21,5 +21,8 @@
 - [x] 4A03 Assignent 1 due Jan 19
 - [x] 3DX4 Prelab 1 due Jan 19
 - [x] 2B03 Quiz 1 due Jan 21
+- [x] 4A03 Post-Dated Letter due Jan 26
+- [x] 4A03 Biosheet due Jan 26
 - [ ] 3DX4 Assignment 1 due Jan 26
 - [ ] 3I03 Assignment 1 due Jan 26
+- [ ] 4A03 Super Credit due Feb 2

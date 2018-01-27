@@ -14,6 +14,8 @@
 - [Testing Strategies and Plans](#testing-strategies-and-plans)
 - [Developing Unit Test Plan](#developing-unit-test-plan)
 - [Tutorial 2 Jan 24, 2018](#tutorial-2-jan-24-2018)
+- [Test Factors](#test-factors)
+- [Test Examples](#test-examples)
 
 ## Day 1 - Jan 4, 2018 
 
@@ -278,3 +280,22 @@ The following may be defects
     - consider more information that has influence on the project
 - technical risks
 - size risks
+
+## Day 10 Jan 25, 2018
+
+### Test Factors
+- Correctness, Data Integrity, Authorization, Audit Trail, Avilability, Access Control, Compliance, Reliability, Ease of Use, Maintainability, Portability, Coupling, Performance, Ease of Operation
+- Access control defines what you have access to and enforces it, authorization defines what you can and can't do
+
+**Activity coming up with test cases**
+
+### Test Examples
+We are given 2 lists A, B where B is an anagram of A. Find an index mapping P from A to B eg. P[i] = j means the i-th element in A is the j-th element in B. 
+-   A and B may contin duplicates, if there are multiples, output any of them.
+- Elements A and B are in the range 1, 100
+
+Input | Output
+-------|--------------
+A and B empty | p=empty message
+a = [2,2] = b | [0,1] or [1,0]
+a = [1,2], b = [1,2,3] | err mesg
