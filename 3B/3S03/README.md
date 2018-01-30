@@ -1,10 +1,7 @@
 # 3S03 Software Testing 
 
 ## Table of Contents
-- [Textbooks](#textbooks)
-- [Language](#language)
-- [Assignments](#assignments)
-- [Breakdown](#breakdown)
+- [Course Outline](#course-outline)
 - [Software Testing](#software-testing)
 - [Testing and Measurement](#testing-and-measurement)
 - [Types of Defects](#types-of-defects)
@@ -21,26 +18,31 @@
 
 ## Day 1 - Jan 4, 2018 
 
-### Textbooks
+### Course Outline
+
+#### Textbooks
 - Software Testing - Ron Patton
 - Software Metrics: A Rigorous and Practical Approach - Norman E. Fenton
 
-### Language
+#### Language
 - Java
 
-### Assignments
+#### Assignments
 A | Given | Due
 --|-------|----
 1 |Jan 20 | Feb 12
 2 | Feb 26 | Mar 12
 3 | Mar 19 | Apr 5
 
-### Breakdown
+#### Breakdown
 - Assignments 30%
 - Midterm 30%
 - Exam 40%
 
 \*Midterm and exam will be multiple choice & short answer.
+
+#### Midterm
+- Thursday Feb 15 9:30-10:20AM
 
 ## Day 2 Jan 8, 2018
 

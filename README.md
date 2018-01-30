@@ -18,11 +18,19 @@
 
 #### Deadlines
 
-- [x] 4A03 Assignent 1 due Jan 19
-- [x] 3DX4 Prelab 1 due Jan 19
-- [x] 2B03 Quiz 1 due Jan 21
-- [x] 4A03 Post-Dated Letter due Jan 26
-- [x] 4A03 Biosheet due Jan 26
-- [ ] 3DX4 Assignment 1 due Jan 26
-- [ ] 3I03 Assignment 1 due Jan 26
+- [ ] <span style="color:red">3S03 Midterm Feb 15</span>
+- [ ] 3S03 Assignment 1 due Feb 12
+- [ ] 3A04 SRS Document due Feb 9
+- [ ] <span style="color:red">3DX4 Midterm Feb 8</span>
+- [ ] 3I03 Interview due Feb 5
+- [ ] 2B03 Quiz 3 due Feb 4
+- [ ] 3DX4 Prelab 2 due Feb 2
 - [ ] 4A03 Super Credit due Feb 2
+- [x] 2B03 Quiz 2 due Jan 28
+- [x] 3I03 Assignment 1 due Jan 26
+- [x] 3DX4 Assignment 1 due Jan 26
+- [x] 4A03 Biosheet due Jan 26
+- [x] 4A03 Post-Dated Letter due Jan 26
+- [x] 2B03 Quiz 1 due Jan 21
+- [x] 3DX4 Prelab 1 due Jan 19
+- [x] 4A03 Assignent 1 due Jan 19
