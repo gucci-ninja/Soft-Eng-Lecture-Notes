@@ -9,7 +9,7 @@
 - [What About the Interview?](#what-about-the-interview)
 - [How to Become a More Perfect Candidate](#how-to-become-a-more-perfect-candidate)
 - [Technical Questions](#technical-questions)
-- [How to Approach Problems	 ](#how-to-approach-problems	-)
+- [How to Approach Problems ](#how-to-approach-problems-)
 - [Machine Learning](#machine-learning)
 
 ## Day 1 Jan 4, 2018

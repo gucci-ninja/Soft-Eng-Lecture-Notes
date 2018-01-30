@@ -16,6 +16,8 @@
 - [Tutorial 2 Jan 24, 2018](#tutorial-2-jan-24-2018)
 - [Test Factors](#test-factors)
 - [Test Examples](#test-examples)
+- [Testing Techniques](#testing-techniques)
+- [Functional vs Structural Testing](#functional-vs-structural-testing)
 
 ## Day 1 - Jan 4, 2018 
 
@@ -299,3 +301,74 @@ Input | Output
 A and B empty | p=empty message
 a = [2,2] = b | [0,1] or [1,0]
 a = [1,2], b = [1,2,3] | err mesg
+
+## Day 11 Jan 29, 2018
+- skipped
+
+## Day 12 Jan 30, 2018
+- Quiz 1
+
+#### Agile Development
+- prototyping in an incremental way
+
+### Testing Techniques
+- functional vs structural
+- dynamic vs static
+- manual vs automated
+
+OR
+
+- coverage-based
+- fault-based
+- error-based
+- black-box vs white-box
+
+#### Fault Seeding
+- finding total number of pikes present in lake A
+    - estimated as (M-M')*(N/M')
+    - you catch a number of pikes, N in lake B
+    - you mark them and throw into lake A
+    - you catch the number of pikes, M in lake A
+    - suppose M' out of M pikes are found to be marked
+- this technique can be used to find faults of a program
+- easiest way to do this is to artificially seed number of faults
+- when tested you will find seeded and new faults
+- total faults can then be estimated
+- **Assumption:** distribution(real) faults = distribution(seeded) faults
+- need to steremine what faults to seed
+    - Technique 1: construct by hand (unlikely that they will be realistic)
+    - Technique 2: have the program independently tested by 2 groups
+        - faults found by 1 group can be seeded for the other but both might find the same faults
+- **Rule of thumb** - if we find many seded faults and relatively few others, the result can be trusted (but not the opposite)
+
+> The probability of the existence of more errors in a section 
+> of a program is proportional to the number of errors already
+> found in that section - Myers 1979
+### Functional vs Structural Testing
+- tests can be derived from a description of the system's **function** or from the system's internal **structure**
+
+
+.  | Functional | Structural
+---|------------|-----------
+Uncovers errors in | Rqmt. implementations, Design Spec | Actual coding
+Concerned with | the WHAT | the HOW
+Evaluates the | Results of Behaviour processing | Implementation algorithms
+Ensures that | requirements are satisfied | the structure is sound
+
+. | Dynamic | Static
+--|---------|------
+How | Execute code | By inspection
+Stage | Validation | Verification
+SDLC Phases | Implementation, testing | Requirements, Design
+What | Behaviour (F and NF) | Documentation, Syntax, Structure
+
+
+#### Exhaustive Testing
+- dynamic techniques involve running all possible inputs and if they all give us the expected result, we have validated the product - which is really not feasible
+- domain of inputs is very large so exhaustive testing is not practical
+
+#### Test Adequacy Criteria
+- reduce to finite testing process by finding criteria for choosing representative test cases
+- a combo of static and dynamic tests is used
+    - select reasonable subset of test conditions to provide high probability that system will perform correctly
+

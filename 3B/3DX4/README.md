@@ -30,6 +30,9 @@
 - [Rotational Mechanical System with Gears](#rotational-mechanical-system-with-gears)
 - [Electromechanical Transfer Functions and DC Motors](#electromechanical-transfer-functions-and-dc-motors)
 - [Linear and Nonlinear systems](#linear-and-nonlinear-systems)
+- [Reduction of Multiple Systems (Slides 3)](#reduction-of-multiple-systems-slides-3)
+- [Midterm ](#midterm-)
+- [Modelling in the Time Domain](#modelling-in-the-time-domain)
 
 ## Day 1 Jan 4, 2018
 
@@ -755,3 +758,116 @@ in lab we will apply voltage across motor, it will ramp up (like first order sys
 #### Exam 2016 example
 
 ![](Day11/written.PNG)
+
+
+## Day 12 Jan 30, 2018
+
+### Midterm 
+- Feb 8, 5:30-7:20pm at Canadian Martyrs Centre
+- 2 pages of double sides notes
+
+### Modelling in the Time Domain
+- there are 2 main approaches for modelling and designing control systems
+	- so far we have done frequency domain which is only good for SISO
+	- the more modern technique is **state space** representation which is in the time domain
+	- thid method can also be applied for non-linear systems but that is beyond our scope
+
+#### State Space Representation
+- the state equation for an nth order system, a set of n simultaneous, first-order differential equations with n variables
+- for linear time invariant systems (second order systems, n=2), single input v(t), there will be 2 equations of the form:
+
+![](Day12/statespace.PNG) 
+
+State equations
+- how the system's state evolves
+- x_dot = Ax + Bu
+
+Output equations:
+-  
+- **System variables** - 
+- **Linearly dependent** - x should linearly independent and can't be written as a combo of other variables
+- **State variables** 
+	- minimal amount of info needed to predict into the future
+- **State vector**
+	- x_transposed 
+
+- **First derivatives** 
+	- x_dot = dx/dt = [dx1/dt dx2/dt...]
+- **Output vector**
+	- y = [y1, y2, y3..yp]
+- **input of control vector**
+	- 
+#### State Space Representation Example
+- go around the block and do kirchoffs law
+- write the loop equation Lsi/dt + Ri + 1/C integralidt = v(t)
+- we want to convert the equation to 2 first order differential equations
+- state vairables are q, the charge and i, the current (staying in time domain)
+
+First equation: derivate of q wrt i is the current
+
+Second equation: integral of idt = q
+	- we get the d1/dt = -q/LC - Ri/L + v(t)/L
+
+Take the second equation nd multiple by L to get voltage
+
+Now we can write in matrix format
+- state ector is qi
+
+The rate of change of q is i
+
+x vector = [dq/dt, di/t]^T
+A = [0 1, -1/LC -R/L]^T
+z = [q i]^T
+B = [0 1/L]T^ 
+u = v(t)
+
+Now you can calculat C and D
+
+#### Aplying State Space Representation
+
+- Select the state vector
+	- look at the energy storage (capacitors, inductors) in electrical network
+	- for mechanical systems, need to know mass (for every mass there are 2 state variables - position and velocity)
+	- have to be linearly independent
+	- minimum number of state variables must be chosen, this will be the number of state equations
+	- it turns out that if we do this in lapace, we end up with nth order transfer function
+	- the number needed is usually equal to the number of storage elements in system
+
+#### Electrical Network
+Find a state space representaion for the network below with output ir(t) the current through the resistor
+
+1.
+
+#### Mechanical System
+- find state space representation for system if the output is x<sub>2</sub>(t)
+- use position and velocity of each linearly independent point of motion
+
+- take state variable 
+```
+x_vector = [x1 v1 x2 v2...]
+we want x2, position of second mass
+
+dx/dt = Ax + Bu
+y = Cx + Du
+
+D matrix will be equal to 0
+C matrix will be [0 0 1 0] because we are picking x2
+
+A matrix = [0 1 0 0 ] 
+           [-----   ]
+           [0 0 0 1 ]
+           [ -----  ]
+```
+
+#### Convert Transfer Function to State Space
+- be careful of pole 0 cancellation
+- can derive state space equation from a trasnfer function
+- assume you're given an nth order differential eqation, y is system output, u is input
+
+##### Example
+- say you have G(s) = 2s^3 + 2s^2 + 3s + 4/s^3 + 5s^2 + 6s + 7
+- C(s) = Y(s)/U(s) = 2 + b2s^2 + b1s + b3/s^2 + 5s^2 + 6s + 7
+
+- typically we will be asked for controller canonical form
+
+<SLIDE  19>

@@ -34,6 +34,7 @@
 - [Capital Recovery Factor](#capital-recovery-factor)
 - [Salvage Value](#salvage-value)
 - [Series Present Worth Factor](#series-present-worth-factor)
+- [Equivalence Examples](#equivalence-examples)
  
 _Images are from Prof Cam Churchill's Lecture Slides for ENG 2B03 Engineering Economics._
 

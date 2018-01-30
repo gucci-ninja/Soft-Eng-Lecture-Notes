@@ -24,6 +24,7 @@
 - [Tutorial 2 Jan 23, 2018](#tutorial-2-jan-23-2018)
 - [Classes and Class Diagrams](#classes-and-class-diagrams)
 - [Structual (Static) and Behavioural (Dynamic) Diagrams](#structual-static-and-behavioural-dynamic-diagrams)
+- [General Design Principles](#general-design-principles)
 
 ## Day 1 Jan 5, 2018
 
