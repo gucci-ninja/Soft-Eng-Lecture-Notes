@@ -492,3 +492,29 @@ Below is a package diagram for procss view.
 7. Name and explain the role of 3 types of classes used in Analysis Class Diagram. Which one has an n-tuple secret
 - boundary, entity, controller
 - entity is tuple
+
+## Day 11 Jan 2, 2018
+
+### General Design Principles
+- low coupling and high cohesion
+- in object oriented need to have controller classes
+
+![](img/cohesion_coupling.PNG)
+
+- **interface** - abtract class that implements a contract. it tells you it doesn't have a concrete implementation of its methods but it has the method signature
+
+#### Prinviple Of High Cohesion Low Coupling
+
+#### Open-Closed Principle
+- open to extension: system can be extended to meet new requirements
+- closed to modification: the existing implementation and code should not be modified as a result of system expansion
+- separation of implementation and interface
+- keep attributes private
+- minimize use of global variables
+
+#### Liskov Subsitution Principle
+- let q(x) be  a provable property for objects x and type T. Then q(y) should be true for y objects of subset of type T
+- by design by contracts, it leads to restrictions on interactions having to do with inheritance
+- preconditions cannot be strengthened in subtype
+- postconditions cannot be weakened
+- invariants must be preserved in subtype

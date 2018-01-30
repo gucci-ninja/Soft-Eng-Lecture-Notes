@@ -163,7 +163,7 @@ Java | Java, Python
 	- figure out biggest components (which area has higher load)
 	- discuss tradeoffs, challenges, bottlenecks
 	 
-### How to Approach Problems	 
+### How to Approach Problems 
 1. Listen
 2. Come up with an example - largle cases and general purpose
 	- eg intersection of 2 sorted distinct arrays

@@ -908,5 +908,90 @@ N = 24 (# of annuities)
 Midterm - Mar 6, 7-9
 
 ## Day 10
-- no lecture on Thursday!
-- 
+- no lecture!
+
+## Day 11 Jan 29, 2018
+
+### Equivalence Examples
+
+#### Midterm Question
+The two cashflow diagrams below are equivalent at an interest rate of 12% compounded annuallyy. Determine the unknown value, c
+
+![](Day11/cashflows.PNG)
+
+**How to solve:**
+- you can simplify the cashflow diagram
+- 100, 100, 100, 100, 100 and 0, 0, 200, 200, 200
+- LHS:
+	- total amount at P=0 = 100(P/A, 12%,5) + 200(P/A, 12%, 3)*(P/F, 12%, 2)
+- RHS:
+	- total amount at P=0 = C(P/A, 12%, 5) - C(P/F, 12%, 3)
+- LHS = RHS, solve for C
+- C(P/F, 12%, 1) + C(P/F, 12%, 2) + ... + C(P/F, 12%, 5) would give you the same thing
+- we can also move all of the cash to the 5th year:
+	- LHS (Fs) --> 100(F/A, 12%, 5) + 200(F/A, 12, 3)
+	- RHS: C*(F/A, 12%, 5) - C(F/P, 12%, 2)
+- another way, you take the arrows and turn them into equivalent annuity
+	- LHS: 100 + 200(F/A, 12%, 3)*(A/F, 12%, 5)
+	- RHS: C - C(F/P, 12%, 2)*(A/F, 12%, 5)
+
+#### Example 2 WHo Wants to Be a Millionaire 
+Investment: F= 1000000, r=6%, compounding monthly, total period 50 years.
+
+How much does he have to save every day
+- i = r/m or i<sub>e</sub>
+- r/m because cashflow is daily and is less than compounding monthly
+
+```
+A = F*(A/F, i, N)
+  = 1mill*(A/F, 0.5%, 600)
+  = 1mill*(i/[i+1]^N-1])
+  = 1mill*(0.005/[(1 + 0.005)^600-1])
+  = 264.05
+  => divide by 365
+```
+
+#### Example 3 Series Present Worth Factor
+You paid of an 80000 loan completely in 48 months. You paid 2000 per month plus you paid an extra lump sum of $7000 at the end of first year. WHat was the interest rate on the loan?
+
+```
+80000
+|
+----------------------->
+  ||||||||||||||||||||->
+              |
+48 arrows going down of 2000, after 12th a longer arrow plus 7000
+
+A = 2000
+i = ?
+
+80000 = 2000*(P/A, i, 48) + 7000*(P/F, i, 12)
+
+i = 1.12%
+
+```
+- really easy to do with goal seek on excel or linear interpolation
+- x value is interest rate nd y values re right hand side 
+- this will be on midterm, will be given range for interest
+- x* = x1 + x2 - x1)*[y*-y1/y2-y1] = 1.0 + (1.5 - 1.0)*(80- 82.1601/73.93-82.1601)
+- using 1% and 1.5% interest rate and solving the above equation
+
+#### Example 4
+
+Reginald is budgeting for the next 5 years. His disbursements are listed in the table. If he wanted to pay for everything from one lump sum, how much would he hav to have in his bank today if it pays 3% interest compounded monthly? The tax payments constitute the previous year's payment and therefore a payment will be made starting todat and the last payment will be made at the end of the 5th year.
+- rent is 700$, monthly, end of 1st month
+- utilities is 300, bi-monthly, end of 1st month
+- personal taxes are 1500, annually, today
+
+```
+draw cashflow
+- 6 down arrows of 1500 today and for omce per 5 years
+- 30 down arrows of 300 bimonthly for 5 years
+- 60 down arrows of 700 monthly for 5 years
+
+rent: (P/A, r/m, 60)
+utilities: (P/A, ie, 30) --> k = 2, m = 12
+taxes: (P/A, ie, 6) --> k = 12, m = 12
+
+```
+
