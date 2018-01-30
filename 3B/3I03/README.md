@@ -242,7 +242,6 @@ Java | Java, Python
 - histograms of what you've seen how many times
 - descriptors - boundaries
 
-
 #### Models for training
 1. Classifiers: Linear
 	- used for autonomous vehicles
@@ -261,3 +260,4 @@ Java | Java, Python
 			1. **underfitting** model that is too simple to represent all the class and has high bias, low variane, high training error and high test error
 			2. **overfitting** model is too complex and fits irrelevant characteristics (noise) in the data and has low bias, high variance and low training error, high test error
 
+## Day 5

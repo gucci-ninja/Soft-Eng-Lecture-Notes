@@ -1,17 +1,12 @@
 # 3DX4 Dynamic Systems and Control
 
 ## Table of Contents
-- [Grading](#grading)
-- [Textbook](#textbook)
-- [Software](#software)
+- [Course Outline](#course-outline)
 - [What is a Control System](#what-is-a-control-system)
 - [System Configurations](#system-configurations)
 - [Transient and Steady-State Response](#transient-and-steady-state-response)
-- [Stability](#stability)
-- [Lab 1 and Terminology](#lab-1-and-terminology)
-- [PID Controller](#pid-controller)
-- [Laplace Transforms](#laplace-transforms)
-- [Laplace Table](#laplace-table)
+- [Lab 1 and PID Controller](#lab-1-and-pid-controller)
+- [Laplace Transforms and Table](#laplace-transforms-and-table)
 - [Transfer Function](#transfer-function)
 - [Laplace and PartFrac Examples](#laplace-and-partfrac-examples)
 - [Some MatLab Commands](#some-matlab-commands)
@@ -22,21 +17,22 @@
 - [Cramer's Rule](#cramers-rule)
 - [Nodal Analysis](#nodal-analysis)
 - [Operational Amplifiers](#operational-amplifiers)
-- [Noninverting Op Amp](#noninverting-op-amp)
 - [Mechanical Systems and their Components](#mechanical-systems-and-their-components)
 - [Translational System](#translational-system)
 - [Translational System Example](#translational-system-example)
 - [Rotational Systems](#rotational-systems)
+- [Rotational Example](#rotational-example)
 - [Rotational Mechanical System with Gears](#rotational-mechanical-system-with-gears)
 - [Electromechanical Transfer Functions and DC Motors](#electromechanical-transfer-functions-and-dc-motors)
 - [Linear and Nonlinear systems](#linear-and-nonlinear-systems)
 - [Reduction of Multiple Systems (Slides 3)](#reduction-of-multiple-systems-slides-3)
-- [Midterm ](#midterm-)
 - [Modelling in the Time Domain](#modelling-in-the-time-domain)
 
 ## Day 1 Jan 4, 2018
 
-### Grading
+### Course Outline
+
+#### Grading
 
 - Assignments/Quizzes 10%
 - Labs 10% (ITB 235)
@@ -45,10 +41,10 @@
 
 \*_8 or 9 quizzes, drop lowest 1 or 2_\*
 
-### Textbook
+#### Textbook
 - Control Systems Engineering - N. Nise (7th Edition)
 
-### Software
+#### Software
 - Matlab simulink
 - Labview
 
@@ -96,7 +92,7 @@ a = x-axis to highest point
 b = x-axis to lowest point
 ```
 
-### Stability
+#### Stability
 
 ```
 Total response = Natural response + Forced response
@@ -116,7 +112,7 @@ Total response = Natural response + Forced response
 
 ## Day 2 Jan 5 2018
 
-### Lab 1 and Terminology
+### Lab 1 and PID Controller
 - 70% of problems can be solved with PID
 - In Lab 1, you design a PID controller to control position of a DC electric motor's shaft. Criteria for the controller's step response are
 	- settling time less than 0.04s
@@ -156,7 +152,7 @@ c<sub>final</sub> = lim<sub>t->inf</sub>c(t)
 
 4. **Settling time** - is it close enough to do whatever we have to do? (settles within +-2% ofc<sub>final</sub>
 
-### PID Controller
+#### PID Controller
 - transfer function of proportional integral derivative controller
 
 ![](Day2/PID.PNG)
@@ -167,7 +163,7 @@ c<sub>final</sub> = lim<sub>t->inf</sub>c(t)
 #### Block Diagram Representation of System
 - can use differential equations to represent relationship between input r(t) and output c(t) or a block diagram of subsystems
 
-### Laplace Transforms
+### Laplace Transforms and Table
 - modelling in the frequency domain entails laplace transforms
 - can do by hand or using MatLab
 - helps us understand dynamic behaviour of processes
@@ -183,7 +179,7 @@ c<sub>final</sub> = lim<sub>t->inf</sub>c(t)
 - no information for time less than zero so we multiply f(t) by u(t) 
 - but its ok if you write L(1/s^2) = t
 
-### Laplace Table
+#### Laplace Table
 
 ![](Day2/laplace_transforms.PNG)
 
@@ -465,7 +461,7 @@ Find transfer function Vo(s)/Vi(s) of the following:
 - putting those 3 terms together gives you PID controller
 - Gc(s) = K3(s^ + K1s/K3 + K2/K3)/s (as seen earlier)
 
-### Noninverting Op Amp
+#### Noninverting Op Amp
 - want input to go into positive terminal (unlike previous example)
 - we know that Vo(s) = A(Vi(s)-V1(s))
 
@@ -592,11 +588,53 @@ Find transfer function Vo(s)/Vi(s) of the following:
 #### Writing Equations of Motion
 - use same principle as translational motion
 - Consider J1 holding J2 still, consider J1 holding J1 still and add them
-- Do the same for J2 and find the sum of torquess
+- Do the same for J2 and find the sum of torques
 
 ## Day 9 Jan 23, 2018
 
 **go back and read slides 65-71**
+
+### Rotational Example
+- Find the transfer function θ<sub>2</sub>(S)/T(S)
+- flexible rod suported at both ends, undergoing torsion
+- system can be approximated by a spring at one point in the rod with inertias J1 and J2
+- a) is physical system and b) is schematic
+
+![](Day9/example.PNG)
+
+#### Free body Diagrams for J1
+- torues on J1 due to motions of J1 (a)
+- torques on J1 due to only motion of J2 (b)
+- sum of all torques on J1 (c)
+- You get J<sub>1</sub>s<sup>2</sup>θ<sub>1</sub>(s) + D<sub>1</sub>sθ<sub>1</sub>(s) + Kθ<sub>1</sub>(s) = T(s) + Kθ<sub>2</sub>(s)
+
+![](Day9/j1.PNG)
+
+#### Free body Diagrams for J2
+- torues on J2 due to motions of J2 (a)
+- torques on J2 due to only motion of J1 (b)
+- sum of all torques on J2 (c)
+- You get J<sub>2</sub>s<sup>2</sup>θ<sub>2</sub>(s) + D<sub>2</sub>sθ<sub>2</sub>(s) + Kθ<sub>2</sub>(s) = Kθ<sub>1</sub>(s)
+
+![](Day9/j2.PNG)
+
+#### Putting it all together
+- from the 2 equations, we move the unknowns to the left side and collect terms for θ<sub>1</sub> and θ<sub>2</sub>
+- Put this into the form of Ax = B
+
+```
+x = [ θ1(s) ]
+    [ θ2(s) ]
+
+A = [ J1*s^2 + D1*s + K          -K          ]
+    [       -K           J2*s^2 + D2*s + K   ]
+
+B = [ T(s) ]
+    [  θ   ]
+```
+
+- use Cramer's rule to find 0<sub>2</sub>(s) = |A<sub>2</sub>|/|A|
+- thus we get θ<sub>2</sub>(s)/T(S) = |K|/|A|
 
 ### Rotational Mechanical System with Gears
 
@@ -607,7 +645,27 @@ T<sub>1</sub>/T<sub>2</sub>
 
 So T1\*N2 = T2\*N1
 
+```
+T1--->[N2/N1]--->T2
+```
+
+#### Using Transfer Function for Lossless Gears
+
+Equation of motion is (Js<sup>2</sup> + Ds + K)θ<sub>2</sub>(s) = T<sub>1</sub>(s)(N<sub>2</sub>/N<sub>1</sub>)
+
 - assume negiligable inertia and dampening
+
+![](Day9/transfer_function.PNG)
+
+#### Generalizing Reflecting Impedance
+
+Rule: "Rotational mechanical impedances can be reflected through gear trains by multiplying the mechanical impedence by the ratio (# of teeth of gear on destination shaft/# of teeth of gear on source shaft)^2
+
+#### Examples
+
+![](Day9/written1.PNG)
+
+![](Day9/written2.PNG)
 
 ## Day 10 Jan 25, 2018
 - Midterm: Feb 8 or 15 5:30 to 7:30
@@ -636,7 +694,8 @@ So T1\*N2 = T2\*N1
 #### Back EMF
 - when conductor moves at right angles to magnetic field, it generates voltage at terminals of the conductor (like a generator)
 - since armature is rotating in magnetic field is produces voltage proportional to velocity
-- vb(t) = Kb*dθ<sub>m</sub>/dt
+- vb(t) = Kb*(dθ<sub>m</sub>/dt)
+- taking laplace we get V<sub>b</sub> = K<sub>b</sub>sθ<sub>m</sub>(s)
 
 #### Analyzing Armature Ciruit for Transfer Function
 - we wish to find θ<sub>m</sub>(s)/E<sub>a</sub>(s)
@@ -663,13 +722,13 @@ This gives us transfer function K/(s(s+α)).
 - we can reflect the lad to get armature inertia, gears: desitination/source gear squared
 
 #### Deriving Electrical Constants
-- dynamometer measures torque and speed of a motor under constant applied voltage
-- previously we derived: ___
-- taking the laplace inverse of that we get ____
+- _dynamometer_ measures torque and speed of a motor under constant applied voltage
+- previously we derived: (R<sub>a</sub>/K<sub>t</sub>)*T<sub>m</sub>(s) + K<sub>b</sub>sθ<sub>m</sub>(s) = E<sub>a</sub>(s)
+- taking the laplace inverse of that we get (R<sub>a</sub>/K<sub>t</sub>)*T<sub>m</sub>(t) + K<sub>b</sub>ω<sub>m</sub>(t) = e<sub>a</sub>(t)
 - if we tune our mechanical system we
 - stall point is the maximum torque you can get out of the system
 
-in lab we will apply voltage across motor, it will ramp up (like first order system) then go into steady state and run at steady state velocity
+In lab we will apply voltage across motor, it will ramp up (like first order system) then go into steady state and run at steady state velocity
 
 ### Linear and Nonlinear systems
 - linear has 2 properties
@@ -682,8 +741,9 @@ in lab we will apply voltage across motor, it will ramp up (like first order sys
 ![](Day10/nonlinear.PNG)
 
 #### Linearization
-1. identify non-linear components and write nonlinear
-2. 
+1. Identify non-linear components and write nonlinear
+2. Choose small range of input values over which the system behaves approximately linear. This is a _small-signal input_.
+3. Write linear differential expression for this range and then apply Laplace tranforms
 
 ##### Linearizing a Function
 - take first derivitave of function
@@ -716,7 +776,7 @@ in lab we will apply voltage across motor, it will ramp up (like first order sys
 
 ![](Day11/loading.PNG)
 
-#### Parallel FOrm
+#### Parallel Form
 - sum together all the gains
 
 ![](Day11/parallel.PNG)
@@ -759,10 +819,9 @@ in lab we will apply voltage across motor, it will ramp up (like first order sys
 
 ![](Day11/written.PNG)
 
-
 ## Day 12 Jan 30, 2018
 
-### Midterm 
+#### Midterm 
 - Feb 8, 5:30-7:20pm at Canadian Martyrs Centre
 - 2 pages of double sides notes
 
@@ -861,7 +920,7 @@ A matrix = [0 1 0 0 ]
 
 #### Convert Transfer Function to State Space
 - be careful of pole 0 cancellation
-- can derive state space equation from a trasnfer function
+- can derive state space equation from a transfer function
 - assume you're given an nth order differential eqation, y is system output, u is input
 
 ##### Example
@@ -871,3 +930,5 @@ A matrix = [0 1 0 0 ]
 - typically we will be asked for controller canonical form
 
 <SLIDE  19>
+
+## Day 13

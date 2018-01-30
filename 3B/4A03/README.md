@@ -200,3 +200,5 @@ follow you own moral compass (or the one given to you as an engineer)
 - avoid punishment
 - follow the rules
 - do what is right (engineers don't have to get to this stage)
+
+## Day 4

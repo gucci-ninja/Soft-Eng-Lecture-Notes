@@ -355,13 +355,13 @@ Concerned with | the WHAT | the HOW
 Evaluates the | Results of Behaviour processing | Implementation algorithms
 Ensures that | requirements are satisfied | the structure is sound
 
+
 . | Dynamic | Static
 --|---------|------
 How | Execute code | By inspection
 Stage | Validation | Verification
 SDLC Phases | Implementation, testing | Requirements, Design
 What | Behaviour (F and NF) | Documentation, Syntax, Structure
-
 
 #### Exhaustive Testing
 - dynamic techniques involve running all possible inputs and if they all give us the expected result, we have validated the product - which is really not feasible
@@ -372,3 +372,4 @@ What | Behaviour (F and NF) | Documentation, Syntax, Structure
 - a combo of static and dynamic tests is used
     - select reasonable subset of test conditions to provide high probability that system will perform correctly
 
+## Day 13

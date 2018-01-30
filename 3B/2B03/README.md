@@ -4,30 +4,19 @@
 - [Course Outline](#course-outline)
 - [Making Decisions](#making-decisions)
 - [What is Sustainability](#what-is-sustainability)
-- [Business Models](#business-models)
-- [Important Variables in Sustainable Development](#important-variables-in-sustainable-development)
 - [Case Study Interface Carpets](#case-study-interface-carpets)
-- [Intro, Time Value of Money](#intro-time-value-of-money)
 - [Interest](#interest)
-- [Lump-Sum Interest Rate](#lump-sum-interest-rate)
-- [Nominal Interest Rate](#nominal-interest-rate)
 - [Simple Interest](#simple-interest)
 - [Compound Interest](#compound-interest)
-- [Interest Rate Terms](#interest-rate-terms)
 - [Cash Flow Diagrams](#cash-flow-diagrams)
-- [Nominal Interest Rate Revisited](#nominal-interest-rate-revisited)
 - [Timing of Cash Flow and Modelling](#timing-of-cash-flow-and-modelling)
-- [Comtinuous Compounding](#comtinuous-compounding)
 - [Equivalence](#equivalence)
-- [Simplification of Cash Flow](#simplification-of-cash-flow)
 - [Compound Amount Factor](#compound-amount-factor)
 - [Present Worth Factor](#present-worth-factor)
 - [Textbook](#textbook)
 - [Sinking Fund Factor and Annuity](#sinking-fund-factor-and-annuity)
 - [Uniform Series Compound Amount Factor](#uniform-series-compound-amount-factor)
 - [Effective Interest Rate](#effective-interest-rate)
-- [Nominal vs Effective Interest](#nominal-vs-effective-interest)
-- [Efective Interest Examples](#efective-interest-examples)
 - [Effective Interest Rate and Cash Flow Period](#effective-interest-rate-and-cash-flow-period)
 - [Critical Point](#critical-point)
 - [What Interest Rate to Use](#what-interest-rate-to-use)
@@ -35,6 +24,7 @@
 - [Salvage Value](#salvage-value)
 - [Series Present Worth Factor](#series-present-worth-factor)
 - [Equivalence Examples](#equivalence-examples)
+- [Arithmetic Gradient Series](#arithmetic-gradient-series)
  
 _Images are from Prof Cam Churchill's Lecture Slides for ENG 2B03 Engineering Economics._
 
@@ -85,7 +75,7 @@ of costs and benefits of project over time
 > SD is not a fixed state of harmony but a process of change in which exploitation of resources, direction of investment, orientation of technological development and institutiona change are made consistent"
 \- UNICED 1987
 
-### Business Models
+#### Business Models
 - Linear Model
 	- yields a lot of waste
 
@@ -96,34 +86,34 @@ of costs and benefits of project over time
 
 	![](Day2/closed.PNG)
 
-### Important Variables in Sustainable Development
+#### Important Variables in Sustainable Development
 
-#### Global Goals
+##### Global Goals
 - Waste nothing
 - adapt to the place
 - use free resources
 - optimize not maximize
 - create livable environemtnt
 
-#### Metrics and Tools
+##### Metrics and Tools
 - life cycle cost analysis
 - life cycle assessment
 - ecological footprint analysis
 
-#### Stakeholders
+##### Stakeholders
 - should take end-user into consideration
 - eg juice box design - one time use, flimsy straws
 
-#### Ethics
+##### Ethics
 - engineers have responsibility towards
 	- client
 	- profession
 	- society
 
-#### Complexity
+##### Complexity
 - important for engineers to understand that their activites and designs will be operating in very complex systems
 
-#### Triple Bottom Line
+##### Triple Bottom Line
 - need to think about social sustainbaility
 	- socially sound, acessible to users
 - environmental sustainability
@@ -156,7 +146,11 @@ of costs and benefits of project over time
 - inspired Wal-Mart to deploy sustainable practices
 - 72% reduction in waste water
 
-### Intro, Time Value of Money
+### Interest
+[Lump Sum Interest](#lump-sum-interest-rate)
+[Nominal Interest](#nominal-interest-rate)
+
+#### Value of Time and Money
 - would rather get a million dollars today vs 10 years
 	- due to inflation
 	- money has earning power over time (investments)
@@ -164,7 +158,7 @@ of costs and benefits of project over time
 - engineering decisions involve analysis of costs and benefits
 - key to this financial analysis and comparison is the **"interest"** 
 
-### Interest
+#### What is Interest
 - it is the **_compensation for giving up the use of money_**
 - it is the **_difference between amount of money lent vs paid_**
 - the _difference_ between a present amount of money an future amount is **interest**
@@ -175,7 +169,7 @@ of costs and benefits of project over time
 	- F = future worth
 	- P = present worth
 
-### Lump-Sum Interest Rate
+#### Lump Sum Interest Rate
 - when interest is specified as a percentage of the money borrowed (common)
 - then...
 
@@ -185,7 +179,7 @@ F = P + I
   = P + Pi
   = P(1 + i)
 ```
-#### Example
+##### Example
 Peter wishes to borrow $50000 from his uncle and promises to pay it back after 3 years. His uncle agrees provided Peter pays 60% interest
 
 **There is a legal interest rate, you can't go over 60%**
@@ -198,7 +192,7 @@ I = P*i = 50000*(0.6) = 30000
 Therefore F = P + I = 80000
 ```
 
-### Nominal Interest Rate
+#### Nominal Interest Rate
 - **Interest rate** may be specified for an **interest period**
 
 > Interest rate - rate of interest charged for use of money, usually expressed as annual rate
@@ -253,7 +247,7 @@ Therefore, F = 5600
 	- i is interest rate/compunding period
 	- N is number of compounding periods
 
-### Interest Rate Terms
+#### Interest Rate Terms
 - compounding period:time between points when interest is computed and added to initial amount
 - Payment Period/Cashflow Period - shortest time between payments
 - Nominal Rate (r) - simplified expression of annual cost of money
@@ -325,7 +319,7 @@ i = 2.5
 - period from 0 to 1 is period 1, -1 to 0 is period -1
 - end of period means the arrow will be drawn at that period
 
-### Nominal Interest Rate Revisited
+#### Nominal Interest Rate Revisited
 - conventional method of stating annual interest rate
 - 18% compounded daily --> ```i = 18%/365```
 - ``` i = r/# compounding periods per year ```
@@ -359,7 +353,7 @@ F = P(1+i)^N
 - continuous cash flow - continous compounding
 - can't have continuous - discrete (continuous money and monthly period)
 
-### Comtinuous Compounding
+#### Comtinuous Compounding
 - i<sub>c</sub> = effective compound interest rate/year
 - r = nominal interest rate/year
 - m = number of compounding periods in one year which is approaching infinity
@@ -388,7 +382,7 @@ using limit: e^0.06 - 1
 
 - if market equivalence holds and decisional can be expressed in monetary terms, then we can assume that mathematical equivalnce can be used
 
-### Simplification of Cash Flow
+#### Simplification of Cash Flow
 - for when it gets too complex
 - Convention: Sample Factor (compound amount factor)
 	- ```(F/P, i, N)``` = (1+i)<sup>N</sup>
@@ -560,7 +554,7 @@ Bob wants new truck in 3 years. If he saves $25000 each year and puts it in savi
 
 ## Day 7 Jan 18, 2018
 
-### Nominal vs Effective Interest
+#### Nominal vs Effective Interest
 - nominal - stated rate of interest
 - effecive interest rate - rate actually paid or earned because of compounding period less than 1 year
 	- i<sub>e</sub> = effective interest rate/year
@@ -574,9 +568,9 @@ Bob wants new truck in 3 years. If he saves $25000 each year and puts it in savi
 
 thus ```i```<sub>```e```</sub> ```= (1 + r/m)```<sup>```m```</sup> ``` - 1```
 
-### Efective Interest Examples
+#### Efective Interest Examples
 
-#### Example 1 Slide 49
+##### Example 1 Slide 49
 WHat is the effective interest rate/year of an investment with a 6% nominal interest rate, compounded daily?
 
 ```
@@ -590,7 +584,7 @@ ie = (1 + r/m)^m - 1
 
 **\*if compounded daily for ex. 6% it becomes 6.18%*\**
 
-#### Example 2 Slide 53
+##### Example 2 Slide 53
 How much money will be in a bank account at the end of 2 years if $5000 is deposited today? The interest rate is 12% compounded monthly.
 
 - single arrow on cashflow diagram
@@ -803,7 +797,7 @@ Whenever you have annuity equation, you'll probably have to use effective intere
 
 **Do problems on Avenue**
 
-#### From last
+#### From last lecture
 
 Hector says he will make the investment for you at fee of 2% of investments total value 1  year from now. What is the effective annual interest rate of this investment after paying Hector's fee?
 
@@ -991,8 +985,102 @@ draw cashflow
 - 60 down arrows of 700 monthly for 5 years
 
 rent: (P/A, r/m, 60)
-utilities: (P/A, ie, 30) --> k = 2, m = 12
-taxes: (P/A, ie, 6) --> k = 12, m = 12
+- pretty straightforward
+
+utilities: (P/A, ie, 30(?))*(F/P, r/m, ) --> k = 2, m = 12
+- 
+
+taxes: (P/A, ie, 6)*(F/P, ie, 1) --> k = 12, m = 12
+Alternative method for taxes: Po = 1500 + 1500(P/F, ie, 1) = 1500(P/F, ie, 2) ..
+
+P = 700(P/A, 0.0025,60) + 300(P/A, 0.005006, 30)*(F/P, 0.0025, 1) + 1500(P/, 0.30416, 5) + 1500
+  = 38956.65 + 8358.31 + 6861.41 + 1500
+  = 55676.37
 
 ```
 
+## Day 12 Jan 30, 2018
+
+**continuing with example from last lecture**
+
+#### Example 5
+- skipped
+
+### Arithmetic Gradient Series
+- series of receipts or disbursements that may start at 0 or have base value at the end of first gradient
+- there is an increase of constant amount [G]
+- we are going to take this **gradient** and find the equivalent annuity or the **base annuity component** [A']
+- gradient can be negative as well
+
+![](Day12/gradient.PNG)
+
+- base value is A' and the amoutn it increases by over periods is G
+- in following example, base = 300 and G = 200 
+
+```
+ 300 500 700 900 1500
+  |   |   |   |...|
+-------------------
+0 1   2   3   4...7
+
+have to include base so N = 7, goes from 1-7
+A = A' + G(A/G, i, N)
+  = 300 + 200(A/G, i, 7)
+```
+
+#### Declining Linear Gradient
+- down arrows
+- starts with -1200 at 1, -1000 at 2, -800 at 3 all the way to 400 at 5
+
+```
+A = -1200 + 200(A/G, i, 5)
+or
+A = 1200 - 200(G/A, i, 5)
+```
+
+#### Example 1
+
+Your company as just opened and must dispose of its biomedical waste. The base cost that was quoted to you was $6000 but as business increass you expect the cost to grow by $100 per month. If the interest rate is 10% compounded monthly ehat is the future cost of the disposal at the end of the year?
+
+```
+in this example the down arrows increase over time by 100
+
+A' = 6000
+G = 100
+i = (10/12)%
+N = 1*12
+
+A_tot = A' + G(A/G, i, N)
+      = 6540.11
+
+then alculate F
+F = A(F/A, i, N)
+  = 6540(F/A, 0.8333, 12)
+  = 82180.20
+```
+
+##### Shifted Gradient
+- i = 10%
+- use A' + G(A/G, i, N) and then P/A
+
+#### Arithmetic Gradient Series to Annuity Conversion Factor
+
+Cases | Meaning
+------|-------
+A>0 and G>0 | positive annuity and increasing cash flow
+A>0 and G<0 | positive annuity and decreasing cash flow
+A<0 and G> 0 | negative cashflow but becoming less so, closer to x-axis
+A<0 and G<0 | negative cashflow but becoming more so
+
+
+#### Example 2 Winning the Lottery
+
+You win a lottery and have 2 payment options. The first is a lump sum payment of 3.44 mill dollars today. The second option pays out installments over 26 years. The payment schedule is $175000 one year from today and seond is 189000 in 2 years and subsequen yearly payments that increase each year by 7000 ffor a final payment in 26 years of $35700. If an interest rate of 4.5% is used what is the present worth of each option?
+
+```
+base = 189000 and G = 7000
+it's a shifted gradient becasue base starts 2 years from now
+
+```
+
+## Day 13

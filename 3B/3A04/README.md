@@ -22,8 +22,9 @@
 - [Surprise Quiz 1](#surprise-quiz-1)
 - [How to find the views](#how-to-find-the-views)
 - [Tutorial 2 Jan 23, 2018](#tutorial-2-jan-23-2018)
-- [Classes and Class Diagrams](#classes-and-class-diagrams)
-- [Structual (Static) and Behavioural (Dynamic) Diagrams](#structual-static-and-behavioural-dynamic-diagrams)
+- [UML](#uml)
+- [Structural Static Diagrams](#structural-static-diagrams)
+- [Structural (Static) and Behavioural (Dynamic) Diagrams](#structural-static-and-behavioural-dynamic-diagrams)
 - [General Design Principles](#general-design-principles)
 
 ## Day 1 Jan 5, 2018
@@ -283,9 +284,9 @@ Design coukd be viewed as an activity that translates an idea/goal into a bluepr
 
 - Will discuss the 4 + 1 model for architecture
 - architecture has components, connections and interactions between these components
-- need to specify configuration toplogy
+- need to specify configuration topology
   - **Bus** is an infrastructure or more formally, a sofware system
-- the bad thing about the bus infrastructure is that if a single part of the system fails, the inter-related system makes it so that the whole thing fails (most of the time)
+    - the bad thing about the bus infrastructure is that if a single part of the system fails, the inter-related system makes it so that the whole thing fails (most of the time)
   - **Star** architecture has a central node with things coming into it
     - not that much differnet from bus
   - **C4/K4** is like a square with an X in the middle
@@ -294,14 +295,15 @@ Design coukd be viewed as an activity that translates an idea/goal into a bluepr
     - bad thing: it is complex so it might require more maintenance as well as redundant information
 
 #### Ways to describe software architecture
-  - formally in ADL and informally in UML
-  - Box-and-line diagram
-    - describe business concept
+  - formal (ADL) and informal (UML) ways
+  - Box-and-line diagram - formal way
+    - describes business concept
     - lines indicate relationshp among components (unlike UML)
-    - lines may refer to dependancy, control flw, data flow
+    - lines may refer to dependancy, control flow, data flow
     - lines may be associated with arrows to indicate process direction and sequence
   - UML is one of the Object-Oriented solutions for software modeling and design
-  - "4+1" view is another way to show different views wit different concerns for dif aspects (F + NF reqs)
+  - "4+1" view is another way to show different views with different concerns for dif aspects (F + NF reqs)
+    - it is formal, UML
 
 ## Day 7 Jan 19, 2018
 
@@ -402,8 +404,8 @@ Below is a package diagram for procss view.
 
 ## Day 9 Jan 24, 2018
 
-#### Logical View
-- will be using UML for this
+### UML
+- used to describe structural software architecture
 - there is a class hierarchy and structure
 - the relationshps between classes include:
   - inheritance
@@ -413,12 +415,17 @@ Below is a package diagram for procss view.
   - association
     - uses-a
   - messaging
+    - method invocation
+- we wish to depict the control flow between software elements (class diagram, component diagram, deployment diagram)
+- Behavioural dynamic software architecture describes behaviour of objects (classes) and entails sequence diagrams, collaboration diagrams and activity diagrams
 
 #### Tools for UML
 - Rational Rose, Boland Together, Microsoft Visio
 - might get these in the future
 
-### Classes and Class Diagrams
+### Structural Static Diagrams
+
+#### Class Diagrams
 - each of the views in the 4+1 model have a class diagram
 - the elements of a class are class name, attributes, operations
 - there are 3 types of classes
@@ -430,7 +437,7 @@ Below is a package diagram for procss view.
     - controls flow of system
     - secret is the algorithm of <span style="color:blue">behaviour-hiding</span>
   
-### Structual (Static) and Behavioural (Dynamic) Diagrams
+### Structural (Static) and Behavioural (Dynamic) Diagrams
   
 #### Structural (Static) Diagrams
   - object diagram (objects)
@@ -453,7 +460,7 @@ Below is a package diagram for procss view.
 ## Day 10 Jan 26, 2018
 - looking over at diagrams
 
-**FInite state machine**
+**Finite state machine**
 - components are
   - start state
   - set of inputs
@@ -465,7 +472,7 @@ Below is a package diagram for procss view.
 - each scenario and viewpoint is a functional requirement
 - good starting point for writing functional requirements
 
-2. Read the follwing informal requirements and identify one business event
+2. Read the following informal requirements and identify one business event
 > the turnstile consists of a rotating barrier and a coin slot and is fitted with an 
 > electrical interface. The mechanial apparatus has alrady been chosen and the 
 > development project is to provide controling software. To enter the stadium, a vistor
@@ -519,3 +526,5 @@ Below is a package diagram for procss view.
 - preconditions cannot be strengthened in subtype
 - postconditions cannot be weakened
 - invariants must be preserved in subtype
+
+## Day 12
