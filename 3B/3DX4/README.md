@@ -931,4 +931,7 @@ A matrix = [0 1 0 0 ]
 
 <SLIDE  19>
 
-## Day 13
+## Day 13 Fev 1, 2018
+
+- controler form: you take coefficients of denominator and reverse them
+- s^2 + 7s + 2

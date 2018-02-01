@@ -201,4 +201,98 @@ follow you own moral compass (or the one given to you as an engineer)
 - follow the rules
 - do what is right (engineers don't have to get to this stage)
 
-## Day 4
+## Day 4 Jan 31, 2018
+
+### Resilience and Cities
+
+#### Dealing with ethical or moral dillemas
+1. look for your biases
+2. look at your options from different people's perspectives
+3. consider the options and how they affect stakeholders
+4. what is important to you
+
+#### Pre-test
+1. Explain the usage limits of the earth for renewable and non-renewable resources
+2. The global birth rate is  over the past 50 years
+    - decreasing fertility rate
+3. Who most likely feels the most impact from unsustainable activities? Why?
+4. What is jevons paradox
+
+#### Post Carbon Institute
+- we need to do 4 things:
+1. depend less on fossil fuels
+2. stop doubling population
+3. don't depend on economic growth
+4. deal with our legacy of environmental degredation
+
+#### How We Got Wealthy
+- 300 Years of Fossil Fuels in 300 Seconds
+- Did we require fossil fuels for our wealth? - not really, GM - "the future is electric"
+
+#### Usage Limits
+Explain the concept of sustainable usage limits of the earth
+- create different rules for both renewable and non-renewable resources.
+- non-renewable: need to use in a continuous, cyclic process for it to be sustainable usage
+    - steel does this, except it down-cycles
+- sustainable - pertaining to a syste that maintains its own viability by using techniques that allow for continual reuse.
+- resilience and sustainability are very linked
+
+#### Broken WIndow Fallacy
+- that if a window is broken you'll be creating opportunities for people
+- not true since there will be work either way
+- prosperity comes from production not destruction
+
+#### Now vs Later
+- I = PAT: impact = population\*consumption/person\*impact/person
+- what will our impact be in 25 years
+- my guess: 300% or 3 times the impact we are having now
+- 2016: 7.335 bill - 2041: 8.979 bill (factor 1.22)
+- consumption: 3.5% per year, compounded over 25 years
+    - (1+i)^n -> factor of 2.36
+- so far, 2.88 times the impact
+- **jevon's paradox**: as efficiency increases, consumption increases
+
+### Group Discussion 3
+
+**Will have to submit this one and the 2 after this**
+
+You have reently been promoted to the position of SUstainabilty Commissioner for the City of Hamilton. Climate Change has had real and significant impacts on certain aspecs of City Infrastructure operation, and in particular storms with high winds have been experienced on a regular basis and rain is falling frequently during winter months.
+
+The mayor and members of the council have asked you to provide a white paper on what suggestions you have for making Hamilton increasingly resilient to high wind velocity events and ice storms.
+
+- concrete homes, steel reinforcement
+- less decoratives --> less flying debris
+- underground hideout
+- tunnels
+- only use materials that pass stress-testing and pressure-testing
+- reinforced hot water pipes
+
+### Cities, Buildings & Design
+
+- Jane Jacobs wrote The Death and Life of Great American Cities
+- what makes a great city
+    - safe city requires 'eyes on the street'
+    - if people use the space, it's safe and interesting
+    1. multiple primary use space
+        - attract different types of people for different purposes at different times of the day
+    2. Short blocks
+        - many paths to get from place to place, many visiting options, encourage walking and create feeling of connectedness, access, proximity
+    3. diverse ages of buildings
+        - dfferent rental rates
+        - can have opportunities for small, independent and unique niche businesses and for more established companies
+        - enforces mixed use space
+    4. sufficiently high population densities
+        - large customer base for niche businesses
+
+Would you prefer city or the country or a susurb or smol town?
+
+### Group Discussion 4
+
+Cities - Group Problem Solving
+
+The mayor has recently returns from a happy cities tour in South America and wants to make Hamilton the recognized Canadian leader in the happy city movement. 
+
+How would you improve Hamilton? What types of things matter?
+
+
+

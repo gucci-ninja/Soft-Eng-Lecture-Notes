@@ -374,4 +374,40 @@ What | Behaviour (F and NF) | Documentation, Syntax, Structure
 - a combo of static and dynamic tests is used
     - select reasonable subset of test conditions to provide high probability that system will perform correctly
 
+### Tutorial 3 Jan 31, 2018
+
+#### Test Objectives
+- all members of a project team have these
+    - developers
+        - Objective: code
+    - testers
+        - Objective: find defects
+    - quality team
+        - Objective: ensure that a quality project is given to customer
+    - management
+        - Objective: do management of the project
+- if there are no clear objectives you must identify them for test phases and test plans
+- objectives need to be set to minimize risk
+- define
+    - itemize
+    - prioritize (low, medium, high)
+    - completion criteria
+
+#### Test Scenario
+- has a description
+- has a test case (set of actions that you perform for a scenario)
+
+#### Validation vs Verification
+- are we building the right product? - validation
+- are we building the product right? - verification
+
+#### Test Matrix
+
+Test Factors | Operations | Recovery | Stress | Regression | Manual
+-------------|------------|----------|-------|-----------|--------
+reliability | | | |
+security | | | |
+maintainability | | | | 
+portability | | | | 
+
 ## Day 13

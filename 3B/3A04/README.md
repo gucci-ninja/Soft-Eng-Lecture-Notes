@@ -511,7 +511,7 @@ Below is a package diagram for procss view.
 
 - **interface** - abtract class that implements a contract. it tells you it doesn't have a concrete implementation of its methods but it has the method signature
 
-#### Prinviple Of High Cohesion Low Coupling
+#### Principle Of High Cohesion Low Coupling
 
 #### Open-Closed Principle
 - open to extension: system can be extended to meet new requirements
@@ -527,4 +527,33 @@ Below is a package diagram for procss view.
 - postconditions cannot be weakened
 - invariants must be preserved in subtype
 
-## Day 12
+## Day 12 Jan 31, 2018
+
+#### Dependency Inversion Principle
+- Packages that are maximally stable should be maximally abstract. Instable packages should be concrete. The abstraction of a package should be in proportion to its stability.
+- can have partner apps
+- concrete but has business rules that are likely to change
+
+#### Interface Segregation Principle
+- Clients shouls not be forced to depend upon interfaces that they do not use
+- if there are 2 non-cohesive functionalities, keep them separate
+- avoids design of fat interfaces and provides clear design to user
+- break the functionalities into atomic interfaces that can be then individually accessed by the user
+
+#### Law of Demeter
+
+### Design Principles for Security
+
+#### Principle of Least Privilege
+
+#### Fail-Safe Defaults
+- when system fails we back up
+- unless subject is given explicit access to an object, it should beb denied access to that object
+- assumes tHt the default access to an object is none
+- if the subject is unable to complete its action or task, it should undo those changes it made to thte security state of the system becore it terminates
+- fault-tolerance: when we can't guarantee that system will behave in a safe way
+
+#### Principle of Economy of Mechanism
+- security mechanisms should be as simple as possible
+
+## Day 13
