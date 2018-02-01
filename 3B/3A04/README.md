@@ -26,6 +26,7 @@
 - [Structural Static Diagrams](#structural-static-diagrams)
 - [Structural (Static) and Behavioural (Dynamic) Diagrams](#structural-static-and-behavioural-dynamic-diagrams)
 - [General Design Principles](#general-design-principles)
+- [Design Principles for Security](#design-principles-for-security)
 
 ## Day 1 Jan 5, 2018
 

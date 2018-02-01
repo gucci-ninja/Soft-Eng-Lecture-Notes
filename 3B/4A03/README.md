@@ -12,6 +12,10 @@
 - [Trolley Problems](#trolley-problems)
 - [Group Discussion 2](#group-discussion-2)
 - [Real life examples of Ethics](#real-life-examples-of-ethics)
+- [Resilience and Cities](#resilience-and-cities)
+- [Group Discussion 3](#group-discussion-3)
+- [Cities, Buildings & Design](#cities-buildings-&-design)
+- [Group Discussion 4](#group-discussion-4)
 
 ## Day 1 Jan 10, 2018
 
