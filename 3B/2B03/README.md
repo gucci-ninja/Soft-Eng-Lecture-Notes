@@ -25,6 +25,7 @@
 - [Series Present Worth Factor](#series-present-worth-factor)
 - [Equivalence Examples](#equivalence-examples)
 - [Arithmetic Gradient Series](#arithmetic-gradient-series)
+- [Geometric Gradient Series](#geometric-gradient-series)
  
 _Images are from Prof Cam Churchill's Lecture Slides for ENG 2B03 Engineering Economics._
 
@@ -1081,6 +1082,134 @@ You win a lottery and have 2 payment options. The first is a lump sum payment of
 base = 189000 and G = 7000
 it's a shifted gradient becasue base starts 2 years from now
 
+Atot = A' + G(C/A, i, N)
+N = 25
+G = 7000
+A' = 89000
+i = 4.5
+
+A_gradient = 68292.67
+
+A_tot = 68292.67 + 189000
+      = 257292.67
+
+if there is a gradient you must use the A/G equation and then use other ones
+
+in this case, we use P given A
+
+but since we need to move back one year, we use P given F as well
+
+P_Opt2 = (175000 + 257292.67*(P/A, 4.5, 25))*(P/F, 4.5, 1)
+= (175k + 257292.67(14.828209))(0.9569)
+= 3818363
+
 ```
 
-## Day 13
+## Day 13 Feb 1, 2018
+
+#### Example 1
+John and Barbara have just opeed 2 savings accounts at their bank. The account earns 10% interest compounded daily. John wants to deposit $1000 into his account today and then make monthly deposits that would increase by 300 each time. FOr instance at the end of first month he would make a 1300 deposit and at the end of the second month a 1600 deposit. He will do this for 1 year. Barbara wants to make monthly deposits of an equal amount for the next year but she starts her deposit at the end of the first month not today. What should be the size of Barbara's monthly deposits so that the 2 accounts have equal balances at the end of the year.
+
+```
+ie = (1+r/m)^k - 1
+
+(A/G, i, N) = 1/i - N/[(1+i)^N-1]
+
+is cashflow (month) less than compounding (day) - No 
+
+k = 30
+
+Atot = A' + G(A/G, i, N)
+A' = 1000
+N = 13
+G = 300
+imonthly
+
+ie = ((1+((10/365)/100))^30)- 1
+A_john = A' + G(A/G,ie, 13) = 1000 + 300*5.885 = 2765.49
+
+to turn into N equal annuities we can use A/P equation
+Po(A/P, i, N)
+N = 12
+
+
+John's first payment is made today so we need to take that single payment and make it into an annuity. SO the annuity from the first payment is found using A/P
+A_firstpayment = P(A/P, ie, 12) where A = A_john = 243.01
+Barbara's monthly payments are ABarbara = A_firstpayment + A_John = 2765.49 + 243.01 = 3008.5
+```
+
+### Geometric Gradient Series
+
+(P/A, g, i, N) = (P/A, i<sup>0</sup>, N)/(1+g)
+
+- has 4 factors
+- i<sup>0</sup> is the growth adjusted interest rate
+	- = ([1+i]/[1+g]) - 1
+- ![](Day13/formula.PNG)
+
+![](Day13/geometric.PNG)
+
+Cases | Meaning | Procedure
+------|---------|----------
+i>g>0 | growth positive, but less than rate of interest thus 1^0 is positive | use tables/formula
+g>i>0 | growth positive, but more than rate of interest thus i^0 is negative | use formula **only**
+g=1>0 | growth equals rate of interest thus i&0 is zero | special case: P = N[A/(1+g)]
+g<0 | growth is negative ths i^0 is positive | use tables or formula
+
+#### Example 2
+
+Your retirement benefits are worth $50000 per year which should cover cost of living. However cost of living is said to increase 5% per year. Your investments can make 7% per year. How much should you invest to cover you for 25 years.
+
+![](Day13/example2.PNG)
+
+```
+i = 7%
+g = 5%
+cost of living is a negative so g is a negative
+
+pension is 582679
+i^0 = 0.019
+
+P = 50000(P/A, 1.9, 25)/(1+0.05) = 940696
+
+delta P = 940696 - 582679 = 358017
+
+```
+
+#### Example 3 
+**Geometric Gradient to Present Worth Conversion Factor**
+
+Your company has opened and must dispose of biomedical waste. Base cost was quoted as $6000 but as business increases you expect cost to grow by 1% per month. If interest rate is 10% compounded monthly what is the future cost of disposal at the end of first year?
+
+```
+g > i so use formula
+6000(P/A, g, i, N)
+i = 10%/12
+N = 12
+
+this equation will give you equivalent amuont at 0
+
+to move the single arrow into the future you use F/P
+
+therefore multiply 6000(P/A, g, i, N) by (F/P, 10%/12, 12)
+
+if we change it to the 3rd year, instead of N = 12 we would use N = 36
+
+P = A(P/A, g, i, N)
+  = 6000 * 12.009617 = 72057.70
+F = P(F/P, i, N) = 72057.70(F/P, 0.8333, 12)
+  = 79603.08
+```
+
+**Quiz includes geometric**
+
+#### Example 4
+24 months from now you hire employees, why is your first payment in 25 months.
+
+**on Avenue**
+
+```
+i^0 = -0.0452
+P = 16630451.56
+
+```
