@@ -11,6 +11,8 @@
 - [Technical Questions](#technical-questions)
 - [How to Approach Problems ](#how-to-approach-problems-)
 - [Machine Learning](#machine-learning)
+- [Assignment 2](#assignment-2)
+- [The Writing Process](#the-writing-process)
 
 ## Day 1 Jan 4, 2018
 
@@ -260,4 +262,71 @@ Java | Java, Python
 			1. **underfitting** model that is too simple to represent all the class and has high bias, low variane, high training error and high test error
 			2. **overfitting** model is too complex and fits irrelevant characteristics (noise) in the data and has low bias, high variance and low training error, high test error
 
-## Day 5
+## Day 5 Feb 1, 2018
+
+### Assignment 2
+- Identify real world problem and come up with technical solution
+- Then write a proposal for it
+- Present idea to tutorial in form of investor pitch
+
+### The Writing Process
+- Writing should be a part of the project process
+- Its really hard to “do the work” and then “write it up”
+- b/c work is never done – its constantly changing
+- write something everyday – write casually, fix it later
+- create an outline with bullet points of what you want to put in each section
+	- helps with flow
+
+#### Components of a Proposal
+1.	title
+	- introduce and identify proposal
+	- should be short, easy to remember, capture main idea of proposal
+	- if proposal is accepted, title will usually become name of project
+2.	background
+	- includes background needed to understand and appreciate proposal
+	- includes
+		- description of problem that needs to be solved
+		- technical background info
+		- past experiences
+	- be succinct
+3.	objective
+	- state what you want to accomplish
+	- can be formulated as a collection of goals
+		- minor and major goals
+		- short term and long term goals
+4.	approach
+	- how you intend to accomplish the objective
+	- presents the ideas that will make the project/idea successful
+		- plan of attack
+		- methods/tech that will be employed
+		- people, money etc that you need
+		- products/services that will be provided
+		- timeline for completion
+		- criteria for knowing when job is done
+		- any maintenance plans for keeping the project ongoing
+	- section where details are presented and provides main substance of proposal
+5.	impact
+	- expected results of implementing the proposal
+	- both positive and negative results can be discussed should be net positive tho
+	- clearly set expectations of what you intend to deliver (+ / -)
+	- delineate benefits of proposal
+		- products/services
+		- short/long term
+		- inside your group/ organization and outside
+6.	cost
+	- expected cost of implementing the proposal ideas
+		- often presented as a budget
+	- cost includes all resources that will be needed to implement the proposal
+		- monetary resources
+		- physical resources
+		- person/time/ energy
+		- goodwill – IP, trademarks, brands, customers
+		- political capital – influence/goodwill of public or political person
+
+#### Writing Style
+**Goals of Scientific Writing**
+- clear
+- unambiguous
+- correct
+- interesting
+- direct

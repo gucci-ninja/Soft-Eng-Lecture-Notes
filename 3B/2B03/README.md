@@ -148,8 +148,8 @@ of costs and benefits of project over time
 - 72% reduction in waste water
 
 ### Interest
-[Lump Sum Interest](#lump-sum-interest-rate)
-[Nominal Interest](#nominal-interest-rate)
+- [Lump Sum Interest](#lump-sum-interest-rate)
+- [Nominal Interest](#nominal-interest-rate)
 
 #### Value of Time and Money
 - would rather get a million dollars today vs 10 years
@@ -1201,15 +1201,19 @@ F = P(F/P, i, N) = 72057.70(F/P, 0.8333, 12)
   = 79603.08
 ```
 
-**Quiz includes geometric**
+**\*Quiz includes geometric**
 
 #### Example 4
-24 months from now you hire employees, why is your first payment in 25 months.
-
-**on Avenue**
+Planning for the next 10 years, you need to start hiring employees in 2 years. You anticipate monthly wages you pay will start at $10000 and increase by 5% each month. If interest rate is 3% compounded monthly and first payment starts 25 months, what is the present cost of your workers over next 10 years?
 
 ```
-i^0 = -0.0452
-P = 16630451.56
+g = 0.05
+i 3/12
+i^0 = ([1+i]/[1+g]) - 1
+    = -0.0452
+P = 10000(P/A,g,i,N)(P/F,i,24)
+  = 10000(P/A, 0.05, 0.0025, 96)(P/F,0.0025,24)
+  = 10000*1765.75*0.9418
+  = 16630451.56
 
 ```

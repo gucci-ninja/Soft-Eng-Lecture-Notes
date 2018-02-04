@@ -269,7 +269,8 @@ The mayor and members of the council have asked you to provide a white paper on 
 - underground hideout
 - tunnels
 - only use materials that pass stress-testing and pressure-testing
-- reinforced hot water pipes
+- reinforced hot water pipes o 
+- less wooden fences
 
 ### Cities, Buildings & Design
 
@@ -287,8 +288,6 @@ The mayor and members of the council have asked you to provide a white paper on 
         - enforces mixed use space
     4. sufficiently high population densities
         - large customer base for niche businesses
-
-Would you prefer city or the country or a susurb or smol town?
 
 ### Group Discussion 4
 

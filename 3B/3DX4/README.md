@@ -27,6 +27,8 @@
 - [Linear and Nonlinear systems](#linear-and-nonlinear-systems)
 - [Reduction of Multiple Systems (Slides 3)](#reduction-of-multiple-systems-slides-3)
 - [Modelling in the Time Domain](#modelling-in-the-time-domain)
+- [State Space to Transfer Function Written Example](#state-space-to-transfer-function-written-example)
+- [Time Response](#time-response)
 
 ## Day 1 Jan 4, 2018
 
@@ -931,7 +933,42 @@ A matrix = [0 1 0 0 ]
 
 <SLIDE  19>
 
-## Day 13 Fev 1, 2018
+## Day 13 Feb 1, 2018
 
 - controler form: you take coefficients of denominator and reverse them
-- s^2 + 7s + 2
+- G(s) = s^2 + 7s + 2/s^3+9s^2+26s+24
+
+![](Day13/written1.PNG)
+
+![](Day13/written2.PNG)
+
+## Day 14 Feb 2, 2018
+
+### State Space to Transfer Function Written Example
+
+![](Day14/written.PNG)
+
+Midterm will cover up to chapter 4-5.
+
+### Time Response
+- we are gonna try and develop intuition on what properties w need in a system to get what we want
+- so we can look at a systme and tell how its gonna behave
+
+#### Poles and Zeroes
+- system is infuenced by its poles and zeroes
+- consider a transfer function
+	- poles are the roots of denominator
+	- zroes are roots of numerator
+- in general, at poles G(s) = inf. unless the pole is cancelled by a matching zero
+- at zeroes, G(s) = 0 unless zero is cancelled by matching pole
+
+#### Poles and Zeroes of First Order System
+- forced/steady state response (input) and the natural/homogeneous response (how system behaves with initial conditions)
+- for simple system s+2/s+5 and input 1/s
+	- in the graph, x represents poles and o represents a zero
+	- in matlab, there is a live editor that lets you interleave text and equations (go to insert -> equation)
+
+```
+G = y/x
+s = tf('s')
+```
