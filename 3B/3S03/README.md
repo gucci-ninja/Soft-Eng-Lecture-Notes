@@ -16,6 +16,9 @@
 - [Testing Techniques](#testing-techniques)
 - [Functional vs Structural Testing](#functional-vs-structural-testing)
 - [Tutorial 3 Jan 31, 2018](#tutorial-3-jan-31-2018)
+- [Test Adequacy Criteria](#test-adequacy-criteria)
+- [Dynamic vs Static testing](#dynamic-vs-static-testing)
+- [Functional Testing Techniques](#functional-testing-techniques)
 
 ## Day 1 - Jan 4, 2018 
 

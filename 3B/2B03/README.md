@@ -26,6 +26,8 @@
 - [Equivalence Examples](#equivalence-examples)
 - [Arithmetic Gradient Series](#arithmetic-gradient-series)
 - [Geometric Gradient Series](#geometric-gradient-series)
+- [When N Approaches Infinity](#when-n-approaches-infinity)
+- [Mortgages](#mortgages)
  
 _Images are from Prof Cam Churchill's Lecture Slides for ENG 2B03 Engineering Economics._
 
@@ -1217,3 +1219,74 @@ P = 10000(P/A,g,i,N)(P/F,i,24)
   = 16630451.56
 
 ```
+
+## Day 14 Feb 5, 2018
+
+short - betting against the stock
+put - ??
+
+### When N Approaches Infinity
+- long-lived projects 
+- P = A/i
+- might have 1-2 questions on the quiz on this
+
+![](Day14/p_infinity.PNG)
+
+### Mortgages
+- basically means death pledge
+- **amortization** - number of years it would take to repay a mortgage loan in full for given interest rate and payment schedule
+- **term** - number of years the agreed upon interest rate is fixed. duration over which loan agreement is valid
+
+#### Fixed Rate Mortgages
+- **open fixed rate mortgages** - able to repay in full or in part at any time with no prepayment charge. You can also change to another term any time without charge.
+- **closed fixed rate mortgage** - interest rate and payments are fixed for the term you choose
+- **convertible fixed rate mortgage** - lets you convert to closed term of 1 year or longer at any time without charge.
+
+#### Variable Rate Mortgages
+- ???
+
+#### Fixed vs Variable
+
+. | fixed | variable
+--|------|-------
+description | set for duration of mortage term | fluctuates wth market
+pros | eases budgeting anxiety | proven to be less expensive over time
+cons | if difference btwn fixed and variable is large, may not be worth paying premium for stability and protedction | financial uncertainty
+
+#### Example 1
+Bobby bought a house for $200000. He paid $50000 down, mortgage has nominal interest rate of 10% compounded monthly with 10 year amortization period. The term of mortgage is 5 years. What are Bobby's current monthly payments. How much does he owe in 5 years?
+
+```
+2 part question
+A = ?
+P = ?
+
+P0 = 150000
+r = 10%
+m = 12
+N = 10 * 12
+
+A = P(A/P, i, N)
+  = 150000(A/P, .10/12, 120)
+  = 1982.26
+
+for the second part
+P = 150000
+i = .10/12
+N = 5*12
+A = 1982.26
+
+P60 = A(P/A, i, 60)
+    = 93295.85
+
+OR
+
+P60 = 15000(F/P, i, 60) - A(F/A, i, 60)
+```
+
+#### Bobby's Payment Breakdown
+- P<sub>remaining</sub>
+- P<sub>p</sub> + A =  I<sub>p</sub>
+- after 5 years, Bobby will need to renegotite his mortgage and choose a new term
+- usually annuity payment amount will not change, the actual amortization period have changed
+

@@ -27,6 +27,8 @@
 - [Structural (Static) and Behavioural (Dynamic) Diagrams](#structural-static-and-behavioural-dynamic-diagrams)
 - [General Design Principles](#general-design-principles)
 - [Design Principles for Security](#design-principles-for-security)
+- [Data Flow Architecture](#data-flow-architecture)
+- [Batch Sequential](#batch-sequential)
 
 ## Day 1 Jan 5, 2018
 
@@ -557,4 +559,52 @@ Below is a package diagram for procss view.
 #### Principle of Economy of Mechanism
 - security mechanisms should be as simple as possible
 
-## Day 13
+## Day 13 Feb 2, 2018
+
+**skipped**
+
+## Day 14 Feb 5, 2018
+
+### Data Flow Architecture
+- Data coming in, going through a bunch of tranformations
+- software system is decomposed into functional processing modules
+- focus in data flow architecture is data availability
+  - in batches or streams
+  - linear
+  - cyclic
+  - tree
+- no interaction between modules except the data connection between them
+- modifiability and reusability are the property attributes of data flow architecture
+- function is a relation that is deterministic
+
+
+### Batch Sequential
+- this architecture is available in the financial sector
+- they use COBOL or RPG
+- COBOL is specifically designed for this stuff
+- in Java, your class has declaration (the datatype), behavioural (the functions)
+- in COBOL you have:
+  - identification
+    - program id
+    - author
+    - installation
+    - date written/compiled
+  - environment
+    - configuration
+      - source computer - the one on which we compile
+      - object computer - the one where it is supposed to run
+    - input - all the input files
+  - data
+    - file section 
+      - file description
+      - blockage factor - allows you to read files in 'N' factors, N = blockage factor
+    - tape section
+  - procedure
+    - the program and its functions
+
+![](img/batch.PNG)
+
+- when sorting with batch sequential you can run into 2 situations
+  - after partitioning N ways, can I sort the data?
+     - merge and sort and merge and sort and merge and sort
+    - hadoop
