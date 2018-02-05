@@ -411,4 +411,46 @@ security | | | |
 maintainability | | | | 
 portability | | | | 
 
-## Day 13
+## Day 13 Feb 1, 2018
+
+### Test Adequacy Criteria
+- Can be used as a tool to measure testing and whether you are done or not and to generate test cases
+- Reduce finite…
+- Ex. bubble sort
+    - N = 2, a = {10,5}
+    - Want 100% statement coverage
+
+### Dynamic vs Static testing
+- How do we find suitable test cases
+- Ex. need to perform binary search
+    - Input – key, set of pre-sorted elements, size of set
+- Once an individual concern has been identified, it must be determined whether to perform a structural or function test
+- Once the technique has been selected, the test method for implementing that technique needs to be determined
+- Last step is to select for either dynamic or static test method a manual or automated too
+
+### Functional Testing Techniques
+**Preliminaries**
+- Designed to ensure that the system reqs and specs are achieved
+- Create test conditions for use in evaluating the correctness of the application
+- Techniques
+    - Req testing/acceptance testing
+    - Regression testing
+    - Error handling testing
+    - Manual-sys testing
+    - …
+
+#### Functional Requirements Testing
+- The sys can perform its function correctly and that the correctness can be sustained over a continuous period of time (reliability)
+- Objectives
+    - User reqs are implemented
+    - Correctness is maintained over extended processing periods
+- How to use req testing
+    - Boundary value analysis – test boundaries for specified range of values
+    - Equivalence partition – partition the range into equal parts/groups that tend to have the same behavior
+    - State transition – test based on the change of software state following particular action
+    - Error guessing- anticipate the error that may arise while testing
+- Ex. factorial
+    - req is prescriptive not descriptive 
+        - It tells you how to test something which it shouldn’t do really
+    - Partitions at 0, 20, 200, some sort of max integer
+        - Things should happen same way inside each partition
