@@ -931,7 +931,7 @@ The two cashflow diagrams below are equivalent at an interest rate of 12% compou
 	- LHS: 100 + 200(F/A, 12%, 3)*(A/F, 12%, 5)
 	- RHS: C - C(F/P, 12%, 2)*(A/F, 12%, 5)
 
-#### Example 2 WHo Wants to Be a Millionaire 
+#### Example 2 Who Wants to Be a Millionaire 
 Investment: F= 1000000, r=6%, compounding monthly, total period 50 years.
 
 How much does he have to save every day
@@ -948,7 +948,7 @@ A = F*(A/F, i, N)
 ```
 
 #### Example 3 Series Present Worth Factor
-You paid of an 80000 loan completely in 48 months. You paid 2000 per month plus you paid an extra lump sum of $7000 at the end of first year. WHat was the interest rate on the loan?
+You paid of an 80000 loan completely in 48 months. You paid 2000 per month plus you paid an extra lump sum of $7000 at the end of first year. What was the interest rate on the loan?
 
 ```
 80000
@@ -969,7 +969,7 @@ i = 1.12%
 - really easy to do with goal seek on excel or linear interpolation
 - x value is interest rate nd y values re right hand side 
 - this will be on midterm, will be given range for interest
-- x* = x1 + x2 - x1)*[y*-y1/y2-y1] = 1.0 + (1.5 - 1.0)*(80- 82.1601/73.93-82.1601)
+- x* = x1 + (x2 - x1)\*[y\*-y1/y2-y1] = 1.0 + (1.5 - 1.0)*(80- 82.1601/73.93-82.1601)
 - using 1% and 1.5% interest rate and solving the above equation
 
 #### Example 4
