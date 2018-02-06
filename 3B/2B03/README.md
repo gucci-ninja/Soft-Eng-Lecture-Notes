@@ -28,6 +28,8 @@
 - [Geometric Gradient Series](#geometric-gradient-series)
 - [When N Approaches Infinity](#when-n-approaches-infinity)
 - [Mortgages](#mortgages)
+- [Residential Mortgages](#residential-mortgages)
+- [Stress Test](#stress-test)
  
 _Images are from Prof Cam Churchill's Lecture Slides for ENG 2B03 Engineering Economics._
 
@@ -1344,3 +1346,24 @@ How much interest do you pay overall for those 6 years
 ```
 total interest= 497.19(72)-30000 = 5797.6
 ```
+
+### Residential Mortgages
+- a secured loan using a residencial property as collateral
+- July 2008: reudced max length of insured high-ratio mortgage to 35 years
+- when you apply for mortage they look at 2 things
+  - payment to income ratio
+  - loan to value (LTV)
+    - higher ratio -> higher probability of default
+    - ltv of oer 100% is concerning
+- down payments
+  - if you put 15% down and you don't have debt then your ltv is 85%
+  - minimum is 5% but you have to get insurance
+- Feb 15, 2016 -> homes less than or equal to 500k the minimum is 5% down
+- for homes with purchase price greater than 500k and less than 1 mill, minimum is 5% of first 500k and 10% of remaining balance
+- 1 mill+ homes, minimum down is 20%
+
+### Stress Test
+- as of Jan 2018
+- originally only applied to some people
+- you have to show that you can afford an mortgage
+- either 5 year bench mark rate, at a rate of 4.89% OR it's based upon your current rate and they add 2% to it and see which one is bigger
