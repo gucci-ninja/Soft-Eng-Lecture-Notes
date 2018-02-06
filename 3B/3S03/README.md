@@ -457,3 +457,7 @@ portability | | | |
         - It tells you how to test something which it shouldn’t do really
     - Partitions at 0, 20, 200, some sort of max integer
         - Things should happen same way inside each partition
+
+## Day 14 Feb 6, 2018
+
+- if there is previous working application, you can perform parallel testing

@@ -1282,6 +1282,8 @@ P60 = A(P/A, i, 60)
 OR
 
 P60 = 15000(F/P, i, 60) - A(F/A, i, 60)
+
+After 5 years, Bobby still owes $93295.94
 ```
 
 #### Bobby's Payment Breakdown
@@ -1290,3 +1292,55 @@ P60 = 15000(F/P, i, 60) - A(F/A, i, 60)
 - after 5 years, Bobby will need to renegotite his mortgage and choose a new term
 - usually annuity payment amount will not change, the actual amortization period have changed
 
+## Day 15 Feb 6, 2018
+
+#### Example 2
+
+You bought a house that is worth 1.9 million and you will give 60 payments of 10000 mortgage. Interest rate = 6% compounded monthly
+
+```
+P = A(P/A,i,N)
+
+1900000 = 10000*(P/A, .6/12, 60)
+
+Using Goalseek
+601 payments
+that's why we don't have 50 year amortization - it's too much interest
+
+```
+
+#### Example 3 Car Payments
+
+Determine monthly payments required if you want to borrow 30k from a bank to buy a car at 6% interest compounded monthly for 6 years
+
+```
+i = 0.6/12
+P = 30000
+A = 30000(0.005*(1+0.005)^72/((1+0.005)^72-1))
+  = 497.19
+
+the 24th payment is 497.19
+- the interest -> Ip
+- principle reduction -> Pp
+
+Po = 30000
+P23 = A(P/A, 0.06/12, 23)
+30k = A(P/A, 0.06/12, 23) + F(P/F, .06/12, 23)
+F = 21560
+or
+P = A*(P/A, 0.06/12, 72-23)
+interest is $107.80
+and p reduction $389.39
+
+You can also do F23-F24 to get principle reduction
+
+```
+
+For previous car loan, when you hand the bank your cheque for the 24th payment (answered above).
+
+How much interest do you pay overall for those 6 years
+- bank makes $5800 off of you
+
+```
+total interest= 497.19(72)-30000 = 5797.6
+```

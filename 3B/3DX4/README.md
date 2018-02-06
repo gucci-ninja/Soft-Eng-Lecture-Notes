@@ -29,6 +29,9 @@
 - [Modelling in the Time Domain](#modelling-in-the-time-domain)
 - [State Space to Transfer Function Written Example](#state-space-to-transfer-function-written-example)
 - [Time Response](#time-response)
+- [First Order Systems](#first-order-systems)
+- [Testing to Determine Transfer Function](#testing-to-determine-transfer-function)
+- [Second Order Systems](#second-order-systems)
 
 ## Day 1 Jan 4, 2018
 
@@ -972,3 +975,58 @@ Midterm will cover up to chapter 4-5.
 G = y/x
 s = tf('s')
 ```
+
+## Day 15 Feb 6, 2018
+
+#### Evaluating Response Using Poles
+<slide 7>
+
+### First Order Systems
+- systems without zeroes
+- we can find form specifications for this system like:
+1. time constant: 1/a
+	- the time required for step response to reach 63% of its final value
+	- can get a from the initiial slope at time t = 0, the derivative of c(t) is ae<sup>-at</sup>
+2. rise time/settling time
+	- rise: time it takes to get to 10% to 90%of final value
+		- 2.2/a
+	- settling: time required to reach 98% of final value
+		- 4/a
+
+**board time**
+
+![](Day15/written.PNG)
+
+### Testing to Determine Transfer Function
+- often not possible/practical to determine function by analytic means
+- in general, gain of system at s = 0 (DC input) is not unity
+- more general model is G(s) = K/s+a
+- by Final Value Theorem, we get steady state as K/a using partial fractions
+- for system to be first order its unit step response should have no overshoot and should have non-zero initial slope
+- c(inf) = K/a
+
+### Second Order Systems
+- for first order, varying system parameters only changes speed
+- second order system is b/(s<sup>2</sup>+as+b)
+- these changes can change the form of the system's response
+- might see damped oscillation
+	- over damped - looks similar to first order but its kinda curvy
+		- 2 non-equal real poles
+	- pole closest to 0 is the dominant pole
+	- under damped - most interesting behaviour
+		- complex conjugate poles (non-zero real and imaginry parts)
+	- critically damped - 2 equasl real poles response
+	```
+		 G(s) = 9/(s^2+6s+9)
+		      = 9 /(s+3)^2
+		C(s) = G(s)/s = 9/(s*(s+3)^2)
+		     = A/s + B/(s+3) + C/(s+3)^2
+	```
+	- undamped - system with 2 imaginary poles (0 zero parts)
+		- frequency of osciallations corresponds to imaginary part
+
+#### General Second Order Systems
+- we will tpically get the frequency of a system without any dampening
+- then we talk baout ratio of dampening, independent of time scale
+- takng the transfer function of second orde system, we get the poles
+- We can rewrite the system in terms of w<sup>n</sup> and C
