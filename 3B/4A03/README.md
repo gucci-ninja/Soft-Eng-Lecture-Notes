@@ -13,9 +13,13 @@
 - [Group Discussion 2](#group-discussion-2)
 - [Real life examples of Ethics](#real-life-examples-of-ethics)
 - [Resilience and Cities](#resilience-and-cities)
-- [Group Discussion 3](#group-discussion-3)
+- [Group Discussion 3 for Case Study](#group-discussion-3-for-case-study)
 - [Cities, Buildings & Design](#cities-buildings-&-design)
-- [Group Discussion 4](#group-discussion-4)
+- [Group Discussion 4 for Case Study](#group-discussion-4-for-case-study)
+- [FOod for a Sustainable World](#food-for-a-sustainable-world)
+- [Mini-Discussion](#mini-discussion)
+- [Factors to Consider about Food](#factors-to-consider-about-food)
+- [Group Discussion 6 for Case Study](#group-discussion-6-for-case-study)
 
 ## Day 1 Jan 10, 2018
 
@@ -256,7 +260,7 @@ Explain the concept of sustainable usage limits of the earth
 - so far, 2.88 times the impact
 - **jevon's paradox**: as efficiency increases, consumption increases
 
-### Group Discussion 3
+### Group Discussion 3 for Case Study
 
 **Will have to submit this one and the 2 after this**
 
@@ -289,7 +293,7 @@ The mayor and members of the council have asked you to provide a white paper on 
     4. sufficiently high population densities
         - large customer base for niche businesses
 
-### Group Discussion 4
+### Group Discussion 4 for Case Study
 
 Cities - Group Problem Solving
 
@@ -297,5 +301,68 @@ The mayor has recently returns from a happy cities tour in South America and wan
 
 How would you improve Hamilton? What types of things matter?
 
+**Decision Making** 
+- Stakeholder identiciation
+- formulation of design problem
+- identification/development of criteria
+- formulation of alternatives 
+- refinement
+- selection
+- stakeholder feedback & public information sessions at many stages
+- making a recommendation to decision maker
 
+**Relevant story**
+- some years ago Hamilton had a planning committee
+- had plans for a green space which is now a parking lot
+- they finalized 3 alternatives but then nothing happened because they were working on the downtown area
 
+## Day 5 Feb 7, 2018
+
+- TED Talk on global warming and cow farts making up 1/5 of greenhouse gas and food
+
+### FOod for a Sustainable World
+
+- **health** - a state of complete physical, mental, and social wellbeing, not merely the absence of disease or infirmity - world health ord 1946
+- **sustainability** - improve the quality of human life while living within the caryying capacity of supporting ecosystems - UNEP/IUCN/WWF
+- **bric countries** - brazil russian india china - on their way to becoming 1st world countries
+
+### Mini-Discussion
+
+What was noteworthy to you about TED Talk?
+- students like us can't afford to eat very healthy
+- when we lived in poverty we ate a lot better
+- if we all had farms, where would we live?
+- not a lot was proposed except eating healthier and less meat
+- eating insects is an option
+
+#### A&W Beef Guarantee
+- without steroids
+- respone: it's a bad idea
+
+- how did you learn about food and health
+- what's the culture in your school
+
+### Factors to Consider about Food
+- water footprint
+- pesticides
+- dirty dozen 2015 worst foods with the most pesticides
+    - food you do need to buy organic
+- energy consumption
+- microbes
+
+### Group Discussion 6 for Case Study
+- mayor recently returned from public health conference. while you're not trained in public health, he asks you to utilize your well-respected system-thinking and problem solving capacities to write paper on what city might do to become a world leader fo other cities to combat root causes of unhealthy eating and sedentary lifestyle. provincial and federal level
+- education on healthy eating in elementary school
+- more farmers markets & tell more people about them
+- public service announcements on how bad junk food is - refer to anti-smoking ads that were very effective
+- weekday vegetarian campaign
+- mobile app that scans your food and tells you how much more you can eat i.e take picture of burger and it tells you how much more meat you can consume for the day
+- promote apps that already exsit to help you eat healthy
+- public exercise equipemnt (at parks maybe)
+- canada's food guide based on science instead of government
+
+#### Technological Approaches
+- monitoring and adjustingsoil and pH constantly using robotics
+- genetic modifiation - we can add nutrients, breed for cold-hardy, disease resistance and longer shelf-life
+- vertical farms (a stacked greenhouse)
+- aeroponics - using suspended plants and misting roots with nutrient solution

@@ -608,3 +608,7 @@ Below is a package diagram for procss view.
   - after partitioning N ways, can I sort the data?
      - merge and sort and merge and sort and merge and sort
     - hadoop
+
+## Day 15 Feb 7, 2018
+
+**skipped**

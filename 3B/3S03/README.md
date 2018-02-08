@@ -19,6 +19,7 @@
 - [Test Adequacy Criteria](#test-adequacy-criteria)
 - [Dynamic vs Static testing](#dynamic-vs-static-testing)
 - [Functional Testing Techniques](#functional-testing-techniques)
+- [Tutorial 3 Feb 7, 2018](#tutorial-3-feb-7-2018)
 
 ## Day 1 - Jan 4, 2018 
 
@@ -458,6 +459,14 @@ portability | | | |
     - Partitions at 0, 20, 200, some sort of max integer
         - Things should happen same way inside each partition
 
-## Day 14 Feb 6, 2018
+## Day 14 Feb 5, 2018
+
+**skipped**
+
+## Day 15 Feb 6, 2018
 
 - if there is previous working application, you can perform parallel testing
+
+### Tutorial 3 Feb 7, 2018
+
+**skipped**
