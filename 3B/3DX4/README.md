@@ -1030,3 +1030,32 @@ s = tf('s')
 - then we talk baout ratio of dampening, independent of time scale
 - takng the transfer function of second orde system, we get the poles
 - We can rewrite the system in terms of w<sup>n</sup> and C
+
+## Day 16 Feb 8, 2018
+
+- midterm day
+- didn't pay attention but I think it was a review of [Day 17](#day-17)
+- also did a lot of matlab stuff
+
+## Day 17 Feb 9, 2018
+
+### Approximation of Higher Order Systems
+- approximate them as second-order systems containing dominant polesk
+- dominant poles are the 2 poles farthest to the right (typically)
+- how far is far enough away? depends on how accurate you want to be
+
+```
+G2nd = .....
+[p, z]=pzmap(G2nd) # second order
+define p, z, p3
+step(G2nd)
+G3rd = zpk([],[p(1) p(2) p3],1) # gain = 1
+
+output if you hit this with step (all poles are in left half plane)
+
+step(G2nd)
+hold
+step(G3rd)
+
+
+```

@@ -20,9 +20,13 @@
 
 Course | Description | Due
 -------|-------------|----
-3DX4 | **Midterm** | Feb 8
-4A04 | Journal | Feb 9
-3A04 | SRS Document | Feb 9
 2B03 | Quiz 4 | Feb 12
 3S03 | Assignment 1 | Feb 12
 3S03 | **Midterm** | Feb 15
+3A04 | Super-Credit | Feb 16
+3DX4 | Pre-lab 3 | Feb 16
+2B03 | Quiz 5 | Feb 19
+***** | Reading Week | \*****
+3A04 | **Midterm** | Feb 26
+3I03 | Assignment 2 | Feb 27
+
