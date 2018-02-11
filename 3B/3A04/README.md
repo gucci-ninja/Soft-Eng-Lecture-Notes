@@ -612,3 +612,22 @@ Below is a package diagram for procss view.
 ## Day 15 Feb 7, 2018
 
 **skipped**
+
+## Day 16
+
+#### Midterm Question
+Compiler involves several elements that provide tranformation phase of source file to machine file.
+- lexical analysis
+- syntax analysis
+- type checking
+- intermediate code generation
+- reister allocation
+
+Discuss conditions under which we cn use the styles of data flow architecture
+
+#### Midterm Question 2
+- propose batch sequential architecure for payroll system. system takes id, work time, rank and generate paycheck for each worker. 
+
+```
+<Time files>---> ??? ----> ??? ----> taxes and reduction ---> reduction files --->> generate paycheck
+```

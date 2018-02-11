@@ -1043,6 +1043,7 @@ s = tf('s')
 - approximate them as second-order systems containing dominant polesk
 - dominant poles are the 2 poles farthest to the right (typically)
 - how far is far enough away? depends on how accurate you want to be
+- textbook assumes 5 times further to the left than dominant poles
 
 ```
 G2nd = .....
@@ -1053,9 +1054,90 @@ G3rd = zpk([],[p(1) p(2) p3],1) # gain = 1
 
 output if you hit this with step (all poles are in left half plane)
 
+z = 0x1 empty double column vector
+
 step(G2nd)
 hold
 step(G3rd)
 
+```
+
+#### Justification for Ignoring Nondominant Poles
+- the further you put them the faster they decay exponentially
+- if D is really big then it will have a fast response
+- steady state response is unity gain
+- if D is big it will have an initial effect
+- if we let C go to infinity then D looks like -b
 
 ```
+C(s) = bc/(s(s^2+as+b)(s+c)) = A/s + (Bs + c)/(s^2+as+b) + D/(s+c)
+A = 
+B = ca-c^2/
+C = (ca^2-c^2a-bs/(c^2+a-ca))
+D = -b(c^2+b-ca)
+```
+
+#### System Response with Zeros
+- if we have zeros, they don't affect order but they affect response
+- therefore same denominators
+- if zero is far to the left then it lets A get large, it gets much larger than poles
+
+#### Nonminimum Phase System
+- as soon as yu give it input, it goes in the opposite direction
+- this is when zero is in the right half plane
+
+#### Pole Zero Cancellation
+- if you have a zero and it's really close to the pole
+- the zero will cancel the pole
+- can only be used to cancel things in left half plane with a zero, **NEVER** the right half plane
+	- this was asked on the 2016 final
+
+```
+C(s) =     26.25(s+4)
+       -----------------
+      s(s+4.01)(s+5)(s+6)
+
+this is an unstable system
+
+```
+
+#### Analysis and Design of Feedback Systems
+
+```
+---> o ---> K ----> 1/(s(+a)) ---->
+|				|
+|				|
+---------------------------------
+
+T(s) =  K/(s(s+a))
+     -----------------
+      1 + L/(s(s+1))
+     =      K
+	 -----------
+	  (s+a) + K
+
+    =      w_n^2
+	---------------
+	s^2 + 2 {{zeta(?)S + w_n}
+
+w_n^2 = K
+2(zeta)w
+```
+
+#### Gain Design for Transient Respone
+- design a value for system gain K such that resposne has 10% overshoot
+- overshoot formula for zeta
+
+![](Day17/zeta.PNG)
+
+- **matlab script**
+```
+a = 5
+G = zpk([], [0 -a],1)
+pos = 10
+zeta = formula
+Wn = sqrt(K)
+
+rlocus(G)
+```
+
