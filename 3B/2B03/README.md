@@ -1455,3 +1455,95 @@ A = 100000(A/P, 0.00607369, 300)
 - for example - coupon rate of 10% on a bond with $10000 face alue would pay annuity $500 every 6 months
 
 ## Day 16 Feb 12, 2018
+
+## Day 17 Feb 13, 2018
+
+### Comparison Methods
+- PW method - compare projects by examining the present worth of all project cash flows
+- AW method - comparison based on converting all cash flows to annuities (uniform series)
+- Payback Period estimates how long it takes to pay back investments
+
+#### Assumptions
+1. everything is measurable in terms of money
+2. future cash flows are known with certainty
+3. cashflows are unaffected by inflation
+4. sufficient funds are avilable
+5. taxes are not applicable - for now
+6. projects with first costs have cash inflows, after the first costs, that match or exceed the first costs
+- You can operate at a loss but still do well because of 0 corporate taxes
+
+**crown corporations** - companies run/funded by government that don't need to make a profit
+
+### Relationships Among Projects
+1. Independent
+  - simplest form
+  - expected costs and benefits do not depend upon whether some other project is implemented
+2. mutually exclusive
+  - choosing one project means eliminating all others
+3. related but not mutually exclusive
+  - usually related pairs of projects
+  - a lot of choices that are interconnected
+  - expected costs and benefits of one project depends ____
+  - 2<sup>n</sup> permutations
+
+#### Example 1
+District improvements
+  - alternatives to make street better
+    1. converting part of roadway to gardens
+    2. add old fashioned light standards
+    3. replace pavement
+    4. make street 1-way
+  - constraints
+    1. only 2 of the first 3 projects can be done at once
+    2. garden only possible for 1 way street
+    3. 
+  - number of alternatives: 2^n - 1 because you can't have null set
+    - leaves us with 7 due to the rest of the constraints
+
+#### Minimum Acceptable Rate of Return (MARR)
+ - an interest rate that must be earned by project to be accepted
+ - aka rate of return required to attract investors/shareholders
+ - **present worth** - use MARR and compute PW
+  - move all cashflow arrows to 0 and choose project with best present worth
+  - if present worth is negative and you're using your MARR, you're losing money over time
+ - **annual worth** - transform all disbursements and receipts to a uniform series at MARR
+- **future worth** - move all arrows to future and calculate future worth
+
+present worth | actions
+-----|-------------
+>0 | acceptable
+<0 | unacceptable
+=0 | marginal
+
+#### Example 2
+Company specializing in vericomposting (worm eat waste). Currently mails out all of his orders but is thinking he could save up to $34000. MARR = 10%
+
+- 1st cost - $30k
+- fuel - $100/week, annual $5200
+- insurance - $2000/yr
+- driver - $1500/year
+- maintenance $1000/year
+
+```
+cashflow diagram: 34000 saved, 30000 capital cost, 25200 in expenses
+PW = -30000 + 7800(P/A, MARR, 5)
+= -431.76
+```
+
+#### Example 3 from Midterm
+Should a company purchase new copy machines. Will last 7 years, no salvage value, will cost $5000 to pruchase, annual savings of $1700 at the end of the first year, $1500 in the second, $1300 in third, decreases by 200 per year. MARR = 15%
+
+```
+N = 7 because it includes base
+
+A_tot = A' + G(A/G, i, N)
+      = 1210
+PW = -5000 + A_tot(P/A, 15%, 7)
+= 34.23
+```
+
+#### Mutually Exclusive Projects
+- easy to use when service lives are same for all projects under consideration
+- compute present worth of each project using MARR
+- project with greatest present worth is the preferred project
+- **remark** for minimum cost problems, pick project which has smallest present cost at MARR
