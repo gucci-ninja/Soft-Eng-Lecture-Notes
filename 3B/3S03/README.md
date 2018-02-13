@@ -478,3 +478,38 @@ portability | | | |
 ## Day 17 Feb 12, 2018
 
 **Assignment 1 due** 
+
+#### Quiz on Regression Testing
+
+## Day 18 Feb 13, 2018
+
+### Quiz 2 Regression Testing
+Regression testing vs recover testing
+- regression means we're not going backwards
+    - goes in structural lbecause it's not about functionality, it's about behaviours 
+    - you have already tested and now there is a change to the system
+    - you have multiple components and one component changes therefore you have to test the whole thing since all components work together
+    - want to make sure that something that has been working is _still_ working
+- recovery testing
+    - want to make sure the system can recover but mention recovery from where/what/how
+    - what: possible failure
+    - introduce the failure and see if the system can recover
+
+### Equivalent Partitioning Classes
+- dividing system into out of bounds on the right and left and within bounds
+- use max int and min int for partition ends
+- partitions should not intersect
+
+### Unit Testing
+- this is the basic testing
+- any function of the system, class, module, component is considered for unit testing
+- a good test:
+    - has good probability fo catching an error
+    - not redundant
+    - best of its type
+    - not too simple, not too complex
+    - it makes obvious failures
+- no absolute certaintty can be gaind from pure testing activity
+- natural approach such as using randomly generated test cases is inappropriate in most cases
+- unit testing should be based on sound and systematic techniques
+- tests should be repeatable, very critical for concurrent software
