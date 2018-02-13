@@ -1142,3 +1142,90 @@ Wn = sqrt(K)
 rlocus(G)
 ```
 
+## Day 18 Feb 13, 2018
+
+### Stability
+- there will be a question on this on the final
+
+#### Intro
+- ways to determien if a system is stable
+- if the system is unstable, transient respone and steady state are irrelevant
+- all the other criteria don't matter so stability is the first thing you check
+
+
+#### Stability and Natural Reponse 
+- for LTI systems, total resposne of system is c(t) = c<sub>forced</sub>(t) + c<sub>natural</sub>(t)
+- stable if natural resposne goes to 0 as t approaches inf
+- unstable if it gets unboudned
+- marginally stable if natural respone either decays or grows (stays constant or oscillates with fixed amplitude)
+
+#### Bounded Input Bounded Output
+- if any bounded input produces an unbounded output (even just one) then the system is unstable
+- if every bounded input produces bounded output then it is stable
+
+#### Stability and Poles
+- stable if all poles strictly in left half plane (negative exponentials/complex, decaying amplitude)
+- unstable if any pole in right hand side
+- marginally unstable
+	- zeros on -y and +y just generates oscillations and is marginally stable (1/(s^2+w^2))
+	- but if you take that and double the poles ie 1/(s^2+w^2)^2 is unstable
+- multiplicity 
+- poles on imaginry axis with multiplicity of 1 will be untable by the BIBO definition
+	- for example if we hve G(s) = 25/((s^2+25)(s+1))
+	- u(t) = cos(wt), U(S) = s/(s^2+w^2)
+	- C(s) = G(s)U(s) = 25s/((s+1)(s^2+25)^2)
+	- matlab simulation: 
+	```
+	G = 25/(s^3+s^2+25s+25)
+	impulse(G*s/(s^2+25))
+
+	# in time domain use elsim, gives same output
+	G_theta = 5/(s^2+5s)
+
+	step(G_theta)
+	```
+	- for BIBO, nothing can be on j omega axis or else that input will be able to mess up the system
+	- if you have marginally stable system with poles on j axis, it is not BIBO stable because bounded input (the pole) can blow system up (give bounded input)
+
+#### Example
+- gain of 3, unity gain
+- gives underdamped system
+- poles of the closed loop system strictly in left half plane therefore BIBO
+- input that will give biggest oscillation is 1.047
+
+![](Dqy18/stable.PNG)
+
+- second example is unstable
+
+![](Day18/unstable.PNG)
+
+#### Stability Summary
+
+Real Part of Poles | Natural Response | BIBO
+------------------ | ---------------- | ------------
+All poles < 0 | stable | stable
+any pole > 0 or imaginary poles of multiplicty > 1 | unstable | untable
+poles <= 0 and imaginary poles multiplicity of 1 | marginally stable | unstable
+
+#### Closed Loop Systems
+- when poles arent where we want we can use feedback control system
+
+##### Necessary Stability Condition
+- necessary condition for polynomial to haev all roots in open left hand plane (all positive coefficients)
+- not a sufficient condition
+- if some coefficients are missing, may be unstable or at best marginally unstable
+
+#### Routh Hurwitz Criterion
+- gives stability info without having to find poles of closed loop system
+- create a routh table
+	1. label rows of table with powers of s down to s^0
+	2. list coefficients across top row starting with coefficient of highest power of s
+	3. list remaining coefficients in second row starting with coefficeint of second highest power
+- fill in the remainder
+	- 2x2 determinants
+	1. each entry is negative determinant of entries from previous 2 rows
+	2. each determinant i divided by the entry in the first column of row above
+	
+##### Interpresting a Basic Routh Table
+- system is stable if there are no sign changes in the first column
+- on thursday we're gonna do the routh table for system on slide 15
