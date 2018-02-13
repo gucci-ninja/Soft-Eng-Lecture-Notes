@@ -613,7 +613,7 @@ Below is a package diagram for procss view.
 
 **skipped**
 
-## Day 16
+## Day 16 Feb 9, 2018
 
 #### Midterm Question
 Compiler involves several elements that provide tranformation phase of source file to machine file.
@@ -631,3 +631,7 @@ Discuss conditions under which we cn use the styles of data flow architecture
 ```
 <Time files>---> ??? ----> ??? ----> taxes and reduction ---> reduction files --->> generate paycheck
 ```
+
+## Day 17 Feb 12, 2018
+
+**skipped**

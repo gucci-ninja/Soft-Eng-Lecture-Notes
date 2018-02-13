@@ -470,3 +470,11 @@ portability | | | |
 ### Tutorial 3 Feb 7, 2018
 
 **skipped**
+
+## Day 16 Feb 8, 2018
+
+**skipped**
+
+## Day 17 Feb 12, 2018
+
+**Assignment 1 due** 

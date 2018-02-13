@@ -32,6 +32,7 @@
 - [First Order Systems](#first-order-systems)
 - [Testing to Determine Transfer Function](#testing-to-determine-transfer-function)
 - [Second Order Systems](#second-order-systems)
+- [Approximation of Higher Order Systems](#approximation-of-higher-order-systems)
 
 ## Day 1 Jan 4, 2018
 

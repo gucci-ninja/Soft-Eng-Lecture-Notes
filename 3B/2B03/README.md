@@ -30,6 +30,7 @@
 - [Mortgages](#mortgages)
 - [Residential Mortgages](#residential-mortgages)
 - [Stress Test](#stress-test)
+- [Bonds](#bonds)
  
 _Images are from Prof Cam Churchill's Lecture Slides for ENG 2B03 Engineering Economics._
 
@@ -1385,8 +1386,6 @@ Same family with same income qualifies for 5 year fixe contract rate mortgage at
 
 ## Day 15 Feb 8, 2018
 
-**skipped**
-
 #### Mortgage Interest
 - Canada Bank Act: quoted rates must be stated on semi-annual compounding basis monthly rate is (1+r/2)^1/6 - 1
 - in the US it is monthly payments
@@ -1455,4 +1454,4 @@ A = 100000(A/P, 0.00607369, 300)
 - **floating rate**
 - for example - coupon rate of 10% on a bond with $10000 face alue would pay annuity $500 every 6 months
 
-
+## Day 16 Feb 12, 2018
