@@ -31,6 +31,8 @@
 - [Residential Mortgages](#residential-mortgages)
 - [Stress Test](#stress-test)
 - [Bonds](#bonds)
+- [Comparison Methods](#comparison-methods)
+- [Relationships Among Projects](#relationships-among-projects)
  
 _Images are from Prof Cam Churchill's Lecture Slides for ENG 2B03 Engineering Economics._
 
@@ -1384,14 +1386,14 @@ Famlily with yearly income of $100k qualifies for 5 year fixed rate mortgage at 
 
 Same family with same income qualifies for 5 year fixe contract rate mortgage at 3.09% with 25 year amortization. Until Jan 1 they could afford $706692 but after stress test is applied they have to add 2% (now 5.09%) and can only afford $559896 house
 
-## Day 15 Feb 8, 2018
+## Day 16 Feb 8, 2018
 
 #### Mortgage Interest
 - Canada Bank Act: quoted rates must be stated on semi-annual compounding basis monthly rate is (1+r/2)^1/6 - 1
 - in the US it is monthly payments
 
 #### Example 1 Mortgage
-You have negotiated a 25-year, $100k mortgag at rate of 7.4% per year compounded semi-annually w/ TD Bank. To answer most mortgage questions we have to convert quotd annual interest compounded semi-annually to get actual interet charged each month/get efective monthly period rate.
+You have negotiated a 25-year, $100k mortgag at rate of 7.4% per year compounded semi-annually w/ TD Bank. To answer most mortgage questions we have to convert quoted annual interest compounded semi-annually to get actual interet charged each month/get efective monthly period rate.
 
 ```
 EPR = 0.074/2%
@@ -1414,6 +1416,9 @@ A = 100000(A/P, 0.00607369, 300)
 ### Bonds
 - issuer in return pays investor interest at predetermined rate and schedule (coupon)
 - date to repay amount borrowed (face value) is maturity date
+- maturity date: can range from 1 day to 30 years, there have been 100yr bonds issued
+- short term bonds are more predictable that long term
+- longer time to maturity usually corresponds to higher interest rate, longer term bods also fluctuate more
 - known as fixed-income securities because you know exact amount of cash you get back provided you hold it to maturity
 
 #### Debt vs Equity
@@ -1443,7 +1448,7 @@ A = 100000(A/P, 0.00607369, 300)
 - higher yields than govt bc higher risk, credit quality determines interest rate
 
 #### Terminology
-- par or face valu is amount needed for which bonds can be redeemed for at maturity
+- par or face value is amount needed for which bonds can be redeemed for at maturity
   - actual price of bond would be different from face value except at redermption
   - corporate bonds normally have $1000 par values when issued
 
@@ -1454,9 +1459,62 @@ A = 100000(A/P, 0.00607369, 300)
 - **floating rate**
 - for example - coupon rate of 10% on a bond with $10000 face alue would pay annuity $500 every 6 months
 
-## Day 16 Feb 12, 2018
+## Day 17 Feb 12, 2018
+- mortgage interest rates in Canada are lower than US by 0.5%
 
-## Day 17 Feb 13, 2018
+#### Example 1 Bonds
+Bond with face value of $10000, coupon rate of 10% compounded semi-annually with a maturity period of 20 years. What is the purchase price of this bond (present worth)?
+
+- present worth of bond depends on going interest rate
+- assume buyer expects 15% (r) interest compouned semi-annually
+- can do:
+  1. take all arrows to future
+  2. take all arrows to present
+  3. turn everything into annuities
+
+```
+Option 3, turn everything into annuities
+P = ?
+A = 500
+F = 10000
+τ = 15%/2 = 7.5%
+
+P(A/P, 7.5%, 40) = 500 + 10000(A/F, 7.5%, 40)
+
+P = 500(P/A, 7.5%, 40) + 10000(A/F, 7.5%, 40)
+
+alternatively
+ie = (1 + 15/2)^2(?) - 1
+P = 500(P/A, 7.5%, 40) + 10000(P/F, ie 40)
+  = 6851.39
+```
+
+#### Exmaple 2 Midterm Question
+- Want to make at least 13.55% compounded weekly
+- how much would the face value have to be for a bond maturing in 12 years if it had a coupon rate of 10% and you had $500 today to buy it
+
+```
+coupon = F x 10%/2
+ie_semiannual = (1 + 13.55%/2)^26 - 1 = 0.07
+
+P = A(P/A, i, N) + F(P/F, i, N) where N=24
+5000 = coupon(P/A, 7%, 24) + F(P/F, 7%, 24)
+F = 6488.338406
+
+A = F x coupon_rate/2
+```
+
+#### Midterm Question
+If you bought a bond today for $5000 which is maturing in 12 years with a face value of $7000 and it had a coupon rate of 10%, what is the ie on your investment?
+
+```
+Step 1: 5000 = A(P/A, i, 24) + F(P/F, i, N) // use linear interpolation to get i
+
+Step 2: convert semi-annual interest rate to ie(annual)
+ie_annual = (1 + i_semiannual)^2 - 1
+
+```
+## Day 18 Feb 13, 2018
 
 ### Comparison Methods
 - PW method - compare projects by examining the present worth of all project cash flows

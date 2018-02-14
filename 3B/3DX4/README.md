@@ -33,6 +33,7 @@
 - [Testing to Determine Transfer Function](#testing-to-determine-transfer-function)
 - [Second Order Systems](#second-order-systems)
 - [Approximation of Higher Order Systems](#approximation-of-higher-order-systems)
+- [Stability](#stability)
 
 ## Day 1 Jan 4, 2018
 

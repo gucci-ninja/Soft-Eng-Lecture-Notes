@@ -20,6 +20,9 @@
 - [Dynamic vs Static testing](#dynamic-vs-static-testing)
 - [Functional Testing Techniques](#functional-testing-techniques)
 - [Tutorial 3 Feb 7, 2018](#tutorial-3-feb-7-2018)
+- [Quiz 2 Regression Testing](#quiz-2-regression-testing)
+- [Equivalent Partitioning Classes](#equivalent-partitioning-classes)
+- [Unit Testing](#unit-testing)
 
 ## Day 1 - Jan 4, 2018 
 
