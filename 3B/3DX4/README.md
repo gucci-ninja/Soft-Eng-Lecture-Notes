@@ -1230,3 +1230,7 @@ poles <= 0 and imaginary poles multiplicity of 1 | marginally stable | unstable
 ##### Interpresting a Basic Routh Table
 - system is stable if there are no sign changes in the first column
 - on thursday we're gonna do the routh table for system on slide 15
+
+## Day 19 Feb 15, 2018
+
+### Stability Example
