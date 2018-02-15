@@ -4,10 +4,11 @@
 - [Course Outline](#course-outline)
 - [Software Testing](#software-testing)
 - [Testing and Measurement](#testing-and-measurement)
-- [Types of Defects](#types-of-defects)
+- [Defects](#defects)
 - [Testing Principles](#testing-principles)
 - [Testing Strategies and Plans](#testing-strategies-and-plans)
 - [Tutorial 1 Jan 17, 2018](#tutorial-1-jan-17-2018)
+- [Test Strategy](#test-strategy)
 - [Testing Strategies and Plans](#testing-strategies-and-plans)
 - [Developing Unit Test Plan](#developing-unit-test-plan)
 - [Tutorial 2 Jan 24, 2018](#tutorial-2-jan-24-2018)
@@ -15,14 +16,16 @@
 - [Test Examples](#test-examples)
 - [Testing Techniques](#testing-techniques)
 - [Functional vs Structural Testing](#functional-vs-structural-testing)
+- [Dynamic vs Static Testing](#dynamic-vs-static-testing)
 - [Tutorial 3 Jan 31, 2018](#tutorial-3-jan-31-2018)
-- [Test Adequacy Criteria](#test-adequacy-criteria)
-- [Dynamic vs Static testing](#dynamic-vs-static-testing)
 - [Functional Testing Techniques](#functional-testing-techniques)
+- [Test Report](#test-report)
 - [Tutorial 3 Feb 7, 2018](#tutorial-3-feb-7-2018)
+- [Structural Testing Techniques](#structural-testing-techniques)
 - [Quiz 2 Regression Testing](#quiz-2-regression-testing)
 - [Equivalent Partitioning Classes](#equivalent-partitioning-classes)
 - [Unit Testing](#unit-testing)
+- [Tutorial Feb 14, 2018 ](#tutorial-feb-14-2018-)
 
 ## Day 1 - Jan 4, 2018 
 
@@ -172,6 +175,36 @@ The following may be defects
 - **errors** by process actors lead to **defects** in software
 - **defect** that leads to unacceptable behaviour is called **failure**
 - some defects don't cause any failures, some cause millions
+- **risk** is a condition that can result in loss
+    - types of risks
+        - incorrect results from system
+        - system accepting unauthorized transactions
+        - computer file integrity lost
+        - processing cannot be reconstructed
+        - continuity of processing will ve lost
+        - service provided will degrade to unacceptable level
+        - system security will be compromised
+        - procesing wont comply with govt/company policy
+        - unreliabe results
+        - system difficult to use/operate
+        - unmaintainable
+        - not portable to other environment
+        - not able to interconnect with other computer systems
+        - unacceptable performance level
+- risk of **undertesting** - translates into system defects
+- risk of **overtesting** - uses valuable resources
+- problems associated with testing:
+    - failure to define testing objectives
+    - testing at wrong phase
+    - use of ineffective testing techniques
+
+#### Testing Policy
+- management's definition of testing
+- criteria:
+    - definition of testing
+    - testing system
+    - evaluation
+    - standards - against which testing will be measured
 
 ### Tutorial 1 Jan 17, 2018
 
@@ -222,6 +255,53 @@ The following may be defects
 ## Day 7 Jan 18, 2018
 
 **skipped**
+
+### Test Strategy
+- objective: decrease risks
+- strategy must address risks and present process to reduce them
+- 2 components
+    1. test factor - risk/issue
+    2. test phase
+
+#### Test Factors
+- Correctness
+    - data entered, processed and outputted is accurate and complete
+- Data integrity
+    - data entered will be returned unaltered
+- Authorization
+    - data is processed in accordance with intents of management
+- Audit trail
+    - processing of data can be supported through retention of sufficient evidential matter to substantiate accuracy, completeness, timeliness and authorization
+- Continuity of processing
+    - ability to sustain processing in event of problems
+    - timelineness of recovery operations
+- Service levels
+    - desired results will be available within acceptable time frame
+- Access control
+    - system resources will be protected against accidental and intentional modification, destruction, misuse and disclosure
+- Compliance
+    - system in accordance with organizational strategy, policies
+- Reliability
+    - application iwll perform its intended funtions with required precision over extended period of time
+- Ease of use
+    - effort to learn and operate system
+- Maintainability
+    - effort required to locate and fix error/defect in operational system
+- Portability
+    - effort to transfer program from one hardware configuration to another
+- Performance
+    - amount of computing resources and code for system to perform functions
+- Ease of operation
+    - effort required to integreate system into OS
+
+#### Developing Test Strategy
+1. Select and rank test factors:
+    - who
+    - what: 3-7 factors
+    - how: specific test risks can be subbes for factors
+2. Identify the system development phased (Requirements, Arch Design, Deisgn, Coding, Unit/System Test, Maintenance)
+3. Identify the business risks associated with the system under development.
+4. Place risks in a test factor/test phase matrix. Should place plans in these?
 
 ## Day 8 Jan 22, 2018
 
@@ -277,8 +357,21 @@ The following may be defects
 
 ### Developing Unit Test Plan
 - system divided into components
-- same as the Plan from before
-- functions that arent tested
+1. same as the Plan from before
+    - functions that arent tested
+2. Business and Structural Function Testing
+    - business functions
+    - structural functions
+    - test descriptions
+    - expected result
+    - condition to stop test
+    - test number
+3. Intrface Test Descriptions
+    - interface
+    - test descriptions
+    - expected results
+    - test number
+4. Test Progression
 
 ### Tutorial 2 Jan 24, 2018
 - Advantages of Test Plans
@@ -336,16 +429,18 @@ a = [1,2], b = [1,2,3] | err mesg
 - prototyping in an incremental way
 
 ### Testing Techniques
-- functional vs structural
-- dynamic vs static
-- manual vs automated
-
-OR
-
-- coverage-based
-- fault-based
-- error-based
-- black-box vs white-box
+1. System functional testing techniques
+2. System structural testing techniques
+3. Unit testing techniques
+- testing can be classified as
+    - functional vs structural
+    - dynamic vs static
+    - manual vs automated
+- OR classified by adequacy criterion:
+    - coverage-based 
+    - fault-based
+    - error-based
+    - black-box vs white-box
 
 #### Fault Seeding
 - finding total number of pikes present in lake A
@@ -359,15 +454,16 @@ OR
 - when tested you will find seeded and new faults
 - total faults can then be estimated
 - **Assumption:** distribution(real) faults = distribution(seeded) faults
-- need to steremine what faults to seed
+- need to deteremine what faults to seed
     - Technique 1: construct by hand (unlikely that they will be realistic)
     - Technique 2: have the program independently tested by 2 groups
         - faults found by 1 group can be seeded for the other but both might find the same faults
-- **Rule of thumb** - if we find many seded faults and relatively few others, the result can be trusted (but not the opposite)
+- **Rule of thumb** - if we find many seeded faults and relatively few others, the result can be trusted (but not the opposite)
 
 > The probability of the existence of more errors in a section 
 > of a program is proportional to the number of errors already
 > found in that section - Myers 1979
+
 ### Functional vs Structural Testing
 - tests can be derived from a description of the system's **function** or from the system's internal **structure**
 
@@ -379,6 +475,7 @@ Concerned with | the WHAT | the HOW
 Evaluates the | Results of Behaviour processing | Implementation algorithms
 Ensures that | requirements are satisfied | the structure is sound
 
+### Dynamic vs Static Testing
 
 . | Dynamic | Static
 --|---------|------
@@ -395,6 +492,7 @@ What | Behaviour (F and NF) | Documentation, Syntax, Structure
 - reduce to finite testing process by finding criteria for choosing representative test cases
 - a combo of static and dynamic tests is used
     - select reasonable subset of test conditions to provide high probability that system will perform correctly
+- test adequacy criterion specifies requirements for testing and can be used as a stopping rule, measurement or test case generator
 
 ### Tutorial 3 Jan 31, 2018
 
@@ -434,17 +532,19 @@ portability | | | |
 
 ## Day 13 Feb 1, 2018
 
-### Test Adequacy Criteria
+#### Test Adequacy Criteria
 - Can be used as a tool to measure testing and whether you are done or not and to generate test cases
 - Reduce finite…
 - Ex. bubble sort
     - N = 2, a = {10,5}
-    - Want 100% statement coverage
+    - This test set is adequate for 100% statement coverage but no for 100% branch coverage
 
-### Dynamic vs Static testing
+#### Dynamic vs Static testing
 - How do we find suitable test cases
 - Ex. need to perform binary search
     - Input – key, set of pre-sorted elements, size of set
+
+#### Selecting Techniques
 - Once an individual concern has been identified, it must be determined whether to perform a structural or function test
 - Once the technique has been selected, the test method for implementing that technique needs to be determined
 - Last step is to select for either dynamic or static test method a manual or automated too
@@ -457,15 +557,18 @@ portability | | | |
     - Req testing/acceptance testing
     - Regression testing
     - Error handling testing
-    - Manual-sys testing
-    - …
+    - Manual-support testing
+    - Intersystems testing
+    - Control testing
+    - Parallel testing
 
 #### Functional Requirements Testing
 - The sys can perform its function correctly and that the correctness can be sustained over a continuous period of time (reliability)
 - Objectives
     - User reqs are implemented
     - Correctness is maintained over extended processing periods
-- How to use req testing
+
+#### Requirements Testing
     - Boundary value analysis – test boundaries for specified range of values
     - Equivalence partition – partition the range into equal parts/groups that tend to have the same behavior
     - State transition – test based on the change of software state following particular action
@@ -476,13 +579,84 @@ portability | | | |
     - Partitions at 0, 20, 200, some sort of max integer
         - Things should happen same way inside each partition
 
+#### Regression Testing
+- retest previously tested segments to ensure they still function properly after a change is made
+- specific onjective is to ensure documentation is current, test data and test conditions remain curent and previously tested functions perform properly after changes
+- how to use regression testing
+    - corrective - rerun same tests that were previously executed
+        - when specs haven't changed
+    - progressive - (re)run modified or new tests for previously tested components
+        - when specs have changed
+    - retest all
+        - when before new release
+    - selective - based on dependencies between components and tests
+        - any time modifications are made
+- regression testing should be used wen there is high risk new changes will affect unchanged areas
+
+#### Error Handling Testing
+- ability of application system to properly process incorrect transactions
+- specific objectives is to ensure app recognizes all reasonably expected error conditions and accounts for processing errors that are likely
+- how to use
+    - create set of transations that contain errors/produce errors
+    - enter them into system to determine if app can identify
+    - check for improper handling and improper communication to user
+
+#### Manual Support Testing
+- evaluates functions performed by the people while preparing the data for and using the data from automated system
+- specific objectives include documenting manual-support procedures, assigning manual support responsability, adequately training manual support team and interfacing manual support with automated segment
+- how to use
+    - manual-support group must understand system functionality
+    - they should prepare environment of testing
+    - they prepare and execute test cases manually
+    - observe, verify, record pass/fail
+
+#### Intersystem Testing
+- ensures that integration between systems functions correctly
+- specific objectives are proper passing of data, proper coordination and timing of functions between application sysems and accurate documentation for involved systems
+- how to use
+    - integration nodes between multiple systems are executed to check that data transfers are acceptable and processed properly
+    - develop test transactions set and pass to another system to verify processing
+- when to use
+    - there is change in parameters between app system
+- integration vs compatibiity vs portability vs intersystem
+
+#### Parallel Testing
+- results of new application are consistent with processing of previous applicatiion
+- specific objectives are ensuring that new version performs correctly and demonstrate consistency/inconcesistency btn 2 versions
+- how to use
+    - same input data should be run through 2 versions of same app
+    - done with whole system or part of system
+- when to use
+    - in apps that use complex processing and there is uncertainty regarding correctness of processing
+
+#### Summary
+
+Technique | Objective
+----------|----------
+Requirements | system performs as specified
+Regression | anything unchanged still performs correctly
+Error-handling | errors can be prevented or detected and then corrected
+Manual-support | human-computer interface works
+Intersystem | resources are correctly shared btwn system
+Parallel | new system gives same results as old
+
 ## Day 14 Feb 5, 2018
 
-**skipped**
+**skipped** but notes are continued in Day 13
 
 ## Day 15 Feb 6, 2018
 
 - if there is previous working application, you can perform parallel testing
+
+### Test Report
+- include all details - date, module, Test Case ID, Version, build #
+- give steps to reproduce defects
+- include input data
+- type, severity, priority
+- environment
+- visual support
+- log, error codes
+- maybe recommendations
 
 ### Tutorial 3 Feb 7, 2018
 
@@ -491,6 +665,103 @@ portability | | | |
 ## Day 16 Feb 8, 2018
 
 **skipped**
+
+### Structural Testing Techniques
+- ensure that product designed is structurally sound and will function correctly
+- determines that technology has been used properly and all parts are assembled cohesively
+- focus on process, not correctness
+- uncovers errors that occured during implementation
+- techniques are:
+    - stress testing
+    - execution testing
+    - recovery testing
+    - operations testing
+    - compliance testing
+    - security testing
+
+#### Stress Testing
+- if system can handle heavy loads
+- stressed areas are:
+    - input, users accessing
+    - disk space, communication
+    - memory capacity
+- robustness, availability and error-handling
+- how to use
+    - simulate production environment (really well)
+    - enter heavier than expected volumes of data
+    - simulate large # users
+    - error conditinos included
+- looking for issues in
+    - load balancing
+    - bandwidth
+    - system capacity
+    - respone time
+
+#### Execution Testing
+- if system machieves desired level of proficiency in production status
+- verifies reponse time, turnarouns time, design performance
+- can be tested in whole or in part using actual system or simulated model
+- objectives are determining performance of system structure, verifying optimum use of hardware/software, determining response time to users requests and transaction processing turnaround time
+
+#### Recovery Testing
+- ability to restart operations after integrity of app has been lost
+- revert to point where integrity of system is known, reprocess transactions up to point of failure
+- time required to recover is affected by
+    - # restart points
+    - volume of applications running on computer
+    - training/skil of ppl conducting recovery
+    - tools available
+- specific objectives are preservation of adequate backup data in secure location, documented recovery procedures, trained recovery personnel, available tools
+- how to use
+    - assess procedures, methods, tools
+    - introduce faiure in system and evaluate recoerability
+    - perform recovery testing by ppl who will do it IRL
+- when to use
+    - when continuity of operation of app is essential 
+
+#### Operations Testing
+- verify that operating procedures and staff can properly execute app
+- specific objectives are determining completeness of computer operator documentation, ensuring necessary support mechanisms are prepared, completeness of operator training and that operators can operate
+- how to use
+    - QA assess operator documention and gather key acceptance criteria
+    - QA trains operational stadd
+    - operation stadd performs and gives feedback
+- when to use
+    - prior to placing in production status
+
+#### Compliance Testing
+- verifies app was developed in accordance with IT standards, procedures, guidelines
+- methodologies used to increase success, enable transfer of ppl w/ minimal cost, increase maintainability
+- specific objectives include determining that systems development emthodologies are followed, compliance to standards.., complete documentation
+
+#### Security Testing
+- ensure secure confidential info and for competitive purpose assure 3rd parties their data is protected
+- amount of security depends on risks
+- security defects aren't very obvious
+- specific objectives are
+    - determining adequate attention is devoted to securit
+    - realistic definition and enforcement has been implemented
+    - sufficient expertise for security testing
+    - conducting reasonable tests
+- highly specialized part of testing
+- physical security deals with penetration by ppl
+- logical security deals with use of computer/communication to improperly access info
+- when to use
+    - prior to operational status
+    - after system in operational status
+
+#### Summary
+
+Technique | Objective | When to Use (Req, Design, Dev, Pre-prod, Maint)
+----------|-----------|------------
+Stress | system behaves outside expected volumes and load | all(?)
+Execution | system achieves desired lvl of proficiency (performance) | all
+Recovery | system can be returned to operational status after failure | all(?)
+Operations | system can be used in normal operational status | pre-prod, maint
+Compliance | system is developed in accordance with standards and procedures | all
+Security | system is protected | all
+
+
 
 ## Day 17 Feb 12, 2018
 
@@ -533,7 +804,7 @@ Regression testing vs recover testing
 
 ### Tutorial Feb 14, 2018 
 
-## Miderm Review
+#### Miderm Review
 
 1. Goal of software testing?
     - find defects and fix them
