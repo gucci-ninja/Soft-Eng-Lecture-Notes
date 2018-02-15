@@ -330,3 +330,15 @@ Java | Java, Python
 - correct
 - interesting
 - direct
+
+## Day 6 Feb 8, 2018
+
+## Day 7 Feb 15, 2018
+
+### Assignment 2
+- new and innovative
+- max 6 pages
+- written proposal due Feb 27, 10pm
+- content: problem, slution, market, business, influence, ask (for money/time?)
+
+#### Guest Speaker
