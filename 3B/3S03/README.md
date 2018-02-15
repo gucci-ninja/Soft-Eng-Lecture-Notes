@@ -105,11 +105,11 @@ _Tutorials start next week_
 ## Day 4 Jan 11, 2018
 
 **Still on Testing and Measurement**
-- accuraacy of measure depends on measuring instrument and definition of measurement
+- accuracy of measure depends on measuring instrument and definition of measurement
 - always a margin of error
 - when is a scale acceptable?
 
-### Types of Defects
+### Defects
 1. Software does something it's not supposed to do 
 2. Software does something the specs say it should not do
 3. Software does something that specs doesn't mention
@@ -119,15 +119,21 @@ _Tutorials start next week_
     - if x happens, y shoudl happen 
 5. The software is difficult to understand, hard to use, slow or just not right
 
-### Testing Principles
+- goal of testing is to demonstrate that errors are not present and show that a program performs its intended functions properly
+- goal (2) is to find defects as early as possible and make sure they get fixed
+- testing is the process of executing program with intent of finding errors
 
+### Testing Principles
 1. Necessary part of test case is the definition of the expected output or result
+    - due to this, a test case must consist of 2 things, description of input data to program AND precise description of correct output of the program for that set of input data
+    - hint: write pre and post-conditions befre writing program
 2. A programmer should avoid attempting to test his/her own program
+    - this doesn't apply to debugging
     - hard to look at program with destructive eye
     - will carry same misunderstanding into tests
 3. Programming organizations should not test its own programs
     - same reasoning as 2
-4. Throughly inspect the resuts of each test
+4. Thoroughly inspect the results of each test
 5. Test cases must be written for input conditions that are invalid and unexpected as well as valid and expected
 
 ## Day 5 Jan 15, 2018
@@ -135,11 +141,15 @@ _Tutorials start next week_
 **Skipped but I'm guessing we went over the rest of the Principles of Testing**
 
 6. Avoid throwaway test cases unless the program is truly a throwaway program
+    - coming up with test cases on the fly and then throwing them away, making it hard to recreate
 7. Do not plan a testing effort under the tacit assumption that no errors will be found
     - Testing is **not** just the process of showing that the system functions correctly
     - Testing is the process of executing system with intent of finding functional errors or qualities attribute mismatches
 8. The probability of the existence of more errors in a section of a program is proportional to the number of errors already found in that section
 9. Testing is an extremely creative and intellectually challenging task
+
+#### Good Software Tester
+- explorer, troubleshooter, relentless, creative, perfectionist, persuasive
 
 ## Day 6 Jan 16, 2018
 
@@ -158,6 +168,10 @@ The following may be defects
 - Boundary-related errors
 - Calculation errors
 - Concurrency issues
+
+- **errors** by process actors lead to **defects** in software
+- **defect** that leads to unacceptable behaviour is called **failure**
+- some defects don't cause any failures, some cause millions
 
 ### Tutorial 1 Jan 17, 2018
 
@@ -512,7 +526,211 @@ Regression testing vs recover testing
     - best of its type
     - not too simple, not too complex
     - it makes obvious failures
-- no absolute certaintty can be gaind from pure testing activity
+- no absolute certainty can be gained from pure testing activity
 - natural approach such as using randomly generated test cases is inappropriate in most cases
 - unit testing should be based on sound and systematic techniques
 - tests should be repeatable, very critical for concurrent software
+
+### Tutorial Feb 14, 2018 
+
+## Miderm Review
+
+1. Goal of software testing?
+    - find defects and fix them
+2. Difference between errors, defects and failures
+    - errors are in defects are in failures
+3. Which of them is/are component(s) of a test case?
+    - a description of output data :heavy_check_mark:
+    - invalid input
+    - a description of procedure
+    - all of the above
+4. What is a test case?
+    - Description of input data and dscription of data
+5. What is the precondition and postcondition of the square root of x function?
+    - precondition: x >=0
+    - postcondition: x = ans*ans
+    - for test cases we also need to give input conditions that are valid and unexpected as well as valid and expected ones
+6. Setting up testing policy should meet 4 main criteria. Which of the following should be included in a testing policy?
+    - Standards :heavy_check_mark:
+    - Data requirements
+    - Specification --- goes in the plan
+    - Testing system :heavy_check_mark:
+    - all of the above
+- **4 main criteria**
+    1. evaluation
+    2. definitions of testing
+    3. standards
+    4. testing system
+7. Which one of the above is/are component of the testing strategy
+    - a process that can reduce those risks
+    - test phase :heavy_check_mark: (?)
+    - address the risks
+    - test plan
+    - test factor :heavy_check_mark:
+    - all of the above
+8. which are test factors?
+    - portability :heavy_check_mark:
+    - ease of operation :heavy_check_mark:
+    - compliance :heavy_check_mark:
+    - access control :heavy_check_mark:
+    - error guessing
+    - continuity of processing :heavy_check_mark:
+    - ease of use :heavy_check_mark:
+    - all of the above
+9. which is/are not testing principle(s)?
+    - programming organization must not attempt to find some of its error :heavy_check_mark:
+    - thoroughly inspect the results of each test
+    - programmer should avoid attempting to test his/her own program
+    - plan the testing effort under the assumption that no error will be found :heavy_check_mark:
+    - all of the above
+10. Which one of them should be included in a test strategy matrix?
+    - risks :heavy_check_mark:
+    - script mapping
+    - test phases :heavy_check_mark:
+    - test cases
+    - all of the above
+- good test startegy matrix: test factors, phases (8 of them) and risks
+- may need to make one for the exam
+11. Which of them refers to recovery testing technique?
+    - ensuring that recovery procedures are documented and back up data preserved :heavy_check_mark:
+    - ensuring that the recovery testing activities are performed by the QA team
+    - ensuring that the backup data is stored on site of rapid recovery
+    - ensuring that the recovery personnel have been assigned and trained :heavy_check_mark:
+12. Regressing tsting, stress testing and security testing are types of
+    - dynamic testing (executing code) :heavy_check_mark:
+    - static
+    - both
+    - none
+13. The types of techniques useful in performing functional testing include:
+    - parallel testing :heavy_check_mark:
+    - integration testing
+    - manual-support testing :heavy_check_mark:
+    - error-handling testing :heavy_check_mark:
+    - all of the above
+14. Funtional testing is designed to ensure that:
+    - the system performs as expected
+    - the system delivers the results with appropriate accuracy
+    - the system requirements and specification are achieved :heavy_check_mark:
+    - all of the above
+15. Which of the methods is requirements testing?
+    - state transition :heavy_check_mark:
+    - error handling
+    - boundary value analysis :heavy_check_mark:
+    - none of the above/all of the above
+- requirements testing is a part of functional testing. error handling is a functional testing method but not a function of requirement testing.
+16. Regression testing is used to ensure that:
+    - segments perform as before
+    - segments perform properly after a change has been applied :heavy_check_mark:
+    - segments perform properly before a change is applied
+    - none of the above
+17. How to use error-handling testing?
+    - create set of transactions that contain errors, determine if the application can identify the errors, check both improper handling and improper communication
+18. How and when to use intersystem testing?
+    - when: there is a change in parameters between application system
+    - how: generate test transaction set in one application and pass to another system to verify the processing
+        - execute the integration nodes between multiple systems to check data transfers are acceptable and processed properly
+19. What is the difference between regression testing and manual support testing? Answer by contrasting 2 specific objectives for each 
+    - regression testing
+        - systems documentation remains current
+        - system test data and test conditions remain current
+        - previously tested systems functions perform properly after changes are introduced into the application system
+    - manual-support testing
+        - manual-support procedures are documented and complete
+        - manual-support responsability has been assigned
+        - manual-support team is adequately trained
+        - manual support and the automated segment are properly interfaced
+20. How and when to use parallel testing?
+    - when: the result of complex processing are similar, uncertainty
+    - how: same input data through 2 versions, done with part of whole system
+21. You have been asked to test a system called M. There are several risks like system consistency (different versions), correctness (after change) and exception processing. Which 2 functional testing techniques are suitable to test system M?
+    1. progression
+    2. error-handling
+22. Suppose there's a function called nextDate which takes 3 input integers - day, month and year. The requirement indicated that 1991 <= year <= 2060, 1 <= day <= 31. Generate test cases using boundary value analysis (take Feb as normal month). Ex input: year=2001, month=2, day=6 has expected output nextDate(year, month, day) = 2001.3.7
+    - boundary value analysis
+        - Year: 1990, 1991, 1992, 2000, 2059, 2060, 2061
+        - Month: 0, 1, 2, 11, 12, 13
+        - Day: 0, 1, 2, 30, 31, 31
+        - Cartesian product
+    - don't forget the 2 components of a test case: input and description of output
+23. Generate test cases of question above using equivalence partition
+    - Valid partition
+        - Y1 = {year: 1991 <= year <= 2060}
+        - M1 = {month: 1 <= month <= 12}
+        - D1 = {day: 1 <= day <= 31}
+    - Invalid partition
+        - Y2 = {year: year < 1991}
+        - Y3 = {year: year > 2060}
+        - M2 = {month: month < 1}
+        - M3 = {month: month > 12}
+        - D2 = {day: day < 1}
+        - D3 = {day: day > 31}
+    - Test cases (low robust)
+
+test case | year | month | day | expected output
+----------|------|-------|-----|---------------
+T1 | 1992 | 3 | 12 | 1992.3.13
+T2 | 1903 | 3 | 12 | Year not in valid partition
+T3 | 2070 | 3 | 12 | Year not in valid partition
+T4 | 2000 | 0 | 12 | Month not in valid partition
+T5 | 2000 | 13 | 12 | Month not in valid partition
+T6 | 2000 | 3 | 0 | Day not in valid partition
+T7 | 2000 | 3 | 32 | Day not in valid partition
+
+    - some test cases (strong)
+test case | year | month | day | expected output
+----------|------|-------|-----|---------------
+T8 | 1880 | -1 | 12 | Year, month not in valid partition
+T9 | 1880 | 1 | -1 | Year, day not in valid 
+
+24. Which one of them are included as structural testing techniques?
+    - compliance testing :heavy_check_mark:
+    - operations testing :heavy_check_mark:
+    - manual support testing
+    - recovery testing :heavy_check_mark:
+    - parallel testing
+    - all of the above
+25. How to use stress testing:
+    - Simulation, heavier volumes of data, larger number of users, error conditions
+26. How to use recovery testing
+    - access and evaluate adequancy, introduce a failure and evaluate recoverability, performing by people who would execute system IRL
+27. What is the difference between execution testing and operations testing (answer by contrasting 2 specific objectives for each)
+    - execution testing
+        - performance of system structure
+        - optimum use of hardware and software
+        - response time to on-line use requests
+        - transaction processing turnaround time
+    - operation testing
+        - completeness of computer operator documentation
+        - support mechanisms
+        - completeness of operator training
+        - operators using prepared documentation can, in fact operate the system
+28. What is the difference between compliance testing and security testing (answer by constrasting 2 specific objects of each)
+    - compliance testing
+        - development and maintenance methodologies
+        - compliance to departmental standards, procedures and guidelines
+        - completeness and reasonableness of applciation system documentation
+    - security testing
+        - adequate attention to identifying security risks
+        - realistic definition and endorsement of access to the system
+        - sufficient expertise exists to perform adequate security testing
+        - conducting tests to ensure implemented security measures function properly
+29. Test Principles: What are test principles
+    - test policy: main criteria
+    - test strategy components: test phase and test vector
+    - test plan: the standard phases (8 of them)
+30. Difference between functional and structural testing technique
+    - for both
+        - what it's used to do
+        - what testing techniques does it contains
+        - specific objective of each testing technique
+        - when and how to use each testing technique
+        - differences between each testing technique
+31. For a specific testing scenario, which techniques is/are the best choice
+32. How to generate test cases by using those principles.
+
+- 12 questions in total
+- will cover everything up to and including structural functions
+    - testing principles
+    - test policy, strategy, factors
+    - testing techniques: functional structural
+- at University Hall 213
