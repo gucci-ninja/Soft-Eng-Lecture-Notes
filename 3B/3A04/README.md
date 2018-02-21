@@ -635,3 +635,29 @@ Discuss conditions under which we cn use the styles of data flow architecture
 ## Day 17 Feb 12, 2018
 
 **skipped**
+
+## Day 18 Feb 14/15, 2018
+
+written example
+
+## Day 19 Feb 16, 2018
+
+Software Archicture Design by Tao Ch 6
+
+### Midterm 2017
+- 9 questions 25/20 marks
+
+1. Main characteristics that an event needs to satify to be event
+s
+#### Exercise 1
+AI software system for speech that has minimal uncertainty?
+- need to use different techniques to recognize voice
+
+Which software architecture is suitable?
+- Black board because you can have multiple experts that can be added to minimize uncertainty
+- combination of partial results to reach approximation
+- dont say batch sequential or pipes and filters
+
+#### 2
+S/w system to control robot given typica functions.
+Challenges: obstacles blocking path, sensor input imperfectm may run out of power, restrict accuracy of movement (this adds uncertainty so we need blackboard)

@@ -1234,3 +1234,62 @@ poles <= 0 and imaginary poles multiplicity of 1 | marginally stable | unstable
 ## Day 19 Feb 15, 2018
 
 ### Stability Example
+
+## Day 20 Feb 16, 2018
+
+### Routh Table Cases
+
+#### Case I: Zero Only in First Column - Reciprocal
+- polynomial whose roots are reciprocal of original polynomial, has poles with same distributions
+- if you have a pole at -2, the reciprical is -1/2 which is still in the left half plane
+#### Case II: Row of Zeroes
+- if we evaluate s<sup>3</sup> row, we find all entries to be 0
+- why row of zeros:
+	- when purely even or odd polynomial as a factor
+	- where all powers of s are even or odd
+	- for the T(s) example, no sign changes and 4 imaginary poles, all poles on y axis and it's marginally stable
+
+#### Stability Design via Routh-Hurwitz
+- tuning system to make sure it's stable (solved yesterday)
+- now we are going to look at it in state space
+
+#### Stability in State Space
+- from liear algebra we know sI-A inverse is the adjoint
+- using all the equations we have we get det([sI-A]) = D(s)
+- roots of det([sI-A]) = 0 will be the eigenvalues of A
+
+Slide set 7
+### Steady-State Errors
+- difference input and output as t --> infinity
+
+#### Test Inputs
+ < add standard test table >
+
+- step: pretty simple, going from point A to B
+- ramp would be used for vehicles?
+	- AIM, autonomous intersection management - vehicle reservation/request system \ - reduce need for deceleration and acceleration since constant velocity
+	- intersection managers, communication protocol to make sure cars get through intersection quickly without collision
+	- inersection manager calculates trajectory of car in space time (position vs time)
+	- vehicle to vehicle communication
+- parabola would be for a rocket
+
+#### Steady State Error and Stable Systems
+- design system to be stable first and then you can fine tune to have finite error
+- there is transiet and forced resposne. for step input you'll get k/s
+- two scenarios that you want for step
+	1. goes to where you expect (zero error)
+	2. constant error value
+- 3 scenarios for steady state error in ramp input
+	1. zero error
+	2. constant value error
+	3. ramp can't keep up with system, infinite error
+
+#### Steady State Error and Block Diagrams
+
+#### Sources of Steady State Error
+- for an electric motot you should get 0 error if yo do feedback control (proportional error feedback)
+	- in actual, your response gets really close to steady state
+-
+
+
+

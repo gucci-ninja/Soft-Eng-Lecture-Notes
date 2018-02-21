@@ -1605,3 +1605,127 @@ PW = -5000 + A_tot(P/A, 15%, 7)
 - compute present worth of each project using MARR
 - project with greatest present worth is the preferred project
 - **remark** for minimum cost problems, pick project which has smallest present cost at MARR
+
+## Day 19 Feb 15, 2018
+
+### Investing
+
+#### Example 1
+- consider 2 investments over 3 year period
+
+Company | 1st Costs | Net Revenue | MARR
+--------|-----------|-------------|------
+Burger Friends | $100000 | $45000/yr | 12 %
+Live Bait | $80000 | $3000/mth | 12%
+
+```
+PWa
+= -100k + 45k(P/A, 12, 3)
+= 8081
+
+PWb
+= -80k + 36k(P/A, 12, 3)
+= 6465
+```
+
+#### Example 2
+Software genius selling rights to video game. He has 2 offers/contracts.
+
+First offer: $10000 at each year end for next 5 years and then $20000 for next 6 to 10 years
+
+Second offer: 10 payments starting $10000, $130000 second year, 
+
+He must invest 50000 now for development and his MARR is 9%.
+
+```
+Need to find equivalent annuity
+
+N = 10, i = MARR, use A/P
+
+PW = -50000 + 10k(P/A, 9%, 5) + 20k(P/A, 9%, 5)(P/F, 9%, 5)
+= 72316
+
+PW2 = -50000 + 10k(P/A, 9%, 10) + 3000(A/G, 9%, 10)(P/A, 9%, 10)
+= 87295
+
+Should choose second option.
+
+AWa
+= 3365
+AWb
+= 2692
+
+```
+
+#### Example 3
+Two investments are being compared...
+
+#### Example 4
+Appledale Dairy is considering upgrading an old ice-cream maker. Modertate upgrade cost is $6500 now and yields annual savings of $330 in first year, $3000 in second, $2700 in third, decreasing by $300. Extensive upgrading costs 10550 and saves $5600 in first year. Savings then decrease by 16.94% each year thereafter. If machine will last 7 years in both cases, state the better upgrading option usng present worth comparison and MARR of 8%.
+
+```
+PW(moderate) = -6500 + [3300 - 300(A/G, 8%, 7)](P/A, 8%, 7)
+= 6473.78
+
+PW(extensive) 
+g = -16.94 therefore ig = (1 + i)/(1+g) - 1 = 0.30
+= -10550 + 5600(P/A, ig, 7)/1+g
+= 8330.60
+
+Extensive upgrading is better.
+``` 
+
+### Alternatives with Unequal Lives
+- comparisons are performed on basis of common time frames
+1. repeated lives
+  - use least common multiple of service lives of alternatives
+  - eg if you have service life of 10 years and one with 4 years, use 20
+2. adopted study period
+  - specific time period is given
+
+#### Lawn Guy Problem (Example)
+```
+Present Worth
+
+Lawn Guy PW
+= 350 + -350(P/F, 5, 10) + (-60-30)(P/A, 5, 20)
+= -1686.45
+
+120 dollars to buy a new lawn mower
+Clip Pro PW
+= 120 + -120(P/F, 5, 4) + -120(P/F, 5, 8) + -120(P/F, 5, 12) + -120(P/F, 5, 16)
+= 1667.94
+
+Annual Worth
+- easier to do
+
+Lawn Guy AW
+= 1686.45(A/P, 5%, 20)
+```
+- if lives are different, pick annual worth
+
+#### Study Period Example
+- used if it cannot be assumed that alternatives can be repeated
+- Suppose that given study period for lawmower is 4 years
+- You estimate salvage value of $150 for lawn guy mower
+
+```
+Lawn Guy
+PW = -$350 - $90(P/A, 5, 4) + 150(P/F, 5, 4)
+   = -545.74
+
+Clip Pro
+PW = -120 - 100(P/A, 5, 4)
+   = -474.60
+
+```
+
+What would salvage value have to be to make the 2 equivalent.
+
+```
+Set salvage value to be S and equate the lawn guy and clip pro
+
+- 350 - 90(P/A, 5, 4) S(P/F, 5, 4) = 474.60
+S = 236.47
+```
+- Quiz will go up to the end of this lecture ^ and will be open til Monday 26th midnight
