@@ -37,28 +37,32 @@
 ### Course Breakdown
 
 1. Software requirements
-  - Pre-reqs -> reqs -> Architecture design -> Coding -> Testing
+  - Pre-reqs
+  - reqs
+  - Architecture design 
+  - Coding
+  - Testing
 2. Software architecture design space (types of software structures, software elements, sofware connectors)
 3. Design Principles for sustainable systems
 4. How to approach practical problems using architecture design
 
 ### Last Year Final Exam
 
-5. Using appropriate design pricnciples, compare 2 designs in figure.
+1. Using appropriate design principles, compare 2 designs in the figure.
   Design A - interconnected, multi-directed, a lot of things depend on other things
   Design B - organized, singly directed, not a lot of interdependency
   
   Design B is better as it has low coupling high cohesion! :bowtie:
   
-6. Build simple software that translates Fahrenheit to Celcius. Choose suitable architecture design.
+2. Build simple software that translates Fahrenheit to Celcius. Choose suitable architecture design.
     - not that hard :innocent:
     
-8. AI system. Algorithm has uncertainty therefore we need specific architecture. What wil be the most suitable architecture?
+3. AI system. Algorithm has uncertainty therefore we need specific architecture. What wil be the most suitable architecture?
   
-9. Gives context for system, system to allow fire dept to follow fire situation in agricultural, forest, industrial areas. System will have sensors for each area.
+4. Given context for system, system to allow fire dept to follow fire situation in agricultural, forest, industrial areas. System will have sensors for each area.
     - choose appropriate software architecture
  
-### Grading and Textboook
+#### Grading and Textboook
  
 - Project
   - teams of 4-5 (not chosen by us :cold_sweat:)
@@ -91,7 +95,7 @@ Software Architecture and Design Illuminated
 - **Design Process**: create a language to satisfy constraints
 - L(M3) is an intersection of 2 languages L(M1) and L(M2) therefore we use product construction
 
-Design coukd be viewed as an activity that translates an idea/goal into a blueprint for an artefact or a process that is fit for its envionment
+Design could be viewed as an activity that translates an idea/goal into a blueprint for an artefact or a process that is fit for its envionment
 
 ## Day 3 Jan 10, 2018
 

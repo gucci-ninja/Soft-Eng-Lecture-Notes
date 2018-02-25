@@ -1483,9 +1483,9 @@ P(A/P, 7.5%, 40) = 500 + 10000(A/F, 7.5%, 40)
 
 P = 500(P/A, 7.5%, 40) + 10000(A/F, 7.5%, 40)
 
-alternatively
-ie = (1 + 15/2)^2(?) - 1
-P = 500(P/A, 7.5%, 40) + 10000(P/F, ie 40)
+alternatively **use this one**
+ie = (1 + 15/2)^2 - 1
+P = 500(P/A, 7.5%, 40) + 10000(P/F, ie, 20)
   = 6851.39
 ```
 
@@ -1688,12 +1688,12 @@ Extensive upgrading is better.
 Present Worth
 
 Lawn Guy PW
-= 350 + -350(P/F, 5, 10) + (-60-30)(P/A, 5, 20)
+= -350 + -350(P/F, 5, 10) + (-60-30)(P/A, 5, 20)
 = -1686.45
 
 120 dollars to buy a new lawn mower
 Clip Pro PW
-= 120 + -120(P/F, 5, 4) + -120(P/F, 5, 8) + -120(P/F, 5, 12) + -120(P/F, 5, 16)
+= -120 + -120(P/F, 5, 4) + -120(P/F, 5, 8) + -120(P/F, 5, 12) + -120(P/F, 5, 16)
 = 1667.94
 
 Annual Worth
