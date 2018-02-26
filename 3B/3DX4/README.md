@@ -34,6 +34,9 @@
 - [Second Order Systems](#second-order-systems)
 - [Approximation of Higher Order Systems](#approximation-of-higher-order-systems)
 - [Stability](#stability)
+- [Stability Example](#stability-example)
+- [Routh Table Cases](#routh-table-cases)
+- [Steady-State Errors](#steady-state-errors)
 
 ## Day 1 Jan 4, 2018
 
