@@ -33,6 +33,10 @@
 - [Bonds](#bonds)
 - [Comparison Methods](#comparison-methods)
 - [Relationships Among Projects](#relationships-among-projects)
+- [Investing](#investing)
+- [Alternatives with Unequal Lives](#alternatives-with-unequal-lives)
+- [Payback Period](#payback-period)
+- [Internal Rate of Return](#internal-rate-of-return)
  
 _Images are from Prof Cam Churchill's Lecture Slides for ENG 2B03 Engineering Economics._
 
@@ -1579,7 +1583,7 @@ Company specializing in vericomposting (worm eat waste). Currently mails out all
 - 1st cost - $30k
 - fuel - $100/week, annual $5200
 - insurance - $2000/yr
-- driver - $1500/year
+- driver - $1500/month - 18k/year
 - maintenance $1000/year
 
 ```
@@ -1729,3 +1733,83 @@ Set salvage value to be S and equate the lawn guy and clip pro
 S = 236.47
 ```
 - Quiz will go up to the end of this lecture ^ and will be open til Monday 26th midnight
+
+## Day 20 Feb 26, 2018
+
+- for present/annual worth, if you have positive numbers, take the highest one. If they're both negative and do nothing is not an option, you take the least negative
+
+### Payback Period
+- number of years for the first cost of an investment to be recovered
+- payback period = first cost/annual benefits
+- if annual benefits are not constant, payback period is __
+
+#### Example 1
+2 independent investment opportunities. What is the payback period for each? If you require a 3 year payback, should none, both or either be purchased?
+
+. | Machine A | Machine B
+--|-----------|----------
+first cost | 15000 | 20000
+revenues | 9000 | 11000
+annual costs | 6000 | 8000
+scrap value | 1000 | 2000
+service life | 5 yeas | 10 years
+
+```
+Machine A
+
+First cost = 15000
+annual net benefits = 9000 - 6000 = 3000
+payback period = (15000)/3000 = 5 years
+
+Machine B
+First cost = 2000
+annual net benefits = 11000 - 8000 = 3000
+payback period = 20000/3000 = 6.7 years (or 7 if assuming year end)
+
+Therefore, you should not invest in either.
+```
+#### Example 2
+. | Cashflows occur at the end of each year
+-----|-----------------------------------
+. | First Cost | Year 1 | Year 2 | Year 3
+A | -25000 | 15000 | 10000 | 5000
+B | -35000 | 10000 | 5000 | 30000
+
+Project | Year 1 | Year 2 | Year 3
+--------|--------|--------
+A | -10000 | 0 | 5000
+B | -25000 | -20000 | 10000
+
+- you would choose project A because it gets you payback by year 2 :0
+- payback value is ez but it ignores interest and future revenue
+
+**Crib sheet - normal paper double sided**
+
+### Internal Rate of Return
+- the interest rate at which NPV = 0, the rate of return at which the present value of the cashflow inflows equals the present value of the cash outflows
+- PW = 0 = -10000 + 2000(P/A, i, 6) for -10000 initial and 2000 yearly for 6 years
+- calculating IRR
+  - PW (disbursements) = PW(receipts)
+  - AW (disbursements) = AW(receipts)
+  - FW (disbursements) = FW(receipts)
+  - solve for unknowne i*
+- **IRR** - interest rate i* such that all ash flows of project are discounted at i*, PW of cash 
+- PW = 0 = sum of all (Rt - Dt)/(1 + i*)<sup>t</sup> where Rt and Dt are receipts and disbursements in period t = 0,1,2...T
+- for 100 invested today returning 110 in a year, the IRR is 10%
+  - o = PW = -100 + 110(P/F, i, 1)
+- if IRR > MARR, accept
+- if IRR < MARR, reject
+- if equal, marginally acceptable
+
+#### Example 3
+New Windows at NF are expected to save $400 per year in energy over their 30 year life. The windows have an initil cost of $8000 and will have 0 salvage value.
+
+- use a spreadhseet to plot PW and calculate the IRR
+- without excel, use annuities and PgivenA equation
+- PW = - 8000 = 400(p/a, i , 30)
+
+#### Example 4
+IRR and NPV
+- yield on single receipt
+- 2 arrows on cashflow, initial payout of 28371 and return of 50000 on year 5
+
