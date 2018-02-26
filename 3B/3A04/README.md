@@ -30,6 +30,7 @@
 - [Batch Sequential](#batch-sequential)
 - [Pipe and Filter Architecture](#pipe-and-filter-architecture)
 - [Process Control Architecture](#process-control-architecture)
+- [Data Centered Software Architecture](#data-centered-software-architecture)
 - [Midterm 2017](#midterm-2017)
 
 ## Day 1 Jan 5, 2018
@@ -770,13 +771,70 @@ Below is a package diagram for procss view.
 - **serialization** is the process of saving an object into storage medium or transmit it across network connection link in binary form
 - when resulting series of bytes are reread according to serialization, it can be used to make an architectural clone
 - the process of serializing is calling **defalting** or **marshalling** an object
-- **deserailization** - opposite operation/extraction of data structure from a series of bytes
+- **deserialization** - opposite operation/extraction of data structure from a series of bytes
 
 ![](img/pipeandfilter.PNG)
 
-- 
+#### Data Flow Methods
+1. Push only (Write only)
+  - data source and filter may push data in a downstream
+2. Pull only (Read only)
+  - data sink and filter may pull data from upstream
+3. Pull/Push (Read | Write)
+  - a filter may pull data from an upstream and push transformed data in a downstream
+
+#### Types of Filters
+1. Active filter
+  - pulls in data and pushes out transformed data
+  - works with passive pipe which provides read/write mechanisms
+2. Passive filter
+  - lets connected pipe push data in and pull data out
+  - works with active pipes that pull data out from a filter and push data into next filter
+
+![](img/activefilter.PNG)
+
+#### Applicable Design Domain
+- whenever system can be broken into series of processing steps
+- simple and stable data format
+- suitable for producer/consumer model
+
+#### Benefits
+- concurrency
+- reusability: encapsulation of filters make it easy to plug and play
+- modifiability: low coupling between filters
+- simplicity: clear division btwn filters
+- flexibility: supports sequential and parallel execution
+
+#### Limitations
+- not for dynamic interactions
+- low common denominator needed for ASCII data
+- overhead of data transformation among filters
+- error handling is sparse
 
 ### Process Control Architecture
+- suitable for embedded system software design
+- decomposes system into 2 subsystems
+  1. executor processor unit for changing process control variables
+  2. controller unit for calculating amount of changes
+
+![](img/processcontrol.PNG)
+
+- process control system must have
+  - **controlled variable**
+  - **input variable**
+  - **manipulated variable**
+
+#### Applicable Domains
+- embedded software system involving continuing actions
+- system that needs to maintain an output to remain stable
+- system with target point
+
+#### Benefits
+- better solution to control system where no precise formula can be used to decide manipulated var
+- software can be completely embedded
+
+#### Limitations
+- can be unstable and requires really careful math
 
 ## Day 16 Feb 9, 2018
 
@@ -786,7 +844,7 @@ Compiler involves several elements that provide tranformation phase of source fi
 - syntax analysis
 - type checking
 - intermediate code generation
-- reister allocation
+- register allocation
 
 Discuss conditions under which we cn use the styles of data flow architecture
 
@@ -794,16 +852,69 @@ Discuss conditions under which we cn use the styles of data flow architecture
 - propose batch sequential architecure for payroll system. system takes id, work time, rank and generate paycheck for each worker. 
 
 ```
-<Time files>---> ??? ----> ??? ----> taxes and reduction ---> reduction files --->> generate paycheck
+<Type files>---> ??? ----> ??? ----> taxes and reduction ---> reduction files --->> generate paycheck
 ```
 
 ## Day 17 Feb 12, 2018
 
-**skipped**
+#### Data Flow Architecture Review
+1. Pipe and Filter
+  - discrete flow of data
+2. Batch Sequential
+  - flow in quantity
+3. Control (gateways)
+- the data is either contained and controlled by an entity or is given in a complete or partial view of considered world
+- AI is used when there is no clear view of considered world
+
+### Data Centered Software Architecture
+- characterized by centralized data store belonging to entity that holds it
+- data store: data transfer and its knowledge - explicit and reasoning (in our case data and knowledge is the same)
+- data store is shared by all related components
+- system is decomposed into
+  1. data store
+  2. independent software component agents
+- connections between data modules and software components are implemented by
+  - explicit method invocation
+  - implicit method invocation based on repository catgeory
+- in pure data centered software architecture
+  - software components do not communicate with each other directly, they only communicate via data store
+  - shared data module provides all mechanisms for software components to access it
+    - insertion
+    - deletion
+    - update
+    - retrieval
+- 2 categories of data centered architecture
+  - repository
+    - data store is passive
+    - clients of data store are active
+    - client may access repo interactively or by batch transaction request
+    - widely used in DBMS, library system
+
+    ![](img/repo.PNG)
+
+  - blackboard
+    - widely used in real life
+    - data store is active
+    - clients are passive and are knowledge sources
+    - will reach approximation, not definite
+    - new data change may trigger evnts to its listeners
+    - infrom clients through notify
+    - can keep adding more clients
+    - knowledge based systems like voice and image recognition, security systems
+
+    ![](img/blackboard.PNG)
 
 ## Day 18 Feb 14/15, 2018
 
-written example
+![](img/written.jpg)
+
+- What is innovative about blackboard?
+  - blackboard allows you to add more observers without modification
+- used commonly for machine learning
+- repo style examples
+  - eg water - clients need water
+  - ecommerce/Amazon - packaging is the interface
+  - religion - ppl go to a priest
 
 ## Day 19 Feb 16, 2018
 
