@@ -13,6 +13,7 @@
 - [Machine Learning](#machine-learning)
 - [Assignment 2](#assignment-2)
 - [The Writing Process](#the-writing-process)
+- [Assignment 2](#assignment-2)
 
 ## Day 1 Jan 4, 2018
 
