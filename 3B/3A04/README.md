@@ -3,7 +3,6 @@
 ## Table of Contents
 - [Course Breakdown](#course-breakdown)
 - [Last Year Final Exam](#last-year-final-exam)
-- [Grading and Textboook](#grading-and-textboook)
 - [Introduction to Software Architecture](#introduction-to-software-architecture)
 - [SDLC V Model](#sdlc-v-model)
 - [What is meant by Software Architecture](#what-is-meant-by-software-architecture)
@@ -24,11 +23,14 @@
 - [Tutorial 2 Jan 23, 2018](#tutorial-2-jan-23-2018)
 - [UML](#uml)
 - [Structural Static Diagrams](#structural-static-diagrams)
-- [Structural (Static) and Behavioural (Dynamic) Diagrams](#structural-static-and-behavioural-dynamic-diagrams)
+- [Behavioural (Dynamic) Diagrams](#behavioural-dynamic-diagrams)
 - [General Design Principles](#general-design-principles)
 - [Design Principles for Security](#design-principles-for-security)
 - [Data Flow Architecture](#data-flow-architecture)
 - [Batch Sequential](#batch-sequential)
+- [Pipe and Filter Architecture](#pipe-and-filter-architecture)
+- [Process Control Architecture](#process-control-architecture)
+- [Midterm 2017](#midterm-2017)
 
 ## Day 1 Jan 5, 2018
 
@@ -242,7 +244,7 @@ Design could be viewed as an activity that translates an idea/goal into a bluepr
 - if those 2 elements mapped to 2 different computers then remote method invocation or Web service invocation can be used
 
 #### Software Connector Attributes
-- Synchronization mode - eg sempaphores, blocking/non-blocking
+- Synchronization mode - eg semaphores, blocking/non-blocking
 - Initiator
   - makes request for communication
   - one-initiator connectors - client initiates communication
@@ -319,13 +321,14 @@ Design could be viewed as an activity that translates an idea/goal into a bluepr
   1. Logical View - identifies software modules and their boundaries
   2. Process View - addresses non-functional requirements and performance at runtime
   3. Development View - organizes software units appropriately
-  4. Physical View - specifies physical software, hardwar, network configuration, installation and deployment
+  4. Physical View - specifies physical software, hardware, network configuration, installation and deployment
   5. Scenario/User Interface View - most important, gives look and feel
 
 ![](img/4plus1.PNG)
 
 ### UML for Software Architecture
 - UML is a graphical language for visualizing, specifying, constructing and documenting software artifacts aka **system's blueprints**
+- UML provides many modeling diagrams of 2 major categories - structural (static), behavioural (dynamic)
 - system within environment has interactions, actors, initiators for events
 - **event** - initializes set of interactions
 - **business event** - is independent from the system. It is from the environment to the system. has an initiator
@@ -434,7 +437,41 @@ Below is a package diagram for procss view.
 
 #### Class Diagrams
 - each of the views in the 4+1 model have a class diagram
+- these can be derived from use cases/scenarios
 - the elements of a class are class name, attributes, operations
+- relationships (connectors)
+  - composition (HAS A)
+    - components have same lifespan as owner
+    - components cannot be involved in another composition
+  - aggregation (HAS A) 
+    - components do not have same lifespan as owner
+    - components can be involved in another comp
+  - association (USES A)
+    - includes name, type and multiplicity
+    - composition is a type of association
+  - dependency
+    - x depends on y if changes to y leads to changes in x
+  - inheritance (IS A)
+    - when attributes are common btwn classes
+    - this weakens the encapsulation of an OO design
+- object diagram
+  - gives objects + relationship at runtime
+  - overview of instances of class diagram at point in time
+  - based on class diagram
+- composite structure diagram
+  - describes inner structure of component (all classes and interface)
+- component diagram
+  - describes all components of system
+  - gives interrelationships, interactions, interface
+  - outline of composition structure of components or modules
+- package diagram 
+  - describes package structure and organization
+  - covers classes in package and packages within packages
+- deployment diagram
+  - describes hardware, software, network connections for distributed computing
+  - covers server configuration and network 
+
+
 - there are 3 types of classes
   1. **boundary** - secret of this class is how to communicate with the environment (the edge of the system)
     - <span style="color:blue">hardware hiding</span>, environment hiding
@@ -444,16 +481,8 @@ Below is a package diagram for procss view.
     - controls flow of system
     - secret is the algorithm of <span style="color:blue">behaviour-hiding</span>
   
-### Structural (Static) and Behavioural (Dynamic) Diagrams
-  
-#### Structural (Static) Diagrams
-  - object diagram (objects)
-  - composite structure diagram (inner structure)
-  - component diagram (relationships and interactions)
-  - package diagram (package structure)
-  - deployment diagram (hardware, software, network)
 
-#### Behavioural (Dynamic) Diagrams
+### Behavioural (Dynamic) Diagrams
 - Use Case Diagrams
   - it is a visual representation of a scenario
   - there are actors that are part of the environment outside the system
@@ -462,8 +491,28 @@ Below is a package diagram for procss view.
 
   ![](img/usecase.PNG)
 - Activity Diagram
-  - 
-
+  - outline of activity data and control flow
+  - workflow oriented diagram
+  - covers decision points
+- State Machine
+  - life cyce of an object
+  - diagram has states and transitions
+  - system + business process
+- Interaction Overview
+  - combines activity and sequence diagrams to provide control flow
+- Sequence of Diagram
+  - chronological sequence of messages between objects
+  - corresponds to 1 use case
+  - full arrowhead: synchronous message
+  - half arrowhead: asynchronous message
+- Communication Diagram
+  - describes message passing sequence
+  - depicts how object receives and sends messages
+  - every communication diagram is equivalent/can be converted to sequence diagram
+- Timing Diagram
+  - combines state diagram and time sequence
+  - dynamic view of state change caused by external events over time
+  
 ## Day 10 Jan 26, 2018
 - looking over at diagrams
 
@@ -519,17 +568,43 @@ Below is a package diagram for procss view.
 - **interface** - abtract class that implements a contract. it tells you it doesn't have a concrete implementation of its methods but it has the method signature
 
 #### Principle Of High Cohesion Low Coupling
+- don't have a lot of interdependent classes or it will be hard to maintain
+- change in one class may lead to cascading updates to other classes
+- tight-coupling can be removed with new classes or inheritance
+- there should be easy expansion, simplicity and elegance
+- improvements in information hiding help system to be more cohesive
+- makes systems easier to modify
+- 7 +- 2 is a useful guideline - difference between small and large scale projects is amount of nesting btwn modules
+- possible architecture for **video games** consists of
+  - environment of game (areas, connections)
+  - mechanism controlling the game (encounters, reactions to events)
+  - participants in game (player, foreign characters)
+  - artifacts in game (sword, books)
+- personal finance app would have
+  - accounts
+  - bill paying
+  - reports
+  - loans
+  - investments
+  - lots of coupling btwn the above
+- alternative architecture could be
+  - assets
+  - sources
+  - suppliers
+  - interfaces
 
 #### Open-Closed Principle
 - open to extension: system can be extended to meet new requirements
 - closed to modification: the existing implementation and code should not be modified as a result of system expansion
+- increases reusability
+- technical approach is using abstraction via inheritance and polymorphism
 - separation of implementation and interface
 - keep attributes private
 - minimize use of global variables
 
 #### Liskov Subsitution Principle
-- let q(x) be  a provable property for objects x and type T. Then q(y) should be true for y objects of subset of type T
-- by design by contracts, it leads to restrictions on interactions having to do with inheritance
+- let q(x) be a provable property for objects x and type T. Then q(y) should be true for y objects of subset of type T
+- in design by contracts, it leads to restrictions on interactions having to do with inheritance
 - preconditions cannot be strengthened in subtype
 - postconditions cannot be weakened
 - invariants must be preserved in subtype
@@ -537,35 +612,75 @@ Below is a package diagram for procss view.
 ## Day 12 Jan 31, 2018
 
 #### Dependency Inversion Principle
-- Packages that are maximally stable should be maximally abstract. Instable packages should be concrete. The abstraction of a package should be in proportion to its stability.
+
+> High level modules should not depend upon low level modules.
+> Both should depend upon abstractions.
+> Abstractions should not depend upon details.
+> Details should depend upon abstraction
+- **rule**: design to an interface, not an implementation
+
+> Packages that are maximally stable should be maximally abstract. 
+> Instable packages should be concrete. 
+> The abstraction of a package should be in proportion to its stability.
+- kinda like the Hollywood principle - don't call us we'll call you
 - can have partner apps
 - concrete but has business rules that are likely to change
 
 #### Interface Segregation Principle
-- Clients shouls not be forced to depend upon interfaces that they do not use
+- Clients should not be forced to depend upon interfaces that they do not use
 - if there are 2 non-cohesive functionalities, keep them separate
 - avoids design of fat interfaces and provides clear design to user
 - break the functionalities into atomic interfaces that can be then individually accessed by the user
 
 #### Law of Demeter
+> Each unit should have only limited knowledge about other units: only units "closely" related to the current unit.
+- style for building systems
+- "only talk to immediate frens"
 
 ### Design Principles for Security
 
 #### Principle of Least Privilege
+> The principle of least privilege states that a subject should be given only those privileges that it needs in order to complete its task.
+- if subject does not need access, it shouldn't have access
 
-#### Fail-Safe Defaults
+#### Fail-Safe Defaults Principles
+> The principle of fail-safe defaults states that, unless a subject is given explict access to an object, it should be denied access to that object.
 - when system fails we back up
-- unless subject is given explicit access to an object, it should beb denied access to that object
 - assumes tHt the default access to an object is none
 - if the subject is unable to complete its action or task, it should undo those changes it made to thte security state of the system becore it terminates
 - fault-tolerance: when we can't guarantee that system will behave in a safe way
 
 #### Principle of Economy of Mechanism
-- security mechanisms should be as simple as possible
+> Security mechanisms should be as simple as possible
+- if design and implementation are simple, there is fewer possibility for errors
+- simple design => less assumptions, less risks, simpler testing
 
 ## Day 13 Feb 2, 2018
 
-**skipped**
+#### Principle of Complete Mediation
+> requires that all accesses to objects be checked to ensure they are allowed.
+- restricts the caching of information
+- OS mediates these actions (determining if allowsed and providing resources)
+
+#### Open Design
+> The security of a mechanism should not depend on the secrecy of its design or implementation
+- complexity does not add security
+
+#### Separation of Privilege
+> A system should not grant permission based on a single condition
+- this is restrictive because it limits access
+- equivalent to separation of duty principle
+
+#### Least Common Mechanism
+> The mechanisms used to access resources should not be shared.
+- to prevent information being transmitted through channels
+- also a restrictive one
+
+#### Psychological Acceptability
+> Security mechanisms should not make the resouce more difficult to access than if the security mechanisms were not present
+- recognizes human element in security
+- configuring and executing should be easy and intuitive
+- interpret as: the security mechanism may add extra burden but that burden must be minimal and reasonable
 
 ## Day 14 Feb 5, 2018
 
@@ -580,7 +695,12 @@ Below is a package diagram for procss view.
 - no interaction between modules except the data connection between them
 - modifiability and reusability are the property attributes of data flow architecture
 - function is a relation that is deterministic
-
+- different ways to connect output data of module to input of other modules
+  - batch sequential
+  - pipes (stateless and serve as conduits for moving streams of data between multiple filters)
+  - filters (stream modifiers, which process incoming data and send modified data stream out over pipe to another filter)
+  - *pipes are special cases of filters
+  - close loop process control is another typical data flow architecture
 
 ### Batch Sequential
 - this architecture is available in the financial sector
@@ -612,10 +732,51 @@ Below is a package diagram for procss view.
   - after partitioning N ways, can I sort the data?
      - merge and sort and merge and sort and merge and sort
     - hadoop
+- connection links between batch sequential elements is conducted through temporary files
+- common for business data processing 
+- scripts are commonly used to make batch sequence
+
+#### Applicable Design Domains
+- data is batched
+- each subsystem reads related input files and writes output files
+
+#### Benefits
+- simple divisions between subsystems
+- each subsystem is standalone
+
+#### Limitations
+- requires external control
+- low throughput
+- no interactive interface
 
 ## Day 15 Feb 7, 2018
 
 **skipped**
+
+### Pipe and Filter Architecture
+- decomposes system into components
+  - data source
+  - filters
+  - pipes
+  - data sink
+- connections between components are data streams
+- a **data stream** is a first-in first-out buffer type data structure
+- a **filter** is an independent data stream that reads from input data stream, transforms and process it and then writes transformed data stream over pipe to next filter
+- filter does not need to wait for batched data as a whole, it works incrementally
+- filter does not know the identity of data
+- a **pipe** is a stateless conduit that moves data stream from one filter to next
+  - can carry binary or character stream
+- an object type data must be serialized to be able to go over stream
+- **serialization** is the process of saving an object into storage medium or transmit it across network connection link in binary form
+- when resulting series of bytes are reread according to serialization, it can be used to make an architectural clone
+- the process of serializing is calling **defalting** or **marshalling** an object
+- **deserailization** - opposite operation/extraction of data structure from a series of bytes
+
+![](img/pipeandfilter.PNG)
+
+- 
+
+### Process Control Architecture
 
 ## Day 16 Feb 9, 2018
 
