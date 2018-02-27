@@ -37,6 +37,8 @@
 - [Stability Example](#stability-example)
 - [Routh Table Cases](#routh-table-cases)
 - [Steady-State Errors](#steady-state-errors)
+- [Steady State Error Example](#steady-state-error-example)
+- [Static Error Constants](#static-error-constants)
 
 ## Day 1 Jan 4, 2018
 
@@ -1268,6 +1270,9 @@ Slide set 7
 #### Test Inputs
  < add standard test table >
 
+ 
+- find out if its accelerating (1/s^2), at constant velocity (1/s) or stationary (1)
+
 - step: pretty simple, going from point A to B
 - ramp would be used for vehicles?
 	- AIM, autonomous intersection management - vehicle reservation/request system \ - reduce need for deceleration and acceleration since constant velocity
@@ -1280,19 +1285,99 @@ Slide set 7
 - design system to be stable first and then you can fine tune to have finite error
 - there is transiet and forced resposne. for step input you'll get k/s
 - two scenarios that you want for step
-	1. goes to where you expect (zero error)
+	1. goes to where you expect (zero error) - approaches exponentially but decays
 	2. constant error value
+
+![](Day21/step.PNG)
+
 - 3 scenarios for steady state error in ramp input
-	1. zero error
+	1. zero error (converges)
 	2. constant value error
-	3. ramp can't keep up with system, infinite error
+	3. ramp can't keep up with system, infinite error (grows at different angles)
+
+![](Day21/ramp.PNG)
+
+## Day 21 Feb 27, 2018
 
 #### Steady State Error and Block Diagrams
+- closed loop TF T(s), what we get from input to the output you do what we want minus what we have
+- we are intrested in time domain signal
+- reference signal - output of closed loop system
 
 #### Sources of Steady State Error
 - for an electric motot you should get 0 error if yo do feedback control (proportional error feedback)
 	- in actual, your response gets really close to steady state
--
+- if TF going to 0, you get smaller and smaller error
+- if you wanna reduce steady state error, crank up the gain (migth cause overshoot and oscilations)
+- if we have K/s, lim as t -> inf as long as K is positive and stable --> 0/(0+K) = 0
+- in general, given close loop TF, output C(S) = TF*R(S), error is R(S)[1 - T(S)]
+```
+e_ss = lim s->0 s*E(s)
+     = lim s->0 s*R(S)/(1 + G(s))
+	 **assuming stable function
 
+For R(s) = 1/s
+e_ss = 1/(a + lim s->0 G(s))
+     = the lim s->0 G(s) part is the DC gain for a step input of the forward TF
+```
 
+- to have zero steady state error we need the lim of G(s) as s goes to 0 to be infinity
+- if you want to track a step you need a pole at the origin
+
+```
+For R(s) = 1/s^2
+e_ss = 1/(a + lim s->0 G(s))
+     = the lim s->0 G(s) part is the DC gain for a ramp input of the forward TF
+```
+
+- if you have a 1/s term (intgegrator) you will get a steady state error for n = 0
+- same thing for parabolic input and R(S) = 1/s^3
+- to get infinity as the limit you need 3 poles at the origin minimum
+- if n = 2 and you multiply by s^2 you get the poles???
+- if n = 1 you get infinite error
+- you cant track a parabola unless you have 1/s^3
+
+### Steady State Error Example
+
+Find steady state inputs for inputs 5u(t), 5tu(t), 5t<sup>2</sup>u(t)
+- the forward path (100*(s+2)(s+6))/(s(s+3)(s+4))
+- tracks a ramp bc 1/s
+
+![](Day21/written)
+
+### Static Error Constants
+- steady state error performance specs 
+1. Position Constant 
+	- K<sub>p</sub> = lim<sub>s->0</sub>G(s) 
+	- thus e<sub>step</sub>(inf) = 1/(1 + K<sub>p</sub>)
+2. Velocity Constant
+	- K<sub>v</sub> = lim<sub>s->0</sub>sG(s) 
+	- thus e<sub>ramp</sub>(inf) = 1/K<sub>v</sub>
+3. Acceleration Constant
+	- K<sub>a</sub> = lim<sub>s->0</sub>s<sup>2</sup>G(s) 
+	- thus e<sub>para</sub>(inf) = 1/K<sub>a</sub>
+
+#### System Type
+- this is what the static error constant is made using, based on number of integrants
+
+#### Steady State Error Summary
+
+![](Day21/summary.PNG)
+
+#### Tight Steady-State Error Specification
+- when you gotta be careful but have a lil bit of constant error like a robotic arm
+
+#### Error Specification Example
+- find value of K such that there is 10% error steady state
+- type of system - Type 1
+- K(s+5)/(s(s+6)(s+7)(s+8))
+- in response to a ramp for type 1 system you get 1/K<sub>v</sub>
+
+```
+want e<sub>ramp</sub>(inf) = 0.1
+= 1/Kv
+
+Kv = lim s->0 s*G(s)
+   = 5K/(6*7*8)
+```
 
