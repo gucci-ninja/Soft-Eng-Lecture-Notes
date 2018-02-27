@@ -1812,4 +1812,84 @@ New Windows at NF are expected to save $400 per year in energy over their 30 yea
 IRR and NPV
 - yield on single receipt
 - 2 arrows on cashflow, initial payout of 28371 and return of 50000 on year 5
+- PW = 0 = -28371 + 50000(1/(1+i*)^5)
+- solve for i, i = 12%
 
+## Day 21 Feb 27, 2018
+
+#### Non-uniform Cash Flow Diagram
+- down arrow - 100
+- up arrow - 20, 30, 20, 40, 40
+- calculate annuity for up arrow
+- for IIR, generally will just ask for it and you can solve any way
+- know that i* is 10%-15%
+
+```
+PW = 0 ## also called NPV
+   = -100 + 20(1/(1+i*)) + 30(1/(1+i*)^2) + 20(1/(1+i*)^3) + 40(1/(1+i*)^4) + 40(1/(1+i*)^5)
+
+i = 10% ----> PW = 10.16
+i = 15% ----> PW = -4.02
+
+if you plug in your first value and get a positive number, to know which way to go to get higher value 
+
+- smaller i => higher present worth generally
+
+i* = 10% + (15% - 10%)(10.16/(10.16 - -4.02))
+   = 13.5%
+```
+
+#### Example 1
+Investor has opporuntity to invest $28371 today. Investment will provide $445.66 at the end of each month for the next 8 years. What is the annual IRR compounded monthly?
+
+```
+P = A(P/A, i*, N)
+28371 = 445.66(P/A, i*, 96)
+
+IRR and MARR in general are nominal
+
+To get annual:
+
+i* = r/m
+r = (i*)*m
+  = (i*)*12
+
+i*_effective = (1+i*)^12 - 1
+
+i*_monthly = 0.9167%
+then you would multiply by 12 to get 11.0%
+```
+
+#### Root Finding Approaches
+- Computational - numerical method
+  - bisection
+  - false position
+  - fixed point iteration
+  - newton-raphson
+  - modified newton-raphson
+  - secant method
+
+#### Rate of Return Analysis
+- IRR is used for analysis since it produces single measure of project desirability
+
+#### IRR for Mutually Exclusive Projects
+
+. | Plan A | Plan B
+---|--------|------
+1st cost | $1 | $1000
+year end | $2 | $1900
+IRR | 100% | 90%
+
+- need to find weighted average
+- for 2 alternatives, calculate incremental rate of return, delta IRR, based on difference between alternatives' cash flows
+  - if delta IRR >= MARR, choose higher cost (cost at time period 0) alternative
+  - if delta IRR < MARR, choose the lower cost alternative
+- we need equal length cashflow diagram, or calculate equal study period
+
+#### Why Inremental Analysis is Necessary
+- asumme company has $90k to invest and uses MARR of 16%. Has to choose between 2 projects
+  - A with initial cost 50k, IRR i*a = 35
+  - B with initial cost 8500 IRR i*b = 29
+- if we do weighted average, the rate of return for is
+  - i*a = (50000(35%) + 40000(16%))/90000 = 26.6 
+  - i*b = 28.3%
