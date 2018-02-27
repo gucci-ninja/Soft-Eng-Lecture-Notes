@@ -26,6 +26,7 @@
 - [Equivalent Partitioning Classes](#equivalent-partitioning-classes)
 - [Unit Testing](#unit-testing)
 - [Tutorial Feb 14, 2018 ](#tutorial-feb-14-2018-)
+- [Empirical Unit Testing Principles](#empirical-unit-testing-principles)
 
 ## Day 1 - Jan 4, 2018 
 
@@ -1005,3 +1006,46 @@ T9 | 1880 | 1 | -1 | Year, day not in valid
     - test policy, strategy, factors
     - testing techniques: functional structural
 - at University Hall 213
+
+## Day 19
+
+## Day 20
+
+### Empirical Unit Testing Principles
+
+#### Complete Coverge Principle
+- subject to many interpretations
+    - each class consists of single elemt
+    - group all input data into just one class
+- this, we may evaluate how good a testing criterion is based on how significant the representatives of the classes obtained by decomposition are
+- may need to partition to get deeper and deeper into the system
+- for example below, D1 = x>0 && x > y, y > x would be one partion
+- another partition, D2 = x > 0 && y > 0 && x <= y
+- D3 = x<=0 || y <=0
+- D4 = x < 0 || y < 0
+- we need to branch when partitioning
+
+```
+f(int x, int y)
+if(x>0 ^ y >0)
+    if (x > y)
+        x = x-y
+        y = y-x
+    else
+        y = y-x
+
+## Euclidiean GCM
+
+Domain = Z x Z
+d = (x, y)
+T = {<x,y>, <x2, yz>,...}
+
+Try
+x <= 0
+y <= 0
+x = -5
+y = 4
+```
+**Inconsistent Partition Example**
+
+```x>0 && y=0```
