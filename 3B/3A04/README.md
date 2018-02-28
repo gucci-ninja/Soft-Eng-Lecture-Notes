@@ -32,6 +32,8 @@
 - [Process Control Architecture](#process-control-architecture)
 - [Data Centered Software Architecture](#data-centered-software-architecture)
 - [Midterm 2017](#midterm-2017)
+- [Hierarchy Structure](#hierarchy-structure)
+- [Main Subroutine Software Architecture](#main-subroutine-software-architecture)
 
 ## Day 1 Jan 5, 2018
 
@@ -937,3 +939,51 @@ Which software architecture is suitable?
 #### 2
 S/w system to control robot given typica functions.
 Challenges: obstacles blocking path, sensor input imperfectm may run out of power, restrict accuracy of movement (this adds uncertainty so we need blackboard)
+
+## Day 20 Feb 28, 2018
+
+- Master Slave - dependapbility and performance
+
+### Hierarchy Structure
+- a substystem or element is assigned a functionality
+- method invocation 
+- we need lower level modules because of design principles
+- modules communicate with adjacent modules
+- middle layers are usually for processing
+- characterized by explicit method invocation (call-and-return) connection styles
+- all architectural styles have this structure (except maybe Master-Slave)
+
+#### Unix Architecture
+- interface includes shell, utilities, app
+- system call interface sends and receives signals from file system
+- device drivers send signals to hardware control
+- middle layer includes process control
+- usually there are many scheduling and memory managment algorithms
+
+### Main Subroutine Software Architecture
+- traditional style
+- purpose it to have maximum reuse of subroutines and make individual subroutine be developed independently
+- we start from data flow diagram (acquired in Requirements stage)
+- in OO, data is encapsulated in indiavidual object
+- system decomposed into subroutines hierarchially according to system functionality
+  - behaviour hiding
+  - software hiding
+  - machine hiding
+- we start building from bottom-up
+
+![](img/ms1.PNG)
+
+![](img/ms2.PNG)
+
+- not good design
+  - not easy to maintain
+
+#### Benefits
+- easy to decompose system
+- can be used in sub-system of OO design
+
+#### Limitations
+- globally shared data is vulnerable
+- tight coupling can cause ripple effects
+
+## Day 21
