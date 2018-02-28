@@ -20,8 +20,6 @@
 
 Course | Description | Due
 -------|-------------|----
-2B03 | Quiz 5 | Feb 26
-3I03 | Assignment 2 | Feb 27
 4A03 | Super-Credit | Mar 2
 3DX4 | Pre-lab 3 | Mar 2
 3I03 | Presentation | Mar 5
