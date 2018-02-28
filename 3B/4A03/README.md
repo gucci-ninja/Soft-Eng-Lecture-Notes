@@ -20,6 +20,7 @@
 - [Mini-Discussion](#mini-discussion)
 - [Factors to Consider about Food](#factors-to-consider-about-food)
 - [Group Discussion 6 for Case Study](#group-discussion-6-for-case-study)
+- [Online Lecture](#online-lecture)
 
 ## Day 1 Jan 10, 2018
 
@@ -366,3 +367,79 @@ What was noteworthy to you about TED Talk?
 - genetic modifiation - we can add nutrients, breed for cold-hardy, disease resistance and longer shelf-life
 - vertical farms (a stacked greenhouse)
 - aeroponics - using suspended plants and misting roots with nutrient solution
+
+### Online Lecture
+
+#### Why is Extinction Important?
+- people point of view and animal point of view
+- animals want to survive
+- there is a balance in the ecosystem
+- research purposes (we can learn from animals)
+- since we are at the top of the food chain, it is our duty/responsability to help the needy
+- in society, we help disabled and young people - same idealogy for animals
+- species are part of our culture and history
+- the extinction of some specieds is partly due to us because of all the development, deforestation and pollution and overhunting
+
+#### Things thare being done
+- environmental movements in 1950s-60s
+- 1969 - national environmental policy - create and maintain conditions under which man and nature can be productive harmony and fulfil social economic requirements of future and present generations (similar to Brundtland Report's definition but in pracice it is to limit chemicals and hazardous waste)
+- late 1980s - start of sustainable development - Earth Summit in Rio 1992
+
+#### Which Time Frame Were We Considering in Previous Discussion
+- we're thinking of the future
+- impact of the past
+- example of conserve the past perspective
+    - we have a duty towards preventing extinction because they existed in the past
+
+#### TED Talk 2
+- biomutualism
+    - association of biology and another discipline
+        - where each discipline reciprocally advances the other
+        - colective discoveries emerge beyond any single field
+- geckos and how they have sticky hands and feet, they can glide and use their tail to reach zero angualr momentum
+
+#### TED Talk 3 - Jane Goodhall
+- sentient and sapient chimpanzees 
+- we need nature for psychological development
+- roots and shoots
+
+- their role in environment
+- how much we can learn from them
+- similarity to us
+- attractiveness
+
+- consequentialist: outcome matters more (ends justify the means)
+    - impact of species being gone
+    - role in environment
+- deontologist: your actions matter more (great power comes great responsibilty)
+    - obligations to animal
+
+#### Empathy
+- mirror-neurons that let us feel what others are feeling
+- we have a drive to belong
+- how de we extend our sense of belonging to the entire biosphere
+- digital tech is helping accomplish this initiative
+
+#### Pretend you're coaching someone on why they should care
+- first discussion
+- how to keep each other alive
+- 5 dimensions
+    1. our needs vs other species needs
+    2. short term vs long term needs
+        - maybe we do better with other species 
+    3. humans vs non-human animals
+        - who is deserving of protection
+        - how are they different
+    4. minor change vs major impact
+        - 1 species going extinct might be nbd but many species will have major impact
+    5. what do you think of humans
+        - self-reflective
+        - is it our fault/responsability?
+
+#### Cultural Extinction TED Talk
+- many cultures are vulnerable
+- languages are becoming extinct (half of them)
+- assimilation
+- the 5 dimensions above also apply to this
+
+
