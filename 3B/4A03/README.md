@@ -20,7 +20,8 @@
 - [Mini-Discussion](#mini-discussion)
 - [Factors to Consider about Food](#factors-to-consider-about-food)
 - [Group Discussion 6 for Case Study](#group-discussion-6-for-case-study)
-- [Online Lecture](#online-lecture)
+- [Online Lecture Day 6](#online-lecture-day-6)
+- [First Quiz](#first-quiz)
 
 ## Day 1 Jan 10, 2018
 
@@ -368,7 +369,7 @@ What was noteworthy to you about TED Talk?
 - vertical farms (a stacked greenhouse)
 - aeroponics - using suspended plants and misting roots with nutrient solution
 
-### Online Lecture
+### Online Lecture Day 6
 
 #### Why is Extinction Important?
 - people point of view and animal point of view
@@ -402,12 +403,10 @@ What was noteworthy to you about TED Talk?
 - sentient and sapient chimpanzees 
 - we need nature for psychological development
 - roots and shoots
-
 - their role in environment
 - how much we can learn from them
 - similarity to us
 - attractiveness
-
 - consequentialist: outcome matters more (ends justify the means)
     - impact of species being gone
     - role in environment
@@ -442,4 +441,19 @@ What was noteworthy to you about TED Talk?
 - assimilation
 - the 5 dimensions above also apply to this
 
+## Day 7 Feb 28, 2018
 
+- Humans Need Not Apply
+    - increase in robots and automation
+    - loss of almost all the jobs
+- how are we going to deal with unemployed people through no fault of their own
+- points to consider: what about people that do not have access to the automation
+
+#### Guest Speaker 1 - Shane
+
+#### Guest Speaker 2 - Levi
+
+### First Quiz
+- due Friday at noon
+
+The internet of things is progressing. As objects become equipped with their own IP addresses, it is possible, for example, that your toaster, hot water tank, and alarm clock could communicate with each other and have a hot shower ready for you when you wake up, and toast ready for you when u hop out of the shower. Suppose this "internet of things" were implemented on a household basis. List 12 potential unintended consequences (at least 6 of them negative) of this technology, including economic, social/cultural, health, and ecosystem integrity.
