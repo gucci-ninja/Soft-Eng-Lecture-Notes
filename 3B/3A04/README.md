@@ -986,4 +986,15 @@ Challenges: obstacles blocking path, sensor input imperfectm may run out of powe
 - globally shared data is vulnerable
 - tight coupling can cause ripple effects
 
-## Day 21
+## Day 21 Mar 2, 2018
+
+### Master Slave Architecture
+
+#### Midterm Solutions
+ - distance of connectors - two elements related with a connector have a distance expressed as in the same thread/process/computer/or on different computers across a network
+- observer pattern example - blackboard, MVC
+- compiler architecture - data flow (using files) - batch sequential and data-centered (repository, diagsram from slides)
+- main elements and characteristics of black board architecture
+  - knowledge sources (problem solving modules sharing common global database called blackboard)
+  - data store (holds knowledge)
+- biometric system question - blackboard
