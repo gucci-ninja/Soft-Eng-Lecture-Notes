@@ -37,6 +37,7 @@
 - [Alternatives with Unequal Lives](#alternatives-with-unequal-lives)
 - [Payback Period](#payback-period)
 - [Internal Rate of Return](#internal-rate-of-return)
+- [Incremental Analysis](#incremental-analysis)
  
 _Images are from Prof Cam Churchill's Lecture Slides for ENG 2B03 Engineering Economics._
 

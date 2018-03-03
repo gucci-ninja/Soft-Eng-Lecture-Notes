@@ -34,6 +34,7 @@
 - [Midterm 2017](#midterm-2017)
 - [Hierarchy Structure](#hierarchy-structure)
 - [Main Subroutine Software Architecture](#main-subroutine-software-architecture)
+- [Master Slave Architecture](#master-slave-architecture)
 
 ## Day 1 Jan 5, 2018
 
