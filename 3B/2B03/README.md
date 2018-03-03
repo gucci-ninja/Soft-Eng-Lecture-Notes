@@ -1869,6 +1869,8 @@ then you would multiply by 12 to get 11.0%
   - modified newton-raphson
   - secant method
 
+### Incremental Analysis
+
 #### Rate of Return Analysis
 - IRR is used for analysis since it produces single measure of project desirability
 
@@ -1893,3 +1895,139 @@ IRR | 100% | 90%
 - if we do weighted average, the rate of return for is
   - i*a = (50000(35%) + 40000(16%))/90000 = 26.6 
   - i*b = 28.3%
+
+## Day 22 Mar 1, 2018
+
+#### Steps in INcremental Analysis
+1. identify alternatives, including "do nothing"
+2. (optional) Compute rate of return for each individual alternative
+  - all optionals will have IIR greater than MARR in midterm/exam so don't do this step
+3. arrange (remaining) alternatives 
+4. calculate delta IRR on the increment (B-A) for the first 2 alternates (A= lower cost alternative)
+5. compare the retained alternative from Step 4 with the next higher cost alternative on the ordered list
+  - use same criteria as Step 4
+  - B-A delta IRR > MARR, eliminate B
+  - C - A, C delta IRR > MARR, eliminate A
+  - D - C, delta IRR < MARR, go with D
+6. repeat steps 4-5 until all alternatives have been examined
+
+#### Flowchart
+
+<pic>
+
+#### Custard Machine Example
+
+You have been put in charge f buying a machine that will inject jelly and custard
+
+Project | First Cost | IRR | Machine 1 | Machine 2 | Machine 3
+--------|-----------|------|-----------|---|---
+1 | 100000 | 12 | . | . | .
+2 | 175000 | 9 | . | .
+3 | 200000 | 18 | 17 | 23|  .
+4 | 250000 | 16 | 12 | 17 | 13
+
+If they were independent, get rid of 2 because it's less than 16%, keep 4 it's marginally stable. If you're only keeping one, you cant look at IRR column because first costs are different. You have to do incremental.
+
+They are already in order of least to most expensive. 
+
+```
+
+when IRR < MARR, keep the cheaper machine
+
+machine 3 vs machine 1
+delta IRR is 17%
+IRR > MARR therefore we keep machine 3
+
+now do machine 4 vs machine 3
+delta IRR < MARR therefore we keep lower one
+
+keep machine 3
+
+```
+
+
+#### Incremental Calculation
+
+COnsider the 2 over a 10 year period and MARR of 20%
+
+Energy Source | 1st cost | Net Saving
+--------------|----------|----------
+wind turbines (B) | $1.5 mill | $400000/yr
+photovoltaic calls (A) | $1.2 mill | $300000/r
+
+```
+do more expensive - less expensive (B - A)
+PW = 0 
+-30000 = 10000(P/A, i*, 10)
+
+plug 20% for i* and see what you get, so there is no need for a range
+
+when we do i* = 20%, we get RHS > 300000
+
+the answer is 31% but we just need to know if it's more or less than MARR
+
+if IRR > MARR, keep the more expensive therefore go with B
+```
+
+#### Example 3
+
+Rimouski Dairy needs to get a filling machine for their creamer. They serve 3 choices. Revenues fromt he line are 200000 per year. MARR = 10%
+
+1. Purchase new machine, first cost = 65000, life = 6yrs, salvage = 10000 (C)
+2. contract with packaging suplier for free machine. packaging = 15000 per year for 6 years (A)
+3. buy used machine for 30000 which has 0 salvsage vallue at the end of 6 years. maintenance costs are 3000 in first year, increasing by 2500 each year (arithmetic) (B)
+- installation is 60000. 
+- what is the preferred alternative
+
+```
+cashflow -> down arrow 30000, up arrow 12000
+-30000 + [12000 - 2500(A?G, IRR, 6)](P/A, IRR, 6) = 0
+try MARR = 10%
+PW = -1948
+need to know how it's going to change with IRR, so try 9%, which brings you closer to zero, therefore, you're going to have a low interest rate, well below the MARR. therefore we are going to go with the less expensive machine (A) and get rid of B
+
+now we have C - A
+
+C machine: 65000+6000 down arrow, no maintenance so 20k positive arrows per year and then salvage vlue at the end of years
+
+minus
+
+A machine: 
+
+= 
+
+65000 down arrow, 15000 per year and then salvage value
+
+bring all arrows back to zero
+- 65000 + 15000(P/A, IRR, 6) + 10000(P/F, IRR, 6)
+try 10%, we get $5974
+we try and find out if IRR is greater or less than MARR
+delta IRR is greater than MARR so we end up with more expensive (which is )
+
+- since number is positive you know that IRR > MARR 
+need to specify how you know in exam/midterm
+
+```
+
+#### Example 4
+Suppose that a project pays $2500 today costs $12500 one year from now and pays $15000 in 2 years. WHat is the IRR?
+
+```
++2500, - 12500, +15000
+
+2500 - 12500(1/(1+i*)) + 15000(1/(1+i*)^2)
+
+i*^2 - 3i^2 + 2 = 0
+(i* - 1)(i*-2) = 0
+
+```
+
+- Midterm will cover up to this point. So the Rmouski Dairy example
+
+**Review at MDCL 1102 from 1-3pm on Sunday**
+
+
+
+```
+
+
