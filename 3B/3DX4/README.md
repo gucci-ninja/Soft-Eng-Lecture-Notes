@@ -1381,3 +1381,19 @@ Kv = lim s->0 s*G(s)
    = 5K/(6*7*8)
 ```
 
+## Day 22 Mar 1, 2018
+
+#### Steady State Error and Disturbances
+- using feedback systems to handle unwanted disturbances
+- track reference signal with 0 error
+- ```E(s) = R(s) - C(s) => C(s) = R(s) - E(s)```
+- using final value theorem, e<sub>sss</sub> = e<sub>R</sub>(inf) + e<sub>D</sub>(inf)
+- if we set R(s) = 0, then we get ```E(s)/D(s) = G2/(1 + G1G2)```
+
+**written**
+
+## Day 23 Mar 2, 2018
+
+**written eg cont'd**
+
+
