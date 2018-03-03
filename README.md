@@ -20,11 +20,11 @@
 
 Course | Description | Due
 -------|-------------|----
-4A03 | Super-Credit | Mar 2
-3DX4 | Pre-lab 3 | Mar 2
 3I03 | Presentation | Mar 5
 2B03 | **Midterm** | Mar 6
 3A04 | Deliverable 2 | Mar 9
+4A03 | Journal 2 | Mar 9
+3DX4 | Prelab 4 | Mar 9
 3S03 | Assignment 2 | Mar 12
 
 
