@@ -343,3 +343,7 @@ Java | Java, Python
 - content: problem, slution, market, business, influence, ask (for money/time?)
 
 #### Guest Speaker
+
+## Day 8 Mar 1, 2018
+
+**skipped** but details on final presentatino announced - need to join a group.

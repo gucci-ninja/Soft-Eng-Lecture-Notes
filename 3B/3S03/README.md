@@ -1007,9 +1007,9 @@ T9 | 1880 | 1 | -1 | Year, day not in valid
     - testing techniques: functional structural
 - at University Hall 213
 
-## Day 19
+## Day 19 Feb 26, 2018
 
-## Day 20
+## Day 20 Feb 27, 2018
 
 ### Empirical Unit Testing Principles
 
@@ -1049,3 +1049,11 @@ y = 4
 **Inconsistent Partition Example**
 
 ```x>0 && y=0```
+
+#### Tutorial Feb 28, 2018
+
+**skipped**
+
+## Day 21 Mar 1, 2018
+
+**skipped**
