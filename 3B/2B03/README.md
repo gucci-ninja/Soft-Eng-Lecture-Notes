@@ -86,7 +86,7 @@ of costs and benefits of project over time
 
 > "Development that mettes needs of the present generation without compromising the ability of future generations to meet their own needs.
 > SD is not a fixed state of harmony but a process of change in which exploitation of resources, direction of investment, orientation of technological development and institutiona change are made consistent"
-\- UNICED 1987
+\- UNICEF 1987
 
 #### Business Models
 - Linear Model
@@ -298,7 +298,7 @@ Manhattan Island was purchased for $24 in 1626. If that was invested at 6% how m
 ```
 i = 6%
 P = 24$
-N = 2018 - 1626
+N = 2017 - 1626
 F = P(1 + i)^N
      = 1.88 B
 ```
@@ -511,7 +511,7 @@ Using interest tables, 12% nominal interest with monthly compunding (1%), N = 24
 
 ### Sinking Fund Factor and Annuity
 
-```(A/F, i, n)``` = i/[1+i)<sup>N</sup> - 1]
+```(A/F, i, n)``` = i/[(1+i)<sup>N</sup> - 1]
 
 **Annuity**
 - a series of equal cash flows that start at the end of the first period, continue over N reglarly spaced time intervals
@@ -537,7 +537,7 @@ A = F(A/F, i, N)
 
 ### Uniform Series Compound Amount Factor
 
-```(F/A, i, n)```
+```(F/A, i, n)``` = [(1+i)<sup>N</sup> - 1]/i
 
 ```F = A(1 + i)```<sup>```N-j```</sup>
 
@@ -763,8 +763,8 @@ N = the number of arrows on cashflow diagram
   = 21
 
 F_26(13th year) = 10000*(F/A, ie, 21)
-F = A*i/[(1+i)^N - 1]
-  = 10000*0.041/[(1+0.04)^21 - 1]
+F = A[(1+i)^N - 1]/i
+  = 10000*[(1+0.04)^21 - 1]/0.041
   = 322441.07
 
 Now find future worth
@@ -884,7 +884,7 @@ A = 5000*(0.26380)
 - most assets have a value for which they can be sold for
 - **WONT** be on Quiz 2
 
-		A = P(A/P, i, N) = S(A/F, i, N)
+		A = P(A/P, i, N) - S(A/F, i, N)
 
 #### Example 2
 You are considering replacing your water heater and buying compact point-of-use water heaters for $5000 with a salvage value of $500 after 5 years. If the nominal interest rate is 10%, what is the expected yearly return on the compact heaters.
