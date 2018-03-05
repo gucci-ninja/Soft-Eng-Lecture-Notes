@@ -35,6 +35,7 @@
 - [Hierarchy Structure](#hierarchy-structure)
 - [Main Subroutine Software Architecture](#main-subroutine-software-architecture)
 - [Master Slave Architecture](#master-slave-architecture)
+- [Layered Architecture](#layered-architecture)
 
 ## Day 1 Jan 5, 2018
 
@@ -990,6 +991,10 @@ Challenges: obstacles blocking path, sensor input imperfectm may run out of powe
 ## Day 21 Mar 2, 2018
 
 ### Master Slave Architecture
+- variant of main/subroutine architecture style
+- supports fault tolerance and system liability
+- slave provides replicated services to master
+- master selects particular result among slaves
 
 #### Midterm Solutions
  - distance of connectors - two elements related with a connector have a distance expressed as in the same thread/process/computer/or on different computers across a network
@@ -999,3 +1004,54 @@ Challenges: obstacles blocking path, sensor input imperfectm may run out of powe
   - knowledge sources (problem solving modules sharing common global database called blackboard)
   - data store (holds knowledge)
 - biometric system question - blackboard
+
+## Day 22 Mar 5, 2018
+
+#### Applicable Design Domains
+- suitable for parallel computing and accuracy
+  - open to addition, closed to modification
+- when liability is critical
+  - eg need many sensors (european, american)
+- where performance is critical (to a limit)
+- capacity issue solution: delegate requests to different workers that can handle the requests
+
+### Layered Architecture
+- system decomposed into higher and lower layers
+- request to layer i+1 invokes services provided by layer i
+- high cohesion
+
+```
+Joseph's diagram
+```
+
+![](img/layered_arch.PNG)
+
+- what kind of class would be at the user interface?
+  - boundary class
+- for utility class, we can use blackboard architecture
+- last layer, Layer 1, only has one link and can be a virtual machine
+
+#### Applicable Design DOmain
+- any system that can be divided between application specific protions and plaform specific
+- apps with clean division between core services, critical services, user interface services
+- apps that have a number of classes closely related to each other
+
+#### Benefit
+- incremental software development based on increasing levels of abstraction
+- rnhanced independence of layers
+- enhances reusability
+- component-based technology is suitable technology to implment layered structure
+- promotion of protability - each layer can be abstract machine deployed independently (because of design)
+
+#### Limitations
+- long path from request to service (many layers) so lower runtime performance
+- performance concerns on overhead on data marshalling and buffering by each layer
+- many apps cannot fit this architecture
+  - they are usually networks
+- expections and error handling are an issue
+- related architectures
+  - repo
+  - cliend-server
+  - virtual machine
+
+## Day 23
