@@ -38,6 +38,7 @@
 - [Payback Period](#payback-period)
 - [Internal Rate of Return](#internal-rate-of-return)
 - [Incremental Analysis](#incremental-analysis)
+- [Review Session](#review-session)
  
 _Images are from Prof Cam Churchill's Lecture Slides for ENG 2B03 Engineering Economics._
 
@@ -956,7 +957,7 @@ A = F*(A/F, i, N)
   = 1mill*(i/[i+1]^N-1])
   = 1mill*(0.005/[(1 + 0.005)^600-1])
   = 264.05
-  => divide by 365
+  => divide by 365 (or by 30 i'm not sure)
 ```
 
 #### Example 3 Series Present Worth Factor
@@ -2027,8 +2028,169 @@ i*^2 - 3i^2 + 2 = 0
 
 **Review at MDCL 1102 from 1-3pm on Sunday**
 
+### Review Session
 
+1. A Paradorian bond pays $500 coupons and $5000 five years from now. I want to earn at least 300 percent annual (effective) interest on this investment (to compensate for the very high inflation in Parador). How much should I pay for this bond now?
+
+All our bonds are coupon bonds - coupons come every 6 months in general
+
+- purchase price
+- up arrows every 6 months for coupons until maturity date
+- then you get face value
+
+Priority of what we'll be asked
+
+- unknown = purchase price
+- face value = 5000 
+- coupon rate = not given
+- interest rate (effective) --> 300
+- N = 5 years
+
+- since it's every 6 months, we need a 6 month interest rate to use P/A and move arrows around.
+
+```
+i_e = (1 + r/m)^k - 1
+i_e = (1 + i_6month)^2 - 1
+sqrt(3 + 1) - 1 = i_6month
+i_6month = 100%
+
+P = 500(P/A, i_6month, 2*5) + 5000(P/F, i_6month, 2*5)
+  = 500(P/A, 1%, 10) + 5000(P/F 1%, 10)
+  = 504.39453125
+```
+
+If we were given P = 500, CR = 20%, i_e = 300%, FV = ?, N = 5 years
+
+```
+We can't get an actual number for FV but we know that coupon = (0.2/2)FV
+
+500 = (0.2/2)FV(P/A, 1, 10) + FV(P/F, 3, 5)
+``` 
+
+2. Pacific Oil Company's monthly revenue is invested at nominal interest rate of 11.72% compounded monthly. However, its quarterly revenue alternates between $100000 and $125000, every other quarter (first quarter 100k, then 125k..). If the revenue starts flowing in one quarter from now what will be the accumulated revenue at the end of 10 years. 
+
+- can split into series: odd months (1, 3, 5..39) and even months (2, 4,..40)
+```
+125k every 2 months up to 40 quarters
+ie = (1 + r/m)^k - 1
+   = (1 + 11.72/12)^6 - 1
+   = 0.06004958609574107
+F = 125000(F/A, ie, 40/2)
+  = 4600650.693603614
+
+100k every 2 months up to 39 quarters and then move it 1 quarter = 3789416.4660202246
+
+ie_6months = (1 + 11.72/12)^6 - 1 = 0.06004958609574107
+ie_3month = (1 + 11.72/12)^3 - 1 = 0.029587094953963167
+F = 100000(F/A, ie_6month, 20)(F/P, i_3month, 1) + 125000(F/A, 1_6months, 20)
+  = 8390067.159623839
+
+```
+3. Clarice would like to buy a house and after budgeting everything she knows that she can afford monthly payments of $1650. If mortage rate is 3% and she plans on amortizing her loan over 25 years how large a mortgage can she get?
+
+```
+at 0 she gets a mortgage (unknown) and the next month and for 25*12 months she pays $1650
+
+P = 1650(P/A, 0.03/12, 25*12)
+  = 347946.1480109683
 
 ```
 
+After a 5 year term how much would Clarice have left to pay on her mortgage if she took the full amount of the loan calculated in part (a)
 
+```
+We know P = 347946.1480109683 and A = 1650
+
+F = P_0(F/P, 0.03/12, 12*5) - 1650(F/A, 0.03/12, 12*5)
+  = 297513.00878057623
+
+```
+
+For the remaining amount calculated in part (b) how long would it take Clarice to pay off her loan if the interest rate stayed the same but she increased her monthly payments to $1900
+
+```
+P = F from (b) = 297513.00878057623
+
+P = 1900(P/A, 0.03/12, N)
+297513.00878057623 = 1900((1+0.03/12)^N - 1)/((0.03/12)*(1+0.03/12)^N)
+range of N = 180 to 250
+
+x* = ?
+y* = 297513.00878057623
+
+x1 = 180
+y2 = 275130.3957682878
+
+x2 = 250
+y2 = 352883.90778240655
+
+x* = x1 + (x2 - x2)(y*-y1/y2-y1)
+  = 198.928 
+Using Solver -> Type your equation, ALPHA bracket for X and ALPHA calc for =
+                Then do SHIFT solve, type 1 for X? and then SHIFT solve again
+                Wait
+                = 198.928 
+
+Round up to 199
+```
+
+On her 45th payment, how much is interest and how much is principal reduction? CHECK NOTES
+
+
+4. A construction company needs to install new fall-arrest equipment on their tower cranes. Two cranes are under consideration.
+
+- Model A will cost $15000, will last 2 years, and will cost $2500 per year to service and inspect
+- Model B will cost $18000, will last 3 years, and will cost $2000 per year to service and inspect
+- if company uses a MARR of 10%, which model should they choose using PW, AW or FW analysis
+- AW is the easiest bc you already have annuities
+
+```
+
+PW for A = -48530
+PW for B = -40234
+
+AW of Model A -> (-15000 - 2500(P/A, 10%, 2))(A/P, 10%, 2) = -11142.857142857138
+OR -15000(A/P, 10%, 2) - 2500
+AW of Model B -> (-18000 - 2000(P/A, 10%, 3))(A/P, 10%, 3) = -9238.066465256792
+
+Choose model B because it is less negative.
+
+```
+
+5. An entrepeneur is looking at leasing houses that he can then rent out to students. Two lease options are avilable, each with a first cost, annual lease cost, and deposit return estimates show below. Note you must also consider do-nothing option. MARR = 13%
+
+. | Location A | Location B
+--|------------|-----------
+initial lease payment | 9000 | 18000
+annual lease cost | 4000 | 4500
+anticipated yearly revenue | 13000 | 14000
+lease term (yrs) | 2 | 6
+```
+Use IRR flowchart
+rank least expensive (A) to most expensive (B) and subtract cashflow B - A and we get a new cashflow diagram
+
+Ranking
+A -> Do nothing
+B -> Location A
+C -> Location B
+
+Do A - B, A is a straight line
+B -> down arrow 9000 and then up 9000 (13000-4000)
+AW = 0 = 9000(A/P, i*, 2) - 9000
+i* > MARR when we solve so we keep the more expensive (get rid of do nothing)
+
+Do C - B, common N is 6
+C is down arrow 18000, 6 up arrows of 9500
+You get down arrow of 9000, up arrows of 500, 9500, 500, 9500, 500, 500
+don't need to calcualate IRR, just need to know if it's less or more than MARR
+
+- 9000 + 500(P/A, MARR, 6) + 9000(P/F, MARR, 2) +  9000(P/F, MARR, 4)
+= 5566.963593966478
+
+if this gives us a positive number. to get zero you would need a higher i
+so delta IRR is going to be greater than MARR. It's gonna be around 34%
+
+if you get confused during midterm, try MARR and then try another number and see if it gets larger or smaller. If it's larger, you need to go in the opposite direction. 
+
+if your delta IRR is greater than MARR you keep the more expensive one --> Location B
+```
