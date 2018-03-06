@@ -1164,7 +1164,7 @@ Barbara's monthly payments are ABarbara = A_firstpayment + A_John = 2765.49 + 24
 
 Cases | Meaning | Procedure
 ------|---------|----------
-i>g>0 | growth positive, but less than rate of interest thus 1^0 is positive | use tables/formula
+i>g>0 | growth positive, but less than rate of interest thus i^0 is positive | use tables/formula
 g>i>0 | growth positive, but more than rate of interest thus i^0 is negative | use formula **only**
 g=1>0 | growth equals rate of interest thus i&0 is zero | special case: P = N[A/(1+g)]
 g<0 | growth is negative ths i^0 is positive | use tables or formula
@@ -1771,14 +1771,14 @@ payback period = 20000/3000 = 6.7 years (or 7 if assuming year end)
 Therefore, you should not invest in either.
 ```
 #### Example 2
-. | Cashflows occur at the end of each year
------|-----------------------------------
+. | Cashflows occur at | the end | of | each year
+-----|--------|----------|-------|----------
 . | First Cost | Year 1 | Year 2 | Year 3
 A | -25000 | 15000 | 10000 | 5000
 B | -35000 | 10000 | 5000 | 30000
 
 Project | Year 1 | Year 2 | Year 3
---------|--------|--------
+--------|--------|--------|--------
 A | -10000 | 0 | 5000
 B | -25000 | -20000 | 10000
 
