@@ -1574,7 +1574,7 @@ District improvements
 - **future worth** - move all arrows to future and calculate future worth
 
 present worth | actions
------|-------------
+-----|--------|-----
 >0 | acceptable
 <0 | unacceptable
 =0 | marginal
@@ -1656,6 +1656,7 @@ PW2 = -50000 + 10k(P/A, 9%, 10) + 3000(A/G, 9%, 10)(P/A, 9%, 10)
 
 Should choose second option.
 
+This is for the previous question I think
 AWa
 = 3365
 AWb
@@ -1915,16 +1916,14 @@ IRR | 100% | 90%
 
 #### Flowchart
 
-<pic>
-
 #### Custard Machine Example
 
 You have been put in charge f buying a machine that will inject jelly and custard
 
 Project | First Cost | IRR | Machine 1 | Machine 2 | Machine 3
 --------|-----------|------|-----------|---|---
-1 | 100000 | 12 | . | . | .
-2 | 175000 | 9 | . | .
+1 | 100000 | 19 | . | . | .
+2 | 175000 | 15 | 9 | .
 3 | 200000 | 18 | 17 | 23|  .
 4 | 250000 | 16 | 12 | 17 | 13
 
