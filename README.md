@@ -20,8 +20,6 @@
 
 Course | Description | Due
 -------|-------------|----
-3I03 | Presentation | Mar 5
-2B03 | **Midterm** | Mar 6
 3A04 | Deliverable 2 | Mar 9
 4A03 | Journal 2 | Mar 9
 3DX4 | Prelab 4 | Mar 9
