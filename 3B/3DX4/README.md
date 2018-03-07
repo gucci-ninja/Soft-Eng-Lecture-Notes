@@ -39,6 +39,7 @@
 - [Steady-State Errors](#steady-state-errors)
 - [Steady State Error Example](#steady-state-error-example)
 - [Static Error Constants](#static-error-constants)
+- [Root Locus Techniques](#root-locus-techniques)
 
 ## Day 1 Jan 4, 2018
 
@@ -1396,4 +1397,56 @@ Kv = lim s->0 s*G(s)
 
 **written eg cont'd**
 
+## Day 24 Mar 6, 2018
 
+### Root Locus Techniques
+- where closed loop poles are gonna go
+
+#### Control System Problem
+- poles of open loop transfer function are typically easy to find and do not depend on gain K
+- thus it is easy to determine stability and transient response
+- for closed transfer function, need to factor T(s)
+- For example G(s) = (s+1)/(s(s+2)) and H(S) - lag compnesator = (s+3)/(s+4)
+	- closed loop TF = T(s) = K(s+1)(s+4)/
+- root locus gives us an idea of how the poles move around as the gain changes
+
+#### Vector Representation of Complex Numbers
+- the rules of root locus and how to compute
+- just need to follow the rules
+- given any complex number we can represent it in polar coordinates with magnitude M and angle theta
+- if F(s) = (s + a) we would get (σ + a) + jω
+
+
+F(s) = (s+1)/(s(s+2)) at s = -3 + j4
+
+Pole at 0, pole at -2 and 0 at -1.    
+
+![](Day24/written.PNG)
+                                                 
+```
+matlab - atan2   
+
+Try at home
+s = tf('s')
+F = ..
+s1 = evalfr(F, -3+j*4)
+M=abs(s1)
+theta = angle(s1)
+
+other commands
+feedback()
+poles()
+```																				
+#### Sketching Root Locus
+- put this on cheat sheet
+1. Number of branches
+	- the paths that poles tranverse
+	- number of brahces thus equals number of poles
+2. symmetry on real axis
+	- complex conjugate
+3. Real-axis segments
+	- angles must add up to multiple of 180
+	- for every complex conjugate, the angles cancel each other out
+4. starting and ending points
+	- root locus begins at the finite and infinite poles of G(s)H(s) and ends at the finite and infinite zeros off G(s)H(s)
+	- root locus begins at zero gain and for small K, denominator is D_G(s)D_H(s) + epsilon
