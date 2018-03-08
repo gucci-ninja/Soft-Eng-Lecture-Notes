@@ -36,6 +36,7 @@
 - [Main Subroutine Software Architecture](#main-subroutine-software-architecture)
 - [Master Slave Architecture](#master-slave-architecture)
 - [Layered Architecture](#layered-architecture)
+- [Virtual Machine](#virtual-machine)
 
 ## Day 1 Jan 5, 2018
 
@@ -1054,4 +1055,52 @@ Joseph's diagram
   - cliend-server
   - virtual machine
 
-## Day 23
+## Day 23 Mar 7, 2018
+
+#### Quiz
+Master Slave Architecture addresses 2 non functional requirements. Identify one of them.
+
+- performance
+  - fault tolerance
+  - system liability
+  - capacity
+  - speed
+
+### Virtual Machine
+- built on existing system
+- separates programmign language, hardware language, or application from a physical execution platform
+- It plays the role of an emulation software
+- provideds emulation of functions of one system using a different system
+- allows exact reproduction of external behaviour of a system
+
+![](img/virtual_machine.PNG)
+
+- in example below, the interface and pilot part stays the same
+
+![](img/pilot.PNG)
+
+
+The example below is for compiling different languages under one machine
+
+![](img/compiler.PNG)
+
+Java Virtual Machine is very variable because you can run it on many machines
+
+#### Applicable Design Doamins
+- solving a problem by simulation or translation
+- interpreters of microprogramming, XML processing, script command language exeution, rule-based system execution, Small talk and Java interpreter typed programmging language
+
+#### Benefits
+- portability and machine platform independence
+- simplicity of software development
+- simula
+
+#### Limitations
+- slow execution of interpreter
+- additional overload due to the new layer
+
+#### Related Architecture
+- interpretor, repository, layered architecture
+
+![](img/datastore.PNG)
+
