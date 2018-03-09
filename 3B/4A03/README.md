@@ -22,6 +22,7 @@
 - [Group Discussion 6 for Case Study](#group-discussion-6-for-case-study)
 - [Online Lecture Day 6](#online-lecture-day-6)
 - [First Quiz](#first-quiz)
+- [Quiz 2](#quiz-2)
 
 ## Day 1 Jan 10, 2018
 
