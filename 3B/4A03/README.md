@@ -457,3 +457,23 @@ What was noteworthy to you about TED Talk?
 - due Friday at noon
 
 The internet of things is progressing. As objects become equipped with their own IP addresses, it is possible, for example, that your toaster, hot water tank, and alarm clock could communicate with each other and have a hot shower ready for you when you wake up, and toast ready for you when u hop out of the shower. Suppose this "internet of things" were implemented on a household basis. List 12 potential unintended consequences (at least 6 of them negative) of this technology, including economic, social/cultural, health, and ecosystem integrity.
+
+## Day 8 Mar 7, 2018
+
+TED talk 1 - us and third world countries
+
+Linda Keen discussion
+
+TED talk 2 - Abundance is the future
+
+What are you excited about technology unlocking?
+- cheap energy
+- water desalination
+
+Al Gore and Climate Change
+- do we have to change
+- can we change
+- will we change
+
+### Quiz 2
+- nuclear reactors and stakeholders
