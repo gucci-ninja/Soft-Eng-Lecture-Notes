@@ -20,10 +20,16 @@
 
 Course | Description | Due
 -------|-------------|----
-3A04 | Deliverable 2 | Mar 9
-4A03 | Journal 2 | Mar 9
-3DX4 | Prelab 4 | Mar 9
 3S03 | Assignment 2 | Mar 12
+2B03 | Quiz 7 | Mar 12
+3DX4 | Prelab 4 | Mar 16
 
 
+#### Exam Schedule
 
+Course | Date | Duration | Room
+--------|------|---------|------
+3DX4 | Apr 16, 2018 | 2:30 | MDCL 1105
+2B03 | Apr 18, 2018 | 2:30 | IWC 1 (3)
+3S03 | Apr 20, 2018 | 2:30 | UH 213
+3A04 | Apr 25, 2018 | 2:30 | UH 213
