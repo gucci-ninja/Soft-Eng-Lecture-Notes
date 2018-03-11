@@ -1104,3 +1104,74 @@ Java Virtual Machine is very variable because you can run it on many machines
 
 ![](img/datastore.PNG)
 
+## Day 24 Mar 9, 2018
+
+#### Question 1
+- user interaction with free robotic arm is extremely controlled
+- It has n controllable sections, each with a control unit and own processing time
+- propose an architecture for this system
+
+#### Answer 1
+- time constraints (performance) therefore we have boundary intervals
+- master slave architecture
+- can also be blackboard architecture
+
+#### Question 2
+- software architect designing a system that
+  - requires divide and conquer to decompose main task and improve performance
+  - calculation task that system is carrying can be partitioned into several independent equal sub-tasks
+  - users should not be aware that calculation is divide and conquer
+  - users or processing of sub-tasks should not depend on algorithms for partioning work and assembling final result
+  - to increase computational accuracy, can use dif implementations
+  - easy to corrdinate sub-tasks
+
+#### Answer 2
+- main sub routine
+  - does it use divide and conquer? - yes 
+  - can computation be processed independently? - no because it doesn't guarantee equal
+  - therefore we can't use it
+- master-slave (the second flavour)
+  - you ask each worker to submit a result and choose the best one (2nd) 
+  - either you have fault tolerance (doing things in different ways) and for accuracy
+  - is it easy to coordinate sub tasks? - yes, when you get results from worker, master can use them
+
+#### Question 3
+- sustainable software development
+- software that depends heavily on hardware and software should not be affected by changes to hardware. 
+- layered architecture, lowest layer should be highly coupled to hardware
+- aim onr unning same software on legacy hardware with litte maintainence
+
+#### Answer 3
+- VM for sustainability and for simulatio/emulation
+
+#### Question 4
+- both blackbard and master-slave delegate tasks to low level agents
+- wrt task delegation, what are the main differences between them
+
+#### Answer 4
+- master-slave, worker gets work and worker returns result
+- blackboard more exchange between data store and knowledge sources
+
+#### Question 5
+- architecture for transmitting data from source to target and target to source 
+- when common replication set is updatabe on both sides during replication interval
+- accomplished by copying data from source to target
+
+#### Answer 5
+
+![](img/q5.PNG)
+
+
+#### Question 6
+- fire losses in US are too high and firefighting is haardous
+- 330 billion dollars spent
+- designing a system that allows firefigting det to follow the fire situation in areas under its control
+  - agriculture areas
+  - forest
+  - indutril
+  - residential
+- system employs different info gathering tools (sensors) that are appropriate area
+- need felxibility in visualizing some data and omitting others
+
+#### Answer 6
+- wait for Monday
