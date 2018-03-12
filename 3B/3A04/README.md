@@ -37,6 +37,9 @@
 - [Master Slave Architecture](#master-slave-architecture)
 - [Layered Architecture](#layered-architecture)
 - [Virtual Machine](#virtual-machine)
+- [Interaction Oriented Software Architecture](#interaction-oriented-software-architecture)
+- [PAC](#pac)
+- [MVC](#mvc)
 
 ## Day 1 Jan 5, 2018
 
@@ -1093,7 +1096,7 @@ Java Virtual Machine is very variable because you can run it on many machines
 #### Benefits
 - portability and machine platform independence
 - simplicity of software development
-- simula
+- simulation
 
 #### Limitations
 - slow execution of interpreter
@@ -1170,7 +1173,52 @@ Java Virtual Machine is very variable because you can run it on many machines
   - indutril
   - residential
 - system employs different info gathering tools (sensors) that are appropriate area
-- need felxibility in visualizing some data and omitting others
+- need flexibility in visualizing some data and omitting others
 
 #### Answer 6
 - wait for Monday
+
+## Day 25 Mar 12, 2018
+- languages are a set of acceptable strings defined by grammars, full of terminal and non-terminal expression
+
+![](img/translator.PNG)
+
+### Interaction Oriented Software Architecture
+- given a set of data, there are many ways to represent it
+- the modules + secrets of each method is:
+  - data Module ---> (secret.Data) **ENTITY CLASS**
+  - Interaction Module ----> (secret: what to present to user) **CONTROLLER CLASS**
+  - module v1...5 ---> how to display v1...5 (5 modules) **BOUNDARY CLASSES**
+  - module other? **BOUNDARY CLASS**
+- 3 kinds of modules
+  - view modules
+  - controller modules - Finite State Machine
+  - data modules
+- this architecture allows separation of user interactions from data abstraction and business data processing
+- allows multiple views for a same data set
+- 2 categories
+  1. presentation-abstraction-control (PAC)
+  ![](img/PAC.PNG)
+  2. model-view-controller (MVC)
+  ![](img/MVC.PNG)
+
+### PAC
+- agent based hierarchial architecture
+- system is decomposed into agent
+- each agent has 3 components - presentation, abstraction, control
+
+![](img/PAC2.PNG)
+
+### MVC
+
+#### Summary
+- the controller
+  - manages user input requests
+  - controls the sequence of user interactions
+  - selects desired views for output displays
+  - manages all initlialization, instantiations, and registrations of other modules in MVC system (subscribe-notify pattern)
+- model module
+  - provides core functional services and encapsulates all data details
+  - does not depnd on other modules and does not know whch view are registerd with or attached to it
+- view module
+  - is responsible for displaying data provided by model module and updating the interfaces whenever the data changes
