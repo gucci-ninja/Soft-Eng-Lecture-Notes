@@ -1161,7 +1161,6 @@ Java Virtual Machine is very variable because you can run it on many machines
 
 ![](img/q5.PNG)
 
-
 #### Question 6
 - fire losses in US are too high and firefighting is haardous
 - 330 billion dollars spent
