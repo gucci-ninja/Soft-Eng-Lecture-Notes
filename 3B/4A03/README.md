@@ -463,7 +463,7 @@ The internet of things is progressing. As objects become equipped with their own
 
 TED talk 1 - us and third world countries
 
-Linda Keen discussion
+[Linda Keen discussion](http://voices-voix.ca/en/facts/profile/linda-keen)
 
 TED talk 2 - Abundance is the future
 
