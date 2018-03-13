@@ -34,7 +34,7 @@
 - [Second Order Systems](#second-order-systems)
 - [Approximation of Higher Order Systems](#approximation-of-higher-order-systems)
 - [Stability](#stability)
-- [Stability Example](#stability-example)
+- [Stability and Routh Tables Example](#stability-and-routh-tables-example)
 - [Routh Table Cases](#routh-table-cases)
 - [Steady-State Errors](#steady-state-errors)
 - [Steady State Error Example](#steady-state-error-example)
@@ -105,7 +105,7 @@ a = x-axis to highest point
 b = x-axis to lowest point
 ```
 
-#### Stability
+#### Stability Intro
 
 ```
 Total response = Natural response + Forced response
@@ -1200,7 +1200,7 @@ rlocus(G)
 - poles of the closed loop system strictly in left half plane therefore BIBO
 - input that will give biggest oscillation is 1.047
 
-![](Dqy18/stable.PNG)
+![](Day18/stable.PNG)
 
 - second example is unstable
 
@@ -1239,7 +1239,13 @@ poles <= 0 and imaginary poles multiplicity of 1 | marginally stable | unstable
 
 ## Day 19 Feb 15, 2018
 
-### Stability Example
+### Stability and Routh Tables Example
+
+![](Day19/written1.PNG)
+
+![](Day19/written2.PNG) 
+
+![](Day19/written3.PNG)
 
 ## Day 20 Feb 16, 2018
 
@@ -1248,6 +1254,7 @@ poles <= 0 and imaginary poles multiplicity of 1 | marginally stable | unstable
 #### Case I: Zero Only in First Column - Reciprocal
 - polynomial whose roots are reciprocal of original polynomial, has poles with same distributions
 - if you have a pole at -2, the reciprical is -1/2 which is still in the left half plane
+
 #### Case II: Row of Zeroes
 - if we evaluate s<sup>3</sup> row, we find all entries to be 0
 - why row of zeros:
@@ -1265,15 +1272,13 @@ poles <= 0 and imaginary poles multiplicity of 1 | marginally stable | unstable
 - roots of det([sI-A]) = 0 will be the eigenvalues of A
 
 Slide set 7
+
 ### Steady-State Errors
 - difference input and output as t --> infinity
 
 #### Test Inputs
- < add standard test table >
-
- 
+- < add standard test table >
 - find out if its accelerating (1/s^2), at constant velocity (1/s) or stationary (1)
-
 - step: pretty simple, going from point A to B
 - ramp would be used for vehicles?
 	- AIM, autonomous intersection management - vehicle reservation/request system \ - reduce need for deceleration and acceleration since constant velocity
@@ -1289,14 +1294,14 @@ Slide set 7
 	1. goes to where you expect (zero error) - approaches exponentially but decays
 	2. constant error value
 
-![](Day21/step.PNG)
+![](Day20/step.PNG)
 
-- 3 scenarios for steady state error in ramp input
-	1. zero error (converges)
-	2. constant value error
-	3. ramp can't keep up with system, infinite error (grows at different angles)
+#### 3 Scenarios for Steady State Error in Ramp Input
+1. zero error (converges)
+2. constant value error
+3. ramp can't keep up with system, infinite error (grows at different angles)
 
-![](Day21/ramp.PNG)
+![](Day20/ramp.PNG)
 
 ## Day 21 Feb 27, 2018
 
@@ -1344,7 +1349,7 @@ Find steady state inputs for inputs 5u(t), 5tu(t), 5t<sup>2</sup>u(t)
 - the forward path (100*(s+2)(s+6))/(s(s+3)(s+4))
 - tracks a ramp bc 1/s
 
-![](Day21/written)
+![](Day21/written.PNG)
 
 ### Static Error Constants
 - steady state error performance specs 
@@ -1388,14 +1393,28 @@ Kv = lim s->0 s*G(s)
 - using feedback systems to handle unwanted disturbances
 - track reference signal with 0 error
 - ```E(s) = R(s) - C(s) => C(s) = R(s) - E(s)```
-- using final value theorem, e<sub>sss</sub> = e<sub>R</sub>(inf) + e<sub>D</sub>(inf)
+- using final value theorem, e<sub>ss</sub> = e<sub>R</sub>(inf) + e<sub>D</sub>(inf)
 - if we set R(s) = 0, then we get ```E(s)/D(s) = G2/(1 + G1G2)```
 
-**written**
+![](Day22/written1.PNG)
+
+![](Day22/written2.PNG)
+
+#### Continued Example
+- Want to track steps at R(s) with 0 error in the presence of non-zero step disturbance input at V(s)
+- G(s) is a type 1 system so it trakcs steps R(s) with zero error for C(s) = K
+- forward path is type 2
+- in this case, closed loop from R(s) to θ(s)
+
+![](Day22/written3.PNG)
+
+#### Steady State Error and Disturbances
+
+![](Day22/written2.PNG)
 
 ## Day 23 Mar 2, 2018
 
-**written eg cont'd**
+![](Day23/written1.PNG)
 
 ## Day 24 Mar 6, 2018
 
@@ -1416,7 +1435,6 @@ Kv = lim s->0 s*G(s)
 - given any complex number we can represent it in polar coordinates with magnitude M and angle theta
 - if F(s) = (s + a) we would get (σ + a) + jω
 
-
 F(s) = (s+1)/(s(s+2)) at s = -3 + j4
 
 Pole at 0, pole at -2 and 0 at -1.    
@@ -1436,7 +1454,8 @@ theta = angle(s1)
 other commands
 feedback()
 poles()
-```																				
+```
+
 #### Sketching Root Locus
 - put this on cheat sheet
 1. Number of branches
@@ -1445,8 +1464,134 @@ poles()
 2. symmetry on real axis
 	- complex conjugate
 3. Real-axis segments
+	- for k > 0, root locus oly ecists on the real axis to the left of an off number of infitinte open-lop poles and/or zeros that are also on the real axis
 	- angles must add up to multiple of 180
 	- for every complex conjugate, the angles cancel each other out
+	- just need to draw x's and o's and count odd numbers
+
 4. starting and ending points
 	- root locus begins at the finite and infinite poles of G(s)H(s) and ends at the finite and infinite zeros off G(s)H(s)
 	- root locus begins at zero gain and for small K, denominator is D_G(s)D_H(s) + epsilon
+
+## Day 25 Mar 8, 2018
+- on figure 8.8 you would shade p3
+- if you had a PID controller (s + 3s + 4)/s, there's one infinite pole, so there would be a line coming in from infinity
+- finite pole goes from 0, to te first zero (-1)
+- for this one, if s gets really big, it looks like s^2/s = s which is 1 infinite pole
+- number of infinite zeroes as s gets infinitely large is m-n for m > n, for a system (s<sup>m</sup>+a<sub>m-1</sub>s<sup>m-1</sup>...)/(s<sup>n</sup>+b<sub>n-1</sub>s<sup>n-1</sup>...)
+
+![](Day25/eg1.PNG)
+
+G(s) = 1/s
+
+![](Day25/eg2.PNG)
+
+if you have K/(s+1)(s+2) or 2 ininte zeroes, we need 2 ines going to infinity. get one mark sketxhing line between the 2 x's - easy for quadratics
+
+5. Behaviour at Infinity
+	- as locus approaches infitinity, it approaches straight lines as asymptotes
+
+## Day 26 Mar 9, 2018
+
+![](Day26/written1.PNG)
+
+#### Real-axis and Break in Points
+- the number of poles that come up and meet is 180 or pi divided by the number of poles that are meeting up
+- typically will be in pairs
+- what value of K does figure 8.13 correspond to at each ends of the x axis?
+- K = -1/(G(σ)H(σ))
+- if you evaluate that functions at all the numbers on the x-axis line, you will reach a maximum
+
+#### The jω Axis Crossings
+- can use Routh Hurwitz criteria
+
+```
+syms sigma s K
+
+G = K*(s+3)/(s*(s+1)*(s+2)*(s+4))
+
+eq1=G==-1
+
+// need to et into form K = ___ so we can take a derivative
+eq2=isolate(eq1,K)
+
+
+// take derivative of K and set it to 0, gives you something complex
+points=solve(diff(rhs(eq2),1)==0)
+
+// this is more useful
+dK=diff(rhs(eq2),1)
+
+simplifyFraction(dK)
+
+// find roots of dK
+points=roots([3 26 77 84 24])
+
+G = zpl([-3], [0, -1, -2, -4]) % (s+3)/(s(s+1)(s+2)(s+4))
+
+angle(evalfr(G,points(3)))
+ans=0
+angle is not an odd multiple of pi so -1.6097 is not a breakin/out point for K > 0. It is actually a breakout point for root locus K < 0.
+
+angle(evalfr(G,points(4)))
+= 3.14...
+
+rlocus(G)
+
+syms s K
+%symbolic version of transfer function -> G
+Gcls = Gs/(1 +k*Gs)
+
+```
+
+## Day 27 Mar 13, 2018
+- continuation of matlab script above
+
+```
+Routh Table
+Gcls =
+RT = [s^4 1 14 3*K; s^3 7 K+8 0]
+
+after d=collect(d)
+
+d = s^4 + 7s^3 + 14s^2 + (K+8)s + 3K
+
+subs(d,s,j*omega)
+
+ans = 3K - 14w&2 + w^4 - 7w^3i + w(K+8)i
+
+(solve by substitution using lambda = w^2 and do quadratic formula)
+both the real and imaginery parts of the d equation have to equal 0 for the jw to be on the root locus (cloed lop emans denomination is zero ...)
+
+soln(2)
+ans = 7sqrt(145)/2 - 65/2
+
+First lets solve for values of jw that make the imaginary part zero -> j[(K+8)w-7w^3]=j0
+
+eval(subs(solve(3K-14*omega^2 + omega^4==0),K,soln(2)))
+ans = 3.3881, -3.3881, 1.5877,-1.5877
+
+**Check uploaded script**
+```
+
+### Departure Angles
+- is it getting closer to getting stable (right) or unstable (left)
+- sum of zero sngles - sum of pole angles = (2k+1)180deg
+
+```
+            K(s+2)
+G(s) = --------------------
+        (s+3)(s+1+j)(s+1-j)
+
+
+angle of G(-1+j + epsilon) e=epsilon
+    = angle(-1 + j + e + 2) - angle(-1+j+e+3) - angle(-1+j+e+1+j) - angle(-1+j+e+1-j)
+
+approx = angle(-1+j+2) + angle(-1+j+3) - angle(-1+j+1+j) - angle(-1+j+e+1-j)
+
+last term is the departure angle we are looking for
+
+in order for it to lie on root locus it has to equal (2k+1)*pi
+
+θ1 = θ3 - θ4 - θ2 - (2K+1)pi
+```
