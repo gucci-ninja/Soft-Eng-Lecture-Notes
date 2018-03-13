@@ -45,3 +45,24 @@ Interview: **Feb 5, 3:15-3:30**
 
 ## Tutorial 4 Jan 29, 2018
 - interviews going on
+
+## Tutorial 5 Feb 5
+- Latex
+
+## Tutorial 6 Feb 12
+- good presentations
+
+## Tutotial 7 Feb 26
+- presentations
+
+## Tutorial 8 Mar 5
+- presentations
+
+## Tutorial 9 Mar 12, 2018
+
+### Effective Presentations
+1. set theme
+2. provide outline
+3. demonstrate relevance of your idea with numbers
+4. interact with audience
+
