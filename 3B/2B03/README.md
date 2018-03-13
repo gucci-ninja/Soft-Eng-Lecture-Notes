@@ -39,6 +39,8 @@
 - [Internal Rate of Return](#internal-rate-of-return)
 - [Incremental Analysis](#incremental-analysis)
 - [Review Session](#review-session)
+- [Rate of Return Issues](#rate-of-return-issues)
+- [External Rate of Return](#external-rate-of-return)
  
 _Images are from Prof Cam Churchill's Lecture Slides for ENG 2B03 Engineering Economics._
 
@@ -1321,7 +1323,6 @@ that's why we don't have 50 year amortization - it's too much interest
 ```
 
 #### Example 3 Car Payments
-
 Determine monthly payments required if you want to borrow 30k from a bank to buy a car at 6% interest compounded monthly for 6 years
 
 ```
@@ -1459,7 +1460,7 @@ A = 100000(A/P, 0.00607369, 300)
   - corporate bonds normally have $1000 par values when issued
 
 #### Coupon - interest rate
-- amoutn investor receives as interest payment
+- amount investor receives as interest payment
 - most bonds pay interest every 6 months but it's possiel for them to pay more or less frequently
 - **fixed rate**
 - **floating rate**
@@ -1901,7 +1902,7 @@ IRR | 100% | 90%
 
 ## Day 22 Mar 1, 2018
 
-#### Steps in INcremental Analysis
+#### Steps in Incremental Analysis
 1. identify alternatives, including "do nothing"
 2. (optional) Compute rate of return for each individual alternative
   - all optionals will have IIR greater than MARR in midterm/exam so don't do this step
@@ -2193,3 +2194,104 @@ if you get confused during midterm, try MARR and then try another number and see
 
 if your delta IRR is greater than MARR you keep the more expensive one --> Location B
 ```
+
+**no class for the next week due to midterm**
+
+## Day 23 Mar 12, 2018
+
+### Rate of Return Issues
+- the normal case is when there is just one sign change associated with cash flow series
+  - initial negative cash flow a year 0 followed by positive cashflows
+  - initial positive cash flow at time 0 folowed by all negative cash flows
+- in this case, NPW Plot which graphs NPW vs interest rate will intersect the x-axis at i* = IRR
+- if there are no sign changes that means NPW will stay positive (or negative) and will never cross 0
+- if cash flows series changes signs more than once, then multiple IRR points of intersection may exist (multiple roots)
+
+#### Descartes Rule of Signs
+- gives upper limit on the numbere of positive, real roots of a polynomial with real coefficients
+- the number of positive, real IRRs is less than or equal to the number of sign changes in cash fow
+- there were 2 signs in the lecture example
+  - descarted rules says there can be 0, 1, or 2 positive real IRRS
+- thi helps us determine ERR
+
+### External Rate of Return
+- what return is earned by money associated with a project that is not invested in the project?
+  - the usual assumption is that the funds that are invested elsewhere and earn an explicit rate of return (usually more than MARR)
+- the ERR is the rate of return on a project where any excess cash from a project is assumed to earn interest at a pre-determined explicit rate (usually MARR)
+- in this class
+  - if you have multiple sign changes, you will be doing ERR
+  - we will also be doing approximate ERR
+
+#### Approximate ERR
+- all net receipts will be taken to the future at the MARR
+- all net disbursements will be taken to the future at the unknown rate i<sub>ea</sub>* (approx ERRR)
+- set FW(receipts) = FW(disbursements) and solve for i<sub>ea</sub>* 
+
+#### Example 1
+A project has cashflows of $2500 now, -$12500 in one year and $15000 in 2 years. If the MARR is 25%, find the approximate ERR.
+
+```
+2300(1.25) - 12500
+= -9350
+
+at year 2, positive money has grown by MARR to -9350
+
+-9350(1 + ERR)^1 + 15000 = 0
+Solve for ERR
+
+ERR = 60%
+
+that's fine if you just have 3 arrows b
+
+if you had -, -, + +, -, +
+you'd move the two - arrows to year 3
+
+2500(1.025)^2 - 12500(1 + ERR)^1 + 15000 = 0
+ERR = 0.51
+
+```
+
+- approx ERR will be between MARR and actual ERR
+
+#### When to Use ERR
+- the ERR method should be used whenever multiple IRRs are possible. Unfortunately, it is sometimes hard to know in advance when there are multiple IRRs
+- **simple investments** - an investment characterized by one or more periods of cash outflows followed by one or more periods of cash inflows
+- if project is not simple investment, there may be more than 1 IRR
+- use regular IRR for simple investments that don't have multiple IRRs by plotting PW
+
+Method | Advtantages | Disadvantages
+-------|----------|--------
+IRR | faciliates comparisons, commonly used | relatively difficult to caclulate, multiple IRRs may exist
+PW | givs explicit measure of profit | difficult to compare if dif N
+AW | annual cash flows may have failiar meanings | difficult to compare for dif N
+payback period | easy to calculate | discriminates against long-term projects
+
+#### Example 2 Exam Question
+Grafton Corp wants to build spare parts storage facility that will last 8 years. 2 locations. Perform rate of return analysis and find best location. MARR = 8% and do nothing **is** an option. 
+
+Location | Initial Cost | Cost Savings
+-------|------------|------
+1 | $122000 | 27000 in first year increasing by 1000 per yr
+2 | $130000 | 20000 per year plus 20000 savings every 4 years (40k every 4 years)
+
+```
+do nothing is A
+Location 1 is B
+Location 2 is C
+
+B - A
+
+PW = 0 = -122000 + [27000 + 1000(A/G, IRR, 8)](P/A, IRR, 8)
+
+Try IRR = MARR = 8% we get PW = 50965
+
+since it's positive, delta IRR will be above MARR so we keep higher cost one and elininate do-nothing
+
+C - B
+
+After subtracting diagrams you get -8000, negative numbers and positive numbers every 4 years
+
+THATS MULTIPLE SIGN CHANGES :o
+
+```
+## Day 24
