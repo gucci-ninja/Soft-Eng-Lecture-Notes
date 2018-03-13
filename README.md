@@ -20,9 +20,9 @@
 
 Course | Description | Due
 -------|-------------|----
-3S03 | Assignment 2 | Mar 15
-4A03 | Reflection and Challenges | Mar 16s
+4A03 | Reflection and Challenges | Mar 16
 3DX4 | Prelab 4 | Mar 16
+3S03 | Assignment 2 | Mar 19
 3I03 | Assignment 3 | Mar 19
 2B03 | Quiz 7 | Mar 19
 
