@@ -27,6 +27,8 @@
 - [Unit Testing](#unit-testing)
 - [Tutorial Feb 14, 2018 ](#tutorial-feb-14-2018-)
 - [Empirical Unit Testing Principles](#empirical-unit-testing-principles)
+- [Parameterized Tests](#parameterized-tests)
+- [Security Testing](#security-testing)
 
 ## Day 1 - Jan 4, 2018 
 
@@ -1009,6 +1011,8 @@ T9 | 1880 | 1 | -1 | Year, day not in valid
 
 ## Day 19 Feb 26, 2018
 
+----
+
 ## Day 20 Feb 27, 2018
 
 ### Empirical Unit Testing Principles
@@ -1057,3 +1061,128 @@ y = 4
 ## Day 21 Mar 1, 2018
 
 **skipped**
+
+## Day 22 Mar 5, 2018
+
+## Day 23 Mar 6, 2018
+
+#### Tutorial Mar 7, 2018
+
+## Day 24 Mar 8, 2018
+
+## Day 25 Mar 12, 2018
+
+[JUnit](https://junit.org/junit4)
+
+### Parameterized Tests
+
+```
+import ..
+@RunWith(Parameterized.Class)
+public class Tests {
+    Parameters(name = "")
+    public static Collection<Object> data() {
+        return Arrays.asList(new Object[][]....)
+    }
+}
+
+```
+#### Using Data Files
+- concurrency testing
+- DigitalAd app - as you move through mall, it displays ads relevant to you
+- problem with unit testing this app
+    - get location and get user is hidden so it cannot be tested
+    - when you write code, think about you it will be tested
+    - if get user/get location is in the same class as the mainfunction, it is hard to test
+
+```
+@Test
+public void tGetAd() {
+    assertEquals(expected, GetAd())
+}
+```
+##### Solution/WorkAround
+- capture system vars in to local
+- use setup and teardown
+- system variable: System.setOut(System.out)
+- capture system input, work with it, reset it
+- look for constructors that do one thing only
+
+```
+Type A f1;
+int f2;
+
+TYpe B(int i) {
+    f1 = new TypeB();
+    f2 = i;
+}
+```
+
+```
+TypeA f1;
+int f2;
+
+TYpe B(int i, TypeA a) {
+    f1 = a;
+    f2 = i;
+}
+```
+
+```
+method(~~user u...~~ Address) {
+    calc SalesTax(user.address);
+    return tax;
+}
+
+/global vs singleton/
+```
+
+**Look for _Guide: Writing Testable Code_**
+
+## Day 26 Mar 13, 2018
+
+### Security Testing
+- types of security vulnerabilities
+    - design
+    - implementation
+- design must specify security model's structure
+    - if security mechanisms are required, how do they work
+    - in multi-user program, desgn specifies how system users are **authenticated, authorized and audited**
+    - for data input, how threats are mitigated
+
+#### Design Vulnerability
+- a mistake in the design that precludes the program from operating securely
+- often found in software's security features
+- parts that have no direct connection to security features
+
+#### Implementation Vulnerability
+- caused by security defects in the actual coding
+- flaws in the code
+    - 
+
+#### Good Secure Software Design Principles
+- compartmentalization
+    - what does they user need to know to do his job
+    - use of strong abstractions (many layers) and interface validations to ensure proper use of module
+- least privilege principle
+    - granting user or process the fewest privileges possible for it to complete its job
+- separation of privileges
+    - has to do mainly with not allowing one user to do everything but thinking of system's domain privileges
+    - ensures multiple keys are needed to compelte sensitive transactions
+- attack surface reduction
+    - _how many_ points of interactions does the system have
+    - more points = more surface for attack
+    - solution: minimalize interface, 'need-to-know' basis
+    - eliminates interfaces to software tht are not necessary to complete its work
+- cryptography
+    - hiding the message
+    - protects the data so that if one security mechanism fails, the data needs decryption
+
+#### Cryptography
+- pitfalls
+    - creating you own
+    - choosing the wrong one
+    - relying on security by obscurity
+    - hard-coded secrets
+    - mishandling private information
+- symmetric/public key generation
