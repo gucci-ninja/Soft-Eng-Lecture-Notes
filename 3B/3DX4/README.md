@@ -40,6 +40,7 @@
 - [Steady State Error Example](#steady-state-error-example)
 - [Static Error Constants](#static-error-constants)
 - [Root Locus Techniques](#root-locus-techniques)
+- [Departure Angles](#departure-angles)
 
 ## Day 1 Jan 4, 2018
 
@@ -1398,6 +1399,8 @@ Kv = lim s->0 s*G(s)
 
 ![](Day22/written1.PNG)
 
+#### Steady State Error and Disturbances
+
 ![](Day22/written2.PNG)
 
 #### Continued Example
@@ -1408,13 +1411,9 @@ Kv = lim s->0 s*G(s)
 
 ![](Day22/written3.PNG)
 
-#### Steady State Error and Disturbances
-
-![](Day22/written2.PNG)
-
 ## Day 23 Mar 2, 2018
 
-![](Day23/written1.PNG)
+![](Day23/written.PNG)
 
 ## Day 24 Mar 6, 2018
 
