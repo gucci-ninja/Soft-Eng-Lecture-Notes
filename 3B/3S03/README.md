@@ -20,15 +20,16 @@
 - [Tutorial 3 Jan 31, 2018](#tutorial-3-jan-31-2018)
 - [Functional Testing Techniques](#functional-testing-techniques)
 - [Test Report](#test-report)
-- [Tutorial 3 Feb 7, 2018](#tutorial-3-feb-7-2018)
+- [Tutorial 4 Feb 7, 2018](#tutorial-4-feb-7-2018)
 - [Structural Testing Techniques](#structural-testing-techniques)
 - [Quiz 2 Regression Testing](#quiz-2-regression-testing)
 - [Equivalent Partitioning Classes](#equivalent-partitioning-classes)
 - [Unit Testing](#unit-testing)
-- [Tutorial Feb 14, 2018 ](#tutorial-feb-14-2018-)
+- [Tutorial 5 Feb 14, 2018 ](#tutorial-5-feb-14-2018-)
 - [Empirical Unit Testing Principles](#empirical-unit-testing-principles)
 - [Parameterized Tests](#parameterized-tests)
 - [Security Testing](#security-testing)
+- [Tutorial 8 Mar 14, 2018](#tutorial-8-mar-14-2018)
 
 ## Day 1 - Jan 4, 2018 
 

@@ -41,6 +41,7 @@
 - [Static Error Constants](#static-error-constants)
 - [Root Locus Techniques](#root-locus-techniques)
 - [Departure Angles](#departure-angles)
+- [Transient Response Design via Gain Adjustment](#transient-response-design-via-gain-adjustment)
 
 ## Day 1 Jan 4, 2018
 

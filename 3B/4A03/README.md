@@ -23,6 +23,7 @@
 - [Online Lecture Day 6](#online-lecture-day-6)
 - [First Quiz](#first-quiz)
 - [Quiz 2](#quiz-2)
+- [Guest Speaker Orlando Bowen](#guest-speaker-orlando-bowen)
 
 ## Day 1 Jan 10, 2018
 
