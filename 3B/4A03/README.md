@@ -478,3 +478,19 @@ Al Gore and Climate Change
 
 ### Quiz 2
 - nuclear reactors and stakeholders
+
+## Day 9 Mar 14, 2018
+
+### Guest Speaker Orlando Bowen
+- people only know what they know, so keep an open mind
+- be thankful and appreciate the 'gifts' you've been given
+- [cool guy](www.orlandobowen.com)
+- wrote a letter to the person who assaulted him
+
+#### Presentations
+- societal entropy
+- unesco world heritage center (preserving cultural, natural and mixed places
+- helping people in syria
+- euthanasia
+
+**quiz requires you make at least 2 attempts and have a cumulative average of more than 50% on it**
