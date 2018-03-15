@@ -1594,3 +1594,82 @@ in order for it to lie on root locus it has to equal (2k+1)*pi
 
 θ1 = θ3 - θ4 - θ2 - (2K+1)pi
 ```
+
+## Day 28 Mar 15, 2018
+
+K = 1/(|G(s)||H(s)|)
+
+![](Day28/written.PNG)
+
+### Transient Response Design via Gain Adjustment
+1. highr order poles are much farther left (more than 5 times) of the s-plane dominant closed loop poles
+2. closed loop zeros near 2 dominant closed loop poles must be nearly cancelled or must be far away from the two dominant poles
+- wind up with G_cl = (~~s+z~~)/((~~s+z+eps~~)(...))
+3. closed loop zeroes that are not cancelled have to be far away
+
+#### Defining Parameters on Root Locus
+- as percent overshoot is a function of the damping ratio, we get a constant number of lines
+- previously we showed that settling time is 4/damping ratio*omega_n
+- vertica line is a constant settling time
+- if we get %OS and damping ratio, you can draw a line and that;s your desired closed loop pole location
+- peak time (of overshoot) is pi/(w_n*sqrt(1-zeta^2))
+- horizontal lines are consant peak time
+- we will either get a peak and settling or OS% and we will get any 2 of those
+- need to have all 3 lines intersecting
+
+#### Design Procedure for Higher Order System
+1. sketch the root locus (for open loop system)
+2. assume system has no zeros and is second-orde. find desired gain that gives desired transient respone
+- check that system satisfies criteria t ojustify approximation
+4. simulate system to make sure transient response is aceptable
+- - if your poles are not far enough to the left then it's not an accurate representaion
+
+#### Example
+- given a system, unity feedback system with a zero, closed loop system has zero at 1.5
+- open loop poles at 0, -1, -10
+- when you do second-order system approximation, the pole at -10 is gonna be higher order (the one we try to ignore)
+1. do the x and 0s, colour between so odd number to the right
+- as k is cranked up, the leftmost pole goes further and further
+ - if we crnk up gain high enough, 
+ - in order to figure this out you need to calculate breakin break out points (there are multiple)
+	- need to taake derivatives and set polynomial to zero
+- in this case 0.8 is the damping ratio coresponding to 1.52 OS%
+- there are 3 possible k values (at inteersectio)
+- if it intersect at an s value it'll give u k (1/G(s))
+- damping ratio thet = 0.8 = arccoss(0.8)
+- search along the line to find the s values
+- rlocfind does this for you on matlab
+- first value plugged in gives k = 7.36
+
+#### Continuing on Matlab
+
+```
+
+OS% = pos = 1.52
+zeta = -log(pos/100)/sqrt(pi^2+log(pos/100)^2)
+G8_21 = (s+1.5)/(s*(s+1)*(s+10))
+rlocus(G8_21)
+sgrid(zeta,0)
+K = 1/abs(evalfr(G8_21, s,))
+
+[K,p]=rlocfind(G8_21)
+
+compute closed loop system
+Gcl= feedback(K*G8_21,1)
+
+----> K ----> G ----->
+ ^                |
+ |----------------|
+
+step(Gcl)
+
+we can now see transient response
+
+```
+
+once you know the 3 pole locations (dif choices of K = 7.36, 12.79, 39.64) then you can compute peak time and settling time
+
+#### Third Order System Gain Design
+- third order system is higer because it has a 0 and acts like a PD controller (which responds quickly when a zero is added to the system)
+
+## Day 29
