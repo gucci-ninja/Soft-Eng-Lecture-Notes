@@ -661,7 +661,7 @@ Parallel | new system gives same results as old
 - log, error codes
 - maybe recommendations
 
-### Tutorial 3 Feb 7, 2018
+### Tutorial 4 Feb 7, 2018
 
 **skipped**
 
@@ -805,7 +805,7 @@ Regression testing vs recover testing
 - unit testing should be based on sound and systematic techniques
 - tests should be repeatable, very critical for concurrent software
 
-### Tutorial Feb 14, 2018 
+### Tutorial 5 Feb 14, 2018 
 
 #### Miderm Review
 
@@ -1054,7 +1054,7 @@ y = 4
 
 ```x>0 && y=0```
 
-#### Tutorial Feb 28, 2018
+#### Tutorial 6 Feb 28, 2018
 
 **skipped**
 
@@ -1066,7 +1066,7 @@ y = 4
 
 ## Day 23 Mar 6, 2018
 
-#### Tutorial Mar 7, 2018
+#### Tutorial 7 Mar 7, 2018
 
 ## Day 24 Mar 8, 2018
 
@@ -1186,3 +1186,40 @@ method(~~user u...~~ Address) {
     - hard-coded secrets
     - mishandling private information
 - symmetric/public key generation
+
+### Tutorial 8 Mar 14, 2018
+- use ignore for things that haven't been implemented but have a test case
+- testing if statements
+    - @org.junit.Test(timeout=1000)
+
+#### Runner (annotations)
+1. Parameterized
+    - organize test cases
+2. Suite
+    - execute all (classes)
+3. Category
+    - classify test methods
+4. Theories
+    - cartesian product
+
+#### Test Driven Development
+- consider a project with testing in mind
+- opposite is BDD (Behaviour)
+
+#### Designing for Testability
+- design that allows for automated testing
+- should be
+    - repeatable
+    - easy to write 
+    - easy to understand
+    - fast
+    - order independent
+- need to encapsulate, isolate (dependencies), separate (simple methods), use protected instead of private 
+- statement coverage: all inputs all statements
+- alt-enter -> test
+
+## Day 27 Mar 15, 2018
+
+**skipped** :( we probably did cryptography
+
+## Day 28
