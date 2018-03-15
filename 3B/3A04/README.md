@@ -1222,3 +1222,52 @@ Java Virtual Machine is very variable because you can run it on many machines
   - does not depnd on other modules and does not know whch view are registerd with or attached to it
 - view module
   - is responsible for displaying data provided by model module and updating the interfaces whenever the data changes
+
+## Day 26 Mar 14, 2018
+
+![](img/mvci.PNG)
+
+![](img/mvc_blackboard.PNG)
+
+#### MVC I
+- simple version of MVC architecture
+- view component - look and feel (view)
+  - can have many of these
+- brain of the interaction (controller)
+  - can be more than 1
+- data model (model)
+  - normally unique, just 1
+- logic - tuple with set of symbols (0,1), set of rules, set of actions and set of formulas you can form from the symbols
+- Controller/View
+  - handles input and output processing and their interfaces
+  - interaction comes to the controller and the view displays data
+  - registers with data module
+  - observer is the controller
+
+![](img/mvci2.PNG)
+
+#### MVC II
+- controller
+  - dispatches tasks
+  - controller and the view register with the model module
+  - whenever the data in the model module is changed the view module and controller module are notified
+- comparison to MVC-I
+  - in both, Model module plays an active role
+  - you register controller with the model and then the view
+
+![](img/mvc_sequence.PNG)
+
+#### Applicable Domain of MVC Architecture
+- suitable for interactive applications (multiplr views are needed + volatile graphics interface)
+- there are clear divisions between the controller, view and data modules (dif professionals can be assigned to work on different aspects of the system)
+- different sets of data changing differently (differnt lives, speeds) then do PAC not MVC
+
+#### Benefits
+- may MVC vendor frameworks available
+- multiple view synchronized with same data model
+- easy to plug in new interfaces or change
+- very effective for developments (team = graphics, programming, data professional)
+
+## Day 27
+
+#### Limitations
