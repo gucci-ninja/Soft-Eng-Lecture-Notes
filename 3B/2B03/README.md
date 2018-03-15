@@ -41,6 +41,8 @@
 - [Review Session](#review-session)
 - [Rate of Return Issues](#rate-of-return-issues)
 - [External Rate of Return](#external-rate-of-return)
+- [Depreciation](#depreciation)
+- [Replacement Decisions](#replacement-decisions)
  
 _Images are from Prof Cam Churchill's Lecture Slides for ENG 2B03 Engineering Economics._
 
@@ -2294,4 +2296,111 @@ After subtracting diagrams you get -8000, negative numbers and positive numbers 
 THATS MULTIPLE SIGN CHANGES :o
 
 ```
-## Day 24
+## Day 24 Mar 13, 2018
+
+```
+Positive i=MARR
+
+FW = 10000(F/P, 8%, 4) + 6000 = 19604
+
+8000(F/P, ERR, 8) + 7000(F/P, ERR, 7) + 8000(F/P, ERR, 6) +  9000(F/P, ERR, 5) + 11000(F/P, ERR, 3) + 12000(F/P, ERR, 2) + 13000(F/P, ERR, 1)
+
+
+OR
+
+COSTS:
+[6000 + 1000(A/G, ERR, 4])](P/A, ERR, 4)(F/P, ERR, 9) + 2000(F/P, ERR, 9) + [11000 + 1000(A/G, ERR, 3)](P/A, ERR, 3)(F/P, ERR, 4)
+
+Try ERR=8% (MARR)
+
+We get a negative future worth -> -51218
+would need less than 8% ERR so choose B  (keep lower cost)
+```
+
+#### Example 1
+Entrepeneur is looking at leasing houses that he can rent to students. Two lease options available. Do-nothing is an option, MARR is 13%.
+
+. | Location 1 (B) | Location 2 (C)
+--|----------|----------
+Initial Lease Payment | 14000 | 18000
+annual lease cost | 4000 | 4500
+anticipated revenues from rent | 13000 | 14000
+lease term (years) | 6 | 9
+
+**do at home**
+
+### Depreciation
+- straight line
+- declining balance
+
+#### Lingo
+- **Generalization**: An asset starts to lose its value as soon as you purchase it
+- **Purchase Value**: The amount paid at purhase. Its the market value at purchase
+- **Market value**: MV(n) Actual value of an asset that can be sold for in an open market
+- **Book value**: BV(N), value of an asset used for accounting purposes. calculated using depreciation methods (what the govt is allowing you to say it's worth)
+- **Salvage value**: actual value of asset when sold
+- **Scrap value** - actual value of an asset when sold at the end of physical life
+
+#### Reasons for Depreciation
+- use-related physical loss
+  - phone, car
+- time related physical loss
+  - electronics that aren't being used but are losing value
+- functional loss
+  - obsolete 
+
+### Replacement Decisions
+- economic incentive to replace things before theyre totally dead
+
+## Day 25 Mar 15, 2018
+
+#### Reasons for Depreciation cont'd
+- financial statements
+- replacement decisions
+- tax calculations
+  - paying a difference between book value and market value
+
+#### Methods of Depreciation
+- straight line - reverse of simple interest
+- declining balance - what we use for tax purposes and income
+
+##### Straight Line Method
+- d<sub>sl</sub> = (P-S)/n
+- can use depreciation to avoid taxes
+- depreciate by a certain amount each year
+- the book value of an asset diminishes by an equal amount (d) during each period (year)
+- BV_4 = 1000 - 4(100) = 600
+
+##### Declining Balance
+- percentage, more intuitive
+- the book value of an asset diminishes by an equal proportion (d) during each period (year)
+- BV<sub>db</sub>(0) = P
+- BV<sub>db</sub>(n) = P(1-d)<sup>n</sup>
+- in summary, if d = depreciation rate and P = purchase value, 
+- D<sub>db</sub>(n) - BV<sub>db</sub>(n-1)d = P(1-d)<sup>n-1</sup>d
+- if you end up with a negative depreciation it means you messed up
+
+#### Example 1
+A new press brake costs Medicine Hat Steel $780000. It is expected to last 20 years with a $60000 salvage value. WHat rate of depreciation for the declining balance method will produce a book value after 20 years that equals the salvage value of the press?
+
+```
+d = 1 - Nthroot(S/P)
+78000(1-d)^N = 60000
+d = 0.12
+```
+#### Example 2
+An asset was purchased 7 years ago for $10000. It was estimated to have a 10 year service life and a salvage value of $2000 at the end of its service life. If the value of the asset is believed to be deprciating at a constant rate each year, what is its book value today if depreciation is calculated using the declining balance method?
+
+```
+in this case, today is at year 7
+d = 1 - nthroot(2000/10000) = 
+BV(7) = P(1-d)^7 = 
+```
+
+#### Example 3
+A machine has a life od 30 years, costs $245000 and has a salvage value of $10000 using straight line depreciation. Determine what depreciation rate (declining balance) will result in the machine having the same book value for both methods in 20 years.
+
+```
+```
+
+## Day 26 MAr 15, 2018
