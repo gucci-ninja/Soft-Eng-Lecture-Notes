@@ -25,6 +25,7 @@ Course | Description | Due
 3S03 | Assignment 2 | Mar 19
 3I03 | Assignment 3 | Mar 19
 2B03 | Quiz 7 | Mar 19
+3I03 | Presentation | Mar 29
 
 #### Exam Schedule
 
