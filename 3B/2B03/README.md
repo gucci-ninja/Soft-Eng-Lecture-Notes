@@ -43,6 +43,7 @@
 - [External Rate of Return](#external-rate-of-return)
 - [Depreciation](#depreciation)
 - [Replacement Decisions](#replacement-decisions)
+- [Replacement Decisions](#replacement-decisions)
  
 _Images are from Prof Cam Churchill's Lecture Slides for ENG 2B03 Engineering Economics._
 
@@ -2404,3 +2405,70 @@ A machine has a life od 30 years, costs $245000 and has a salvage value of $1000
 ```
 
 ## Day 26 MAr 15, 2018
+
+### Replacement Decisions
+- reduced performance
+  - physical deterioration of equipment or system
+  - this is when a good maintenance program is vital
+- new requirements
+  - piece of equipment has to be replaced or enhanced
+  - system cannot meet the new requirments such as speed/accuracy
+  - additional functionality may be needed
+- obsolescence
+  - effect of rapidly changing technology
+  - often a result of ever-decreasing development cycle time to bring new products to market
+  - lack of technical support/spare parts
+
+#### Mutually Exclusive Choices
+1. do nothing
+2. overhaul existing asset
+3. retire
+4. replace
+
+#### Capacity Costs
+- **cost 1** - capital costs
+- **cost 2** - installation costs
+- **note 1**: installation costs are not depreciable
+- **note 2**: when something is installed the defender has a cost advantage
+- **note 3**: sunk costs are irrelevent in future replacement decisions - costs that were incurred in the past
+
+#### Example 1
+- printing service vs photo copier
+- current annual cost = $36000
+- new machine = $35000
+- installation cost = $3000
+- annual O & M cost = $24000
+- O & M growth = 5%
+- MARR = 10%
+
+```
+/salvage value/
+
+defender A = 36000 
+new machine cost + o & m brought back to present?
+A = ? = (35000 + 3000)(A/P, 10%, 10) + 24000(P/A, 5%, 10%, 10)(A/P, 10%, 10) - 3758(A/F, 10%, 10)
+= 35008
+
+Declining Balance
+BV(10) = P(1-0.2)^10
+```
+
+#### Replacement Example cont'd
+- Assume ongoing need for product
+- EAC(capital) = A = (P-S)(A/P, i, N) + Si (Chapter 3)
+- replacement decision also depends on operating and maintenance costs
+  - tend to increase
+  - EAC of O&M a car can be computed for N years
+- economic life is the number of years that minimizes EAC(total) = EAC(capital) + EAC(O&M)
+- installation cost can be either capital or o&m since it's a one time cost
+- in economic life example, to get 13800 capital cost at year 1, you need to add the installation cost to 5hr 35k
+- installation cost is not added to purchase price because it does not get depreciated
+- treat EAC(o&m) as an arithmetic or gradient series
+
+#### Cost and Values
+- when considering an asset's value, there are several possibililites
+  - first costs
+  - book value
+  - replacement cost
+  - trade-in value
+  - market value
