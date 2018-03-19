@@ -20,12 +20,13 @@
 
 Course | Description | Due
 -------|-------------|----
-4A03 | Reflection and Challenges | Mar 16
-3DX4 | Prelab 4 | Mar 16
-3S03 | Assignment 2 | Mar 19
 3I03 | Assignment 3 | Mar 19
 2B03 | Quiz 7 | Mar 19
+4A03 | Journal 3 | Mar 23
+3DX4 | Pre-lab 5 | Mar 23
+2B03 | Quiz 8 | Mar 26
 3I03 | Presentation | Mar 29
+3A04 | Code Deliverable | Mar 30
 
 #### Exam Schedule
 
