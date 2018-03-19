@@ -42,6 +42,7 @@
 - [Root Locus Techniques](#root-locus-techniques)
 - [Departure Angles](#departure-angles)
 - [Transient Response Design via Gain Adjustment](#transient-response-design-via-gain-adjustment)
+- [Matlab Competition???](#matlab-competition)
 
 ## Day 1 Jan 4, 2018
 
@@ -1439,7 +1440,7 @@ F(s) = (s+1)/(s(s+2)) at s = -3 + j4
 
 Pole at 0, pole at -2 and 0 at -1.    
 
-![](Day24/written.PNG)
+![](Day24/written.PNG) -- need to do
                                                  
 ```
 matlab - atan2   
@@ -1464,11 +1465,10 @@ poles()
 2. symmetry on real axis
 	- complex conjugate
 3. Real-axis segments
-	- for k > 0, root locus oly ecists on the real axis to the left of an off number of infitinte open-lop poles and/or zeros that are also on the real axis
+	- for k > 0, root locus only exists on the real axis to the left of an odd number of infitinte open-loop poles and/or zeros that are also on the real axis
 	- angles must add up to multiple of 180
 	- for every complex conjugate, the angles cancel each other out
 	- just need to draw x's and o's and count odd numbers
-
 4. starting and ending points
 	- root locus begins at the finite and infinite poles of G(s)H(s) and ends at the finite and infinite zeros off G(s)H(s)
 	- root locus begins at zero gain and for small K, denominator is D_G(s)D_H(s) + epsilon
@@ -1493,7 +1493,7 @@ if you have K/(s+1)(s+2) or 2 ininte zeroes, we need 2 ines going to infinity. g
 
 ## Day 26 Mar 9, 2018
 
-![](Day26/written1.PNG)
+![](Day26/written1.PNG) -- need to do
 
 #### Real-axis and Break in Points
 - the number of poles that come up and meet is 180 or pi divided by the number of poles that are meeting up
@@ -1600,7 +1600,7 @@ in order for it to lie on root locus it has to equal (2k+1)*pi
 
 K = 1/(|G(s)||H(s)|)
 
-![](Day28/written.PNG)
+![](Day28/written.PNG) -- need to do
 
 ### Transient Response Design via Gain Adjustment
 1. highr order poles are much farther left (more than 5 times) of the s-plane dominant closed loop poles
@@ -1673,4 +1673,63 @@ once you know the 3 pole locations (dif choices of K = 7.36, 12.79, 39.64) then 
 #### Third Order System Gain Design
 - third order system is higer because it has a 0 and acts like a PD controller (which responds quickly when a zero is added to the system)
 
-## Day 29
+## Day 29 Mar 16, 2018
+
+### Matlab Competition???
+
+1. 
+```
+define transfer function
+
+poles(g)
+
+```
+2. Compute rlocus of function
+- there is a pole in the RHP that eventally comes over to LHP as gain goes higher so it can be stabilied with feedback control
+- on paper: can do root locus sketch or Routh-Hurwitz criteria
+
+3. Ways to enter matlab tf
+
+```
+tf([], [])
+
+s = tf(s)
+G = ...
+
+G = zpk([zeros], 
+```
+
+4. 
+```
+pos = 5
+zeta = -log(pos/100)/sqrt(pi^2+log(pos/100)^2)
+     = 0.6901
+```
+
+5. 
+```
+define g2 and zeta
+rlocus(g2)
+sgrid(zeta,0)
+// find intersection of 0.69 with pole thing
+click on intersection to find K
+[K,p] = rlocfind(g2)
+
+gives k of 184
+
+then compute closed loop function
+gcl = feedback(k*g2, 1)
+
+then show the function
+step()
+overshoot is around 20%
+
+pzmap(gcl)
+
+now find the other intersection with rlocus(g2) and zeta
+
+overshoot = 5.03%
+
+pos = (evalfr(gcl, 0) - max(step(gcl))/evalfr(gcl,0)
+
+```
