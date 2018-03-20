@@ -30,6 +30,7 @@
 - [Parameterized Tests](#parameterized-tests)
 - [Security Testing](#security-testing)
 - [Tutorial 8 Mar 14, 2018](#tutorial-8-mar-14-2018)
+- [Basics of Measurement](#basics-of-measurement)
 
 ## Day 1 - Jan 4, 2018 
 
@@ -1226,3 +1227,32 @@ method(~~user u...~~ Address) {
 ## Day 28 Mar 19, 2018
 
 **skipped**
+
+## Day 30 Mar 20, 2018
+
+### Basics of Measurement
+- as we understand more about attributes and relationship s between them, we develop
+    - framework for describing them
+    - tools for measuring them
+- we have no deep understanding of software attributes
+
+#### Basic Theory of Measurement
+- this theory tells us
+    - how to measure
+    - how o analyze and depict data
+    - how to tie results back to our original questions
+- examples
+    - euclidean (parallel lines never meet)
+    - non-euclidean (parallel lines do meet)
+
+#### Representational Theory of Measurement
+- emiprirical relations
+- we understand things better by comparing them, not assigning numbers
+- observation reflects set of rules
+    - we form pairs of people and define a binary relation "taller than" on them
+    - we say who is taller than who
+    - this is an empirical relation for height
+- a (binary) empirical relation is one for which there is reasonable concensus about which pairs are in the relation
+- they don't have to be binary
+- they are mappings from the empirical, real world to a formal mathematical world
+- intuitive
