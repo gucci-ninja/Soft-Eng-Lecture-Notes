@@ -66,3 +66,37 @@ Interview: **Feb 5, 3:15-3:30**
 3. demonstrate relevance of your idea with numbers
 4. interact with audience
 
+## Tutorial 10 Mar 19, 2018
+
+### Constructive Criticism
+
+#### Criticism, good/bad
+- critique - greek
+- goal of constructive criticism is to foster improvement in future work
+- motivation
+    - why are you offering the criticism
+    - are you being helpful or just nitpicking
+    - does it need to be changed or are you just being bitter bc you've always done it a certain way
+- good criticism
+    - clear
+    - concise
+    - tangible, concrete
+    - credible
+    - well founded
+    - relevant
+- bad criticism
+    - personal
+    - hesistant
+    - general
+    - not credible
+    - unfounded
+    - it makes you feel/look better
+
+#### Giving Criticism
+- Hamburger Method
+    - start with positive aspects
+    - be positive - focus on solutions
+    
+#### Receiving Criticism
+
+#### Summary and Discussion
