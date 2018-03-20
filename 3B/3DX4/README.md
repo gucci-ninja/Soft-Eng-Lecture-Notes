@@ -43,6 +43,8 @@
 - [Departure Angles](#departure-angles)
 - [Transient Response Design via Gain Adjustment](#transient-response-design-via-gain-adjustment)
 - [Matlab Competition???](#matlab-competition)
+- [Improving Transient Response](#improving-transient-response)
+- [Improving Transient Response via Compensation](#improving-transient-response-via-compensation)
 
 ## Day 1 Jan 4, 2018
 
@@ -1733,3 +1735,114 @@ overshoot = 5.03%
 pos = (evalfr(gcl, 0) - max(step(gcl))/evalfr(gcl,0)
 
 ```
+
+## Day 30 Mar 20, 2018
+
+**Joseph's Notes**
+
+### Improving Transient Response
+- may be difficult to find system with correct response and still satisfy other needed properties
+- instead we augment or compensate system by adding poles and zeros to get desired behaviour
+- disadvantage: method increases order of system
+- sometimes you satisfy conditions but some conditions are close to being violated, this causes second order approximation to be violated
+- so you should always do the last step, evaluate system via simulation
+
+#### Improving Steady State Error
+- can also add compensators to improve this
+- can treat difference between 2 masses as a disturbance
+- if you add an integral term the problem is that it remembers things from the past
+- if you have integral term on (b) and go to 1, the integra term gets bigger even though you have overshot
+- that's why integral controllers make your overshoot worse
+- rule of thumb: steady state error --> integral controller, system too slow --> derivative controller
+- to optimize transient respone, steady state error usually gets worse so you need an integral compensator
+
+#### Compensator Terminology
+- Proportional - compensators that feed error signal directly to plant
+- Integral - 
+- Derivative
+
+#### Configurations
+- cascade compensator - often done in digital control since it's easy to implement
+- forward you can do a feedback compensator
+- at the end of the fay (feedback/feedforward path) doesn't mater bc poles and zeros have the same effect in terms of changing the angle
+	- might have some effect on steady state error though
+
+#### Improving SE w/ Cascade
+- intgral control
+	- ideal integral compensation - add an integrator to the forward path
+	- lag compensation
+- fake an integral
+- first method produces a 0 sse and requires active circuit
+- second method uses only passive components (resistors, conductors, capacitors)
+	- less likely to get overflow issues when doing this in software
+
+##### Ideal integral Compensation
+- add an integrator to the forward path
+- PI controller
+- if we just add pole at the origin, replace K by K/s we significantly change the root locus
+	- with higher gain, poles are going to go unstable eventually but theyre not that far to the left
+	- no sse but transient respone suffers
+	- in second graph there is no way you can get close t desired settling time (vertcal line)
+- to get around this, you add a zero (proporional integral controller)
+- gives you a 0, Ka/s is the integral part and the other part is proportional (K) in K(s+a)/s
+- if you take A and put it super close to origin, the 2 angles pc and zc can be a degree or 2 (not really changing)
+	- you'll end up with a point really close to A
+	- it will behave like it did but the transient respose does not suffer and it has no sse
+	- the 2 angles pc and zc cancel each other out
+- implications: the pole in (c) will move to 0 slowly (takes long time to decay)
+- implementation
+	- proportional part + integral part: K1 + K2/s
+
+#### Example with Ideal Integral Compensation
+- puttig a 0 really close to origin
+- addd a pole at 0 and you have a pole at 0.1 so they are almost cancelling each other out
+- uncompensated system, gain is 164.6 with pole at -0.694 + j3.926s
+- daming ratio is the line going out from the origin
+- sse: from version a of system (type 0 - 0 poles at origin) = 1/(1+kp)
+- this makes it at -0.679 + j3.873, relatively close
+- settling time will be similar, slightly slower mybe but it'll have 0 sse due to integral term
+- we basically changed it from type 0 to type 1 system
+- if you cmpute closed loop poles of the system, you get that the 0 pole heads towards the open loop zero
+	- at k = 158.2 it has an s = -0.091 which is super close to zero at -0.1, effectively cancelling out
+- really close to j omega axis so it's going to be really slow to get to +-2% of original final value but the old system wasn't even getting to 10%
+- the further you move poles to the left, the faster the system will respond
+
+#### Lag Compensation
+- if you didnt want an integral controller and you were doing thnigs in analog
+- basically means when you're picking poles and zeros the zero is to the left of the pole
+	- almost like having a zero term but not quite like that
+	- you dont get 0 error, just smaller error
+- type 1 - with step it'll have 0 error, with ramp it'll have error 1/kv
+- take limit of s --> of forward gain
+- z1\*z2*.../p1\*p2...
+- for compensated system w have Kvn = Kv0 * zc/pc
+- increasing Kv will decrease SSE
+- make zc big enough by a factor to reduce SSe
+
+### Improving Transient Response via Compensation
+- goal: design system with desired percent OS but better settling time
+2 appraoches
+	- ideal derivative compensation - noisy?, involves adding zero, can add unwanted signal
+	- lead compensation
+
+#### Ideal Derivative Compensation
+- requires ative circuit (PD controller with op amp)
+- make so new pole lies on root locus
+- you add a 0 to the compensator: s + zc
+- idea: for ste input, derivative has a large change so input of system will be very big initially to drive the system faster
+- design
+	- ideniy closed loop poles at desired OS% and settlign time
+	- take difference between actual angle of G(s)H(s) and the odd multiple of 180 deg to get angular contribition of this compensator zero
+	- **exam** go ahead and get me a 16% overshoot
+		- you know you can get 16% overshoot from teh s(s+4)(s+6) example
+		- 16% OS will correspond to some line
+		- formula for OS going to zeta value
+	- sample q: draw the root locus, is it possible to find a K value that gives 16% overshoot
+		- ans- root locus will have to intersect this line
+		- now refine so it has a 5x better settling time
+- in matlab you can find zeta and run rlocfind command
+	- the pole locations you get -1.205 += j2.064
+	- you can get gain K from -1/abs(G(pole)H(pole))
+	- you get settling time Ts = 4/wn = 3.320 which we can make 5x better using something??
+
+!![](Day30/example.PNG)
