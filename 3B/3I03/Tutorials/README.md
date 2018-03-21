@@ -45,3 +45,58 @@ Interview: **Feb 5, 3:15-3:30**
 
 ## Tutorial 4 Jan 29, 2018
 - interviews going on
+
+## Tutorial 5 Feb 5
+- Latex
+
+## Tutorial 6 Feb 12
+- good presentations
+
+## Tutotial 7 Feb 26
+- presentations
+
+## Tutorial 8 Mar 5
+- presentations
+
+## Tutorial 9 Mar 12, 2018
+
+### Effective Presentations
+1. set theme
+2. provide outline
+3. demonstrate relevance of your idea with numbers
+4. interact with audience
+
+## Tutorial 10 Mar 19, 2018
+
+### Constructive Criticism
+
+#### Criticism, good/bad
+- critique - greek
+- goal of constructive criticism is to foster improvement in future work
+- motivation
+    - why are you offering the criticism
+    - are you being helpful or just nitpicking
+    - does it need to be changed or are you just being bitter bc you've always done it a certain way
+- good criticism
+    - clear
+    - concise
+    - tangible, concrete
+    - credible
+    - well founded
+    - relevant
+- bad criticism
+    - personal
+    - hesistant
+    - general
+    - not credible
+    - unfounded
+    - it makes you feel/look better
+
+#### Giving Criticism
+- Hamburger Method
+    - start with positive aspects
+    - be positive - focus on solutions
+    
+#### Receiving Criticism
+
+#### Summary and Discussion

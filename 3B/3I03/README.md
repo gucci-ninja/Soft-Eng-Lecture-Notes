@@ -14,6 +14,8 @@
 - [Assignment 2](#assignment-2)
 - [The Writing Process](#the-writing-process)
 - [Assignment 2](#assignment-2)
+- [Presentations](#presentations)
+- [Outline](#outline)
 
 ## Day 1 Jan 4, 2018
 
@@ -347,3 +349,59 @@ Java | Java, Python
 ## Day 8 Mar 1, 2018
 
 **skipped** but details on final presentatino announced - need to join a group.
+
+### Presentations
+- bad presentations
+	- slides full of words
+	- cannot hear speaker
+	- non-engaging
+	- graphs without labels
+	- no distinction/originality
+	- no transition between slides, no organization
+	- no 'why' or 'so what' (lack of motivation)
+	- no respect for time limit
+	- unaware of audience
+- good presentations
+	- avoid the above
+	- educate and inform
+	- entertain
+	- grab and hold attention
+
+### Outline
+- preparation
+	- why are you presenting
+	- what are you presenting
+	- who and where
+	- assess the audiene
+	- don't be stiff
+	- give dry run of talk
+	- watch yourself on video
+- planning
+	- know your subject
+	- develop a theme
+	- list key concepts and points
+	- think of ways to illustrate those points
+	- max 1 slide per minute
+	- no more than 4 key points in 45 min pres
+- presentation structure
+	- opening
+		- convince that you are cool, know your shit and won't waste time
+		- introduce yourself
+		- connect with audience (jokes)
+		- state purpose, scope, main msg
+		- outline pres
+		- no reading from paper
+	- body
+		- make a story board
+		- break up each section with key point
+		- be logical and concise
+	- summary
+		- have clear ending
+		- brief simple and touch main points
+		- put in context of big picture
+- visual aids and slides
+	- header, one point, visual, annotation
+	- don't use a lot of equations
+	- speak from slides
+- summary
+	- give your links references

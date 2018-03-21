@@ -37,6 +37,14 @@
 - [Master Slave Architecture](#master-slave-architecture)
 - [Layered Architecture](#layered-architecture)
 - [Virtual Machine](#virtual-machine)
+- [Discussion 1](#discussion-1)
+- [Interaction Oriented Software Architecture](#interaction-oriented-software-architecture)
+- [PAC](#pac)
+- [MVC](#mvc)
+- [Discussion 2](#discussion-2)
+- [Distributed Architectures](#distributed-architectures)
+- [Multi Tier Architecture](#multi-tier-architecture)
+- [Broker Architecture](#broker-architecture)
 
 ## Day 1 Jan 5, 2018
 
@@ -1093,7 +1101,7 @@ Java Virtual Machine is very variable because you can run it on many machines
 #### Benefits
 - portability and machine platform independence
 - simplicity of software development
-- simula
+- simulation
 
 #### Limitations
 - slow execution of interpreter
@@ -1106,6 +1114,8 @@ Java Virtual Machine is very variable because you can run it on many machines
 
 ## Day 24 Mar 9, 2018
 
+### Discussion 1
+
 #### Question 1
 - user interaction with free robotic arm is extremely controlled
 - It has n controllable sections, each with a control unit and own processing time
@@ -1114,7 +1124,7 @@ Java Virtual Machine is very variable because you can run it on many machines
 #### Answer 1
 - time constraints (performance) therefore we have boundary intervals
 - master slave architecture
-- can also be blackboard architecture
+- can also be blackboard architectures
 
 #### Question 2
 - software architect designing a system that
@@ -1162,6 +1172,142 @@ Java Virtual Machine is very variable because you can run it on many machines
 ![](img/q5.PNG)
 
 
+## Day 25 Mar 12, 2018
+- languages are a set of acceptable strings defined by grammars, full of terminal and non-terminal expression
+
+![](img/translator.PNG)
+
+### Interaction Oriented Software Architecture
+- given a set of data, there are many ways to represent it
+- the modules + secrets of each method is:
+  - data Module ---> (secret.Data) **ENTITY CLASS**
+  - Interaction Module ----> (secret: what to present to user) **CONTROLLER CLASS**
+  - module v1...5 ---> how to display v1...5 (5 modules) **BOUNDARY CLASSES**
+  - module other? **BOUNDARY CLASS**
+- 3 kinds of modules
+  - view modules
+  - controller modules - Finite State Machine
+  - data modules
+- this architecture allows separation of user interactions from data abstraction and business data processing
+- allows multiple views for a same data set
+- 2 categories
+  1. presentation-abstraction-control (PAC)
+  ![](img/PAC.PNG)
+  2. model-view-controller (MVC)
+  ![](img/MVC.PNG)
+
+### PAC
+- agent based hierarchial architecture, [more PAC](#pac-2)
+- system is decomposed into agent
+- each agent has 3 components - presentation, abstraction, control
+
+![](img/PAC2.PNG)
+
+### MVC
+
+#### Summary
+- the controller
+  - manages user input requests
+  - controls the sequence of user interactions
+  - selects desired views for output displays
+  - manages all initlialization, instantiations, and registrations of other modules in MVC system (subscribe-notify pattern)
+- model module
+  - provides core functional services and encapsulates all data details
+  - does not depnd on other modules and does not know whch view are registerd with or attached to it
+- view module
+  - is responsible for displaying data provided by model module and updating the interfaces whenever the data changes
+
+## Day 26 Mar 14, 2018
+
+![](img/mvci.PNG)
+
+![](img/mvc_blackboard.PNG)
+
+#### MVC I
+- simple version of MVC architecture
+- view component - look and feel (view)
+  - can have many of these
+- brain of the interaction (controller)
+  - can be more than 1
+- data model (model)
+  - normally unique, just 1
+- logic - tuple with set of symbols (0,1), set of rules, set of actions and set of formulas you can form from the symbols
+- Controller/View
+  - handles input and output processing and their interfaces
+  - interaction comes to the controller and the view displays data
+  - registers with data module
+  - observer is the controller
+
+![](img/mvci2.PNG)
+
+#### MVC II
+- controller
+  - dispatches tasks
+  - controller and the view register with the model module
+  - whenever the data in the model module is changed the view module and controller module are notified
+- comparison to MVC-I
+  - in both, Model module plays an active role
+  - you register controller with the model and then the view
+
+![](img/mvc_sequence.PNG)
+
+#### Applicable Domain of MVC Architecture
+- suitable for interactive applications (multiplr views are needed + volatile graphics interface)
+- there are clear divisions between the controller, view and data modules (dif professionals can be assigned to work on different aspects of the system)
+- different sets of data changing differently (differnt lives, speeds) then do PAC not MVC
+
+#### Benefits
+- may MVC vendor frameworks available
+- multiple view synchronized with same data model
+- easy to plug in new interfaces or change
+- very effective for developments (team = graphics, programming, data professional)
+
+#### Limitations
+
+## Day 27 Mar 16, 2018
+
+#### PAC 2
+- similar to MVC
+- developed from MVC to support the application requirement of multiple agents in addition to the interactive applciation requirement
+- 3 componenes concepts applied to all concetrete subsystem architecture
+- very suitable for any distributued system where each remote agent has its own functionalities and its own data and interactive interface
+- another feature: all agents need to communicate
+- no communication between presentation and abstraction
+- ```presentation <---> control <------> abstraction```
+
+#### Applicable Domain of PAC
+- interactive system where system can be divided into many cooperating agents in a hierarchial structure (master-slave does this but doesnt support interaction) - each agent has specific job
+- coupling among the agents is expected very loose (changing one agent doesn't affect others)
+
+![](img/PAC3.PNG)
+
+#### Benefits
+- supporting multitasking, multi-viewing
+- supporting agent reusability and extensibility
+- easy to plug in new agent or replace existing one (using notify-subscribe)
+- supporting concurrency (agents in different threads or different devices or computers)
+
+#### Limitations
+- ovrhead due to
+  - control bridge between presentation and abstraction
+  - communications of controls of many agents
+- difficult to determine the right numbers of the agents based on the lose couplings between agents and high independence of each other
+- development complexity: due to complete separation of presentation and absraction (communications between agents only take place between the controls of agents)
+- increased complexity of the system design and implementation
+- another limitation
+  - after detailed design, implementation and during testing
+  - the controllers are are finite state machines working in parallel
+  - you would use **product construction** to look at them together, with 5 controllers and 10 events you would have 50 events to test, making very large test areas becaus eyou are testing how the machines work in parallel
+  - FSM -> FSM0 = (Q0, S0, i0, F0) and FSM1 = (Q1, S1, i1, F1) would give FSM => cartesian product for states
+  - initial state would be i0\*i1 and F = F1\*F2 
+
+#### Related Architecture
+- layered
+- multi-tier
+- MVC
+
+### Discussion 2
+
 #### Question 6
 - fire losses in US are too high and firefighting is haardous
 - 330 billion dollars spent
@@ -1171,7 +1317,161 @@ Java Virtual Machine is very variable because you can run it on many machines
   - indutril
   - residential
 - system employs different info gathering tools (sensors) that are appropriate area
-- need felxibility in visualizing some data and omitting others
+- need flexibility in visualizing some data and omitting others
 
 #### Answer 6
-- wait for Monday
+- key words: data feed of different structures and frequencies (different kinds of data coming at different speeds)
+- need agents
+- can use PAC
+  - in abstraction you would store general info (date, title)
+
+![](img/q6a.PNG)
+
+![](img/q6b.PNG)
+
+#### Question 7
+- difference between PVC I and PVC II
+
+#### Answer 7
+- from notes
+
+#### Question 8
+- consider a class diagram. WHat is the architecture of the modelled system?
+
+#### Answer 8
+- PAC since it says presentation abstraction and controller
+
+#### Question 9
+- we would like to build simple software system translates temperature from F to C and vice versa
+- when started it displays temp of water at freezing point in F and C
+- user can ask for conversion
+- would like 3 dif GUIs that have to change simultaneously
+- what is the suitable architecture and why
+- explain role of each proposed architecture components
+
+#### Answer 9
+- need concurrency
+- MVC
+- not PAC because we have the same dataset. if it were different we would use PAC
+- if we want to build it, the pattern we would use for detailed design is
+  - classes: 
+
+![](img/q9.PNG)
+
+## Day 28 Mar 19 2018
+
+### Distributed Architectures
+- example of importance
+  - virtual network provider that started off smol wants to extend trouble ticketing system and support 2-way interaction
+  - most appropriate architecture
+  - key point
+    - uncertain in how many steps they are going to provide
+    - have a smol team
+    - don't want high learning curve
+  - can't be PAC because it's not about global views but different specialized services for specific people
+- distributed system is a collection of computers connected through a communication network
+  - data is distributed (not like repo or blackboard)
+  - software is distributed
+  - users are distributed
+- subsystems within this system communicate with each other through
+  - message passing
+  - remote preocedure calls
+
+#### 2 Design Issues/Areas
+1. topology
+- the way entities connect with each other
+- how everything is organized
+- examples include
+  - bus - most common, many things connected to the bus
+    - logical link between application and resources
+  - star - broker would use this, everyone comes to broker and he/she is connected to everything
+2. mode
+- the method by which they communicate with each other
+  - synchronous
+  - asynchronous
+  - message driven
+  - callback
+  - event driven
+- **important features**
+- service location trasnarency
+- service reliability and availability
+
+#### Client Server
+- reduces load to server
+- reduce communication
+- response to client is quicker
+- performance on client side and server side is better
+
+![](img/distributed.PNG)
+
+#### Why the Above is a Bad/Good Design
+- high coupling
+- leads to problem of avilability because if one element fails it causes a lot of problems
+- but it's good because we can mirror servers
+  - if one fails another can take over
+
+![](img/2tier.PNG)
+
+##### Advatages
+- separation of responsabiltiirs
+ such as user interface presentatio nd business logic processing
+ - reusability of server components
+
+##### Disadvantages
+- lack of heterogenous infrastructure to deal with the requirement changes
+  - due to volaltility of technology we develop family of products, not a single product
+  - characteristic is the commonality of the family
+- data can be compromised (security complications)
+- thin clients are invoked for security reasons
+- service availability and reliability
+  - because of high coupling
+- testability and sclability
+  - due to volatility and synchronization
+- fat-clients/thin-clients (depends on application)
+
+## Day 29 Mar 21, 2018
+
+#### Canarie?
+- need to make sure requirements are met
+- needed to account for multiple views
+- that's why they used the PAC architecture
+- firearm registration was supposed to be 1 million but ended up being a billion and got scrapped by the govt :o 
+
+### Multi Tier Architecture
+- sometimes we need to have many tiers to put on system
+- first one is the font tier, deals with user interface presentation
+- many middle tiers taking care of business logic, app decisions and executions
+- sometimes layer is buffer between harware and system
+- backend tier usually works on database management or on a virtual machine
+
+#### Advantages
+  - enhancement of reusabiltiy
+  - scalability by middle tier (building brokers, having a network of servers)
+- middle tier can also provide multi-threading supports for scalability (ie master slave)
+
+#### Disadvantage
+- complex testability
+
+### Broker Architecture
+- middleware architecture widley used in distributed comptiputing
+- suitable for dist. computing that corrdinates and facilitated communcation
+  - brokering the service requests
+  - locating proper server
+  - forwarding and dispatching requests
+  - sending responses or exceptions back to clients
+- can be used to structure distributed software systems with decoupled components that interact by remote service invocations
+- better decoupling between clients and servers
+- servers make their services availale to clients by registerig and publishing interfaces with broker
+- clients can request services of broker statically or dyamically by look-up
+- broker acts as policeman in busy intersection who controls and interacts with client and server components
+
+![](img/broker.PNG)
+
+#### Detailed Deisgn of Broker Architecture
+- distributed client can access distributed service by calling remote methods
+- similar concept to Remote Procedure Calls on Unix and Java Remote Method Invocation
+- next lecture: proxies and stuff
+
+## Day 30 
+
+#### Service-Oriented Architecture

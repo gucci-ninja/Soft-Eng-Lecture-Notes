@@ -39,6 +39,11 @@
 - [Internal Rate of Return](#internal-rate-of-return)
 - [Incremental Analysis](#incremental-analysis)
 - [Review Session](#review-session)
+- [Rate of Return Issues](#rate-of-return-issues)
+- [External Rate of Return](#external-rate-of-return)
+- [Depreciation](#depreciation)
+- [Replacement Decisions](#replacement-decisions)
+- [Replacement Decisions](#replacement-decisions)
  
 _Images are from Prof Cam Churchill's Lecture Slides for ENG 2B03 Engineering Economics._
 
@@ -1321,7 +1326,6 @@ that's why we don't have 50 year amortization - it's too much interest
 ```
 
 #### Example 3 Car Payments
-
 Determine monthly payments required if you want to borrow 30k from a bank to buy a car at 6% interest compounded monthly for 6 years
 
 ```
@@ -1459,7 +1463,7 @@ A = 100000(A/P, 0.00607369, 300)
   - corporate bonds normally have $1000 par values when issued
 
 #### Coupon - interest rate
-- amoutn investor receives as interest payment
+- amount investor receives as interest payment
 - most bonds pay interest every 6 months but it's possiel for them to pay more or less frequently
 - **fixed rate**
 - **floating rate**
@@ -1901,7 +1905,7 @@ IRR | 100% | 90%
 
 ## Day 22 Mar 1, 2018
 
-#### Steps in INcremental Analysis
+#### Steps in Incremental Analysis
 1. identify alternatives, including "do nothing"
 2. (optional) Compute rate of return for each individual alternative
   - all optionals will have IIR greater than MARR in midterm/exam so don't do this step
@@ -2193,3 +2197,400 @@ if you get confused during midterm, try MARR and then try another number and see
 
 if your delta IRR is greater than MARR you keep the more expensive one --> Location B
 ```
+
+**no class for the next week due to midterm**
+
+## Day 23 Mar 12, 2018
+
+### Rate of Return Issues
+- the normal case is when there is just one sign change associated with cash flow series
+  - initial negative cash flow a year 0 followed by positive cashflows
+  - initial positive cash flow at time 0 folowed by all negative cash flows
+- in this case, NPW Plot which graphs NPW vs interest rate will intersect the x-axis at i* = IRR
+- if there are no sign changes that means NPW will stay positive (or negative) and will never cross 0
+- if cash flows series changes signs more than once, then multiple IRR points of intersection may exist (multiple roots)
+
+#### Descartes Rule of Signs
+- gives upper limit on the numbere of positive, real roots of a polynomial with real coefficients
+- the number of positive, real IRRs is less than or equal to the number of sign changes in cash fow
+- there were 2 signs in the lecture example
+  - descarted rules says there can be 0, 1, or 2 positive real IRRS
+- thi helps us determine ERR
+
+### External Rate of Return
+- what return is earned by money associated with a project that is not invested in the project?
+  - the usual assumption is that the funds that are invested elsewhere and earn an explicit rate of return (usually more than MARR)
+- the ERR is the rate of return on a project where any excess cash from a project is assumed to earn interest at a pre-determined explicit rate (usually MARR)
+- in this class
+  - if you have multiple sign changes, you will be doing ERR
+  - we will also be doing approximate ERR
+
+#### Approximate ERR
+- all net receipts will be taken to the future at the MARR
+- all net disbursements will be taken to the future at the unknown rate i<sub>ea</sub>* (approx ERRR)
+- set FW(receipts) = FW(disbursements) and solve for i<sub>ea</sub>* 
+
+#### Example 1
+A project has cashflows of $2500 now, -$12500 in one year and $15000 in 2 years. If the MARR is 25%, find the approximate ERR.
+
+```
+2300(1.25) - 12500
+= -9350
+
+at year 2, positive money has grown by MARR to -9350
+
+-9350(1 + ERR)^1 + 15000 = 0
+Solve for ERR
+
+ERR = 60%
+
+that's fine if you just have 3 arrows b
+
+if you had -, -, + +, -, +
+you'd move the two - arrows to year 3
+
+2500(1.025)^2 - 12500(1 + ERR)^1 + 15000 = 0
+ERR = 0.51
+
+```
+
+- approx ERR will be between MARR and actual ERR
+
+#### When to Use ERR
+- the ERR method should be used whenever multiple IRRs are possible. Unfortunately, it is sometimes hard to know in advance when there are multiple IRRs
+- **simple investments** - an investment characterized by one or more periods of cash outflows followed by one or more periods of cash inflows
+- if project is not simple investment, there may be more than 1 IRR
+- use regular IRR for simple investments that don't have multiple IRRs by plotting PW
+
+Method | Advtantages | Disadvantages
+-------|----------|--------
+IRR | faciliates comparisons, commonly used | relatively difficult to caclulate, multiple IRRs may exist
+PW | givs explicit measure of profit | difficult to compare if dif N
+AW | annual cash flows may have failiar meanings | difficult to compare for dif N
+payback period | easy to calculate | discriminates against long-term projects
+
+#### Example 2 Exam Question
+Grafton Corp wants to build spare parts storage facility that will last 8 years. 2 locations. Perform rate of return analysis and find best location. MARR = 8% and do nothing **is** an option. 
+
+Location | Initial Cost | Cost Savings
+-------|------------|------
+1 | $122000 | 27000 in first year increasing by 1000 per yr
+2 | $130000 | 20000 per year plus 20000 savings every 4 years (40k every 4 years)
+
+```
+do nothing is A
+Location 1 is B
+Location 2 is C
+
+B - A
+
+PW = 0 = -122000 + [27000 + 1000(A/G, IRR, 8)](P/A, IRR, 8)
+
+Try IRR = MARR = 8% we get PW = 50965
+
+since it's positive, delta IRR will be above MARR so we keep higher cost one and elininate do-nothing
+
+C - B
+
+After subtracting diagrams you get -8000, negative numbers and positive numbers every 4 years
+
+THATS MULTIPLE SIGN CHANGES :o
+
+```
+## Day 24 Mar 13, 2018
+
+```
+Positive i=MARR
+
+FW = 10000(F/P, 8%, 4) + 6000 = 19604
+
+8000(F/P, ERR, 8) + 7000(F/P, ERR, 7) + 8000(F/P, ERR, 6) +  9000(F/P, ERR, 5) + 11000(F/P, ERR, 3) + 12000(F/P, ERR, 2) + 13000(F/P, ERR, 1)
+
+
+OR
+
+COSTS:
+[6000 + 1000(A/G, ERR, 4])](P/A, ERR, 4)(F/P, ERR, 9) + 2000(F/P, ERR, 9) + [11000 + 1000(A/G, ERR, 3)](P/A, ERR, 3)(F/P, ERR, 4)
+
+Try ERR=8% (MARR)
+
+We get a negative future worth -> -51218
+would need less than 8% ERR so choose B  (keep lower cost)
+```
+
+#### Example 1
+Entrepeneur is looking at leasing houses that he can rent to students. Two lease options available. Do-nothing is an option, MARR is 13%.
+
+. | Location 1 (B) | Location 2 (C)
+--|----------|----------
+Initial Lease Payment | 14000 | 18000
+annual lease cost | 4000 | 4500
+anticipated revenues from rent | 13000 | 14000
+lease term (years) | 6 | 9
+
+**do at home**
+
+### Depreciation
+- straight line
+- declining balance
+
+#### Lingo
+- **Generalization**: An asset starts to lose its value as soon as you purchase it
+- **Purchase Value**: The amount paid at purhase. Its the market value at purchase
+- **Market value**: MV(n) Actual value of an asset that can be sold for in an open market
+- **Book value**: BV(N), value of an asset used for accounting purposes. calculated using depreciation methods (what the govt is allowing you to say it's worth)
+- **Salvage value**: actual value of asset when sold
+- **Scrap value** - actual value of an asset when sold at the end of physical life
+
+#### Reasons for Depreciation
+- use-related physical loss
+  - phone, car
+- time related physical loss
+  - electronics that aren't being used but are losing value
+- functional loss
+  - obsolete 
+
+### Replacement Decisions
+- economic incentive to replace things before theyre totally dead
+
+## Day 25 Mar 15, 2018
+
+#### Reasons for Depreciation cont'd
+- financial statements
+- replacement decisions
+- tax calculations
+  - paying a difference between book value and market value
+
+#### Methods of Depreciation
+- straight line - reverse of simple interest
+- declining balance - what we use for tax purposes and income
+
+##### Straight Line Method
+- d<sub>sl</sub> = (P-S)/n
+- can use depreciation to avoid taxes
+- depreciate by a certain amount each year
+- the book value of an asset diminishes by an equal amount (d) during each period (year)
+- BV_4 = 1000 - 4(100) = 600
+
+##### Declining Balance
+- percentage, more intuitive
+- the book value of an asset diminishes by an equal proportion (d) during each period (year)
+- BV<sub>db</sub>(0) = P
+- BV<sub>db</sub>(n) = P(1-d)<sup>n</sup>
+- in summary, if d = depreciation rate and P = purchase value, 
+- D<sub>db</sub>(n) - BV<sub>db</sub>(n-1)d = P(1-d)<sup>n-1</sup>d
+- if you end up with a negative depreciation it means you messed up
+
+#### Example 1
+A new press brake costs Medicine Hat Steel $780000. It is expected to last 20 years with a $60000 salvage value. WHat rate of depreciation for the declining balance method will produce a book value after 20 years that equals the salvage value of the press?
+
+```
+d = 1 - Nthroot(S/P)
+78000(1-d)^N = 60000
+d = 0.12
+```
+#### Example 2
+An asset was purchased 7 years ago for $10000. It was estimated to have a 10 year service life and a salvage value of $2000 at the end of its service life. If the value of the asset is believed to be deprciating at a constant rate each year, what is its book value today if depreciation is calculated using the declining balance method?
+
+```
+in this case, today is at year 7
+d = 1 - nthroot(2000/10000) = 
+BV(7) = P(1-d)^7 = 
+```
+
+#### Example 3
+A machine has a life od 30 years, costs $245000 and has a salvage value of $10000 using straight line depreciation. Determine what depreciation rate (declining balance) will result in the machine having the same book value for both methods in 20 years.
+
+```
+```
+
+## Day 26 MAr 15, 2018
+
+### Replacement Decisions
+- reduced performance
+  - physical deterioration of equipment or system
+  - this is when a good maintenance program is vital
+- new requirements
+  - piece of equipment has to be replaced or enhanced
+  - system cannot meet the new requirments such as speed/accuracy
+  - additional functionality may be needed
+- obsolescence
+  - effect of rapidly changing technology
+  - often a result of ever-decreasing development cycle time to bring new products to market
+  - lack of technical support/spare parts
+
+#### Mutually Exclusive Choices
+1. do nothing
+2. overhaul existing asset
+3. retire
+4. replace
+
+#### Capacity Costs
+- **cost 1** - capital costs
+- **cost 2** - installation costs
+- **note 1**: installation costs are not depreciable
+- **note 2**: when something is installed the defender has a cost advantage
+- **note 3**: sunk costs are irrelevent in future replacement decisions - costs that were incurred in the past
+
+#### Example 1
+- printing service vs photo copier
+- current annual cost = $36000
+- new machine = $35000
+- installation cost = $3000
+- annual O & M cost = $24000
+- O & M growth = 5%
+- MARR = 10%
+
+```
+/salvage value/
+
+defender A = 36000 
+new machine cost + o & m brought back to present?
+A = ? = (35000 + 3000)(A/P, 10%, 10) + 24000(P/A, 5%, 10%, 10)(A/P, 10%, 10) - 3758(A/F, 10%, 10)
+= 35008
+
+Declining Balance
+BV(10) = P(1-0.2)^10
+```
+
+#### Replacement Example cont'd
+- Assume ongoing need for product
+- EAC(capital) = A = (P-S)(A/P, i, N) + Si (Chapter 3)
+- replacement decision also depends on operating and maintenance costs
+  - tend to increase
+  - EAC of O&M a car can be computed for N years
+- economic life is the number of years that minimizes EAC(total) = EAC(capital) + EAC(O&M)
+- installation cost can be either capital or o&m since it's a one time cost
+- in economic life example, to get 13800 capital cost at year 1, you need to add the installation cost to 5hr 35k
+- installation cost is not added to purchase price because it does not get depreciated
+- treat EAC(o&m) as an arithmetic or gradient series
+
+#### Cost and Values
+- when considering an asset's value, there are several possibililites
+  - first costs
+  - book value
+  - replacement cost
+  - trade-in value
+  - market value
+
+## Day 27 Mar 20, 2018
+
+#### Forklift Example
+- new forklift costs 18000, has operating costs 1000 in the first year and salvage value 10000 at the end of first year
+- operating costs increase by 15% each year, truck depreciates by 25% per year, MARR = 15%
+- this problem can be best solved on a spreadsheet
+
+#### Equivalent Annual Costs (EAC)
+- (P+I)(A/P, i, N) - S(A/F i, N)
+- EAC(capital) = ____
+
+```
+N = 1
+EAC = EAC(capital) + EAC(O&M)
+18000(A/P, 15%, 1) - 10000(A/F, 15%, 1)
+
+N = 2
+0 - down arrow 18000
+1 -
+2 - up arrow 18000(1-0.25)^2 = 10125
+
+EAC(capital) = 18000(A/P, 15%, 2) - 10125(A/F, 15%, 2)
+= 3290.47
+
+EAC(O&M) = 1000(P/F, 15%, 1) + 1150(P/F, 15%, 2) {approximation}
+         = 1739.130434782609
+         = 4316 (according to the prof)
+
+EAC(tot) = 7406
+
+N - EAC(tot)
+1 - 10800
+2 - 8720
+3 - 7406
+4 - 6678
+5 - 6642
+6 - 6258
+7 - 6394
+
+when it plateus - it signifies the lowest EAC, economic life
+
+*** the numbers are probably all wrong ***
+```
+
+#### Example 2 - Pump and Challengers
+- new water pump is $10000
+- $1000 is immediately needed to install (part of capital but not salvage)
+- O&M is $500 first year, increasing by $300 each year
+- Salvage value at any ime can be estimated by declining rate of 20%
+- interest is 10%
+- calculate the EAC for replacing the pump after 1 yr, 2 yrs.. to find economic life (when it should be replaced)
+
+```
+N = 0
+SV = 10000
+N = 1
+SV = 8000
+N = 2
+SV = 6400
+
+Should be replaced at year 8
+```
+
+#### One Year Principle
+- over time the EAC flattens out
+- biggest drop is when things depreciate quickly
+- "if the cost of keeping the defender one more year extends the EAC of the challenger at its economic life, then defender should be replaced
+
+#### Pump
+- above pump is being considered for replaement
+- current one has salvage value of $1000 and will retain this value indefinitely
+- O&M are $2500 per year rising by $400/yr
+- should it be replaced/when?
+
+```
+economic life = 8 years
+EAC = 3317
+marginal cost of keeping it one more yr
+MC = 1000*10% + 2500 = 2600
+note: P - S = 0
+
+so we do not want to replace now
+
+assuming O&M is 3500 rising by 200, we get MC = 1000*10% + 3500 = 3600 (should replace now)
+```
+
+#### When Challenger is Different from Defender
+- challenger will always repeat
+- decision rules
+  - determine economic life of challenger and its EAC
+  - determine remaining economic life of defencer and its EAC
+  - if EAC(defender) > EAC(challenger), replace now
+
+#### Exmaple 3
+- brockville brackets has 3 yr old robot and challenger is upgraded used robot
+- maintenance for upgrades is 40k first year increasing by 10% per yr
+- current robot maintenance is 50k increasing by 10% per yr
+- MARR = 15%
+
+. | Defender | Challenger
+---|---------|------------
+price | $300000 | $175000
+installation | $50000 | $10000
+useful life | 12 yrs | 9 yrs
+annual depr. rate | 20% | 20%
+
+```
+2 arrows on cashflow diagram (today and at the end of 1 year)
+
+if you keep what's in place 5 yrs -- 97808 dollars
+
+challengers lowest number is 92440
+
+much better than best scenario for keeping defender
+```
+
+**useful life != economic life**
+
+#### Challenger is not Repeated
+
+![](Day27/replacement.PNG)?

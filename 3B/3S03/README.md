@@ -20,13 +20,17 @@
 - [Tutorial 3 Jan 31, 2018](#tutorial-3-jan-31-2018)
 - [Functional Testing Techniques](#functional-testing-techniques)
 - [Test Report](#test-report)
-- [Tutorial 3 Feb 7, 2018](#tutorial-3-feb-7-2018)
 - [Structural Testing Techniques](#structural-testing-techniques)
 - [Quiz 2 Regression Testing](#quiz-2-regression-testing)
 - [Equivalent Partitioning Classes](#equivalent-partitioning-classes)
 - [Unit Testing](#unit-testing)
-- [Tutorial Feb 14, 2018 ](#tutorial-feb-14-2018-)
+- [Tutorial 5 Feb 14, 2018 ](#tutorial-5-feb-14-2018-)
 - [Empirical Unit Testing Principles](#empirical-unit-testing-principles)
+- [Parameterized Tests](#parameterized-tests)
+- [Security Testing](#security-testing)
+- [Tutorial 8 Mar 14, 2018](#tutorial-8-mar-14-2018)
+- [Basics of Measurement](#basics-of-measurement)
+- [Tutorial 9 Mar 21, 2018](#tutorial-9-mar-21-2018)
 
 ## Day 1 - Jan 4, 2018 
 
@@ -659,7 +663,7 @@ Parallel | new system gives same results as old
 - log, error codes
 - maybe recommendations
 
-### Tutorial 3 Feb 7, 2018
+#### Tutorial 4 Feb 7, 2018
 
 **skipped**
 
@@ -803,7 +807,7 @@ Regression testing vs recover testing
 - unit testing should be based on sound and systematic techniques
 - tests should be repeatable, very critical for concurrent software
 
-### Tutorial Feb 14, 2018 
+### Tutorial 5 Feb 14, 2018 
 
 #### Miderm Review
 
@@ -1009,6 +1013,8 @@ T9 | 1880 | 1 | -1 | Year, day not in valid
 
 ## Day 19 Feb 26, 2018
 
+----
+
 ## Day 20 Feb 27, 2018
 
 ### Empirical Unit Testing Principles
@@ -1050,10 +1056,252 @@ y = 4
 
 ```x>0 && y=0```
 
-#### Tutorial Feb 28, 2018
+#### Tutorial 6 Feb 28, 2018
 
 **skipped**
 
 ## Day 21 Mar 1, 2018
 
 **skipped**
+
+## Day 22 Mar 5, 2018
+
+## Day 23 Mar 6, 2018
+
+#### Tutorial 7 Mar 7, 2018
+
+## Day 24 Mar 8, 2018
+
+## Day 25 Mar 12, 2018
+
+[JUnit](https://junit.org/junit4)
+
+### Parameterized Tests
+
+```
+import ..
+@RunWith(Parameterized.Class)
+public class Tests {
+    Parameters(name = "")
+    public static Collection<Object> data() {
+        return Arrays.asList(new Object[][]....)
+    }
+}
+
+```
+#### Using Data Files
+- concurrency testing
+- DigitalAd app - as you move through mall, it displays ads relevant to you
+- problem with unit testing this app
+    - get location and get user is hidden so it cannot be tested
+    - when you write code, think about you it will be tested
+    - if get user/get location is in the same class as the mainfunction, it is hard to test
+
+```
+@Test
+public void tGetAd() {
+    assertEquals(expected, GetAd())
+}
+```
+##### Solution/WorkAround
+- capture system vars in to local
+- use setup and teardown
+- system variable: System.setOut(System.out)
+- capture system input, work with it, reset it
+- look for constructors that do one thing only
+
+```
+Type A f1;
+int f2;
+
+TYpe B(int i) {
+    f1 = new TypeB();
+    f2 = i;
+}
+```
+
+```
+TypeA f1;
+int f2;
+
+TYpe B(int i, TypeA a) {
+    f1 = a;
+    f2 = i;
+}
+```
+
+```
+method(~~user u...~~ Address) {
+    calc SalesTax(user.address);
+    return tax;
+}
+
+/global vs singleton/
+```
+
+**Look for _Guide: Writing Testable Code_**
+
+## Day 26 Mar 13, 2018
+
+### Security Testing
+- types of security vulnerabilities
+    - design
+    - implementation
+- design must specify security model's structure
+    - if security mechanisms are required, how do they work
+    - in multi-user program, desgn specifies how system users are **authenticated, authorized and audited**
+    - for data input, how threats are mitigated
+
+#### Design Vulnerability
+- a mistake in the design that precludes the program from operating securely
+- often found in software's security features
+- parts that have no direct connection to security features
+
+#### Implementation Vulnerability
+- caused by security defects in the actual coding
+- flaws in the code
+    - 
+
+#### Good Secure Software Design Principles
+- compartmentalization
+    - what does they user need to know to do his job
+    - use of strong abstractions (many layers) and interface validations to ensure proper use of module
+- least privilege principle
+    - granting user or process the fewest privileges possible for it to complete its job
+- separation of privileges
+    - has to do mainly with not allowing one user to do everything but thinking of system's domain privileges
+    - ensures multiple keys are needed to compelte sensitive transactions
+- attack surface reduction
+    - _how many_ points of interactions does the system have
+    - more points = more surface for attack
+    - solution: minimalize interface, 'need-to-know' basis
+    - eliminates interfaces to software tht are not necessary to complete its work
+- cryptography
+    - hiding the message
+    - protects the data so that if one security mechanism fails, the data needs decryption
+
+#### Cryptography
+- pitfalls
+    - creating you own
+    - choosing the wrong one
+    - relying on security by obscurity
+    - hard-coded secrets
+    - mishandling private information
+- symmetric/public key generation
+
+### Tutorial 8 Mar 14, 2018
+- use ignore for things that haven't been implemented but have a test case
+- testing if statements
+    - @org.junit.Test(timeout=1000)
+
+#### Runner (annotations)
+1. Parameterized
+    - organize test cases
+2. Suite
+    - execute all (classes)
+3. Category
+    - classify test methods
+4. Theories
+    - cartesian product
+
+#### Test Driven Development
+- consider a project with testing in mind
+- opposite is BDD (Behaviour)
+
+#### Designing for Testability
+- design that allows for automated testing
+- should be
+    - repeatable
+    - easy to write 
+    - easy to understand
+    - fast
+    - order independent
+- need to encapsulate, isolate (dependencies), separate (simple methods), use protected instead of private 
+- statement coverage: all inputs all statements
+- alt-enter -> test
+
+## Day 27 Mar 15, 2018
+
+**skipped** :( we probably did cryptography
+
+## Day 28 Mar 19, 2018
+
+**skipped**
+
+## Day 30 Mar 20, 2018
+
+### Basics of Measurement
+- as we understand more about attributes and relationship s between them, we develop
+    - framework for describing them
+    - tools for measuring them
+- we have no deep understanding of software attributes
+
+#### Basic Theory of Measurement
+- this theory tells us
+    - how to measure
+    - how o analyze and depict data
+    - how to tie results back to our original questions
+- examples
+    - euclidean (parallel lines never meet)
+    - non-euclidean (parallel lines do meet)
+
+#### Representational Theory of Measurement
+- emiprirical relations
+- we understand things better by comparing them, not assigning numbers
+- observation reflects set of rules
+    - we form pairs of people and define a binary relation "taller than" on them
+    - we say who is taller than who
+    - this is an empirical relation for height
+- a (binary) empirical relation is one for which there is reasonable concensus about which pairs are in the relation
+- they don't have to be binary
+- they are mappings from the empirical, real world to a formal mathematical world
+- intuitive
+
+### Tutorial 9 Mar 21, 2018
+
+#### Software Metrics
+- **Halstead's Science**
+    - n1 number of distinct operators in code
+    - n2 number of distinct  operands
+    - N1 occurences of operators
+    - N2 occurences of operands
+- lines of code (LOC) is a common metric
+- program length (N) = N1 + N2
+- volume = Nlog2(N1+N2)
+
+#### Bug Counting Using Dynamic Analysis
+1. failure count model
+    - failure rate
+2. error seeding model
+    - debug vs bebug
+    - error seeding = bebug
+    - we have known errors that we introduce to the code and the programmer tries to identify them
+    - developer testing
+    - concerns performance
+- number of exposed faults and number of undiscovered ones
+- to help count total bugs and ensure if code is working
+
+#### Software Reliability Metrics
+- program is intangible so we use a matrix
+- does software work within the 'stated time'?
+- execute until failure occurs
+    - fix an error in no time, resume and execute again
+- there is also defensive programming
+
+#### Software Requirement Metrics
+- function points
+    - number of inputs/output
+    - how many user interactions
+    - files
+- used to calculate size and cost
+- what sdlc
+
+#### Programmer Productivity Metrics
+- loc
+- pgs of documntation
+- depends on scale of project
+
+#### Design Metrics
+- cohesion and coupling
+- fan in - how many modules are calling this module
+- fan out - how many modules it calls
