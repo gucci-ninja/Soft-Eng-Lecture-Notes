@@ -43,6 +43,8 @@
 - [MVC](#mvc)
 - [Discussion 2](#discussion-2)
 - [Distributed Architectures](#distributed-architectures)
+- [Multi Tier Architecture](#multi-tier-architecture)
+- [Broker Architecture](#broker-architecture)
 
 ## Day 1 Jan 5, 2018
 

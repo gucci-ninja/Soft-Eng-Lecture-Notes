@@ -663,7 +663,7 @@ Parallel | new system gives same results as old
 - log, error codes
 - maybe recommendations
 
-### Tutorial 4 Feb 7, 2018
+#### Tutorial 4 Feb 7, 2018
 
 **skipped**
 
@@ -1256,3 +1256,52 @@ method(~~user u...~~ Address) {
 - they don't have to be binary
 - they are mappings from the empirical, real world to a formal mathematical world
 - intuitive
+
+### Tutorial 9 Mar 21, 2018
+
+#### Software Metrics
+- **Halstead's Science**
+    - n1 number of distinct operators in code
+    - n2 number of distinct  operands
+    - N1 occurences of operators
+    - N2 occurences of operands
+- lines of code (LOC) is a common metric
+- program length (N) = N1 + N2
+- volume = Nlog2(N1+N2)
+
+#### Bug Counting Using Dynamic Analysis
+1. failure count model
+    - failure rate
+2. error seeding model
+    - debug vs bebug
+    - error seeding = bebug
+    - we have known errors that we introduce to the code and the programmer tries to identify them
+    - developer testing
+    - concerns performance
+- number of exposed faults and number of undiscovered ones
+- to help count total bugs and ensure if code is working
+
+#### Software Reliability Metrics
+- program is intangible so we use a matrix
+- does software work within the 'stated time'?
+- execute until failure occurs
+    - fix an error in no time, resume and execute again
+- there is also defensive programming
+
+#### Software Requirement Metrics
+- function points
+    - number of inputs/output
+    - how many user interactions
+    - files
+- used to calculate size and cost
+- what sdlc
+
+#### Programmer Productivity Metrics
+- loc
+- pgs of documntation
+- depends on scale of project
+
+#### Design Metrics
+- cohesion and coupling
+- fan in - how many modules are calling this module
+- fan out - how many modules it calls
