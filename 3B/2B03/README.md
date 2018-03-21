@@ -2472,3 +2472,125 @@ BV(10) = P(1-0.2)^10
   - replacement cost
   - trade-in value
   - market value
+
+## Day 27 Mar 20, 2018
+
+#### Forklift Example
+- new forklift costs 18000, has operating costs 1000 in the first year and salvage value 10000 at the end of first year
+- operating costs increase by 15% each year, truck depreciates by 25% per year, MARR = 15%
+- this problem can be best solved on a spreadsheet
+
+#### Equivalent Annual Costs (EAC)
+- (P+I)(A/P, i, N) - S(A/F i, N)
+- EAC(capital) = ____
+
+```
+N = 1
+EAC = EAC(capital) + EAC(O&M)
+18000(A/P, 15%, 1) - 10000(A/F, 15%, 1)
+
+N = 2
+0 - down arrow 18000
+1 -
+2 - up arrow 18000(1-0.25)^2 = 10125
+
+EAC(capital) = 18000(A/P, 15%, 2) - 10125(A/F, 15%, 2)
+= 3290.47
+
+EAC(O&M) = 1000(P/F, 15%, 1) + 1150(P/F, 15%, 2) {approximation}
+         = 1739.130434782609
+         = 4316 (according to the prof)
+
+EAC(tot) = 7406
+
+N - EAC(tot)
+1 - 10800
+2 - 8720
+3 - 7406
+4 - 6678
+5 - 6642
+6 - 6258
+7 - 6394
+
+when it plateus - it signifies the lowest EAC, economic life
+
+*** the numbers are probably all wrong ***
+```
+
+#### Example 2 - Pump and Challengers
+- new water pump is $10000
+- $1000 is immediately needed to install (part of capital but not salvage)
+- O&M is $500 first year, increasing by $300 each year
+- Salvage value at any ime can be estimated by declining rate of 20%
+- interest is 10%
+- calculate the EAC for replacing the pump after 1 yr, 2 yrs.. to find economic life (when it should be replaced)
+
+```
+N = 0
+SV = 10000
+N = 1
+SV = 8000
+N = 2
+SV = 6400
+
+Should be replaced at year 8
+```
+
+#### One Year Principle
+- over time the EAC flattens out
+- biggest drop is when things depreciate quickly
+- "if the cost of keeping the defender one more year extends the EAC of the challenger at its economic life, then defender should be replaced
+
+#### Pump
+- above pump is being considered for replaement
+- current one has salvage value of $1000 and will retain this value indefinitely
+- O&M are $2500 per year rising by $400/yr
+- should it be replaced/when?
+
+```
+economic life = 8 years
+EAC = 3317
+marginal cost of keeping it one more yr
+MC = 1000*10% + 2500 = 2600
+note: P - S = 0
+
+so we do not want to replace now
+
+assuming O&M is 3500 rising by 200, we get MC = 1000*10% + 3500 = 3600 (should replace now)
+```
+
+#### When Challenger is Different from Defender
+- challenger will always repeat
+- decision rules
+  - determine economic life of challenger and its EAC
+  - determine remaining economic life of defencer and its EAC
+  - if EAC(defender) > EAC(challenger), replace now
+
+#### Exmaple 3
+- brockville brackets has 3 yr old robot and challenger is upgraded used robot
+- maintenance for upgrades is 40k first year increasing by 10% per yr
+- current robot maintenance is 50k increasing by 10% per yr
+- MARR = 15%
+
+. | Defender | Challenger
+---|---------|------------
+price | $300000 | $175000
+installation | $50000 | $10000
+useful life | 12 yrs | 9 yrs
+annual depr. rate | 20% | 20%
+
+```
+2 arrows on cashflow diagram (today and at the end of 1 year)
+
+if you keep what's in place 5 yrs -- 97808 dollars
+
+challengers lowest number is 92440
+
+much better than best scenario for keeping defender
+```
+
+**useful life != economic life**
+
+#### Challenger is not Repeated
+
+![](Day27/replacement.PNG)?
