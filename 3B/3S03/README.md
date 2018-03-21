@@ -20,7 +20,6 @@
 - [Tutorial 3 Jan 31, 2018](#tutorial-3-jan-31-2018)
 - [Functional Testing Techniques](#functional-testing-techniques)
 - [Test Report](#test-report)
-- [Tutorial 4 Feb 7, 2018](#tutorial-4-feb-7-2018)
 - [Structural Testing Techniques](#structural-testing-techniques)
 - [Quiz 2 Regression Testing](#quiz-2-regression-testing)
 - [Equivalent Partitioning Classes](#equivalent-partitioning-classes)
@@ -31,6 +30,7 @@
 - [Security Testing](#security-testing)
 - [Tutorial 8 Mar 14, 2018](#tutorial-8-mar-14-2018)
 - [Basics of Measurement](#basics-of-measurement)
+- [Tutorial 9 Mar 21, 2018](#tutorial-9-mar-21-2018)
 
 ## Day 1 - Jan 4, 2018 
 
