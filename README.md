@@ -20,8 +20,7 @@
 
 Course | Description | Due
 -------|-------------|----
-3I03 | Assignment 3 | Mar 19
-2B03 | Quiz 7 | Mar 19
+3S03 | Assignment 2 | 3S03
 4A03 | Journal 3 | Mar 23
 3DX4 | Pre-lab 5 | Mar 23
 2B03 | Quiz 8 | Mar 26
