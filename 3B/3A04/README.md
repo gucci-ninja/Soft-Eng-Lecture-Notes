@@ -1424,10 +1424,52 @@ Java Virtual Machine is very variable because you can run it on many machines
 - service availability and reliability
   - because of high coupling
 - testability and sclability
-  - due to volatility
+  - due to volatility and synchronization
+- fat-clients/thin-clients (depends on application)
 
-## Day 29
+## Day 29 Mar 21, 2018
 
-#### Multi Tier
-#### Broker Architecture
+#### Canarie?
+- need to make sure requirements are met
+- needed to account for multiple views
+- that's why they used the PAC architecture
+- firearm registration was supposed to be 1 million but ended up being a billion and got scrapped by the govt :o 
+
+### Multi Tier Architecture
+- sometimes we need to have many tiers to put on system
+- first one is the font tier, deals with user interface presentation
+- many middle tiers taking care of business logic, app decisions and executions
+- sometimes layer is buffer between harware and system
+- backend tier usually works on database management or on a virtual machine
+
+#### Advantages
+  - enhancement of reusabiltiy
+  - scalability by middle tier (building brokers, having a network of servers)
+- middle tier can also provide multi-threading supports for scalability (ie master slave)
+
+#### Disadvantage
+- complex testability
+
+### Broker Architecture
+- middleware architecture widley used in distributed comptiputing
+- suitable for dist. computing that corrdinates and facilitated communcation
+  - brokering the service requests
+  - locating proper server
+  - forwarding and dispatching requests
+  - sending responses or exceptions back to clients
+- can be used to structure distributed software systems with decoupled components that interact by remote service invocations
+- better decoupling between clients and servers
+- servers make their services availale to clients by registerig and publishing interfaces with broker
+- clients can request services of broker statically or dyamically by look-up
+- broker acts as policeman in busy intersection who controls and interacts with client and server components
+
+![](img/broker.PNG)
+
+#### Detailed Deisgn of Broker Architecture
+- distributed client can access distributed service by calling remote methods
+- similar concept to Remote Procedure Calls on Unix and Java Remote Method Invocation
+- next lecture: proxies and stuff
+
+## Day 30 
+
 #### Service-Oriented Architecture
