@@ -1392,11 +1392,14 @@ Java Virtual Machine is very variable because you can run it on many machines
   - message driven
   - callback
   - event driven
-- **important features**
-- service location trasnarency
-- service reliability and availability
+- **important features of distributed architecture**
+  - service location trasnarency
+  - service reliability and availability
 
 #### Client Server
+- based on 2 communicating subsystems usually running on different processors
+  - client issues rquest to second process server
+  - server receives request, carries it out and sends reply to client
 - reduces load to server
 - reduce communication
 - response to client is quicker
@@ -1413,8 +1416,7 @@ Java Virtual Machine is very variable because you can run it on many machines
 ![](img/2tier.PNG)
 
 ##### Advatages
-- separation of responsabiltiirs
- such as user interface presentatio nd business logic processing
+- separation of responsabilities such as user interface presentation and business logic processing
  - reusability of server components
 
 ##### Disadvantages
@@ -1422,7 +1424,7 @@ Java Virtual Machine is very variable because you can run it on many machines
   - due to volaltility of technology we develop family of products, not a single product
   - characteristic is the commonality of the family
 - data can be compromised (security complications)
-- thin clients are invoked for security reasons
+  - thin clients are invoked for security reasons
 - service availability and reliability
   - because of high coupling
 - testability and sclability
@@ -1439,22 +1441,25 @@ Java Virtual Machine is very variable because you can run it on many machines
 
 ### Multi Tier Architecture
 - sometimes we need to have many tiers to put on system
-- first one is the font tier, deals with user interface presentation
+- first one is the front tier, deals with user interface presentation
 - many middle tiers taking care of business logic, app decisions and executions
 - sometimes layer is buffer between harware and system
 - backend tier usually works on database management or on a virtual machine
 
 #### Advantages
-  - enhancement of reusabiltiy
-  - scalability by middle tier (building brokers, having a network of servers)
+- enhancement of reusabiltiy
+- scalability by middle tier (building brokers, having a network of servers)
 - middle tier can also provide multi-threading supports for scalability (ie master slave)
+- reduces traffic on network
 
 #### Disadvantage
 - complex testability
 
+![](img/multitier.PNG)
+
 ### Broker Architecture
-- middleware architecture widley used in distributed comptiputing
-- suitable for dist. computing that corrdinates and facilitated communcation
+- middleware architecture widely used in distributed computing
+- suitable for dist. computing that coordinates and facilitates communcation
   - brokering the service requests
   - locating proper server
   - forwarding and dispatching requests
@@ -1472,6 +1477,54 @@ Java Virtual Machine is very variable because you can run it on many machines
 - similar concept to Remote Procedure Calls on Unix and Java Remote Method Invocation
 - next lecture: proxies and stuff
 
-## Day 30 
+## Day 30 Mar 23, 2018
+
+#### Proxies in Broker Architecture
+- client has direct connection to its client-proxy
+- server has direct connection to its server proxy
+- proxy talks to mediaor broker
+- proxy is well-known pattern for hiding low-level detailed communication processing
+  - it intercepts client's request
+  - gets all arguments
+  - packets it
+  - marshals (streamlines) and formats the package in communication protocol format
+  - sends it to broker
+- broker is also called proxy-based system
+
+![](img/proxy.PNG)
+
+#### Sub Components of Broker Architecture
+- broker
+- stub (client-side proxy) - mediates btwn client and broker
+- skeleton (server-side proxy)
+  - statically gnerated by the service interface compilation and then deployed to server side
+  - receives requests, unpacks requests, unmarshals the method arguments and clls appropriate service
+  - also marshals results from the server before it sends back to the client
+- bridges (optional)
+  - used to hide implementation details when 2 brokers interoperate
+  - can connect 2 different netwroks based on dif communication protocols
+
+![](img/broker_model.PNG)
+
+**some images on slides 21-23
+
+#### Advantages
+- server component implementation and location transparency
+- changeability and extensibility
+- simplicity for clients to access server and server portability
+- interoperability via broker bridges
+- reusability
+- feasibility of runtime changes of server components (add/remove server comps)
+
+#### Disadvantages
+- inefficiency due to overhead of proxies
+- low fault-tolerance
+- difficulty in testing (lots of branches also running concurrently)
 
 #### Service-Oriented Architecture
+- service is a business functionality that is:
+  - well defined and self-contained
+  - independent from other services
+  - published and availale to be used via an interface
+
+**He didn't really finish SOA so read it on your own time**

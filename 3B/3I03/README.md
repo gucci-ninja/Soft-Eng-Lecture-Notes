@@ -348,7 +348,7 @@ Java | Java, Python
 
 ## Day 8 Mar 1, 2018
 
-**skipped** but details on final presentatino announced - need to join a group.
+**skipped** but details on final presentation announced - need to join a group.
 
 ### Presentations
 - bad presentations
@@ -405,3 +405,9 @@ Java | Java, Python
 	- speak from slides
 - summary
 	- give your links references
+
+## Day 9 Mar 22, 2018
+
+### Giving Criticism and Feedback
+- Hmaburger Method
+- things we went over in tutorial

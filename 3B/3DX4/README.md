@@ -1846,3 +1846,147 @@ pos = (evalfr(gcl, 0) - max(step(gcl))/evalfr(gcl,0)
 	- you get settling time Ts = 4/wn = 3.320 which we can make 5x better using something??
 
 !![](Day30/example.PNG)
+
+## Day 31 Mar 22, 2018
+
+#### Ideal Derivative Compensation cont'd
+- K/(s(s+4)(s+6)) example
+- to make settling time 3x faster
+- settling time is inversely proportional to the real part of the closed loop poles
+- still has to lie on the dotted line for 16% overshoot
+- so you move the pole farther from the origin
+- Ts = 4/(zeta*omega_n) = 4/real part of pole = 4/1.205 = 3.320
+- gain of 43.35 gives s = -7.59 pole which is a valid second order approximation
+- for new settling time you just divide by 3, = 1.107
+- to find sigma you do 4/Ts = 3.613
+- imaginary part is omega_d = 3.613tan(80-120.26) = 6.193
+
+-josephs note-
+
+![](Day31/example.PNG)
+
+![](Day31/compensator.PNG)
+
+- zero must contribute theta = 275.6 degrees - 180 = 95.6
+- will do an example like this later
+- to get desired poles we need gain = 47.54
+- to check if there is a pole-zero cancellation we need to perform a simulation
+- uncompensated vs compensated system simulation tells you if your compensation is good enough
+
+#### PD Controller
+- first you do a proportional controller to see if it's fast enough
+- PD controller will speed thing up but wont get rid of sse
+- remember: need an intgeral part to improve sse
+- requires active circuits
+
+### Lead Compensation
+- approximates derivative by adding a zero that is left of the pole (pole to the right of the zero)
+- since we want a net angular contribution of zero and poles, theta_c = theta_z - thea_p (which is an odd multiple of 180 degrees?)
+
+#### PID Controller Design
+1. evaluate system's performance
+2. design PD conroller for trasnient respone improvement
+3. simulate system
+4. redesign f simulation shows they are not
+5. design PI controller for sse improvement
+6. determine gains
+
+#### Example
+Design PID controller so system has 20% overshoot, zero sse for step input and peak time that is 2/3 original
+- settling time corresponds to vertical lines
+- peak time corresponds to horizontal lines
+- zeta = -log(pos/100)/swrt(pi^2+log(pos/100)^2)
+- gives zeta = 0.4559
+
+![](Day31/pid.PNG)
+
+```
+G = zpk(poles/zeros)
+sgrid
+rlocus
+damping ratio zeta (0.456) intersects transfr function root locus so we can get desired overshoot
+
+peak time = pi/imaginary part of poles
+we want 2/3 of this
+so omega_d = pi/Tp = pi/((2/3)*0.297) = 5.87
+
+sum of angles to s = -8.13 + j15.87 is -198.37
+```
+
+- now we have our zero location
+- to get the gain we plug in our zero, -8.13 _ j15.97 into the TF
+- this gives a K of 5.34
+- on matlab: 1/abs(evalfr(s+55.92)*G, -8.13+j15.97)
+- to get the closed loop system, we go Gpd=feedback(K*(s+55.92)*G,1)
+
+## Day 32 Mar 23, 2018
+
+### Concept of Frequency Response
+- the steady state output phaser is input magnitude * TF maginative * angle of TF evaluated at tha frequency
+- magnitude freuency response 
+- phase frequency response
+- most of the time ppl do analysis, you just look at magnitude plot, not the phase plot
+
+
+#### Plotting Frequency Reponse
+- magnitude: magnitude in decibals vs log(omega)
+- phase: phase angle vs log(omega)
+
+#### WHat the hell is a Decibel
+- how system affects the power
+- what is the power gain from input to output if you run it through the system
+- we are interested in if the power is increased or decreased
+- power varies as voltage^2
+- so we can assume that if we have some load, power gain p_out/p_in is (v_out/v_in)^2
+- the decibal gain of 20log<sub>10</sub>|G(jw1)| dB
+- if you're talking about power then 10logbase10 but if it's voltage then 20logbase10 (more common)
+
+![](Day32/blackbox.PNG)
+
+#### System Bandwidth
+- important for digital control system integration
+- aliASsing woowa 
+- if the power is down by 1/2 that means the ratio of Py/Pu must be 1/2, which varies with the tranfer function squared
+
+```
+1/2 = |G(jwBW)|^2
+
+|G(jwBW)| = 1/sqrt(2) = 0.707
+
+20log|G(jwBW)| = 20log(1/sqrt(2)
+               = -3 dB
+```
+
+-- josephs note --
+
+![](Day32/sampling.png)
+
+#### Plotting Frequency Response
+- G(s) = 1/(s+2)
+- set s = jw
+- G(jw) = 1/(jw+2)
+- angle = arctan(o/a)
+
+```
+IN MATLAB
+bode(1/(s+2))
+- gives log scale plot for magnitude in dB and phase in degrees
+```
+
+### Bode Plots
+
+#### Asymptotic Approximations
+- if we have some transfer function G(s) = K*zeros/s^m\*poles
+- when we take the log of multiplied numbers, it's the log of the two numbers added
+
+```
+when omega = a
+20logM = 20log(|a+ja|)
+       = 20log(sqrt(a^2+a^2))
+```
+
+#### Steps to Draw
+- learn later :o
+
+#### Normalizing
+- makes it easy to compare plots iwth different break points
