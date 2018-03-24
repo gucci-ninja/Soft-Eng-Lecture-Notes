@@ -20,6 +20,64 @@
 - [Influence Tatics](#influence-tatics)
 - [Who wants power](#who-wants-power)
 - [Organizational Politics](#organizational-politics)
+- [Ethics in Organizations](#ethics-in-organizations)
+- [Sexual Harassment](#sexual-harassment)
+- [Ethical Guidelines](#ethical-guidelines)
+)
+- [Non-verbal Language of work
+](#non-verbal-language-of-work
+)
+- [Computer Mediated Language
+](#computer-mediated-language
+)
+- [What is Leadership
+](#what-is-leadership
+)
+- [Trait Theory of Leadership
+](#trait-theory-of-leadership
+)
+- [Ohio State Leadership Study
+](#ohio-state-leadership-study
+)
+- [Situational Theories of Leadership
+](#situational-theories-of-leadership
+)
+- [Leader-Member Exchange (LMX) Theory
+](#leader-member-exchange-lmx-theory
+)
+- [Transactional vs. Transformational Leadership
+](#transactional-vs-transformational-leadership
+)
+- [Social Influence and Socialization
+](#social-influence-and-socialization
+)
+- [Psychological Contract
+](#psychological-contract
+)
+- [Employee Orientation Programs
+](#employee-orientation-programs
+)
+- [Socialization Tatics
+](#socialization-tatics
+)
+- [Mentoring
+](#mentoring
+)
+- [What is Power
+](#what-is-power
+)
+- [Empowerment
+](#empowerment
+)
+- [Influence Tatics
+](#influence-tatics
+)
+- [Who wants power
+](#who-wants-power
+)
+- [Organizational Politics
+](#organizational-politics
+)
 )
 - [Non-verbal Language of work
 ](#non-verbal-language-of-work
@@ -508,3 +566,62 @@ Networking
 - high self-esteem and self-confidence
 - Form alliances with powerful people
 - set of cynical beliefs about human nature, morality, and permissability of using various tactics to achieve one's goals.
+
+## Week 10 Ethics
+
+### Ethics in Organizations
+- systematic thinking about moral consequences
+- framed in potential harm in stakeholder
+    - Stakeholder are people who are affected by the organization
+
+#### Ethical Misconduct
+- Abusive Behavior
+- Lying to employee
+- Conflicts of Interest
+- Bribery
+- Manipulating Financial Data
+- Falsifying Expenses
+
+#### Common themes in ethical issues
+- Homest communication
+- Fair treatment
+- Special consideration
+- Fair competition
+- Responsibility to organization
+- Corporate social responsibility
+- Respect for law
+
+#### Causes of Issues
+- Gain
+- Extreme Performance Pressure
+- Role Conflict
+- Strong orgamizational identification
+- Competition
+- Personality
+- Organizational and industry culture
+
+#### Whistle-Blowing
+- Current or former organizational member discloses illegitimate practices to someone that can correct these practices
+
+### Sexual Harassment
+- Using power to request sexual favours
+- Creates Hostile work environments
+    - uncomfortable and unable to change
+- most organization are slow to react
+    - deaf ear syndrome
+
+#### Dealing with Sexual Haassment
+- Examine characeristics of deaf ear organizations
+- Foster management support and education.
+- Stay vigilant.
+- Take immediate action.
+- Create a state-of-the-art policy.
+- Establish clear reporting procedures.
+
+### Ethical Guidelines
+- identify Stakeholders
+- Identify Costs and Benefits
+- Consider moral expectations
+- Be familiar with common ethical dilemmas
+- Discuss ethical matters
+- convert judgements into action
