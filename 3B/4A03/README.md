@@ -444,7 +444,6 @@ What was noteworthy to you about TED Talk?
 - the 5 dimensions above also apply to this
 
 ## Day 7 Feb 28, 2018
-
 - Humans Need Not Apply
     - increase in robots and automation
     - loss of almost all the jobs
@@ -495,3 +494,10 @@ Al Gore and Climate Change
 - euthanasia
 
 **quiz requires you make at least 2 attempts and have a cumulative average of more than 50% on it**
+
+## Day 10 Mar 21, 2018
+- do the online lecture quiz soon
+
+### Guest Speaker by Dr. Baetz
+- being self aware of your thoughts so you can drop the bad ones, guilt
+- lemniscus workshop
