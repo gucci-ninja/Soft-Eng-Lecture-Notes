@@ -2593,4 +2593,101 @@ much better than best scenario for keeping defender
 
 #### Challenger is not Repeated
 
-![](Day27/replacement.PNG)?
+![](Day27/replacement.PNG)
+
+## Day 28 Mar 22, 2018
+
+### Taxes
+
+#### Comparisons of Forms of Business Organizations
+- sole propietorships
+- partnerships
+- corporations
+
+#### Sole Proprietorships
+- advantages
+  - easy and inexpensive to form
+  - owner's right to all profits
+  - direct control of busines
+  - freedome from govt regulation
+  - no special taxation
+  - ease of dissolution
+- disadvantages
+  - unlimited liability
+  - difficulty in raising capital
+  - limited managerial expertise
+  - difficulty finding qualified employees
+  - personal time commitment
+  - unstable business life
+  - owner absorbs all losses
+
+#### Partnership
+- 2 or more persons carrying on a business ith a view to making a profit
+- consensual and contractual
+- written agrement between partners s not necessary to show that a partnership exists
+- a court looks for the substance of the relationship beween parties to determine if it is a partnership
+- general partnerships
+  - partners co-own assets and share profits
+  - each partner is individually liable for all debts
+- limited partnerships
+  - limited liability
+  - many provinces have enacted laws concerning these partnerships
+  - a non-negligant partner is not personally liable for the debts, obligations, and losses caused by negligance of another partner
+  - limited partner sould ensure their name is not used in the name of the partnership
+- advtantages
+  - ease of formation
+  - availability of capital
+  - diversity of skills and expertise
+  - flexibility
+  - no special taxes
+  - relative freedom from govt control
+- disadvantages
+  - unlimited liability
+  - potential conflict
+  - sharing of profits
+  - difficulty in leaving or ending a partnership
+
+#### Corporation
+- a legal entity with an existence and life separate from its owners, who therfore are no personally liable
+
+##### Incorporation Process
+1. select company name
+2. write and file the articles of incorporation
+3. pay fees and taxes
+4. hold organization meeting
+5. adopt bylaws, elect directors, and pass operating resolutions
+
+##### Types of Corporations
+- private corporation
+  - does not trade publicly and therefore isnt on the stock exchange
+  - number of shareholders is no more than 50
+  - public not invited to share in its securities
+- public corporation
+  - has the right to issue shares to the general public and is listed on stock exchange
+- advanages
+  - limited liability
+  - easy to transfer ownership
+  - unlimited life span
+  - ability to attract financing
+  - ability to attract potential employees
+- disadvantages
+  - double taxation - corporate tax + personal income tax (45%)
+    - makes you lose profit
+  - cost and complexity of formation
+  - more govt regulations and restrictions
+
+##### Specialized Forms of Organizations
+- cooperatives
+  - legal entity
+  - competitors get together
+- franchises
+  - franchisor supplies
+  - advantages
+    - increased ability for franchisor to expand
+    - recognized name
+    - finanaical assistance for franchisee
+    - management training and assistance for franchise
+  - disadvantages
+    - loss of control for franchisor
+    - costs of franchising
+    - restricted operating freedom for franchisee
