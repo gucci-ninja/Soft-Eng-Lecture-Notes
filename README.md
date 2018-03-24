@@ -15,6 +15,7 @@
 - [3I03 Communication Skills](3B/3I03/README.md)
 - [3DX4 Dynamic Systems and Control](3B/3DX4/README.md)
 - [4A03 Sustainability and Ethics in Engineering](3B/4A03/README.md)
+- [1BA3 Organizational Behavior](3B/1BA3/README.md)
 
 #### Deadlines
 
