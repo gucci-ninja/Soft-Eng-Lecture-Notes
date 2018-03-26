@@ -45,6 +45,8 @@
 - [Distributed Architectures](#distributed-architectures)
 - [Multi Tier Architecture](#multi-tier-architecture)
 - [Broker Architecture](#broker-architecture)
+- [Service-Oriented Architecture](#service-oriented-architecture)
+- [Exercises](#exercises)
 
 ## Day 1 Jan 5, 2018
 
@@ -1415,7 +1417,7 @@ Java Virtual Machine is very variable because you can run it on many machines
 
 ![](img/2tier.PNG)
 
-##### Advatages
+##### Advantages
 - separation of responsabilities such as user interface presentation and business logic processing
  - reusability of server components
 
@@ -1437,7 +1439,11 @@ Java Virtual Machine is very variable because you can run it on many machines
 - need to make sure requirements are met
 - needed to account for multiple views
 - that's why they used the PAC architecture
-- firearm registration was supposed to be 1 million but ended up being a billion and got scrapped by the govt :o 
+- firearm registration was supposed to be 1 million but ended up being a billion and got scrapped by the govt :o
+- normal engineering - like a building or bridge
+- radical engineering - once in thousand years
+  - software eng is radical
+  - only 50 years old
 
 ### Multi Tier Architecture
 - sometimes we need to have many tiers to put on system
@@ -1458,6 +1464,9 @@ Java Virtual Machine is very variable because you can run it on many machines
 ![](img/multitier.PNG)
 
 ### Broker Architecture
+- wat pattern
+  - broker knows how to ask insurance company
+  - insurance company sends signal if available
 - middleware architecture widely used in distributed computing
 - suitable for dist. computing that coordinates and facilitates communcation
   - brokering the service requests
@@ -1533,7 +1542,8 @@ Java Virtual Machine is very variable because you can run it on many machines
 - for this one needs a flow control language
   - allows specifying the sequence and logical order of business executions based on business logic
 - some services can be reused by other applications tgat they are - we can build new services from  existing service
-  - aggregation: extends one endpoint of a service to make
+  - aggregation: extends one endpoint of a service to makea new interface of a new service
+  - containment structure: has one interface that wraps all used services
 - possible conifguration:
 
 ![](img/recursive.PNG)
@@ -1557,14 +1567,38 @@ Java Virtual Machine is very variable because you can run it on many machines
 #### Question 1
 - virtual network provider wants to extend ticketing service as a sared business process to a busness partner
 - deliberately started smol bs smol team
-- shorter learning curve
+- shorter learning curvle
 - what is the most appropriate architecture for this system
 
 #### Answer 1
 - characteristics of system: improve communication  and better experience for end user, open to addition-closed to modification 
 - characteristics of manager: doesn't know how many services to create
+- SOA 
 
 #### Question 2
-- credit swiss group IT partners closely related with the business to deliver in n ovative and cost-effcient results
+- credit swiss group IT partners closely related with the business to deliver innovative and cost-effcient results
 - IT drives performance and revenue growth
+- credit swiss IT manages more than 1000 services
+- all services are made available for 66400 supported users in  550 locations
+- suitable style for thin service interface and contracts, allows loose coupling, service abstraction and reusability, ease of service discovery and data sharing
+- discuss weaknesses
+- 
 #### Answer 2
+- service oriented architecture through aggregation
+- aggregation: one service open to others 
+- weaknesses
+  1. testability
+  2. since it's linked one after another, you need to go through many interfaces so performance and time will be a weakness
+
+#### Question 3
+- heterogenous environment - diverse technology
+- company has many dif software applications and databases are supported by many dif OS
+- headquarters: accounting, finance, HR
+- R&D dept in chicago, others in NY // all over the world
+- want it to be open to addition closed to modification
+- architecture that wll make it easy to integreate and make it easy to maintain and expand
+
+#### Answer 3
+- obv service oriented architecture
+- can do containment or aggregation
+- if it's fat client then choose aggregation 
