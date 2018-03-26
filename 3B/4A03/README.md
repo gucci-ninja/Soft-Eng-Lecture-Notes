@@ -24,6 +24,7 @@
 - [First Quiz](#first-quiz)
 - [Quiz 2](#quiz-2)
 - [Guest Speaker Orlando Bowen](#guest-speaker-orlando-bowen)
+- [Guest Speaker by Dr. Baetz](#guest-speaker-by-dr-baetz)
 
 ## Day 1 Jan 10, 2018
 

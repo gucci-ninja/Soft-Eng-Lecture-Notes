@@ -16,6 +16,7 @@
 - [Assignment 2](#assignment-2)
 - [Presentations](#presentations)
 - [Outline](#outline)
+- [Giving Criticism and Feedback](#giving-criticism-and-feedback)
 
 ## Day 1 Jan 4, 2018
 

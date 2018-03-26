@@ -44,6 +44,7 @@
 - [Depreciation](#depreciation)
 - [Replacement Decisions](#replacement-decisions)
 - [Replacement Decisions](#replacement-decisions)
+- [Taxes](#taxes)
  
 _Images are from Prof Cam Churchill's Lecture Slides for ENG 2B03 Engineering Economics._
 

@@ -1521,10 +1521,50 @@ Java Virtual Machine is very variable because you can run it on many machines
 - low fault-tolerance
 - difficulty in testing (lots of branches also running concurrently)
 
-#### Service-Oriented Architecture
+## Day 31 Mar 26, 2018
+
+### Service-Oriented Architecture
 - service is a business functionality that is:
   - well defined and self-contained
   - independent from other services
   - published and availale to be used via an interface
+- interface communicated with service
+- may make use of many available services
+- for this one needs a flow control language
+  - allows specifying the sequence and logical order of business executions based on business logic
+- some services can be reused by other applications tgat they are - we can build new services from  existing service
+  - aggregation: extends one endpoint of a service to make
+- possible conifguration:
 
-**He didn't really finish SOA so read it on your own time**
+![](img/recursive.PNG)
+
+#### Advantages
+- loosely coupled connection 
+  - service by themselves don't have connections bc we add em
+- each service comp is indeepn dent from other services due to stateless service feature
+- interoperatbility - technically any client or any service can access other service regardless of platform, technology, vendors or language implementations
+- resuablity - any service can be reused by an other services and service is developed to be resued as well
+- scalability - loosely coupled service makes thmeselves easy to scale (related principle: )
+  - if you have a lot of services for one interface makes it a fat service
+
+#### Disadvantages
+- testability
+  - services are independent so they can be independently tested
+  - if we have aggregation (one service needs another and that on e needs an other) makes it harder to test all 
+
+### Exercises
+
+#### Question 1
+- virtual network provider wants to extend ticketing service as a sared business process to a busness partner
+- deliberately started smol bs smol team
+- shorter learning curve
+- what is the most appropriate architecture for this system
+
+#### Answer 1
+- characteristics of system: improve communication  and better experience for end user, open to addition-closed to modification 
+- characteristics of manager: doesn't know how many services to create
+
+#### Question 2
+- credit swiss group IT partners closely related with the business to deliver in n ovative and cost-effcient results
+- IT drives performance and revenue growth
+#### Answer 2

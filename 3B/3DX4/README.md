@@ -45,6 +45,9 @@
 - [Matlab Competition???](#matlab-competition)
 - [Improving Transient Response](#improving-transient-response)
 - [Improving Transient Response via Compensation](#improving-transient-response-via-compensation)
+- [Lead Compensation](#lead-compensation)
+- [Concept of Frequency Response](#concept-of-frequency-response)
+- [Bode Plots](#bode-plots)
 
 ## Day 1 Jan 4, 2018
 
