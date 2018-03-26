@@ -2665,7 +2665,7 @@ much better than best scenario for keeping defender
   - public not invited to share in its securities
 - public corporation
   - has the right to issue shares to the general public and is listed on stock exchange
-- advanages
+- advantages
   - limited liability
   - easy to transfer ownership
   - unlimited life span
@@ -2692,3 +2692,93 @@ much better than best scenario for keeping defender
     - loss of control for franchisor
     - costs of franchising
     - restricted operating freedom for franchisee
+
+## Day 29 Mar 26, 2018
+
+#### Some Tax Effects
+- income taxes affect investment decisions because they take a portion of the firm's earnings
+- both depreciation (capital cost allowance) and other tax incentives are important
+- anything can be filed as a business expense
+
+#### Corporate Tax
+- tax losses can be carried forward to offset future earnings, but they are lost after 7 years
+- corporations can re-file tax returns after the fact to create or use tax losses already incurred
+- CCA does not have to be taken in any year so these credits can be held for future years indefinitely
+
+#### Tax form Example
+- 40 something classes on the left followed by desciption
+- class 10: automobiles and electronics
+- beside class is the depreciation rate
+- cutlery and shit: 100% "accelerated depreciation"
+  - allows govt to help a sector that isn't doing so well
+  - gets people to replace thier cutlery/dental equipment after 1 year
+  - even though really the book value probably only went down by 20%
+
+#### Tax Incentives
+- **Accelerated Capital Cost Allowances** provide companies a reason to invest in equipment now rather than future
+- **investment Taxx credit** is another way to provide incentive to cdn companies to make new capital spending plans
+  - give companies investment tax credits (aquisition of new buildings and new equipment)
+  - sometimes there is a regional incentive (to locate in low growth areas)
+- goods must be acquired for the designated activity and be unused when acquired
+  - income tax act specifies the rules
+- R&D incentive
+  - Scientifci Reasearcg and Experimental Development Program provides tax incentives to canadian businesses
+  - intended to encourage SR&ED
+
+#### Some Important Issues
+- taxable income = gross income - deductions/expenses
+- purchase of a fixed asset is not an eligble expense at the time of purchase
+  - if you just bought a new truck for your company, youc can't claim it as an expense, you can claim its depreciation though (for each year)
+    - bc you're using this asset over time
+- depreciation is not an actual cashflow
+- firm many finacne projects through equity (owners $) or debt financying (bonds, loans)
+- **all cars have the same depreciation rate :o
+
+#### Mechanics of Tax Calculations
+- taxes to be paid = (taxable income) x (tax rate)
+- allowable deductions
+  - taxable income
+  - interest
+  - capital cost allowance (depreciation)
+  - operating costs
+
+#### More on Depreciation and Taxes
+- companies want to depreciate their assets as quick as possible
+- govt wants the opposite of that
+- there is a basic unfairness in how govt treats depreciation for tax purposes
+  - you spend cash now and they give you relief later, time value of money is on their side
+
+#### Example 1
+- facts
+  - investment interest rate (MARR) = 10%
+  - tax rate = 40%
+  - fixed cost = $80k, life = 5 years
+- question 
+  - how much would he have with depreciation  of 100% vs 30%
+
+Method A - First cost 80k
+
+Year | 1 | 2 | 3 | 4 | 5
+----|--|--|--|--|--
+depreciation expense | 80k | 0 | 0 | 0 | 0
+tax rate | 40 | 40 | 40 | 40 | 40
+tax savings | 32k | 0 | 0 | 0 | 0 |
+accumulated tax savings | 32000 | 35200 | 38720 | 42592 | 46851
+
+The other method
+
+Year | 1 | 2 | 3 | 4 | 5
+----|--|--|--|--|--
+depreciation expense | 24k | 16800 | 11760 | 8232 | 5762
+
+
+#### Capital Cost Allowance System
+- may deduct capital expense over period of years by claiming depreciation expenses each year of the useful life
+- at the end of the year you have a UCC
+  - the day after the UCC closes and then it is the UCC opening
+
+#### Half Year Rule
+- started in the 80s
+- capital cost of asset is total acquisition vost (incl installation, transportation, legal, accounting)
+- as asset is depreciated, company keeps track of UCC which may differ from market or salvage value
+- in the year of pruchase only half the depreciation is applied (can only use it on half the value of an asset)
