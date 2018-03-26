@@ -1445,7 +1445,7 @@ F(s) = (s+1)/(s(s+2)) at s = -3 + j4
 
 Pole at 0, pole at -2 and 0 at -1.    
 
-![](Day24/written.PNG) -- need to do
+![](Day24/written.PNG)
                                                  
 ```
 matlab - atan2   
@@ -1479,6 +1479,9 @@ poles()
 	- root locus begins at zero gain and for small K, denominator is D_G(s)D_H(s) + epsilon
 
 ## Day 25 Mar 8, 2018
+
+![](Day25/written.PNG)
+
 - on figure 8.8 you would shade p3
 - if you had a PID controller (s + 3s + 4)/s, there's one infinite pole, so there would be a line coming in from infinity
 - finite pole goes from 0, to te first zero (-1)
@@ -1498,7 +1501,7 @@ if you have K/(s+1)(s+2) or 2 ininte zeroes, we need 2 ines going to infinity. g
 
 ## Day 26 Mar 9, 2018
 
-![](Day26/written1.PNG) -- need to do
+![](Day26/written1.PNG)
 
 #### Real-axis and Break in Points
 - the number of poles that come up and meet is 180 or pi divided by the number of poles that are meeting up
@@ -1506,6 +1509,8 @@ if you have K/(s+1)(s+2) or 2 ininte zeroes, we need 2 ines going to infinity. g
 - what value of K does figure 8.13 correspond to at each ends of the x axis?
 - K = -1/(G(σ)H(σ))
 - if you evaluate that functions at all the numbers on the x-axis line, you will reach a maximum
+
+![](Day26/written2.PNG)
 
 #### The jω Axis Crossings
 - can use Routh Hurwitz criteria
@@ -1741,8 +1746,6 @@ pos = (evalfr(gcl, 0) - max(step(gcl))/evalfr(gcl,0)
 
 ## Day 30 Mar 20, 2018
 
-**Joseph's Notes**
-
 ### Improving Transient Response
 - may be difficult to find system with correct response and still satisfy other needed properties
 - instead we augment or compensate system by adding poles and zeros to get desired behaviour
@@ -1848,7 +1851,7 @@ pos = (evalfr(gcl, 0) - max(step(gcl))/evalfr(gcl,0)
 	- you can get gain K from -1/abs(G(pole)H(pole))
 	- you get settling time Ts = 4/wn = 3.320 which we can make 5x better using something??
 
-!![](Day30/example.PNG)
+![](Day30/written.PNG)
 
 ## Day 31 Mar 22, 2018
 
@@ -1864,7 +1867,7 @@ pos = (evalfr(gcl, 0) - max(step(gcl))/evalfr(gcl,0)
 - to find sigma you do 4/Ts = 3.613
 - imaginary part is omega_d = 3.613tan(80-120.26) = 6.193
 
--josephs note-
+![](Day31/written.PNG)
 
 ![](Day31/example.PNG)
 
@@ -1935,7 +1938,7 @@ sum of angles to s = -8.13 + j15.87 is -198.37
 - magnitude: magnitude in decibals vs log(omega)
 - phase: phase angle vs log(omega)
 
-#### WHat the hell is a Decibel
+#### What the hell is a Decibel
 - how system affects the power
 - what is the power gain from input to output if you run it through the system
 - we are interested in if the power is increased or decreased
@@ -1945,6 +1948,8 @@ sum of angles to s = -8.13 + j15.87 is -198.37
 - if you're talking about power then 10logbase10 but if it's voltage then 20logbase10 (more common)
 
 ![](Day32/blackbox.PNG)
+
+![](Day32/decibal.PNG)
 
 #### System Bandwidth
 - important for digital control system integration
@@ -1960,9 +1965,9 @@ sum of angles to s = -8.13 + j15.87 is -198.37
                = -3 dB
 ```
 
--- josephs note --
-
 ![](Day32/sampling.png)
+
+![](Day32/bandwidth.PNG)
 
 #### Plotting Frequency Response
 - G(s) = 1/(s+2)
