@@ -21,10 +21,14 @@
 
 Course | Description | Due
 -------|-------------|----
-~~2B03~~ | ~~Quiz 8~~ | ~~Mar 26~~
-3I03 | Presentation | Mar 29
 3A04 | Deliverable 3 | Mar 30
 4A03 | Ethics of Extinction Quiz | Mar 30
+2B03 | Quiz 8 | Apr 3
+4A03 | XPS Quiz | Apr 6
+4A03 | Reflection | Apr 6
+3A04 | Code Deliverable | Apr 6
+3I03 | Assignment 4 | Apr 9
+3A04 | Presentation | Apr 10
 
 #### Exam Schedule
 
