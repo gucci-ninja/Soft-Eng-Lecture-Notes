@@ -1602,3 +1602,65 @@ Java Virtual Machine is very variable because you can run it on many machines
 - obv service oriented architecture
 - can do containment or aggregation
 - if it's fat client then choose aggregation 
+
+## Day 32 Mar 28, 2018
+
+#### SOA vs Broker
+- soa a lot of services with an interface
+- user chooses which service to choose
+  - containment and aggregation to choose
+- broker is the routing master, tells you which route to take to reach the most available/least costly service
+  - user does not choose which service, it's given to you
+- sometimes we build a macro service that is a combo of architctures
+
+#### Enterprise Service Bus
+- enterprise info systems have dramatically changed and progressed
+- technology that comes with SOA
+- for really really large systems so we can respond quickly, while using agile and merger
+- a lot of changes to enterprise info systems is brought by
+  - corporation merger
+  - internal control and regulatory compliance control for personal info protection
+- motivation 
+  - strong demand for low cost and quick system dev
+- we can satisfy thes by minimizing newly developed parts
+- an ESB is a middleware that provsied unified architecture for high resulability btwn client and service
+- environment designed to foster interconnectivity that is sophisticated
+- helps overcome problems with reliability, scalability and communication disparity
+  - SOA gives fat with containment and aggregated is deep
+
+#### Components of ESB
+
+![](img/esb.PNG)
+
+- asynchronous queuing - about how a service and its consumers accomodate isolated failures and avoid unnecesarily locking resources
+
+```
+clnt A ----> BUS ----> SB
+box: client ID, job, states
+
+(1) Request A to ___ the memory
+Step 2)
+the queue submits the service request to ServiceB and changes states
+
+You can have 2 queues, one you just receve and ones you sent and are waiting for respone to be free
+
+(3) ServiceB either responds (3.1) or does not (3.2) (within delta t)
+
+4(3.1) queue erases client request and returns answer
+
+4(3.2) --> return time out + ERASE FROM QUEUE
+  OR it can keep request and resend to SB for n times at max
+
+in all these cases client A is out of memory
+(5) client A regains access to memory
+```
+- intermediate routing
+- policy centralization
+- event driven messaging
+- service broker
+  - acts like a middleman, performs translations on request according to whateer service is needed
+  provides services:
+  - data model tansofmration 
+  - data format transformation
+  - protocol bridging - a protocol to handle communication, maybe cryptography
+- rules centralization - 
