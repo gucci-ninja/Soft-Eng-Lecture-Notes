@@ -25,6 +25,7 @@
 - [Quiz 2](#quiz-2)
 - [Guest Speaker Orlando Bowen](#guest-speaker-orlando-bowen)
 - [Guest Speaker by Dr. Baetz](#guest-speaker-by-dr-baetz)
+- [Matt Minnick PEO licence](#matt-minnick-peo-licence)
 
 ## Day 1 Jan 10, 2018
 
@@ -400,10 +401,13 @@ What was noteworthy to you about TED Talk?
     - association of biology and another discipline
         - where each discipline reciprocally advances the other
         - colective discoveries emerge beyond any single field
-- geckos and how they have sticky hands and feet, they can glide and use their tail to reach zero angualr momentum
+- geckos and how they have sticky hands and feet, they can glide and use their tail to reach zero angular momentum
 
 #### TED Talk 3 - Jane Goodhall
-- sentient and sapient chimpanzees 
+- sentient and sapient chimpanzees
+    - depend on their parents, have a childhood
+    - have sense of humour
+    - feel suffering
 - we need nature for psychological development
 - roots and shoots
 - their role in environment
@@ -502,3 +506,48 @@ Al Gore and Climate Change
 ### Guest Speaker by Dr. Baetz
 - being self aware of your thoughts so you can drop the bad ones, guilt
 - lemniscus workshop
+
+## Day 11 Mar 28, 2018
+- exPS quiz
+
+### Matt Minnick PEO licence
+- 3 reqs
+    - need a b.eng or equivalent (collwge -> 13 technical exams)
+    - pass professional practice exam (law and ethics)
+    - 4 yrs of work ex=perience (including masters)
+- $200/yr to maintain it
+- 3 hours 2 exams, 3 dif sittings per year (April, August, December)
+- part 1 - ethics, part 2 - law
+- you get ontario regulation 941 excerpt and code of ethics
+- engineering is a self-regulating profession
+
+#### Sample Questions
+- look at code of ethics and professional misconduct
+- it is unethical for you to do work at discounted rate
+- obligation to be fair to first client if they own design
+- being mean ->
+- what to do about someone being mean
+- specify nd explain the requirements if any that Green must satisfy in order to properky undertake such 
+
+#### Quiz
+
+#### Ethics
+ - licenses and designations
+ - enforcement and design
+ - special topics
+    - seal
+    - ads
+    - profession vs self-regulation profession
+1. avoid punishment
+2. follow rules
+3. do what's right
+
+941 - code of ethics and professional misoconduct
+
+a) comment on a disucss on potents
+- part N: harrassment
+
+b) what should green do about potent
+- 
+c) moonlighting section
+
