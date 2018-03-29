@@ -1933,7 +1933,6 @@ sum of angles to s = -8.13 + j15.87 is -198.37
 - phase frequency response
 - most of the time ppl do analysis, you just look at magnitude plot, not the phase plot
 
-
 #### Plotting Frequency Reponse
 - magnitude: magnitude in decibals vs log(omega)
 - phase: phase angle vs log(omega)
@@ -1995,6 +1994,72 @@ when omega = a
 
 #### Steps to Draw
 - learn later :o
+- we probably won't have to draw one but need to read phase margin and gain margin
 
 #### Normalizing
 - makes it easy to compare plots iwth different break points
+
+## Day 33 Mar 27, 2018
+
+#### Bode Plot for G(s) = (s+a)
+- when omega gets really large you get a line that goes down 20dB/decade for zeros, up 20dB/decade for poles
+
+```
+for G(s) = s
+
+high freq asymptot with magntude 10logw
+straightlin with 20/db/dec slope
+equal to 0db at w=1
+phase constant at 90deg (if u take s and plug in omega (w), the phase is a constant 90deg)
+
+G(s) = 1/s
+straight line slope with slop -20db/dec and 0db at w=1
+phase is constant at -90deg
+we get -90 because G(s) = 1/s so G(jw) = (1/jw)*(j/j) = -j/w
+```
+
+#### Drawing Bode Plots: Magnitude
+1. determine initial slope
+2. determine leftmost starting value
+	- if pole or zero at origin
+	- otherwise aka magnitude for dc gain
+3. at each break frequency, increase slope by +20dB/dec
+4. effect of gain K is to shift up or down, K >1 moves magnitude of curve up
+
+```
+G1 = 1/(s+10)
+bode(G1) 	// starts at -20
+20*log10(K) = 23.5218
+```
+
+#### Drawing Bode Plots: Phase
+1. determine leftmost starting value
+	- if no pole/zero at origin, start at 0 deg
+2. start graph at 0.1a, where a is the smallest break freuency
+3. for each zero break frequency a
+4. for each pole, similarly, at 0.1a, decrease pole by 45deg/decade
+5. K haas not effect because
+
+#### Example
+
+```
+MATLAB
+G = zpk([-3], [0 -1 -2], 1)
+bode(G) (after releasing any prev plot w/ hold)
+
+BY HAND
+start by sketching 3/2s
+```
+
+![](Day33/example.PNG)
+
+#### Bode Plots for G(s) = s^2 + 2{wns + wn^2
+- when omega gets really large the dominant term is s^2
+- when omega gets rly smol the dominant term is wn^2
+- when omega = wn, high and low frequency are equal
+- to sketch, start out flat until w<sub>n</sub>
+- phase starts at 0 and ends up at 180deg
+	- take jw, evaluate 
+
+#### Corrections for Second-Order Bode Plots
+- magnitude of omega = sqrt()
