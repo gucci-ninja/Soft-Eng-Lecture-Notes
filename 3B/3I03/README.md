@@ -17,6 +17,7 @@
 - [Presentations](#presentations)
 - [Outline](#outline)
 - [Giving Criticism and Feedback](#giving-criticism-and-feedback)
+- [More Machine Learning](#more-machine-learning)
 
 ## Day 1 Jan 4, 2018
 
@@ -412,3 +413,14 @@ Java | Java, Python
 ### Giving Criticism and Feedback
 - Hmaburger Method
 - things we went over in tutorial
+
+## Day 10 Mar 29, 2018
+
+#### Presentation
+- intro, motivation, this is the product and this is how it works, how a user would use it, how you would implement it
+
+### More Machine Learning
+- learning associations
+- classifications
+	- face recognition
+- can use decision trees to ensure a set of properties are satisfied
