@@ -31,6 +31,9 @@
 - [Tutorial 8 Mar 14, 2018](#tutorial-8-mar-14-2018)
 - [Basics of Measurement](#basics-of-measurement)
 - [Tutorial 9 Mar 21, 2018](#tutorial-9-mar-21-2018)
+- [Scales](#scales)
+- [Tutorial 10 Mar 28, 2018](#tutorial-10-mar-28-2018)
+- [Scales contd](#scales-contd)
 
 ## Day 1 - Jan 4, 2018 
 
@@ -1305,3 +1308,146 @@ method(~~user u...~~ Address) {
 - cohesion and coupling
 - fan in - how many modules are calling this module
 - fan out - how many modules it calls
+
+## Day 31 Mar 36, 2018
+
+**skipped**
+
+## Day 32 Mar 27, 2018
+
+#### Quiz 4
+- SQL injection
+- difference between assertTrue and fail
+
+### Scales
+- differences among different kinds of mappings
+- we're going to look at real world and mathematical domain
+- homomorphic: whaetever happens in the real world should be mapped to mathematical
+- 3 important questions
+    1. how do we know when one numerical (or symbolic) relation system is preferable to another
+        - generally we stick to numbers because it's simpler
+    2. how do we know that what we see in the real world has a representation in mathematics
+        - if a particular empirical relation sstem has a representation in a given numerical system
+        - representation problem
+    3. what do we do when we have several different possible representations in the same numerical relation system
+        - want to know if they are equivalent or not
+        - uniqueness problem
+- generally, many different representations for a given emipirical relation system (S, {Ri | i in I}) where I is set of indices
+- the higher the size of I, the fewer the representations
+- R is richer than Q if Q in R because we have Q and some more
+
+#### Scale Types
+- 5 major types of scales, most richest to least (ie absolute you can do whatever you can do in 2-5 and more)
+    1. absolute
+    2. ratio
+    3. interval
+    4. ordinal
+    5. nominal
+- scale examples - height mapped in inches, km, etc
+- scale is defined by homomorphism and the notion of admissible transformation
+- mapping from one acceptable measure to another is called an admissible transformation (aka rescaling)
+- scales and scales types lead to the notion of meaningfulness (and validity)
+- meaningfulness - a statement with measurement values is meaningful iff its truth value is invariant to admissible transformations
+
+```
+M1(I1) : 5 ft
+M2(I1) : 60 in
+=> M_1(I1) = aM(I1) for a > 0
+```
+
+#### Nominal Scale
+- nominal: comes from nomen, latin word for name
+    - so nominal gives us names/categories
+- Let (P, ~) be an empirical relational system, where P is a non-empty countable set and where ~ is an equivalnce relation on P. Let (R, =) be numerical mathematical structure with R its carrier set and = is its identity relation. Let μ: P --> R be a real value function. The system ((P,~),(R,=),μ) is a nominal scale iff - for all p and q where p, q are in P, p ~ q <--> μ(p) = μ(q))
+- meaningful statistical operations
+    - the admissible tranformation is only a one-to-one transformation
+- only has identity (no magnitude)
+- eg error is from design, requirements, code
+
+### Tutorial 10 Mar 28, 2018
+
+#### Lorenz Metrics
+- avg method size - < 8 LOC (smalltalk) or < 24 LOC  (c++)
+- smalltalk is oop
+- average # methods per class - < 20 (more: too much responsability)
+- average # instance vars - < 6
+- class hierarchy - < 6
+- number of comment lines per method - < 1
+- high defect rate if high # methods/class
+- low performance if low # methods/class
+
+#### MOOD Metrics
+- encapsulation
+    - MHF - method hiding factor
+    - shos sum of invisibilites attributed in all classes
+    - formula
+    - high HD means attributes are private
+- inheritance
+    - MIF - method inheritance factor
+    - low - no methods existing in class as well as lacking inheritance statement
+- polymorphism
+    - complicated formula
+    - if 100% it means all methods are overridden
+
+#### CK OO Metrics Suite
+- WMD - Weighted Methods per Class
+    - sum of complexities of methods
+- DIT - depth of ineritance tree
+- NOC - number of children of a class
+    - number of immediate subclasses
+- CBO - Coupling Between Object classes
+    - number of classes a given class uses
+- RCF - Response for a class
+- LCOM - lack of cohesion on methods
+    - how closely methods are related to instance variables
+- wmc low, dit high, noc low all imply low reuse through inheritance
+- cbo/rfc difference indicates lack of use of inheritance
+- low dit and noc - lack of inheritance reuse
+- wmc, rfc, cbo - highly correlated
+
+#### Li and Henry's Metrics
+- DAC - number of attributes of a class
+- DAC' - 
+- NOM - number of local methods
+- SIZE2
+
+#### Productivity Methods
+- units of output/units of effort
+    - classes/methods - person-year
+- possible estimates and if they are reached
+
+#### Quality Metrics
+- FP - function point 
+- KLOC
+- defects/KLOC, defects/FP
+
+#### Education and SKills
+- 18 mnths OOP
+
+## Day Mar 29, 2018
+
+### Scales contd
+
+#### Ordinal Scale
+- entities have an order/severity
+- an emprirical relational system where P is a non-empty countable set and yo uhave a emprircal relation describing ranking propertis on P
+-  there is also a numerical mathematical strucuture with R as a carrier set and a partial order
+-  mu: P --> RR is a real value function and you have an oridinal scale iff we can say p is somehow higher than q is the same thing as saying that u(p) >= u(q)
+- there is identity + magnitude
+
+#### Interval Scale
+- mostly will look at nominal and ordinal
+- there are units associated with this one
+- eg if we have ordinal scale of high, med, low - we can say that each is 6, 4, 2
+- not intuitive in software measurement
+- algebraic difference structure // 
+    - A x A cartesian product with interval relation
+    - there are 5 axioms tis above relation satisfies
+        1. Weak Order
+        2. Transitivity
+        `- if you have interval 1 A x A and interval 2 A x A, either interval 1 is greater than 2 or 2 is greater than 1
+        3. another transitivity relation?
+        4. equivalence of intervals: if ab > cd and cd > ab then we have 2 d's, d' and d"
+            - very unintuitive
+        5. if a sequence is strictly bounded, it is finite
+- interval scale is an algebraic difference structure
