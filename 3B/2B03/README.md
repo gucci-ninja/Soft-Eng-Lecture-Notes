@@ -2782,3 +2782,84 @@ depreciation expense | 24k | 16800 | 11760 | 8232 | 5762
 - capital cost of asset is total acquisition vost (incl installation, transportation, legal, accounting)
 - as asset is depreciated, company keeps track of UCC which may differ from market or salvage value
 - in the year of pruchase only half the depreciation is applied (can only use it on half the value of an asset)
+- need to keep this rule in mind for all the questions that we do
+
+## Day 30 Mar 27, 2018
+
+#### Tax Implications on Depreciable Assets
+- undepreciated capital cost - capital cost at the end of the year
+- when the thing you bought reaches its depreciation, multiply by UCC rate
+- column 13 slide 40 - 42072
+- SLIDE 42: column 7
+  - if net addition is positive, (25000-850)/2
+- when we talk about net casflow diagram with additions and dispositions
+- always do the net before applying 50% rule
+- if you have sold more than you bought then 50% rule is not used
+- recap
+  - **CCA = [UCC<sub>opening</sub> + (1/2)additions] x CCA rate**
+  - 80000 dollar vehicle but we look at 40k
+- when depreciation is a percent, it never goes to 0, as long as you never sell that asset
+- to calculate present worth, we look at it as a geometric series
+- we can create a factor CTF, capital tax factor
+
+#### Capital Tax Factor
+- PW of an asset - P*CTF
+
+![](Day31/ctf.PNG)
+
+#### Capital Salvage Factor
+- since half year rule doesn't apply to disposals, must use differnt factor
+- PW -> S x CSF
+
+![](Day31/csf.PNG)
+
+#### Using CTF and CSF
+- P\*CTF = [S\*CSF]*(P/F,i, N)
+- if there is additional savings or expenses, during period n, then [A*(1-t)]*(P/F, i, N)
+
+#### Example
+- automobile purchasd or $25000. CCA rate = 30%, corporate tax = 43%, after tax MARR = 12% (i)
+- what is the PW of the first cost
+
+```
+      1 - 0.43(0.3)(1+.12/2)
+CTF = ----------------------
+       [0.12+0.3][1+0.12]
+
+    = 0.709311
+
+PW = CTF*P
+   = 0.709311*25000
+   = 17733
+
+for tax calculations, you have to calculate CTF. Sometimes the asset is not sold so you do CSF
+
+CCA is the govt rate
+```
+
+#### Components of a Complete PW Tax Calculation
+- first costs - multiply it with CTF to find the after tax cost
+- savings or expenses - reduce these by the tax rate by multiplying them by (1-t). Assuming company is profitable and company is paying taxes
+- salvage value - we apply CSF
+
+#### Example 2
+- recovery system costs $30000, saves $5280 per year of its 7 year life. Salvage value is $7500. After tax MARR = 9% and taxes are 45%
+- what is the net after-tax annual cost
+
+```
+annual worth
+CTF = 0.7025
+CSF = 0.6897
+AW_p = 30000CTF(A/P, 9%, 7)
+AW_savings = -5280(1-T) = -5280(1-0.45)     // already annuities but we have to take taxes off
+AW_salvage = -7500CSF(A/F, 9%, 7)
+
+overall AW = 721 (cost)
+```
+
+
+
+
+
+
+
