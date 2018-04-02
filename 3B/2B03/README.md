@@ -45,6 +45,7 @@
 - [Replacement Decisions](#replacement-decisions)
 - [Replacement Decisions](#replacement-decisions)
 - [Taxes](#taxes)
+- [Inflation](#inflation)
  
 _Images are from Prof Cam Churchill's Lecture Slides for ENG 2B03 Engineering Economics._
 
@@ -2855,11 +2856,88 @@ AW_savings = -5280(1-T) = -5280(1-0.45)     // already annuities but we have to 
 AW_salvage = -7500CSF(A/F, 9%, 7)
 
 overall AW = 721 (cost)
+
+d = 1- nthroot(S/P)
 ```
 
+## Day 31 Mar 29, 2018
 
+#### Before and After Tax MARR
+- MARR<sub>after-tax</sub> ~ MARR<sub>before-tax</sub>(1-t) where t is corporate tax rate
+- we have been using before tax MARR
+- now if youre given a before tax MARR we will have to convert
 
+#### Example 1
+- watter bottling company purchased automated bottle capper
+- SV = 2000
+- tax rate = 50%
+- after-tax = 12%
+- CCA rate = 20%
+- what is the after-tax PW if it costs $10000 and saves $4000/year ove its 5 year life?
 
+```
+PW = Pc*CTF + A(1-t)(P/A, i, A) + S*CSF(P/F, i, S)
+CTF = 0.70424
+CSF = 
 
+PW = -10000(0.70424) + 4000(1-0.5)(P/A, 12%, 5) + 2000*CSF(P/F, 12%, 5)
+   = 947
 
+```
 
+#### After Tax IRR
+- tax can affect IRR
+-  IRR<sub>after-tax</sub> ~ IRR<sub>before-tax</sub>(1-t) where t = income tax rate
+
+#### Example 2
+- truck costs $12000 and aves $4000 per year over a 5 year life with a $2000 salvage value
+- after-tax MARR = 8%, taxes at 50%, CCA 20%
+- is the investment justified? use PW
+
+```
+CTF = 0.6571
+CSF = 0.6429
+
+P = -12000(0.6561) + 4000(1-t)(P/A, 8%, 5) + 2000(0.6429)(P/F, 8%, 5)
+   = 987
+
+AW = -12000CTF(A/P, i*, 5) + 4000(1-0.5) + 2000CSF(A/F, i*, 5)
+
+i* is aound 10.64% (after tax) and after-tax MARR is 8%
+without taking taxes into account, before tax IRR would be 22.72% (calculation below)
+
+AW = 0 = -12000(A/P, i*, 5) + 4000 + 2000(A/F, i*, 5)
+```
+
+#### Example 3 - Exam q
+- oil company purchased for 15 mill
+- operating costs 2 mill/yr
+- output is 1000 barrels/day
+- calculate after tax IRR given corporate tax 25%, $20/barrel, 5 years life, 2mill salvage value
+- if after tax MARR is 15% is this a good investment
+- if there is choice, calculate you can do before tax and then convert it
+- range for after tax IRR given
+
+```
+-15000000 - 2000000(A/P, i*B, 5) + (20*1000*365)(P/A, i*B, 5) + 2000000(P/F, i*B, 5)
+i*B ~ 0.247
+
+convert to i*After i*A = i*B(1-0.25)
+i*A ~ 18.5%
+
+if you were doing after tax PW/AW/FW calc you would have
+-15000000*CTF - 2000000(A/P, i*, 5)(1-t) + (20*1000*365)(P/A, i*, 5)(1-t) + 2000000(P/F, i*, 5)CSF
+```
+
+### Inflation
+- increase in the general (average) price level of goods and services in the economy
+- it means that cost increases over time (not time value of money)
+- on cashflow - changes the magnitude of the arrow
+- decrease of money's purchasing power
+- deflation - opposite, where currency buys more than before
+- differential inflation - item whos price is changing as a result of the economy as a whole
+
+#### Examples
+- eng consultant chatged 150$/hr in 2000 and since then its 165$/hr, this reflects economy's inflation rate (1.5-2% per year)
+- cost of accounting services has increaed at annual rate of 5%, differential inflation of 3%
+- cleaning services have stayed the same for 3 years, 6% deflation

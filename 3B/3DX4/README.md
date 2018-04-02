@@ -48,6 +48,7 @@
 - [Lead Compensation](#lead-compensation)
 - [Concept of Frequency Response](#concept-of-frequency-response)
 - [Bode Plots](#bode-plots)
+- [State Space Control Theory](#state-space-control-theory)
 
 ## Day 1 Jan 4, 2018
 
@@ -2063,3 +2064,91 @@ start by sketching 3/2s
 
 #### Corrections for Second-Order Bode Plots
 - magnitude of omega = sqrt()
+
+## Day 34 Mar 29, 2018
+
+#### Gain and Phase Stability Margins
+- for K and s, we know a closed loop pole exists when we have 1 + KG(s)H(s) = 0
+- find value of omega when eqn on 43 = 1 and then calculate angle
+- typically for root locus there are 2 cases
+	1. system unstab;e as k increases
+	- stabiltiy condition is |KG(w)
+	2. if the system becomes stable as K increases we wanna be bigger than 1 for all |KG(w..)
+
+#### Gain Margin
+- how much can you change the gain of a fedeback loop before system goes unstable
+- how much we have to change freq response magnitude to reach the 0dB value when you have an odd muliple of 180 deg
+- 10.37
+	- freq where we have 180 deg bode plot - if it intersect with 0 dB it means poles are on imaginary axis, but in this case, system will eventuaally go unstable, which will lift up the bode plot (K > 1)
+	- questin: how much can you lift it up before it goes unstable
+	- 1st determine frequency w_m, when phase is (2k+1)180
+	- then determine magnitude
+
+#### Phase Margin
+- corresponds to time delay (gain corrsponds to magnitude of amplitude)
+- ho we change freq response
+- first dtermine freq w which is when gain is 0dB
+- in 10.37 the phase margin is phi at 0dB gain and if it's close or far from 180 
+
+#### Example
+- G(s)H(s) = K(s+1)/(s(s-1))
+- we know it gets stable as K increases bc pole +1
+- 20log10(abs(evalfr(K*G, j*1))) gives you how far it is from 0dB
+- how much can you change K by question given K*G see how far it is from 0dB when we have odd multiple of 180 deg, dif from 0db is how much u have to change gain by in decibals (we have to convert back to K tho)
+
+![](Day34/eg1.PNG)
+
+#### System Bandwidth
+- power is no more reduced tha 50%
+- in that case, gain is down by 1/2
+- 20log(1/sqrt(2)) = -3dB
+- 10.36 - when down by 3 you can read of bandwidth
+- don't need to know nyquist!!
+
+### State Space Control Theory
+- freq response allows us to place dominant second order poles
+- usually we plac the higher order poles and hope other things don't get in the way
+- to place n poles, need n separate gains (adjustable parameters)
+- state space control theory is gonna let us design a system that lets us do that
+
+#### Intro
+- introduce adjustable params and provide techniques to determine these values
+- downside: we don't know where zeros will wind up
+- very sensitive to parameter changes
+
+#### Control Design
+- nth order feedback control system
+	- closed loop poles (TF) correspond to eigenvalues of A
+	- A' is a closd loop system matrix
+
+#### Topology for Pole Placement
+- inputs u (from actuators) enter the system through B matrix, integrator x dot integreats Bu with Ax
+- at output we have Cx (sensor values)
+- to fix system, assume we can see inside box and its state values even tho the sensors don't tell you
+- this allows us to do anything we want to control the system
+- now we take our original system by picking off x and sending it thru a feedback matrix -K
+- now u = x + r
+- replaced u by -K matrix
+- don't need signal flow graphs
+
+![](Day34/box.PNG)
+
+#### Phase Variable Form
+- in controller canpncial form (phase var form) take output x2....sn are derivatives
+- statespace eqn is x1 dot = x2, x2 dot = x3....
+- take coef of denominator and reverse negate along bottom row for state space eqn
+
+#### Pole Placement with Phase-Variable Form
+- steps
+
+![](Day34/eg2.PNG)
+
+- simulation gives us overshoot of about more han 11.5% (we wanted 9.5) because we didnt cancel the zero at -5)
+
+#### Controllability
+- not always possible to place every pole in a system
+- final exam: will be asked about controllabiltiy
+- if you could see the internal state given B actuators, can I put the poles anywhere
+	- compute the controllability matrix, if it is rank n then yes you can put em anywhere u want
+	- gotta do row reduction
+	- as long as determinant of square matrix is non-zero ur good

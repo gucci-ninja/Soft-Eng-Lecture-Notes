@@ -1432,7 +1432,7 @@ M2(I1) : 60 in
 - entities have an order/severity
 - an emprirical relational system where P is a non-empty countable set and yo uhave a emprircal relation describing ranking propertis on P
 -  there is also a numerical mathematical strucuture with R as a carrier set and a partial order
--  mu: P --> RR is a real value function and you have an oridinal scale iff we can say p is somehow higher than q is the same thing as saying that u(p) >= u(q)
+-  μ: P --> RR is a real value function and you have an oridinal scale iff we can say p is somehow higher than q is the same thing as saying that μ(p) >= μ(q)
 - there is identity + magnitude
 
 #### Interval Scale
@@ -1451,3 +1451,8 @@ M2(I1) : 60 in
             - very unintuitive
         5. if a sequence is strictly bounded, it is finite
 - interval scale is an algebraic difference structure
+    - when looking at intervals (a,b) >~ (c,d), there is a function μ saying that μ(a) - μ(b) >= μ(c) - μ(d)
+    - only good one is f or c but not k
+
+#### Ratio Scale
+- set of entities with relation

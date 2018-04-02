@@ -21,8 +21,6 @@
 
 Course | Description | Due
 -------|-------------|----
-3A04 | Deliverable 3 | Mar 30
-4A03 | Ethics of Extinction Quiz | Mar 30
 2B03 | Quiz 8 | Apr 3
 4A03 | XPS Quiz | Apr 6
 4A03 | Reflection | Apr 6

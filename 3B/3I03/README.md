@@ -424,3 +424,6 @@ Java | Java, Python
 - classifications
 	- face recognition
 - can use decision trees to ensure a set of properties are satisfied
+- clustering
+	- hierarchial
+- reinforcement learning
