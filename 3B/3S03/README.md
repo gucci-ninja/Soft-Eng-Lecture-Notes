@@ -34,6 +34,8 @@
 - [Scales](#scales)
 - [Tutorial 10 Mar 28, 2018](#tutorial-10-mar-28-2018)
 - [Scales contd](#scales-contd)
+- [Admissible Transformation](#admissible-transformation)
+- [Statistical Operations on Measures](#statistical-operations-on-measures)
 
 ## Day 1 - Jan 4, 2018 
 
@@ -1424,7 +1426,7 @@ M2(I1) : 60 in
 #### Education and SKills
 - 18 mnths OOP
 
-## Day Mar 29, 2018
+## Day 33 Mar 29, 2018
 
 ### Scales contd
 
@@ -1456,3 +1458,31 @@ M2(I1) : 60 in
 
 #### Ratio Scale
 - set of entities with relation
+
+## Day 34 Apr 2, 2018
+
+### Admissible Transformation
+- is LOC a direct measurement? - obtained by looking and counting
+- is 1000 lines of code direct or indirect?
+
+Scale | Admissible Transformation
+---------|------------------------
+nominal | any one-to-one (no repeats)
+ordinal | g is a strictly increasing monotonic function (since things have order + no repeats)
+interval | g(x) = a*μ(x) + b, a > 0, b !=0 - x is infinite set
+ratio | g(x) = aμ(x), a > 0
+
+*interval - to show it is not admissible, find an x for which g(x) does not hold?
+μ2 = aμ1 + b
+
+### Statistical Operations on Measures
+
+you can compute | nominal | ordinal | interval | ratio
+------------------|---------|---------|-------|----------
+frequency distribution | 1 | 1 | 1 | 1
+medians and percentiles | 0 | 1 | 1 | 1
+add or subtract | 0 | 0 | 1 | 1
+mean, std deviation, std error | 0 | 0 | 1 | 1
+ratio, or coefficient of variation | 0 | 0 | 0 | 1
+
+## Day 35
