@@ -47,6 +47,8 @@
 - [Broker Architecture](#broker-architecture)
 - [Service-Oriented Architecture](#service-oriented-architecture)
 - [Exercises](#exercises)
+- [Enterprie Service Bus contd](#enterprie-service-bus-contd)
+- [Heterogeneous Architecture](#heterogeneous-architecture)
 
 ## Day 1 Jan 5, 2018
 
@@ -1664,3 +1666,37 @@ in all these cases client A is out of memory
   - data format transformation
   - protocol bridging - a protocol to handle communication, maybe cryptography
 - rules centralization - 
+
+## Day 33 Apr 2, 2018
+
+### Enterprie Service Bus contd
+- intended for short term turnaround ie a merge between 2 companies
+- last week we discussed the servie broker and found that we can have any of the 3 (data model, data format, protocol bridging) or all 3
+- asynchronous queuing - make a request and hold memory
+  - once client makes request, client is put out of memory usage untl service is ready to use (put back into memory)
+- event driven messaging - consumer establishes itself as subscriber of the service
+  - service, in turn, automatically issues notifications of relevent events to this and any of its subscribers
+
+  ![](img/service.PNG)
+
+  ![](img/intheesb.PNG)
+
+#### Compositions
+- policy centraliation - separation of concerns
+  - policies that apply to multiple services introduce redundancy
+  - global or domain specific policies can be isolated and applied to multipe services
+- reliable messaging - concept of communciating messages across unreliable infrastructure while being able to make certain guarantees about successful transmission of the msgs
+  - send message request and wait
+  - if timeout, let client know service is not available
+  - note: services do not talk to each other, you put them together through containment (an interface)
+- rules centralization
+  - same business ruls may apply across different business services, leading to redundancy and governance challenges
+  - the storage ad management of business rules are positioned within a dedicaed architectural extension from where they can be centrally accessed and maintained
+
+![](img/reliable_msg.PNG)
+
+### Heterogeneous Architecture
+- sometimes you need many architectures combined together
+- how do we combine them and what do we need
+- weighing the pros and cons of each architecture
+- relevent sdlc phases: non functional reqs and achritecture design (which is before detailed design)
