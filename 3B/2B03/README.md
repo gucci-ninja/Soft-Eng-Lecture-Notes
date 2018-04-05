@@ -2941,3 +2941,110 @@ if you were doing after tax PW/AW/FW calc you would have
 - eng consultant chatged 150$/hr in 2000 and since then its 165$/hr, this reflects economy's inflation rate (1.5-2% per year)
 - cost of accounting services has increaed at annual rate of 5%, differential inflation of 3%
 - cleaning services have stayed the same for 3 years, 6% deflation
+
+## Day 32 Apr 2, 2018
+
+#### INflation conts
+- CPI consumer price index = (CYP/BYP) x 100%
+  - BYP base year
+  - CYP cost of market basket
+- annual rate of inflation ARI
+- ARI = ((CPIY - CPIPY)/CPIPY) x 100%
+  - CPIY - consumer price index in given year
+  - CPIPY - consumer price index in previous year
+- for exam assume inflation is constant
+
+#### Conversion
+- convert actual dollars in year N into real dollars in year N relative to base year 0
+- actual is current
+- C<sub>N</sub> - current dollars in year N
+- I<sub>0,n</sub> = value of global prices
+- R<sub>0,N</sub> = C<sub>N</sub>/I<sub>0,n</sub>/100)
+- R<sub>N</sub> = C<sub>N</sub>/(1+f)<sup>N</sup>
+- can be rewritten as R<sub>N</sub> = C<sub>N</sub>(P/F, f, N)
+  - doesn't mvoe the arrow, just adjusts it for inflation
+- to move it you would do PW = C<sub>N</sub>(P/F, f, N)(P/F, i, N)
+
+#### Actual and Real Interest Rates
+- current interest rate (i) = observed interest rate based on actual dollars
+- real interest rate (i') = interest rate tat would give the samenumber of real dollars without infaltion as the actual interest rate gives with inflation
+- i' = (1+i/1+f) - 1
+- if you rearrange, you can find the actual (i)
+- up to this point we had been working with actual interest rate
+
+#### Inflation Effect on the IRR
+- IRRc = IRRr + f + IRRr*f
+- IRR_real = (1 + IRRcurr/1+f) - 1
+
+## Day 33 Apr 3, 2018
+
+#### Example 1
+- loan has real interest rate of 12% compounded monthly and inflation is 4%
+- what is the current effective interest rate (i<sub>curr</sub>)
+- i<sub>eff</sub> = (1+r/m)<sup>m</sup> - 1
+
+```
+ieff = (1 + 0.12/12)^12 - 1 = 0.127
+
+iee_current = i' + f + i'f 
+            = 0.127 + 0.04 + (0.127*0.04)
+            = 0.172
+```
+
+#### Example 2
+- a graduate chemical engineer got a job in 2007 and was paid $60k/yr. His salary grew to $65k by 2010 but Consumers' Price Index grew from 119.5 to 130.4. When was he better off?
+
+```
+R_2007 = 60000/(119.5/100) = 50209
+R_2010 = 65000/(130.4/100) = 49846
+
+Therefore, in terms of purchasing power, he was better off in 2007
+```
+
+#### Example 3
+- project has a $10k first cost and $15k savings at the end of year 2. Inflation rate is 5%, MARR<sub>R</sub> is 13%. Should the project be accepted (based on IRR analysis)
+- actual dollars with real interest rate
+- we can get actual IRR and convert MARR OR we can adjust the arrows to take inflation into account
+
+```
+PW = 0 = -10000 + 15000(P/F, i*, 2)
+10000/15000 = (P/F, i*, 2)
+0.6 = 1/(1+i*)^2
+IRR_acctual = 22.5%
+
+IRR_real = (1 + 0.225)/(1+0.05)
+         = 16.6%
+
+In this case we would go for it since MARR < IRR_real
+```
+
+#### Example 4
+- your broker alers you to the availability of a 30 yr bond with 15 yrs left to maturity with a 8% coupon, compounded semi-annually, it's face value is $2000
+- but you want to return of at least 12% real interest, compounded semi-annually with inflation at 3.6%. How much should you pay for this bond?
+- would have to change 31 arrows if we used the inflation rate so we're going to change the interest rate to actual
+
+```
+i_acctual = 0.12 + 0.036 + 0.12*0.036
+         = 16%
+
+P = 800(P/A, 8%, 30) + 20000(P/F, 8%, 30)
+  = 800(11.258) + 20000(0.0993773) 
+  = 10993
+
+``` 
+#### Example 5
+- investment and inflation
+- you can make an investment that pays $1000/yr for the next 4 years and $10k at the end of the 5th yr
+- inflation rate is 5%, real MARR is 8%m what is the PW?
+
+```
+(changing the size of each arrow and moving it back)
+PW_real = 1000(P/F, f, 1)(P/F, i, 1) ......
+        = 1000/(1.05*1.08) + 1000/(1.05^2*1.08^2) + 1000/(1.05^3*1.08^3) + 1000/(1.05^4*1.08^4) + 10000/(1.05^5*1.08^5)
+
+MARR_actual = 0.08 + 0.05 + 0.08*0.05
+            = 0.134
+
+PW = 1000(P/A, 13.4%, 4) + 10000(P/F, 13.4%, 5)
+   ~ 8282
+```
