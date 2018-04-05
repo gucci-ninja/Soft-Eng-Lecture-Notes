@@ -21,12 +21,14 @@
 
 Course | Description | Due
 -------|-------------|----
-2B03 | Quiz 8 | Apr 3
 4A03 | XPS Quiz | Apr 6
 4A03 | Reflection | Apr 6
-3A04 | Code Deliverable | Apr 6
+4A03 | In Class Quiz 3 | Apr 6
+4A03 | In Class Quiz 4 | Apr 6
+3I03 | Final Report | Apr 6
 3I03 | Assignment 4 | Apr 9
-3A04 | Presentation | Apr 10
+3S03 | Assignment 3 | Apr 10
+3A04 | Code & Presentation | Apr 10
 
 #### Exam Schedule
 
