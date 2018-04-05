@@ -512,7 +512,7 @@ Al Gore and Climate Change
 
 ### Matt Minnick PEO licence
 - 3 reqs
-    - need a b.eng or equivalent (collwge -> 13 technical exams)
+    - need a b.eng or equivalent (college -> 13 technical exams)
     - pass professional practice exam (law and ethics)
     - 4 yrs of work ex=perience (including masters)
 - $200/yr to maintain it
@@ -551,3 +551,9 @@ b) what should green do about potent
 - 
 c) moonlighting section
 
+## Day 12 Apr 4, 2018
+- last lecture :o
+- impact of technology
+- how it was when technology wasn't as advanced
+- eliza, time magazine, pale blue dot
+- 3-5 year old < 1 hr screen per day
