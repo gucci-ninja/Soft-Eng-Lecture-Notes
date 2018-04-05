@@ -49,6 +49,7 @@
 - [Exercises](#exercises)
 - [Enterprie Service Bus contd](#enterprie-service-bus-contd)
 - [Heterogeneous Architecture](#heterogeneous-architecture)
+- [Product Families](#product-families)
 
 ## Day 1 Jan 5, 2018
 
@@ -1700,3 +1701,79 @@ in all these cases client A is out of memory
 - how do we combine them and what do we need
 - weighing the pros and cons of each architecture
 - relevent sdlc phases: non functional reqs and achritecture design (which is before detailed design)
+
+#### System Quality Attributes
+- designs vs non-functional requirement matrix to evaluate which designs satisfy what requirements (number 1-100)
+- these numbers are assessed using scenarios
+- obtained from requirements also
+
+. | Performance (50%) | Reliability (50%) | **Sum**
+--|------------------|--------------|----
+Design 1 | 10 | 30 | 10\*50% + 30*50%
+Design 2 | 20 | 20 | 10\*50% + 80*50%
+
+- Batch sequential
+  - reusability should be a plus 
+- process control
+  - learnability is hard
+- repository 
+  - time economic bc direct access to data store nd space economy bc only one data store
+  - understandability
+  - learn database managemnt
+- master slave - reduce task into many subtasks so time economic  - not resuable bc each task is specifci to decomposition that master does
+
+virtual machine
+  - time economic - bad bc adds on extra layer instead of going directly to sensors
+  - space economy - bad bc new layer
+  - security - yes because you can have security mechanisms
+  - hardware and software indepenedence - vm does it best
+srvece oriented 
+  - hardware independence bc you don't care if it runs on ibm or legacy system
+  - software independece 
+  - resuability - can be reused many times eg credit card services
+  - learnability - easy to learn, update as new services are added
+
+#### SAAM
+- evaluate candidate architecture design using a collection of scenerios (scenario represents important usage of system)
+- 3 stages
+1. define a collection of design scenarios covering functional and nf req
+2. perform an evaluation on all candiates
+3. perform an analysis on interactions of system
+
+##### SAAM Example
+- 4 more exmaples in textbook
+- tax payer case study
+- stakeholders interested in
+  - extendability - add more occupations
+  - performance - because millions of cases
+  - modifiability - format and method of calculation
+- Scenario 1 - add one more occupation
+  - assess the other factors and test expandability
+- Scenario 2 - perform virtual exhaustive testing on system
+  - tests performance
+- Scenario 3 - Alter tax rate calculation algorithm
+  - tests modifiability
+- first design using first scenerio
+  - add one occuputation by going to IRS's modules (which is going to be very hard to do)
+- the second design is open for addition since it has an interface for IRS (American tax payer)
+- both designs Scenario 2
+  - roughly the same
+  - heavy for both of them
+- Scenario 3 is a little bit easier in design 2 but generally both are slow
+- first design would be eliminated because it's hard to add new occupation
+- however, second design doesn't scale with performance
+- therefore, we can try service broker architecture
+  - Task Dispatcher is contacted by client and communicates with IRS
+  - can have 100s of clients and work under heavy load
+
+### Product Families
+- sequential completion - classic method of developing software
+- 1976 - Parnas gave product families a lot of attention
+- due to
+  - increase in speed of market
+  - necessity of launching new products
+- product family shares at least 1 common functionality
+- concept of software family comes from hardware industry
+- hardware product lines allow manufacturing of several similar products
+- there are some embedded systems you can't use VM for
+  - ie pacemaker's battery that is variable because FDA asks for minimality of product
