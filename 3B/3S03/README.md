@@ -1485,4 +1485,12 @@ add or subtract | 0 | 0 | 1 | 1
 mean, std deviation, std error | 0 | 0 | 1 | 1
 ratio, or coefficient of variation | 0 | 0 | 0 | 1
 
-## Day 35
+## Day 35 Apr 3, 2018
+
+#### Tutorial Apr 4, 2018
+
+## Day 36 Apr 5, 2018
+- estimating defects (using math but also make assumptions)
+-  measurements - be v mathematical
+- scale is a representaion of the mapping of a function real+math world
+s
