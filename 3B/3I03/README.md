@@ -427,3 +427,15 @@ Java | Java, Python
 - clustering
 	- hierarchial
 - reinforcement learning
+
+## Day 11 Apr 5, 2018
+
+#### More Machine Learning cont'd
+- bias
+- variance
+- clustering through measure of similarity or distance
+- algorithms include
+	- partitioning
+	- density-based
+	- model based
+	- spectral
