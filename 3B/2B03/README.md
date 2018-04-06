@@ -46,6 +46,7 @@
 - [Replacement Decisions](#replacement-decisions)
 - [Taxes](#taxes)
 - [Inflation](#inflation)
+- [Ethics and Social Responsability](#ethics-and-social-responsability)
  
 _Images are from Prof Cam Churchill's Lecture Slides for ENG 2B03 Engineering Economics._
 
@@ -3048,3 +3049,16 @@ MARR_actual = 0.08 + 0.05 + 0.08*0.05
 PW = 1000(P/A, 13.4%, 4) + 10000(P/F, 13.4%, 5)
    ~ 8282
 ```
+
+## Day 34 Apr 5, 2018
+
+### Ethics and Social Responsability
+- events leading to 1980s rise of social responsability
+  - manhattan project
+  - silent spring
+  - pinto
+  - 3 mile island
+    - meltdown in the 70s
+    - nuclear powerplant
+    - all control systems were designed independently so when something went wrong, a lot of lights went off
+    - they couldn't implement any of the safety measures
