@@ -21,10 +21,6 @@
 
 Course | Description | Due
 -------|-------------|----
-4A03 | XPS Quiz | Apr 6
-4A03 | Reflection | Apr 6
-4A03 | In Class Quiz 3 | Apr 6
-4A03 | In Class Quiz 4 | Apr 6
 3I03 | Final Report | Apr 6
 3I03 | Assignment 4 | Apr 9
 3S03 | Assignment 3 | Apr 10
