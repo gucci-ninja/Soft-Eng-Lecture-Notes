@@ -49,6 +49,9 @@
 - [Concept of Frequency Response](#concept-of-frequency-response)
 - [Bode Plots](#bode-plots)
 - [State Space Control Theory](#state-space-control-theory)
+- [Observers](#observers)
+- [Digital Control](#digital-control)
+- [Exam Hints](#exam-hints)
 
 ## Day 1 Jan 4, 2018
 
@@ -2152,3 +2155,251 @@ start by sketching 3/2s
 	- compute the controllability matrix, if it is rank n then yes you can put em anywhere u want
 	- gotta do row reduction
 	- as long as determinant of square matrix is non-zero ur good
+
+## Day 35 Apr 3, 2018
+
+#### Board Example from 2017 Exam
+
+![](Day35/example.PNG)
+
+#### Computing Same Example in Matlab
+
+```
+ctrb(A,B) for controllability gradient?
+rank(ctrb(A,B))
+
+K = place(A,B,[-5+j*22 -5-j*22 -10])
+gives us 22, 60 and 5095
+
+now we can do eignenvalues of A-B*K
+eig(A-B*K)
+```
+
+##### Controllability cont'd
+- if the rank is a max # of independent rows or columns, then it is going to (with SISO) be able to move the eignevalues anywhere we want to and the determiannt of that matrix should be non-zero
+
+##### Matlab Example
+
+```
+A = [-1 1 0; 0 -1 0; 0 0 -2]
+B = [0 0 1]'
+
+ctrb(A,B)
+ 0 1 -2 
+ 1 -1 1
+  ...
+rank(ctrb(A,B)) = 3
+determinant of ___ is nonzero
+```
+
+##### Non Controller Canonical Form Eg
+
+```
+-1 1 0
+0 -1 0
+0 0 -2
+
+B = [0 1 1]'
+
+actually have to compute symbolic determinant
+```
+
+#### Alternate Approach to Controller Design
+- put in phase var form and use a feedback controller to map into the form of state space representation you chose
+	- if not in canonical form
+- basically a change of bases that is picked to put system into phase variable form
+- eg z system is not in phase variable but we will put it into phase variable form 
+	- everywhere you see z, replace with Px, giving a new A and B and C matrix
+- to compute controllabiltiy matrix of the new coordinate system (x)
+	- new B matrix P<sup>-1</sup>B, new A = P<sup>-1</sup>AP
+
+#### Controller Design by Transform
+- might be asked to design a controller but it'll be in controller canonical form
+- won't go into this
+
+### Observers
+- sensors are expensive and some properties are harder to measure
+- therefore we want to try and estimate what some of our state variables are
+- this will allow us to do state feedback controller
+- observers (estimators) allow us to do this
+- given input and output, try to estimate what's happening inside the box
+- I stopped paying attention after this part
+
+#### Observer Design
+- idea is to increase speed with open loop
+- then we feedback
+- estimate a state output and subtract the actual
+
+#### Observer Canonical Form
+- canonical form for designing observers
+- cross multiply some thing (R and C)
+- collect all the r's and c's in the form of an integrator that feeds into another integrator (1/s)
+- draw a single flow graph that represents what integrator is feeding into what integrator
+1. now our C matrix is 1 0 0 0 ...
+2. denom. coeffiecients make up the left column of A
+3. numerator coefficients make up B matrix
+- now for our observer we have x^ = Ax + Bu + L(y-y^)
+
+## Day 36 Apr 5, 2018
+
+#### Observer Design cont'd
+- typically set eigenvalues 10x bigger on the left half plane
+- we put them in order of magnitude on the left
+- det(lMBA(I - (A-LC)))
+	- coefficients of L matrix get subtracted
+- in slide 47 example
+	- multiply by TF
+	- take coeff and neage them, right them in right column
+	- C is just 1 and all zeros
+	- A - LC gives a characteristic equation
+	- if original poles are at -1 +- j2 and you want dominat poles 10 times faster, make it -10 += j20
+	- multiply them all together for chaarcteristic equation and pattern match
+
+#### Observability
+- when can we assign/place observer poles arbitrarily
+- if the system is observable, we can do this
+- if the initial state x(to) of system can be determined from y(t) and u(t) observed over a finite time interval starting at to, we say the system is observable
+- observability
+- system is controllable is step 1, then check if it's observability, both matrices should have rank n
+- if it's not in observer canonical (we won't be asked to do this) you do some tranformation
+
+#### Steady State Error Design via Integral Control
+- feedback integral of the error
+- this changes the state equations
+
+#### Example
+- design controller with 10% OS and 0.5 settling time
+- we can determine from above that s = -8 +- j10
+- system is in canonical controller form already
+- need to determine K
+- upon solving for coefficients we get k1, = 180.1 and k2 = 11
+- steady state error comes out to be almost 1
+- after finding integral gain, computing steady state error gives 0
+
+### Digital Control
+- **Exam tip** Given analog system - give zero hold order and sampling rate so you dont have aliasing (which depends on closed loop poles)
+- digital computers do 2 main tasks
+	1. supervisor tasks - outside of control loop such as sheduling, monitoring out of range values, shutdown init
+	2. control tasks - within closed loop
+- these days almost all are digital and very little analog
+
+#### Advantages of Digital Computer
+1. reduced cost
+2. felxibility
+	- implementing new controller is a matter of software
+3. noise immunity
+
+#### Converting Between Analog and Digital
+- e and f are analog and go into analog plant, therefore we need to do digitization
+- put a converter before and after, something that is built into most microcontroller
+- put into something that samples and holds it (zero order hold - straight line that holds values constant)
+
+#### Quantization
+- dynamic range of input signal is divided into discrete levels
+- M/2^n + 1 is the range for error
+
+#### Minimum Sampling Frequency
+- 16 or 12 bits is pretty cheap
+- need to make sure we don't lose important info (info on signals)
+- if fs > 2f1 then x(t) can be reconstructed
+
+#### Modeling the Digital Computer - Zero Order Hold
+- didn't pay attention for this part
+- zero order pole part has TF of (1 - e^-sT)/s
+
+#### The z Transform
+- f(kT) = kT example - do it at home 
+- in matlab, F = ztrans(f,k,z)
+- look up table will be given with s and z tranforms
+- inverse z transform (stuff we have done already i just can't believe he expects me to remember)
+- F(z)/z easier with partial fractions using cover-up method
+
+#### Transfer Functions
+- continuous system
+- with sampled input
+- and sampled output
+
+#### Derivation of the Pulse Transfer Function
+- ideal sampler used on r(t), then c(t) in response will be scaled impulse responses
+- if we take t = kT then our repsonse becomes 13.34
+- doing substitution for z transform + change of variables, gives you convolution G(z)C(z)?
+- convolution becomes multiplication
+
+## Day 37
+
+#### ZOH Transformation Example
+- G(s) = s+2/s+1 for T = 0.5
+- use the lookup table
+- do partial fractions
+- plug in value for T
+
+#### ZOH Discrete in Matlab
+
+```
+```
+
+#### Block Diagram Reduction
+- 
+
+#### Pulse Transfer of Fedback System
+- do an ideal sampler on first case
+	- you have feedback and there's no intervening sampler
+- we didn't do the rest of the cases
+
+#### Stability
+- for z tranforms stability is inside unit circle
+- for laplace it's left half plane or else it's growing without bound
+
+#### Missle Guidance Example
+- analog to digital conversion that tracking data goes through
+- value goes to computer (getting feedback of reltive position)
+- does converion and gets amplifier and then goes to airframe dynamics
+- guidance given by twisting control surfaces
+- (c) we are given functions for each plant thingy
+- in (c), D/A --> ideal samplers and A/D --> ZOH
+- if we think of it as a block (samplers) and can push them both on the other side to make them equivalent (in d)
+- find G(z) given ZOH, amplifier gain, airfram dynamics
+- take G(s)/s and take the z transform using partial fractions (slide 45)
+- tajej Z{G(s)/s} and multply with  (z-1)/z
+- if we take A = 27 and T = 0.1 we get the z transform of our plant's equivalent
+- closed loop digital system then becoms G<sub>cl</sub>(z) = G(z)/(1+G(z)) <--- feedback, with K built in since we plugged it in already
+- we can try different gains for Gcl and find the poles, make sure they are in the unit circle
+- K = 20 vs 100 the system reacts faster, which means higher bandwidth (higher frequencies)
+- eventually you pass the band that goes to the nyquist frequency
+- for continuous system when K = 100, at w = 76ish, Gcl(w) = -3dB - 76/2/pi = 12 Hz
+- Nyquist frequency is 10/2 Hz, so our's is way beyond
+- thee is crossover at a gain of 33, which goes outside the unit circle
+- which means your digital implementation can go unstable because of sampling rate and aliasing
+- for K = 20, bandwidth is 27 radians/s which is 27/2/pi = 4.29 Hz which is not past Nyquist frequency yet so it's stable
+
+### Exam Hints
+- might get continuous plant, if you wanna do digital impl, 
+- tak plant/s take trasofrm multoply by z-1/z
+- if this is the sampling and t why is it not unstable - look at bandwdith and you might be past the aliasing frequency
+- is this system stable?
+	- given TF (s+3)/(s^4 + 5s^3 + 3s^2 + 2) ---> o routh hurwitz and check sign changes
+	- if you put that in feedback control system adn you get asked what K causes sign canges for when it goes unstable
+- sketch the root locus
+	- put plant in feedback loop
+	- does the system become unstable as K increases
+- assuming the feedback loop is stable, as you crank up K, it's guaranteed to - cross the imaginary axis
+	- 4 poles and 1 zero, 4-1 = number of asymptotes
+	- since it has 3 asymptotes, it is guaranteed to cross imaginary axis since the 3 asympotes
+	- to find eaxt value of K it blows up - routh criteria
+	- in general if #poles-#zeros >= 3 then bc of root locus and asymptotes, system always goes unstable
+- assume you pick a value of K and get poles here but you want them elsewhere (or this overshoot)
+	- do PD compensation
+	- look at step reesposne and see if it sucks
+	- if steady state error - do integral compensator
+- state space questions
+	- given system, see if its controllable
+	- if it si, put poles at this location
+	- probably won't get 4x4
+	- might get aksked if it's observable
+- digital control system (last slides et)
+- given analog control system, make discrete version of it
+- might get asked for matlab command o do something
+	- eg step response or bode plot or 
+	- or closed loop feedabck of a plant control
+- won't be worth more than 5 marks
+- cheat sheet - 2 double sided sheets + calculator
