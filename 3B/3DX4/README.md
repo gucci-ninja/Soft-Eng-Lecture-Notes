@@ -79,6 +79,7 @@
 - simplest form - output provided for a given input
 ![](Day1/control_system.PNG)
 - unity feedback - input 1 output 1
+- control systems have a transient response and steady state response
 
 #### Why Need?
 - power amplification
@@ -106,7 +107,7 @@
 
 ![](Day1/transient_steady_state_response.PNG)
 _transient = in transition_
-- transient response tradeoff
+- transient response tradeoffs
 	- if you get where you want really fast (high gain)
 	- oscillates around point and doesn't settle
 	![](Day1/high_gain.PNG)
@@ -123,10 +124,11 @@ b = x-axis to lowest point
 Total response = Natural response + Forced response
 ```
 
-- Natural response (homogeneous) - evolution of system due to initial conditions
+- Natural response (homogeneous) - evolution of system due to initial conditions, the way system dissipates or acquires energy
 - Forced response (particular soln) - Evolution of system due to input
-- bounded input doesn't create bounded output :dizzy_face:
-- system has to be stable
+- generally, system is stable if the natural response eventually goes to zero or oscillates at fixed amplitude
+- bounded input doesn't create bounded output so unstable system grows without bounds, becoming uncontrollable :dizzy_face:
+- system has to be stable to be useful
 
 #### Control Objectives
 1. Stabilize the system
@@ -135,9 +137,32 @@ Total response = Natural response + Forced response
 4. Make system robust to withstand disturbances and variations in parameters
 5. Achieve optimal performance
 
+#### Design Process
+1. Transform requirements into physical system - concept
+2. Draw a functional block diagram - detailed layout
+3. Create a schematic
+4. Develop mathematical model (block diagram)
+	- mechanical
+	- electrical
+	- rotational
+5. Reduce block diagram
+6. Analyze and Design
+
+#### Testing Waveforms
+
+Input | Function | Use
+------|----------|-----
+impulse | 𝛿(t) | transient response modeling
+step | u(t) | transient respone and steady-state error
+ramp | tu(t) | steady-state error
+parabola | .5t<sup>2</sup>u(t) | steady-state error
+sinusoid | sin wt | transient response, modeling, sse
+
 ## Day 2 Jan 5 2018
 
-### Lab 1 and PID Controller
+### Compensator Terminology and PID controllers
+
+#### Lab 1
 - 70% of problems can be solved with PID
 - In Lab 1, you design a PID controller to control position of a DC electric motor's shaft. Criteria for the controller's step response are
 	- settling time less than 0.04s
@@ -165,12 +190,12 @@ Total response = Natural response + Forced response
 - improves performance of system
 
 #### Underdamped Response Specifications
-c<sub>final</sub> = lim<sub>t->inf</sub>c(t)
+Let c<sub>final</sub> = lim<sub>t->inf</sub>c(t)
 
 **c(t)** is the output
 
-1. **Rise time** is the time for output to go from 10% (0.1c<sub>final</sub>) to 90% (0.9c<sub>final</sub>)
-2. **Peak time** - time required to reach first and largest peak
+1. **Rise time** T<sub>r</sub> is the time for output to go from 10% (0.1c<sub>final</sub>) to 90% (0.9c<sub>final</sub>)
+2. **Peak time** T<sub>p</sub> - time required to reach first and largest peak
 3. **Percent overshoot** - %OS percentage that output overshoots final value
 
 %OS = ((c<sub>max</sub> - c<sub>final</sub>)/c<sub>final</sub>)*100%
@@ -185,8 +210,15 @@ c<sub>final</sub> = lim<sub>t->inf</sub>c(t)
 - first term is proportional, second integral.. etc
 - system has 2 zeros plus a pole at origin
 
+### Modeling in the Frequency Domain
+- 2 methods to develop mathematical models
+	1. transfer functions in frequency domain
+	2. state equations in time domain
+
 #### Block Diagram Representation of System
 - can use differential equations to represent relationship between input r(t) and output c(t) or a block diagram of subsystems
+- however, we want cascading subsystems to make life easier which isn't possible with differential equations
+- therefore, we need transfer functions
 
 ### Laplace Transforms and Table
 - modelling in the frequency domain entails laplace transforms
@@ -197,10 +229,10 @@ c<sub>final</sub> = lim<sub>t->inf</sub>c(t)
 - **Laplace Transform** - going from time domain differential equation to laplace algebraic equation 
 - **Inverse Laplace transform** - algebraic equation to time domain solution
 
-**_Definition_**
+**_Definition of Laplace Transform_**
 
 ![](Day2/laplace.PNG)
-- s = σ + jω is th Laplace transform variable
+- s = σ + jω is the Laplace transform variable
 - no information for time less than zero so we multiply f(t) by u(t) 
 - but its ok if you write L(1/s^2) = t
 
@@ -217,7 +249,7 @@ c<sub>final</sub> = lim<sub>t->inf</sub>c(t)
 #### Laplace Transform Theorems
 
 ![](Day2/transform_theorems.PNG)
-- #11 could have poles on left side and maybe one at origin but if it doesnt it violates condition and is unstable
+- \#11 could have poles on left side and maybe one at origin but if it doesnt it violates condition and is unstable
 
 ### Transfer Function
 - the box in the middle that transforms input
@@ -242,7 +274,8 @@ G(s) = C(s)/R(s) = kp/(Tp*s + 1)
 ```
 
 #### Inverse laplace transform
-	- ![](Day2/inverse_laplace.PNG)
+- ![](Day2/inverse_laplace.PNG)
+- just look at the tables
 
 #### Partial Fraction Expansion
 - since the system model will most likely of the form F(s) = N(s)/D(s)
@@ -259,13 +292,13 @@ G(s) = C(s)/R(s) = kp/(Tp*s + 1)
 		----- + ----- + ----- +  -------
 		s-1     s+1    (s+1)^2   s^2 + 1
 	```
-   - expect a bunch of dif terms
-   - pole zero cancellayion, when both denom and numerator have same pole
-   - so when you expand the term with s - 1 wont be there
+- expect a bunch of dif terms
+- pole zero cancellation, when both denom and numerator have same pole
+- so when you expand the term with s - 1 wont be there
 
 ## Day 3 Jan 9, 2018
 
-### Laplace and PartFrac Examples
+#### Laplace and PartFrac Examples
 
 ![](Day3/written1.PNG)
 
@@ -288,10 +321,10 @@ G(s) = C(s)/R(s) = kp/(Tp*s + 1)
 #### Partial Fractions Decomposition
 1. Divide if improper, degree of numerator is denominator
 	- do long division
-2. Factor denominator
+2. Factor denominator so they can't be further reduced
 3. Linear factors
 	- if you have (s+a)<sup>m</sup>, include A/(s+a) ... A<sub>m</sub>/(s+a)<sup>m</sup>
-4. Quadratic factors
+4. Quadratic factors - Bs + C when you have as^2 + bs + c denominator
 5. Determine unknowns
 
 #### Cover Up Method
@@ -312,10 +345,12 @@ G(s) = C(s)/R(s) = kp/(Tp*s + 1)
 - if you have distinct poles p1, p2, p3 then you end up with A<sub>1</sub>e<sup>-p<sub>1</sub>t</sup> + A<sub>2</sub>e<sup>-p<sub>2</sub>t</sup> + ... A<sub>n</sub>e<sup>-p<sub>n</sub>t</sup>
 - between G(s) = 1/(s+1) and 1/(s-1), the second one is unstable as it comes to a finite value
 
-#### Real and Imaginary Roots
+#### Case 1: Real Roots
 If we have poles at s = -p<sub>i</sub> = - σ<sub>i</sub> +- jω<sub>i</sub>
 - if ω<sub>i</sub> = 0 then pole is strictly real 
 - if σ<sub>i</sub> > 0, then pole is in left side of imaginary plane and response decreasess to zero over time - system is **stable**
+
+#### Real and Imaginary Roots
 - if ω<sub>i</sub> = 0 and σ<sub>i</sub> < 0 then pole is in right side of imaginary plane, response increases over time and system is **unstable**
 - sometimes you want an oscillation, can tune a system so poles are on imaginary axis
 - if only pure imaginary roots, technically considered stable - called **marginally stable** because its impulse response doesn't blow up - σ<sub>i</sub> = 0 and ω<sub>i</sub> != 0
@@ -326,7 +361,7 @@ If we have poles at s = -p<sub>i</sub> = - σ<sub>i</sub> +- jω<sub>i</sub>
 - system will blow up with a repeating periodic impulse input
 - bounded input to break system: hit it with oscillation of 3 rad/s
 
-#### Complex Roots
+#### Case 3: Roots are Complex or Imaginary
 Again, if we have poles at s = - σ<sub>i</sub> +- jω<sub>i</sub>
 - if ω<sub>i</sub> and σ<sub>i</sub> both != 0 we have complex roots
 
@@ -351,10 +386,10 @@ some oscillation, then plateaus out
 
 #### Time Functions associated with s-plane
 ![](Day4/timefunctions.PNG)
-- in theory, turning up the gain and spending infinite energy will make system respone large
+- in theory, turning up the gain and spending infinite energy will make system response large
 - on s-plane, things on j plane appear in complex conjugates
 
-### Impedence, Electric Network Transfer Function, and Circuits
+### Electrical Network Transfer Function
 - impedence is laplace generalization of resistance
 - need Ohm's law: ```v(t) = Ri(t)```
 	- Laplace ```V(s) = R!(s)```
@@ -369,7 +404,9 @@ some oscillation, then plateaus out
 - ![](Day4/circuit.PNG)
 
 #### Impedence of Capacitor
-- 1/C*S
+- dv/dt = (1/C)i
+sV = (1/C)I
+- Z(s) = V/I = 1/C*S
 
 #### Summary of Circuit Elements
 - things with very low voltage signal use active components - eg cellphone
@@ -414,9 +451,9 @@ some oscillation, then plateaus out
 - if you know the voltages, same thing because you can do voltage/impedence
 
 #### Mesh Example
- ![](Day5/mesh_1.PNG)
+![](Day5/mesh_1.PNG)
 
- ![](Day5/mesh_2.PNG)
+![](Day5/mesh_2.PNG)
 
 ### Cramer's Rule
 - if Ax = B is a system of N linear equations and you wanna solve for N unknowns such that det(A) != 0, then system has unique solution and you can solve for x
@@ -460,6 +497,8 @@ some oscillation, then plateaus out
 	- no current flows into inputs i+ = i- = 0
 
 #### Inverting Op Amps
+- if we tie v2(t) to ground, with output vo(t) = -Av1(t)
+- large impedence so current ~ 0
 - 2 marks for writing down voltage - voltage at ground = 0, V1(x) = 0
 	- current flowing in is 0
 	- relation between i1 and i2: i1 = - i2
@@ -478,27 +517,34 @@ Find transfer function Vo(s)/Vi(s) of the following:
 
 - Vo(s)/Vi(s) = -Z2(s)/Z1(s), both of which we need to determine 
 - using parallel inductance, Z1(s)<sup>-1</sup> = C<sub>1</sub>s + R1<sup>-1</sup>
-- Z1(s) = inverse of above
+- Z1(s) = inverse of above = 360000/(2.016s + 1)
 - using serial inductance rule, Z2(s) = R2 + C<sub>2</sub>s<sup>-1</sup>
 - through substitution we can now find the transfer function
 - multiplying input by s implies derivative
 - division by s corresponds to integral
+- Vo(s)/Vi(s) = (220000 + 10^7/s)/(360000/(2.016s + 1))
 - putting those 3 terms together gives you PID controller
 - Gc(s) = K3(s^ + K1s/K3 + K2/K3)/s (as seen earlier)
 
 #### Noninverting Op Amp
 - want input to go into positive terminal (unlike previous example)
 - we know that Vo(s) = A(Vi(s)-V1(s))
-
+- using voltage division, 
 - voltage divider circuit
 
 ![](Day6/voltage_divider.PNG)
 
-**written example**
+```
+Vo(s)    Z1(s) + Z2(s)
+----- = -----------------
+Vi(s)        Z1(s)
+```
 
-### Mechanical Systems and their Components
+**written example that I missed?**
+
+### Mechanical Systems: Translational and Rotational
 - once in laplace form, we just know transfer function
-- there are 2 types of mechanical systems, **translational** and **rotational**
+- there are 2 types of mechanical systems, [translational](#translational-system) and [rotational](#rotational-system)
 
 #### Mass Component
 - we wish to find transfer function Z<sub>m</sub>(s) = F(s)/X(s)
@@ -527,7 +573,7 @@ Find transfer function Vo(s)/Vi(s) of the following:
 
 ![](Day6/summary.PNG)
 
-### Translational System
+#### Translational System
 - to find transfer function
 	- draw free-body diagram
 	- use f = ma to create force equations
@@ -568,7 +614,7 @@ Find transfer function Vo(s)/Vi(s) of the following:
 
 ## Day 7 Jan 18, 2018
 
-### Translational System Example
+#### Translational System Example
 - find transfer function X(s)/F(s)
 
 ![](Day7/written1.PNG)
@@ -585,7 +631,7 @@ Find transfer function Vo(s)/Vi(s) of the following:
 
 - when asked for transfer function for position from velocity - multiply by 1/s
 
-### Rotational Systems
+#### Rotational Systems
 - x(t) --> θ(t) 
 - v(t) --> ω(t) angular velocty
 - f(t) --> T(t) torque
@@ -617,9 +663,7 @@ Find transfer function Vo(s)/Vi(s) of the following:
 
 ## Day 9 Jan 23, 2018
 
-**go back and read slides 65-71**
-
-### Rotational Example
+#### Rotational Example
 - Find the transfer function θ<sub>2</sub>(S)/T(S)
 - flexible rod suported at both ends, undergoing torsion
 - system can be approximated by a spring at one point in the rod with inertias J1 and J2
@@ -683,7 +727,6 @@ Equation of motion is (Js<sup>2</sup> + Ds + K)θ<sub>2</sub>(s) = T<sub>1</sub>
 ![](Day9/transfer_function.PNG)
 
 #### Generalizing Reflecting Impedance
-
 Rule: "Rotational mechanical impedances can be reflected through gear trains by multiplying the mechanical impedence by the ratio (# of teeth of gear on destination shaft/# of teeth of gear on source shaft)^2
 
 #### Examples
@@ -696,6 +739,7 @@ Rule: "Rotational mechanical impedances can be reflected through gear trains by 
 - Midterm: Feb 8 or 15 5:30 to 7:30
 
 ### Electromechanical Transfer Functions and DC Motors
+- systems that are a mixture of electrical and mechanical variables
 
 #### DC Motor
 - motor that takes a voltage as input and produces a physical displacement as output
@@ -758,9 +802,11 @@ In lab we will apply voltage across motor, it will ramp up (like first order sys
 ### Linear and Nonlinear systems
 - linear has 2 properties
 	1. Superposition means that the output response to a sum of inputs isequal to the sum of the output response of each individual input that makes up the sum
-	2. Homogeneity - s
+	2. Homogeneity - means that when input is multiplied by a scalar, the result is a response multiplied by same scalar
 - non-linear
-	- op amps are lnear over given range 
+	- op amps are linear over given range but exhibits saturation at high inputs
+	- motor exhibits deadzone where it doesn;t respond to low input voltages due to friction
+	- backlash occurs when gears don't fit well
 	- sometimes you can do a [linear approximation](#linearization) of non-linear systems
 
 ![](Day10/nonlinear.PNG)
@@ -790,6 +836,7 @@ In lab we will apply voltage across motor, it will ramp up (like first order sys
 - there are also **pickoff points** that break the input signal into multiple copies
 
 ![](Day11/summing_junction.PNG)
+
 #### Cascade Form
 - one controller flows into the next in sequence
 - we will do unity feedback ssytem where plants are in line with the controllers
@@ -814,8 +861,11 @@ In lab we will apply voltage across motor, it will ramp up (like first order sys
 
 ![](Day11/feedback.PNG)
 
-#### Moving Blocks to Create Familiar Forms
-- because of distribution, the following 2 are equivalent
+#### Moving Blocks
+- to create familiar forms
+	- because of distribution, the following 2 are equivalent
+- through summing junctions
+- through pickoff points
 
 ![](Day11/equivalence.PNG)
 
@@ -831,7 +881,6 @@ In lab we will apply voltage across motor, it will ramp up (like first order sys
 ![](Day11/reduction_solution.PNG)
 
 #### Reduction By Moving Block
-
 1. move G2 to left of pickoff point creating parallel form
 2. reduce feedback system (G3, H3)
 3. reduce parallel form containing 1/G2(s) and unity
@@ -852,35 +901,26 @@ In lab we will apply voltage across motor, it will ramp up (like first order sys
 
 ### Modelling in the Time Domain
 - there are 2 main approaches for modelling and designing control systems
-	- so far we have done frequency domain which is only good for SISO
-	- the more modern technique is **state space** representation which is in the time domain
-	- thid method can also be applied for non-linear systems but that is beyond our scope
+- so far we have done frequency domain which is only good for SISO
+- the more modern technique is **state space** representation which is in the time domain
+- thid method can also be applied for non-linear systems but that is beyond our scope
 
 #### State Space Representation
+- ```ẋ = Ax + Bu``` are state equations - how the system's state evolves
+- ```y = Cx + Du``` are output equationss
 - the state equation for an nth order system, a set of n simultaneous, first-order differential equations with n variables
 - for linear time invariant systems (second order systems, n=2), single input v(t), there will be 2 equations of the form:
 
 ![](Day12/statespace.PNG) 
 
-State equations
-- how the system's state evolves
-- x_dot = Ax + Bu
-
-Output equations:
--  
-- **System variables** - 
+- **System variables** - respond to a system input or initial conditions
 - **Linearly dependent** - x should linearly independent and can't be written as a combo of other variables
-- **State variables** 
-	- minimal amount of info needed to predict into the future
-- **State vector**
-	- x_transposed 
+- **State variables** - minimal amount of info needed to predict into the future
+- **State vector** - x_transposed 
+- **First derivatives** - x_dot = dx/dt = [dx1/dt dx2/dt...]
+- **Output vector** - y = [y1, y2, y3..yp]
+- **input of control vector** - u = [u1, u2,..., um]
 
-- **First derivatives** 
-	- x_dot = dx/dt = [dx1/dt dx2/dt...]
-- **Output vector**
-	- y = [y1, y2, y3..yp]
-- **input of control vector**
-	- 
 #### State Space Representation Example
 - go around the block and do kirchoffs law
 - write the loop equation Lsi/dt + Ri + 1/C integralidt = v(t)
@@ -908,25 +948,27 @@ u = v(t)
 Now you can calculat C and D
 
 #### Aplying State Space Representation
-
 - Select the state vector
 	- look at the energy storage (capacitors, inductors) in electrical network
 	- for mechanical systems, need to know mass (for every mass there are 2 state variables - position and velocity)
-	- have to be linearly independent
-	- minimum number of state variables must be chosen, this will be the number of state equations
+	1. have to be linearly independent
+	2. minimum number of state variables must be chosen, this will be the number of state equations
 	- it turns out that if we do this in lapace, we end up with nth order transfer function
 	- the number needed is usually equal to the number of storage elements in system
 
 #### Electrical Network
 Find a state space representaion for the network below with output ir(t) the current through the resistor
+1. label branch currents (iL, iR, iC)
+2. write derivative equations for all energy storing elements
+3. rewrite the derivative equations in terms of state variables
+4. solve for output in terms of input and state variables
+5 express in state space form
 
-1.
-
-#### Mechanical System
+#### Translational Mechanical System
 - find state space representation for system if the output is x<sub>2</sub>(t)
 - use position and velocity of each linearly independent point of motion
-
 - take state variable 
+
 ```
 x_vector = [x1 v1 x2 v2...]
 we want x2, position of second mass
@@ -947,18 +989,18 @@ A matrix = [0 1 0 0 ]
 - be careful of pole 0 cancellation
 - can derive state space equation from a transfer function
 - assume you're given an nth order differential eqation, y is system output, u is input
+- we will use phase variable approach
+- Ax + Bu where A's last row is the negative coefficients and B's last entry is b0
 
 ##### Example
 - say you have G(s) = 2s^3 + 2s^2 + 3s + 4/s^3 + 5s^2 + 6s + 7
 - C(s) = Y(s)/U(s) = 2 + b2s^2 + b1s + b3/s^2 + 5s^2 + 6s + 7
-
 - typically we will be asked for controller canonical form
 
 <SLIDE  19>
 
 ## Day 13 Feb 1, 2018
-
-- controler form: you take coefficients of denominator and reverse them
+- controller form: you take coefficients of denominator and reverse them
 - G(s) = s^2 + 7s + 2/s^3+9s^2+26s+24
 
 ![](Day13/written1.PNG)
@@ -975,13 +1017,13 @@ Midterm will cover up to chapter 4-5.
 
 ### Time Response
 - we are gonna try and develop intuition on what properties w need in a system to get what we want
-- so we can look at a systme and tell how its gonna behave
+- so we can look at a system and tell how its gonna behave
 
 #### Poles and Zeroes
 - system is infuenced by its poles and zeroes
 - consider a transfer function
 	- poles are the roots of denominator
-	- zroes are roots of numerator
+	- zeroes are roots of numerator
 - in general, at poles G(s) = inf. unless the pole is cancelled by a matching zero
 - at zeroes, G(s) = 0 unless zero is cancelled by matching pole
 
@@ -999,7 +1041,7 @@ s = tf('s')
 ## Day 15 Feb 6, 2018
 
 #### Evaluating Response Using Poles
-<slide 7>
+- we can identify between forced and natural response by inspection
 
 ### First Order Systems
 - systems without zeroes
@@ -1007,6 +1049,7 @@ s = tf('s')
 1. time constant: 1/a
 	- the time required for step response to reach 63% of its final value
 	- can get a from the initiial slope at time t = 0, the derivative of c(t) is ae<sup>-at</sup>
+	- a is the exponential frequency
 2. rise time/settling time
 	- rise: time it takes to get to 10% to 90%of final value
 		- 2.2/a
@@ -1030,7 +1073,7 @@ s = tf('s')
 - second order system is b/(s<sup>2</sup>+as+b)
 - these changes can change the form of the system's response
 - might see damped oscillation
-	- over damped - looks similar to first order but its kinda curvy
+	- overdamped - looks similar to first order but its kinda curvy
 		- 2 non-equal real poles
 	- pole closest to 0 is the dominant pole
 	- under damped - most interesting behaviour
@@ -1047,15 +1090,36 @@ s = tf('s')
 
 #### General Second Order Systems
 - we will tpically get the frequency of a system without any dampening
-- then we talk baout ratio of dampening, independent of time scale
-- takng the transfer function of second orde system, we get the poles
-- We can rewrite the system in terms of w<sup>n</sup> and C
-
+- then we talk about ratio of dampening, independent of time scale
+- takng the transfer function of second order system, we get the poles
+- We can rewrite the system in terms of w<sub>n</sub> and ζ
+	- natural frequency w<sub>n</sub> is frequency of oscillation of system with damping removed
+	- damping ratio ζ is a way to describ system's damped oscillation, independent of time scale (exponential decay/natural frequency)
+                                            
 ## Day 16 Feb 8, 2018
 
+#### Deriving Parameters for Second Order Systems
 - midterm day
 - didn't pay attention but I think it was a review of [Day 17](#day-17)
 - also did a lot of matlab stuff
+
+##### Poles
+- s1,2 = -ζw<sub>n</sub> +- w<sub>n</sub>sqrt(ζ<sup>2</sup>-1)
+
+##### Zeta
+- real part of poles/wn
+
+##### Peak Time
+- Tp = pi/(w<sub>n</sub>sqrt(ζ<sup>2</sup>-1))
+
+##### Percent Overshoot
+- %OS = e<sup>-ζpi/sqrt(ζ<sup>2</sup>-1)</sup> * 100%
+- but if we know what percent OS, we can get ζ
+	- ζ = -ln(.OS)/sqrt(pi<sup>2</sup> + ln<sup>2</sup>(.OS))
+
+##### Settling Time
+- when output reaches and stays within 2% of final value
+- Ts ~ 4/(ζw<sub>n</sub>)
 
 ## Day 17 Feb 9, 2018
 
@@ -1167,20 +1231,20 @@ rlocus(G)
 - there will be a question on this on the final
 
 #### Intro
-- ways to determien if a system is stable
+- ways to determine if a system is stable
 - if the system is unstable, transient respone and steady state are irrelevant
 - all the other criteria don't matter so stability is the first thing you check
 
-
 #### Stability and Natural Reponse 
-- for LTI systems, total resposne of system is c(t) = c<sub>forced</sub>(t) + c<sub>natural</sub>(t)
-- stable if natural resposne goes to 0 as t approaches inf
-- unstable if it gets unboudned
-- marginally stable if natural respone either decays or grows (stays constant or oscillates with fixed amplitude)
+- for LTI systems, total response of system is c(t) = c<sub>forced</sub>(t) + c<sub>natural</sub>(t)
+1. stable if natural resposne goes to 0 as t approaches inf
+2. unstable if it gets unboudned
+3. marginally stable if natural respone either decays or grows (stays constant or oscillates with fixed amplitude)
 
 #### Bounded Input Bounded Output
-- if any bounded input produces an unbounded output (even just one) then the system is unstable
-- if every bounded input produces bounded output then it is stable
+- so you don't need to isolate forced and natural
+1. if any bounded input produces an unbounded output (even just one) then the system is unstable
+2. if every bounded input produces bounded output then it is stable
 
 #### Stability and Poles
 - stable if all poles strictly in left half plane (negative exponentials/complex, decaying amplitude)
@@ -1279,17 +1343,15 @@ poles <= 0 and imaginary poles multiplicity of 1 | marginally stable | unstable
 - now we are going to look at it in state space
 
 #### Stability in State Space
-- from liear algebra we know sI-A inverse is the adjoint
+- from linear algebra we know sI-A inverse is the adjoint
 - using all the equations we have we get det([sI-A]) = D(s)
 - roots of det([sI-A]) = 0 will be the eigenvalues of A
-
-Slide set 7
 
 ### Steady-State Errors
 - difference input and output as t --> infinity
 
 #### Test Inputs
-- < add standard test table >
+- can have step, ramp or parabola
 - find out if its accelerating (1/s^2), at constant velocity (1/s) or stationary (1)
 - step: pretty simple, going from point A to B
 - ramp would be used for vehicles?
@@ -1323,10 +1385,10 @@ Slide set 7
 - reference signal - output of closed loop system
 
 #### Sources of Steady State Error
-- for an electric motot you should get 0 error if yo do feedback control (proportional error feedback)
+- for an electric motor you should get 0 error if you do feedback control (proportional error feedback)
 	- in actual, your response gets really close to steady state
 - if TF going to 0, you get smaller and smaller error
-- if you wanna reduce steady state error, crank up the gain (migth cause overshoot and oscilations)
+- if you wanna reduce steady state error, crank up the gain (might cause overshoot and oscilations)
 - if we have K/s, lim as t -> inf as long as K is positive and stable --> 0/(0+K) = 0
 - in general, given close loop TF, output C(S) = TF*R(S), error is R(S)[1 - T(S)]
 ```
