@@ -50,6 +50,8 @@
 - [Enterprie Service Bus contd](#enterprie-service-bus-contd)
 - [Heterogeneous Architecture](#heterogeneous-architecture)
 - [Product Families](#product-families)
+- [Product Family Algebra](#product-family-algebra)
+- [Final Exam](#final-exam)
 
 ## Day 1 Jan 5, 2018
 
@@ -1777,3 +1779,103 @@ srvece oriented
 - hardware product lines allow manufacturing of several similar products
 - there are some embedded systems you can't use VM for
   - ie pacemaker's battery that is variable because FDA asks for minimality of product
+
+## Day 34 Apr 6, 2018
+
+#### Product Fam cont'd
+- product family
+  - set of products that share common hardwaere or software artefacts such as requirements, architectural properties, components, middleware, etc
+- feature can be seen as
+  - any of above artefacts
+  - conceptual characteristics that is visible to stakeholders
+
+#### Feature Modelling
+- approach to model product families in terms of features
+- usually a graph
+- vertex represents a feature
+- different techniques used (all derived from FODA)
+  - FODA
+  - FORM
+  - FeatuRSEB
+  - GP
+  - PLUSS
+- most used now is FORE
+- FODA - Feature Oriented Domain Analysis
+  - give the mandatory, optional and alternative relationship
+- feature model of bike
+- skipped FeatuRSEB Monitor Engine System
+  - XOR - choose 1, OR - choose 0, 1, 2..
+- generative programming
+  - parent feature is composed of combo of some or all of its children
+  - not very independent, very related
+  - all you really need is the AND and OR
+  - dark bullet is mandatory, white bullet is optional
+  - when cardianlity is given it means you can choose 1 or 2 or 3 or n
+- tools for modelling
+  - don't care but there are a lot
+
+```
+G = (V,E)
+V = {1, 2, 3}
+E = {(1,2), (1,3)}
+```
+
+#### Practical Goals
+- repository where you have all the features
+- apply a formal transformation for combinations
+- very straightforward, especially given mathematical model
+- k-near - close to each other by 3 features
+- problem: if we take the feature as a diagram, we can't do calculation because it's a graph so we need a way to represent family
+
+### Product Family Algebra
+- monoid is a 3-tuple (S, +, 0) where (S, +) is a semigroup and 0 is the identity element for the binary operation +
+- monoid is a simple algebra
+- semiring is a quintuple (S,+,0,*,1) such that (S,+,0) is commutative monoid and (S,*,1) is monoid that distributes
+- realtion a <= b <=> a + b = b is partial order, natural order on S
+- it has 0 as least element (in prod fam algebra it is the impossible constraint)
+- we don't need to go too in depth for this
+- allows you to build and compare things
+- an idempotent commutative semiring a product family algebra elements are product families and can be considered as abstractly representing sets of products eac of which is compoed of features
+  - \+ is optionality
+  - \* is mandatory
+
+```
+set S and set O of operators
+(S, Op) --> Algebra
+--------------------------
+(S, Relators)
+eg graphs have vertices (set S) with edges (relators)
+------------------------------
+3 > 2
+> - relator
+equivalent to saying there exists (p | : 2 + p = 3)
+------------------------------
+F = a*b*(1+c)
+ = a*b + a*b*c
+ = two product families
+--------------------------------
+robot with 5 wheels
+R = w*w*w*w
+  = w^4
+w^4*w = 0 is a constraint and means 5 wheels is impossible
+which means that w^4*w*w is also impossible since w^4*w = 0 so 0*w = 0
+----------------------------------
+F = a*b*(c+d+w)
+H = a*b(c+d)
+
+is H a product - it's a product family bec 2 products
+H can be abc or abd (2 products)
+
+abc <= H 
+<=> abc + abc + abd = H1
+it si idempotent
+= True
+therefore it is not a product
+a is a product if for every b that is less than it, b = 0 v b = a
+
+------------------------------------
+efficient algorithm - greatest common divisor/euclids
+```
+
+### Final Exam
+- same length as midterm
