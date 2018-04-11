@@ -21,10 +21,7 @@
 
 Course | Description | Due
 -------|-------------|----
-3I03 | Final Report | Apr 6
-3I03 | Assignment 4 | Apr 9
-3S03 | Assignment 3 | Apr 10
-3A04 | Code & Presentation | Apr 10
+No | More | Deadlines
 
 #### Exam Schedule
 
