@@ -36,13 +36,12 @@
 - [Steady State Error Example](#steady-state-error-example)
 - [Static Error Constants](#static-error-constants)
 - [Root Locus Techniques](#root-locus-techniques)
-- [Departure Angles](#departure-angles)
+- [Angles of Departure and Arrival ](#angles-of-departure-and-arrival-)
 - [Transient Response Design via Gain Adjustment](#transient-response-design-via-gain-adjustment)
 - [Matlab Competition???](#matlab-competition)
-- [Improving Transient Response](#improving-transient-response)
-- [Improving Transient Response via Compensation](#improving-transient-response-via-compensation)
+- [Design Via Root Locus (Improving SSE and Transient Response)](#design-via-root-locus-improving-sse-and-transient-response)
 - [Lead Compensation](#lead-compensation)
-- [Concept of Frequency Response](#concept-of-frequency-response)
+- [Frequency Response Techniques](#frequency-response-techniques)
 - [Bode Plots](#bode-plots)
 - [State Space Control Theory](#state-space-control-theory)
 - [Observers](#observers)
@@ -1345,9 +1344,11 @@ poles <= 0 and imaginary poles multiplicity of 1 | marginally stable | unstable
 
 ### Steady-State Errors
 - difference input and output as t --> infinity
+- typically have to make tradeofdds between desired transient, steady-state and stability specifications
 
 #### Test Inputs
-- can have step, ramp or parabola
+- can have step, ramp or parabola for evaluation steady state error
+- choose based on application
 - find out if its accelerating (1/s^2), at constant velocity (1/s) or stationary (1)
 - step: pretty simple, going from point A to B
 - ramp would be used for vehicles?
@@ -1376,17 +1377,44 @@ poles <= 0 and imaginary poles multiplicity of 1 | marginally stable | unstable
 ## Day 21 Feb 27, 2018
 
 #### Steady State Error and Block Diagrams
-- closed loop TF T(s), what we get from input to the output you do what we want minus what we have
+- closed loop TF T(s) means we can represent system error signal E(s)
+- what we get from input to the output you do what we want minus what we have
 - we are intrested in time domain signal
 - reference signal - output of closed loop system
 
 #### Sources of Steady State Error
+- can arise from nonlinear sources such as backlash in gears or motors requiring minimum input voltage before it starts to move
+- can also arise from configuration of system and input
+- consider step input applied to system with constant gain
+- if unity feedback system has feedforward TF G(s), we can derive E(s)
 - for an electric motor you should get 0 error if you do feedback control (proportional error feedback)
 	- in actual, your response gets really close to steady state
 - if TF going to 0, you get smaller and smaller error
 - if you wanna reduce steady state error, crank up the gain (might cause overshoot and oscilations)
+
+```
+C(s) = E(s)G(s)----------- 1
+E(s) = R(s) - C(s)-------- 2
+-------------------------- sub 1 into 2
+E(s) = R(s) - E(s)G(s)
+E(s)[1+G(s)] = R(s)
+E(s)/R(s) = 1/(1+G(s))---- 3
+-------------------------- for G(s) = K
+E(s)/R(s) = 1/(1+K)------- 4
+-------------------------- for R(s) = 1/s and E(s) = 1/(s(1+K))
+E(s)/R(s) = 1/(s(1+K))
+
+Thus our e_ss = lim t->inf e(t) = lim s->0 sE(s) = 1/(1+K)
+-------------------------- add integrator G(s) = K/s
+E(s)/R(s) = 1/(1 + K/s) = s/(s+K)
+
+Thus our e_ss = 0/(0+K) = 0
+
+```
+
 - if we have K/s, lim as t -> inf as long as K is positive and stable --> 0/(0+K) = 0
-- in general, given close loop TF, output C(S) = TF*R(S), error is R(S)[1 - T(S)]
+- in general, given closed loop TF, output C(S) = TF*R(S), error is R(S)[1 - T(S)]
+
 ```
 e_ss = lim s->0 s*E(s)
      = lim s->0 s*R(S)/(1 + G(s))
@@ -1434,7 +1462,7 @@ Find steady state inputs for inputs 5u(t), 5tu(t), 5t<sup>2</sup>u(t)
 	- thus e<sub>para</sub>(inf) = 1/K<sub>a</sub>
 
 #### System Type
-- this is what the static error constant is made using, based on number of integrants
+- this is what the static error constant is made using, based on number of integrators
 
 #### Steady State Error Summary
 
@@ -1468,8 +1496,6 @@ Kv = lim s->0 s*G(s)
 
 ![](Day22/written1.PNG)
 
-#### Steady State Error and Disturbances
-
 ![](Day22/written2.PNG)
 
 #### Continued Example
@@ -1488,13 +1514,24 @@ Kv = lim s->0 s*G(s)
 
 ### Root Locus Techniques
 - where closed loop poles are gonna go
+- how closed loop poles change as system parameter is varied
 
 #### Control System Problem
 - poles of open loop transfer function are typically easy to find and do not depend on gain K
-- thus it is easy to determine stability and transient response
-- for closed transfer function, need to factor T(s)
+- thus it is easy to determine stability and transient response of open loop systems
+- for closed transfer function, need to factor denominator TF
 - For example G(s) = (s+1)/(s(s+2)) and H(S) - lag compnesator = (s+3)/(s+4)
-	- closed loop TF = T(s) = K(s+1)(s+4)/
+	- closed loop TF 
+	```
+                     K(s+1)(s+4)
+	T(s) = -----------------------------
+              s(s+2)(s+4)+K(s+1)(s+3)
+
+                     K(s+1)(s+4)
+	    = -----------------------------
+           s^3 +(6+K)s^2 + (8+4K)s + 3K
+
+	```
 - root locus gives us an idea of how the poles move around as the gain changes
 
 #### Vector Representation of Complex Numbers
@@ -1502,13 +1539,17 @@ Kv = lim s->0 s*G(s)
 - just need to follow the rules
 - given any complex number we can represent it in polar coordinates with magnitude M and angle theta
 - if F(s) = (s + a) we would get (σ + a) + jω
+- magnitude = Mz/Mp
+- theta = sum of zero angles - sum of pole angles
 
+#### Polar Form and Transfer Function Example
 F(s) = (s+1)/(s(s+2)) at s = -3 + j4
 
 Pole at 0, pole at -2 and 0 at -1.    
 
 ![](Day24/written.PNG)
-                                                 
+
+#### On Matlab							                     
 ```
 matlab - atan2   
 
@@ -1524,11 +1565,13 @@ feedback()
 poles()
 ```
 
+![](Day24/rootlocus.PNG)
+
 #### Sketching Root Locus
 - put this on cheat sheet
 1. Number of branches
 	- the paths that poles tranverse
-	- number of brahces thus equals number of poles
+	- number of branches thus equals number of poles
 2. symmetry on real axis
 	- complex conjugate
 3. Real-axis segments
@@ -1539,6 +1582,7 @@ poles()
 4. starting and ending points
 	- root locus begins at the finite and infinite poles of G(s)H(s) and ends at the finite and infinite zeros off G(s)H(s)
 	- root locus begins at zero gain and for small K, denominator is D_G(s)D_H(s) + epsilon
+5. on Day 25
 
 ## Day 25 Mar 8, 2018
 
@@ -1560,6 +1604,9 @@ if you have K/(s+1)(s+2) or 2 ininte zeroes, we need 2 ines going to infinity. g
 
 5. Behaviour at Infinity
 	- as locus approaches infitinity, it approaches straight lines as asymptotes
+	- σa = (sum of finite poles - sum of finite zeros)/(#finite poles-# finite zeros)
+	- theta = (2k+1)/(#finite poles-#finite zeros)
+		- where k = -3, -2, -1, 0, 1, 2, 3 and angle's in radians
 
 ## Day 26 Mar 9, 2018
 
@@ -1571,11 +1618,16 @@ if you have K/(s+1)(s+2) or 2 ininte zeroes, we need 2 ines going to infinity. g
 - what value of K does figure 8.13 correspond to at each ends of the x axis?
 - K = -1/(G(σ)H(σ))
 - if you evaluate that functions at all the numbers on the x-axis line, you will reach a maximum
+- breakin points occur at max gain, breakout pooints occur at minimum in gain
+- we can determine these points by setting s to σ and setting derivative of K = -1/(G(σ)H(σ)) to 0
 
 ![](Day26/written2.PNG)
 
 #### The jω Axis Crossings
+- value of gain where system goes from unstable to stable (crosses into right plane)
 - can use Routh Hurwitz criteria
+	- force a row of zeros to get gain
+	- determine polynomial for row above to get w, the frequency of oscillation
 
 ```
 syms sigma s K
@@ -1584,9 +1636,8 @@ G = K*(s+3)/(s*(s+1)*(s+2)*(s+4))
 
 eq1=G==-1
 
-// need to et into form K = ___ so we can take a derivative
+// need to get into form K = ___ so we can take a derivative
 eq2=isolate(eq1,K)
-
 
 // take derivative of K and set it to 0, gives you something complex
 points=solve(diff(rhs(eq2),1)==0)
@@ -1646,9 +1697,12 @@ ans = 3.3881, -3.3881, 1.5877,-1.5877
 **Check uploaded script**
 ```
 
-### Departure Angles
-- is it getting closer to getting stable (right) or unstable (left)
-- sum of zero sngles - sum of pole angles = (2k+1)180deg
+### Angles of Departure and Arrival 
+- is it getting closer to getting stable or unstable
+- sum of zero angles - sum of pole angles = (2k+1)180deg
+- when you have complex poles or zeros
+- want to calculate departure angle from complex poles and arrival angle to complex zeros
+
 
 ```
             K(s+2)
@@ -1663,39 +1717,48 @@ approx = angle(-1+j+2) + angle(-1+j+3) - angle(-1+j+1+j) - angle(-1+j+e+1-j)
 
 last term is the departure angle we are looking for
 
-in order for it to lie on root locus it has to equal (2k+1)*pi
+in order for it to like on root locus it has to equal (2k+1)*pi
 
 θ1 = θ3 - θ4 - θ2 - (2K+1)pi
 ```
 
 ## Day 28 Mar 15, 2018
 
-K = 1/(|G(s)||H(s)|)
+K = -1/(|G(s)||H(s)|)
 
-![](Day28/written.PNG) -- need to do
+~~![](Day28/written.PNG) -- need to do~~
+
+```
+-θ1 - θ2 + θ3 - θ4 = (2k+1)180
+-θ1 - 90 + tan^-1(1/1) - tan^-1(1/2)
+θ = -251.6 = 108.4
+```
 
 ### Transient Response Design via Gain Adjustment
-1. highr order poles are much farther left (more than 5 times) of the s-plane dominant closed loop poles
+1. higher order poles are much farther left (more than 5 times) of the s-plane dominant closed loop poles
 2. closed loop zeros near 2 dominant closed loop poles must be nearly cancelled or must be far away from the two dominant poles
 - wind up with G_cl = (~~s+z~~)/((~~s+z+eps~~)(...))
 3. closed loop zeroes that are not cancelled have to be far away
 
 #### Defining Parameters on Root Locus
+- ζ = cos(θ)
 - as percent overshoot is a function of the damping ratio, we get a constant number of lines
+- real part of a pole σd is ζwn and wd = wn*sqrt(1-ζ<sup>2</sup>)
 - previously we showed that settling time is 4/damping ratio*omega_n
-- vertica line is a constant settling time
-- if we get %OS and damping ratio, you can draw a line and that;s your desired closed loop pole location
+- vertical line is a constant settling time
+- if we get %OS and damping ratio, you can draw a line and that's your desired closed loop pole location
 - peak time (of overshoot) is pi/(w_n*sqrt(1-zeta^2))
 - horizontal lines are consant peak time
 - we will either get a peak and settling or OS% and we will get any 2 of those
 - need to have all 3 lines intersecting
+- if you need to calculate K, do 1+KG = 0 and only take the real part of the answer as your K
 
 #### Design Procedure for Higher Order System
 1. sketch the root locus (for open loop system)
-2. assume system has no zeros and is second-orde. find desired gain that gives desired transient respone
-- check that system satisfies criteria t ojustify approximation
+2. assume system has no zeros and is second-order. find gain that gives desired transient respone
+3. check that system satisfies criteria to justify approximation
 4. simulate system to make sure transient response is aceptable
-- - if your poles are not far enough to the left then it's not an accurate representaion
+- if your poles are not far enough to the left then it's not an accurate representaion
 
 #### Example
 - given a system, unity feedback system with a zero, closed loop system has zero at 1.5
@@ -1706,18 +1769,23 @@ K = 1/(|G(s)||H(s)|)
  - if we crnk up gain high enough, 
  - in order to figure this out you need to calculate breakin break out points (there are multiple)
 	- need to taake derivatives and set polynomial to zero
-- in this case 0.8 is the damping ratio coresponding to 1.52 OS%
-- there are 3 possible k values (at inteersectio)
+- in this case 0.8 is the damping ratio coresponding to 1.52 OS% - do -ln(.OS)/sqrt(pi<sup>2</sup> + ln<sup>2</sup>(.OS))
+- there are 3 possible k values (at inteersection)
 - if it intersect at an s value it'll give u k (1/G(s))
-- damping ratio thet = 0.8 = arccoss(0.8)
+- damping ratio thet = 0.8 = acos(0.8) = 36.87
 - search along the line to find the s values
 - rlocfind does this for you on matlab
 - first value plugged in gives k = 7.36
+- 3 cases in total, need the following:
+	- closed loop poles - where damping ratio intersects pole/zero lines
+	- closed loop zero - -1.5 + j0 for all
+	- gain - real part of -1/G
+	- third closed loop pole - magnitude of intersection point
+	- settling time, peak time, Kv - use formula
 
 #### Continuing on Matlab
 
 ```
-
 OS% = pos = 1.52
 zeta = -log(pos/100)/sqrt(pi^2+log(pos/100)^2)
 G8_21 = (s+1.5)/(s*(s+1)*(s+10))
@@ -1808,8 +1876,15 @@ pos = (evalfr(gcl, 0) - max(step(gcl))/evalfr(gcl,0)
 
 ## Day 30 Mar 20, 2018
 
-### Improving Transient Response
+### Design Via Root Locus (Improving SSE and Transient Response)
+- root locus shows us transient response and stability information
+- allows us to choose needed gain for desired transient response
+- by choosing different gains, we can only achieve response corresponding to roots on root locus
+- by adding other ontrollers, we can add new poles and locate desird spot
+
+#### Improving Transient Response
 - may be difficult to find system with correct response and still satisfy other needed properties
+- eg. using gain response, we can achieve desired percnt OS but not always an ideal settling time
 - instead we augment or compensate system by adding poles and zeros to get desired behaviour
 - disadvantage: method increases order of system
 - sometimes you satisfy conditions but some conditions are close to being violated, this causes second order approximation to be violated
@@ -1819,39 +1894,39 @@ pos = (evalfr(gcl, 0) - max(step(gcl))/evalfr(gcl,0)
 - can also add compensators to improve this
 - can treat difference between 2 masses as a disturbance
 - if you add an integral term the problem is that it remembers things from the past
-- if you have integral term on (b) and go to 1, the integra term gets bigger even though you have overshot
+- if you have integral term on (b) and go to 1, the integral term gets bigger even though you have overshot
 - that's why integral controllers make your overshoot worse
 - rule of thumb: steady state error --> integral controller, system too slow --> derivative controller
 - to optimize transient respone, steady state error usually gets worse so you need an integral compensator
 
-#### Compensator Terminology
+#### Compensator Terminology - Review
 - Proportional - compensators that feed error signal directly to plant
-- Integral - 
-- Derivative
+- Integral - feed integral of error to plant
+- Derivative - feed derivative of error to plant
 
 #### Configurations
-- cascade compensator - often done in digital control since it's easy to implement
-- forward you can do a feedback compensator
-- at the end of the fay (feedback/feedforward path) doesn't mater bc poles and zeros have the same effect in terms of changing the angle
+- 2 main configurations
+1. cascade compensator - often done in digital control since it's easy to implement
+2. forward you can do a feedback compensator
+- at the end of the day (feedback/feedforward path) doesn't matter bc poles and zeros have the same effect in terms of changing the angle
 	- might have some effect on steady state error though
 
-#### Improving SE w/ Cascade
-- intgral control
+#### Improving SSE w/ Cascade
+- integral control
 	- ideal integral compensation - add an integrator to the forward path
-	- lag compensation
-- fake an integral
-- first method produces a 0 sse and requires active circuit
+	- lag compensation - fake an integral
+- first method produces a 0 sse but requires active circuit
 - second method uses only passive components (resistors, conductors, capacitors)
 	- less likely to get overflow issues when doing this in software
 
 ##### Ideal integral Compensation
-- add an integrator to the forward path
+- add an integrator to the forward path, increases system type
 - PI controller
 - if we just add pole at the origin, replace K by K/s we significantly change the root locus
 	- with higher gain, poles are going to go unstable eventually but theyre not that far to the left
-	- no sse but transient respone suffers
+	- no sse but transient response suffers
 	- in second graph there is no way you can get close t desired settling time (vertcal line)
-- to get around this, you add a zero (proporional integral controller)
+- to get around this, you add a zero (proporional integral controller) near the origin at s = -a
 - gives you a 0, Ka/s is the integral part and the other part is proportional (K) in K(s+a)/s
 - if you take A and put it super close to origin, the 2 angles pc and zc can be a degree or 2 (not really changing)
 	- you'll end up with a point really close to A
@@ -1859,24 +1934,24 @@ pos = (evalfr(gcl, 0) - max(step(gcl))/evalfr(gcl,0)
 	- the 2 angles pc and zc cancel each other out
 - implications: the pole in (c) will move to 0 slowly (takes long time to decay)
 - implementation
-	- proportional part + integral part: K1 + K2/s
+	- proportional part + integral part: K1 + K2/s --> [K1(s+K2/K1)]/s
 
-#### Example with Ideal Integral Compensation
-- puttig a 0 really close to origin
-- addd a pole at 0 and you have a pole at 0.1 so they are almost cancelling each other out
+###### Example with Ideal Integral Compensation
+- putting a 0 really close to origin
+- add a pole at 0 and you have a pole at 0.1 so they are almost cancelling each other out
 - uncompensated system, gain is 164.6 with pole at -0.694 + j3.926s
-- daming ratio is the line going out from the origin
+- damping ratio is the line going out from the origin
 - sse: from version a of system (type 0 - 0 poles at origin) = 1/(1+kp)
 - this makes it at -0.679 + j3.873, relatively close
 - settling time will be similar, slightly slower mybe but it'll have 0 sse due to integral term
 - we basically changed it from type 0 to type 1 system
-- if you cmpute closed loop poles of the system, you get that the 0 pole heads towards the open loop zero
+- if you compute closed loop poles of the system, you get that the 0 pole heads towards the open loop zero
 	- at k = 158.2 it has an s = -0.091 which is super close to zero at -0.1, effectively cancelling out
 - really close to j omega axis so it's going to be really slow to get to +-2% of original final value but the old system wasn't even getting to 10%
 - the further you move poles to the left, the faster the system will respond
 
-#### Lag Compensation
-- if you didnt want an integral controller and you were doing thnigs in analog
+##### Lag Compensation
+- if you didn't want an integral controller and you were doing things in analog
 - basically means when you're picking poles and zeros the zero is to the left of the pole
 	- almost like having a zero term but not quite like that
 	- you dont get 0 error, just smaller error
@@ -1885,29 +1960,47 @@ pos = (evalfr(gcl, 0) - max(step(gcl))/evalfr(gcl,0)
 - z1\*z2*.../p1\*p2...
 - for compensated system w have Kvn = Kv0 * zc/pc
 - increasing Kv will decrease SSE
-- make zc big enough by a factor to reduce SSe
+- make zc big enough by a factor to reduce SSE
+- we need to maximize the zc/pc ratio to reduce SSE but need the poles to be close together for their effects to cancel out
+- this means zc and pc both must be small and thus close to the origin
 
-### Improving Transient Response via Compensation
+#### Improving Transient Response via Compensation
 - goal: design system with desired percent OS but better settling time
-2 appraoches
+2 appraochses pls help me spel
 	- ideal derivative compensation - noisy?, involves adding zero, can add unwanted signal
 	- lead compensation
 
-#### Ideal Derivative Compensation
-- requires ative circuit (PD controller with op amp)
-- make so new pole lies on root locus
-- you add a 0 to the compensator: s + zc
+##### Ideal Derivative Compensation
+- requires active circuit (PD controller with op amp)
+- reshape so new pole lies on root locus
+- you add a 0 to the compensator, forward path: G<sub>c</sub>(s) = s + z<sub>c</sub>
+- choosing right location for zero can quicken response of original system
 - idea: for ste input, derivative has a large change so input of system will be very big initially to drive the system faster
-- design
-	- ideniy closed loop poles at desired OS% and settlign time
-	- take difference between actual angle of G(s)H(s) and the odd multiple of 180 deg to get angular contribition of this compensator zero
-	- **exam** go ahead and get me a 16% overshoot
-		- you know you can get 16% overshoot from teh s(s+4)(s+6) example
-		- 16% OS will correspond to some line
-		- formula for OS going to zeta value
-	- sample q: draw the root locus, is it possible to find a K value that gives 16% overshoot
-		- ans- root locus will have to intersect this line
-		- now refine so it has a 5x better settling time
+
+##### Ideal Derivative Compensation Design
+- identify closed loop poles at desired OS% and settlign time
+- take difference between actual angle of G(s)H(s) and the odd multiple of 180 deg to get angular contribition of this compensator zero
+- **exam question** give me a 16% overshoot and 3x reduction in settling time
+	- you know you can get 16% overshoot from the s(s+4)(s+6) example
+	- 16% OS will correspond to some line
+```
+from OS and damping ratio formula
+zeta = 0.504
+angle = 180 - cos^-1(0.504)
+search along line to find closed loop poles:
+-1.205 +- j2.064 with gain 43.35
+settling time Ts 
+= 4/(zeta*wn)
+= 4/1.205
+= 3.320
+
+gain of 43.35 gives a third closed loop pole at s = -7.59 which is more than 6x farther from jw axis than dominant poles (we need at least 5x)
+
+therefore, our 2nd order approx is valid for OS and Ts
+```
+- sample q: draw the root locus, is it possible to find a K value that gives 16% overshoot
+	- ans - root locus will have to intersect this line
+	- now refine so it has a 5x better settling time
 - in matlab you can find zeta and run rlocfind command
 	- the pole locations you get -1.205 += j2.064
 	- you can get gain K from -1/abs(G(pole)H(pole))
@@ -1928,10 +2021,37 @@ pos = (evalfr(gcl, 0) - max(step(gcl))/evalfr(gcl,0)
 - for new settling time you just divide by 3, = 1.107
 - to find sigma you do 4/Ts = 3.613
 - imaginary part is omega_d = 3.613tan(80-120.26) = 6.193
+- work shown below
+
+```
+Desired settling time 
+= 3.320/3
+= 1.107
+
+real part of pole sigma
+= 4/Ts
+= 4/1.107
+= 3.613
+
+Imaginary part wd
+= 3.613tan(180-120.26)
+= 6.193
+
+for point to be on locus it must satisfy angles KGH = (2k+1)180
+for s = -3.613 + j6.193 we get sum of angles -275.6
+zero must contribute 275.6 - 180 = 95.6
+
+location of zero must satisfy tan(180 - 95.6) = o/a = 6.193/(3.613 - sigma)
+
+we get s = -3.006 (where zero goes)
+
+for desired dominant poles, we need gain of 47.54
+
+at this gain, third pole is at -2.755
+
+```
 
 ![](Day31/written.PNG)
-
-![](Day31/example.PNG)
 
 ![](Day31/compensator.PNG)
 
@@ -1948,23 +2068,63 @@ pos = (evalfr(gcl, 0) - max(step(gcl))/evalfr(gcl,0)
 - requires active circuits
 
 ### Lead Compensation
+- advantages - no additional power supply + reduced noise due to differentiation
 - approximates derivative by adding a zero that is left of the pole (pole to the right of the zero)
 - since we want a net angular contribution of zero and poles, theta_c = theta_z - thea_p (which is an odd multiple of 180 degrees?)
+- have infinite possible pole-zero combos
+- compensators differ in things like static error constants, required gain, quality of 2nd order approximation and shape of actual transient response
+
+#### Improving SSE and Transient Response
+- to improve both we can design an active PD controller, then an active PI conroller
+	- altogether PID
+- or first design a passive lead compensator and then design a passive lag compensator (lead-lag compensator)
 
 #### PID Controller Design
-1. evaluate system's performance
-2. design PD conroller for trasnient respone improvement
+1. evaluate original system's performance
+2. design PD controller for trasnient respone improvement
 3. simulate system
 4. redesign f simulation shows they are not
 5. design PI controller for sse improvement
-6. determine gains
+6. determine gains K1, K2, K3
+7. simulate system to make sure conditions are met
+8. redesign if not met
 
 #### Example
 Design PID controller so system has 20% overshoot, zero sse for step input and peak time that is 2/3 original
 - settling time corresponds to vertical lines
 - peak time corresponds to horizontal lines
-- zeta = -log(pos/100)/swrt(pi^2+log(pos/100)^2)
-- gives zeta = 0.4559
+
+```
+zeta 
+= -log(pos/100)/swrt(pi^2+log(pos/100)^2)
+ = 0.4559 at line 117.13
+
+this gives dominant poles at s = -5.415 +- j10.57, third pole at s = -8.169
+estimated peak time = 0.297 sec
+
+desired pole imaginary part wd
+= pi/T 
+= pi/(0.297*(2/3)) 
+= 15.87
+
+real part σ
+= wd/tan(180-117.13)
+= 8.13
+
+desird dominant poles s
+= -8.13 +- j15.87
+they require gain K = 5.34
+
+sum of angles to s = -8.13 + j15.87 is currently -198.37
+zero contribution 
+= 198.37-180
+= 18.37
+
+so we need zero at s = -55.92
+
+G_PD = (s + 55.92)
+```
+**missed slide 41**
 
 ![](Day31/pid.PNG)
 
@@ -1987,17 +2147,34 @@ sum of angles to s = -8.13 + j15.87 is -198.37
 - on matlab: 1/abs(evalfr(s+55.92)*G, -8.13+j15.97)
 - to get the closed loop system, we go Gpd=feedback(K*(s+55.92)*G,1)
 
+#### Lag-Lead Compensator Design
+- similar to PI PD but replace PI with lead compensator and PD with lag compensator
+
 ## Day 32 Mar 23, 2018
 
-### Concept of Frequency Response
+### Frequency Response Techniques
+- another perspective for design of feedback control systems vis gain adjustment and compensation
+- advantages
+	1. modelling transfer functions from physical data
+	2. design lead compensators to meet steady state error and transient response reqs
+	3. finding stability of nonlinear systems
+	4. setting ambiguities when sketching root locus
+
+#### Concept of frequency response
 - the steady state output phaser is input magnitude * TF maginative * angle of TF evaluated at tha frequency
 - magnitude freuency response 
 - phase frequency response
 - most of the time ppl do analysis, you just look at magnitude plot, not the phase plot
 
+#### Phasors
+- convenient way to represent sinusoids
+- they are complex numbers whose magnitude is the amplitude of the sinusoid and angle is the phase angle
+- eg M1cos(ωt + ϕ1) would be the phasor M1/_ϕ1 whose frequency is implicit
+
 #### Plotting Frequency Reponse
 - magnitude: magnitude in decibals vs log(omega)
 - phase: phase angle vs log(omega)
+- db = 20logM
 
 #### What the hell is a Decibel
 - how system affects the power
@@ -2043,6 +2220,8 @@ bode(1/(s+2))
 ```
 
 ### Bode Plots
+- log magntude and phase frequency response cruves plotted at function of log w
+
 
 #### Asymptotic Approximations
 - if we have some transfer function G(s) = K*zeros/s^m\*poles
@@ -2057,9 +2236,16 @@ when omega = a
 #### Steps to Draw
 - learn later :o
 - we probably won't have to draw one but need to read phase margin and gain margin
+- straight line approximations are aymptotes
+- a is the break frequency where we switch from low frequency asymptote to high freq asymptote
+- at G(jw) = (jq + a) = a + ja we get 45 deg
+- at G(Jw) = a we get 0deg
+- at G(jw) = jw we get 90deg
 
 #### Normalizing
-- makes it easy to compare plots iwth different break points
+- makes it easy to compare plots with different break points
+- actual curve is never more than 3.01 dB from aymptotes
+- phase curve i never more than 5.71 deg different from aymptotes
 
 ## Day 33 Mar 27, 2018
 
