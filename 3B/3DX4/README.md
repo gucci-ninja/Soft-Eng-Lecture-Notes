@@ -17,7 +17,7 @@
 - [Cramer's Rule](#cramers-rule)
 - [Nodal Analysis](#nodal-analysis)
 - [Operational Amplifiers](#operational-amplifiers)
-- [Mechanical Systems: Translational and Rotational](#mechanical-systems:-translational-and-rotational)
+- [Mechanical Systems Translational and Rotational](#mechanical-systems-translational-and-rotational)
 - [Rotational Mechanical System with Gears](#rotational-mechanical-system-with-gears)
 - [Electromechanical Transfer Functions and DC Motors](#electromechanical-transfer-functions-and-dc-motors)
 - [Linear and Nonlinear systems](#linear-and-nonlinear-systems)
@@ -537,7 +537,7 @@ Vi(s)        Z1(s)
 
 **written example that I missed?**
 
-### Mechanical Systems: Translational and Rotational
+### Mechanical Systems Translational and Rotational
 - once in laplace form, we just know transfer function
 - there are 2 types of mechanical systems, [translational](#translational-system) and [rotational](#rotational-system)
 
@@ -2268,11 +2268,13 @@ we get -90 because G(s) = 1/s so G(jw) = (1/jw)*(j/j) = -j/w
 
 #### Drawing Bode Plots: Magnitude
 1. determine initial slope
+	- if contains pole/zer at origin, determine net slope due to items at origin
 2. determine leftmost starting value
-	- if pole or zero at origin
-	- otherwise aka magnitude for dc gain
-3. at each break frequency, increase slope by +20dB/dec
+	- if pole or zero at origin, determine magnitude at 0.1a a=smalles break frequency
+	- otherwise magnitude for dc gain aka s = 0
+3. at each break frequency, increase slope by +20dB/dec for a zero and -20dB/dec if break freq correponds to pole
 4. effect of gain K is to shift up or down, K >1 moves magnitude of curve up
+5. to draw graph take K=1 unless gain is specified
 
 ```
 G1 = 1/(s+10)
@@ -2285,10 +2287,13 @@ bode(G1) 	// starts at -20
 	- if no pole/zero at origin, start at 0 deg
 2. start graph at 0.1a, where a is the smallest break freuency
 3. for each zero break frequency a
+	- at 0.1a, increase slope by 45deg/dec
+	- at 10a, decrease slopy by 45deg/dec
 4. for each pole, similarly, at 0.1a, decrease pole by 45deg/decade
-5. K haas not effect because
+5. K has no effect on phase curve
 
 #### Example
+- we did this in matlab
 
 ```
 MATLAB
@@ -2307,10 +2312,10 @@ start by sketching 3/2s
 - when omega = wn, high and low frequency are equal
 - to sketch, start out flat until w<sub>n</sub>
 - phase starts at 0 and ends up at 180deg
-	- take jw, evaluate 
+	- take jw, evaluate phase at wn, you get a phase of 90deg
 
 #### Corrections for Second-Order Bode Plots
-- magnitude of omega = sqrt()
+- magnitude of omega = sqrt((wn^2-w^2) + (2*zea*wn*w)^2)
 
 ## Day 34 Mar 29, 2018
 
@@ -2318,7 +2323,7 @@ start by sketching 3/2s
 - for K and s, we know a closed loop pole exists when we have 1 + KG(s)H(s) = 0
 - find value of omega when eqn on 43 = 1 and then calculate angle
 - typically for root locus there are 2 cases
-	1. system unstab;e as k increases
+	1. system unstable as K increases
 	- stabiltiy condition is |KG(w)
 	2. if the system becomes stable as K increases we wanna be bigger than 1 for all |KG(w..)
 
@@ -2337,13 +2342,15 @@ start by sketching 3/2s
 - first dtermine freq w which is when gain is 0dB
 - in 10.37 the phase margin is phi at 0dB gain and if it's close or far from 180 
 
-#### Example
+#### Gain and Phase Stability Margin Example
 - G(s)H(s) = K(s+1)/(s(s-1))
 - we know it gets stable as K increases bc pole +1
 - 20log10(abs(evalfr(K*G, j*1))) gives you how far it is from 0dB
 - how much can you change K by question given K*G see how far it is from 0dB when we have odd multiple of 180 deg, dif from 0db is how much u have to change gain by in decibals (we have to convert back to K tho)
 
-![](Day34/eg1.PNG)
+![](Day34/eg.PNG)
+
+**might be the one I wrote on grid paper**
 
 #### System Bandwidth
 - power is no more reduced tha 50%
@@ -2366,7 +2373,8 @@ start by sketching 3/2s
 #### Control Design
 - nth order feedback control system
 	- closed loop poles (TF) correspond to eigenvalues of A
-	- A' is a closd loop system matrix
+	- A' is a closed loop system matrix
+- det(sI - A') = s^n + ... + ao = 0
 
 #### Topology for Pole Placement
 - inputs u (from actuators) enter the system through B matrix, integrator x dot integreats Bu with Ax
@@ -2378,17 +2386,20 @@ start by sketching 3/2s
 - replaced u by -K matrix
 - don't need signal flow graphs
 
-![](Day34/box.PNG)
-
 #### Phase Variable Form
 - in controller canpncial form (phase var form) take output x2....sn are derivatives
 - statespace eqn is x1 dot = x2, x2 dot = x3....
 - take coef of denominator and reverse negate along bottom row for state space eqn
 
 #### Pole Placement with Phase-Variable Form
-- steps
+- to apply pole placement appraoch
+1. repesent system in phase-variable form
+2. feed back each state
+3. find characteristic eqn for above system
+4. select desired closed-loop poles and corresponding characteristic eqn
+5. equate coefficients of characteristic eqn from last 2 steps and solve for Ki
 
-![](Day34/eg2.PNG)
+![](Day34/eg1.PNG)
 
 - simulation gives us overshoot of about more han 11.5% (we wanted 9.5) because we didnt cancel the zero at -5)
 
@@ -2404,7 +2415,9 @@ start by sketching 3/2s
 
 #### Board Example from 2017 Exam
 
-![](Day35/example.PNG)
+![](Day35/example1.PNG)
+
+![](Day35/example2.PNG)
 
 #### Computing Same Example in Matlab
 
@@ -2467,15 +2480,18 @@ actually have to compute symbolic determinant
 - this will allow us to do state feedback controller
 - observers (estimators) allow us to do this
 - given input and output, try to estimate what's happening inside the box
+- we will use an observer to calculate the inaccessible plant state variables
 - I stopped paying attention after this part
 
 #### Observer Design
 - idea is to increase speed with open loop
 - then we feedback
 - estimate a state output and subtract the actual
+- equations are the same except it's x-hat, ŷ instead of x, y
 
 #### Observer Canonical Form
 - canonical form for designing observers
+- divide all terms by highest power of s
 - cross multiply some thing (R and C)
 - collect all the r's and c's in the form of an integrator that feeds into another integrator (1/s)
 - draw a single flow graph that represents what integrator is feeding into what integrator
@@ -2489,7 +2505,7 @@ actually have to compute symbolic determinant
 #### Observer Design cont'd
 - typically set eigenvalues 10x bigger on the left half plane
 - we put them in order of magnitude on the left
-- det(lMBA(I - (A-LC)))
+- det(lambda(I - (A-LC)))
 	- coefficients of L matrix get subtracted
 - in slide 47 example
 	- multiply by TF
@@ -2499,11 +2515,13 @@ actually have to compute symbolic determinant
 	- if original poles are at -1 +- j2 and you want dominat poles 10 times faster, make it -10 += j20
 	- multiply them all together for chaarcteristic equation and pattern match
 
+![](Day36/observer.PNG)
+
 #### Observability
+- to design an observer, we need to be able to deduce the current state of each state variable from the system output
 - when can we assign/place observer poles arbitrarily
 - if the system is observable, we can do this
 - if the initial state x(to) of system can be determined from y(t) and u(t) observed over a finite time interval starting at to, we say the system is observable
-- observability
 - system is controllable is step 1, then check if it's observability, both matrices should have rank n
 - if it's not in observer canonical (we won't be asked to do this) you do some tranformation
 
@@ -2569,7 +2587,7 @@ actually have to compute symbolic determinant
 - doing substitution for z transform + change of variables, gives you convolution G(z)C(z)?
 - convolution becomes multiplication
 
-## Day 37
+## Day 37 Apr 6, 2018
 
 #### ZOH Transformation Example
 - G(s) = s+2/s+1 for T = 0.5
