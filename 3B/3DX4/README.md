@@ -26,21 +26,17 @@
 - [State Space to Transfer Function Written Example](#state-space-to-transfer-function-written-example)
 - [Time Response](#time-response)
 - [First Order Systems](#first-order-systems)
-- [Testing to Determine Transfer Function](#testing-to-determine-transfer-function)
 - [Second Order Systems](#second-order-systems)
 - [Approximation of Higher Order Systems](#approximation-of-higher-order-systems)
 - [Stability](#stability)
 - [Stability and Routh Tables Example](#stability-and-routh-tables-example)
 - [Routh Table Cases](#routh-table-cases)
 - [Steady-State Errors](#steady-state-errors)
-- [Steady State Error Example](#steady-state-error-example)
-- [Static Error Constants](#static-error-constants)
 - [Root Locus Techniques](#root-locus-techniques)
 - [Angles of Departure and Arrival ](#angles-of-departure-and-arrival-)
 - [Transient Response Design via Gain Adjustment](#transient-response-design-via-gain-adjustment)
 - [Matlab Competition???](#matlab-competition)
 - [Design Via Root Locus (Improving SSE and Transient Response)](#design-via-root-locus-improving-sse-and-transient-response)
-- [Lead Compensation](#lead-compensation)
 - [Frequency Response Techniques](#frequency-response-techniques)
 - [Bode Plots](#bode-plots)
 - [State Space Control Theory](#state-space-control-theory)
@@ -1055,7 +1051,7 @@ s = tf('s')
 
 ![](Day15/written.PNG)
 
-### Testing to Determine Transfer Function
+#### Testing to Determine Transfer Function
 - often not possible/practical to determine function by analytic means
 - in general, gain of system at s = 0 (DC input) is not unity
 - more general model is G(s) = K/s+a
@@ -1441,7 +1437,7 @@ e_ss = 1/(a + lim s->0 G(s))
 - if n = 1 you get infinite error
 - you cant track a parabola unless you have 1/s^3
 
-### Steady State Error Example
+#### Steady State Error Example
 
 Find steady state inputs for inputs 5u(t), 5tu(t), 5t<sup>2</sup>u(t)
 - the forward path (100*(s+2)(s+6))/(s(s+3)(s+4))
@@ -1449,7 +1445,7 @@ Find steady state inputs for inputs 5u(t), 5tu(t), 5t<sup>2</sup>u(t)
 
 ![](Day21/written.PNG)
 
-### Static Error Constants
+#### Static Error Constants
 - steady state error performance specs 
 1. Position Constant 
 	- K<sub>p</sub> = lim<sub>s->0</sub>G(s) 
@@ -2067,7 +2063,7 @@ at this gain, third pole is at -2.755
 - remember: need an intgeral part to improve sse
 - requires active circuits
 
-### Lead Compensation
+#### Lead Compensation
 - advantages - no additional power supply + reduced noise due to differentiation
 - approximates derivative by adding a zero that is left of the pole (pole to the right of the zero)
 - since we want a net angular contribution of zero and poles, theta_c = theta_z - thea_p (which is an odd multiple of 180 degrees?)
@@ -2523,7 +2519,16 @@ actually have to compute symbolic determinant
 - if the system is observable, we can do this
 - if the initial state x(to) of system can be determined from y(t) and u(t) observed over a finite time interval starting at to, we say the system is observable
 - system is controllable is step 1, then check if it's observability, both matrices should have rank n
+- observability matric O<sub>M</sub> is [C CA ... CA<sup>n-1</sup>]<sup>T</sup>
 - if it's not in observer canonical (we won't be asked to do this) you do some tranformation
+
+#### Alternate Approaches to Observer Design
+- observer design is good when system's in observer canonical form
+- for other forms, we still do observer but it's a lot of calculating
+- easier method is to transform the system into observer canonical form, place the poles and then tranform the result back to original form
+
+#### Observer Design by Transformation
+- fell asleep during this part
 
 #### Steady State Error Design via Integral Control
 - feedback integral of the error
@@ -2531,11 +2536,14 @@ actually have to compute symbolic determinant
 
 #### Example
 - design controller with 10% OS and 0.5 settling time
-- we can determine from above that s = -8 +- j10
+	- find steady state error for a unit step
+- we can determine from above that s = -8 +- j10 and characteristic eqn s<sup>2</sup> + 16s + 183.1
 - system is in canonical controller form already
 - need to determine K
 - upon solving for coefficients we get k1, = 180.1 and k2 = 11
-- steady state error comes out to be almost 1
+- compute (A - BK)x + Br
+- using eqn e<sub>ss</sub> = lim s->0 sR(s)[1 - C(sI - A)<sup>-1</sup>)B]
+- steady state error comes out to 0.995
 - after finding integral gain, computing steady state error gives 0
 
 ### Digital Control
@@ -2552,22 +2560,33 @@ actually have to compute symbolic determinant
 3. noise immunity
 
 #### Converting Between Analog and Digital
-- e and f are analog and go into analog plant, therefore we need to do digitization
+- e and f are analog and go into analog plant, therefore we need to do digitization since digital computers can only hndle binary
 - put a converter before and after, something that is built into most microcontroller
+- 2 step process, and there's a dela between input V and output binary numbers
 - put into something that samples and holds it (zero order hold - straight line that holds values constant)
+- zero order sample and hold device used to sample analog signal periodically
 
 #### Quantization
 - dynamic range of input signal is divided into discrete levels
-- M/2^n + 1 is the range for error
+- each lvl is assigned a binary number
+- if M is max input voltage then M/2<sup>n</sup> is the difference between quantization lvls
+- M/2<sup>n+1</sup> is the range for error
 
 #### Minimum Sampling Frequency
 - 16 or 12 bits is pretty cheap
 - need to make sure we don't lose important info (info on signals)
+- sampling theorem
+	- for continuous signal x(t), let f1 be the frequency of the highest frequency component that x(t) contains. Let f<sub>s</sub> = 1/T, where T is the sampling period
 - if fs > 2f1 then x(t) can be reconstructed
+- for a given sampling frequency f<sub>s</sub>, f<sub>N</sub> = 1/2f<sub>s</sub> (Nyquist frequency)
 
 #### Modeling the Digital Computer - Zero Order Hold
 - didn't pay attention for this part
 - zero order pole part has TF of (1 - e^-sT)/s
+
+![](Day36/sampler.PNG)
+
+![](Day36/eqn.PNG)
 
 #### The z Transform
 - f(kT) = kT example - do it at home 
@@ -2577,9 +2596,11 @@ actually have to compute symbolic determinant
 - F(z)/z easier with partial fractions using cover-up method
 
 #### Transfer Functions
-- continuous system
-- with sampled input
-- and sampled output
+- continuous system (a)
+- with sampled input (b)
+- and sampled output (c)
+
+![](Day36/tf.PNG)
 
 #### Derivation of the Pulse Transfer Function
 - ideal sampler used on r(t), then c(t) in response will be scaled impulse responses
@@ -2590,20 +2611,45 @@ actually have to compute symbolic determinant
 ## Day 37 Apr 6, 2018
 
 #### ZOH Transformation Example
-- G(s) = s+2/s+1 for T = 0.5
+- find ZOH discretization of lag controller G(s) = s+2/s+1 for T = 0.5
 - use the lookup table
 - do partial fractions
 - plug in value for T
 
+```
+find z-transform of G(s)/s
+     s+2
+= ----------
+    s(s+1)
+   A      B
+= --- + -----
+   s     s+1
+   2      1
+= --- + -----
+   s     s+1
+
+using look up table lines 1 and 4
+   z^2 - (2e^-T - 1)z
+= --------------------
+   (z - 1)(z - e^-T)
+
+plugging in T = 0.5
+        z - 0.213
+G(z) = ------------
+        z - 0.607
+```
 #### ZOH Discrete in Matlab
 
 ```
+G1 = zpk([-2], [-1], 1)
+G1z = c2d(G1, 0.5, 'zoh')
 ```
 
 #### Block Diagram Reduction
-- 
 
-#### Pulse Transfer of Fedback System
+![](Day37/reduction.PNG)
+
+#### Pulse Transfer of Feedback System
 - do an ideal sampler on first case
 	- you have feedback and there's no intervening sampler
 - we didn't do the rest of the cases
@@ -2611,6 +2657,8 @@ actually have to compute symbolic determinant
 #### Stability
 - for z tranforms stability is inside unit circle
 - for laplace it's left half plane or else it's growing without bound
+
+![](Day37/stability.PNG)
 
 #### Missle Guidance Example
 - analog to digital conversion that tracking data goes through
