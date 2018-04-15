@@ -1095,13 +1095,13 @@ s = tf('s')
 - also did a lot of matlab stuff
 
 ##### Poles
-- s1,2 = -ζw<sub>n</sub> +- w<sub>n</sub>sqrt(ζ<sup>2</sup>-1)
+- s1,2 = -ζw<sub>n</sub> +- w<sub>n</sub>sqrt(1-ζ<sup>2</sup>)
 
 ##### Zeta
 - real part of poles/wn
 
 ##### Peak Time
-- Tp = pi/(w<sub>n</sub>sqrt(ζ<sup>2</sup>-1))
+- Tp = pi/(w<sub>n</sub>sqrt(1-ζ<sup>2</sup>))
 
 ##### Percent Overshoot
 - %OS = e<sup>-ζpi/sqrt(ζ<sup>2</sup>-1)</sup> * 100%
