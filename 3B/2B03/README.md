@@ -3062,3 +3062,14 @@ PW = 1000(P/A, 13.4%, 4) + 10000(P/F, 13.4%, 5)
     - nuclear powerplant
     - all control systems were designed independently so when something went wrong, a lot of lights went off
     - they couldn't implement any of the safety measures
+
+#### Types of Ethics
+- utilitarianism
+- rights
+- duty ethics
+- the other one
+
+## Day 35 Apr 9, 2018
+- review day
+- he posted slides
+- 15MC + 6 long answer
