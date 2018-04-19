@@ -22,7 +22,6 @@
 - [Test Report](#test-report)
 - [Structural Testing Techniques](#structural-testing-techniques)
 - [Quiz 2 Regression Testing](#quiz-2-regression-testing)
-- [Equivalent Partitioning Classes](#equivalent-partitioning-classes)
 - [Unit Testing](#unit-testing)
 - [Tutorial 5 Feb 14, 2018 ](#tutorial-5-feb-14-2018-)
 - [Empirical Unit Testing Principles](#empirical-unit-testing-principles)
@@ -674,7 +673,7 @@ Parallel | new system gives same results as old
 
 ## Day 16 Feb 8, 2018
 
-**skipped**
+**skipped** but covered
 
 ### Structural Testing Techniques
 - ensure that product designed is structurally sound and will function correctly
@@ -717,7 +716,7 @@ Parallel | new system gives same results as old
 - ability to restart operations after integrity of app has been lost
 - revert to point where integrity of system is known, reprocess transactions up to point of failure
 - time required to recover is affected by
-    - # restart points
+    - number of restart points
     - volume of applications running on computer
     - training/skil of ppl conducting recovery
     - tools available
@@ -771,8 +770,6 @@ Operations | system can be used in normal operational status | pre-prod, maint
 Compliance | system is developed in accordance with standards and procedures | all
 Security | system is protected | all
 
-
-
 ## Day 17 Feb 12, 2018
 
 **Assignment 1 due** 
@@ -793,16 +790,18 @@ Regression testing vs recover testing
     - what: possible failure
     - introduce the failure and see if the system can recover
 
-### Equivalent Partitioning Classes
+#### Equivalent Partitioning Classes
 - dividing system into out of bounds on the right and left and within bounds
 - use max int and min int for partition ends
 - partitions should not intersect
 
 ### Unit Testing
+- piece of code that exercises a specific area of functinality
+- helps you communicate the code's intended use (ie learn how to use the code)
 - this is the basic testing
 - any function of the system, class, module, component is considered for unit testing
 - a good test:
-    - has good probability fo catching an error
+    - has good probability of catching an error
     - not redundant
     - best of its type
     - not too simple, not too complex
@@ -811,6 +810,45 @@ Regression testing vs recover testing
 - natural approach such as using randomly generated test cases is inappropriate in most cases
 - unit testing should be based on sound and systematic techniques
 - tests should be repeatable, very critical for concurrent software
+
+#### Unit Testing in Java
+- assertions, written as Boolean expressions
+- if false, then
+    - error msg generated
+    - execution is aborted
+- assertions can be turned on when running the program for test purposes and turned off when the program is shipped to the user
+- assertions can be turned on again by "-ea" flag
+
+```
+public void assertTrue(boolean condition) {
+    if (!condition) {
+        abort();
+    }
+}
+
+public void assertEquals(int a, int b) {
+    assertTrue(a == b);
+}
+
+```
+
+#### Testing a Simple Method
+- testing class that returns the largest element in a list
+
+```
+import junit.framework.*;
+pubilc class TestLargest extends TestCase {
+    public TestLargest(String name) {
+        super(name);
+    }
+
+    public void testSimple() {
+        assertEquals(9, Largest.largest(new int[] {7,8,9}));
+    }
+}
+
+
+```
 
 ### Tutorial 5 Feb 14, 2018 
 
@@ -1165,7 +1203,6 @@ method(~~user u...~~ Address) {
 #### Implementation Vulnerability
 - caused by security defects in the actual coding
 - flaws in the code
-    - 
 
 #### Good Secure Software Design Principles
 - compartmentalization
@@ -1493,4 +1530,4 @@ ratio, or coefficient of variation | 0 | 0 | 0 | 1
 - estimating defects (using math but also make assumptions)
 -  measurements - be v mathematical
 - scale is a representaion of the mapping of a function real+math world
-s
+
