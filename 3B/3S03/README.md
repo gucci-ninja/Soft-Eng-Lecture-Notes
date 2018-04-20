@@ -27,8 +27,11 @@
 - [Tutorial 5 Feb 14, 2018 ](#tutorial-5-feb-14-2018-)
 - [Unit Testing contd](#unit-testing-contd)
 - [Empirical Unit Testing Principles](#empirical-unit-testing-principles)
+- [Tutorial 6 Feb 28, 2018](#tutorial-6-feb-28-2018)
+- [White Box Testing](#white-box-testing)
 - [Parameterized Tests](#parameterized-tests)
 - [Security Testing](#security-testing)
+- [Common Sources of Design Issues](#common-sources-of-design-issues)
 - [Tutorial 8 Mar 14, 2018](#tutorial-8-mar-14-2018)
 - [Basics of Measurement](#basics-of-measurement)
 - [Tutorial 9 Mar 21, 2018](#tutorial-9-mar-21-2018)
@@ -1162,17 +1165,30 @@ T9 | 1880 | 1 | -1 | Year, day not in valid
     - if there is an error in the program, the test set shows it
 - test criterion C is a subset of P(D) where P(D) denotes the set of all finite subsets of D
 - test set T satisfies C if it belongs to C
-
+- a criterion is consistent if all test sets of it are successful
+- if P is incorrect, there is an unsuccessful test set that satisfies C
+- **Conclusion:** it is impossible to decide whether
+    - test is ideal
+    - criterion is consisten or complete
 
 ## Day 20 Feb 27, 2018
 
 ### Empirical Unit Testing Principles
 
-#### Complete Coverge Principle
+#### Complete Coverage Principle
+- testing criterion attempts to group elements of the input domain into classes
+- allows us to narrow down our test cases by grouping similar inputs
+- if the classes Di cover the entirety of D then we say the testing criterion satisfies the complete coverage principle
+- eg you have input n and the program behaves differently for different ranges of n
+- we divide the domain into classes
+    - {n<0}
+    - {n=0} ... and so on covering all numbers
+- all the classes Di are disjoint, they do not overlap
+- in the case that they do overlap, we can minimize the number of test cases because if Di and Dj have a similar test case then we can use that to represent both classes
 - subject to many interpretations
     - each class consists of single elemt
-    - group all input data into just one class
-- this, we may evaluate how good a testing criterion is based on how significant the representatives of the classes obtained by decomposition are
+    - can group all input data into just one class
+- thus, we may evaluate how good a testing criterion is based on how useful the representatives of the decomposed classes are
 - may need to partition to get deeper and deeper into the system
 - for example below, D1 = x>0 && x > y, y > x would be one partion
 - another partition, D2 = x > 0 && y > 0 && x <= y
@@ -1205,21 +1221,82 @@ y = 4
 
 ```x>0 && y=0```
 
-#### Tutorial 6 Feb 28, 2018
-
-**skipped**
+### Tutorial 6 Feb 28, 2018
 
 ## Day 21 Mar 1, 2018
 
 **skipped**
 
+### White Box Testing
+- information on internal structure of software is used and specs may be ignored
+- white box tests what program does and black-box tests what it is supposed to do
+- both increase confidence and reliability
+
+#### Statement Coverage Criterion
+- looking at Euclid algorithm
+    - while condition suggest to cases, x = y and x != y therefore we can test main loop and get statement coverage criterion
+- an error cannot be discovered if parts of the program executing it are not executed (duh)
+- however, executing a statement once does not guarantee that it is correct
+- elementary statements are
+    - assignment statements
+    - I/O statements
+    - procedure calls
+- _Select a test set T such that by executing P for each d in T, each elementary statement of P is executes at least once_
+- one input can execute a lot of statements so we have to try and minimize
+- once you have your representative classes D<sub>i</sub>, choose an input from each of them and make it more minimal
+
 ## Day 22 Mar 5, 2018
 
+#### Edge COverage Criterion
+- for any program fragment P its control graph G<sub>p</sub> is built such that there is an entry and exit
+- we can lay out a graph given the if statements of a program
+- _Select a test set T such that, by executing P for each d in T, each edge of P
+is control flow is traversed at least once_
+
+```
+if cond then
+        S1;
+else
+        S2;
+end if;
+
+       o
+      /  \
+     /    \
+    o      o
+   G1      G2
+    o      o
+    \      /
+     \    /
+      \  /
+        o
+
+```
+
 ## Day 23 Mar 6, 2018
+
+#### Condition Coverage
+- strengthened edge coverage
+- more likely to expose errors
+- _Select a test set T such that by executing P for each element in T, each edge of P
+s control flow graph is traversed and all possible values of the constituents of compound conditions are exercised at least once_
+
+#### Path Coverage
+- shows that edge coverage is simply not enough
+- eg not testing division by zero but testing all branches
+- _Select a test set T such that by executing P for each d in T, all paths leading from the inital to final node of P's control graph are traversed_
+- harder to achieve
 
 #### Tutorial 7 Mar 7, 2018
 
 ## Day 24 Mar 8, 2018
+
+#### Other Criteria
+- empirical guidelines for testing loops
+    - executed 0 times
+    - max number of items
+    - avg number of times
+- major complexity is with nested loops
 
 ## Day 25 Mar 12, 2018
 
@@ -1298,21 +1375,26 @@ method(~~user u...~~ Address) {
     - implementation
 - design must specify security model's structure
     - if security mechanisms are required, how do they work
-    - in multi-user program, desgn specifies how system users are **authenticated, authorized and audited**
+    - in multi-user program, design specifies how system users are **authenticated, authorized and audited**
     - for data input, how threats are mitigated
 
 #### Design Vulnerability
 - a mistake in the design that precludes the program from operating securely
 - often found in software's security features
 - parts that have no direct connection to security features
+- eg not exchanging encrytion keys securely or not properly basing them on a secret
 
 #### Implementation Vulnerability
 - caused by security defects in the actual coding
 - flaws in the code
+    - not checking returns
+    - not sizing buffers properly
+    - not handling unexpected input properly
+
 
 #### Good Secure Software Design Principles
 - compartmentalization
-    - what does they user need to know to do his job
+    - what does the user need to know to do his job
     - use of strong abstractions (many layers) and interface validations to ensure proper use of module
 - least privilege principle
     - granting user or process the fewest privileges possible for it to complete its job
@@ -1328,9 +1410,19 @@ method(~~user u...~~ Address) {
     - hiding the message
     - protects the data so that if one security mechanism fails, the data needs decryption
 
-#### Cryptography
+### Common Sources of Design Issues
+- [Cryptography](#cryptography-flaws)
+- [Tracking Users and Their Permissions](#tracking-users-and-their-permissions)
+- [Input Validation](#input-validation)
+- [Structural Security](#structural-security)
+
+#### Cryptography Flaws
+- used to
+    - mitigate eavesdropping
+    - securely store password
+    - enable session to be surely maintained
 - pitfalls
-    - creating you own
+    - creating your own
     - choosing the wrong one
     - relying on security by obscurity
     - hard-coded secrets
@@ -1341,6 +1433,19 @@ method(~~user u...~~ Address) {
 - use ignore for things that haven't been implemented but have a test case
 - testing if statements
     - @org.junit.Test(timeout=1000)
+- Junit features
+    1. open source
+    2. annotations
+        - @Test
+        - @Test(expected = Exception.class)
+        - @test(timeout=n)
+        - @Ignore
+        - @Before void method() or @After for setup
+    3. assertions
+        - org.junit.Assert
+        - assertArrayEquals (number of elements and their contents)
+    4. test runners
+    5. test suites
 
 #### Runner (annotations)
 1. Parameterized
@@ -1358,6 +1463,7 @@ method(~~user u...~~ Address) {
 
 #### Designing for Testability
 - design that allows for automated testing
+- interface first then implementatinon
 - should be
     - repeatable
     - easy to write 
@@ -1372,17 +1478,110 @@ method(~~user u...~~ Address) {
 
 **skipped** :( we probably did cryptography
 
+#### Tracking Users and Their Permissions
+- which user is associated with which transaction
+- if unathorized user, must return error
+- associated pitfalls
+    - weak or missing session management
+    - weak or missing authentication
+    - weak or missing authorization
+
+#### Input Validation
+- this causes many vulnerabilities
+- includes buffer overflow, SQL injection (1=1), cross-site scripting
+    - not performing va;idation insecure context
+    - not centralising validation routines
+    - not securing component boundaries
+
+#### Structural Security
+- large attack surface (boundary of app interaction)
+- running process at too high privilege lvl (attacker can exploit sotware running at highest lvl-root)
+- no defense in depth (only one mechanism and it fails)
+- not failing securely (error handling)
+
+#### Other Design Flaws
+- mixing code and data
+- misplaced trust in external systems
+- insecure defaults
+- missing audit logs
+
 ## Day 28 Mar 19, 2018
 
 **skipped**
 
+#### Programming Language Implementation Issues
+- idiosyncrasies - weirdo things about a language
+- you need to understand the language's security implementations
+- C/C++ has a lot of vulnerabilities
+    - domain name servers
+    - mail servers
+    - router servers
+- C has no Safe Native String Type and no Safe, Easy-to-Use String-Handling functions
+- in C, strings are arrays of chars w/ NULL terminator at the end
+    - can lead to memory beyond the end of a buffer being overwritten when string is copied
+    - called buffer overrun (overflow)
+    - if you define as num of bits [1024] you should be good or else strcopy can go from normal size (00000---) to (AAAA----) which is large af
+
+##### Preventing Buffer Overflows
+- check length of input
+- limit size of strings to idk 511 bytes so if you have 2 strings you add them together 511*2 = 1022 + 1 for a space or something + NULL terminator = 1024
+- use strncpy and strncat instead of strcpy and strcat since the first limit the number of characters being added to buffer
+- other C/C++ problems are with
+    - printf formatting
+    - integer ovrflow
+    - heapoverflow
+    - function pointer overwriting
+    - Vtable overwriting
+    - exception handler overwriting
+
+#### Interpreted Languages
+- shell scripting and PHP
+- make things easier
+- lots of behind the scenes operations
+- makes programs OS independent
+- hidden functionality can have security consequences
+- good thing is that there are no buffer overflow issues, but it's still important to always check input lengths regardless
+- eg email functions for web app
+    - write small UNIX shell script to call send mail, saving times
+- common vulnerabilities
+    - metacharacters - such as ; or : that have special meanings 
+    - command injection - when metacharacters get processed, especially using ; characters to run commands
+    - automatically created variables in PHP - no declarations
+
+#### Virtual Machine Languages
+- Java and C#
+- they compile into bytecode and require VM to run
+- typically safer than native code languages
+- designed keeping in mind C's insecurities
+- these languages cannot access arbitrary memory
+- still have issues
+    - lack of error handling
+        - it is the programer's job to write error handling code, something that is usually ignored
+        - attackers can use this to their advantage and create an exception condition at will
+    - native code
+        - even though java and c# are compiled to bytecode and shouldn't be executed by a processor like native code, when managed code calls native code using native method, VM can't do anything
+
+#### Platform Implementation Issues
+- platform is the nevironemtn that a program runs inside
+- consists of OS and maybe some program components
+- OS's have idiosyncaries as well
+- programs rely on OS for I/O, network and file system
+- issues
+    - symbolic linking - files in file system that point to other files
+        - allow sys-admin to move file physically to different device while keeping same name
+        - attacker can create a predicted filename
+    - directory traversal - allows access to directoies that are not below the share directory by using the .. notation to go up a lvl
+
 ## Day 30 Mar 20, 2018
 
 ### Basics of Measurement
-- as we understand more about attributes and relationship s between them, we develop
+- as we understand more about attributes and relationships between them, we develop
     - framework for describing them
     - tools for measuring them
 - we have no deep understanding of software attributes
+    - how to measure complexity
+    - is counting number of bugs = quality of system
+    - average productivity, average quality of modules
 
 #### Basic Theory of Measurement
 - this theory tells us
@@ -1395,6 +1594,7 @@ method(~~user u...~~ Address) {
 
 #### Representational Theory of Measurement
 - emiprirical relations
+    - should be able to represent attributes, manipulate them while preserving relationships
 - we understand things better by comparing them, not assigning numbers
 - observation reflects set of rules
     - we form pairs of people and define a binary relation "taller than" on them
@@ -1458,6 +1658,73 @@ method(~~user u...~~ Address) {
 
 **skipped**
 
+#### Definition of Measurement
+- mapping from empirical world to formal, relational world. A measure is a value or synbol assigned to an entity by this mapping in order to characterize an attribute
+- measure must specify the domain and range as wella s rule for mapping
+- types of mappings
+    - injective, but not surjective (not measurement mapping)
+    - surjective, but not injective (could be measurement mapping) 
+    - bijective (not measurement mapping)
+    - neither injective nor surjective (most mappings)
+    - **injective is one-to-one, surjective is when each element maps at least one element of domain (onto), bijective is a one-to-one and onto
+- representation condition
+    - each relation in empirical relational system corresponds to an element in a carrier set in the math world
+    - operations are preserved by relations
+    - measure is sometimes called representation or homomorphism (same even when morphed)
+- specific measures in soft eng
+    - duration of project/phase
+        - months
+        - days
+        - hours
+    - length of program code
+        - LOC lines of code
+        - number of executable statements
+    - quality/reliability of code
+        - faults per KLOC
+        - mean time to failure in CPU hours MTTF
+        - rate of occurence of failures ROCOF
+
+#### Measureent and Models
+- software engies use
+    - cost-estimation
+    - quality model
+    - capability-maturity
+- model is an abstraction of reality
+    - detail is stripped
+- using models the world can be divided into
+    1. things whose effects are neglectd
+    2. things that affect model but model is not designed to study them
+    3. things model is designed to study behaviour of
+- danger of focusing too much on formal/math and give thought to relationships among entities
+- measuring complexity - McCabe's model of cyclomatic number (number of decision nodes of a program + 1)
+    - v(G) the number of linearly independent paths in G = e edges - n nodes + 2
+    - decision nodes are the diamond shapes with 2 branches
+    - McCabe - modules with high v are likely to be fault prone and unmaintainable
+    - he proposed a threshold of 10
+    - limitations
+        - it's a partial view of complexity
+        - there are exceptions, ie if you document your code well
+
+#### Indirect vs Direct Measurement
+- direct - measurement of an attribute of an entity involves no other attribute or entity
+    - length
+    - length of code lines
+    - duration of testing process
+    - number of defects discovered
+    - time spent on project
+- indirect
+    - faults per KLOC
+
+#### Measurement for Prediction
+- we want to predict an attribute
+- distinction for assessment vs prediction is not clear cut
+- prediction always requires mathematical model
+- eg reliability model
+    - based on exponential distribution for time to ith failure
+    - F(t) = 1 - e<sup>-(N-i+1)at</sup> where
+        - t is time
+        - N is the number of faults residing initially
+
 ## Day 32 Mar 27, 2018
 
 #### Quiz 4
@@ -1467,6 +1734,7 @@ method(~~user u...~~ Address) {
 ### Scales
 - differences among different kinds of mappings
 - we're going to look at real world and mathematical domain
+- measurement scale = measurement mapping (M) + the empirical and numerical relation systems (range, domain)
 - homomorphic: whaetever happens in the real world should be mapped to mathematical
 - 3 important questions
     1. how do we know when one numerical (or symbolic) relation system is preferable to another
@@ -1489,10 +1757,15 @@ method(~~user u...~~ Address) {
     4. ordinal
     5. nominal
 - scale examples - height mapped in inches, km, etc
-- scale is defined by homomorphism and the notion of admissible transformation
+- scale is defined by homomorphism and scale type by notion of admissible transformation
 - mapping from one acceptable measure to another is called an admissible transformation (aka rescaling)
 - scales and scales types lead to the notion of meaningfulness (and validity)
 - meaningfulness - a statement with measurement values is meaningful iff its truth value is invariant to admissible transformations
+- wholeness - the whole is equally or more big than the sum of the parts
+    - (P`, o) is a structure of flow graphs with concatenation o
+    - P, Q is in P`, the set of flow graphs
+    - mu is a measure
+    - u(P o Q) >= u(P) + u(Q) signifies wholeness
 
 ```
 M1(I1) : 5 ft
@@ -1575,18 +1848,24 @@ M2(I1) : 60 in
 
 #### Ordinal Scale
 - entities have an order/severity
-- an emprirical relational system where P is a non-empty countable set and yo uhave a emprircal relation describing ranking propertis on P
--  there is also a numerical mathematical strucuture with R as a carrier set and a partial order
--  μ: P --> RR is a real value function and you have an oridinal scale iff we can say p is somehow higher than q is the same thing as saying that μ(p) >= μ(q)
+- an emprirical relational system (P, >~) where P is a non-empty countable set and you have a empirical relation describing ranking properties on P
+-  there is also a numerical mathematical strucuture (R, >=) with R as a carrier set and a partial order
+-  μ: P --> R is a real value function and you have an oridinal scale iff we can say p is somehow higher than q is the same thing as saying that μ(p) >= μ(q)
 - there is identity + magnitude
+- properties
+    - p >~ q <==> μ(p) >= μ(q)
+    - transitivity
+    - completeness
 
 #### Interval Scale
 - mostly will look at nominal and ordinal
 - there are units associated with this one
 - eg if we have ordinal scale of high, med, low - we can say that each is 6, 4, 2
 - not intuitive in software measurement
+- eg temperature w/ transformation between kelvin/c/f
 - algebraic difference structure // 
     - A x A cartesian product with interval relation
+    - there is a difference between 2 choices a,b >~ c,d and it is equal
     - there are 5 axioms tis above relation satisfies
         1. Weak Order
         2. Transitivity
@@ -1598,13 +1877,24 @@ M2(I1) : 60 in
 - interval scale is an algebraic difference structure
     - when looking at intervals (a,b) >~ (c,d), there is a function μ saying that μ(a) - μ(b) >= μ(c) - μ(d)
     - only good one is f or c but not k
+- pairs, not individual things
+    - positive and nagetive differences
 
 #### Ratio Scale
 - set of entities with relation
+- let (P, >~, o) be an empirical relational system where P is a non-empty countable set, >~ is an empirical relation and o is a binary operation. (R, >=, +) is a numerical structure with carrier set R, >= partial order and + addition. 
+- let μ: P ---> R be a real value function
+- the system ((P, >~, o), (R, >=, +), μ) i a ratio scale IFF
+    1. for all p, q in P, p >~ q <===> μ(p) >= μ(q)
+    2. for all p, q in P, μ(p o q) = μ(p) + μ(q)
+- its relational part is an ordinal scale but even more, there is a real value function v: P ---> R satisfying the above conditions saying there exists an alpha 'a' real number such that for all p in P, v(p) = aμ(p)
+- v(p) = aμ(p) is an admissible transformation
 
 ## Day 34 Apr 2, 2018
 
 ### Admissible Transformation
+- let (A,B,μ) be ascale where there is a mapping g: A-->B
+- 
 - is LOC a direct measurement? - obtained by looking and counting
 - is 1000 lines of code direct or indirect?
 
@@ -1617,6 +1907,16 @@ ratio | g(x) = aμ(x), a > 0
 
 *interval - to show it is not admissible, find an x for which g(x) does not hold?
 μ2 = aμ1 + b
+
+```
+General classification
+
+nominal --> ordinal --> interval --> ratio
+
+nominal --> metrical
+
+nominal --> n-affline --> (n-linear OR n-euclidean)
+```
 
 ### Statistical Operations on Measures
 
@@ -1634,8 +1934,9 @@ ratio, or coefficient of variation | 0 | 0 | 0 | 1
 
 ## Day 36 Apr 5, 2018
 - estimating defects (using math but also make assumptions)
--  measurements - be v mathematical
+- measurements - be v mathematical
 - scale is a representaion of the mapping of a function real+math world
+- same empricial meaning means scales are admissible transformations of each other
 
 #### Review
 - challenges of testing
