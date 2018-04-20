@@ -1776,7 +1776,7 @@ M2(I1) : 60 in
 #### Nominal Scale
 - nominal: comes from nomen, latin word for name
     - so nominal gives us names/categories
-- Let (P, ~) be an empirical relational system, where P is a non-empty countable set and where ~ is an equivalnce relation on P. Let (R, =) be numerical mathematical structure with R its carrier set and = is its identity relation. Let μ: P --> R be a real value function. The system ((P,~),(R,=),μ) is a nominal scale iff - for all p and q where p, q are in P, p ~ q <--> μ(p) = μ(q))
+- Let (P, \~) be an empirical relational system, where P is a non-empty countable set and where ~ is an equivalnce relation on P. Let (R, =) be numerical mathematical structure with R its carrier set and = is its identity relation. Let μ: P --> R be a real value function. The system ((P,\~),(R,=),μ) is a nominal scale iff - for all p and q where p, q are in P, p ~ q <--> μ(p) = μ(q))
 - meaningful statistical operations
     - the admissible tranformation is only a one-to-one transformation
 - only has identity (no magnitude)
@@ -1848,12 +1848,12 @@ M2(I1) : 60 in
 
 #### Ordinal Scale
 - entities have an order/severity
-- an emprirical relational system (P, >~) where P is a non-empty countable set and you have a empirical relation describing ranking properties on P
+- an emprirical relational system (P, >\~) where P is a non-empty countable set and you have a empirical relation describing ranking properties on P
 -  there is also a numerical mathematical strucuture (R, >=) with R as a carrier set and a partial order
 -  μ: P --> R is a real value function and you have an oridinal scale iff we can say p is somehow higher than q is the same thing as saying that μ(p) >= μ(q)
 - there is identity + magnitude
 - properties
-    - p >~ q <==> μ(p) >= μ(q)
+    - p >\~ q <==> μ(p) >= μ(q)
     - transitivity
     - completeness
 
@@ -1882,10 +1882,10 @@ M2(I1) : 60 in
 
 #### Ratio Scale
 - set of entities with relation
-- let (P, >~, o) be an empirical relational system where P is a non-empty countable set, >~ is an empirical relation and o is a binary operation. (R, >=, +) is a numerical structure with carrier set R, >= partial order and + addition. 
+- let (P, >\~, o) be an empirical relational system where P is a non-empty countable set, >\~ is an empirical relation and o is a binary operation. (R, >=, +) is a numerical structure with carrier set R, >= partial order and + addition. 
 - let μ: P ---> R be a real value function
-- the system ((P, >~, o), (R, >=, +), μ) i a ratio scale IFF
-    1. for all p, q in P, p >~ q <===> μ(p) >= μ(q)
+- the system ((P, >\~, o), (R, >=, +), μ) i a ratio scale IFF
+    1. for all p, q in P, p >\~ q <===> μ(p) >= μ(q)
     2. for all p, q in P, μ(p o q) = μ(p) + μ(q)
 - its relational part is an ordinal scale but even more, there is a real value function v: P ---> R satisfying the above conditions saying there exists an alpha 'a' real number such that for all p in P, v(p) = aμ(p)
 - v(p) = aμ(p) is an admissible transformation
