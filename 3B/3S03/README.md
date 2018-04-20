@@ -21,9 +21,11 @@
 - [Functional Testing Techniques](#functional-testing-techniques)
 - [Test Report](#test-report)
 - [Structural Testing Techniques](#structural-testing-techniques)
+- [Unit Testing in Java](#unit-testing-in-java)
 - [Quiz 2 Regression Testing](#quiz-2-regression-testing)
 - [Unit Testing](#unit-testing)
 - [Tutorial 5 Feb 14, 2018 ](#tutorial-5-feb-14-2018-)
+- [Unit Testing contd](#unit-testing-contd)
 - [Empirical Unit Testing Principles](#empirical-unit-testing-principles)
 - [Parameterized Tests](#parameterized-tests)
 - [Security Testing](#security-testing)
@@ -774,7 +776,130 @@ Security | system is protected | all
 
 **Assignment 1 due** 
 
-#### Quiz on Regression Testing
+### Unit Testing in Java
+- assertions, written as Boolean expressions
+- if false, then
+    - error msg generated
+    - execution is aborted
+- assertions can be turned on when running the program for test purposes and turned off when the program is shipped to the user
+- assertions can be turned on again by "-ea" flag
+
+```
+public void assertTrue(boolean condition) {
+    if (!condition) {
+        abort();
+    }
+}
+
+public void assertEquals(int a, int b) {
+    assertTrue(a == b);
+}
+
+```
+
+#### Testing a Simple Method
+- testing class that returns the largest element in a list
+
+```
+import junit.framework.*;
+pubilc class TestLargest extends TestCase {
+    public TestLargest(String name) {
+        super(name);
+    }
+
+    public void testSimple() {
+        assertEquals(9, Largest.largest(new int[] {7,8,9}));
+    }
+
+    public void testEmpty() {
+        try {
+            Largest.largest(new int[] {});
+            fail("Should have thrown an exception);
+        } catch (RuntimeException e) {
+            assertTrue(true);
+        }
+    }
+
+}
+
+```
+
+#### How to Execute JUnit Test
+- if JUnit is integrated in your IDE, its ez
+- otherwise you gotta use TestRunner
+    - GUI runner is java junit.swingui.TestRunner
+- do it from IDE of command line^
+- textual UI -> java junit.textui.TestRunner classname
+
+#### Structuring Tests
+- each method can contain more than one assert statement but once one fails, the rest do not run
+- naming conventions
+    - testMethodName_TestCondition_ShouldPass/Fail()
+- setup conditions
+- asserts
+    - assertEquals([String msg], expected, actual) - does not compare content of native arrays
+    - for floats, need to specify tolerance
+    - assertNull([String msg], java.lang.Object obj)
+    - assertNotNull([String msg], java.lang.Object obj)
+    - assertSame([String msg], expected, actual)
+    - assertNotSame([String msg], expected, actual)
+        - checks if both are or arent referring to same object
+    - assertTrue/assertFalse
+    - fail([String msg])
+        - used to mark sections of code that should not be reached, eg after exception
+- better structure through test suites
+
+#### JUnit Test Composition
+- test class can contain a static method named suite
+- ```public static Test suite();```
+- this returns any collection of tests we want
+- without suite(), JUnit will run all tests
+- add following code o the end of test method
+
+```
+public void setUp() {
+
+}
+
+public void tearDOwn() {
+
+}
+public class Test suite() {
+    Test suite = new TestSuit();
+    tests suite.addTest(
+        new TestClass("testMethodName")
+        );
+    suite.addTest(
+        new TestClass("anotherTestMethod")
+        );
+    return suite;    
+}
+
+public static void main(String[] args) {
+    TestSuit suite = new TestSuite();
+    if (args.length!=0) {
+        // run specific tests
+        for (int i=0;i<args.length; i++){
+            suite.addTEst(new TestClass(args[i]));
+        } else {
+            suite.addTest(TestClass.suite());
+        }
+    }
+}
+```
+
+- there is also per-suite setup and teardown
+- you wrap it in a TestSetup object
+    - inside suite code, add a setUp and tearDown and call oneTimeSetUp() and oneTimeTearDown() in them
+
+#### Using Data Files
+- for sets of tests with large amounts of test data
+- data file format
+    - each line contains set of numbers
+    - first number is the expected answer
+    - numbers on rest of the line are inputs
+    - hashtag sign for comments
+- use string tokenizer with buffered reader
 
 ## Day 18 Feb 13, 2018
 
@@ -810,45 +935,6 @@ Regression testing vs recover testing
 - natural approach such as using randomly generated test cases is inappropriate in most cases
 - unit testing should be based on sound and systematic techniques
 - tests should be repeatable, very critical for concurrent software
-
-#### Unit Testing in Java
-- assertions, written as Boolean expressions
-- if false, then
-    - error msg generated
-    - execution is aborted
-- assertions can be turned on when running the program for test purposes and turned off when the program is shipped to the user
-- assertions can be turned on again by "-ea" flag
-
-```
-public void assertTrue(boolean condition) {
-    if (!condition) {
-        abort();
-    }
-}
-
-public void assertEquals(int a, int b) {
-    assertTrue(a == b);
-}
-
-```
-
-#### Testing a Simple Method
-- testing class that returns the largest element in a list
-
-```
-import junit.framework.*;
-pubilc class TestLargest extends TestCase {
-    public TestLargest(String name) {
-        super(name);
-    }
-
-    public void testSimple() {
-        assertEquals(9, Largest.largest(new int[] {7,8,9}));
-    }
-}
-
-
-```
 
 ### Tutorial 5 Feb 14, 2018 
 
@@ -1056,7 +1142,27 @@ T9 | 1880 | 1 | -1 | Year, day not in valid
 
 ## Day 19 Feb 26, 2018
 
-----
+### Unit Testing contd
+- natural appraoch using randomly generated test cases is inappropriate in many situations
+- unit testing should be based on sound and systematic techniques
+- tests should be repeatable
+    - especially with concurrency
+- to make testin accurate, we express input/output mathematically
+
+#### Theoretical Foundations of Unit Testing
+- Let P be a program
+- D = domain of P
+- R = range of P
+- P behaves as a function with domain
+- O<sub>R</sub> is the requiremnt on output values
+- for d in D, P is correct for f if P(d) satisfies O<sub>R</sub>
+- test set T is a finite subset of D
+- P is correct for T if it is correct for all elements in T
+- test set T is ideal is whenever P is incorrect, there is a d in T such that P is incorrect for d
+    - if there is an error in the program, the test set shows it
+- test criterion C is a subset of P(D) where P(D) denotes the set of all finite subsets of D
+- test set T satisfies C if it belongs to C
+
 
 ## Day 20 Feb 27, 2018
 
@@ -1531,3 +1637,22 @@ ratio, or coefficient of variation | 0 | 0 | 0 | 1
 -  measurements - be v mathematical
 - scale is a representaion of the mapping of a function real+math world
 
+#### Review
+- challenges of testing
+    - budget
+    - time
+    - management - finding testers and finding how to test
+- measurement - mapping from empirical to formal world
+- metric - quantitative attribute
+- types of measurements
+    - direct
+    - indirect - determined by putting different deduced info together
+- models for testing
+    - quality of requirments
+    - management issues
+    - quality of work
+    - cost
+        - effort
+        - size
+        - productivity
+    
