@@ -58,11 +58,11 @@
 
 ### Course Breakdown
 1. Software requirements
-  - Pre-reqs
-  - reqs
-  - Architecture design 
-  - Coding
-  - Testing
+    - Pre-reqs
+    - reqs
+    - Architecture design 
+    - Coding
+    - Testing
 2. Software architecture design space (types of software structures, software elements, sofware connectors)
 3. Design Principles for sustainable systems
 4. How to approach practical problems using architecture design
@@ -70,8 +70,8 @@
 ### Last Year Final Exam
 - answers can be found in [Exercises](#exercises)
 1. Using appropriate design principles, compare 2 designs in the figure.
-  - Design A - interconnected, multi-directed, a lot of things depend on other things
-  - Design B - organized, singly directed, not a lot of interdependency
+    - Design A - interconnected, multi-directed, a lot of things depend on other things
+    - Design B - organized, singly directed, not a lot of interdependency
   
   Design B is better as it has low coupling high cohesion! :bowtie:
   
@@ -96,8 +96,7 @@
   - eg if 4 quizzes then (40 - 2*3)% = 34%
   - may be oral?
   
-**Textbook**
-Software Architecture and Design Illuminated
+**Textbook:** Software Architecture and Design Illuminated
   
 ## Day 2 Jan 8, 2018
 
@@ -123,11 +122,11 @@ Design could be viewed as an activity that translates an idea/goal into a bluepr
 - good design in software reduces risks
 - makes system traceable for implementation and testing
 
-### SDLC V Model
+#### SDLC V Model
 
 ![](img/VModel.PNG)
 
-### What is meant by Software Architecture
+#### What is meant by Software Architecture
 - blueprint for developing small and large systems based on requirement analysis
 - highlights early decisions
 - has set of constraints (space, time, budget)
@@ -144,8 +143,23 @@ Design could be viewed as an activity that translates an idea/goal into a bluepr
 - set of desired quality attributes (eg performance)
 
 #### Architecture Style
-- families of similar architectures
-- represents the way elements are arranged, connections and interactions among elements, quality attributes, etc
+- proposed architecture can address some or all of desired attributes
+- families of architectures have similar choices on element types and connections
+- each arch. style represents
+  - the way elements are arranged
+  - connections and interactions among elements
+  - control transfer among elements in system
+  - semantic constraints and behaviours concerning data trasnfer of the architectural style
+  - quality attributes trade-off
+- partial list of quality attributes
+  - performance
+  - reliability
+  - portability
+  - usability
+  - security
+  - maintainability
+  - adaptability
+  - usability
 
 #### System Architecture
 - IEEE Std 1471 - "the fundamental organization of a system embodied in its components, their relationships to each other, and to the environment, and the principle guiding its design and evolution"
@@ -153,13 +167,14 @@ Design could be viewed as an activity that translates an idea/goal into a bluepr
 ### Role of Software Architect
 - system static partioning
 - decomposing system into sub-systems
-- establish dynamic control relationships between sub-systems
+- establish dynamic control relationships between sub-systems in control flow/data flow/message dispatching
 - quality attribute tradeoff analysis
+- ensure that chosen arch. style satisfies functional and non-functional requirements
+- promote high cohesion and loose comp
 
 ## Day 4 Jan 12, 2018
 
-**Discussion Day**
-
+### Software Architecture Design Space SlideSet 2
 - software architecture can be given from several perspectives
   - software code units (elements are source, binary code, modules)
   - project's runtime structure (elements are threads, processes, transactions)
