@@ -54,11 +54,9 @@
 - [Final Exam](#final-exam)
 
 ## Day 1 Jan 5, 2018
-
 - Fridays are for problem solving :relieved:
 
 ### Course Breakdown
-
 1. Software requirements
   - Pre-reqs
   - reqs
@@ -70,10 +68,10 @@
 4. How to approach practical problems using architecture design
 
 ### Last Year Final Exam
-
+- answers can be found in [Exercises](#exercises)
 1. Using appropriate design principles, compare 2 designs in the figure.
-  Design A - interconnected, multi-directed, a lot of things depend on other things
-  Design B - organized, singly directed, not a lot of interdependency
+  - Design A - interconnected, multi-directed, a lot of things depend on other things
+  - Design B - organized, singly directed, not a lot of interdependency
   
   Design B is better as it has low coupling high cohesion! :bowtie:
   
@@ -86,7 +84,6 @@
     - choose appropriate software architecture
  
 #### Grading and Textboook
- 
 - Project
   - teams of 4-5 (not chosen by us :cold_sweat:)
   - need log book 
@@ -199,7 +196,7 @@ Design could be viewed as an activity that translates an idea/goal into a bluepr
 
 ### Project Runtime Structure
 - at runtime project can be **threads**, **processes**, **functional units** and **data units**
-- these elements ay run on the same or multiple computers
+- these elements may run on the same or multiple computers
 - elements in code structures can implement or support multiple runtime elements (modules implement processes)
 - several code structure elements may implement or support single runtime element (many threads in different code units)
 - connectors at this level inherit atributes from their source-code counterparts
@@ -234,6 +231,7 @@ Design could be viewed as an activity that translates an idea/goal into a bluepr
 6. complex system can be expanded into sub-system with its own elements and connectors
 7. complex element can be transformed into sequence of layered elements
   - each layered element hides low-level system details from upper layers
+
 ![](img/layered.PNG)
 
 8. complex element can be transformed into sequence of tiered elements (each interface must be well-defined)
