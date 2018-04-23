@@ -234,23 +234,28 @@ Design could be viewed as an activity that translates an idea/goal into a bluepr
 - they have functions and are connected into dependency graphs through connectors
 - each one has different synchronization and performance constraints
 - some elements are re-entrant 
-- usually more efficient since they avoid synchronization, therefore can be safely executed concurrently, they can be implemented by any thread or process
+  - usually more efficient since they avoid synchronization, therefore can be safely executed concurrently, they can be implemented by any thread or process
+  - if element is not reentrant then it should not be more than one thead executing in it at any time
+  - can have an element be invoked by limited number of other elements or unlimited (performance issue)
 
 #### Basic Guidelines for runtime elements
-1. business logics may not allow some elements to be reentrant since order of operations matters a lot when you have shared resources
-2. if element is reentrant and multiple threads or processes may need to communicate with it, must run on separate threads or processes (thread safety)
+1. if an element is reentrant, it can be implemented by any thread/process
+    - usually more efficient
+    - business logics may not allow some elements to be reentrant since order of operations matters a lot when you have shared resources
+2. if element is not reentrant and multiple threads or processes may need to communicate with it, must run on separate threads or processes (thread safety)
 3. if element has high multiplicity and performance is important to global system, use an application server for implementation
-4. if heavy computations innvolved for deployment at particular location, consider using _cluster of processes_
-  - architecture is master-slave but it will suffer from performance problem if a master is connected to like 1000 slave processors at one layer
-    - if multiple layers it is mores manageable
-  - size of cluster is determined by computation load and communication traffic
+    - take advantage of thread/resource pooling and data caching
+4. if heavy computations involved for deployment at particular location, consider using _cluster of processes_
+    - architecture is master-slave but it will suffer from performance problem if a master is connected to like 1000 slave processors at one layer
+      - if multiple layers it is mores manageable
+    - size of cluster is determined by computation load and communication traffic
 
   ![](img/cluster.PNG)
 
 5. if element is assigned well-defined complex functions and similar off-the-shelf software exists and performance not critical then use **off the shelf solution**
 6. complex system can be expanded into sub-system with its own elements and connectors
 7. complex element can be transformed into sequence of layered elements
-  - each layered element hides low-level system details from upper layers
+    - each layered element hides low-level system details from upper layers
 
 ![](img/layered.PNG)
 
@@ -277,26 +282,28 @@ Design could be viewed as an activity that translates an idea/goal into a bluepr
 ## Day 6 Jan 17, 2018
 
 ### Software Connectors
-- in abstract form, connector indicates necessity during system execution for 1 element to send message to another elemnt
+- in abstract form, connector indicates necessity during system execution for 1 element to send message to another element & potentially get a return message
 - if those 2 elements mapped to single process, connector could be mapped to local method invocation
 - if those 2 elements mapped to two different processes on same computer, then connector could be mapped to local message queue or an operating system pipe
 - if those 2 elements mapped to 2 different computers then remote method invocation or Web service invocation can be used
 
 #### Software Connector Attributes
-- Synchronization mode - eg semaphores, blocking/non-blocking
+- Synchronization mode - eg semaphores
+  - blocking connectors
+  - non-blocking connectors
 - Initiator
   - makes request for communication
   - one-initiator connectors - client initiates communication
   - two-initiator connectors - if they are non-blocking
-  - callback support - requires two-initiator connectos
+  - callback support - requires two-initiator connectors
 - Information carrier perspective
   - what medium to use
     - variable (2 threads in same process)
     - environment resource (register, pipes, file, local message queues)
     - method invocation and message
-- Implementation type 
+- Implementation type
   - protocol-based can implement multiple operations
-  - signature-based methods implemnt **one** type of operation
+  - signature-based methods implement **one** type of operation
 - Active Time
   - when you make connection to program
   - event-driven - when something becomes active, something happens (reactive systems like thermostat)
@@ -314,7 +321,7 @@ Design could be viewed as an activity that translates an idea/goal into a bluepr
 
 ### Iterative Refinement of an Architecture
 - third part of architecture (elements, connectors, now **iterative refinement**)
-- givem project spec, an absract high level software architecture is proposed (elements + connectors)
+- given project spec, an absract high level software architecture is proposed (elements + connectors)
 - goes through multiple refinement phases
 
 #### Example steps of implementing an architecture
