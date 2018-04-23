@@ -6,10 +6,6 @@
 - [Introduction to Software Architecture](#introduction-to-software-architecture)
 - [Role of Software Architect](#role-of-software-architect)
 - [Software Architecture Design Space SlideSet 2](#software-architecture-design-space-slideset-2)
-- [Code Structure](#code-structure)
-- [3 things in architecture](#3-things-in-architecture)
-- [Project Runtime Structure](#project-runtime-structure)
-- [Software Management Structure](#software-management-structure)
 - [Software Elements](#software-elements)
 - [Group Project Overview and Deadlines](#group-project-overview-and-deadlines)
 - [Software Connectors](#software-connectors)
@@ -175,60 +171,70 @@ Design could be viewed as an activity that translates an idea/goal into a bluepr
 
 ### Software Architecture Design Space SlideSet 2
 - software architecture can be given from several perspectives
-  - software code units (elements are source, binary code, modules)
-  - project's runtime structure (elements are threads, processes, transactions)
-  - allocation structure (project management structure)
+  - [software code units](#code-structure) (elements are source, binary code, modules or software component deployment units)
+  - [project's runtime structure](#project-runtime-structure) (elements are threads, processes, sessions, transactions)
+  - [allocation structure](#software-management-structure) (project management structure)
 - each structure class uses different connectors and different performance attributes
 
 :cry: :cry: **so hungry** :cry: :cry:
  
-### Code Structure
+#### Code Structure
 - **module** : software component that hides a secret - big part of code structure
   - behaviour hiding modules
   - hardware hiding modules (hide communication between software and hardware)
     - eg robot's secret is its language
   - software hiding modules
     - have secrets like algorithms, data structures (can be generalized to 3 types - tuples, list, sets)
+  - each module is assigned function/non-functinoal attributes and public APIs
+- there are dependency relations between modules
+  - contains
+  - follows
+  - delivers data to
+  - uses
 - amount of knowledge that component modules have of each other kept to minimum (**high cohesion low coupling**)
 - information flow between compoenents is restricted to flow from method calls
+  - the **uses** relation is often called a "call graph" for this reason 
 - connectors in structures have:
   - direction - if module A invokes a method of module B then A -> B is connected
   - synchronization
-    - asynchronous - operates independently
+    - asynchronous - operates independently of other processes
     - synchronous - process runs as result of other processes
-  - sequence - some connectors must be used in particular sequence (label connector with sequence id)
+- sequence - some connectors must be used in particular sequence (label connector with sequence id)
 
  ## Day 5 Jan 15, 2018
 
 - last week we began to look at 3 architectural views - code view, runtime view, management view
 
-### 3 things in architecture
+#### 3 things in architecture
 - we give many views that provide 3 things
   1. components
   2. connectors
   3. rationale for having the above to explain non-functional reqs
 
-### Project Runtime Structure
+#### Project Runtime Structure
 - at runtime project can be **threads**, **processes**, **functional units** and **data units**
 - these elements may run on the same or multiple computers
 - elements in code structures can implement or support multiple runtime elements (modules implement processes)
-- several code structure elements may implement or support single runtime element (many threads in different code units)
+- several code structure elements may implement or support single runtime element (many threads run many methods from in different code units)
 - connectors at this level inherit atributes from their source-code counterparts
   - **multiplicity** - one element may be connected to multiple other elements if it needs to invoke methods of multiple elements at runtime
   - **distance and connection media** - two connected elements may communicate in the same process/thread/computer
     - eg communication by optical cable OR LAN to the media
-  - **universal invokable** - protocol to communicate with an element
+  - **universal invokable** - protocol to communicate with an element, allows ANY external software system to invoke the method at connector's target
     - software protocol is a way of exchanging information eg bluetooth is 15 dif protocols
-  - **self-descriptive** - allow external software system to invoke its target methods without pre-installation
+    - allows heterogeneous info systems
+  - **self-descriptive** - allows external software system to invoke its target methods without pre-installation
+    - eg bluetooth devices discovering each other
 
-### Software Management Structure
+#### Software Management Structure
 - ~~are we skipping this just because???~~
 - used for project resource allocation
 
 ### Software Elements
 - they have functions and are connected into dependency graphs through connectors
 - each one has different synchronization and performance constraints
-- some elements are re-entrant - usually more efficient since they avoid synchronization, therefore can be safely executed concurrently, they can be implemented by any thread or process
+- some elements are re-entrant 
+- usually more efficient since they avoid synchronization, therefore can be safely executed concurrently, they can be implemented by any thread or process
 
 #### Basic Guidelines for runtime elements
 1. business logics may not allow some elements to be reentrant since order of operations matters a lot when you have shared resources
