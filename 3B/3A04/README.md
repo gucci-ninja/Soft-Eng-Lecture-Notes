@@ -45,8 +45,8 @@
 - [Broker Architecture](#broker-architecture)
 - [Service-Oriented Architecture](#service-oriented-architecture)
 - [Exercises](#exercises)
-- [Heterogeneous Architecture](#heterogeneous-architecture)
-- [Product Families](#product-families)
+- [Heterogeneous Architecture SlideSet 10](#heterogeneous-architecture-slideset-10)
+- [Product Families SlideSet 11](#product-families-slideset-11)
 - [Product Family Algebra](#product-family-algebra)
 - [Final Exam](#final-exam)
 
@@ -1899,7 +1899,7 @@ in all these cases client A is out of memory
 
   ![](img/intheesb.PNG)
 
-### Heterogeneous Architecture
+### Heterogeneous Architecture SlideSet 10
 - sometimes you need many architectures combined together
 - how do we combine them and what do we need
 - weighing the pros and cons of each architecture
@@ -1915,6 +1915,7 @@ in all these cases client A is out of memory
 Design 1 | 10 | 30 | 10\*50% + 30*50%
 Design 2 | 20 | 20 | 10\*50% + 80*50%
 
+#### Comparison of architectural styles
 - Batch sequential
   - reusability should be a plus 
 - process control
@@ -1924,19 +1925,20 @@ Design 2 | 20 | 20 | 10\*50% + 80*50%
   - understandability
   - learn database managemnt
 - master slave - reduce task into many subtasks so time economic  - not resuable bc each task is specifci to decomposition that master does
-
-virtual machine
+- virtual machine
   - time economic - bad bc adds on extra layer instead of going directly to sensors
   - space economy - bad bc new layer
   - security - yes because you can have security mechanisms
   - hardware and software indepenedence - vm does it best
-srvece oriented 
+- service oriented 
   - hardware independence bc you don't care if it runs on ibm or legacy system
   - software independece 
   - resuability - can be reused many times eg credit card services
   - learnability - easy to learn, update as new services are added
 
-#### SAAM
+![](img/compare.PNG)
+
+#### SAAM Method
 - evaluate candidate architecture design using a collection of scenerios (scenario represents important usage of system)
 - 3 stages
 1. define a collection of design scenarios covering functional and nf req
@@ -1969,7 +1971,13 @@ srvece oriented
   - Task Dispatcher is contacted by client and communicates with IRS
   - can have 100s of clients and work under heavy load
 
-### Product Families
+. | Scenario 1 Expandability | Scen 2 Time Efficiency | Scen 3 Modifability
+---|------------|------------|---------
+Design 1 | - | - | +
+Design 2 | + | - | +
+Design 3 | + | + | +
+
+### Product Families SlideSet 11
 - sequential completion - classic method of developing software
 - 1976 - Parnas gave product families a lot of attention
 - due to
@@ -2004,14 +2012,38 @@ srvece oriented
 - FODA - Feature Oriented Domain Analysis
   - give the mandatory, optional and alternative relationship
 - feature model of bike
+
+![](img/foda.PNG)
+
 - skipped FeatuRSEB Monitor Engine System
   - XOR - choose 1, OR - choose 0, 1, 2..
+- FORM - Feature Oriented Reuse Method
+  - start with commonalities among apps
+  - construct feature model using and/or
+    - AND indicates mandatory features
+    - OR is alternative
+
+![](img/form.PNG)
+
+- FeatuRSEB - Feature Reuse-Driven Soft Eng Business
+  - also a graph
+  - edges are UML dependence relationships
+    - composed of
+    - optional feature
+    - alternative relation
+  - can specify 'requires' and 'mututal exclusion'
+
+![](img/featurseb.PNG)
+
 - generative programming
   - parent feature is composed of combo of some or all of its children
   - not very independent, very related
   - all you really need is the AND and OR
   - dark bullet is mandatory, white bullet is optional
   - when cardianlity is given it means you can choose 1 or 2 or 3 or n
+
+![](img/gp.PNG)
+
 - tools for modelling
   - don't care but there are a lot
 
@@ -2029,11 +2061,14 @@ E = {(1,2), (1,3)}
 - problem: if we take the feature as a diagram, we can't do calculation because it's a graph so we need a way to represent family
 
 ### Product Family Algebra
-- monoid is a 3-tuple (S, +, 0) where (S, +) is a semigroup and 0 is the identity element for the binary operation +
-- monoid is a simple algebra
-- semiring is a quintuple (S,+,0,*,1) such that (S,+,0) is commutative monoid and (S,*,1) is monoid that distributes
-- realtion a <= b <=> a + b = b is partial order, natural order on S
+- **monoid** is a 3-tuple (S, +, 0) where (S, +) is a semigroup and 0 is the identity element for the binary operation +
+  - simple algebra
+- **semiring** is a quintuple (S,+,0,\*,1) such that (S,+,0) is commutative monoid and (S,\*,1) is a monoid that distributes + over 0
+  - 0\*a = 0 = a\*0
+  - commutative and therfore idempotent if + is idempotent (a + 0 = a)
+- relation a <= b <=> a + b = b is a partial order, natural order on S
 - it has 0 as least element (in prod fam algebra it is the impossible constraint)
+- \+ and \* ar isotone w.r.t <= 
 - we don't need to go too in depth for this
 - allows you to build and compare things
 - an idempotent commutative semiring a product family algebra elements are product families and can be considered as abstractly representing sets of products eac of which is compoed of features
