@@ -30,7 +30,7 @@
 - [Repository Architecture Style](#repository-architecture-style)
 - [Blackboard Architecture Style](#blackboard-architecture-style)
 - [Midterm 2017](#midterm-2017)
-- [Hierarchy Structure](#hierarchy-structure)
+- [Hierarchy Structure SlideSet 7](#hierarchy-structure-slideset-7)
 - [Main Subroutine Software Architecture](#main-subroutine-software-architecture)
 - [Master Slave Architecture](#master-slave-architecture)
 - [Layered Architecture](#layered-architecture)
@@ -1068,7 +1068,7 @@ Software Archicture Design by Tao Ch 6
 - 9 questions 25/20 marks
 
 1. Main characteristics that an event needs to satify to be event
-s
+
 #### Exercise 1
 AI software system for speech that has minimal uncertainty?
 - need to use different techniques to recognize voice
@@ -1078,15 +1078,14 @@ Which software architecture is suitable?
 - combination of partial results to reach approximation
 - dont say batch sequential or pipes and filters
 
-#### 2
+#### Exercise 2
 S/w system to control robot given typica functions.
 Challenges: obstacles blocking path, sensor input imperfectm may run out of power, restrict accuracy of movement (this adds uncertainty so we need blackboard)
 
 ## Day 20 Feb 28, 2018
-
 - Master Slave - dependapbility and performance
 
-### Hierarchy Structure
+### Hierarchy Structure SlideSet 7
 - a substystem or element is assigned a functionality
 - method invocation 
 - we need lower level modules because of design principles
@@ -1094,6 +1093,7 @@ Challenges: obstacles blocking path, sensor input imperfectm may run out of powe
 - middle layers are usually for processing
 - characterized by explicit method invocation (call-and-return) connection styles
 - all architectural styles have this structure (except maybe Master-Slave)
+- hierarchial structure combines really well with other styles
 
 #### Unix Architecture
 - interface includes shell, utilities, app
@@ -1101,6 +1101,9 @@ Challenges: obstacles blocking path, sensor input imperfectm may run out of powe
 - device drivers send signals to hardware control
 - middle layer includes process control
 - usually there are many scheduling and memory managment algorithms
+- upper layer is the interface
+
+![](img/unix.PNG)
 
 ### Main Subroutine Software Architecture
 - traditional style
@@ -1108,17 +1111,26 @@ Challenges: obstacles blocking path, sensor input imperfectm may run out of powe
 - we start from data flow diagram (acquired in Requirements stage)
 - in OO, data is encapsulated in indiavidual object
 - system decomposed into subroutines hierarchially according to system functionality
-  - behaviour hiding
-  - software hiding
-  - machine hiding
+  - behaviour hiding with _secrets_:
+    - input formats
+    - screen formats
+    - messages
+  - software hiding with _secrets_:
+    - algorithms
+    - data structures
+  - machine hiding with _secrets_:
+    - hardware machine
+    - VM
+    - interfaces
 - we start building from bottom-up
+- map requirements to main/subroutine
+  - find tranform or transaction flow
+  - transform flow is mapped with a controlling module
+  - transaction center is at origin of action paths called the dispatcher control module
 
 ![](img/ms1.PNG)
 
 ![](img/ms2.PNG)
-
-- not good design
-  - not easy to maintain
 
 #### Benefits
 - easy to decompose system
@@ -1127,6 +1139,8 @@ Challenges: obstacles blocking path, sensor input imperfectm may run out of powe
 #### Limitations
 - globally shared data is vulnerable
 - tight coupling can cause ripple effects
+- not good design
+  - not easy to maintain
 
 ## Day 21 Mar 2, 2018
 
@@ -1135,6 +1149,19 @@ Challenges: obstacles blocking path, sensor input imperfectm may run out of powe
 - supports fault tolerance and system liability
 - slave provides replicated services to master
 - master selects particular result among slaves
+
+![](img/masterslave.PNG)
+
+#### Benefits
+- suitable for parallel computing and accuracy
+  - open to addition, closed to modification
+  - slaves can execute in parallel
+
+#### Applicable Design Domains
+- when liability is critical
+  - eg need many sensors (european, american)
+- where performance is critical (to a limit)
+- capacity issue solution: delegate requests to different workers that can handle the requests
 
 #### Midterm Solutions
  - distance of connectors - two elements related with a connector have a distance expressed as in the same thread/process/computer/or on different computers across a network
@@ -1147,21 +1174,26 @@ Challenges: obstacles blocking path, sensor input imperfectm may run out of powe
 
 ## Day 22 Mar 5, 2018
 
-#### Applicable Design Domains
-- suitable for parallel computing and accuracy
-  - open to addition, closed to modification
-- when liability is critical
-  - eg need many sensors (european, american)
-- where performance is critical (to a limit)
-- capacity issue solution: delegate requests to different workers that can handle the requests
-
 ### Layered Architecture
 - system decomposed into higher and lower layers
+- each layer is a group of classes/subroutines
 - request to layer i+1 invokes services provided by layer i
 - high cohesion
+- each layer has interface to upper and lower layer
+- pure layered there is only service to adjacent upper layer
+- higher layers are kinda abstract and lower layers are specific utility type
+- we can encapsulate all servces and deploy using a JAR file
+  - includes services from Java API
+- simple software would have
+  1. interaction layer
+  2. processing layer
 
 ```
 Joseph's diagram
+
+Layer i+1
+Layer i
+Layer i-1
 ```
 
 ![](img/layered_arch.PNG)
@@ -1178,7 +1210,7 @@ Joseph's diagram
 
 #### Benefit
 - incremental software development based on increasing levels of abstraction
-- rnhanced independence of layers
+- enhanced independence of layers
 - enhances reusability
 - component-based technology is suitable technology to implment layered structure
 - promotion of protability - each layer can be abstract machine deployed independently (because of design)
@@ -1189,14 +1221,15 @@ Joseph's diagram
 - many apps cannot fit this architecture
   - they are usually networks
 - expections and error handling are an issue
-- related architectures
-  - repo
-  - cliend-server
-  - virtual machine
+
+#### Related Architectures
+- repo
+- cliend-server
+- virtual machine
 
 ## Day 23 Mar 7, 2018
 
-#### Quiz
+#### Quiz 3
 Master Slave Architecture addresses 2 non functional requirements. Identify one of them.
 
 - performance
@@ -1215,6 +1248,8 @@ Master Slave Architecture addresses 2 non functional requirements. Identify one 
 ![](img/virtual_machine.PNG)
 
 - in example below, the interface and pilot part stays the same
+  - interface + pilot example = unix shells + kernel
+  - and then you have the machine
 
 ![](img/pilot.PNG)
 
@@ -1236,7 +1271,7 @@ Java Virtual Machine is very variable because you can run it on many machines
 
 #### Limitations
 - slow execution of interpreter
-- additional overload due to the new layer
+- additional overhead due to the new layer
 
 #### Related Architecture
 - interpretor, repository, layered architecture
