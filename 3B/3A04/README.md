@@ -10,14 +10,15 @@
 - [Group Project Overview and Deadlines](#group-project-overview-and-deadlines)
 - [Software Connectors](#software-connectors)
 - [Iterative Refinement of an Architecture](#iterative-refinement-of-an-architecture)
-- [Models](#models)
+- [Models SlideSet 3](#models-slideset-3)
 - [4 plus 1 Model](#4-plus-1-model)
 - [UML for Software Architecture](#uml-for-software-architecture)
 - [Surprise Quiz 1](#surprise-quiz-1)
 - [How to find the views](#how-to-find-the-views)
 - [Tutorial 2 Jan 23, 2018](#tutorial-2-jan-23-2018)
 - [UML](#uml)
-- [Structural Static Diagrams](#structural-static-diagrams)
+- [Structural Class Diagrams](#structural-class-diagrams)
+- [Structural (Static) Diagrams](#structural-static-diagrams)
 - [Behavioural (Dynamic) Diagrams](#behavioural-dynamic-diagrams)
 - [General Design Principles](#general-design-principles)
 - [Design Principles for Security](#design-principles-for-security)
@@ -334,9 +335,7 @@ Design could be viewed as an activity that translates an idea/goal into a bluepr
 4. layered architecture
   ![](img/step4_layered.PNG)
 
-### Models
-**Third slide set**
-
+### Models SlideSet 3
 - Will discuss the 4 + 1 model for architecture
 - architecture has components, connections and interactions between these components
 - need to specify configuration topology
@@ -350,15 +349,15 @@ Design could be viewed as an activity that translates an idea/goal into a bluepr
     - bad thing: it is complex so it might require more maintenance as well as redundant information
 
 #### Ways to describe software architecture
-  - formal (ADL) and informal (UML) ways
-  - Box-and-line diagram - formal way
-    - describes business concept
-    - lines indicate relationshp among components (unlike UML)
-    - lines may refer to dependancy, control flow, data flow
-    - lines may be associated with arrows to indicate process direction and sequence
-  - UML is one of the Object-Oriented solutions for software modeling and design
-  - "4+1" view is another way to show different views with different concerns for dif aspects (F + NF reqs)
-    - it is formal, UML
+- formal (ADL) and informal (UML) ways
+- Box-and-line diagram - formal way
+  - describes business concept
+  - lines indicate relationshp among components (unlike UML)
+  - lines may refer to dependancy, control flow, data flow
+  - lines may be associated with arrows to indicate process direction and sequence
+- UML is one of the Object-Oriented solutions for software modeling and design
+- "4+1" view is another way to show different views with different concerns for dif aspects (F + NF reqs)
+  - it is formal, UML
 
 ## Day 7 Jan 19, 2018
 
@@ -479,19 +478,17 @@ Below is a package diagram for procss view.
 - Rational Rose, Boland Together, Microsoft Visio
 - might get these in the future
 
-### Structural Static Diagrams
-
-#### Class Diagrams
+### Structural Class Diagrams
 - each of the views in the 4+1 model have a class diagram
 - these can be derived from use cases/scenarios
 - the elements of a class are class name, attributes, operations
 - relationships (connectors)
   - composition (HAS A)
-    - components have same lifespan as owner
-    - components cannot be involved in another composition
+    - components HAVE same lifespan as owner
+    - components CANNOT be involved in another composition
   - aggregation (HAS A) 
-    - components do not have same lifespan as owner
-    - components can be involved in another comp
+    - components DO NOT HAVE same lifespan as owner
+    - components CAN be involved in another comp
   - association (USES A)
     - includes name, type and multiplicity
     - composition is a type of association
@@ -500,23 +497,38 @@ Below is a package diagram for procss view.
   - inheritance (IS A)
     - when attributes are common btwn classes
     - this weakens the encapsulation of an OO design
+
+### Structural (Static) Diagrams
 - object diagram
   - gives objects + relationship at runtime
   - overview of instances of class diagram at point in time
   - based on class diagram
+
+![](img/objectdiagram.PNG)
+
 - composite structure diagram
   - describes inner structure of component (all classes and interface)
+
+![](img/compositestructurediagram.PNG)
+
 - component diagram
   - describes all components of system
   - gives interrelationships, interactions, interface
   - outline of composition structure of components or modules
+
+![](img/componentdiagram.PNG)
+
 - package diagram 
   - describes package structure and organization
   - covers classes in package and packages within packages
+
+![](img/packagediagram.PNG)
+
 - deployment diagram
   - describes hardware, software, network connections for distributed computing
   - covers server configuration and network 
 
+![](img/deploymentdiagram.PNG)
 
 - there are 3 types of classes
   1. **boundary** - secret of this class is how to communicate with the environment (the edge of the system)
@@ -526,7 +538,6 @@ Below is a package diagram for procss view.
   3. **control** - finite state machine
     - controls flow of system
     - secret is the algorithm of <span style="color:blue">behaviour-hiding</span>
-  
 
 ### Behavioural (Dynamic) Diagrams
 - Use Case Diagrams
@@ -536,28 +547,46 @@ Below is a package diagram for procss view.
   - sees the system as a blackbox, doesn't tell you what system does
 
   ![](img/usecase.PNG)
+
 - Activity Diagram
   - outline of activity data and control flow
   - workflow oriented diagram
   - covers decision points
+
+  ![](img/activitydiagram.PNG)
+
 - State Machine
   - life cyce of an object
   - diagram has states and transitions
   - system + business process
+
+  ![](img/statemachine.PNG)
+
 - Interaction Overview
   - combines activity and sequence diagrams to provide control flow
+
+  ![](img/interaction.PNG)
+
 - Sequence of Diagram
   - chronological sequence of messages between objects
   - corresponds to 1 use case
   - full arrowhead: synchronous message
   - half arrowhead: asynchronous message
+
+  ![](img/sequencediagram.PNG)
+
 - Communication Diagram
   - describes message passing sequence
   - depicts how object receives and sends messages
   - every communication diagram is equivalent/can be converted to sequence diagram
+
+  ![](img/communicationdiagram.PNG)
+
 - Timing Diagram
   - combines state diagram and time sequence
   - dynamic view of state change caused by external events over time
+  
+  ![](img/timingdiagram.PNG)
   
 ## Day 10 Jan 26, 2018
 - looking over at diagrams
