@@ -40,12 +40,11 @@
 - [MVC](#mvc)
 - [PAC](#pac)
 - [Discussion 2](#discussion-2)
-- [Distributed Architectures](#distributed-architectures)
+- [Distributed Architectures SlideSet 9](#distributed-architectures-slideset-9)
 - [Multi Tier Architecture](#multi-tier-architecture)
 - [Broker Architecture](#broker-architecture)
 - [Service-Oriented Architecture](#service-oriented-architecture)
 - [Exercises](#exercises)
-- [Enterprie Service Bus contd](#enterprie-service-bus-contd)
 - [Heterogeneous Architecture](#heterogeneous-architecture)
 - [Product Families](#product-families)
 - [Product Family Algebra](#product-family-algebra)
@@ -1548,7 +1547,7 @@ Java Virtual Machine is very variable because you can run it on many machines
 
 ## Day 28 Mar 19 2018
 
-### Distributed Architectures
+### Distributed Architectures SlideSet 9
 - example of importance
   - virtual network provider that started off smol wants to extend trouble ticketing system and support 2-way interaction
   - most appropriate architecture
@@ -1581,7 +1580,7 @@ Java Virtual Machine is very variable because you can run it on many machines
   - callback
   - event driven
 - **important features of distributed architecture**
-  - service location trasnarency
+  - service location transparency
   - service reliability and availability
 
 #### Client Server
@@ -1605,7 +1604,7 @@ Java Virtual Machine is very variable because you can run it on many machines
 
 ##### Advantages
 - separation of responsabilities such as user interface presentation and business logic processing
- - reusability of server components
+- reusability of server components
 
 ##### Disadvantages
 - lack of heterogenous infrastructure to deal with the requirement changes
@@ -1660,24 +1659,24 @@ Java Virtual Machine is very variable because you can run it on many machines
   - forwarding and dispatching requests
   - sending responses or exceptions back to clients
 - can be used to structure distributed software systems with decoupled components that interact by remote service invocations
-- better decoupling between clients and servers
-- servers make their services availale to clients by registerig and publishing interfaces with broker
+- **better decoupling between clients and servers**
+- servers make their services available to clients by registerig and publishing interfaces with broker
 - clients can request services of broker statically or dyamically by look-up
 - broker acts as policeman in busy intersection who controls and interacts with client and server components
 
 ![](img/broker.PNG)
 
-#### Detailed Deisgn of Broker Architecture
+#### Detailed Design of Broker Architecture
 - distributed client can access distributed service by calling remote methods
 - similar concept to Remote Procedure Calls on Unix and Java Remote Method Invocation
-- next lecture: proxies and stuff
+- next lecture: proxies and stuff in broker arch
 
 ## Day 30 Mar 23, 2018
 
 #### Proxies in Broker Architecture
 - client has direct connection to its client-proxy
 - server has direct connection to its server proxy
-- proxy talks to mediaor broker
+- proxy talks to mediator broker
 - proxy is well-known pattern for hiding low-level detailed communication processing
   - it intercepts client's request
   - gets all arguments
@@ -1701,7 +1700,7 @@ Java Virtual Machine is very variable because you can run it on many machines
 
 ![](img/broker_model.PNG)
 
-**some images on slides 21-23
+![](img/broker_class.PNG)
 
 #### Advantages
 - server component implementation and location transparency
@@ -1724,15 +1723,22 @@ Java Virtual Machine is very variable because you can run it on many machines
   - independent from other services
   - published and availale to be used via an interface
 - interface communicated with service
-- may make use of many available services
-- for this one needs a flow control language
+- can be reused extensively regardless of if its based on legacy software
+- loose coupling of SOA provides flexibility to make use of many available services
+- connections are conducted by common and universal msg oriented protocols like SOAP web service protocol
+- to use many services, you need a flow control language
   - allows specifying the sequence and logical order of business executions based on business logic
-- some services can be reused by other applications tgat they are - we can build new services from  existing service
+- some services can be reused by other applicationsm
+- we can build new services from  existing service (even recursively)
   - aggregation: extends one endpoint of a service to makea new interface of a new service
   - containment structure: has one interface that wraps all used services
-- possible conifguration:
+- possible configuration of recursive:
 
 ![](img/recursive.PNG)
+
+![](img/soa.PNG)
+
+![](img/soa2.PNG)
 
 #### Advantages
 - loosely coupled connection 
@@ -1808,17 +1814,30 @@ Java Virtual Machine is very variable because you can run it on many machines
   - internal control and regulatory compliance control for personal info protection
 - motivation 
   - strong demand for low cost and quick system dev
-- we can satisfy thes by minimizing newly developed parts
-- an ESB is a middleware that provsied unified architecture for high resulability btwn client and service
+  - sometimes a quick change is needed to keep up but this leads to a bunch of independent systems in different departments
+  - cost of overall system increases
+  - we see diminished enterprise management
+- enterprise systems require highly adaptale and highly flexible architecture as well as low-cost/quick dev
+- we can satisfy thes by
+  1. using existing systems and APIs'
+  2. minimizing newly developed parts
+  3. using a combo of the above
+- an ESB is a middleware that provides unified architecture for high resulability btwn client and service
 - environment designed to foster interconnectivity that is sophisticated
 - helps overcome problems with reliability, scalability and communication disparity
-  - SOA gives fat with containment and aggregated is deep
+  - SOA gives fat with containment and aggregated is deep (wtf did i just write)
 
 #### Components of ESB
+- reliable messaging
+- rules centralization
+- service broker
 
 ![](img/esb.PNG)
 
-- asynchronous queuing - about how a service and its consumers accomodate isolated failures and avoid unnecesarily locking resources
+1. asynchronous queuing 
+    - about how a service and its consumers accomodate isolated failures and avoid unnecesarily locking resources
+    - make a request and hold memory
+      - once client makes request, client is put out of memory usage untl service is ready to use (put back into memory)
 
 ```
 clnt A ----> BUS ----> SB
@@ -1840,44 +1859,45 @@ You can have 2 queues, one you just receve and ones you sent and are waiting for
 in all these cases client A is out of memory
 (5) client A regains access to memory
 ```
-- intermediate routing
-- policy centralization
-- event driven messaging
-- service broker
+
+2. event driven messaging
+    - consumer establishes itself as subscriber of the service
+    - service, in turn, automatically issues notifications of relevent events to this and any of its subscribers
+3. intermediate routing
+    - various types of intermediary routng logic can be used to create message paths
+4. policy centralization
+    - policies that apply to multiple services can be redundant and inconsistent so we should use global policies
+  - separation of concerns
+    - policies that apply to multiple services introduce redundancy
+    - global or domain specific policies can be isolated and applied to multipe services
+5. reliable messaging
+    - concept of communciating messages across unreliable infrastructure while being able to make certain guarantees about successful transmission of the msgs
+    - send message request and wait
+    - if timeout, let client know service is not available
+    - note: services do not talk to each other, you put them together through containment (an interface)
+
+  ![](img/reliable_msg.PNG)
+
+6. rules centralization
+    - same business ruls may apply across different business services, leading to redundancy and governance challenges
+    - the storage ad management of business rules are positioned within a dedicaed architectural extension from where they can be centrally accessed and maintained
+7. service broker
   - acts like a middleman, performs translations on request according to whateer service is needed
   provides services:
   - data model tansofmration 
   - data format transformation
   - protocol bridging - a protocol to handle communication, maybe cryptography
-- rules centralization - 
+
 
 ## Day 33 Apr 2, 2018
 
-### Enterprie Service Bus contd
+#### Enterprie Service Bus contd
 - intended for short term turnaround ie a merge between 2 companies
 - last week we discussed the servie broker and found that we can have any of the 3 (data model, data format, protocol bridging) or all 3
-- asynchronous queuing - make a request and hold memory
-  - once client makes request, client is put out of memory usage untl service is ready to use (put back into memory)
-- event driven messaging - consumer establishes itself as subscriber of the service
-  - service, in turn, automatically issues notifications of relevent events to this and any of its subscribers
 
   ![](img/service.PNG)
 
   ![](img/intheesb.PNG)
-
-#### Compositions
-- policy centraliation - separation of concerns
-  - policies that apply to multiple services introduce redundancy
-  - global or domain specific policies can be isolated and applied to multipe services
-- reliable messaging - concept of communciating messages across unreliable infrastructure while being able to make certain guarantees about successful transmission of the msgs
-  - send message request and wait
-  - if timeout, let client know service is not available
-  - note: services do not talk to each other, you put them together through containment (an interface)
-- rules centralization
-  - same business ruls may apply across different business services, leading to redundancy and governance challenges
-  - the storage ad management of business rules are positioned within a dedicaed architectural extension from where they can be centrally accessed and maintained
-
-![](img/reliable_msg.PNG)
 
 ### Heterogeneous Architecture
 - sometimes you need many architectures combined together
