@@ -36,9 +36,9 @@
 - [Layered Architecture](#layered-architecture)
 - [Virtual Machine](#virtual-machine)
 - [Discussion 1](#discussion-1)
-- [Interaction Oriented Software Architecture](#interaction-oriented-software-architecture)
-- [PAC](#pac)
+- [Interaction Oriented Software Architecture SlideSet 8](#interaction-oriented-software-architecture-slideset-8)
 - [MVC](#mvc)
+- [PAC](#pac)
 - [Discussion 2](#discussion-2)
 - [Distributed Architectures](#distributed-architectures)
 - [Multi Tier Architecture](#multi-tier-architecture)
@@ -1343,14 +1343,16 @@ Java Virtual Machine is very variable because you can run it on many machines
 
 ![](img/translator.PNG)
 
-### Interaction Oriented Software Architecture
+### Interaction Oriented Software Architecture SlideSet 8
 - given a set of data, there are many ways to represent it
 - the modules + secrets of each method is:
   - data Module ---> (secret.Data) **ENTITY CLASS**
   - Interaction Module ----> (secret: what to present to user) **CONTROLLER CLASS**
+    - this is also called the flow control and determines communication between modules
   - module v1...5 ---> how to display v1...5 (5 modules) **BOUNDARY CLASSES**
+    - this is the view presentation that is responsible for visual/audio output
   - module other? **BOUNDARY CLASS**
-- 3 kinds of modules
+- 3 kinds of modules (above in reverse)
   - view modules
   - controller modules - Finite State Machine
   - data modules
@@ -1362,14 +1364,11 @@ Java Virtual Machine is very variable because you can run it on many machines
   2. model-view-controller (MVC)
   ![](img/MVC.PNG)
 
-### PAC
-- agent based hierarchial architecture, [more PAC](#pac-2)
-- system is decomposed into agent
-- each agent has 3 components - presentation, abstraction, control
-
-![](img/PAC2.PNG)
-
 ### MVC
+- all modules are connected together
+- common in web dev
+- used where UI is prone to changes
+- supports look and feel
 
 #### Summary
 - the controller
@@ -1387,10 +1386,8 @@ Java Virtual Machine is very variable because you can run it on many machines
 
 ![](img/mvci.PNG)
 
-![](img/mvc_blackboard.PNG)
-
 #### MVC I
-- simple version of MVC architecture
+- simple version of MVC architecture (pictured above)
 - view component - look and feel (view)
   - can have many of these
 - brain of the interaction (controller)
@@ -1404,9 +1401,16 @@ Java Virtual Machine is very variable because you can run it on many machines
   - registers with data module
   - observer is the controller
 
+#### MVC Black board
+- MVC I connection can be designed using the subscribe/notify pattern
+- controller/view (subscribes the model and model notifies of changes
+
+![](img/mvc_blackboard.PNG)
+
 ![](img/mvci2.PNG)
 
 #### MVC II
+- model provides all core functionality and data from database
 - controller
   - dispatches tasks
   - controller and the view register with the model module
@@ -1414,6 +1418,8 @@ Java Virtual Machine is very variable because you can run it on many machines
 - comparison to MVC-I
   - in both, Model module plays an active role
   - you register controller with the model and then the view
+  - in mvc2 the view and controller are completely separated
+- from sequence - controller register with model and initializes view, view registers with model and the controller updates while the model notifies and view gets updated
 
 ![](img/mvc_sequence.PNG)
 
@@ -1423,23 +1429,39 @@ Java Virtual Machine is very variable because you can run it on many machines
 - different sets of data changing differently (differnt lives, speeds) then do PAC not MVC
 
 #### Benefits
-- may MVC vendor frameworks available
+- many MVC vendor frameworks available
 - multiple view synchronized with same data model
 - easy to plug in new interfaces or change
 - very effective for developments (team = graphics, programming, data professional)
 
 #### Limitations
+- does not fit agent-oriented applications such as interactive/robotics
+- multiple pairs of controllers and viws based on same data model = expensive
+- division btwn view and controller is not always clear
+
+#### Related Architecture
+- implicit invocation such as event-based
+- multi-tier
+- PAC
 
 ## Day 27 Mar 16, 2018
 
-#### PAC 2
-- similar to MVC
+### PAC
+- agent based hierarchial architecture similar to MVC
+- system is decomposed into many cooperating agents
+- each agent has 3 components - presentation, abstraction, control
+- no direct connection between abstraction and presentation
+
+![](img/PAC2.PNG)
+
 - developed from MVC to support the application requirement of multiple agents in addition to the interactive applciation requirement
-- 3 componenes concepts applied to all concetrete subsystem architecture
+- 3 components concepts applied to all concetrete subsystem architecture
 - very suitable for any distributued system where each remote agent has its own functionalities and its own data and interactive interface
 - another feature: all agents need to communicate
 - no communication between presentation and abstraction
 - ```presentation <---> control <------> abstraction```
+
+![](img/pac_real.PNG)
 
 #### Applicable Domain of PAC
 - interactive system where system can be divided into many cooperating agents in a hierarchial structure (master-slave does this but doesnt support interaction) - each agent has specific job
@@ -1454,7 +1476,7 @@ Java Virtual Machine is very variable because you can run it on many machines
 - supporting concurrency (agents in different threads or different devices or computers)
 
 #### Limitations
-- ovrhead due to
+- overhead due to
   - control bridge between presentation and abstraction
   - communications of controls of many agents
 - difficult to determine the right numbers of the agents based on the lose couplings between agents and high independence of each other
