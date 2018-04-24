@@ -26,7 +26,9 @@
 - [Batch Sequential](#batch-sequential)
 - [Pipe and Filter Architecture](#pipe-and-filter-architecture)
 - [Process Control Architecture](#process-control-architecture)
-- [Data Centered Software Architecture](#data-centered-software-architecture)
+- [Data Centered Software Architecture SlideSet 6](#data-centered-software-architecture-slideset-6)
+- [Repository Architecture Style](#repository-architecture-style)
+- [Blackboard Architecture Style](#blackboard-architecture-style)
 - [Midterm 2017](#midterm-2017)
 - [Hierarchy Structure](#hierarchy-structure)
 - [Main Subroutine Software Architecture](#main-subroutine-software-architecture)
@@ -951,7 +953,7 @@ Discuss conditions under which we cn use the styles of data flow architecture
 - the data is either contained and controlled by an entity or is given in a complete or partial view of considered world
 - AI is used when there is no clear view of considered world
 
-### Data Centered Software Architecture
+### Data Centered Software Architecture SlideSet 6
 - characterized by centralized data store belonging to entity that holds it
 - data store: data transfer and its knowledge - explicit and reasoning (in our case data and knowledge is the same)
 - data store is shared by all related components
@@ -985,11 +987,68 @@ Discuss conditions under which we cn use the styles of data flow architecture
     - new data change may trigger evnts to its listeners
     - infrom clients through notify
     - can keep adding more clients
-    - knowledge based systems like voice and image recognition, security systems
+    - most apps using this are knowledge based systems like voice and image recognition, security systems
 
     ![](img/blackboard.PNG)
 
 ## Day 18 Feb 14/15, 2018
+
+### Repository Architecture Style
+- supports user interaction for data processing instead of batch transaction
+- clients can get data from data store and put data in data store (so active)
+- student (clients) and database (data store)
+
+#### Applicable Domain
+- large complex info system with many s/w clients accessing in different ways
+- info system where data transactions drive control flow
+
+#### Benefits
+- data integrity - easy to back up and restore
+- system scalability and reusability of agents - easy to add new software component
+- reduce overhead of transient data between components
+
+#### Limitations
+- data store and reliability/availability are important issues
+- centralized repo is vulnerable to failure compared to distributed repo
+- high dependency btwn data structure of data store and agents
+- changes on data structure leads to impact on agents
+- overhead cost of moving data if it's distrubuted
+
+#### Related Architecture
+- layered
+- multi-tier
+- MVC
+
+### Blackboard Architecture Style
+- all thing work in parallel and indepedently
+- 2 major partitions
+  1. blackboard subsystem used to store data
+  2. knowledge source subsystem where domain specific knowledge is stored
+  3. optional controller that is used to initiate things
+- connection = implicit invocation
+- change in store triggers matched knowlegde source
+  - if there is a problem on the blackboard, student starts solving
+
+#### Applicable Domain
+- immature and complex problems where non-deterministic solutions exist
+- problem spans multiple disciplines
+- optimal, partial, approximate solution is acceptable
+- exhausted searching is impractical
+
+#### Benefits
+- scalability  - ez to add new source or update it
+- concurrency - can work in parallel
+- supports hypotheses experimentation
+- reusability of agents
+
+#### Limitations
+- tight dependency btwn blackboard and knowledge source
+- difficult to know when to terminate reasoning
+- synchornization of multiple agents is an issue
+- debugging and testing is a challenge bc no clear execution path
+
+#### Related Architecture
+- implicit invocation eg event based
 
 ![](img/written.jpg)
 
