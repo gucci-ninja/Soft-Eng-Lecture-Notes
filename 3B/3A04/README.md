@@ -20,9 +20,9 @@
 - [Structural Class Diagrams](#structural-class-diagrams)
 - [Structural (Static) Diagrams](#structural-static-diagrams)
 - [Behavioural (Dynamic) Diagrams](#behavioural-dynamic-diagrams)
-- [General Design Principles SlideSet4](#general-design-principles-slideset4)
+- [General Design Principles SlideSet 4](#general-design-principles-slideset-4)
 - [Design Principles for Security](#design-principles-for-security)
-- [Data Flow Architecture](#data-flow-architecture)
+- [Data Flow Architecture SlideSet 5](#data-flow-architecture-slideset-5)
 - [Batch Sequential](#batch-sequential)
 - [Pipe and Filter Architecture](#pipe-and-filter-architecture)
 - [Process Control Architecture](#process-control-architecture)
@@ -634,7 +634,7 @@ Below is a package diagram for procss view.
 
 ## Day 11 Jan 2, 2018
 
-### General Design Principles SlideSet4
+### General Design Principles SlideSet 4
 - in general
   - low coupling and high cohesion (cohesion = how much communication is between modules and coupling = dependence)
   - in object oriented need to have controller classes
@@ -760,9 +760,15 @@ Below is a package diagram for procss view.
 
 ## Day 14 Feb 5, 2018
 
-### Data Flow Architecture
+### Data Flow Architecture SlideSet 5
 - Data coming in, going through a bunch of tranformations
 - software system is decomposed into functional processing modules
+- connections = 
+  - I/O streams
+  - I/O files
+  - buffers
+  - piped streams
+- BASICALLY we will be talking about architectures that use such conenctions to transofmr input data into output data
 - focus in data flow architecture is data availability
   - in batches or streams
   - linear
@@ -775,13 +781,14 @@ Below is a package diagram for procss view.
   - batch sequential
   - pipes (stateless and serve as conduits for moving streams of data between multiple filters)
   - filters (stream modifiers, which process incoming data and send modified data stream out over pipe to another filter)
-  - *pipes are special cases of filters
-  - close loop process control is another typical data flow architecture
+- pipes are special cases of filters
+- close loop process control is another typical data flow architecture
 
 ### Batch Sequential
-- this architecture is available in the financial sector
+- this architecture is seen in the financial sector
 - they use COBOL or RPG
-- COBOL is specifically designed for this stuff
+  - COBOL is specifically designed for this stuff
+- you literlly can't start a process until the one before is done
 - in Java, your class has declaration (the datatype), behavioural (the functions)
 - in COBOL you have:
   - identification
@@ -810,7 +817,7 @@ Below is a package diagram for procss view.
     - hadoop
 - connection links between batch sequential elements is conducted through temporary files
 - common for business data processing 
-- scripts are commonly used to make batch sequence
+- scripts are commonly used to make batch sequence but we can also make a program
 
 #### Applicable Design Domains
 - data is batched
@@ -868,9 +875,12 @@ Below is a package diagram for procss view.
 
 ![](img/activefilter.PNG)
 
+![](img/pipe_filter_sequence.PNG)
+
 #### Applicable Design Domain
 - whenever system can be broken into series of processing steps
 - simple and stable data format
+- significant work to be pipelined
 - suitable for producer/consumer model
 
 #### Benefits
