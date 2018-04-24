@@ -20,7 +20,7 @@
 - [Structural Class Diagrams](#structural-class-diagrams)
 - [Structural (Static) Diagrams](#structural-static-diagrams)
 - [Behavioural (Dynamic) Diagrams](#behavioural-dynamic-diagrams)
-- [General Design Principles](#general-design-principles)
+- [General Design Principles SlideSet4](#general-design-principles-slideset4)
 - [Design Principles for Security](#design-principles-for-security)
 - [Data Flow Architecture](#data-flow-architecture)
 - [Batch Sequential](#batch-sequential)
@@ -634,9 +634,10 @@ Below is a package diagram for procss view.
 
 ## Day 11 Jan 2, 2018
 
-### General Design Principles
-- low coupling and high cohesion
-- in object oriented need to have controller classes
+### General Design Principles SlideSet4
+- in general
+  - low coupling and high cohesion (cohesion = how much communication is between modules and coupling = dependence)
+  - in object oriented need to have controller classes
 
 ![](img/cohesion_coupling.PNG)
 
@@ -647,7 +648,7 @@ Below is a package diagram for procss view.
 - change in one class may lead to cascading updates to other classes
 - tight-coupling can be removed with new classes or inheritance
 - there should be easy expansion, simplicity and elegance
-- improvements in information hiding help system to be more cohesive
+- improvements in information hiding help system to be more cohesive (info hiding = hiding decisions that are most likely to change)
 - makes systems easier to modify
 - 7 +- 2 is a useful guideline - difference between small and large scale projects is amount of nesting btwn modules
 - possible architecture for **video games** consists of
