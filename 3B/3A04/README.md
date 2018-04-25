@@ -431,14 +431,14 @@ What role business events play in determining the scenario view in the 4+1 model
 
 #### Process View
 Looking at logical view we can determine the process view.
-Below is a package diagram for procss view.
+Below is a activity diagram for procss view.
 
 ![](img/process_view.PNG)
 
 #### Development View
 - once you have identified classes and modules
 - this is also known as the source code view
-- below is an activity diagram for development
+- below is an package diagram for development
 
 ![](img/development_view.PNG)
 
