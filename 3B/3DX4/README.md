@@ -44,6 +44,8 @@
 - [Digital Control](#digital-control)
 - [Exam Hints](#exam-hints)
 
+_Images are from Dr. Lawford's Lecture Slides for SFWRENG 3DX4 Control Systems and the [textbook](#textbook)._
+
 ## Day 1 Jan 4, 2018
 
 ### Course Outline

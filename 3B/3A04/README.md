@@ -50,6 +50,8 @@
 - [Product Family Algebra](#product-family-algebra)
 - [Final Exam](#final-exam)
 
+_Images are from Dr. Khedri's Lecture Slides for SFWR ENG 3A04 Software Design II._
+
 ## Day 1 Jan 5, 2018
 - Fridays are for problem solving :relieved:
 
@@ -618,6 +620,8 @@ Below is a activity diagram for procss view.
 3. - What are the models of a software system? Give an example of one formal design model and one rigorous design model
 - (partial and approximative) descriptions of different aspects of the system/artefact that put emphasis on some things
 - graph (set of edges and vertices)
+- so a formal design model would be finite state machine, predicates, relations, logic
+- rigorous diagram would be class diagram and sequence diagram
 
 4. Software architects initiate their work from the requirements specification document. Explain the influence of the non-functional requirements on the architecture of a system. Can the architect always satisfy the non functional requirements as stipulated in the requirements document and why?
 - in canada the registration system _works_ but it had to be cancelled because a lot of non functional requirements were left out
