@@ -1,6 +1,18 @@
 # Soft-Eng-Lecture-Notes
 
-## Table of Contents
+## Deadlines
+
+Course | Description | Due
+-------|-------------|----
+No | More | Deadlines!
+
+#### Exam Schedule
+
+Course | Date | Time | Duration | Room
+--------|-----|------|----------|------
+No | More | Exams! |
+
+## Courses
 
 ### Year 3 Semester 2
 
@@ -17,14 +29,3 @@
 - [3BB4 Concurrency](3A/3BB4/README.md)
 - [3DB3 Databases](3A/3DB3/README.md)
 
-#### Deadlines
-
-Course | Description | Due
--------|-------------|----
-No | More | Deadlines!
-
-#### Exam Schedule
-
-Course | Date | Time | Duration | Room
---------|-----|------|----------|------
-No | More | Exams! |
