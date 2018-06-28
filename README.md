@@ -1,18 +1,11 @@
 # Soft-Eng-Lecture-Notes
 
-## Deadlines
-
-Course | Description | Due
--------|-------------|----
-No | More | Deadlines!
-
-#### Exam Schedule
-
-Course | Date | Time | Duration | Room
---------|-----|------|----------|------
-No | More | Exams! |
-
 ## Courses
+
+### Summer 2018
+
+- [Algorithms and Data Structures](Summer/Algorithms%20and%20Data%20Structures/README.md)
+- [Fast.ai](Summer/Fast.ai/README.md)
 
 ### Year 3 Semester 2
 
@@ -29,3 +22,14 @@ No | More | Exams! |
 - [3BB4 Concurrency](3A/3BB4/README.md)
 - [3DB3 Databases](3A/3DB3/README.md)
 
+## Deadlines
+
+Course | Description | Due
+-------|-------------|----
+No | More | Deadlines!
+
+#### Exam Schedule
+
+Course | Date | Time | Duration | Room
+--------|-----|------|----------|------
+No | More | Exams! |
