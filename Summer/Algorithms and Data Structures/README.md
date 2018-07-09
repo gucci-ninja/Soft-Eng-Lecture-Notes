@@ -87,4 +87,69 @@ for(Transaction t : collection)
 ![](img/ch1/stack.jpg)
 
 ##### Arithmetic expression evaluation
-- 
+
+```
+( 1 + ( ( 2 + 3 ) * ( 4 * 5 ) ) )
+```
+
+- an arithmetic expression is either a number, or a left parenthesis followed by an arithmetic expression followed by an arithmetic operator followed by another arithmetic expression follwed by a right parenthesis
+- this recursive definition holds for fully parenthesized arithmetic expressions
+- a simple algorithm developed by E.W. Dijkstra uses 2 stacks (one for operands and one for operators)
+- proceeding left to right, there are 4 possible cases
+    - push operands onto operand stack
+    - push operators onto operator stack
+    - ignore left parenthesis
+    - on encountering a right parenthesis, pop an operator, pop the requisite number of operands, and push onto the operanf stack the result of applying that operator to those operands
+
+#### Implementing collections
+
+##### Fixed-capacity stack
+- representation is an array of generic values
+- need to specify capacity
+- array a[] holds items in the stack and integer N counts number of items in stack
+- to remove, decrement N and return a[N]
+- to insert, set a[N] equal to new item and increment N
+
+```
+public class FixedCapcityStack<Item>
+
+a = (Item[]) new Object[cap]; // casting Object to Item
+```
+
+##### Array Resizing
+- in Java, we can't change the size of an array so the stack always uses space proportional to max
+- risking overflow
+- we rewrite ```push()```  and ```pop()``` to test if the stack is too small or too big and add ```resize()``` to change size
+- push() doubles the max once the current max is reached and pop() halves size once array is 1/4 full
+
+##### Loitering
+- garbage collection policy is to reclaim memory associated with objects that can no longer be accesed
+- in pop(), references to pooped items become orphans since they can't be accessed
+- java has no way of knowing this and we call this loitering
+- we avoid this by setting popped items to null so they do not take up space
+
+```
+private void resize(int max) { 
+    // Move stack of size N <= max to a new array of size max
+    Item[] temp = (Item[]) new Object[max];
+    for (int i = 0; i < N; i++)
+        temp[i] = a[i];
+    a = temp;
+}
+
+public void push(String item) {
+    // Add item to the top of the stack
+    if (N == a.length) resize(2*a.length);
+    a[N++] = item;
+}
+
+public String pop() {
+    // Remove itme from top of stack
+    String item = a[--N];
+    a[N] = null; // Avoid loitering
+    if (N > 0 && N == a.length/4) resize(a.length/2);
+    return item;
+}
+```
+
+##### Iteration
