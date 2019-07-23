@@ -488,3 +488,169 @@ new Vue({
     }
 });
 ```
+
+### Writing JavaScript Code in the Templates
+
+The dude tells us that we can write simple javascript statements in the template.
+
+```
+<button v-on:click="counter++">Click me</button>
+<p>{{ counter  2 > 10 ? 'Greater than 10' : 'nop' }}</p>
+```
+
+### Using Two-Way-Binding
+
+The dude tells us how to populate the name of a user but everytime it's changed, it gets updated. He uses the v-model property
+
+```
+HTML
+
+<script src="https://npmcdn.com/vue/dist/vue.js"></script>
+
+<div id="app">
+    <input type="text" v-model="name">
+    <p>{{ name }}</p>
+</div>
+
+JS
+
+new Vue({
+    el: '#app',
+    data: {
+        name: 'Max'
+    }
+})
+```
+
+### Reacting to Changes with Computed Properties
+
+The dude has a data property ```result``` that gets updated when a button is clicked. He adds a new property, ```computed```, which allows us to store properties. Everything stored and computed can be used like a property in the data object of the Vue instance. ```computed``` will only be executed because it only runs when ```counter``` is affected. The result is not being recalculated but it is being cached. 
+
+```
+HTML
+
+<script src="https://npmcdn.com/vue/dist/vue.js"></script>
+
+<div id="app">
+    <button v-on:click="counter++">Increase</button>
+    <button v-on:click="counter--">Decrease</button>
+    <button v-on:click="secondCounter++">Increase Second</button>
+    <p>Counter: {{ counter }} | {{ secondCounter }}</p>
+    <p>Result: {{ result() }} | {{ output }}</p>
+</div>
+
+JS
+
+new Vue({
+    el: '#app',
+    data: {
+        counter: 0,
+        secondCounter: 0
+    },
+    computed: {
+        output: function() {
+            return this.counter > 5 ? 'greater than 5' : 'nop';
+        }
+
+    }
+    methods: {
+        result: function() {
+            return this.counter > 5 ? 'greater than 5' : 'nop';
+        }
+    }
+})
+```
+
+### An Alternative to Computed Properties: Waiting for Changes
+
+Instead of using computed property, we can use the watch object. In computed we set up the property and then set up the function for how it's computed. FOr watch, you set the name of the property you want to watch (```counter```). Then you specify the code you want to execute when ```counter``` is affected. Computed properties are more optimized than watch properties. Computed properties also won't work if you need asynchronous tasks to be run. Computed properties always run immediately (synchronously).
+
+
+```
+HTML
+
+<script src="https://npmcdn.com/vue/dist/vue.js"></script>
+
+<div id="app">
+    <button v-on:click="counter++">Increase</button>
+    <button v-on:click="counter--">Decrease</button>
+    <button v-on:click="secondCounter++">Increase Second</button>
+    <p>Counter: {{ counter }} | {{ secondCounter }}</p>
+    <p>Result: {{ result() }} | {{ output }}</p>
+</div>
+
+JS
+
+new Vue({
+    el: '#app',
+    data: {
+        counter: 0,
+        secondCounter: 0
+    },
+    computed: {
+        output: function() {
+            return this.counter > 5 ? 'greater than 5' : 'nop';
+        }
+    },
+    watch: {
+        counter: function(value) {
+            var vm = this;
+            setTimeout(function() {
+                vm.counter = 0;
+            }, 2000);
+        }
+    }
+})
+```
+
+### Saving Time with Shorthands
+- replace the ```v-on:click``` with ```@click```
+- ```v-bind:href``` --> ```:href```
+
+
+### Assigment 3: Reactive Properties
+
+The objective is to show a result 
+
+```
+HTML
+<script src="https://npmcdn.com/vue/dist/vue.js"></script>
+
+<div id="exercise">
+    <!-- 1) Show a "result" of 'not there yet' as long as "value" is not equal to 37 - you can change "value" with the buttons. Print 'done' once you did it -->
+    <div>
+        <p>Current Value: {{ value }}</p>
+        <button @click="value += 5">Add 5</button>
+        <button @click="value += 1">Add 1</button>
+        <p>{{ result }}</p>
+    </div>
+    <!-- 2) Watch for changes in the "result" and reset the "value" after 5 seconds (hint: setTimeout(..., 5000) -->
+    <div>
+        <input type="text">
+        <p>{{ value }}</p>
+    </div>
+</div>
+
+JS
+new Vue({
+  el: '#exercise',
+  data: {
+    value: 0
+  },
+  computed: {
+		result: function() {
+    	    return this.value < 37 ? 'not there yet' : 'done';
+    }
+   },
+   watch: {
+   	value: function(value) {
+    	var vm = this;
+      setTimeout(function() {
+      	vm.value = 0;
+      }, 5000);
+    }
+   }
+});
+```
+
+### Dynamic Styling with CSS Classes - Basics
