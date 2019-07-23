@@ -272,3 +272,131 @@ new Vue({
 ```
 
 ### Listening to Events
+
+The dude creates a JS FIddle with a button that increases a counter object. He uses the v-on directive, which recieves an /event/ from the Vue template.
+
+```
+HTML
+<script src="https://unpkg.com/vue/dist/vue.js">
+</script>
+
+<div id="app">
+    <button v-on:click="increase">Click me</button>
+    <p>{{ counter }}</p>
+</div>
+```
+
+```
+JS
+
+new Vue({
+    el: '#app',
+    data: {
+        counter: 0
+    },
+    methods: {
+        inrease: function() {
+            this.counter++;
+        }
+    }
+});
+```
+
+### Getting Event Data from the Event Object
+
+```
+HTML
+<script src="https://unpkg.com/vue/dist/vue.js">
+</script>
+
+<div id="app">
+    <button v-on:click="increase">Click me</button>
+    <p>{{ counter }}</p>
+    <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}</p>
+</div>
+```
+
+```
+JS
+
+new Vue({
+    el: '#app',
+    data: {
+        counter: 0,
+        x: 0,
+        y: 0
+    },
+    methods: {
+        increase: function() {
+            this.counter++;
+        },
+        updateCoordinates: function(event) {
+            this.x = event.clientX;
+            this.y = event.clientY;
+        }
+    }
+});
+```
+
+### Passing your own Arguments with Events
+
+The dude wants to add in a parameter so the previous counter increases by sending a parameter to the increase function. He also passes his own argument as well as the event object. The naming for this second one is important - ```$event```.
+
+```
+HTML
+
+<button v-on:click="increase(2, $event)">Click me</button>
+
+JS
+
+increase: function(step, event) {
+    this.counter += step;
+}
+```
+
+### Modifying an Event - with Event Modifiers
+
+The dude modifies the coordinae update event by adding a dead spot so that the coordinaes don't change in a certain area. He does it first by creating a method called dummy that stops propagation of the event.
+
+```
+dummy: function(event) {
+    event.stopPropagation();
+}
+```
+
+Then he does it by using a modifier (.stop). It does the same thing as the dummy solution. We can also make it .stop.prevent if you want to prevent default event object. In this case it won't do anything.
+
+```
+HTML
+<script src="https://unpkg.com/vue/dist/vue.js">
+</script>
+
+<div id="app">
+    <button v-on:click="increase(2, $event)">Click me</button>
+    <p>{{ counter }}</p>
+    <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}
+        - <span v-on:mousemove.stop="dummy">DEAD SPOT</span></p>
+</div>
+```
+
+```
+JS
+
+new Vue({
+    el: '#app',
+    data: {
+        counter: 0,
+        x: 0,
+        y: 0
+    },
+    methods: {
+        increase: function(step, event) {
+            this.counter += step;
+        },
+        updateCoordinates: function(event) {
+            this.x = event.clientX;
+            this.y = event.clientY;
+        }
+    }
+});
+```
