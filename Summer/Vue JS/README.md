@@ -400,3 +400,91 @@ new Vue({
     }
 });
 ```
+
+### Listening to Keyboard Events
+
+The dude creates an alert that uses a key modifiers. It is fired whenever the user releases the key. Both space and enter key will trigger the event.
+
+
+```
+HTML
+<script src="https://unpkg.com/vue/dist/vue.js">
+</script>
+
+<div id="app">
+    <button v-on:click="increase(2, $event)">Click me</button>
+    <p>{{ counter }}</p>
+    <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}
+        - <span v-on:mousemove.stop="dummy">DEAD SPOT</span></p>
+    <input type="text" v-on:keyup.enter.space="alertMe">
+</div>
+```
+
+```
+JS
+
+new Vue({
+    el: '#app',
+    data: {
+        counter: 0,
+        x: 0,
+        y: 0
+    },
+    methods: {
+        increase: function(step, event) {
+            this.counter += step;
+        },
+        updateCoordinates: function(event) {
+            this.x = event.clientX;
+            this.y = event.clientY;
+        },
+        alertMe: function() {
+            alert('Alert');
+        }
+    }
+});
+```
+
+### Assignment 2: Events
+
+The dude wants us to show an alert when a button is clicked. Then, listen to a keydown event on an nput and store it in a data property. We would need sccess to the input field. Then, listen to keydown but only refresh the property if enter is pressed.
+
+```
+<script src="https://npmcdn.com/vue/dist/vue.js"></script>
+
+<div id="exercise">
+    <!-- 1) Show an alert when the Button gets clicked -->
+    <div>
+        <button v-on:click="alertMe">Show Alert</button>
+    </div>
+    <!-- 2) Listen to the "keydown" event and store the value in a data property (hint: event.target.value gives you the value) -->
+    <div>
+        <input v-on:keydown="getVal" type="text">
+        <p>{{ value }}</p>
+    </div>
+    <!-- 3) Adjust the example from 2) to only fire if the "key down" is the ENTER key -->
+    <div>
+        <input v-on:keydown.enter="getVal" type="text">
+        <p>{{ value }}</p>
+    </div>
+</div>
+```
+
+```
+JS
+
+new Vue({
+    el: '#exercise',
+    data: {
+        value: ''
+    },
+    methods: {
+    	alertMe: function() {
+      	alert('Alert');
+      },
+      getVal: function(event) {
+      	this.value = event.target.value;
+      }
+    }
+});
+```
