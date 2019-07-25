@@ -14,8 +14,7 @@ In this part the dude wrote some code on JS Fiddle that binds to an element on t
 - in methods, data properties get proxied to the DOM
 - you can access elements from data in methods by doing this.title for title
 
-```
-HTML
+```html
 <script src="https://unpkg.com/vue/dist/vue.js">
 </script>
 
@@ -25,9 +24,7 @@ HTML
 </div>
 ```
 
-```
-JS
-
+```js
 new Vue({
     el: '#app',
     data: {
@@ -77,8 +74,7 @@ The dude makes another app on JS Fiddle and explains the connection between the 
 
 Data stored in the Vue instance can be outputted in our template pretty easily - {{ data_object }}. You can also execute a method from the Vue instance like this - {{ method_name() }}. 
 
-```
-HTML
+```html
 <script src="https://unpkg.com/vue/dist/vue.js">
 </script>
 
@@ -87,9 +83,7 @@ HTML
 </div>
 ```
 
-```
-JS
-
+```js
 new Vue({
     el: '#app',
     data: {
@@ -106,8 +100,7 @@ new Vue({
 
 We can access the title property in our HTML but if we wanted our function sayHello to access the title property, we would have to use this.title since we are working within the Vue instance.
 
-```
-HTML
+```html
 <script src="https://unpkg.com/vue/dist/vue.js">
 </script>
 
@@ -116,9 +109,7 @@ HTML
 </div>
 ```
 
-```
-JS
-
+```js
 new Vue({
     el: '#app',
     data: {
@@ -136,13 +127,13 @@ new Vue({
 
 The dude adds a link property in data. He makes an anchor tag and tries to pass in the link. It fails because you can't use the {{ }} syntax for HTML element attributes.
 
-```
+```html
 <a href="{{ link }}">Google</a> // will not work
 ```
 
 To bind the link property you have to use a directive called v-bind. We don't need the {{}} because we're using a Vue directive
 
-```
+```html
 <a v-bind:href="link">Google</a>
 ```
 
@@ -150,7 +141,7 @@ To bind the link property you have to use a directive called v-bind. We don't ne
 
 A directive is basically an instruction you place in your code. VueJS ships with a few built-in directives that cover a good amount of use cases. You can also write your own directives.
 
-```
+```html
 <a v-bind:href="link">Google</a>
 ```
 
@@ -161,8 +152,7 @@ A directive is basically an instruction you place in your code. VueJS ships with
 
 The dude adds an h1 {{ title }}. Without v-once, the code will print out 'Hello' twice. Once as the h1 title and again in the p tag. When the title property is changed in sayHello, all usages of title are re-rendered. To keep the first title to remain 'Hello World' we can use v-once so it doesn't re-render.
 
-```
-HTML
+```html
 <script src="https://unpkg.com/vue/dist/vue.js">
 </script>
 
@@ -172,9 +162,7 @@ HTML
 </div>
 ```
 
-```
-JS
-
+```js
 new Vue({
     el: '#app',
     data: {
@@ -193,8 +181,7 @@ new Vue({
 
 The guy adds the raw HTML code for the link to the Vue instance. By default VueJS escapes HTML and only renders text, which is good to avoid cross-side scripting. To render HTML content, you need to use a directive called v-html.
 
-```
-HTML
+```html
 <script src="https://unpkg.com/vue/dist/vue.js">
 </script>
 
@@ -206,9 +193,7 @@ HTML
 </div>
 ```
 
-```
-JS
-
+```js
 new Vue({
     el: '#app',
     data: {
@@ -232,8 +217,7 @@ new Vue({
 - bind image to src
 
 
-```
-HTML
+```html
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
 <div id="exercise">
@@ -253,9 +237,7 @@ HTML
     </div>
 </div>
 ```
-```
-JS
-
+```js
 new Vue({
 	el: '#exercise',
   data: {
@@ -275,8 +257,7 @@ new Vue({
 
 The dude creates a JS FIddle with a button that increases a counter object. He uses the v-on directive, which recieves an /event/ from the Vue template.
 
-```
-HTML
+```html
 <script src="https://unpkg.com/vue/dist/vue.js">
 </script>
 
@@ -286,9 +267,7 @@ HTML
 </div>
 ```
 
-```
-JS
-
+```js
 new Vue({
     el: '#app',
     data: {
@@ -304,8 +283,7 @@ new Vue({
 
 ### Getting Event Data from the Event Object
 
-```
-HTML
+```html
 <script src="https://unpkg.com/vue/dist/vue.js">
 </script>
 
@@ -316,9 +294,7 @@ HTML
 </div>
 ```
 
-```
-JS
-
+```js
 new Vue({
     el: '#app',
     data: {
@@ -342,13 +318,10 @@ new Vue({
 
 The dude wants to add in a parameter so the previous counter increases by sending a parameter to the increase function. He also passes his own argument as well as the event object. The naming for this second one is important - ```$event```.
 
-```
-HTML
-
+```html
 <button v-on:click="increase(2, $event)">Click me</button>
-
-JS
-
+```
+```js
 increase: function(step, event) {
     this.counter += step;
 }
@@ -358,7 +331,7 @@ increase: function(step, event) {
 
 The dude modifies the coordinae update event by adding a dead spot so that the coordinaes don't change in a certain area. He does it first by creating a method called dummy that stops propagation of the event.
 
-```
+```js
 dummy: function(event) {
     event.stopPropagation();
 }
@@ -366,8 +339,7 @@ dummy: function(event) {
 
 Then he does it by using a modifier (.stop). It does the same thing as the dummy solution. We can also make it .stop.prevent if you want to prevent default event object. In this case it won't do anything.
 
-```
-HTML
+```html
 <script src="https://unpkg.com/vue/dist/vue.js">
 </script>
 
@@ -379,9 +351,7 @@ HTML
 </div>
 ```
 
-```
-JS
-
+```js
 new Vue({
     el: '#app',
     data: {
@@ -406,8 +376,7 @@ new Vue({
 The dude creates an alert that uses a key modifiers. It is fired whenever the user releases the key. Both space and enter key will trigger the event.
 
 
-```
-HTML
+```html
 <script src="https://unpkg.com/vue/dist/vue.js">
 </script>
 
@@ -420,9 +389,7 @@ HTML
 </div>
 ```
 
-```
-JS
-
+```js
 new Vue({
     el: '#app',
     data: {
@@ -449,7 +416,7 @@ new Vue({
 
 The dude wants us to show an alert when a button is clicked. Then, listen to a keydown event on an nput and store it in a data property. We would need sccess to the input field. Then, listen to keydown but only refresh the property if enter is pressed.
 
-```
+```html
 <script src="https://npmcdn.com/vue/dist/vue.js"></script>
 
 <div id="exercise">
@@ -470,9 +437,7 @@ The dude wants us to show an alert when a button is clicked. Then, listen to a k
 </div>
 ```
 
-```
-JS
-
+```js
 new Vue({
     el: '#exercise',
     data: {
@@ -493,7 +458,7 @@ new Vue({
 
 The dude tells us that we can write simple javascript statements in the template.
 
-```
+```html
 <button v-on:click="counter++">Click me</button>
 <p>{{ counter  2 > 10 ? 'Greater than 10' : 'nop' }}</p>
 ```
@@ -502,18 +467,16 @@ The dude tells us that we can write simple javascript statements in the template
 
 The dude tells us how to populate the name of a user but everytime it's changed, it gets updated. He uses the v-model property
 
-```
-HTML
-
+```html
 <script src="https://npmcdn.com/vue/dist/vue.js"></script>
 
 <div id="app">
     <input type="text" v-model="name">
     <p>{{ name }}</p>
 </div>
+```
 
-JS
-
+```js
 new Vue({
     el: '#app',
     data: {
@@ -526,9 +489,7 @@ new Vue({
 
 The dude has a data property ```result``` that gets updated when a button is clicked. He adds a new property, ```computed```, which allows us to store properties. Everything stored and computed can be used like a property in the data object of the Vue instance. ```computed``` will only be executed because it only runs when ```counter``` is affected. The result is not being recalculated but it is being cached. 
 
-```
-HTML
-
+```html
 <script src="https://npmcdn.com/vue/dist/vue.js"></script>
 
 <div id="app">
@@ -538,9 +499,8 @@ HTML
     <p>Counter: {{ counter }} | {{ secondCounter }}</p>
     <p>Result: {{ result() }} | {{ output }}</p>
 </div>
-
-JS
-
+```
+```js
 new Vue({
     el: '#app',
     data: {
@@ -566,9 +526,7 @@ new Vue({
 Instead of using computed property, we can use the watch object. In computed we set up the property and then set up the function for how it's computed. FOr watch, you set the name of the property you want to watch (```counter```). Then you specify the code you want to execute when ```counter``` is affected. Computed properties are more optimized than watch properties. Computed properties also won't work if you need asynchronous tasks to be run. Computed properties always run immediately (synchronously).
 
 
-```
-HTML
-
+```html
 <script src="https://npmcdn.com/vue/dist/vue.js"></script>
 
 <div id="app">
@@ -578,9 +536,9 @@ HTML
     <p>Counter: {{ counter }} | {{ secondCounter }}</p>
     <p>Result: {{ result() }} | {{ output }}</p>
 </div>
+```
 
-JS
-
+```js
 new Vue({
     el: '#app',
     data: {
@@ -612,8 +570,7 @@ new Vue({
 
 The objective is to show a result 
 
-```
-HTML
+```html
 <script src="https://npmcdn.com/vue/dist/vue.js"></script>
 
 <div id="exercise">
@@ -631,7 +588,9 @@ HTML
     </div>
 </div>
 
-JS
+```
+
+```js
 new Vue({
   el: '#exercise',
   data: {
@@ -654,3 +613,35 @@ new Vue({
 ```
 
 ### Dynamic Styling with CSS Classes - Basics
+
+The ability to change the styling of the page by attaching CSS classes to divs in the Vue instance. Upon clicking on the block it will change to red.
+
+```html
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+    <div class="demo" @click="attachRed = !attachRed"></div>
+    <div class="demo"></div>
+    <div class="demo"></div>
+</div>
+```
+
+```js
+new Vue({
+    el: '#app',
+    data: {
+        attachRed: false
+    }
+})
+```
+
+```css
+.red {
+    background-color: red;
+}
+.green {
+    background-color: green;
+}
+.blue {
+    background-color: blue;
+}
