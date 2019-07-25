@@ -614,13 +614,15 @@ new Vue({
 
 ### Dynamic Styling with CSS Classes - Basics
 
-The ability to change the styling of the page by attaching CSS classes to divs in the Vue instance. Upon clicking on the block it will change to red.
+The ability to change the styling of the page by attaching CSS classes to divs in the Vue instance. Upon clicking on the block it will change to red. We can attach the CSS class red to demo by binding class with a conditional for whether it should be red or not. You can just say ```:class="{red}"``` but if your class has special characters then you need to enclose it in quotes.
 
 ```html
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
 <div id="app">
-    <div class="demo" @click="attachRed = !attachRed"></div>
+    <div class="demo" 
+    @click="attachRed = !attachRed"
+    :class="{red: attachRed}"></div>
     <div class="demo"></div>
     <div class="demo"></div>
 </div>
