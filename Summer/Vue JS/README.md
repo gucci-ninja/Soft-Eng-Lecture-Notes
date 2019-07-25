@@ -647,3 +647,49 @@ new Vue({
 .blue {
     background-color: blue;
 }
+```
+
+### Dynamic Styling with CSS Classes - Using Objects
+
+You can put the conditional to change the class in the computed property of the Vue instance.
+
+```html
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+    <div class="demo" 
+    @click="attachRed = !attachRed"
+    :class="divClasses"></div>
+    <div class="demo"></div>
+    <div class="demo"></div>
+</div>
+```
+
+```js
+new Vue({
+    el: '#app',
+    data: {
+        attachRed: false
+    },
+    computed: {
+        divClasses: function() {
+            return {
+                red: this.attachRed,
+                blue: !this.attachRed
+            };
+        }
+    }
+})
+```
+
+```css
+.red {
+    background-color: red;
+}
+.green {
+    background-color: green;
+}
+.blue {
+    background-color: blue;
+}
+```
