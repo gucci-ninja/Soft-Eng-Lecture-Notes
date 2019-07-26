@@ -612,7 +612,9 @@ new Vue({
 });
 ```
 
-### Dynamic Styling with CSS Classes - Basics
+### Dynamic Styling with CSS Classes
+
+#### Basics
 
 The ability to change the styling of the page by attaching CSS classes to divs in the Vue instance. Upon clicking on the block it will change to red. We can attach the CSS class red to demo by binding class with a conditional for whether it should be red or not. You can just say ```:class="{red}"``` but if your class has special characters then you need to enclose it in quotes.
 
@@ -638,6 +640,13 @@ new Vue({
 ```
 
 ```css
+.demo {
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+    display: inline-block;
+    margin: 10px;
+}
 .red {
     background-color: red;
 }
@@ -649,7 +658,7 @@ new Vue({
 }
 ```
 
-### Dynamic Styling with CSS Classes - Using Objects
+#### Using Objects
 
 You can put the conditional to change the class in the computed property of the Vue instance.
 
@@ -682,14 +691,61 @@ new Vue({
 })
 ```
 
-```css
-.red {
-    background-color: red;
-}
-.green {
-    background-color: green;
-}
-.blue {
-    background-color: blue;
-}
+#### Using Names
+
+You can attach multiple classes using the array syntax by doing ```:class="[color, {red: attachRed}]"```
+
+```html
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+    <div class="demo" 
+    @click="attachRed = !attachRed"
+    :class="divClasses"></div>
+    <div class="demo" :class="[color, {red: attachRed}]"></div>
+    <div class="demo"></div>
+    <hr>
+    <input type="text" v-model="color">
+</div>
+```
+
+```js
+new Vue({
+    el: '#app',
+    data: {
+        attachRed: false,
+        color: 'green'
+    },
+    computed: {
+        divClasses: function() {
+            return {
+                red: this.attachRed,
+                blue: !this.attachRed
+            };
+        }
+    }
+})
+```
+
+### Setting Styles Dynamically (without CSS Classes)
+
+```html
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+    <div class="demo" :style></div>
+    <div class="demo" :class="[color, {red: attachRed}]"></div>
+    <div class="demo"></div>
+    <hr>
+    <input type="text" v-model="color">
+</div>
+```
+
+```js
+new Vue({
+    el: '#app',
+    data: {
+        color: 'gray'
+    }
+})
 ```
