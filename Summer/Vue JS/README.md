@@ -640,7 +640,7 @@ new Vue({
 ```
 
 ```css
-.demo {
+.demo {gray
     width: 100px;
     height: 100px;
     background-color: gray;
@@ -703,7 +703,7 @@ You can attach multiple classes using the array syntax by doing ```:class="[colo
     @click="attachRed = !attachRed"
     :class="divClasses"></div>
     <div class="demo" :class="[color, {red: attachRed}]"></div>
-    <div class="demo"></div>
+    <div class="demo" :class="color"></div>
     <hr>
     <input type="text" v-model="color">
 </div>
@@ -729,15 +729,18 @@ new Vue({
 
 ### Setting Styles Dynamically (without CSS Classes)
 
+To change the background colour, we can either do `:style="{'background-color':color}"` since it has a dash or we can do `:style="{backgroundColor: color}"`
+
 ```html
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
 <div id="app">
-    <div class="demo" :style></div>
-    <div class="demo" :class="[color, {red: attachRed}]"></div>
+    <div class="demo" :style="{backgroundColor: color}"></div>
+    <div class="demo" :style="myStyle"></div>
     <div class="demo"></div>
     <hr>
     <input type="text" v-model="color">
+    <input type="text" v-mdoel="width">
 </div>
 ```
 
@@ -745,7 +748,30 @@ new Vue({
 new Vue({
     el: '#app',
     data: {
-        color: 'gray'
+        color: 'gray',
+        width: 100
+    },
+    computed: {
+        myStyle: function() {
+            return {
+                backgroundColor: this.color,
+                width: this.width + 'px'
+            };s
+        }
     }
 })
 ```
+
+### Styling Elements with the Array Syntax
+
+You can add an array with the style.
+
+ ```html
+ <div class="demo" :style="[myStyle, {height: width + 'px'}]">
+ ```
+
+ ### Assignment 4: Styling
+
+ ### Module Wrap Up
+ 
+
