@@ -772,6 +772,10 @@ You can add an array with the style.
 
  ### Assignment 4: Styling
 
+ Change between the highlight and shrink effect on a div by using `setInterval` which works similarly to `setTimeout` except instead of occuring after x seconds it fires every x seconds.
+
+
+
  ### Module Wrap Up
- 
+
 

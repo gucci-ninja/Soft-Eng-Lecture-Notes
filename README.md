@@ -2,6 +2,12 @@
 
 ## Courses
 
+### Year 4 Semester 1
+
+- [4G06 Capstone](4A/4G06/README.md)
+- [4AA4 Real Time Systems](4A/4AA4/README.md)
+- [4HC3 Human Computer Interfaces](4A/4HC3/README.md)
+
 ### Summer 2019
 
 - [Vue JS](Summer/Vue%20JS/README.md)
