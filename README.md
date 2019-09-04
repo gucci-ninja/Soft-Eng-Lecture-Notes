@@ -7,6 +7,8 @@
 - [4G06 Capstone](4A/4G06/README.md)
 - [4AA4 Real Time Systems](4A/4AA4/README.md)
 - [4HC3 Human Computer Interfaces](4A/4HC3/README.md)
+- [3Y03 Statistics and Probability](4A/3Y03/README.md)
+- [4E03 Performance Analysis of Computer Systems](4A/4E03/README.md)
 
 ### Summer 2019
 
