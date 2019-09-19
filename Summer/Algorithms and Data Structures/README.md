@@ -1,5 +1,8 @@
 # Algorithms and Data Structures
 
+## Table of Contents
+- [Bags, Queues, and Stacks](#bags-queues-and-stacks)
+
 ## Fundamentals
 
 ### Bags, Queues, and Stacks

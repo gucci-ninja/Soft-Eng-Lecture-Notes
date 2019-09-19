@@ -1,5 +1,18 @@
 # 4HC3 Human Compute Interaction
 
+## Table of Contents
+- [Elm Architecture](#elm-architecture)
+- [Assignment 1](#assignment-1)
+- [Communication](#communication)
+- [Elm](#elm)
+- [Design Thinking](#design-thinking)
+- [Marking](#marking)
+- [What is Design](#what-is-design)
+- [Counter Example for Good Design](#counter-example-for-good-design)
+- [Design Vocabulary](#design-vocabulary)
+- [Tutorial Assignment 3](#tutorial-assignment-3)
+- [The Psychology of Everyday Actions](#the-psychology-of-everyday-actions)
+
 ## Tutorial 1 - Sept 3, 2019
 
 ### Elm Architecture

@@ -49,7 +49,8 @@ end
 
 
 filenames = ["3B/2B03/", "3B/3A04/", "3B/3DX4/", "3B/3I03/", "3B/3S03/",
-"3B/4A03/", "3B/1BA3/", "3A/3DB3/", "3A/3BB4/", "Summer/Fast.ai/", "Summer/Algorithms and Data Structures/"]
+"3B/4A03/", "3B/1BA3/", "3A/3DB3/", "3A/3BB4/", "Summer/Fast.ai/", "Summer/Algorithms and Data Structures/",
+"4A/3Y03/", "4A/4E03/", "4A/4HC3/", "4A/4AA4/"]
 
 filenames.each do |fname|
     puts fname

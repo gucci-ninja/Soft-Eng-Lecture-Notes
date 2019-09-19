@@ -1,5 +1,20 @@
 # 4E03 Performance Analysis of Computer Systems
 
+## Table of Contents
+- [Crash Course in Probability](#crash-course-in-probability)
+- [Higher Moments](#higher-moments)
+- [Variance](#variance)
+- [Geometric Distribution](#geometric-distribution)
+- [Poisson Distribution](#poisson-distribution)
+- [Exponential Distribution](#exponential-distribution)
+- [Memoryless Property](#memoryless-property)
+- [Discrete-Time Markov Chains](#discrete-time-markov-chains)
+- [Tutorial 1 - Sept 13, 2019](#tutorial-1---sept-13-2019)
+- [Limitiing Probabilities](#limitiing-probabilities)
+- [Stationary Probabilities](#stationary-probabilities)
+- [Key Theorem](#key-theorem)
+- [Expect Number of JObs in System](#expect-number-of-jobs-in-system)
+
 ## Day 1 - Sept 4, 2019
 - weekly assignments (11 in total) 
 - mark is based on best 5 assignments

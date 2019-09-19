@@ -1,6 +1,7 @@
 # Fast.ai
 
-## Lesson 1 - Recognizing Cats and Dogs
+## Table of Contents
+- [Setting Up](#setting-up)
 
 ### Setting Up
 - want a GPU, graphics processing unit

@@ -1,5 +1,29 @@
 # 4AA4 Real Time Systems
 
+## Table of Contents
+- [Course Information](#course-information)
+- [Grading](#grading)
+- [Introduction to Real-time Systems](#introduction-to-real-time-systems)
+- [Quiz 1](#quiz-1)
+- [Quick Review T/F](#quick-review-t/f)
+- [Real-Time Operating Systems](#real-time-operating-systems)
+- [Kernel Module](#kernel-module)
+- [Passing Commandline Argumnts](#passing-commandline-argumnts)
+- [RTOS and Kernel Module Tutorial](#rtos-and-kernel-module-tutorial)
+- [System Calls](#system-calls)
+- [Makefile](#makefile)
+- [Real-Time Scheduling](#real-time-scheduling)
+- [Program in Virtual Memory](#program-in-virtual-memory)
+- [Multiple Processes](#multiple-processes)
+- [Thread](#thread)
+- [Creating threads in C](#creating-threads-in-c)
+- [Real Time Systems and Control Applications](#real-time-systems-and-control-applications)
+- [Race COndition](#race-condition)
+- [Midterm Details](#midterm-details)
+- [Real-Time Tasks](#real-time-tasks)
+- [](#)
+- [Scheduling Algorithms](#scheduling-algorithms)
+
 ## Day 1 - Sept 3, 2019
 
 ### Course Information

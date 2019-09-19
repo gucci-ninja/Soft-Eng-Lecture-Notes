@@ -1,9 +1,26 @@
 # 3Y03 Statistics and Probability
 
-## Day 1 - Sept 4, 2019
-- assignments due Thursdays midnight
-- Test 1 - Mon Sept 30
-- https://www.childsmath.ca/childsa/forms/3yStuff/student_admin.php
+## Table of Contents
+- [What is Probability](#what-is-probability)
+- [Sample Spaces](#sample-spaces)
+- [Events](#events)
+- [Event Operations](#event-operations)
+- [Counting Techniques (aka Combinatorial Analysis)](#counting-techniques-aka-combinatorial-analysis)
+- [Permutations](#permutations)
+- [Combinations](#combinations)
+- [Binominal Theorem](#binominal-theorem)
+- [The Axioms of Probability](#the-axioms-of-probability)
+- [Conditional Probability](#conditional-probability)
+- [Intersection/Multiplication and the Laws of Total Probability](#intersection/multiplication-and-the-laws-of-total-probability)
+- [Independence](#independence)
+- [Random Variables](#random-variables)
+- [Discrete Random Variable](#discrete-random-variable)
+- [Probability Mass Function](#probability-mass-function)
+- [Cumulative Distribution Function (cmf)](#cumulative-distribution-function-cmf)
+- [Mean and Variance of a DRV](#mean-and-variance-of-a-drv)
+- [Binomial Distribution](#binomial-distribution)
+- [Geometric and Negative Binomial Distribution](#geometric-and-negative-binomial-distribution)
+- [Negative Binomial Distribution](#negative-binomial-distribution)
 
 ### What is Probability
 - Statistics is roughly the science and application of collecting and analyzing data and inferring information from possibly incomplete data sets

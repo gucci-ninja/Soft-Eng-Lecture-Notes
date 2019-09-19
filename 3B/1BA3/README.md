@@ -1,28 +1,28 @@
 # 1BA3 Organizational Behavior
 
 ## Table of Contents
-- [What is Communication](#what-is-communication)
-- [Non-verbal Language of work](#non-verbal-language-of-work)
-- [Computer Mediated Language](#computer-mediated-language)
-- [What is Leadership](#what-is-leadership)
-- [Trait Theory of Leadership](#trait-theory-of-leadership)
-- [Ohio State Leadership Study](#ohio-state-leadership-study)
-- [Situational Theories of Leadership](#situational-theories-of-leadership)
-- [Leader-Member Exchange (LMX) Theory](#leader-member-exchange-lmx-theory)
-- [Transactional vs. Transformational Leadership](#transactional-vs-transformational-leadership)
-- [Social Influence and Socialization](#social-influence-and-socialization)
-- [Psychological Contract](#psychological-contract)
-- [Employee Orientation Programs](#employee-orientation-programs)
-- [Socialization Tatics](#socialization-tatics)
-- [Mentoring](#mentoring)
-- [What is Power](#what-is-power)
-- [Empowerment](#empowerment)
-- [Influence Tatics](#influence-tatics)
-- [Who wants power](#who-wants-power)
-- [Organizational Politics](#organizational-politics)
-- [Ethics in Organizations](#ethics-in-organizations)
-- [Sexual Harassment](#sexual-harassment)
-- [Ethical Guidelines](#ethical-guidelines)
+- [What is Communication](#what-is-communication)
+- [Non-verbal Language of work](#non-verbal-language-of-work)
+- [Computer Mediated Language](#computer-mediated-language)
+- [What is Leadership](#what-is-leadership)
+- [Trait Theory of Leadership](#trait-theory-of-leadership)
+- [Ohio State Leadership Study](#ohio-state-leadership-study)
+- [Situational Theories of Leadership](#situational-theories-of-leadership)
+- [Leader-Member Exchange (LMX) Theory](#leader-member-exchange-lmx-theory)
+- [Transactional vs. Transformational Leadership](#transactional-vs-transformational-leadership)
+- [Social Influence and Socialization](#social-influence-and-socialization)
+- [Psychological Contract](#psychological-contract)
+- [Employee Orientation Programs](#employee-orientation-programs)
+- [Socialization Tatics](#socialization-tatics)
+- [Mentoring](#mentoring)
+- [What is Power](#what-is-power)
+- [Empowerment](#empowerment)
+- [Influence Tatics](#influence-tatics)
+- [Who wants power](#who-wants-power)
+- [Organizational Politics](#organizational-politics)
+- [Ethics in Organizations](#ethics-in-organizations)
+- [Sexual Harassment](#sexual-harassment)
+- [Ethical Guidelines](#ethical-guidelines)
 
 ## Week 7 - Communication
 
