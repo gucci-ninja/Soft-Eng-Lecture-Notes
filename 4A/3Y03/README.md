@@ -601,7 +601,9 @@ Interpretation: f(x) = probability of failing x-1 times and then succeeding on t
 
 #### Mean
 
-<ipad>
+![](img/mean_proof.jpg)
+
+By the following:
 
      μ = E(x) 
        = p(1/p^2) 

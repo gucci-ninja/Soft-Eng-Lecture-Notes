@@ -234,3 +234,12 @@ for first times | skilled behaviour
     - one step at a time
 - unconscius
     - internalized
+
+### Learned Helplessness
+
+### Positive Psychology
+- make sure your app is giving user a sense of success
+- reinforce success
+- people learn from their mistakes
+- turn failure into learning experience
+    - IDEO: design company, slogan is fail often, fail fast

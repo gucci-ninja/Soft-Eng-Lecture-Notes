@@ -140,7 +140,8 @@
 ## Day 3 - Sept 9, 2019
 
 #### Distributions
-- cumulative distributighon function 
+- way of modelling the probability of an event
+- we will use cumulative distribution function (cdf)
 - any probability can be calculated given this function
 - if there's only one variable, drop the subscript
 
@@ -151,100 +152,137 @@ P{ 1 < X <= 4}
 ```
 
 ##### Continuous Random Variables
-- for quantities tha take on values on a continuum - eg time
-- F(x) is continous
+- for quantities that take on values on a continuum - eg time
+- F(x) is continuous
 - integrals
-- assocaied density function
+- associated density function
+- taking an integral of that will give you the cdf
+
+![](img/density_function.png)
+
+![](img/density_function_cdf.png)
+
 
 #### Discrete Random Variables
+- probability mass function (pmf) gives probabilities that the random variable equals values in a discrete set
 - random variable x takes on the value i and sums it
 
+![](img/discrete_random_variable.png)
+
 #### Summary Statistics - Mean (Expected Value)
-- sometimes called avergae but we wil use tha for another purpose
-- if you were measureing respnse time from db server every 5 minutes, and take the numerical average
-- the expected vaue (mean) may be the same as the average but doesn't have to be
+- sometimes called average but we will use that for another purpose
+- if you were measuring respnse time from db server every 5 minutes, and take the numerical average
+- the expected value (mean) may be the same as the average but doesn't have to be
+- the expected value does not have to be an outcome (eg dice E[X] = 3.5)
 
-### Higher Moments
-- kth moment is raising the value to kth value
+![](img/mean.png)
+
+#### Higher Moments
+- kth moment is raising the value to kth value to find the kth moment
 - k = 2 is the second moment
-- statisicians work with higher moments, wewill only use 1st and s2nd moments
+- statisicians work with higher moments, we will only use 1st and s2nd moments
+- different ways to compute for discrete vs continuous
+- k = 1 gives us the mean, same formula as before
 
-### Variance
+![](img/higher_moment.png)
+
+#### Variance
 - an important summary statistic
-- measures how spread out hte distributoin is
-- Var(X) = expected difference from random vairables from the mean squared
+- measures how spread out the distribution is
+- Var(X) = expected difference from random variables from the mean squared
 - squaring it makes it positive, and is actually easier to work with than absoute value
-- Var(X) = sigma^2 = E[(X - E[X])^2]
-- when we tlk about computing systems, knowing variance can help us get an idea ofhow the computer system performs
+- ![](img/variance.png)
+- when we talk about computing systems, knowing variance can help us get an idea ofhow the computer system performs
 - if we're scheduling requests on a web server and the request are roughly the same sizes then variance is low and the requests can just be processed in order
 - if we have different kind of requests with small files vs large files, the variance is high. we would have to worry about delaying the small files when there are large files
+- the square root of variance, σ<sub>x</sub>
+
+![](img/variance.jpg)
 
 #### Example
-Given the denisity of a a function (lifetime of a omponent in days)
+Given the denisity of a a function (lifetime of a component in days)
+- do we need to answer in terms of k or independent of k?
+- can check integral 0 to 100 f(x) = 1
 
-1. Find probability that lifetime is between 9 and 90 days
-    - do we need to answer in terms of k or independent of k?
-    - can check integral 0 to 100 f(x) = 1
-<work>
+![](img/continuous_cdf_example.jpg)
 
-### Geometric Distribution
-- how many times do i do the same experiment where q is the probability of success, i get the kth experiment to be a success.
+#### Some Useful Distributions
 
-```
-px(k) = q(1-q)^(k-1), k = 1,2
-```
-
+##### Geometric Distribution
+- how many times do you do the same experiment where q is the probability of success, you get the kth experiment to be a success.
+- ![](img/geometric_distribution.png)
+- ![](img/geometric_distribution2.png)
 - as probablity of sucess gets lower, you have to wait longer to see a success
 - variane goes up as q goes down
 
-### Poisson Distribution
+##### Poisson Distribution
 - probabilty that random value takes on value of k :)((((()))))
-- all the values hsould sum up to 1
-- if you do the sumamtion of  to infinity, e^-lambae^-lmb = 1
+- one parameter - lambda
+- all the values should sum up to 1
+- if you do the summation of  to infinity, e^-lambae^-dlmb = 1
 - taylor series expansion
 - E[X] = mean, Var(X) = variance, both are equal to lambda
 - the satistician Poisson used this to model deaths by horse kicks in the Prussian army
 
-#### Uniform Distribution
-- what most people think of when we say somethig is compeltley random
-- `f(x) = {1/(b-a) a<= x <= b and 0 otherwise}`
-- random variable is equally lieky to take values anwhere between a and b
-- this doesnt mean P{X = i} = P{X = j}, though it is trivially true
--
+![](img/poisson_distribution.png)
 
-### Exponential Distribution
-- the probability that it takes on negative vakue should be 0 
+![](img/poisson_distribution2.png)
+
+##### Uniform Distribution (continuous)
+- what most people think of when we say something is completely random
+- density function, denoted by U(a,b):
+- ![](img/uniform_distribution.png)
+- random variable is equally likeky to take values anyuwhere between a and b
+- this doesnt mean P{X = i} = P{X = j}, though it is trivially true
+- U(0,1) is super popular as a random number generator
+
+##### Exponential Distribution
+- the probability that it takes on negative value should be 0 
 - if you plug in 0 for x, you get 1 - 1
 - when x goes to infinity, the value should equal 1
 
-#### Example
-Jobs ariving to server have CPU time (total time needed to process begining to end). We looked at some data and foud the data exponenetially dsitributed with mean 140msec. CPU scheduing dsciple is quantum-oriented so that a job nt completeing within 100 msec will be routed back to tail of the queue of waiting jobs. Find probability that a job has to wait for a second quantim.
-<ex 3.2>
+![](img/exponential_distribution.png)
+
+###### Exponential Distribution Example
+Jobs ariving to server have CPU time (total time needed to process beginning to end). We looked at some data and foud the data exponenetially dsitributed with mean 140msec. CPU scheduling discipline is quantum-oriented so that a job not completing within 100 msec will be routed back to tail of the queue of waiting jobs. Find probability that a job has to wait for a second quantum.
+
+![](img/second_quantum.jpg)
 
 ## Day 4 - Sept 11, 2019
 
-### Memoryless Property
-- given X > Exp(λ) and X > b
+##### Memoryless Property of Exponential Distribution
+- given X ~ Exp(λ) and X > b
 - X has been running for at least 6 months
 - we want to calculate probability that it runs 7 months (1 more month)
-- what is the probBILITY that X> a + b
+- what is the probability that X > a + b
 - = e<sup>-λa</sup>
 
-#### Example
+![](img/memoryless_proof.png)
+
+- the future is independent of the past
+- knowing b gives us no real information about future
+- this is the only time you can apply memoryless property
+- example: if the bus is coming in 5 minutes and you get there exactly 1 minute before, you still can't say it'll come in 1 minute, we assume it's 5 minutes from when you arrive
+
+###### Memoryless Property Example
 What is the probability that a job finishs in the second quantum given it does not finish in the first quantum
 
-<ex 4.1>
+![](img/quantum_example.jpg)
 
 ### Discrete-Time Markov Chains
-- how system evolves over time
-- dependent random variables
-- used for user web page navigation
-    - google's page rank algorithm
-- cache contents and performance
-- speech recognition
-- machine learning (reinforcement learning - working with discete-time markov chains)
-- composers
-- baseball (how runs are scored)
+
+#### Stochastic Model
+- stochastic means random
+- when we want to known how system evolves over time using dependent random variables
+- discrete time markov chains are a good model
+- number of places dtmc's are used
+    - user web page navigation
+        - google's page rank algorithm
+    - cache contents and performance
+    - speech recognition
+    - machine learning (reinforcement learning - working with discete-time markov chains)
+    - composers
+    - baseball (how runs are scored)
 
 #### Intro Example
 - 3 web pages A,B,C linked to each other
@@ -254,12 +292,17 @@ What is the probability that a job finishs in the second quantum given it does n
 - 1/3 of time we go to B, 2/3 to C when you leave A
 - B always to C
 - C to A and C to B is 50/50
-- want to know what proporitoin of visits are made to each of the pages
+- want to know what proportion of visits are made to each of the pages
 - it doesn't take into account how much time is psent on each page but rather discretly, the nth time point corresponds to nth page visited
 
-#### Stochastic Process
-- stochastic measn random
-- process means evolving through time
+#### Discrete Time Systems
+- the example with the linked pages is discrete-time
+- te nth time point is basically the nth page visited
+
+#### Discrete Time Markov Chains
+- definition: a stochastic process X<sub>n</sub> which denotes the state at a discrete time step n
+    - stochastic measn random
+    - process means evolving through time
 - the probability at step n+1, the state is equal to j, given that you know every state it's been in the past
 - that probability boils down to just knowing the most recent state
 - this is the Markov property
@@ -267,52 +310,140 @@ What is the probability that a job finishs in the second quantum given it does n
 - last property is stationarity - sats of process are independent of time
 - chain refers to state space being discrete, states are chained together by transitions
 
-#### Markovian Property 
+![](img/dtmc.png)
+
+#### Markovian Property and P
 - future is independent of past given the present
-- makes analysis easy (1)
-- reasonable assumption for practical situations (2)
-- if you ever want to simulate this thing on a computer it means you only need to store present state (3)
-- sqaure matrix
+- more formally, the markovian property is that the conditional distribution of any future state X at n+1 given the past states X at 0,2...to n-1 as well as current state at n, the conditional distribution is independent of past states and only depends on the current state 
+    1. makes analysis easy
+    2. reasonable assumption for practical situations
+    3. if you ever want to simulate this thing on a computer it measn you only need to store present state
+- P is the transition probability matrix
+    - square matrix
 - can be infintely dimensional based on how mny states you have
 - rows of P sum to one because the sum of the probabilities that you go somewhere has to be 1
 - if it is less than 1 that means there is a state that is missing
 - we are gonna allow self transitions so P<sub>ii</sub> > 0
+- in general, P's entries P<sub>ij</sub> > represent the probability of moving from state i to state j in the next transition
 
-#### BAck to webpage example
+#### Back to Webpage Example
 
     P = [0   1/3  2/3,
          0   0    1,
          1/2 1/2  0]
 
 #### Umbrella Problem
-<diagram 4.2>
+- prof has 2 umbrellas that are used going home and to work
+- if it rains and umbrella is at current location, umbrella is taken
+- if not raining, no umbrella is taken
+- probability of rain is p
+- determine fraction of trips that the prof gets wet
+
+![](img/umbrella_problem.jpg)
 
 ### Tutorial 1 - Sept 13, 2019
+1. Useful for Assignment 1 - constructing a sample set
+    - drawing balls from a hat
 
+    ![](img/tutorial1_q1.jpg)
 
-## Day? - Sept 13, 2019
+2. Mutual exclusion
+    - intersection is an empty set
+    - eg sunny dat or rainy day can't happen at the same time (except it can but ok sis)
+
+3. Independence - MC question
+    - P{A|B|} = P{A} if A is independent from B
+
+4. Useful for Question 3 of assignment 1
+    - Bayes law (will be on midterm)
+
+    ![](img/tutorial1_q4.jpg)
+
+5. Helpful for Q4 of Ass 1 - Geometric Distribution
+    - probability of succeeding at attempt k
+    - probability of drawing card of some suit = 1/4
+    - P(1 - P)<sup>k-1</sup> = P{K}
+
+6. Useful for Q5 of Ass 1
+    - PDF (PMF) - Probability Density Function
+        - probability that something is happening at value x
+    - CDF (CMF) - Cumulative Density Function
+
+    ![](img/tutorial1_q6.jpg)
+
+7. Memoryless Property (for last part of Q5)
+    - in exponential distributions
+    - regardless of start
+    - given rate = 1/5, E[X] = 5
+    - if something fails in 5 seconds and you wait 35 seconds, when is it going to fail?
+        - 5 seconds, regardless of how long you wait
+
+8. Example for Exponential Distribution
+
+    ![](img/tutorial1_q8.jpg)
+
+9. PDFS/CDFS
+    - What is the interval of PDF from [0, inf]?
+        - 1 
+        - by the Law of Total Probability
+    - CDF at infinity?
+        - 1 (this is what y value becomes over time)
+    - CDF behaviour at 0
+        - 0
+        - we have x function, is it a PDF or CDF?
+            - cdf if it approaches  at infinity
+
+## Day 5 - Sept 13, 2019
 
 #### Umbrella Problem contd
-- 
+- could model problem with 6 states, where state is the ordered pair consisting of number of umbrellas at home and current location
 
-### Limitiing Probabilities
-- not obvous thwt limit always exists
+![](img/umbrella_cont.jpg)
 
+#### n-Step Transition Probabilities
+- when we want to know what will happen in 5 steps
+- P<sup>n</sup> = P * P *** P
+    - n copies of P multiplied together
+- entry at P(i,j) is what will happen the first step
+- if you multiply P with P, you get what will happen in second step
+- notation is ![](img/Pij.png)
+- in general, we know that (n-1) step transition probabilities are give by P<sup>n-1</sup> 
 
-#### Revisiting Umbrella Problem
+##### 2-step Transition Probabilties
+- with a 3 state DTMC
+- 0 to 1 is 0 -> 0 -> 1, 0 -> 1 -> 1, 0 -> 2 -> 1
+
+![](img/two_step_transition.jpg)
+
+- two step formula
+    ![](img/2step_formula.png)
+
+#### Limiting Probabilities
+- not obvous that limit always exists
+- what happens when you let the system go for a long time
+- you keep multiplying the P matrix
+- rows start to become the same (check webpage link example)
+
+![](img/limiting_probabilities.png)
+
+##### Revisiting Umbrella Problem
 - raining P = 0.4
-- p^30 has a limiting probability
-- prob that one gets wet =  0.4*0.23 = 0.092
-- is there a better way to compute pi_i
-- yee
-- by stationary probabilities
+- p^30 has a limiting probability, the rows are all the same
 
-### Stationary Probabilities
-- more equations than unknowns
-    - no solution or
+![](img/umbrella_limiting_prob.png)
+
+- probability that one gets wet = pπ<sub>0</sub> 0.4*0.23 = 0.092
+- is there a better way to compute π<sub>i</sub>
+    - yes, by stationary probabilities
+
+#### Stationary Probabilities
+- when you have more equations than unknowns
+    - usually means no solution or
     - if we know there is a solution then at least one of the equations may be redundant
-    - but you can't just throw away an equation
-- simplest possible solution is that all pis are 0, which is why we need the equation that pi_i summed up = 1
+    - but you can't just throw away an equation t fix this
+- simplest possible solution is that all π are 0, which is why we need the equation that π<sub>i</sub> summed up = 1
+
+![](img/stationary_probabilities.png)
 
 ### Key Theorem
 - these 2 ways of calculating the probabilities give u the same answer
@@ -337,10 +468,128 @@ first 2 colum eqns:
 0.8pi_0 + 0.1pi_1 + 0.1pi_2 = pi0
 ```
 
-## Day ?? - Sept 16, 2019
+## Day 6 - Sept 16, 2019
 
 written notes
 
 ### Expect Number of JObs in System
 - the priciple of randomness degrading how the system works is an important thing to take away
 - 
+
+
+## Day ?? - Sept 20, 2019
+
+#### Description of a Queuing System
+- simple queue consists of buffer/queue where arribing jobs wait to be served. afer completed processing, they depart
+- need to describe 
+    - how arrivals work (given by probability distribution)
+    - queue - size (infinite or finite)
+    - how server processes jobs that arrive (number of servers, order of service, processing times)
+
+#### Performance Indicators/Metrics
+1. response time
+    - avgerage, mean, variance, if its larger than some value
+2. throughput
+
+#### Queuing Networks
+- topology of queues
+
+#### Analysis Directions
+1. exact analysis
+    - equations that yield desired performance metric
+    - question 2 on assignment 2
+2. simulation
+    - idea is that instead of doing exact analysis, you simulate it and gather real data for response times and then compute the average
+    - running the system logically
+
+#### Operational Laws
+- what analytic models rely on
+- suppose we have log data of simulations
+- A<sub>i</sub>(t) - number of arrivals to device i at time t
+- C<sub>i</sub>(t) - number of completions from device i at time t
+    - integer values
+    - both functions increase, number of arrivals and number of completions
+- B<sub>i</sub>(t) - busy time of device i at time t
+    - time spent working on these arrivals
+    - this is = t if it is busy the whole time
+    - usually it's between 0 and t
+    - the rest of the time the device is idle
+- what can we derive from this data?
+- from this we can construct a probability distribution
+- arrival rate at device i = A<sub>i</sub>(t)/t
+- throughput = C<sub>i</sub>(t)/t
+- utilization = B<sub>i</sub>(t)/t = between 0 and 1
+- average processing time = B<sub>i</sub>(t)/C<sub>i</sub>(t)
+    - if we knew the real processing time, this calculated value would be overestimated because B<sub>i</sub>
+    - it goes up and drops
+
+#### Ergocidity Assumptions
+- assume system is ergodic (time averages lead to actual underlying means)
+    - youd eventually get the means 
+- assume everything converges to a fixed value as time gets large
+- many situations where arrival rate changes (eg more arrivals during business hours)
+
+#### Utilization Law
+- we're gonna do some algebraic manipulation of the quantities
+
+- number of arrivals an derpatures is around 100 million, then we can say that arrivals are departing at some rate X
+- if the 2 were not equal it would not converge? - i just made this part up he didn't really say that
+- if the system was busy all the time, it would process 1 job every e[Si] time units
+- otherwise departues would be happening faster than they are arriving
+
+#### Forced Flow Law
+- suppose A<sub>i</sub>(t) = C<sub>i</sub>(t)
+- what does that tell us about the queue at time t?
+    - it's 0
+- system where jobs might revisit a device
+- this is a common model
+- control gets passed to CPU then to storage device and then passed back to CPU and then to storage device
+    - program visits CPU multiple times
+- given reference device, device 0, by definition te expected number f vists to device i = expected number of departures (one of these is reference device)
+
+#### Device Demands
+- combining utilization law and forced flow law
+- throughput ro = E[Si]E[Vi]X
+- ro<sub>i</sub> = E[Di]X
+
+#### Little's Law
+- this one is a relationship that's not very obvious
+- John Little came up with this in 1950s
+- N<sub>i</sub> is the avergae number of jobs that are sitting or waiting at a device including the one being processed
+- that expected number paired with mean response time is related
+- if we kow that 2 different systems, 1 with average qeueu length of 10 and system 2 avergae qeueu length of 20
+    - it makes sense that the average waiting time for the system with twice the length has longer is twice as much as system 1
+    - in a number of systems, we are almost always interested in response time, esp when deciding how long you should make your buffer
+
+- the derivation after is used in multiple palces so you should understand it
+
+#### Users/Clients
+- using relations we talked about to make design decisions
+- look at the following model
+    - there are n users
+    - each user thinks for period of time E[Z]
+    - at the end of think time the user submtis job to subsystem
+    - once processing is complete at subsystem, as soon as user gets response the user starts thinking again
+    - common model for behaviour of user
+    - eg databases - formulate a query, submit query
+    - no parallel execution
+
+#### General Response Time Law
+- subsystem has k nodes
+- we are interested in mean response time E[T]
+    - E[T] = time user submits request to when request is completed (total time spent during this process)
+    - we want to look at mean number of jobs in the subsystem
+    - if there are 10 users in total and there are 3 in the system that means there are 3 active requests
+        - that would mean there are 7 users in thinking mode
+    - when a request is completed there may be 8 in thinking mode and 2 active
+
+<ipad notessss>reeeeeeee
+
+#### Interactive Reponse Time Law
+- rate at whivh jobs are generated per time unit = total time/time that it takes for one of these things (t/(E[Z] + E[T]))
+- M users, each user generateds the amount ----
+- throughput = M/(E[Z] + E[T])
+- expected response time = number of users/(throughput - avg think time)
+1. if we are given M and the think time, we can measure response time that gives throughput
+2. more improtantly, we are gonna look at the end resut and fint he fundamental properties that limit performance
+    - when can we get low response time and high throughput

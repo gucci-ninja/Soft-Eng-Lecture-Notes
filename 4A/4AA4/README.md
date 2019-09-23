@@ -727,7 +727,7 @@ pthreadcode block on slide 8
 
 ## Day 8 - Sept 19, 2019
 
-### 
+#### Note
 release time = arrival time and it is not equal to the complete time
 
 ### Scheduling Algorithms
@@ -807,3 +807,56 @@ for (  ) {
 - by constrains 1, f >= 5
 - by C3, f <= 4
 - why not split T3 into T<sub>31<sub> = (20,2) and T<sub>32<sub> = (20,3) 
+
+## Day 8 - Sept 20, 2019
+
+### Lab 3
+- downoad C-SUpport_for_myRIO from course website
+- we're gonna be using Eclipse
+- Part 1
+    - hello world
+    - create new eclipse project and ssh into myRIOto execute
+- Part 2
+    - import the C_SUpport thing
+    - run accelerometer executable
+- Part 3
+    - create real time task
+    - use template on eclipse for myrio
+- Part 4
+    - download file and run it
+
+#### Solving in class problem
+
+<example>
+
+#### Cyclic Scheduling Decision Summary
+- 3 decisions
+    1. choose frame size
+    2. if suitable frame size is found, go to step 3 otherwise break constraint 1 to select frame size satisfying C2 and C
+    3. place slices into frames
+- generally, these decisions are not imdependent
+- should choose feasibly largest frame size is because in that case you only need to gve smallest frames/decisions
+- can you only schedule task when period has ended? no because you don't get a new instance of job release
+- if you have a periodic timeline with jobs happening for one task, you have to schedule at every job 'break' to meet deadlines
+- schedule same job in same frame?
+
+#### Network Flow Problem
+- graph of links
+- network 
+
+#### Flow Graph
+- can have 2 layers
+- number of nodes is number of frames
+- to compute number of nodes, you do H/Pi, same calculation as frames
+- capacity Ci is the same as execution time? e?
+
+#### How to find a Schedule with Flow Graph
+- max flow is sum of capacities
+
+#### Cyclic Execution Advantages
+- cyclic executives are very simple
+- dispatching task is as simple as making a function call
+
+#### CE DIsadvantages
+- they are brittle
+- they don't deal well with change
