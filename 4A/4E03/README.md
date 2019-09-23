@@ -477,7 +477,7 @@ written notes
 - 
 
 
-## Day ?? - Sept 20, 2019
+## Day 7 - Sept 20, 2019
 
 #### Description of a Queuing System
 - simple queue consists of buffer/queue where arribing jobs wait to be served. afer completed processing, they depart
@@ -589,7 +589,75 @@ written notes
 - rate at whivh jobs are generated per time unit = total time/time that it takes for one of these things (t/(E[Z] + E[T]))
 - M users, each user generateds the amount ----
 - throughput = M/(E[Z] + E[T])
+    - this tells us that response time and throughput are related
+    - throughput = arrival rate = departure rate = X
 - expected response time = number of users/(throughput - avg think time)
 1. if we are given M and the think time, we can measure response time that gives throughput
 2. more improtantly, we are gonna look at the end resut and fint he fundamental properties that limit performance
     - when can we get low response time and high throughput
+- on average, the user generates at value (t/(E[Z] + E[T]))
+- don't really need limit because t's cancel
+
+## Day 8 - Sept 23, 2019
+
+#### Interactive Response TIme Law contd
+- throughput = arrival rate = departure rate = X
+- if output rate was smaller than input (0 < x) then there is some loss
+- however in our assumption there is no loss
+- max number you'd ever see in system is M
+- the rate of things going in and going out has to be equal for our rate to stay constant
+- if users were allowed to generate requests as soon as they finish (no think time) then 0 < x may hold true
+- end result is E[T] = M/X - E[Z]
+
+#### Bottleneck Analysis
+- at the very least, it'll take this long to complete
+-turns out we can get he following result
+- x is system throghput measured at some point
+- it's bounded above Dmax (max val of demands) and M/---
+- Dmax = bottleneck demand
+- throuhput cant get any larger than this demand DMax
+
+(paper notes 8.1)
+
+##### Proof of Bounds
+- when system has its performance limited, througput is going to be 1
+- min reponse time is when you are the only user of system, it would be greter than or equal to D
+
+#### Example 1
+- M clients submitting requests to 3 single-server nodes in series (visit in order and visit once)
+- the mean demands at the 3 nodes at E[Da] = 2, E[Db] = 3, E[Dc] = 1
+- throughput is biuded above by min(1/3,M/36)
+- mean response time is bounded below by max(6, 3M-30)
+- M is the same for when the upper and lower bounds are equal
+- the E's need to add up to 6 (total demand stay the same)
+- the best choice would be to get a balanced load  E[Da] = E[Db] = E[Dc] = 2
+- then the number of supported clients will become 18 (more users)
+- but there is another reason this is a better choice
+    - something more direct
+    - you want to get the max possible throughput
+    - with Dmax being 2, you cn do 1 job every 2 times
+    - max throuput increases by 50%
+- bottom line is that we want to improve bottleneck demand
+- almost all service based computer systems have a load balancer attached to them
+    - it adjusts the demands to make them as equal as possible
+
+#### Example 2
+- system has 50 clients
+- each request requires 5 reads be made on avg
+- avg read time is 9ms
+- each db request requires at least 15ms of CPU time
+- consider 3 proposed design changes
+    1. reorganize data so disk reads per access reduced from 5 to 2.5
+    2. disk replaced by one 60% faster
+    3. CPU speed doubled
+- based on what we have discussed, the way to justify would be to calculate demands
+- 2 resources - CPU and disk, which one has higher demand?
+- 5 reads * 9 ms = 45 ms demand for disk
+- 15 ms for CPU
+- demand for disk is higher so we can just eliminate #3, since it doubles the CPU speed even though disk read is what is slowing us
+- 50 clients is useless information so we can ignore that (it would be useful if we were given think time)
+- #1 decreases by factor of 2 (22.5 seconds from 45)
+- #2 reduces it to 28.1 so chose #1
+- the disk is still at bottleneck with 1 do a second choice to be implemented would be #2
+
+<8.3>
