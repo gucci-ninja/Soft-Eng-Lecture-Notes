@@ -660,4 +660,107 @@ f(500) = 0.0025, 0.25%
 f(1000) = 0.00005
 ```
 
-You're looking to call 10 people so you
+You're looking to call 10 people so your probability is dependent on that
+
+## Day 9 - Sept 23, 2019
+
+### Hypergeometric Distribution
+- handles taking samples without replacement
+- suppose we have a deck of cards (well-shuffled)
+- we draw 4 cards without replacement
+- let x = "the number of aces in the sample"
+- x = {0,1,2,3,4}
+- what is the probability that x = 0?
+
+```
+P(X=0) = (48/52)(47/51)(46/50)(45/49)
+
+P(X=1) = (4/52)(48/51)(47/50)(46/49) +
+         (48/52)(4/51)(47/50)(46/49) + 
+         ... +
+         (48/52)(47/51)(46/50)(4/48)
+
+P(X=2) = 4 choose 2 = 6 terms
+       = (4/52)(3/51)(48/50)(47/49) +
+          ... +
+         (48/52)(47/51)(4/50)(3/49)
+
+P(X=4) = (4 * 3 * 2 * 1)
+         ----------------
+         52 * 51 *50 * 48
+        
+```
+
+This gives an example of a hypergeometric random variable.
+
+#### Definition of Hypergeometric Random Variable
+- Given N many objects (eg N=52 cards)
+- define some K <= M many objects (eg K = 4 aces) to be "success" (and so N-K will be "failures")
+- our experiment consists of drawing n <= M many objects without replacement
+- Then, we say that X = "number of successes in the sample" is a hypergeometric random variable with parameters n, N, K (p = K/N= probability of success on first draw)
+
+- given X, a hypergeometric RV with params n, N, K we have
+
+        P(X=x) = f(x) = (k x) (N-K n-x)/(N n)
+- given X, hypergeometric (n, N, K) we have
+
+        E(X) = np = n(K/N)
+        V(X) = np(1-p)( N-n / N-1 )
+- coeffecient for variance is the variance ofa binomial distribution
+- in some situations, hypergeometrics basically become binomials
+    - like a small sample size for K
+
+**Note**: If N >>> n
+
+        N - n
+        ----- ~ 1
+        N - 1
+        and X is approximately binomial
+
+### Poisson Distribution
+- we want to describe events which occur randomly along an interval
+- examples
+    - \# of flaws in a length of wire
+    - \# of earthquakes over a 5 year period
+        - interval concerned with is time
+    - \# of buses that stop in front of your house over a week
+- we want a probability mass function
+    - we need the average number of events per unit length
+- divide timeline 0 to T into equal intervals of delta T = T/n
+- we want to reduce to a binomial situation so that the probability that delta T contains more than 1 evennt is ~ 0
+- each little subinterval is a Bernoulli trial
+    - each subinterval will either have and event or not
+- given λ = average # if events per unit length,
+- the probability that there is an event in a given subinterval is p = λ\*delta T `= λ*T/n`
+- since we may assume that each subinterval has an event or does not,
+- ` X ~ Bin( n, λ*T/n)`
+- Bin(n, λ*T/n) has pmf (nCx)(p^x)(1-p)^(n-x)
+- So P(X=x) = lim of n to infinity `(nCx)(λ*T/n)^x(1 - λ*T/n)^n-x`
+- final equation<>><><>
+
+#### Poisson Distribution Example
+- a real estate agency sells an avaerage of 2 houses/day
+- per week that is 14
+- what is the probability that they sell 10 houses next week
+
+```
+λ = 2 houses/day
+T = 7 days
+
+pmf = f(x) = (2*7)^x
+            --------- e^(-2*7)
+                x!
+
+P(x=10) = 14^10
+         -------e^-14
+           10!
+        = 0.066
+        = 6.6%
+```
+
+##### Mean/Variance Poisson Distribution
+- knowing that the Posisson distribution is a limit modelled by binomial distribution, how do we figure out the mean and variance?
+    - we know the mean of binomial distribution (np)
+    - we know that the poisson distribution is the limit
+    - so E[X] = lim n goes to infinity of np which gives us `λT`
+    - V(X) = lim n gos to infinity np(1-p) which becomes `λT`

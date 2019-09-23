@@ -219,7 +219,7 @@ Given the denisity of a a function (lifetime of a component in days)
 - probabilty that random value takes on value of k :)((((()))))
 - one parameter - lambda
 - all the values should sum up to 1
-- if you do the summation of  to infinity, e^-lambae^-dlmb = 1
+- if you do the summation of  to infinity, e^-λ^-?? = 1
 - taylor series expansion
 - E[X] = mean, Var(X) = variance, both are equal to lambda
 - the satistician Poisson used this to model deaths by horse kicks in the Prussian army
