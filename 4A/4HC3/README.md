@@ -243,3 +243,58 @@ for first times | skilled behaviour
 - people learn from their mistakes
 - turn failure into learning experience
     - IDEO: design company, slogan is fail often, fail fast
+
+
+## Day  ? - Sept 23, 2019
+
+### Norman's Advice on Failure
+- don't force user to learn your machine
+- make errors low-cost
+    - allow users to undo if they mess up
+    - do not exit without saving or giving warning
+- tell the user what their choices are using signifiers
+    - don't expect users to memorize
+- who remembers the 3 layers (goal)
+    - simplification of layers of our brain
+    - what part of our experience are captured in lizard brain?
+        - emotions
+        - non-animal name for lizard brain = visceral
+        - visceral comes from 'in the flesh'
+        - 
+- reflective - top layer - instincts - concious
+- behavioural - middle layer - can work unconciously
+- we start with the goal
+    - questions at refelctive level
+        - are there alternatives
+        - anything in the layer is expensive, a lot slower
+        - also learned behaviours
+    - affordance is at behavioral level
+    - signifiers are a higher levle thing because people have to think about that
+    - midterm q?: what layer does affordance belong in
+    - the lower things are on the layers, the quicker
+    - second layer: what are the possibilties
+    - third (bottom): how to do it
+    - is it ok
+    - what does it mean
+        - example when you do a google search
+    - what happened: analysis/did the goal get accomplished
+- each q above is for the designer
+- they are the seven stages of action
+
+### More Advice from Norman
+- when you find bad design
+    - don't moan but figure out why the problem happened
+    - understand that there might have been a reason
+- end of first chapter!!!! 
+
+### Memory in the Brain and in the World
+- writing is a way to store knowledge in the world
+- we also organize our world so it encodes knowledge (data)
+- procedural knowledge
+    - how to do things
+    - not concious
+    - often hard to think about it
+    - like playing guitar
+    
+
+
