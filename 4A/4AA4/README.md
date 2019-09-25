@@ -860,3 +860,66 @@ for (  ) {
 #### CE DIsadvantages
 - they are brittle
 - they don't deal well with change
+
+## Day 9 - Sept 24, 2019
+- office hours thursday sept 26 10-11am
+- Last name A-K - MDCL 1102
+- Last name L-Z - MDCL 1105
+- 15 MC and 9 short answer (show answers??) ( 1 bonus point)
+- can bring calculator but probably won't need it
+
+### Midterm Review
+
+#### Sample Questions
+1. which of the following about rts is correct?
+    - classification of rts depends on how to define cost of missing deadline
+2. which of the following function is invoked by insmod to initiate modules functions, and you can use this function to LLOCte system resources and start tasks
+    - init_module()
+3. which statement is not correct
+- using threads to implement multiple tasks is more efficient that using processiner
+- principle objective of batch processing systems is to minimize reponse time (this statement is not corect)
+- code written for linux kernel should  not have main function
+- running insmod requires superusr
+
+#### Concepts
+- classification of rts
+- usefulness function of rts
+- diff btwn geeral prupose OS and rtos
+- diff between user space andkernel space (how to access kernel space from user space)
+- beneifts of using kernel modu,es
+    - how to write kernel modules
+- processes and threads
+
+##### Memory Space for processes and threads
+- processes do not share any common space
+- threads share common space, 
+
+#### More Concepts
+- what is race condition and why don't we like it
+- difference between poll and interrupt (pro con)
+- scheduling policies in linux
+- concept of real time tasks and how to represent them
+- so far we only did one scheduling algorithm (cyyclic executive)
+- CE alg
+- how to reduce CE sched problem to network flow problem
+
+#### Using network flwo to model CE scheduling
+- QUestion - given 3 real time tasks
+- T1(4,1); T2(5,1); T3(10,2)
+    - execution time of third task is 2
+- reduce to network flow problem
+- can choose any frame size - we are gona use f=4
+- first hav directed graph with capacity (flow graph)
+    - between source and destination we have number of jobs
+    - from source to given instance of task, the capcity is the execution time of task
+- constructing a flow graph
+    - 5 jobs from 1st task
+    - 3 from second and 2 fromm third
+    - T1,1 is first instance of first task
+    - T1,2 is second instance of first task
+    - T1,1 cannot connect to f3
+- based on max flow graph, you can make a scheduling decision
+    - feasible max flow = sum of all e<sub>i</sub>
+
+- inc lass
+    - given task set t1
