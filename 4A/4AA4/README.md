@@ -114,6 +114,8 @@
 
 ##### Questions
 1. what should we do if not all deadlines are met
+    - there is some mechanism/control
+    - you can prioritize
 2. does a real time system mean a "fast system"?
 
 ### Quiz 1
@@ -219,6 +221,15 @@ f(x) {
 - after execution of system call the control is passed to kernel
 - the kernel gets the arguments from the user sapce
 - a user process becomes a kernel process when it is making a system call
+- need defauolt value for variables
+
+
+```c
+static char *my_string = "string"; // (no __init_data)
+
+module_param(my_string, charp, 0000);
+MODULE_PARM_DESC(my_string, "a string");
+```
 
 #### Process Scheduling
 - OS must decide which process to run first and in what order to run remaining processes should run
@@ -306,6 +317,11 @@ Overload | fairness | meet critical deadlines
 3. function `cleanup_module()` to clean up resources to ensure modules functions will not be called anymore
     - invoked by rmmod
     - task won't be executable and will be deleted
+- in general, to run a kernel module, you need to compile it first
+- to do this, run it with `gcc -o executable_name filename.c`
+- if you have multiple files run first with `gcc -c file1.c file2.c` then with -o
+- if you type `/sbin lsmod` you should see your module
+- to load module, do `/sbin/insmod filename.ko` and to unload do `/sbin/rmmod name_of_module` without the .ko
 
 #### Simple example
 ```c
@@ -372,11 +388,14 @@ module_exit(hello_4_exit);
 - `MODULE_DESCRIPTION()` - tells us what module does
 - `MODULE_AUTHOR()` - author of code
 - `MODULE_SUPPORTED_DEVICES()` - device support from module
+- to get this info from module run `/sbin/modinfo file.ko`
 
 #### Usage of Macros
 
 ```c
 #define DRIVER_AUTHOR "Suhavi Sandhu"
+
+MODULE_AUTHOR(DRIVER_AUTHOR);
 ```
 
 ### Passing Commandline Argumnts
@@ -407,23 +426,28 @@ MODULE_PARM_DESC(my_int, "An integer");
     - in order to make your task to premept other tasks it must be implemented as a module
 
 #### Kernel Module Programming and Makefile
-- system calls are methd in a kernel module, written between the init and cleanup methods
+- system calls are methods in a kernel module, written between the init and cleanup methods
 - .ko file is kernel module
 - to run, do insmod hello1.ko (will only work in lab environemnt bc you need permission to run kernel modules)
 - we use static for functions and variables so we canonly allow som evariables to call a function, we make the function private to the module
 - we need to keep status of resources in the static variable
 - making it static allows value to be preserved
+- after typing make you get a .ko file and you insert it by doing insmod helloko
 
-
-#### Example of static variable (9)
+#### Example of static variable
+- static defines your scope, has different meaning when talking about functions and variables
+    - for variables, its value can be preserved
+    - for functions, it can only be seen from the file in which it was declared
 - defines foo and main, main calls foo
+- run script in `static_var.c` locally to see results
 - what is the output?
     - a = 15, sa = 15..20..25..30
-- sa is static so value is stored even after functionis returned
+- sa is static so value is stored even after function is returned whereas a gets reinitialized each time and its value does not get saved
 
-#### Example 2
+#### Example of static function
 - would fail because you can't call function `func` in file2 since its declared in file1
 - to make it work, they would have to be in the same file
+- this is how the word static varies for variables vs functions
 
 ### System Calls
 - write() is a system call
@@ -440,6 +464,7 @@ MODULE_PARM_DESC(my_int, "An integer");
         - API can be more efficient because it gets compiled
 
 ### Makefile
+- useful for compiling
 
 #### C Compilation Process
 - start off with an idea/algorithm and write it in your text editor
@@ -447,13 +472,16 @@ MODULE_PARM_DESC(my_int, "An integer");
     1. remove the #include < ... > 
     2. actually inject the include file
     3. remove comments from your code
-- then compiler + assemler
+- then compiler + assembler
 - object file is generated (.o)
 - executabe file is created (.exe or.com?)
 
-#### Compiling mutiple files
+#### Compiling multiple files
+- given file1.c and file2.c, file1.c has dependency file2.h
 ```bash
 $ gcc -c file1.c file2.c
+gives file1.o and file2.o
+
 $ gcc file1.o file2.o
 file1.c file2.h file2.c fiel1.o fie2.o a.out
 ```
@@ -463,7 +491,7 @@ file1.c file2.h file2.c fiel1.o fie2.o a.out
 - instructions have a format
 - final target depends n the sub_target and other source files
 - if you're trying to build a certain target and it depends on a .c file. if there is a change in that .c file then you will need to recompile
-- if you run make final_target, the inctruction will ge run
+- if you run make final_target, the inctruction will be run
 
 ```bash
 final_target: sub_target final_target.c
@@ -475,8 +503,12 @@ final_target: sub_target final_target.c
 ### Real-Time Scheduling
 
 #### Process
+- progra min execution
+- abstraction of running program
+- logical unit of work
+- processes are independent, carry considerable state info, have separate address spaces and interact through system provided inter-process communication mechanism (no shared address space)
 
-### Program in Virtual Memory
+#### Program in Virtual Memory
 - memory space of a process consists of 
     - stack - used to store function arguments and return address of functions that called current function
     - heap -  memory is dynamically located by system calls
@@ -485,8 +517,8 @@ final_target: sub_target final_target.c
     - text - read-only section for program instructions
 
 #### Stack vs Heap
-- in order to create object in stakc, yuo can declare statically
-- 
+- in order to create object in stack, you can declare statically
+
 
 . | Stack | Heap
 --|-------|------
@@ -496,7 +528,7 @@ grow in size? | fixed size | more memory can be added to system
 common errors | stack overflow, since you have fixed size - you can't go over | heap fragmentation, since its continuous, when memory is lost/overwritten
 when to use | when you know the size of memory and it 's not very large | when you need large scale of memory
 
-### Multiple Processes
+#### Multiple Processes
 - an example where you need multiple processes is on the browser, the web sever's default port is 80
     - when you make an http request, it goes to port 80 and on the server side it listens on port 80
     - in this case, there is one process always listening on port 80
@@ -507,24 +539,33 @@ when to use | when you know the size of memory and it 's not very large | when y
 - it makes copies of the parent process and the values are copied to a separated memory space
 - after fork() is evoked, the processes will execute the next instruction
 - the return value of forked processes will be different
-- fork() returns a value of 0to the child process and an integer process id to parent process (to differentiate them)
+- fork() returns a value of 0 to the child process and an integer process id to parent process (to differentiate them)
 - no shared memory between child and parent process
 - this makes for a lot of overhead ^ as everything is duplilcated
 - also hard to communicate since data space not shared
 - if your pid = 0 it means you ar ein the child process, and non zero means you are in the parent process
 
 
-### Thread
+#### Thread
 - 2 different parts of memory space
 - give us more efficient way to implement task
 - each different thread has a specific memory space
 - need to know state of thread
 - with threads, multiple processes can be run in differnet data space
 - in memory layout of multithreaded program, there is a single process address space with multiple thread address spaces with their own object data and status
+- with threads, process is broken into 2 parts
+    - program wide resources such as global data and program isntructions (process)
+    - info pertaining to exwecution state of contorl system ,such as PC and stack (thread)
 
+
+#### Memory Space for Multithreaded Program
+- global data, code, heap is shared
+- stack is not shared
 
 #### Single thread vs multithreaded
-- ?
+- for single, the code, data and files are shared
+- for single threaded, the registers and stack are not shared but there is only one thread
+- for multithreaded, the code, data and files are shared and there are many threads
 
 #### Advatnage of THreads
 - efficient communication ince there is shared address space
@@ -533,12 +574,6 @@ when to use | when you know the size of memory and it 's not very large | when y
 - much quicker to create thread than process
 - thread programming is supoted by POSIX
 
-#### POSIX
-- portable operating system interface
-- provides system calls for using threads or processes
-- has real time extensions
-
-
 #### Disadvantages of threads
 - need of synchronization
     - if by accident you modify some values, there will not be cross thread synchronization
@@ -546,6 +581,11 @@ when to use | when you know the size of memory and it 's not very large | when y
 - many library functions are not thread safe
 - lack of robustness
     - if one thread crashes, whole app crashes
+
+#### POSIX
+- portable operating system interface
+- provides system calls for using threads or processes
+- has real time extensions
 
 #### Question
 - do we benefit from using a multi-threaded process when t runs on a uniprocessor system?
@@ -599,7 +639,7 @@ pthread_exit(NULL)
 
 #### Linux
 - linux systems have priority levels from 0 to 139
-- 0 to 99 is reserved for real time tasks
+- 1 to 99 is reserved for real time tasks
 - 100 to 139 is for users
 - linux allows you to use NICE value to represent prority level from 100 to 139
 - the nicenes value is from [-20,19] and has a mapping to priority level 100 to 139
@@ -627,11 +667,11 @@ pthread_exit(NULL)
 #### Alternatively call nice() in your program
 - increase process prioty by calling `int nice(int inc);`
 
-#### Creating THrea with Specified Priority
-- structure `sched_param` as one of the variables
+#### Creating THread with Specified Priority
+- structure `sched_param` as one of the variables ihn `#include <sched.h>`
 - if you already have a param, you can use set_sched param to set the priority
 
-```
+```c
 struct sched_param param;
 param.sched_priority=20;
 ```
@@ -651,7 +691,7 @@ pthreadcode block on slide 8
 ## Day 6 - Sept 13, 2019
 
 #### After fork is called
-- can child process ;vie longer than parent process
+- can child process live longer than parent process
     - yes, but msy cause problems 
 - can child process access data created by parent process before fork()
     - before fork, yes, after fork no
@@ -660,8 +700,15 @@ pthreadcode block on slide 8
 
 #### Example
 
-### Race COndition
-- 
+### Race Condition
+- an error condition when executing paralellly in which outcome of program changes relative to scheduling of different control flow\
+- happens when ordering of events affect outcome of computation
+- it sucks because it is unpredicable and cannot be repeated
+
+#### Possible Solutions
+- for uniprocessor system - disable preemption when scheduling processes
+    - only process itself can volunatrily relinquish CPU
+- use semaphores as atomic operation (wait for completion of event to fire next)
 
 ## Day 7 - Sept 17, 2019
 
@@ -673,12 +720,13 @@ pthreadcode block on slide 8
 - in RTS, several tasks execute concurrently
     - each task has a real-time constraint
 - task categories
-    - periodic
-    - sporadic -> for hard RTS
-    - aperiodic -> for soft RTS
+    - periodic - inter-arrival time btwn task instances is same (we will be working with these)
+    - sporadic - inter-arrival time btwn consecutive instances differs a lot (for hard RTS)
+    - aperiodic -> inter-arrival time btwn consecutive instances differ widely (for soft RTS)
 
 #### Preemptivity of Tasks
 - higher prority task can preempt lower priority task
+- task is preemptable if execution can be suspended  to allow other jobs to happen
 
 #### Temporal Parameters
 - assumed to be known at all times
@@ -690,14 +738,13 @@ pthreadcode block on slide 8
     - response time (R<sub>i</sub>)
     - execution time (E<sub>>i</sub>)
 
-
 ##### Number of Tasks
 - in most emb systems, # of tasks is fixed
 - in some, # tasks could change as tasks are added or removed during execution
 
 ##### Relative Vs Absolute Deadlien
  - relative deadline is an interval when the absolute deadline is a moment in time at which the job must be completed
-
+ - relative gives a range in which the task may complete but absolute is when it must be completed
 
 ##### Execution Time
 - execution time with no other tasks sharing resources
@@ -710,21 +757,60 @@ pthreadcode block on slide 8
 - response time spans between task activation and completion
 - execution time - the actual amount of time required by a job to complete its execution
     - can find out through analysis and measurements of min and max amounts of time to complete
+- respsonse time is the execution time and the wait time
 
 #### Periods and Phases of Periodic Tasks
 -  a period (p<sub>i</sub> of a periodic task T<sub>i</sub> is the minimum leanth of all time intervals between release times of consecutive tasks
 - phase (Φ<sub>i</sub>) is the release time r<sub>i,j</sub> of a task is called phase of T<sub>i</sub> (Φ<sub>i</sub> = r<sub>i,j</sub>)
+- relative deadline = period unless specified
+- tasks are independent 
+- only processing requirements matter, memory and I/O are negligible
 
 <diagram>
+
+#### CPU Utilization
+- measure of non-idle processing
+- ui = e1/pi
+- U = sum of all ui = sum of ei/pi
 
 #### Typical Task Model for Periodic Tasks
 - all tasks in task set are strictly periodic
 - T<sub>i</sub>  = (Φ<sub>i</sub>, P<sub>i</sub>, e<sub>i</sub>, D<sub>i</sub>) = (phase, period, execution time, relative deadline)
 
+### How Process Knowns that an Event Occured
+
 #### Polling and Interrupt
 - polling - constantly reading a memory location to receive updates of event/input value
-- interrupt
+- interrupt - upon recveiving interrupt signal, processor interups whatever it is doing and serves request
 
+#### Polling Pros Cons
+- easy to write and debug, response time is easy to determine
+- con: not sufficient for complex systems or burst events
+- con: waste of CPU time to keep checking especially when event is polled infrequently
+
+. | Interrupt | Polling
+----|---------|---------
+speed | fast | slow
+efficiency | good | poor
+CPU waste | low | high
+multitasking | yes | yes
+complexity | high | low
+debugging | hard | easy
+
+#### Creating Periodic Tasks
+- suspend execution of calling thread until time value of clock specified by clock_id is met
+
+```c
+#include <time.h>
+int clock_nanosleep (clcokid_t clock_id, int_flags,
+const struct timespec *request, struct timespec *remain);
+
+clock_nanosleep(CLOCK_MONOTONIC, TIMER_ABSTIME, &t, NULL);
+```
+
+#### Clock_nanosleep()
+- takes one of the follwoing - REALTIME, MONOTONIC, PROCESS_CPUTIME_ID
+- if flag is 0 then value specified in request is interpreted as interval
 ## Day 8 - Sept 19, 2019
 
 #### Note
@@ -733,45 +819,87 @@ release time = arrival time and it is not equal to the complete time
 ### Scheduling Algorithms
 
 #### Review of Realtime Task Representations
-- how to find out reuired execution
+- how to find out required execution
+- a periodic task Ti can be represented as a 4 tuple
+    - phase, period, execution, deadline
+- if it is a 3-tuple you get period, execution, deadline and phase = 0
+- if u get a 2-tuple then you get period, execution (in this case phase=0 and deadline=period)
 
 #### Cyclic Executive
 - offline scheduling policy
 - table-driven
+    - you know all the hard deadlines of jobs
+    - specifies exactly when each job executes
+    - non-periodic tasks run during idle slots
 - given a time map, you can come up with a E<sub>0</sub>
 - time line would be devided into equal and fixed length sprints
 - at the beginning of each sprint, a scheduling decision is made
 - after you have offline table, you can just follow the table
 - in this case, there is no preemption
-- another thing that gets s
+
+###### Example CE
 - assume you have 4 tasks in the system represented by T1, T2, T3, T4
-- what isthe utility?
-    - total utilization = 25% + 36% + 5% + 10%
+- what is the total utilization?
+- how can we construct schedule?
+
+```
+T1 = (4; 1)
+T2 = (5; 1.8)
+T3 = (20; 1)
+T4 = (20; 2)
+
+U = sum of all ui = sum of all ei/Pi
+  = 1/4 + 1.8/5 + 1/20 + 2/20
+  = 25% + 36% + 5% + 10%
+  = 76%
+```
 - how can we construct a scheduling table?
 - how long will the table be? 0 to whatev 
 - interval hould be lowest common multiple from task table
 
 #### Hyperperiod
 - defined as least common multiple of the periods of all periodic tasks
-- of the system given, lcm = 20 seconds for the 4 tasks, and N = 11
-- after 20 seconds, everything will be repeated
+- after the hyperperiod everything gets repeated
 - the max numner of jobs in hyper period can be computed by summation of H/p<sub>i</sub> where p<sub>i</sub> is the period of task i
 
+```
+T1 = (4; 1)
+T2 = (5; 1.8)
+T3 = (20; 1)
+T4 = (20; 2)
+
+H = LCM(4,5,20,20) = 20
+
+N = sum of all H/pi
+  = 20/4 + 20/5 + 20/20 + 20/20
+  = 5 + 4 + 1 + 1
+  = 11
+```
 
 #### Refinement - Frames
+- we want scheduling decisions to be made at regular intervals
 - number of frames per hyperperiod is H/f
-- coouple of cnotraints we want to apply to determine size of frame
+- timing enforced at frame boundaries
+- task being executed must fit within single frame
+- multiple tasks per frame is ok
+
+#### Frame Size Constraints
+- coouple of constraints we want to apply to determine size of frame
     1. it should be large enough (larger than any execution time for the tasks)
         - if possible, you don't want to divide one job into 2 frames
         - otherwise there will be overhead from switching
     2. f must evenly divide H equivalently
+        - to keep cyclic schedule table size small
     3. f must be sufficiently small so that there is at least one frame between release time and deadline
+        - so that you can schedule the task before missing deadline
+        - 2f - gcd(Pi,f) <= Di
+        - want to have one fulll frame between release time and deadline
 - if a job is released in frame k, the scheduling decision is made after that time mark
 - you can schedule the job in frame k + 1 if the deadline is smaller than the time left in frame
 
 ##### More Explanation for third constraint
 - should satify the following
-    2f - (t' - t) <= D<sub>i</sub>
+    2f - (t' - t) <= D<sub>i</sub> 
 
 #### Example Revisited
 - by constraint 1, f >= 2
@@ -804,9 +932,12 @@ for (  ) {
 #### Task Slices
 - T = {(4,1), (5,2,7), (20,5)}
 - slicing task into smaller subtasks
-- by constrains 1, f >= 5
+- by constraint 1, f >= 5
 - by C3, f <= 4
 - why not split T3 into T<sub>31<sub> = (20,2) and T<sub>32<sub> = (20,3) 
+- T1 with a period of 4 must be scheduled in each frame of size 4
+- T2 with p = 5 must be scheduled 4 out of 5 times
+- this leaves only 1 frame with 3 units of time for T3, other frames have only one slot empty and cannot have a job with execution 3
 
 ## Day 8 - Sept 20, 2019
 
@@ -853,13 +984,28 @@ for (  ) {
 #### How to find a Schedule with Flow Graph
 - max flow is sum of capacities
 
-#### Cyclic Execution Advantages
-- cyclic executives are very simple
-- dispatching task is as simple as making a function call
+#### Job Splitting in Flow Daigram
+- have 2 arrows for the job and divide the execution based on the split
 
-#### CE DIsadvantages
-- they are brittle
+#### Cyclic Execution Advantages
+- cyclic executives are very simple all you need is a table
+- system is predictable and finite
+- no race conditions or deadlock
+- dispatching task is as simple as making a function call
+- lack of scheduling anomalies
+
+#### CE Disadvantages
+- they are brittle, any change means you have to redo the table
+- F can become very large, implies mode changes may have log latency
+- release times of tasks must be fixed
+- slicing tasks is hard and error prone
 - they don't deal well with change
+
+#### Summary
+- Cyclic executives is a major s/w architecture in embedded
+- used a lot for safety critical systems
+- simple and predictable is good
+- need to do a lot of offline computation to come up with one of these bad boys
 
 ## Day 9 - Sept 24, 2019
 - office hours thursday sept 26 10-11am
@@ -872,8 +1018,10 @@ for (  ) {
 
 #### Sample Questions
 1. which of the following about rts is correct?
-    - classification of rts depends on how to define cost of missing deadline
-2. which of the following function is invoked by insmod to initiate modules functions, and you can use this function to LLOCte system resources and start tasks
+    - classification of rts depends on how to define cost of missing deadline (true)
+    - a good algorithm for scheduling hard real-time tasks must try to complete each task in shortest time possible (F)
+    - soft rt tasks do not have any time bounds (F)
+2. which of the following function is invoked by insmod to initiate modules functions, and you can use this function to allocate system resources and start tasks
     - init_module()
 3. which statement is not correct
 - using threads to implement multiple tasks is more efficient that using processiner
@@ -883,13 +1031,23 @@ for (  ) {
 
 #### Concepts
 - classification of rts
+    - schedulability is the design requirement, for hard real time the deadlines have to be met or the system goes under
 - usefulness function of rts
-- diff btwn geeral prupose OS and rtos
-- diff between user space andkernel space (how to access kernel space from user space)
+- diff btwn general purpose OS and rtos
+    - the design philosophy for OS is time-sharing whereas RTOS is event-driven
+    - the design requirement for OS is high throughput whereas RTOS is schedulability
+    - the performance metric for OS is fastest average response were RTOS ensures worst-case response
+    - when there is overload OS is fair and RTOS meets critical deadlines
+- diff between user space and kernel space (how to access kernel space from user space)
 - beneifts of using kernel modu,es
     - how to write kernel modules
 - processes and threads
-
+    - 
+- 3 things that a real time task running as kernel module needs: 
+    - init_module -> initializes and prepares module for running
+    - task specific code -> 
+    - cleanup_module -> cleans up resources so module can't be called
+        - invoked by rmmod
 ##### Memory Space for processes and threads
 - processes do not share any common space
 - threads share common space, 
@@ -903,7 +1061,7 @@ for (  ) {
 - CE alg
 - how to reduce CE sched problem to network flow problem
 
-#### Using network flwo to model CE scheduling
+#### Using network flow to model CE scheduling
 - QUestion - given 3 real time tasks
 - T1(4,1); T2(5,1); T3(10,2)
     - execution time of third task is 2
