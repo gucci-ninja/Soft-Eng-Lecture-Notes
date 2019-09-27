@@ -12,6 +12,11 @@
 - [Design Vocabulary](#design-vocabulary)
 - [Tutorial Assignment 3](#tutorial-assignment-3)
 - [The Psychology of Everyday Actions](#the-psychology-of-everyday-actions)
+- [Learned Helplessness](#learned-helplessness)
+- [Positive Psychology](#positive-psychology)
+- [Norman's Advice on Failure](#normans-advice-on-failure)
+- [More Advice from Norman](#more-advice-from-norman)
+- [Memory in the Brain and in the World](#memory-in-the-brain-and-in-the-world)
 
 ## Tutorial 1 - Sept 3, 2019
 
