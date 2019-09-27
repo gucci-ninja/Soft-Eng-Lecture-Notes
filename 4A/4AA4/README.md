@@ -13,16 +13,17 @@
 - [System Calls](#system-calls)
 - [Makefile](#makefile)
 - [Real-Time Scheduling](#real-time-scheduling)
-- [Program in Virtual Memory](#program-in-virtual-memory)
-- [Multiple Processes](#multiple-processes)
-- [Thread](#thread)
 - [Creating threads in C](#creating-threads-in-c)
 - [Real Time Systems and Control Applications](#real-time-systems-and-control-applications)
-- [Race COndition](#race-condition)
+- [Race Condition](#race-condition)
 - [Midterm Details](#midterm-details)
 - [Real-Time Tasks](#real-time-tasks)
-- [](#)
+- [How Process Knowns that an Event Occured](#how-process-knowns-that-an-event-occured)
 - [Scheduling Algorithms](#scheduling-algorithms)
+- [Lab 3](#lab-3)
+- [Midterm Review](#midterm-review)
+- [Lab 4](#lab-4)
+- [Brief Review of RTS](#brief-review-of-rts)
 
 ## Day 1 - Sept 3, 2019
 
@@ -1081,3 +1082,110 @@ for (  ) {
 
 - inc lass
     - given task set t1
+
+## Day 
+
+### Lab 4
+- learn how to cerate periodic real time tasks
+- blink an LED light
+
+### Brief Review of RTS
+- given set of rt tasks, you need to tell if tasks are schedulable and then come up with the schedule
+- ways to make schedule
+    - cyclic executive (we have covered already) - not priority based so no preemption
+    - static priorities - you know the priority values of each task beforehand
+    - dynamic priorities -priority may be not be fixed, it needs to be computed
+        - dynamic is more flexible but less predictable
+
+#### Static Priority Assignment
+- problem in rts is that we consider al rt tasks as hard rt tasks so you can't know what is more important
+- couple of ways to determine priority
+    - for example you can make the priority based on period
+        - shorter period tasks = higher proirtuy
+        - this is called Rate monotonic (RM)
+    - shorter deadline task has higher priority
+        - deadline monotonic (DM)
+
+#### RM Assumptions
+- tasks are all preemptive
+- tasks are running on uniprocessor system
+- there is negligible OS overhead
+    - switching between processes is rly small
+
+#### Rate Monotonic (RM) Scheduling Algorithm
+- at any time, the higher priority task can premept execution of lower prioity task
+- if period of task i is smaller than period of task j then task i has higher priority
+
+#### Example
+- given set of 3 tasks 
+
+```
+task 1 release every 5 s
+t2 at 1 5 9 13
+t3 at 2 22 42 62
+
+we can use 4 tuple representtion for each othe tasks
+
+T1 (0,5,2,5) T2(1,4,1,4) T3(2,20,2,20)
+
+T1 would be scheduled first
+task 2 will prempt task 1
+1 slot for t2 
+```
+
+ipad work
+
+#### Diff between CE and RM
+- for the first 2 frames are the same
+- in CE the first deadline missed is when second instance of T1 is late
+0 with RM all deadlines are met when 2nd instance of T1 is late
+
+#### Schedulability Test
+- to tell whether or not you should use a certain scheduling algorithm
+- this is computed before the system starts
+- this will tell us if scheduled tasks are schedulable
+
+##### Optimal Scheduler
+- may fail to meet deadline of a task only if no other scheduler can make it
+- the term optimal is in terms of schedulability - not in terms of fastest avg respose or shortest avg waiting time
+
+#### Scheudlability TEst for RM (Test 1)
+- consider n periodic task that are all preemptable and idnepdnent
+- assume relative deadline is larger than or equal to period
+- assume tasks are integer multiples of each other
+- a necessary and suffiecient condition is tha the total cpi tutilixatin ha to be smaller then or equal to 1
+
+#### Example Sched Test
+- consider set with  3 tasks T1(4,1) T2(2,1) T3(8,2) - all integer multiple periods
+- p1 = 2p2 = 0.5p3
+- U = 1/4 + 1/2 + 2/8 = 1
+- therefore this task is RM shcedulable
+
+#### Schedlability Tes for RM (TEst 2)
+- utilixation has to be less than n(2^1/n - 1) where n is number of tasks (sufficient but not necesary condition)
+
+#### For Different n Values
+- if we consider n to be 1 and U<= 1, it is schedulable
+- if n=2 we get U <= 0.824
+- when n= inf, we get U <= 0.693
+- so no matter how many tasks are in system, if U is less than 0.693 the tasks will always be RM schedulable
+
+#### Proof for the limit of n goes to infinity
+- converges to ln(2)
+
+#### Schedulability Test for RM (Test 3)
+- sufficient and necessary condition
+- assume all tasks are n pahse (arrive at same time)
+- p1 < p2 < p3 < pi
+- moment T1 is released, processor will interrupt  anything else it is doing 
+- therefore the only condition to satisfy to ensure that T1 can succesffuly schedule, need to havee1 <= p1
+- task 2 will be executed successfully if first iteration can find enough time over [0,p2] that is not used by t1
+- suppose t2 finishes at t, the total number of instances of task 1 released over [0,t] is (t/p1)
+- then for t2 to finish at t we need to satisfy t = (t/p1)e1 + e2
+- before t2 is scheduled you can't schedule t3,t4..
+- when t2 is scheduled only t1 has been computed, but there can be multiple instances of t1
+- (t/p1)*e1 is the execution time for t1 and then e2 is the first instance of t2 executing
+- then we do the same for first instance of t3 when multiple instances of t1 and t2 have happened
+
+#### General Statement for Test 3
+- (t/pk)*ek <= t for all pi and ei
