@@ -1189,3 +1189,15 @@ ipad work
 
 #### General Statement for Test 3
 - (t/pk)*ek <= t for all pi and ei
+
+## Day i dont give a fuck anymore
+
+```
+Task 1: 0< t <= P1
+e1 <= t
+
+Task 2: 0 < t <= P2
+[t/P1]e1 + e2 <=t
+
+Task i: 0 < t <= Pi
+[t/P1]e1 + [t/P2]e2 + ... + ei <= t
