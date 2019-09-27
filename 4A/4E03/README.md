@@ -2,18 +2,12 @@
 
 ## Table of Contents
 - [Crash Course in Probability](#crash-course-in-probability)
-- [Higher Moments](#higher-moments)
-- [Variance](#variance)
-- [Geometric Distribution](#geometric-distribution)
-- [Poisson Distribution](#poisson-distribution)
-- [Exponential Distribution](#exponential-distribution)
-- [Memoryless Property](#memoryless-property)
 - [Discrete-Time Markov Chains](#discrete-time-markov-chains)
 - [Tutorial 1 - Sept 13, 2019](#tutorial-1---sept-13-2019)
-- [Limitiing Probabilities](#limitiing-probabilities)
-- [Stationary Probabilities](#stationary-probabilities)
 - [Key Theorem](#key-theorem)
 - [Expect Number of JObs in System](#expect-number-of-jobs-in-system)
+- [Operational Laws 6.4 in textbook](#operational-laws-64-in-textbook)
+- [Simulation](#simulation)
 
 ## Day 1 - Sept 4, 2019
 - weekly assignments (11 in total) 
@@ -661,3 +655,69 @@ written notes
 - the disk is still at bottleneck with 1 do a second choice to be implemented would be #2
 
 <8.3>
+
+
+## Day 9 - Sept 25, 2019
+
+### Operational Laws 6.4 in textbook
+- probability of exactly 1 visit = 50%
+- probability of exactly 2 visits = 25%
+- expected number of visits to CPU = 2
+- expected number of visits to device i = 20
+
+#### How to solve this question
+- list all quantities
+- write out laws
+- which of these things do we have 2/3 things of the equation
+ 
+<<ipad work
+
+### Simulation
+- for operational analysis there are drawbacks
+- all we can caculate is mean values
+- if there is a question like what is the probability that there are 3 jobs at particular node
+- cannot use op analysis for that
+- we can't even get throughput with OA, we can onyl get bounds
+- instead of equations for performance, we simulate system and get numbers from that
+
+#### Random Number Generation
+- 2 issues
+    1. how do computers generate random numbers
+    2. how does one generate a sample from given distribution
+- eg want to generate user think times
+
+#### Pseudo Random Number Generation
+- computers can't truly generate random numbers
+- Cloudflares's wall of lava lamps - uses iamges of lava lamps to generate a random number
+- produce sequence of pseudo random numbers
+    - something that appeears to be random but it's really
+- it passes statistical tests of randomness
+- many approaches for RNG
+- goal is to give one primitive approach
+- we don't have to know how to write a PRNG, but understand how they work
+
+##### Multiplicative Congruential Method
+- generate stream of pseudo random numbers
+- x<sub>0</sub> is the seed of rng alg
+- we recursively compute values x<sub>n</sub> by modding by m and multiplying by a
+- xn is an int between 0 and m-1
+- x<sub>n</sub>/m is a sample from uniform distribution U(0,1)
+- as soon as value repeats, whole sequence will repeat
+- m should be a large prime number (if it not we'll get repetitions over factors of m)
+- for 32-bit word with first bit being the sign, m = 2^31 - 1 and a = 7^5 work well
+- these values came from experimentation
+
+#### PRNG - assumptions
+- assume we have a good random number generator
+- all it can do is generate samples from U[0,1]
+- how do we make samples
+
+## Day ? - Sept 27, 2019\
+
+#### Generating Samples from a Given Distribution
+- how to generate coin flips from U[0,1]
+    - if it's less than 0.5 then heads, greater than then tails
+
+### DIscrete Case 
+- to generae sample given distribution
+
