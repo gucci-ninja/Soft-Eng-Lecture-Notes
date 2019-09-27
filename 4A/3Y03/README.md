@@ -21,6 +21,10 @@
 - [Binomial Distribution](#binomial-distribution)
 - [Geometric and Negative Binomial Distribution](#geometric-and-negative-binomial-distribution)
 - [Negative Binomial Distribution](#negative-binomial-distribution)
+- [Hypergeometric Distribution](#hypergeometric-distribution)
+- [Poisson Distribution](#poisson-distribution)
+- [Continuous Random Variables](#continuous-random-variables)
+- [Normal Distribution](#normal-distribution)
 
 ### What is Probability
 - Statistics is roughly the science and application of collecting and analyzing data and inferring information from possibly incomplete data sets
@@ -764,3 +768,134 @@ P(x=10) = 14^10
     - we know that the poisson distribution is the limit
     - so E[X] = lim n goes to infinity of np which gives us `λT`
     - V(X) = lim n gos to infinity np(1-p) which becomes `λT`
+
+## Day 10 - Sept 25, 2019
+- none of this stuff will be on Test 1
+
+### Continuous Random Variables
+Recall a random variable X is said to be continuous if range(X) is an interval of real numbers (bounded - [0,1] or unbounded [0,inf])
+
+#### Examples of Continuous Random Variables
+```
+X = "length of randomly selected telephone call"
+range(X) = (0, infinity)
+
+X = "time until some machine fails"
+range(X) = [0, infinity)
+
+X = "electrical current across a wire"
+```
+
+#### More Detailed Example
+- say we have a dartboard of radius R
+- let X = "distance of dart from center of circle (bullseye)"
+- range(X) = [0,R]
+- for particular value of r, what is the probability that we land at r?
+    - P(x=r) = 0
+    - why? - the probability will be infintesimally small
+    - insert circle diagrame xample
+    - If X is a CRV, then for any particular value a, P(x=a) = 0
+- Recall: If X = DRV, for any paricular a, P(X=a) = f(a)
+    - f(a) = probability mass function at a
+    - more generally for a <=b, P(a <= X <= B) = sum of f(x) from a to b
+
+For a continuous random variable, we have a similar situation.
+
+<u>Definition</u>: let X, CRV, the probability density function f(x), is a function with the following.
+
+1. f(x) >= 0 for all x
+2. integral from -inf to inf of f(x) = 1
+3. P(a<= X <= b) = integral of f(x) from a to b
+
+**Note** Since P(X=a) = 0 for any particular value, P(a <= X <= b) = P(a < X <= b) = P(a <= X < b) = P(a < X < b)
+
+#### Uniform Distribution Example
+- fix an interval [a,b] <= Real numbers
+- example from ipad
+
+##### Uniform Distributio Subexample
+- suppose x = current in a piece of wire
+- suppose curent range is uniformly between 3.6 and 4.1 milliAmps
+- question: P(3.7 < x < 3.8) = ?
+- insert example from ipad
+
+#### Example of Non-uniform Distribution
+- X = "waiting time in hours at hospital to be admitted to ER"
+- range(X) = [0, inf)
+- example from ipad
+
+In general, X is a CRV with pdf f(x). How do we compute P(X <= x)?
+- P(X <= x) is the cumulative distribution function.
+- something about fundamentals of calculus
+- the antiderivative F(X) of f(x) - if it exists, if the cumulative distribution function
+- in general, given F(X), the antiderivatie of f(x);
+
+```
+P(a <= X <= b) = F(b) - F(a)
+```
+
+## Day 11 - Sept 26, 2019
+
+Let X be a continuous random var with probabiity density funtion f(x).
+
+How do we compute P(X <= x). From the fundamental theorem of calculus, the derivative of the integral of f(t)dt -inf to inf is f(x).
+
+If we want to know the cmf, it is just the antiderivative of the pdf.
+
+We call F(x) the cumuative distribution function if F(x) is the antiderivative of f(x).
+
+P(x <= a) = F(a)
+
+P(a <= x <= b) = F(b) - F(a)
+
+#### Example
+- suppose we have cumulative distribution function
+
+```
+F(X) = { 0 for x <= 1}
+       { (1/2)(x+1)^2 for 1 < x <= 0}
+       { 1 - (x-1)^2/2 for 0 < x < 1}
+       { 1 for x >= 1 }
+
+Find P(X <= 1/2)
+Find P(X > 0)
+What is the pdf? derive it
+```
+ipad
+
+#### Mean and Variance
+IF X is a CRV with pdf f(x) then the mean/expected value of X is just E[X]
+
+```
+integral of -inf to inf xf(x)dx
+```
+
+For function h(x) (continuous/integratable)
+
+```
+E[h(x)] = integral of -inf to ing h(x)f(x)dx
+```
+
+As a special case, we have the variance V(X) = E[(x-mu)^2]
+
+### Normal Distribution
+- central limit theorme: roughly average distributin tend to normal ones
+- normal distribtions have the following pdf
+
+```
+f(x) = 1/sqrt(2Pi*sigma) * e ^ (-(x-mu)^2/2*sigma^2)
+
+sigma mu are in the real numbers
+sigma > 0
+
+```
+
+In partivular, if X is normal with parameters sigma^2 and mu, (X = N(mu, sigma^2)),
+
+```
+E[X] = mu and V(X) = sigma^2
+```
+
+- Can standardize normal distributions
+- Given X=N(my, sigma^2), observe the random var Z = X-mu/sigma is normal
+- just shifting it back to 0 and squishing it by standard deviation
