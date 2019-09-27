@@ -302,4 +302,10 @@ for first times | skilled behaviour
     - like playing guitar
     
 
+## Day ??
+- skipped
 
+## Day ??
+- went but didn't pay attention
+- tutotial presentation on tuesday
+- assignment due oct 28
