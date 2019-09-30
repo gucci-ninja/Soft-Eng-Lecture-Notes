@@ -899,3 +899,81 @@ E[X] = mu and V(X) = sigma^2
 - Can standardize normal distributions
 - Given X=N(my, sigma^2), observe the random var Z = X-mu/sigma is normal
 - just shifting it back to 0 and squishing it by standard deviation
+
+## Day 12 - Sept 30, 2019
+
+Recall: X = N(sigma^2, mu) is the normal distribution distribution with mean mu and variance sigma^2
+
+- it looks like a bell curve 
+- its cmf is P(X <= x)) is a long ass integral with no antiderivative
+- but that is ok because there is a table with numbers we can use
+- X = N(0,1) is the standard normal
+- given any other normal random variable, we can standardize P(X <= x) = P(z, <= x-mu/sigma) (shift it to mean 0and then compress it by std deviation)
+- look up phi (x-mu/sigma) <- look it up in textbook
+
+#### Example
+- File transfer dpeed from aserver to a computer is ormally distributed with mean = 5.75 mbps and variance sigma^2 = (0.35)^2
+- Part A: what is the probability that at some given time, the speed is greater than or equal to 6.7 mbps
+    - first thing we do is standardize it
+- Part B: what is the probability that the speed is less than or equal to 5.5
+- Part C: finding symmetric interval around the mean such that the 99% of the time the speed is within this interval
+    - drawing a symmetric curve, we wanna find mu-t such that the middle portion of the curve area is 99%
+
+```
+
+PART A
+We want P(x >= 6.7) 
+    = 1 - P(x <= 6.7)
+    = 1 - P(z <= (6.7 - mu/sgima)>)
+    = 1 - P(z <= 6.7-5.75/0.35)
+    = 1 - P(z <= 2.71) <--- look it up
+    = 1 - 0.996633
+    = 0.003364
+
+PART B
+We wantP(x <= 5.5) 
+    = P(z <= 5.5-5.75/0.35)
+    = P(z <= -0.71)
+    = Phi(-0.71) <---- look it up
+    = 0.238852
+
+PART C
+P(5.75 - t <= x <= 5.75 + t) = 0.88
+We know that:
+1 = P(x <= 5.75 - t) + P(5.65 - t <= x <= 5.75 + t) + P(x >= 5.75 + t)
+By symmetry of the distribution, P(x <= 5.75 - t) = P(x >= 5.75 + t)
+So
+0.99 = 1 - 2P(x <= 5.75 - t)
+0.005 = P(x <= 5.75 - t)
+0.005 = P(z <= 5.75 - t - 5.75/0.35)
+0.005 = P(z <= -t/0.35) <=== look in table
+0.00508 = P(z <= -2.57) (from table)
+So
+-t/0.35 = -2.57
+t ~= 0.8995
+```
+
+#### Normal Approximation to Binomial Distribution
+- Recall that binomial distributon is rougly bell shaped and as n gets large enough, binomial(n,p) is approximated well by a normal random variable N(np, np(1-p)).
+- It follows that is X=Bin(n,p) then X-np/sqrt(np(1-p)) is N(0,1)
+- We can improve this approximatuon with 'continuity corection'
+- P(X <= x) (counting number of successes) = P(X <= x + 0.5) ~ P(z <= x+0.5-np/sqrt(np(1-p)))
+- similarly, we can approximate from above
+```    
+P(X >= x) = P(X >= x-0.5)
+~= P((x-0.5-np)/sqrt(np(1-p)) <= Z)
+```
+- this approximation is good when np > 5 and n(1-p) > 5
+- i.e when n is large enough
+
+##### Example
+- given multiple choice test,60 questions, 5 answers per question
+- each q is bernoulli trial with p = 1/5
+- x = # questions correct 
+- P(10 <= x <= 20) = sum of (60 x)(1/5)^x(4/5)^60-x
+- but P(10 <= x <= 20) =P(8.5 <= x <= 20.5)
+- note p = 1/5, 1-p = 4/5 so np = 60/5 > 5, 60*(4/5) > 5
+- e[X] = 60*(1/5) = 12
+- v(x) = 9.6
+- p(8.5 <= X <= 20.5) ~ p(8.5-12/SQWRT(9.6) <= Z <= 20.5-12/SQRT(9.6))
+= ~0.788
