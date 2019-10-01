@@ -1193,6 +1193,8 @@ ipad work
 ## Day i dont give a fuck anymore
 
 ```
+assume di = pi
+
 Task 1: 0< t <= P1
 e1 <= t
 
@@ -1201,3 +1203,21 @@ Task 2: 0 < t <= P2
 
 Task i: 0 < t <= Pi
 [t/P1]e1 + [t/P2]e2 + ... + ei <= t
+```
+
+#### Example for TEst 3
+```
+consider task 1 first
+ei < pi
+
+p2 = 5
+at time t3 there is a release of what? 2 possible slots
+task 2: p2 = 5   [0,5]
+
+k1 = 1 .. [P2/P1]
+
+t=k, P1=3
+
+w2(t) <= t
+
+
