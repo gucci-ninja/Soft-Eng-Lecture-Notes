@@ -1219,5 +1219,160 @@ k1 = 1 .. [P2/P1]
 t=k, P1=3
 
 w2(t) <= t
+```
 
+## Day 12 - Oct 3, 2019
+
+### Test 2
+- crib shet
+- oct 31? in class
+
+### Deadline Monotinic Scheduling
+- priority based on relative deadline
+
+#### Example DM vs RM
+- in RM you only check the period
+    - task 1 gets higher priority
+    - 
+- absolute deadline of second instance of task 2 is 62.5 + 20 = 82.5
+    - this gets missed because t3 preempts
+- if using RM: second instance of t3 misses deadline
+- if using DM: tsk 2 gets higher priority than task 3 gets higher priority than task 1
+
+#### Dynamic-priority Schedulign: Earliest deadline First (EFD)
+- priorities change based on which absolute deadline comes first
+- if two tasks have the sam abs deadline you can choose either
+
+##### Example
+```
+T1(5,2) T2(7,4)
+T1 gets higher priority
+
+RM/DM -> T1 T1 T2 T2 T2 T1 T1 <-- deadline missed for T2
+but 7 is the absolute deadline for T2
+
+By EDF: T1 T1 T2 T2 T2 T2
+
+at t=5, T2 gets higher priority in EDF
+at t=15, task 1 is released again (third instance) and its deadlien is 20
+```
+
+#### EDF is Optimal
+- because 
+
+#### Comparison of RM and EDF
+- rm is more predictable
+- edf is more flexible
+
+#### Example
+```
+T1(3,2) T2(5,2)
+at t=2, 1 time task released
+
+if using RM: T1 meets deadline and T2 misses
+if using edf: both will miss 
+
+```
+
+#### Non-preemptable Tasks
+- task precedence graph
+    - Ti --> Tj - Ti must be completed before Tj
+
+#### Example
+- what relies on what basically
+- t1 takes precedence over t2 and t3 whih preempt t4,t4,t6
+- 
+
+```
+rm: t3 t3 t3 t2 t2 
+
+edf:  t1 t1 t1 t2 t2 t2 t2 t3 t3 t3 t4 (t=11 t3) t4 t3 t3
+      t2 t2 t2 t2 t3 
+
+```
+## Day ?? - Oct 4, 2019
+
+### Midterm 2 Review
+
+- among CE, RM, DM, EDF, which are static priority schedulers
+- which is optimal schedular for real-time applications
+
+#### Critical Sections
+- several properties
+
+#### Mutex
+- at most one process can hold it
+- everything in between the mutex lock is called the critical section
+
+#### Deadlocks
+- when multiple resources are trying to access same thing
+
+#### Resrouce Access Control
+- one processor
+
+#### Mutual Exclusion and Critical Secions
+- L(Ri, 1) = L(Ri)
+- if a process requests resource R for t units
+- critical section that is not included with the others is the outermost critifal section
+
+#### Problem causd by resource contention
+- for first instance, t3 has the lowest priority and t1 has the highest
+- higher priority task always prempets lower prioity task w/o  resource contention
+- what if we consider each one with a critical section? - each requesting same resource at 2, 4, 4 units (t1,t2,t3)
+- with resource contntion, t3 will be scheduled first and will enter critical section
+- then t2 is released at t=2
+
+#### Priority Inversion
+- shows resource contention can delay completion of higher priority task
+- tasks t1 and t2 would complete at unit 1 and 14 w/o resource contention
+- because even if tasks are preemptable, resources are allocated non-preemptively
+- this can be seen in time intervals 4,6 and 8,9
+
+#### Timing Anomalies
+- this may cause deadlock
+
+
+#### Mars
+- 1997 pathfinder landed on mars
+- began transmitting data back to earth
+- days later the transmission of data was interrupted by total systems resets
+- t1 = data gathering (low priority)
+- t2 = long-run ccommunication
+- t2 = bus management (high priority)
+- what happened was: t2 blocks t3 and sysem detected something had gone wrong and ordered total system reset
+- this was a result of priority inversion
+- what is a possible solution?
+    - let the processes with critical section finish before other processes
+
+#### Solution - Non-preemptive critical section protoco (npcs)
+- task with critical section holds higher priority than the other tasks
+- while the task is holding a resource it is set to highest priority until the task releases the resource
+
+##### Advantage and Disadvantage
+- advantages
+    - no prior knowledge needed about resource reqs
+    - simple to implement
+    - good for static and dynamic priority scheduling
+    - good for short critical sections and where tasks coflict with one another
+- disadvantages
+    - if critical section is very long then a higher priority task may have to wait for a while even withut resource conflict
+
+#### Example
+
+```
+T1(2,8,5,8) NO CS
+t2(5,10,5,10) no cs
+T3(0,18,7,18) [R;6] assume t3 locks R at time t=1
+
+when task 3 enters, its priority is set to be highest so it blocks t1 and t2 until resource is released at t=7
+
+there is no resource contention because no conflict
+but t1 and t2 deadlines will be missed
+```
+
+#### Another Solution - Priority Inheritance
+- in critical section, task inherit the priority of a higher priority tas when higher priority task requests the resource
+- assuming task 1priority = 1 is the highest priority
+- even if t4 enteres critical section it doesn't change priority, its priorty is still 4
+- then when t1 is released
 

@@ -977,3 +977,50 @@ P(X >= x) = P(X >= x-0.5)
 - v(x) = 9.6
 - p(8.5 <= X <= 20.5) ~ p(8.5-12/SQWRT(9.6) <= Z <= 20.5-12/SQRT(9.6))
 = ~0.788
+
+## Day idk fuck statssssssss - Oct 3, 2019
+
+#### Example
+- first step: sketch the domain
+
+- Remark Suppose R <= R^2 is same as 1 dimensional egion P((x,y) belongs to R) = 0
+- basically the probability one specific event happening is 0 or rly small
+
+
+### Marginal Probability Density Functions
+- suppose we have 2 continuous random variables X and Y
+- they are defined in a region R (i.e double integral over R f<sub>xy</sub> dxdy = 1)
+- in this situation, we want to be able to study X and Y as CRVs in their own right
+- in partivular we wantthis prob density functions
+
+### Independent Random Variable
+- recall: events A and B are independent if P(A and B) = P(A intersect B) = P(A)P(B)
+- this motivates the following definition
+    - suppose X and Y are continuoud random variables given by joint probability distribution fucntion f<sub>xy</sub>
+    - then A and Y are indepndent if f<sub>xy</sub> = f<sub>x</sub>f<sub>y</sub>
+- why is this a good definition
+    - suppose that X and Y are defined on a rectangular region R = A x B
+- fact: if X and Y are independent then they are defined on a rectagnular region
+- warning the converse id not true! if there are X and Y defined on rectangular region whcih are not independent
+
+#### Example 
+```
+0 <= y <= x <= 4, fxy = x+y/32 not eqal fx*fy
+then x andy are dependent
+```
+
+## Covariance and COrrelation
+```
+let x, y beCRVs with jpdf fxy
+if h(x,y) then E[h(x,y)] = double integral h(x,y)fxy dxdy
+```
+
+The covariance of X and Y is
+ ipad 
+
+The covariance of two continuous random variables detects relationshops between X and Y. It does not detedct higher order relationships
+
+Note: If X and Y are independent, then E[xy] = double intrgal of xy*f<sub>xy</sub>dxdy = double integral xyf<sub>x</sub>f<sub>y</sub>dxdy E[X]E[Y]
+
+So if X and Y are independent then the covariance of xy is equal to 0
+

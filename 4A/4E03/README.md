@@ -10,6 +10,8 @@
 - [Simulation](#simulation)
 
 ## Day 1 - Sept 4, 2019
+
+### Course Info
 - weekly assignments (11 in total) 
 - mark is based on best 5 assignments
 - assignments will come out on mondays and TAs will do questions related to the assigment
@@ -133,7 +135,7 @@
 
 ## Day 3 - Sept 9, 2019
 
-#### Distributions
+### Distributions
 - way of modelling the probability of an event
 - we will use cumulative distribution function (cdf)
 - any probability can be calculated given this function
@@ -145,7 +147,7 @@ P{ 1 < X <= 4}
 = F(4) - F(1)
 ```
 
-##### Continuous Random Variables
+#### Continuous Random Variables
 - for quantities that take on values on a continuum - eg time
 - F(x) is continuous
 - integrals
@@ -194,7 +196,7 @@ P{ 1 < X <= 4}
 ![](img/variance.jpg)
 
 #### Example
-Given the denisity of a a function (lifetime of a component in days)
+Given the density of a a function (lifetime of a component in days)
 - do we need to answer in terms of k or independent of k?
 - can check integral 0 to 100 f(x) = 1
 
@@ -278,7 +280,7 @@ What is the probability that a job finishs in the second quantum given it does n
     - composers
     - baseball (how runs are scored)
 
-#### Intro Example
+#### Web Page Example
 - 3 web pages A,B,C linked to each other
 - A links to B,C
 - B links to C
@@ -293,7 +295,7 @@ What is the probability that a job finishs in the second quantum given it does n
 - the example with the linked pages is discrete-time
 - te nth time point is basically the nth page visited
 
-#### Discrete Time Markov Chains
+#### Discrete Time Markov Chains Definition
 - definition: a stochastic process X<sub>n</sub> which denotes the state at a discrete time step n
     - stochastic measn random
     - process means evolving through time
@@ -441,19 +443,32 @@ What is the probability that a job finishs in the second quantum given it does n
 
 ### Key Theorem
 - these 2 ways of calculating the probabilities give u the same answer
+- pij is the limiting probability of being in state j where pi is a 1xM matrix
+- there is a proof but we won't go into it in very much detail
 
-#### Example 1
-- toy model - if we look at the execution of a pgroam, we can track it using a DTMC
-- 3 resources - cpu, storage A, storage B
-- assume that wiht this programs execution it doesnt simulataneously use the resources
+![](img/key_theorem.png)
+
+#### Steady State Probabilities Example 1
+- toy model - if we look at the execution of a progam, we can track it using a DTMC
+- 3 resources - cpu, storage A, storage B                             
+- assume that with this programs execution it doesnt simulataneously use the resources
 - you are given the probability transition matrix
-- if u discretize time, high probability that we stay at one resource for P[0,0]
-- what is the prob that given a program is using cpu, it uses disk A 2 units later
-- wanna get P[0,1]
-- note: (P[0,0])^2 is the prob that you stay at 0,0 for2 steps and P^2[0,0] is prob that you are at 0,0 after 2 steps
-
 
 ```
+      0.8 0.1 0.1
+p =   0.1 0.9  0
+      0.1  0  0.9 
+```
+
+- if you discretize time, high probability that we stay at one resource for P[0,0]
+- what is the probability that given a program is initially using the CPU, it uses disk A 2 time units later?
+    - wanna get P[0,1]
+    - note: (P[0,0])^2 is the prob that you stay at 0,0 for 2 steps and P^2[0,0] is prob that you are at 0,0 after 2 steps
+    - so for this we just do P<sup>2</sup><sub>01</sub> which is 0.17
+- what is the steady state probability that disk A is being used
+    - compute the limiting probability for this
+
+ ```
 [pi_0 pi_1 Pi_3][0.8 0.1 0.1, 0.1 0.9 0,0.1 0 0.9] = [pi0 pi1 ]
 we are gonna throw away one of those equations
 
@@ -462,16 +477,105 @@ first 2 colum eqns:
 0.8pi_0 + 0.1pi_1 + 0.1pi_2 = pi0
 ```
 
+![](img/key_theorem.jpg)
+
 ## Day 6 - Sept 16, 2019
 
-written notes
+#### Steady State Probabilities Example 2
+- multiprocessor system with 2 processors and 2 memory storage with the following matrix
 
-### Expect Number of JObs in System
+1. Make the P matrix
+    - key questions: do we need to distinguish between 2 processes? no
+    - we can't distinguish between them so we don't need to keep track of which is which
+    - states of P matrix:
+        1. both access memory 1
+        2. both access memory 2
+        3. both access different memory
+    - if we were to make request probabilities the same, we wouldn't even need to distinguish between the memory modules
+2. compute steady state using limiting probability
+
+![](img/steady_state_example.jpg)
+
+#### Calculating expected number of steps to enter a state
+- example with states {0,1,2,3} and matrix P
+
+```
+     0  0.4  0.6  0
+P =  0  0.4  0.6  0
+     0  0.9   0  0.1
+     0   0    0   1
+```
+
+- T(0,3) is the number of steps to enter state 3 given the system satrs at state 0
+- E[T(0,3)] = 1 + 0.4E[T(1,3)] + 0.6E[T(2,3)]
+- value on RHS: 1 because we always take step from state 0, no matter what, then add number of steps starting from the next state
+- we can come up with additional equations for E[T(1,3)] and E[T(2,3)] as well
+- after solving for unknowns you get that E[T(0,3)] = 26.67
+
+#### General Result
+
+![](img/number_of_steps.png)
+
+### Infinite State Discrete Time Markov Chains
+- P is still square matrix but with infinite dimensions
+- infinite linear equations and unknowns
+- we could try truncating to make it simpler to calculate
+
+#### Example
+- jobs arrive at a probability of 0.05
+- jobs depart with P = 0.1
+- if there are already jobs in system, probability of inrease is r = (0.05)(1 - 0.1) = 0.045
+- probability of decrease is s = (0.1)(1 - 0.05) = 0.095
+- 86% of the time nothing happens (1 - s - r)
+
+![](img/infinite_dtmc.jpg)
+
+![](img/pi_0.jpg)
+
+- works only when r/s is less than 1 or else the sum of all r/s will be infinite :(
+- final result:
+
+![](img/infinite_dtmc_result.png)
+
+### Expect Number of Jobs in System
 - the priciple of randomness degrading how the system works is an important thing to take away
-- 
+- E[N] = π0\*0 + π1\*1 + π2*2 ... = (r/s) / (1 - r/s)
 
+## Day 7 - Sept 18, 2019
+
+### DTMCs and PageRank
+
+#### Search Engine Goals
+- search terms and ranks
+- based on popularity
+
+#### Proposal 1
+- popularity of page is determined by the number of backlinks to it
+- might not work well because not all links are equal
+- can cheat the system by creating a bunch of pages pointing to a webpage
+
+#### Proposal 2
+- look at number of pages linked to backlinked pages
+- also easy to cheat - can have all pages point to each other
+
+#### Proposal 3
+- page has high rank if sum of the ranks of its backlinks is high
+- πj = sum of all πi*Pij
+
+#### PageRank (vanilla)
+1. get all pages and links between pages
+2. create DTMC where state are pages and there is a transition from page i to j only if there is a link between i and j
+3. if page i has a k<sub>i</sub> > 0 outgoing links, the probabilities of transition from i to j = 1/k<sub>i</sub>
+4. solve dtmc for limiting probability
+
+#### Web Proxy Cahcing
+- cache so web clients get pages with better latency
+- LRU - least recebtly used
+- have probabilities of being accessed for web pages
 
 ## Day 7 - Sept 20, 2019
+
+### Operational Analysis
 
 #### Description of a Queuing System
 - simple queue consists of buffer/queue where arribing jobs wait to be served. afer completed processing, they depart
@@ -482,8 +586,9 @@ written notes
 
 #### Performance Indicators/Metrics
 1. response time
-    - avgerage, mean, variance, if its larger than some value
+    - average, mean, variance, if its larger than some value
 2. throughput
+    - number of jobs served per time unit
 
 #### Queuing Networks
 - topology of queues
@@ -577,7 +682,7 @@ written notes
         - that would mean there are 7 users in thinking mode
     - when a request is completed there may be 8 in thinking mode and 2 active
 
-<ipad notessss>reeeeeeee
+![](img/system.jpg)
 
 #### Interactive Reponse Time Law
 - rate at whivh jobs are generated per time unit = total time/time that it takes for one of these things (t/(E[Z] + E[T]))
@@ -721,3 +826,155 @@ written notes
 ### DIscrete Case 
 - to generae sample given distribution
 
+## Day ? - Sept 30, 2019
+
+### Test 1
+- next wednesday
+- covers assignments 1 to 3
+- one sheet of notes, assume knowledge of distributions ie what is exponential distribution
+- sample questions - go through all of them
+- Max will do review in tutorials
+
+### Caching Example
+- more detailed than last time
+- how people use these tools in real life
+
+#### Introduction
+- we wanna compare caching straetgies
+- we're gonna model system as a ranked set of pages
+- suppose we have 8 pages anf the ranking is 3,7,2,6,5,1,8,4
+- suppose cache covers 2 of these (top 2 - so 3 and 7)
+- two caching strategies ppl have considerd
+- suppose next request is for P5
+    1. when you use LRU, the most recently requsted becomes highest ranked
+        - this would move P5 to the front of the list, keeping everything else the same order
+    2. other strategy is move ahead
+        - whatever page is requested moves up on rank (so 5 and 6 would switch)
+- there is a cache miss wen the page requested is not in memory
+- if all the pages ar eranked, a dtmc is easy to make
+    - howveer, if n is number of pages all pssible states is permutations 1 through n
+    - size of state pace is then n!
+    - in this case we have state space 8!
+    - in typical inux system, 4k page size and 1gb memeory and 1gb swap disk, the state space would be 500000!
+
+#### Request Model
+- constructing a DTMC
+    - need logic of cache (in LRU and move ahead this is really easy to determine next list)
+    - model for request themselves (how do requests come into system)
+- we are gonna assume that each request follows same distribution
+    - i.i.d - indepedent and identically distributed
+        - what you choose nth time has no dependence on anything and probabailities of accessing page i don't depend on n
+        - whether you request a million vs thousand, it is the same probability
+- when you have those 8 pages, you wanna look at scenarios bc it is difficult to believe one algo works better than another
+- assume there is one page (page A) that is more frequent than the other ones
+- probabikity that we choose page A is a
+- b = probability of pages that are not A
+- a + (N-1)b = 1
+- suppose a = 0.3 and the other b's are 0.1
+- but 70% of the time it is some other page and 30% is A
+- so a > b but doesn't mean A will be chosen a lot more
+- so if request is distributed arbitrarily,state space of size N!
+- with this assumption, state space of size N
+    - at least 7 of pages have same statistics
+    - A is the only 'outlier'
+    - we want state to work for LRU and move ahead
+    - we only need to know the position of page PA after nth request because all other pages act the same
+    - then N = 8 and state space = 8
+    - Xn = position of page A after nth request
+
+```
+LRU
+       1  2  3  4  5  6  7  8
+    1  a  7b 0  0  0  0  0  0
+    2  a  b  6b 0  0  0  0  0
+P = 3  a  0  2b 5b 0  0  0  0
+    4  a  0  0  3b 4b 0  0  0
+    5  a  0  0  0  4b 3b 0  0
+    6  a  0  0  0  0  5b 2b 0
+    7  a  0  0  0  0  0  6b b
+    8  a  0  0  0  0  0  0  7b
+
+```
+
+
+```
+Move Ahead
+
+        1      2  3  4  5  6  7  8
+    1  a + 6b  b  0  0  0  0  0  0
+    2   a      6b b  0  0  0  0  0
+P = 3   0      a  6b b  0  0  0  0
+    4   0      0  a  6b b  0  0  0
+    5   0      0  0  a  6b b  0  0
+    6  
+    7 
+    8  
+```
+
+Which is a better model?
+
+- With a = 0.3 and b = 0.1, the stationaary distribution for LRU shows the probability
+- with move ahead and cache size one, the stationary distribution is a lot better
+    - it says page A will be top ranked 2/3 of the time
+- with cache size 1, LRU cache miss probability is 1
+
+
+P(R<sub>n</sub> = P<sub>A</sub>) P(A not in cache) + sum of all P(R<sub>n</sub> = P<sub>i</sub>) P(i not in cache) and i != A
+
+= 0.3*.7 + (7)\*(0.1)*(0.9) = 0.84
+
+## Day ? - Oct 2, 2019
+
+- when would you prefer LRU over move ahead
+    - when once you go to a certain page, some pages are more likely
+
+### DTMCs and Machine Learning
+- number of reasons why people use DTMC for machine learning
+- key thing people look at is that it's a simple model that is able to capture correlations
+    - 1 step probabilities for state dependent variable
+- DTMCs are easy to work with
+- once model is determined compute Xn = j and X0 = i
+- P^n and take i,j entry
+
+#### Sampling
+- to generate values for DTMC
+- just need to generate a U[0,1] to generate next state
+- i we look at ith row, take the most probable value in the row and keep generating states
+
+#### Decoding
+- one of the things we wanna do in machine learning 
+
+#### Constructing a Simulation
+- if there's an arrival to one of the jobs in your somputer sstem you want to be able to determien the next state
+- output variables: things we are trying to measure
+
+#### Similation Example
+
+```
+lambda --> a node  --> node --> node 
+
+times for each node are exponentially distributed with mu 1
+
+we might want to know the throughput 
+```
+
+#### Code Example
+
+```matlab
+ttne(1) = Inf; // remaining time until next arrival
+ttne(2) = Inf; //remaining process time at queue 1
+ttne(3) = remaining process time at 2
+arrivals=0;
+departures=0;
+while(t<simtime)
+
+// smalles one determines what happens next
+//find which event happens next, update time (advance clock by y)
+// subtract y from all the entries
+// if there is an arriavl (it is the smallest of the three), increment number of arrivals
+// q(1) = q(1) + 1
+// generate new exponential number for next arrival(?)
+// if there is no scheduled event, generate a processing time at q1
+// with the exponenttial, it is always log(rand)/mu1
+
+```
