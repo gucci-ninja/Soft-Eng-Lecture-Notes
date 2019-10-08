@@ -817,7 +817,7 @@ P =  0  0.4  0.6  0
 - write out laws
 - which of these things do we have 2/3 things of the equation
 
-<ipad work
+![](img/day10_textbook_example.png)
 
 ### Simulation
 - for operational analysis there are drawbacks
