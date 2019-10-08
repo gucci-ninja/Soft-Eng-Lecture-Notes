@@ -24,6 +24,9 @@
 - [Midterm Review](#midterm-review)
 - [Lab 4](#lab-4)
 - [Brief Review of RTS](#brief-review-of-rts)
+- [Test 2](#test-2)
+- [Deadline Monotinic Scheduling](#deadline-monotinic-scheduling)
+- [Midterm 2 Review](#midterm-2-review)
 
 ## Day 1 - Sept 3, 2019
 

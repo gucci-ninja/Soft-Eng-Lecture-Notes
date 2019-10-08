@@ -25,6 +25,9 @@
 - [Poisson Distribution](#poisson-distribution)
 - [Continuous Random Variables](#continuous-random-variables)
 - [Normal Distribution](#normal-distribution)
+- [Marginal Probability Density Functions](#marginal-probability-density-functions)
+- [Independent Random Variable](#independent-random-variable)
+- [More on Covariance and Correlation](#more-on-covariance-and-correlation)
 
 ### What is Probability
 - Statistics is roughly the science and application of collecting and analyzing data and inferring information from possibly incomplete data sets

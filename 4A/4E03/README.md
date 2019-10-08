@@ -1,13 +1,26 @@
 # 4E03 Performance Analysis of Computer Systems
 
 ## Table of Contents
+- [Course Info](#course-info)
 - [Crash Course in Probability](#crash-course-in-probability)
+- [Distributions](#distributions)
 - [Discrete-Time Markov Chains](#discrete-time-markov-chains)
 - [Tutorial 1 - Sept 13, 2019](#tutorial-1---sept-13-2019)
 - [Key Theorem](#key-theorem)
-- [Expect Number of JObs in System](#expect-number-of-jobs-in-system)
+- [Infinite State Discrete Time Markov Chains](#infinite-state-discrete-time-markov-chains)
+- [Expect Number of Jobs in System](#expect-number-of-jobs-in-system)
+- [DTMCs and PageRank](#dtmcs-and-pagerank)
+- [Tutorial 2 - Sept 20, 2019](#tutorial-2---sept-20-2019)
+- [Operational Analysis](#operational-analysis)
 - [Operational Laws 6.4 in textbook](#operational-laws-64-in-textbook)
 - [Simulation](#simulation)
+- [Tutorial 3 - Sept 27, 2019](#tutorial-3---sept-27-2019)
+- [Discrete Case ](#discrete-case-)
+- [Test 1](#test-1)
+- [Caching Example](#caching-example)
+- [DTMCs and Machine Learning](#dtmcs-and-machine-learning)
+- [Tutorial 4 - Oct 4, 2019](#tutorial-4---oct-4-2019)
+- [Simulation Packages](#simulation-packages)
 
 ## Day 1 - Sept 4, 2019
 
