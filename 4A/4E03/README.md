@@ -573,12 +573,15 @@ P =  0  0.4  0.6  0
 - LRU - least recebtly used
 - have probabilities of being accessed for web pages
 
-## Day 7 - Sept 20, 2019
+### Tutorial 2 - Sept 20, 2019
+
+## Day 8 - Sept 20, 2019
 
 ### Operational Analysis
 
 #### Description of a Queuing System
-- simple queue consists of buffer/queue where arribing jobs wait to be served. afer completed processing, they depart
+- simple queue consists of buffer/queue where arriving jobs wait to be served
+- depart after completion
 - need to describe 
     - how arrivals work (given by probability distribution)
     - queue - size (infinite or finite)
@@ -594,12 +597,13 @@ P =  0  0.4  0.6  0
 - topology of queues
 
 #### Analysis Directions
-1. exact analysis
-    - equations that yield desired performance metric
-    - question 2 on assignment 2
-2. simulation
-    - idea is that instead of doing exact analysis, you simulate it and gather real data for response times and then compute the average
-    - running the system logically
+- two possibilities
+    1. exact analysis
+        - equations that yield desired performance metric
+        - question 2 on assignment 2
+    2. simulation
+        - idea is that instead of doing exact analysis, you simulate it and gather real data for response times and then compute the average
+        - running the system logically
 
 #### Operational Laws
 - what analytic models rely on
@@ -622,11 +626,19 @@ P =  0  0.4  0.6  0
     - if we knew the real processing time, this calculated value would be overestimated because B<sub>i</sub>
     - it goes up and drops
 
+![](img/operational_laws.png)
+
+#### Simple Calculations
+
+![](img/calculations.png)
+
 #### Ergocidity Assumptions
 - assume system is ergodic (time averages lead to actual underlying means)
     - youd eventually get the means 
 - assume everything converges to a fixed value as time gets large
 - many situations where arrival rate changes (eg more arrivals during business hours)
+
+![](img/simplification.png)
 
 #### Utilization Law
 - we're gonna do some algebraic manipulation of the quantities
@@ -635,6 +647,8 @@ P =  0  0.4  0.6  0
 - if the 2 were not equal it would not converge? - i just made this part up he didn't really say that
 - if the system was busy all the time, it would process 1 job every e[Si] time units
 - otherwise departues would be happening faster than they are arriving
+
+![](img/utilization_law.png)
 
 #### Forced Flow Law
 - suppose A<sub>i</sub>(t) = C<sub>i</sub>(t)
@@ -646,21 +660,26 @@ P =  0  0.4  0.6  0
     - program visits CPU multiple times
 - given reference device, device 0, by definition te expected number f vists to device i = expected number of departures (one of these is reference device)
 
+![](img/forced_flow_law.png)
+
 #### Device Demands
 - combining utilization law and forced flow law
 - throughput ro = E[Si]E[Vi]X
 - ro<sub>i</sub> = E[Di]X
+
+![](img/device_demands.png)
 
 #### Little's Law
 - this one is a relationship that's not very obvious
 - John Little came up with this in 1950s
 - N<sub>i</sub> is the avergae number of jobs that are sitting or waiting at a device including the one being processed
 - that expected number paired with mean response time is related
-- if we kow that 2 different systems, 1 with average qeueu length of 10 and system 2 avergae qeueu length of 20
+- if we know that 2 different systems, 1 with average qeueu length of 10 and system 2 avergae q length of 20
     - it makes sense that the average waiting time for the system with twice the length has longer is twice as much as system 1
     - in a number of systems, we are almost always interested in response time, esp when deciding how long you should make your buffer
+- the derivation after is used in multiple places so you should understand it
 
-- the derivation after is used in multiple palces so you should understand it
+![](img/littles_law.png)
 
 #### Users/Clients
 - using relations we talked about to make design decisions
@@ -684,20 +703,24 @@ P =  0  0.4  0.6  0
 
 ![](img/system.jpg)
 
+![](img/general_response_time_law.png)
+
 #### Interactive Reponse Time Law
-- rate at whivh jobs are generated per time unit = total time/time that it takes for one of these things (t/(E[Z] + E[T]))
+- rate at which jobs are generated per time unit = total time/time that it takes for one of these things (t/(E[Z] + E[T]))
 - M users, each user generateds the amount ----
 - throughput = M/(E[Z] + E[T])
     - this tells us that response time and throughput are related
     - throughput = arrival rate = departure rate = X
 - expected response time = number of users/(throughput - avg think time)
 1. if we are given M and the think time, we can measure response time that gives throughput
-2. more improtantly, we are gonna look at the end resut and fint he fundamental properties that limit performance
+2. more impotantly, we are gonna look at the end resut and fint he fundamental properties that limit performance
     - when can we get low response time and high throughput
 - on average, the user generates at value (t/(E[Z] + E[T]))
 - don't really need limit because t's cancel
 
-## Day 8 - Sept 23, 2019
+![](img/interactive_response_time_law.png)
+
+## Day 9 - Sept 23, 2019
 
 #### Interactive Response TIme Law contd
 - throughput = arrival rate = departure rate = X
@@ -716,11 +739,13 @@ P =  0  0.4  0.6  0
 - Dmax = bottleneck demand
 - throuhput cant get any larger than this demand DMax
 
-(paper notes 8.1)
+![](img/bottleneck_analysis.png)
 
 ##### Proof of Bounds
 - when system has its performance limited, througput is going to be 1
 - min reponse time is when you are the only user of system, it would be greter than or equal to D
+
+![](img/bottleneck_diagram.png)
 
 #### Example 1
 - M clients submitting requests to 3 single-server nodes in series (visit in order and visit once)
@@ -739,6 +764,8 @@ P =  0  0.4  0.6  0
 - bottom line is that we want to improve bottleneck demand
 - almost all service based computer systems have a load balancer attached to them
     - it adjusts the demands to make them as equal as possible
+
+![](img/bottleneck_analysis_example.png)
 
 #### Example 2
 - system has 50 clients
@@ -759,10 +786,12 @@ P =  0  0.4  0.6  0
 - #2 reduces it to 28.1 so chose #1
 - the disk is still at bottleneck with 1 do a second choice to be implemented would be #2
 
-<8.3>
+#### Example 3
+
+![](img/oa_example3.png)
 
 
-## Day 9 - Sept 25, 2019
+## Day 10 - Sept 25, 2019
 
 ### Operational Laws 6.4 in textbook
 - probability of exactly 1 visit = 50%
@@ -774,8 +803,8 @@ P =  0  0.4  0.6  0
 - list all quantities
 - write out laws
 - which of these things do we have 2/3 things of the equation
- 
-<<ipad work
+
+<ipad work
 
 ### Simulation
 - for operational analysis there are drawbacks
@@ -817,16 +846,18 @@ P =  0  0.4  0.6  0
 - all it can do is generate samples from U[0,1]
 - how do we make samples
 
-## Day ? - Sept 27, 2019\
+### Tutorial 3 - Sept 27, 2019
+
+## Day 11 - Sept 27, 2019
 
 #### Generating Samples from a Given Distribution
 - how to generate coin flips from U[0,1]
     - if it's less than 0.5 then heads, greater than then tails
 
-### DIscrete Case 
-- to generae sample given distribution
+### Discrete Case 
+- to generate sample given distribution
 
-## Day ? - Sept 30, 2019
+## Day 12 - Sept 30, 2019
 
 ### Test 1
 - next wednesday
@@ -923,7 +954,7 @@ P(R<sub>n</sub> = P<sub>A</sub>) P(A not in cache) + sum of all P(R<sub>n</sub> 
 
 = 0.3*.7 + (7)\*(0.1)*(0.9) = 0.84
 
-## Day ? - Oct 2, 2019
+## Day 13 - Oct 2, 2019
 
 - when would you prefer LRU over move ahead
     - when once you go to a certain page, some pages are more likely
@@ -948,7 +979,7 @@ P(R<sub>n</sub> = P<sub>A</sub>) P(A not in cache) + sum of all P(R<sub>n</sub> 
 - if there's an arrival to one of the jobs in your somputer sstem you want to be able to determien the next state
 - output variables: things we are trying to measure
 
-#### Similation Example
+#### Simulation Example
 
 ```
 lambda --> a node  --> node --> node 
@@ -979,13 +1010,14 @@ while(t<simtime)
 
 ```
 
-### Tutorial Oct 4, 2019
+### Tutorial 4 - Oct 4, 2019
 
+#### Concepts Review
 - intersect of 2 mutually exliusive
 - a cdf as x approaches infinity it is 1
     - a pdf will be 1 if u integrate/take sum of -inf to inf
 
-## Day ?? - Oct 4, 2019
+## Day 14 - Oct 4, 2019
 
 #### Matlab Implementation
 1. Run program, `two_queue(0.5, 1.0, 1.5, 100000)`
@@ -1027,7 +1059,7 @@ R = sum of R(i) from i=1 to N all over N
 - problem with that is that we would have to throw out a lot of data
 - in practice, the simulation is repeated with a different seed for PRNG (called independent replica)
 
-## Oct 7, 2019
+## Day 15 - Oct 7, 2019
 
 1. computation of confidence intervals - appropriate way to present output/results
 2. transient removal - remove bias from results
