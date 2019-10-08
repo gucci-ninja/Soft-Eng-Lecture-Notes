@@ -568,7 +568,7 @@ P =  0  0.4  0.6  0
 3. if page i has a k<sub>i</sub> > 0 outgoing links, the probabilities of transition from i to j = 1/k<sub>i</sub>
 4. solve dtmc for limiting probability
 
-#### Web Proxy Cahcing
+#### Web Proxy Caching
 - cache so web clients get pages with better latency
 - LRU - least recebtly used
 - have probabilities of being accessed for web pages
@@ -978,3 +978,136 @@ while(t<simtime)
 // with the exponenttial, it is always log(rand)/mu1
 
 ```
+
+### Tutorial Oct 4, 2019
+
+- intersect of 2 mutually exliusive
+- a cdf as x approaches infinity it is 1
+    - a pdf will be 1 if u integrate/take sum of -inf to inf
+
+## Day ?? - Oct 4, 2019
+
+#### Matlab Implementation
+1. Run program, `two_queue(0.5, 1.0, 1.5, 100000)`
+    - exit matlab
+    - repeat: get exactly the same values
+    - (lambda, mu_1, mu_2, simulated time)
+    - this is because matlab uses the same seed
+2. run two consecutive times
+    - different values ( for throughput and avg response time)
+3. `two_queue(2.0, 1.0,1.5, 100000)`
+    - the throughput for this woud be around 1 (smallest rate)
+    - the longer you run it, the longer the avg respnse time would be 
+4. Q1: what to choose for output?
+    - calculate average
+    - how 'confident' are we with result (confidence intervals)
+
+```
+lambda = 0.99
+mu_1  = 1.00
+mu_2 = 100
+
+pi = lambda*E[Si]
+```
+
+#### Output Analysis
+transient reponse graph R(n) <-- repsons etime of nth job
+
+_
+R = sum of R(i) from i=1 to N all over N
+
+- reponse will be underestimated because it doesn't take transient reposne into account (not steady state yet)
+- you can kill transient by keep on simulating until you get a steady state
+- even if we get rid of transient, we're just reporting 1 avg value whereas we wanna report confidence values
+- there is an assumpton about set of samples for confidence intervals
+    - these samples are indepdent samples from underlying distribution
+- if we take conseuctive values and we wanna claim they are indepndent from reposne time distribution, you can't claim they are independent
+- they follow a trend
+- so we can try to take samples far apart from each other so tey appear indepndent
+- problem with that is that we would have to throw out a lot of data
+- in practice, the simulation is repeated with a different seed for PRNG (called independent replica)
+
+## Oct 7, 2019
+
+1. computation of confidence intervals - appropriate way to present output/results
+2. transient removal - remove bias from results
+    - let the system run for a peroid of time (10%) and then start collecting data
+3. independent replicas
+    - outer loop tracking the number of replications at the top
+    - at the end, for each replication, get throughput and avg response time
+        - eg if we un it 30 times we woul get a vector of size 30
+
+### Simulation Packages
+- would be nice if this was automated - one of these packages is CSIM
+- developing schedules of next events
+- storing state
+
+#### CSIM
+- has no front-end, just provides support
+- notion of a 'process'
+- CSIM schedule processes
+
+```c
+#include "csim.h" // includes all the routines and data structures
+// csim always has a process named sim with a create statement
+void sim() {
+    int cnt=1;
+    create("sim"); /* required */
+    facility_set(facs, "facs", K); // initalize facility
+    while (cnt<NOARRS) {
+        cust();
+        hold()
+    }>)
+}
+
+// cancreate custom jobs
+// comes with built in rng
+void cust()
+{
+    create("cust");
+    use(facs[0], exponential(SVTM1)) // use first node
+    use(facs[1], exponential(SVTM2)) // use second node
+}
+
+// use(fac, time) schedules when job departs from facility
+// it suspends process until it can be processed
+// kind of like clock time but on simulator
+// create("cust") allows multiple copies to be created for every job comign into the system
+// main process is
+```
+
+`ssh macid@moore.cs.mcmaster.ca`
+
+#### Useful Resources
+- `www.mesquite.com` for information on C/C++ version of CSIM
+- `SimPy` for python queues and RNG
+- commercial
+    - Arena
+    - Simul8
+    - Opnet
+
+#### CSIM
+- CSIM doesn't do transient removal
+- reporting confidence intervals can be implemented
+- CSIM also does run length control
+- example at beginning
+    - run n replications
+    - produce CI for desired metric
+    - suppose we ge 3.02 +- 0.02 with 30 replications, each for 100,000 simulated time, 90% confidence)
+    - what is the result was 3.00 +- 1.00
+        - can increase the number of replications or increase simulated time to make it better
+        - can also decrease the confidence
+    - width of CI be 5-10% the average
+- run length control
+    - before: run replication and compute confidence interval
+    - we can put computation of CI (confidene interval) inside the loop
+    - instead of fixed nuber of replications, keep running until CI is narrow enough
+        - dangerous because it could run for a loong time so you should have a timeout after a while
+- CSIM uses something called "batch means" rather than independent replicas to do run length control
+    - the idea is that you have a resposne that is super trasnient-y
+    - goal is to get a bunch of traces and remove transient
+    - in batch means, you divide up the response into batches and use this to calculate Y1 Y2 Y3 Y4 (avg resposne time for each batch) and THEN do a confidence interval
+    - the responses are not independent from each other but if we make the batches large enough they can appear independent
+
+    - accurately identify which movie is playing based on video input
+    - 

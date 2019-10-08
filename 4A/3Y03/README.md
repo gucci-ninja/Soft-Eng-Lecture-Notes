@@ -1024,3 +1024,24 @@ Note: If X and Y are independent, then E[xy] = double intrgal of xy*f<sub>xy</su
 
 So if X and Y are independent then the covariance of xy is equal to 0
 
+## Day 15 - Oct 7, 2019
+
+### More on Covariance and Correlation
+- recall
+    - given 2 continuous random variables X and Y with joint probability distribution functin f<sub>xy</sub>, the covariance is cov(x,y) = ...
+
+-- picture diagrams
+
+- The covariance of 2 random variables can take any real value making cov(x,y) sometimes difficult to interpret
+- so we have correlation
+- correlation of X and Y measures linear dependence in the same way as covariance but is sometimes a little easier to interpret
+- definition: given CRVs X and Y, the correlation is defined as 
+
+#### Reproductive Property og Normal Distribution
+- suppose than X1..Xn are indepndent normal RVs with Xi = N(
+
+
+#### Example
+- suppose waer bottles are filled to an avg of 591mL with std deviation 5mL
+- suppose that the value of a bottle is normally distributed and that the volume of the bottles is indepndent
+- question: what is the probability that given 10 bottles, the average volume is less than 585mL

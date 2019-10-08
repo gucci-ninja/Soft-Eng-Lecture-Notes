@@ -309,3 +309,13 @@ for first times | skilled behaviour
 - went but didn't pay attention
 - tutotial presentation on tuesday
 - assignment due oct 28
+
+## Day 
+- bonus mark
+    - 1 group use mural 1 doesn't
+    - disadvatnage and advantags of using mural
+    - what signifiers
+    - constraints
+
+
+midterm: why emptathy tables re important
