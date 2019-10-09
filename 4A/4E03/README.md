@@ -803,7 +803,6 @@ P =  0  0.4  0.6  0
 
 ![](img/oa_example3.png)
 
-
 ## Day 10 - Sept 25, 2019
 
 ### Operational Laws 6.4 in textbook
