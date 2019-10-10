@@ -318,4 +318,4 @@ for first times | skilled behaviour
     - constraints
 
 
-midterm: why emptathy tables re important
+midterm: why emptathy tables are important
