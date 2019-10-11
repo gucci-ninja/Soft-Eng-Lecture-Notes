@@ -254,6 +254,7 @@ for first times | skilled behaviour
 
 ### Norman's Advice on Failure
 - don't force user to learn your machine
+    - instead of just an error message, give instructions on how to solve issues
 - make errors low-cost
     - allow users to undo if they mess up
     - do not exit without saving or giving warning
@@ -261,20 +262,21 @@ for first times | skilled behaviour
     - don't expect users to memorize
 - who remembers the 3 layers (goal)
     - simplification of layers of our brain
-    - what part of our experience are captured in lizard brain?
-        - emotions
+    - visceral/lizard - bottom layer (red) 
+        - emotions, sensory perceptions
+        - can have closed loop (doesn't need to reach higher levels of cognition)
         - non-animal name for lizard brain = visceral
-        - visceral comes from 'in the flesh'
-        - 
-- reflective - top layer - instincts - concious
-- behavioural - middle layer - can work unconciously
+        - visceral comes from 'in the flesh' 
+    - reflective - top layer (purple) - instincts - concious
+    - behavioural - middle layer (pink) - can work unconciously
 - we start with the goal
     - questions at refelctive level
         - are there alternatives
         - anything in the layer is expensive, a lot slower
         - also learned behaviours
     - affordance is at behavioral level
-    - signifiers are a higher levle thing because people have to think about that
+    - signifiers are a higher level thing because people have to think about that
+        - but if the signifier is really good and is the same on multiple applications, you don't really have to think about it --> can be moved down to behavioural layer
     - midterm q?: what layer does affordance belong in
     - the lower things are on the layers, the quicker
     - second layer: what are the possibilties
@@ -290,16 +292,46 @@ for first times | skilled behaviour
 - when you find bad design
     - don't moan but figure out why the problem happened
     - understand that there might have been a reason
+    - do root-cause analysis
 - end of first chapter!!!! 
 
 ### Memory in the Brain and in the World
 - writing is a way to store knowledge in the world
-- we also organize our world so it encodes knowledge (data)
+- we also organize our world so it implicitly encodes knowledge (data)
+- we rely on partial knowledge ( enough to distinguish between possibilities)
+    - ex. don't know exactly what each coin looks like but know enough to pull out change when needed
+    - have trouble when a change affects partial knowledge
+- constraints - lmits that turn imprecise knowledge to precise knowledge
+    - reduces what needs to be remembered
+    - ex. knowing where your kitchen is within your house (2nd door on left <-- 2 constraints) rather than exact coordinates
+- natural constraints
+    - ex. seatbelts only slot into correct buckle (won't fit in others)
+    - ex. scissors fit naturally one way in the hand (right vs. left handed)
+- cultural constraints
+    - ex. clocks go clockwise
+    - ex. green means go
 - procedural knowledge
     - how to do things
     - not concious
+    - linked to cultural constraints
     - often hard to think about it
-    - like playing guitar
+    - ex. playing guitar
+    - ex. typing on keyboard without looking
+        - facilitated by standard keyboard layout but new users can learn b/c keys labeled
+- evidence that people use natural mappings
+    - ex. putting your keys in a specific place each time
+    - ex. organizing papers spatially according to importance
+- designers should make it easy to find knowledge in world by:
+    - including signifiers
+    - adding physical constraints
+    - using natural mappings
+- working memory
+    - computation in brain is like CPU with 7 registers
+    - context switching is disruptive - requires transferring knowledge to long-term memory but that is hard
+    - best option - make checklist of what you're doing
+    - okay option - compartmentalize 
+        - working mem has 3 components (auditory, visual scratchpad, register file)
+
     
 
 ## Day ??
