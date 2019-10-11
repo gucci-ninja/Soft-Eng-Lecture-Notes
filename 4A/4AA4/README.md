@@ -1334,7 +1334,6 @@ edf:  t1 t1 t1 t2 t2 t2 t2 t3 t3 t3 t4 (t=11 t3) t4 t3 t3
 #### Timing Anomalies
 - this may cause deadlock
 
-
 #### Mars
 - 1997 pathfinder landed on mars
 - began transmitting data back to earth
@@ -1379,3 +1378,117 @@ but t1 and t2 deadlines will be missed
 - even if t4 enteres critical section it doesn't change priority, its priorty is still 4
 - then when t1 is released
 
+## Oct 8, 2019
+
+### Priority Inversion
+- low priority task blocking high priority task due to resource allocation
+- NPCS and PIP(?)
+
+
+#### Advantages nad Disadvantages
+- disadvantage of NPCS - even when there is no resource contention, a task may be blocked
+- PIPincreases priority only when there is resource contention but this can lead to deadlock
+
+#### Priority Inheritance Rule
+- when a task t1 gets blocked due to resource availability, t2 holds the resource and blocks t1
+- in this case, t2 would inherit the priority of t1
+
+#### Priority Inheritance Protocol (PIP)
+- if t1 is blocked by t2 and t2 is blocked by t3 then t2 and t3 both inherit the priority of t1
+
+#### Comments on PIP
+- it avoid disadvantages of NPCS
+- may have deadlock
+
+#### Deadlock Scenario
+- b blocks a from r2
+- c blocks b from r3
+- a blocks c from r1
+- so c has b's priority and a has c's priority
+
+#### Priority Ceiling Protocol
+- assume that all assigned priorities are fixed
+- ceiling(R) = highest priority among tasks requesting resource R
+- each resource has a fixed priority ceiling
+
+#### Resource Allocaion Rule in PCP
+- if request to block a resource fails then the task requesting the resource gets blocked
+- if the resource is free then it gets allocated to the task asumming priority of the task is higher than the resource priority ceiling
+- if task priroity is not higher then the request is denied and the task is blocked
+
+#### Priority Ceiling Protocol
+- this is an advanced version of PIP
+- similar in that priority is updated based on resource contention
+    - priority of ti is set to be priority ceiling of resource requested
+
+
+#### Comments on PCP
+- priority ceiling of resource is fixed but priroity ceiling of system changes
+- the priority of a task updated when it is blocked
+- blocking task inherits priority of blocked task
+
+#### Example
+- c has highest P and a has lowest
+- c requests s1
+- prio(S1) = high, ceil(s2) and ceil(s3) = medium
+
+#### Facts on Priority Ceiling
+- task can only be blocked by 1 critical section
+- PCP has more runtime overhead than PIP
+
+#### PCP Example
+- at which time does the priroity inheritance/update occurs?
+    - whenever a task request a resource already in use
+- at which time does priroity ceiling of system change
+    - at this point you already know priroity ceiling of resource 
+    - when c releases s1, the priroity ceiling is changed back to M
+    - class A release the resourc, task B gets the resource
+    - whenever there is a release/acquisition of resource, it is possible the system's priority ceiling will be changed
+
+#### Another Example
+- 5 tasks
+- PCP schedule?
+
+## Oct 10, 2019
+
+
+#### PIP example
+- t3 acquires r2
+- t2 priority is higher so it gets r3
+- when t2 wants to get r2, it's not free so t3 scheudled
+- then t1 is released
+- t1 pirority higher than t3
+- but there is no resource contention
+- after t1 is done, t3 tries to lock r3
+- then t2 tries to lock r2
+- so there's a deadlock
+
+#### PCP Example
+- ??
+
+#### QUestion
+- t2 will be blocked
+- t3 has highest priority
+- the reason to choose the first is because at time t2,
+- the reason to choose second choice is because tht's the priroity ceiling for resources required by t1
+
+
+### Properties of Clock
+- all tasks need to meet their deadlines so we use a standard time reference
+- implementation of scheduling depends a lot on accuracy of clock
+
+#### Correctness
+- we want arrow between clock value and standard clock should be within a boudn
+
+#### Bounded Drift
+- rate of change of clock value should be like an ideal clock
+- can make i bounded by parameter ro
+- clocks in computes are crystal controlled
+- every day the largest drift should be less than 1 second
+
+#### Example of Failure due to Clock Drift
+- in 1991, an iraqi missile accidentally hit US barracks
+- error caused by clock drift
+
+#### Monotonicity
+- 

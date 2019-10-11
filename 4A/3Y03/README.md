@@ -1048,3 +1048,43 @@ So if X and Y are independent then the covariance of xy is equal to 0
 - suppose waer bottles are filled to an avg of 591mL with std deviation 5mL
 - suppose that the value of a bottle is normally distributed and that the volume of the bottles is indepndent
 - question: what is the probability that given 10 bottles, the average volume is less than 585mL
+
+
+## Day 16
+- skipped
+
+## Day 17 Oct 10, 2019
+- recap on last lecture
+- stem and leaf plots (which are kinda useless)
+    - way to visualize small sets of data {x1...xn}
+- first column is cumulative frequency then stems then leaves
+- stem and leaf plots are good for finding quartiles
+
+### Quartile and Histograms
+
+#### Quartiles
+- can be read off of a stem and leaf plot
+- q1 = first quartile number for which ~ 25% of the date is below q1
+- q2 = second quartile number for which ~ 50% of the data is below q2
+    - also known as median
+- q3 = third quartile number for which 75% of data is below q3
+- in general - nth percentile is that  for which approx n% of the data is below
+- the inter quartile range (IQR or IQRange) is defined to be q3 - q1
+- looking at data and chopping off things that are sparse (near the ends)
+    - usually a beter measure of spread than range
+
+#### Frequency Distributions and Histograms
+- a frequency distribution is a compact way of visualizing data
+- idea: divide your data into bins/intervals/cells of equal width and then count the number of data points that appear in each bin (this is frequency)
+- questions: how many bins?
+    - too many bins - you lose shape of the data
+    - too few - lose detail
+- in general, rule of thumb is that given a data set {x1..xn} then sqrt(n) many bins is usually informative
+    - not too much not too little
+
+##### Example - Industrial Building Permits per Year
+- minimum is 73, max is 213
+- there are 20 data points in total
+- for 20 data points, sqrt(20) data points is good = 4.7 ~ 5 bins
+- if you're forced to make a choice, one more bin is better than one less so round up
+- 
