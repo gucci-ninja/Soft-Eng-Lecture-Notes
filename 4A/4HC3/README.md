@@ -35,14 +35,16 @@
 - interaction
     - dynamic
 - task based inteface design
-    - what does the user need
+    - think: "what does the user need to do"
 - book: The Design of Everyday Things by Don Norman
 
 ### Communication
 - interaction is about communication
-- simple information is harder to display since there is an expectatin to understand the information easily
+- know what your message is & find out what your user understands
+- simple information is harder to display since there is an expectation to understand the information easily
 - should design intuitively
 - need to communicate to user what things they can do
+    - communicate in way that user will pay attention to it
 
 #### Exercises
 - chapter 1-6
@@ -63,6 +65,10 @@
 - need to research 
 - understand things in others POV (empathy)
 
+### Activity Centered Design
+- design for "a person who wants to X"
+- don't add features, add capabilities
+
 ## Day 2 - Sept 5, 2019
 
 ### Marking
@@ -81,14 +87,35 @@
 
 ## Day 3 - Sept 9, 2019
 
-### What is Design
-Design is people deciding how something should be
+### Don Norman
+- helped define what human computer interfaces/interaction is
+- Norman doors - not apparent how to open/close them
 
-Instead of calling it philosophy he called it design of every day things. Users didn't understand what he book was about. the publisher told him to put design in the title but users don't want to read a book that says philosophy in the title. It gives them an appraoch to design their house, lives, etc
+### Discoverability
+- can you figure out what actions are possible?
+    - if its not something obvious, need to add signifiers
+
+### What is Design
+Design is people deciding how something should be and a way of communicating with the user
+
+Instead of calling it philosophy he called it design of every day things. Users didn't understand what the book was about. the publisher told him to put design in the title but users don't want to read a book that says philosophy in the title. It gives them an appraoch to design their house, lives, etc
 
 The Escape Math Island game uses this philosophy of design. The kids who develooped it followed a design thinking approach.
 
 Sometimes you will wish you could just get started, if you are close to the deadline. But its almost guaranteed that you will deisgn something that will not work well if you dont iterate and think of many possibilities. It almost never works out the way you thought.
+
+### Interaction Design
+- what we will learn in this course
+- its how people interact with technology
+- good design makes clear
+    - what can be done
+    - what is happening
+    - what just happened
+
+### Experience Design
+- design focused on total experience
+- measured by value and enjoyment people receive from it (i.e. do they want to experience it)
+
 
 ### Counter Example for Good Design
 A counter example is CRUD - create read update destroy, a software interface, API operations. Lots of ways a user could get to a point and say 'I don't know what to do now'. It's bad because we're focusing on low-leve tasks, not the high-level tasks that the user needs to accomplish. It means we need to memorize all the commands. For a dev it's straight to the point.
@@ -123,7 +150,7 @@ There are principles that people have come up with for this stuff.
 - when you press a button at a crosswalk, the beep beep noise is a signifier for when you will be able to walk
 - signifier is a percievable indicator (can be seen, heard, touched, etc)
 - controls for adjusting a seat (that you can feel)
-- the affordances that you fee can be more important to blind people
+- the affordances that you feel can be more important to blind people
 - buttons are the most common and obvious signifier
 - eg a rectangle with words is commonly thought to be a button
 - software bookmarks/physical bookmark
