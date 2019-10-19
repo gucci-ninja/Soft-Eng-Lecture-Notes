@@ -842,7 +842,7 @@ P =  0  0.4  0.6  0
 - goal is to give one primitive approach
 - we don't have to know how to write a PRNG, but understand how they work
 
-##### Multiplicative Congruential Method
+#### Multiplicative Congruential Method
 - generate stream of pseudo random numbers
 - x<sub>0</sub> is the seed of rng alg
 - we recursively compute values x<sub>n</sub> by modding by m and multiplying by a
@@ -859,6 +859,7 @@ P =  0  0.4  0.6  0
 - how do we make samples
 
 ### Tutorial 3 - Sept 27, 2019
+- went over operational analysis problems
 
 ## Day 11 - Sept 27, 2019
 
@@ -883,7 +884,7 @@ P =  0  0.4  0.6  0
 - how people use these tools in real life
 
 #### Introduction
-- we wanna compare caching straetgies
+- we wanna compare caching strategies
 - we're gonna model system as a ranked set of pages
 - suppose we have 8 pages anf the ranking is 3,7,2,6,5,1,8,4
 - suppose cache covers 2 of these (top 2 - so 3 and 7)
@@ -893,12 +894,12 @@ P =  0  0.4  0.6  0
         - this would move P5 to the front of the list, keeping everything else the same order
     2. other strategy is move ahead
         - whatever page is requested moves up on rank (so 5 and 6 would switch)
-- there is a cache miss wen the page requested is not in memory
-- if all the pages ar eranked, a dtmc is easy to make
-    - howveer, if n is number of pages all pssible states is permutations 1 through n
+- there is a cache miss when the page requested is not in memory
+- if all the pages are ranked, a dtmc is easy to make
+    - however, if n is number of pages all possible states is permutations 1 through n
     - size of state pace is then n!
     - in this case we have state space 8!
-    - in typical inux system, 4k page size and 1gb memeory and 1gb swap disk, the state space would be 500000!
+    - in typical linux system, 4kb page size and 1gb memeory and 1gb swap disk, the state space would be 500000
 
 #### Request Model
 - constructing a DTMC
@@ -914,7 +915,7 @@ P =  0  0.4  0.6  0
 - b = probability of pages that are not A
 - a + (N-1)b = 1
 - suppose a = 0.3 and the other b's are 0.1
-- but 70% of the time it is some other page and 30% is A
+- that means 70% of the time it is some other page and 30% is A
 - so a > b but doesn't mean A will be chosen a lot more
 - so if request is distributed arbitrarily,state space of size N!
 - with this assumption, state space of size N
@@ -925,38 +926,34 @@ P =  0  0.4  0.6  0
     - then N = 8 and state space = 8
     - Xn = position of page A after nth request
 
-```
-LRU
-       1  2  3  4  5  6  7  8
-    1  a  7b 0  0  0  0  0  0
-    2  a  b  6b 0  0  0  0  0
-P = 3  a  0  2b 5b 0  0  0  0
-    4  a  0  0  3b 4b 0  0  0
-    5  a  0  0  0  4b 3b 0  0
-    6  a  0  0  0  0  5b 2b 0
-    7  a  0  0  0  0  0  6b b
-    8  a  0  0  0  0  0  0  7b
-
-```
+#### LRU
+.| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
+-----|---|---|---|---|---|---|---|--
+1| a | 7b|  0|  0|  0|  0|  0|  0
+2|  a|  b|  6b| 0|  0|  0|  0|  0
+3|  a|  0|  2b| 5b| 0|  0|  0|  0
+4|  a|  0|  0|  3b| 4b| 0|  0|  0
+5|  a|  0|  0|  0|  4b| 3b| 0|  0
+6|  a|  0|  0|  0|  0|  5b| 2b| 0
+7|  a|  0|  0|  0|  0|  0|  6b| b
+8|  a|  0|  0|  0|  0|  0|  0|  7b
 
 
-```
-Move Ahead
-
-        1      2  3  4  5  6  7  8
-    1  a + 6b  b  0  0  0  0  0  0
-    2   a      6b b  0  0  0  0  0
-P = 3   0      a  6b b  0  0  0  0
-    4   0      0  a  6b b  0  0  0
-    5   0      0  0  a  6b b  0  0
-    6  
-    7 
-    8  
-```
+#### Move Ahead
+.| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
+-----|---|---|---|---|---|---|---|--
+1| a + 6b | b|  0|  0|  0|  0|  0|  0
+2|  a|  6b|  b| 0|  0|  0|  0|  0
+3|  0|  a|  6b| b| 0|  0|  0|  0
+4|  0|  0|  a|  6b| b| 0|  0|  0
+5|  0|  0|  0|  a|  6b| b| 0|  0
+6|  |  |  |  |  |  | | 
+7|  |  |  |  |  |  |  | 
+8|  |  |  |  |  |  |  |  
 
 Which is a better model?
 
-- With a = 0.3 and b = 0.1, the stationaary distribution for LRU shows the probability
+- With a = 0.3 and b = 0.1, the stationary distribution for LRU shows the probability
 - with move ahead and cache size one, the stationary distribution is a lot better
     - it says page A will be top ranked 2/3 of the time
 - with cache size 1, LRU cache miss probability is 1
@@ -975,9 +972,13 @@ P(R<sub>n</sub> = P<sub>A</sub>) P(A not in cache) + sum of all P(R<sub>n</sub> 
 - number of reasons why people use DTMC for machine learning
 - key thing people look at is that it's a simple model that is able to capture correlations
     - 1 step probabilities for state dependent variable
-- DTMCs are easy to work with
-- once model is determined compute Xn = j and X0 = i
-- P^n and take i,j entry
+- DTMCs are easy to work with and allow us to do the following
+    1. sampling/simulating values
+    2. learning - P{X<sub>n+1</sub> = j| X<sub>n</sub> = i} (what is the probability the next state will be j given the state before is i)
+    3. inference - given the system starts at state i, what is tge probability it will be at state j after n steps P{X<sub>n</sub> = j| X<sub>0</sub> = i}
+    4. stationary distribution (steady state)
+    5. decoding
+    6. conditional inference - what will a state be after n steps if it is at step i right now - P{X<sub>n</sub> = j | X<sub>n-1</sub> = i, X<sub>n+m</sub> = k}
 
 #### Sampling
 - to generate values for DTMC
@@ -987,16 +988,34 @@ P(R<sub>n</sub> = P<sub>A</sub>) P(A not in cache) + sum of all P(R<sub>n</sub> 
 #### Decoding
 - one of the things we wanna do in machine learning 
 
-#### Constructing a Simulation
-- if there's an arrival to one of the jobs in your somputer sstem you want to be able to determien the next state
-- output variables: things we are trying to measure
+### Constructing a Simulation
+- if there's an arrival to one of the jobs in your computer system you want to be able to determine the next state
+- variables and events we can use for discrete event simulation
+    1. time t (elapsed time)
+    2. counter variables - number of times an event happens by t
+    3. state variables - state of system
+    4. output variables: things we are trying to measure
 
 #### Simulation Example
+- simulating 2 single-server queues
+- first one's output goes to second queue
+    1. Exp(λ) = time between arrivals
+    2. Exp(μ1) - processing times of server 1
+    3. Exp(μ2) = processing times of server 2
+    4. first come first serve processing at both servers
+- 3 events
+    1. arrival
+    2. departure from queue 1
+    3. departure from queue 2
+- state = queue length at each server
+- have to update time, state and time to next events
+- if queue 1 is empty, simulate processing time (same for queue 2)
+- also need to note departures (for response times)
 
 ```
 lambda --> a node  --> node --> node 
 
-times for each node are exponentially distributed with mu 1
+times for each node are exponentially distributed with μ 1
 
 we might want to know the throughput 
 ```
@@ -1006,13 +1025,13 @@ we might want to know the throughput
 ```matlab
 ttne(1) = Inf; // remaining time until next arrival
 ttne(2) = Inf; //remaining process time at queue 1
-ttne(3) = remaining process time at 2
+ttne(3) = -log(rand) / lambda; // remaining process time at 2
 arrivals=0;
 departures=0;
 while(t<simtime)
 
-// smalles one determines what happens next
-//find which event happens next, update time (advance clock by y)
+// smallest one determines what happens next
+// find which event happens next, update time (advance clock by y)
 // subtract y from all the entries
 // if there is an arriavl (it is the smallest of the three), increment number of arrivals
 // q(1) = q(1) + 1
@@ -1027,7 +1046,7 @@ while(t<simtime)
 #### Concepts Review
 - intersect of 2 mutually exliusive
 - a cdf as x approaches infinity it is 1
-    - a pdf will be 1 if u integrate/take sum of -inf to inf
+    - a pdf will be 1 if u integrate/take sum of -/inf to /inf
 
 ## Day 14 - Oct 4, 2019
 
@@ -1035,12 +1054,12 @@ while(t<simtime)
 1. Run program, `two_queue(0.5, 1.0, 1.5, 100000)`
     - exit matlab
     - repeat: get exactly the same values
-    - (lambda, mu_1, mu_2, simulated time)
+    - λ, μ_1, μ_2, simulated time)
     - this is because matlab uses the same seed
 2. run two consecutive times
     - different values ( for throughput and avg response time)
 3. `two_queue(2.0, 1.0,1.5, 100000)`
-    - the throughput for this woud be around 1 (smallest rate)
+    - the throughput for this would be around 1 (smallest rate)
     - the longer you run it, the longer the avg respnse time would be 
 4. Q1: what to choose for output?
     - calculate average
@@ -1048,23 +1067,40 @@ while(t<simtime)
 
 ```
 lambda = 0.99
-mu_1  = 1.00
-mu_2 = 100
+mu1  = 1.00
+mu2 = 100
 
 pi = lambda*E[Si]
 ```
 
+#### Confidence Intervals
+- given a bunch of data points with an average of 26.91
+- average is not good enough, it doesn't tell us much
+- we want to get the bounds of an estimate such that P(a <= E[X] <= b) = 1 - α
+    - want to know the probability that the average is going to plus or minus a certain amount
+- 100(1 - α) is the confidence level, given as a percentage
+    - want it to be close to 100%
+- α is the significance level so it will usually be around 0.1 or 0.05
+- (a,b) is the confidence interval
+
+#### How to Compute Confidence Intervals
+- the t-distribution is one way to do this
+- the t<sub>1-α/2;n-1</sub> is the 1 - α/2 quantile
+- so if α is 0.1 then it will be the a confidence level of 90
+
+![](img/ci_example.png)
+
+
 #### Output Analysis
-transient reponse graph R(n) <-- repsons etime of nth job
+- transient response graph R(n) <-- response time of nth job
 
-_
-R = sum of R(i) from i=1 to N all over N
+![](img/transient_response.png)
 
-- reponse will be underestimated because it doesn't take transient reposne into account (not steady state yet)
+- response will be underestimated because it doesn't take transient response into account (not steady state yet)
 - you can kill transient by keep on simulating until you get a steady state
 - even if we get rid of transient, we're just reporting 1 avg value whereas we wanna report confidence values
 - there is an assumpton about set of samples for confidence intervals
-    - these samples are indepdent samples from underlying distribution
+    - these samples are independent samples from underlying distribution
 - if we take conseuctive values and we wanna claim they are indepndent from reposne time distribution, you can't claim they are independent
 - they follow a trend
 - so we can try to take samples far apart from each other so tey appear indepndent
@@ -1073,13 +1109,14 @@ R = sum of R(i) from i=1 to N all over N
 
 ## Day 15 - Oct 7, 2019
 
+### Putting Together a Good Simulation
 1. computation of confidence intervals - appropriate way to present output/results
 2. transient removal - remove bias from results
     - let the system run for a peroid of time (10%) and then start collecting data
 3. independent replicas
     - outer loop tracking the number of replications at the top
     - at the end, for each replication, get throughput and avg response time
-        - eg if we un it 30 times we woul get a vector of size 30
+        - eg if we un it 30 times we would get a vector of size 30
 
 ### Simulation Packages
 - would be nice if this was automated - one of these packages is CSIM
@@ -1154,4 +1191,16 @@ void cust()
     - the responses are not independent from each other but if we make the batches large enough they can appear independent
 
     - accurately identify which movie is playing based on video input
-    - 
+
+## Oct 11, 2019
+- rip
+
+### Relationship between OA and Simulation
+
+![](img/oct11.png)
+
+#### Exponential Distribution Properties
+- x is measuring time between arrivals
+- when you have 2 random variables, you can make one of them equal to something
+- if you add condition that X2 = x then you can calculate it
+- probability that X is less than or equal to x = 1 - Exp(-λ*x)
