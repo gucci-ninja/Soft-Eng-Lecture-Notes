@@ -719,3 +719,45 @@ midterm: why emptathy tables are important?
 ## Day 17 - Oct 10, 2019
 
 ### Human Error, No Bad Design
+
+## Oct 21, 2019
+- midterm day
+
+## Day 18 - Oct 23, 2019
+
+### Human Error, No Bad Design continued
+
+#### Slips and Mistakes
+- mistakes are in reflevtive layer
+- slips in behavioural and visceral
+    - common when you're distracted
+
+#### Types of Mistakes
+- skill-based?
+- rule-based
+    - not using the right rule
+- knowledge-based
+    - incomplete/incorrect inkowledge
+- memory lapse
+    - forgetting a step
+
+
+### Types of Slips
+- capture clips
+    - 2 activities have a common step and you do the wrong one
+- desription-similarity slips
+    - based on internal compression
+    - when things are confusing to understand
+
+#### What can we do to avoid mistakes/slips
+- designers can solve this by making thingd ==s look at work differently
+- use forcing function
+- create uncluttered interface with focus on things
+- same control different state different results
+- mitigating factor - orthogonality
+    - there is no overlap in controls
+
+#### Fixing Types of mistaes
+- rule based
+    - in imperative programming - ifs and whiles
+    - can be caused by faulty rules
