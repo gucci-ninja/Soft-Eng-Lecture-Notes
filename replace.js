@@ -27,9 +27,9 @@ const lookup = {
   omega: "ω",
 
   // Math
-  "+-": "±",
+  // "+-": "±",
   // "*": "×",
-  "/": "÷",
+  // "/": "÷",
   sqrt: "√",
   integral: "∫",
   inf: "∞",
@@ -37,16 +37,16 @@ const lookup = {
   approx: "≈",
   equiv: "≡",
   prop: "∝",
-  ge: "≥",
-  le: "≤",
+  ">=": "≥",
+  "<=": "≤",
 
   // Set theory
   elem: "∈",
   nelem: "∉",
-  nat: "ℕ",
-  int: "ℤ",
+  natN: "ℕ",
+  intZ: "ℤ",
   ratio: "ℚ",
-  real: "ℝ",
+  realR: "ℝ",
   aleph: "ℵ",
   concat: "◦",
 
@@ -101,7 +101,7 @@ function replace(file) {
   var data = fs.readFileSync(file, "utf8");
   var res = data;
   for (var key in lookup) {
-    res = res.replace(new RegExp("/"+key, 'g'), lookup[key]);
+    res = res.replace(new RegExp('//'+key, 'g'), lookup[key]);
   }
   
   console.log(res);

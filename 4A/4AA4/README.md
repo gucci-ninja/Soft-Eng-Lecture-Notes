@@ -1492,3 +1492,14 @@ but t1 and t2 deadlines will be missed
 
 #### Monotonicity
 - 
+
+
+## Oct 11, 2019
+
+### Midterm 2 Review
+
+#### EDF
+- a set of tasks is not schedulable using EDF if their utilization adds up to more than 100%
+- if edf doesn't work then no other scheduling algorithm will work
+- if edf works it doesn't tell us anything
+

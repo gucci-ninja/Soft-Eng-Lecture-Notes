@@ -1060,7 +1060,7 @@ So if X and Y are independent then the covariance of xy is equal to 0
 - first column is cumulative frequency then stems then leaves
 - stem and leaf plots are good for finding quartiles
 
-### Quartile and Histograms
+### Quartiles, Histograms and Box Plots
 
 #### Quartiles
 - can be read off of a stem and leaf plot
@@ -1087,4 +1087,15 @@ So if X and Y are independent then the covariance of xy is equal to 0
 - there are 20 data points in total
 - for 20 data points, sqrt(20) data points is good = 4.7 ~ 5 bins
 - if you're forced to make a choice, one more bin is better than one less so round up
-- 
+- range = 213 - 73 = 140 so 5 bins will each have width of 140/5 = 28 (approx 30 so it's easier to draw)
+
+insert frequency distribution graphs from ipad!!!
+
+#### Box Plots (Box and Whisker Plots)
+- way to visualize data that includes lots of info
+- start with your range
+- draw a box
+- x is used for outliers
+- an outlier is any data point past (1.5)IQR from the endpoitns of the box
+- an extreme outlier is any data point 3IQR from the endpoints of the box
+- you can use box plots to compare data sets
