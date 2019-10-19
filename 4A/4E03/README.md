@@ -19,8 +19,11 @@
 - [Test 1](#test-1)
 - [Caching Example](#caching-example)
 - [DTMCs and Machine Learning](#dtmcs-and-machine-learning)
+- [Constructing a Simulation](#constructing-a-simulation)
 - [Tutorial 4 - Oct 4, 2019](#tutorial-4---oct-4-2019)
+- [Putting Together a Good Simulation](#putting-together-a-good-simulation)
 - [Simulation Packages](#simulation-packages)
+- [Relationship between OA and Simulation](#relationship-between-oa-and-simulation)
 
 ## Day 1 - Sept 4, 2019
 
