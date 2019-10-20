@@ -27,6 +27,9 @@
 - [Test 2](#test-2)
 - [Deadline Monotinic Scheduling](#deadline-monotinic-scheduling)
 - [Midterm 2 Review](#midterm-2-review)
+- [Priority Inversion](#priority-inversion)
+- [Properties of Clock](#properties-of-clock)
+- [Midterm 2 Review](#midterm-2-review)
 
 ## Day 1 - Sept 3, 2019
 
