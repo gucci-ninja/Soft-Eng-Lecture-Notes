@@ -15,13 +15,42 @@
 - [Experience Design](#experience-design)
 - [Counter Example for Good Design](#counter-example-for-good-design)
 - [Design Vocabulary](#design-vocabulary)
+- [Paradox of technology](#paradox-of-technology)
+- [Preview of Design Principles](#preview-of-design-principles)
 - [Tutorial Assignment 3](#tutorial-assignment-3)
 - [The Psychology of Everyday Actions](#the-psychology-of-everyday-actions)
+- [Human Thought](#human-thought)
 - [Learned Helplessness](#learned-helplessness)
 - [Positive Psychology](#positive-psychology)
+- [Three Layers of Cognition](#three-layers-of-cognition)
+- [Goal to World](#goal-to-world)
 - [Norman's Advice on Failure](#normans-advice-on-failure)
 - [More Advice from Norman](#more-advice-from-norman)
 - [Memory in the Brain and in the World](#memory-in-the-brain-and-in-the-world)
+- [Longterm Memory](#longterm-memory)
+- [Why Elm](#why-elm)
+- [Design Thinking](#design-thinking)
+- [Double Diamond](#double-diamond)
+- [Design Thinking continued](#design-thinking-continued)
+- [Testing](#testing)
+- [Activity-Centered Design vs Human Centered](#activity-centered-design-vs-human-centered)
+- [Iterative Design](#iterative-design)
+- [Presentation 1](#presentation-1)
+- [Presentation 2](#presentation-2)
+- [Bonus Marks](#bonus-marks)
+- [Design Thinking continued](#design-thinking-continued)
+- [Standardization](#standardization)
+- [Anti-Affordances](#anti-affordances)
+- [Knowing What to Do:  Constraints, Discoverability and Feedback](#knowing-what-to-do:--constraints-discoverability-and-feedback)
+- [Constraints](#constraints)
+- [Logical Constraints](#logical-constraints)
+- [Applying Affordances, Signifiers and Constraints to Everyday Objects](#applying-affordances-signifiers-and-constraints-to-everyday-objects)
+- [Midterm Prep](#midterm-prep)
+- [Applying Affordances, Signifiers and Constraints to Everyday Objects continued](#applying-affordances-signifiers-and-constraints-to-everyday-objects-continued)
+- [Forcing Functions](#forcing-functions)
+- [Conventions are Cultural Constraints](#conventions-are-cultural-constraints)
+- [Sound](#sound)
+- [Human Error, No Bad Design](#human-error-no-bad-design)
 
 ## Tutorial 1 - Sept 3, 2019
 
@@ -203,16 +232,17 @@ There are principles that people have come up with for this stuff.
     - designer must communicate with user
 - bayesian learning
     - prior probability - user is expecting the product to behave like their probable idea of the world around them
-- paradox of technology
-    - increase in tech is overwhelming
-    - there are a lot of 'probable ideas' (ref: bayesian learning)
-    - people propose more technology to make everything simpler
-        - eg auditory interfaces
-        - AI butlers
-        - google glass
-        - ubiquitous surface (AR/VR?)
-    - these ideas could fail or take away human agency
-    - can have acivity based interfaces or just not develop these things
+
+### Paradox of technology
+- increase in tech is overwhelming
+- there are a lot of 'probable ideas' (ref: bayesian learning)
+- people propose more technology to make everything simpler
+    - eg auditory interfaces
+    - AI butlers
+    - google glass
+    - ubiquitous surface (AR/VR?)
+- these ideas could fail or take away human agency
+- can have acivity based interfaces or just not develop these things
 
 ##### The Design Challenge
 - great design requires great teams and teams need great management
@@ -222,6 +252,27 @@ There are principles that people have come up with for this stuff.
     - manufacturing
     - software
     - designers
+
+### Preview of Design Principles
+1. Discoverability
+    - if we can see what actions are available
+    - perceivable state transitions
+2. Feedback
+    - state diagram: all transitions signal to user
+3. conceptual model
+    - makes model apparent (steering wheel will change direction of front wheel)
+    - force on joystick of 777 planes?
+    - enhances discoverability and feedback
+4. affordances
+    - ways of doing what wants to be done
+5. signifiers
+    - making it easy to discover affordances
+6. mapping
+    - spatial layout of interface
+    - temporal layout (timeline)
+    - makes controls easier to learn
+7. constraints
+
 
 ### Tutorial Assignment 3
 - 7 points in backup report + presentation for 2 of the points (1 good 1 bad)
@@ -244,6 +295,10 @@ There are principles that people have come up with for this stuff.
 #### Gulfs of Execution and Evaluation
 - we need reasons to run experiments
 - most of the time we are just curious or want to achieve a goal
+- goal vs world
+- execution - first we formulate goal (what to do and how to do it)
+- evaluation - we try to make sense of what happened in the world
+    - is it right/wrong
 
 #### Seven Stages of Action
 - this is how we analyze interfaces and errors
@@ -256,6 +311,18 @@ There are principles that people have come up with for this stuff.
     6. interpret (perceived changes)
     7. compare (expectation vs actual changes)
 - can be goal driven (based on internal goal) or event driven (reaction to environment)
+
+### Human Thought
+- mostly subconcious
+- memory
+    - long term
+        - declarative
+        - procedural
+    - short term
+        - cpu with 7 registers
+
+## Sept 18, 2019
+- Class cancelled
 
 ## Day 7 - Sept 19, 2019
 
@@ -281,8 +348,28 @@ for first times | skilled behaviour
 - turn failure into learning experience
     - IDEO: design company, slogan is fail often, fail fast
 
+## Day 8 - Sept 19, 2019
 
-## Day  ? - Sept 23, 2019
+### Three Layers of Cognition
+- reflective
+    - deep, analytical, slow
+- behavioural
+    - can be unconcious
+- visceral
+    - unconcious
+    - lizard brain
+    - instinctual response to world around
+
+### Goal to World
+- diagram
+
+```
+goal----> plan-------> specify-----> perform --> world
+          (refelctive)   (behavioural)   (visceral)
+world---> perceive---> interpret---> compare --> goal
+
+```
+## Day 9 - Sept 23, 2019
 
 ### Norman's Advice on Failure
 - don't force user to learn your machine
@@ -364,22 +451,271 @@ for first times | skilled behaviour
     - okay option - compartmentalize 
         - working mem has 3 components (auditory, visual scratchpad, register file)
 
-    
-
-## Day ??
-- skipped
-
-## Day ??
-- went but didn't pay attention
+## Day 10 - Sept 25, 2019
 - tutotial presentation on tuesday
 - assignment due oct 28
 
-## Day 
-- bonus mark
-    - 1 group use mural 1 doesn't
-    - disadvatnage and advantags of using mural
-    - what signifiers
-    - constraints
+### Longterm Memory
+- not very detailed
+- easy to override by questioning
+- sleep is good for forming longterm memories
+- types
+    - declarative memory
+    - procedural memory
+- conceptual models should use memory aids
+- anticipate what will be forgotten
+
+#### Prospective Memory
+- rememebring to do things in the future
+- in design - calendars, alarms, timers, reminders
+
+Knowledge in the world | Knowledge in the head
+---------------------------|----
+perceived | from memory
+interpreted | learned
+slow | fast
+for beginners | for pros
+can be ugly | sleek
+
+#### Memory in Multiple Heads
+- collective knowledge can enhance team output
+- in design - crowdsourcing
+
+#### Natural Mapping
 
 
-midterm: why emptathy tables are important
+## Day 11 - Sept 26, 2019
+
+### Why Elm
+- app asset size is very small compaired to Vue, React, Angular
+- 29kb
+
+### Design Thinking
+- like root-cause analysis
+- engineers solve problems but designers discover the real problem
+- involves listning to customer
+- human centered design - listen to the people
+- iteration
+    - observation
+    - ideation
+    - prototyping
+    - testing
+
+### Double Diamond
+![](img/double_diamond.png)
+
+## Day 12 - Sept 30, 2019
+
+### Design Thinking continued
+- is not A/B testing
+- not marketing research
+
+#### Ideation
+- don't settle on idea too early
+
+#### Prototyping
+- low fidelity
+- only way to know product works is by testing so we need to make one
+
+### Testing
+- in small groups
+- iterate - test, prototype a coupld of times
+
+### Activity-Centered Design vs Human Centered
+- activity = when there is more than one customer
+- human centerd = for one specific person
+- activities vs tasks
+    - activities are high level, drive satisfaction
+    - tasks are low level
+- Carver and Schier hierarchy of goals
+    - be-goals
+        - about you, your image
+        - abstract
+    - do-geals
+        - action based, tasks
+    - motor-goals
+        - operations
+- ipod is a good example for activity design
+    - people like the activity of listening to music
+
+### Iterative Design
+- waterfall is not good for design thinking
+- big companies let you do design thinking
+- better to prototype and find problems early on
+
+## Day 13 - Oct 2, 2019
+
+### Presentation 1
+- double diamond
+- designing weed puller for elderly (short) woman
+- empathize, define, ideate, prototype, test
+
+## Day 14 - Oct 3, 2019
+
+### Presentation 2
+1. Overview of Challenge
+2. What do we Hope to Learn
+3. Empathy Map
+- say, think, do, feel
+4. Ethnographic Observations
+- get different opinions
+5. Themes and Insights
+6. User Profile
+7. As-Is Scenarios (kinda like empathy maps)
+8. HILLS/POV Statement
+9. How Might We
+    - variations and pespectives
+10. Reflection
+
+#### First Prototype
+1. Description
+2. What We Wanna Learn
+3. Testing
+4. Feedback
+    - reflection/action
+
+### Bonus Marks
+- 1 group use mural 1 doesn't
+- disadvatnage and advantags of using mural
+- what signifiers
+- constraints
+
+midterm: why emptathy tables are important?
+
+### Design Thinking continued
+
+#### Design Challenge
+- great product = great team
+- how can we make the best use of every team? - use parallelism
+    - sales, manufacturing, marketing, etc
+
+#### Multiple Stakehodlers
+- a lot of products aren't chosen by users but by companies
+- for example education is a collective effort from parents, politicians
+- appliances bought by developers/property managers
+
+### Standardization
+- people agreeing on common choice
+    - web protocols
+- good because
+    - users get expected behaviour
+    - it's cheaper
+    - products can work together better
+- bad because
+    - users might prefer bad system just because they know it (qwerty keyboard whereas colemak might be better)
+
+### Anti-Affordances
+- trying to make something hard
+- for people with dementia so they do not leave the house alone
+
+## Day 15 - Oct 7, 2019
+
+### Knowing What to Do:  Constraints, Discoverability and Feedback
+- when you start using a new device, approach with various types of knowledge
+- knowledge in the world
+    - signifiers
+    - perceived affordances
+- knowledge in the head
+    - conceptual model
+    - cultural, logical and semantic constraints
+    - analogies that link to previous knowledge
+- the part that the designer can do is put knowledge in the world
+- taking 15 LEgo pieces example
+    - many ways to build something
+    - constrained by how they can be attached (physical contraint), which color goes where (cultural)
+- we are going to be talking about some of these constraints
+
+### Constraints
+
+#### Physical Constraints
+- "goes together like lego"
+- should be able to tell how something should be used (physically)
+- it used to be hard to tell which side up a USB type A should go but the type C fixed this
+
+#### Cultural Constraints
+- restaurant etiquette
+- road etiquette
+
+#### Semantic Constraints
+- choices depend on knowing use
+- driver is going to sit behind the windshield not the front because of how a car works and based on what windshields purpose is
+
+### Logical Constraints
+- pieon-hole principle
+- give one obvious option to do something
+
+### Applying Affordances, Signifiers and Constraints to Everyday Objects
+- doors
+- public transit
+
+## Day 16 - Oct 9, 2019
+
+### Midterm Prep
+- practice exam on Avenue
+- one page of writing and labelling diagram - 50 minutes
+
+### Applying Affordances, Signifiers and Constraints to Everyday Objects continued
+
+#### Switches and How to Make them Understandable
+- mapping is Norman's fave principle
+- should place switch where the object (light fixture) is placed
+- switches with similar functions should be put together
+
+##### Task Analysis
+- to make a switch better, you should figure out what your users want and do
+    - interview and observe them
+- one button model is simple but there is no way we can cover all use cases this way
+
+##### Use Mapping
+- for controls, use spatial or timeline-based mapping
+
+##### Wireless Control
+- would get rid of physical househol switches
+
+### Forcing Functions
+- another constraint, physical one that prevents bad(unsafe) behaviour
+
+#### Interlocks
+- prevent dangerous actions that are ongoing
+- microwave has an interlock mechanism so it doesn't keep radiating when you open it
+- oven doors lock when it gets super hot
+- OG interlock example - dead man's switch
+    - trains are automatic but we needed to make sure the engineer is still alive overlooking
+    - so there was a pedal with a spring that ensured the engineer is present
+- still figuring out how we are going to do this for a smart car (Tesla)
+
+#### Lockins
+- prevent an action from stopping
+- when you're about to close Word Doc it asks you to save
+- business purpose
+    - Bell device will not work with Rogers SIM
+    - data usage
+
+#### Lockouts
+- prevent dangerous thing from happening
+- pin in fire extinguisher needs to be removed before using it
+- gates on stairs don't let people into the basement
+- password systems need to do this properly
+    - too many restrictions will make users override them
+    - too many password change prompts make users just add number
+
+### Conventions are Cultural Constraints
+- it saves time to use conventions because they are defined and easy to re-implemenent
+- in software this is harder to do since capabilities are different
+- common practice for building layouts
+- faucets
+    - can be clockwise
+    - can be mirrored (clockwise for cold, ccw for hot) but this sucks for one hand
+
+### Sound
+- good for feedback for people who can't see
+- in general sound is good feedback, unless you can't hear
+- lots of psychology behind these sounds
+- useful to use skeuomorphism (making the object sound like how it seems it would sound)
+    - phone camera makes a shutter sound
+    - hands on a smartwatch
+    - telephone icon for smartphones
+
+## Day 17 - Oct 10, 2019
+
+### Human Error, No Bad Design
