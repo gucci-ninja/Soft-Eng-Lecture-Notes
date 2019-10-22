@@ -29,6 +29,8 @@
 - [Independent Random Variable](#independent-random-variable)
 - [More on Covariance and Correlation](#more-on-covariance-and-correlation)
 - [Quartiles, Histograms and Box Plots](#quartiles-histograms-and-box-plots)
+- [Probability Plots](#probability-plots)
+- [Chapter 7 - Point Estimation of Parameters](#chapter-7---point-estimation-of-parameters)
 
 ### What is Probability
 - Statistics is roughly the science and application of collecting and analyzing data and inferring information from possibly incomplete data sets
@@ -1031,25 +1033,27 @@ So if X and Y are independent then the covariance of xy is equal to 0
 ## Day 15 - Oct 7, 2019
 
 ### More on Covariance and Correlation
-- recall
-    - given 2 continuous random variables X and Y with joint probability distribution functin f<sub>xy</sub>, the covariance is cov(x,y) = ...
 
--- picture diagrams
+![](img/covariance.png)
 
 - The covariance of 2 random variables can take any real value making cov(x,y) sometimes difficult to interpret
 - so we have correlation
 - correlation of X and Y measures linear dependence in the same way as covariance but is sometimes a little easier to interpret
 - definition: given CRVs X and Y, the correlation is defined as 
 
+![](img/correlation.png)
+
 #### Reproductive Property og Normal Distribution
 - suppose than X1..Xn are indepndent normal RVs with Xi = N(
 
+![](img/linear_function_rv.png)
 
 #### Example
 - suppose waer bottles are filled to an avg of 591mL with std deviation 5mL
 - suppose that the value of a bottle is normally distributed and that the volume of the bottles is indepndent
 - question: what is the probability that given 10 bottles, the average volume is less than 585mL
 
+![](img/day15_example.png)
 
 ## Day 16
 - skipped
@@ -1090,7 +1094,11 @@ So if X and Y are independent then the covariance of xy is equal to 0
 - if you're forced to make a choice, one more bin is better than one less so round up
 - range = 213 - 73 = 140 so 5 bins will each have width of 140/5 = 28 (approx 30 so it's easier to draw)
 
-insert frequency distribution graphs from ipad!!!
+![](img/frequency_dist.png)
+
+![](img/histogram.png)
+
+![](img/cumulative_frequency.png)
 
 #### Box Plots (Box and Whisker Plots)
 - way to visualize data that includes lots of info
@@ -1100,3 +1108,45 @@ insert frequency distribution graphs from ipad!!!
 - an outlier is any data point past (1.5)IQR from the endpoitns of the box
 - an extreme outlier is any data point 3IQR from the endpoints of the box
 - you can use box plots to compare data sets
+
+![](img/box_plot.png)
+
+## Day 18 - Oct 21, 2019
+
+### Probability Plots
+- useful tool for visualizing data
+- we are given a sample {x//_1,..x</sub>n</sub>} chosen from possibly larger dataset
+- we can assume that any data follows some distribution ie, our set has values of a random variable X with probability distribution function f(x)
+- our hypothesis is that the data can be modelled by some distribution
+- to test if our hypothesis is correct we can use probability plots
+
+#### Steps to create a probability plot
+- start with some sample
+1. Reorder (n increasing order) and rename the sample
+    - x1,...,xn ----> x<sub>(1)</sub> //<=  x<sub>(2)</sub> ...
+    - that is, rename elements of the sample so that x<sub>(1)</sub> is the smallest
+- idea: x<sub>(i)</sub> should be approximately the 100(1/n)th percentile
+- so in a set of 11 values, x x<sub>(6)</sub> ~ median
+2. Find values of X, say y<sub>i</sub> such that 
+
+- found in notebook
+
+### Chapter 7 - Point Estimation of Parameters
+- first going to go through terminology
+- a parameter (usually denoted by //theta) is any numerical deatuer of your data set/population
+- examples of parameters
+    - //mu mean
+    - //sigma//_2 variance
+    - //sigma std deviation
+- recall that a random sample is a particular instance of a set of independent and indetically distributed RVs
+- a statistic is any function of X//_1,...,X<sub>n</sub>
+    - sample mean calculation is a statistic
+    - sample variance, S//^2
+- given a parameter, //theta an estimator for //theta is a statistic
+    - notebook
+
+#### Sampling Dist and Central Limit Theorem
+- recall that a statistic is a function of RVs
+- so a statistic is an RV
+- it follows that each statistic as an associated distribution called sampling distribution
+- X_bar is a sampling distribution of the mean.
