@@ -1115,7 +1115,7 @@ So if X and Y are independent then the covariance of xy is equal to 0
 
 ### Probability Plots
 - useful tool for visualizing data
-- we are given a sample {x//_1,..x</sub>n</sub>} chosen from possibly larger dataset
+- we are given a sample {x₁,..x</sub>n</sub>} chosen from possibly larger dataset
 - we can assume that any data follows some distribution ie, our set has values of a random variable X with probability distribution function f(x)
 - our hypothesis is that the data can be modelled by some distribution
 - to test if our hypothesis is correct we can use probability plots
@@ -1123,7 +1123,7 @@ So if X and Y are independent then the covariance of xy is equal to 0
 #### Steps to create a probability plot
 - start with some sample
 1. Reorder (n increasing order) and rename the sample
-    - x1,...,xn ----> x<sub>(1)</sub> //<=  x<sub>(2)</sub> ...
+    - x1,...,xn ----> x<sub>(1)</sub> ≤  x<sub>(2)</sub> ...
     - that is, rename elements of the sample so that x<sub>(1)</sub> is the smallest
 - idea: x<sub>(i)</sub> should be approximately the 100(1/n)th percentile
 - so in a set of 11 values, x x<sub>(6)</sub> ~ median
@@ -1133,16 +1133,16 @@ So if X and Y are independent then the covariance of xy is equal to 0
 
 ### Chapter 7 - Point Estimation of Parameters
 - first going to go through terminology
-- a parameter (usually denoted by //theta) is any numerical deatuer of your data set/population
+- a parameter (usually denoted by θ) is any numerical deatuer of your data set/population
 - examples of parameters
-    - //mu mean
-    - //sigma//_2 variance
-    - //sigma std deviation
+    - μ mean
+    - σ₂ variance
+    - σ std deviation
 - recall that a random sample is a particular instance of a set of independent and indetically distributed RVs
-- a statistic is any function of X//_1,...,X<sub>n</sub>
+- a statistic is any function of X₁,...,X<sub>n</sub>
     - sample mean calculation is a statistic
     - sample variance, S//^2
-- given a parameter, //theta an estimator for //theta is a statistic
+- given a parameter, θ an estimator for θ is a statistic
     - notebook
 
 #### Sampling Dist and Central Limit Theorem
