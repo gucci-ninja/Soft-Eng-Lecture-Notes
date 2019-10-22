@@ -25,6 +25,7 @@ const lookup = {
   chi: "χ",
   psi: "ψ",
   omega: "ω",
+  bigtheta: "Θ",
 
   // Math
   // "+-": "±",
