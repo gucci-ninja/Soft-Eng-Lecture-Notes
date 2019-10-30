@@ -761,3 +761,16 @@ midterm: why emptathy tables are important?
 - rule based
     - in imperative programming - ifs and whiles
     - can be caused by faulty rules
+
+
+## Day ?? - Oct 24, 2019
+
+### Guest Speaker 
+- lesson 1: internet is the most popular OS :|
+- shutterstock ad campaign that used stock photos to recreate fire festival video
+- how aairbnb is the second largest hotel chain and their interface tackles the design challenge of making 2 strangers trust each other
+- lesson 2: you will make mistakes
+- lesson 3: can't predict the future because it's not constant
+- lesson 4: estimating work is the hardest thing
+    - figure out if you should take on a challenge
+- leson 5: team building
