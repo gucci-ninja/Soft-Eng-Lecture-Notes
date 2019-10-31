@@ -774,3 +774,37 @@ midterm: why emptathy tables are important?
 - lesson 4: estimating work is the hardest thing
     - figure out if you should take on a challenge
 - leson 5: team building
+
+## Day ?? - Oct 28
+
+### Human Error, No Bad Design contd
+- memory lapse mistakes
+    - designers should make interfaces clean and focus-based
+- social and institutional pressure
+- error reporting
+- jidoka - automation w/ human touch
+- poka-joke
+- NASA voluntary accident reporting (anonymous reporting)
+- error detection
+    - capture slip?
+- if user asks to do something thta's not posible, shohw them what is possible
+- dont interrupt user for no reason
+- add distancde to commands, controls, shortcuts - don;t put delete beside copy/paste ?
+- minimize consequences for slip
+
+## OCt 30
+
+- signifier good
+- open ended question good
+- but also closed question
+- non verbal clues
+    - 
+
+## Oct 31
+
+### How Might We
+
+- bottom left - things we dont want but might do them anyesy
+- top -right - things we want
+- top left - things we want but we don't know how to do
+- - bottom right - no desire (we can do but ppl don't want them)
