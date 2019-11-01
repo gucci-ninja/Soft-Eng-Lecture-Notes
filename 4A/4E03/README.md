@@ -23,6 +23,7 @@
 - [Tutorial 4 - Oct 4, 2019](#tutorial-4---oct-4-2019)
 - [Putting Together a Good Simulation](#putting-together-a-good-simulation)
 - [Simulation Packages](#simulation-packages)
+- [Tutorial 5 - Oct 11, 2019](#tutorial-5---oct-11-2019)
 - [Relationship between OA and Simulation](#relationship-between-oa-and-simulation)
 
 ## Day 1 - Sept 4, 2019
@@ -1209,3 +1210,16 @@ void cust()
 - when you have 2 random variables, you can make one of them equal to something
 - if you add condition that X2 = x then you can calculate it
 - probability that X is less than or equal to x = 1 - Exp(-λ*x)
+
+## Oct 21, 2019
+- last time we talked about exponential distribution and derived some properties (all relied on memoryless)
+- today we woll go over single event expoenentials
+- squence of events: arrials to a systm (called the workload)
+- want it to be easy to analyze
+- reasonable approximation to reality
+
+#### Counting Process
+- N(t) is a counting process that is nondecreasing and N(t) = ,1,2///
+- it counts events basically
+
+#### Independent Increments
