@@ -412,7 +412,7 @@ MODULE_AUTHOR(DRIVER_AUTHOR);
 - then in run time use insmod to accept/fill up the variables with values
 
 ```c
-static int my_int = 5; /*(initliaze defaults) */
+static int my_int = 5; /*  (initialize defaults) */
 
 module_param(My_int, int, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 
@@ -818,6 +818,7 @@ clock_nanosleep(CLOCK_MONOTONIC, TIMER_ABSTIME, &t, NULL);
 #### Clock_nanosleep()
 - takes one of the follwoing - REALTIME, MONOTONIC, PROCESS_CPUTIME_ID
 - if flag is 0 then value specified in request is interpreted as interval
+
 ## Day 8 - Sept 19, 2019
 
 #### Note
@@ -946,7 +947,7 @@ for (  ) {
 - T2 with p = 5 must be scheduled 4 out of 5 times
 - this leaves only 1 frame with 3 units of time for T3, other frames have only one slot empty and cannot have a job with execution 3
 
-## Day 8 - Sept 20, 2019
+## Day 9 - Sept 20, 2019
 
 ### Lab 3
 - downoad C-SUpport_for_myRIO from course website
@@ -1014,7 +1015,7 @@ for (  ) {
 - simple and predictable is good
 - need to do a lot of offline computation to come up with one of these bad boys
 
-## Day 9 - Sept 24, 2019
+## Day 10 - Sept 24, 2019
 - office hours thursday sept 26 10-11am
 - Last name A-K - MDCL 1102
 - Last name L-Z - MDCL 1105
@@ -1089,7 +1090,7 @@ for (  ) {
 - inc lass
     - given task set t1
 
-## Day 
+## Day 11
 
 ### Lab 4
 - learn how to cerate periodic real time tasks
@@ -1196,7 +1197,7 @@ ipad work
 #### General Statement for Test 3
 - (t/pk)*ek <= t for all pi and ei
 
-## Day i dont give a fuck anymore
+## Day 12
 
 ```
 assume di = pi
@@ -1227,7 +1228,7 @@ t=k, P1=3
 w2(t) <= t
 ```
 
-## Day 12 - Oct 3, 2019
+## Day 13 - Oct 3, 2019
 
 ### Test 2
 - crib shet
@@ -1296,7 +1297,7 @@ edf:  t1 t1 t1 t2 t2 t2 t2 t3 t3 t3 t4 (t=11 t3) t4 t3 t3
       t2 t2 t2 t2 t3 
 
 ```
-## Day ?? - Oct 4, 2019
+## Day 14 - Oct 4, 2019
 
 ### Midterm 2 Review
 
@@ -1381,12 +1382,11 @@ but t1 and t2 deadlines will be missed
 - even if t4 enteres critical section it doesn't change priority, its priorty is still 4
 - then when t1 is released
 
-## Oct 8, 2019
+## Day 15 - Oct 8, 2019
 
 ### Priority Inversion
 - low priority task blocking high priority task due to resource allocation
 - NPCS and PIP(?)
-
 
 #### Advantages nad Disadvantages
 - disadvantage of NPCS - even when there is no resource contention, a task may be blocked
@@ -1452,7 +1452,7 @@ but t1 and t2 deadlines will be missed
 - 5 tasks
 - PCP schedule?
 
-## Oct 10, 2019
+## Day 16 - Oct 10, 2019
 
 
 #### PIP example
@@ -1496,13 +1496,135 @@ but t1 and t2 deadlines will be missed
 #### Monotonicity
 - 
 
-
-## Oct 11, 2019
+## Day 17 - Oct 11, 2019
 
 ### Midterm 2 Review
+- on Oct 31
+- early write Oct 24
+- open note?
+- material covered after midterm 1
+
+#### Coverage
+- RM, schedulability tests
+- DM, why DM is better than RM
+- EDF - optimal scheduler
+- Priority Inversion
+    - causes
+    - solutions - NPCS, PIP, PCP
+    - benefits/drawbacks of the above
+
+#### Example 1
+- given independent periodic tasks. check their schedulability using necessary and sufficient condition using RM
+- in RM, priority is given to smallest period tasks
 
 #### EDF
 - a set of tasks is not schedulable using EDF if their utilization adds up to more than 100%
 - if edf doesn't work then no other scheduling algorithm will work
 - if edf works it doesn't tell us anything
+
+## Day 18 - Oct 22, 2019
+
+### Control Systems Review
+- transient response
+- open loop systems and closed loop systems
+
+#### Time Domain vs Frequency Domain
+- laplace transform to go from time to frequency
+- example of simple circuit system
+
+(figure 1)
+
+#### How to Solve the Ordinary Differential Equation
+- convert equation to frequency domain by taking laplace
+
+#### Laplace Transform
+- transform differential equation to algebraic
+
+#### Frequency Response
+- another benefit of using frequency domain
+- different magnitude and phase shift for output
+
+#### Another Form of System Model in Frequency
+
+(figure 2)
+
+#### Why s is Substituted with jw in Tranfer Function
+- when doing fourier transform, repace s with jw
+
+#### Time Response
+- even if you use frequency domain to look at control system, you need time domain response to interpret system
+
+#### First Order System
+- input is step function 1/s
+- given transfer function
+- we will be given a table with frequently used transfer function
+- output is Y(s) = X(s)G(s)
+- can separate into forced and antural response using inverse law
+    - when the denominator is s, just get rid of it by multiply by 1/s
+    - and when the denom is (s+5) multiply by e^-5t
+    - general: 1/(s+a) -> e^-at
+- the forced resposne is steady state (doesn't depend on t)
+- the natural resosne is transient (depends on t)
+
+#### Poles and Zeros
+- poles are the denominator s = 0 and zeros are the numerator s = 0
+- when a pole is zero that means the system is not stable=
+- but in the system given, the response is 
+
+(figure 3)
+
+#### Transfer functions
+1. G1 x G2
+2. G1 + G2
+3. G1/(1 - G1G2)
+
+(fig 4)
+
+- open loop transfer function of 3rd
+- G1 x G2
+
+## Day 20 - Oct 24, 2019
+
+### Control Systems Review
+
+#### Answer to Yesterday's Quiz
+
+(fig 1)
+
+#### Time Constant of First Order Systems
+
+(fig 2)
+
+## Day ?? - Oct 29, 2019
+
+### Proportional Control
+  
+## Day ? - Nov 5, 2019
+
+### New Slide Set
+
+#### Goals
+- identify 
+- an important component is an a to b component (the sampler)
+
+#### Sampling (Analog to Digital Convertor)
+- by sampling, you lose a lot of imformation
+- if you have a wave output and you take a sample every 2 seconds, you lose the rest and can have a choppy sample
+- sampling rate is 1/T
+- accuracy is based on the number of bits used to represent the sample
+- with n bits you get 2<sup>n</sup>
+
+#### Quantization Error
+- with number of bits n, thequantization error is (2^n)/2
+- then the resolution is M/(2^n)
+
+#### Sampled Data System
+- at kT = r(kT) * //delta(kT)
+
+#### Example of Sampled Data System
+- can do laplace transform of R*(s)
+
+- for f(t) =e^t, Z(f(t)) = sum (e^kT)*z^(-k) = 1/(z-e^T)
+
+## Day 26 - Nov 7, 2019
 
