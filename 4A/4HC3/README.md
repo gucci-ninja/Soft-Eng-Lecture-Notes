@@ -807,4 +807,4 @@ midterm: why emptathy tables are important?
 - bottom left - things we dont want but might do them anyesy
 - top -right - things we want
 - top left - things we want but we don't know how to do
-- - bottom right - no desire (we can do but ppl don't want them)
+- bottom right - no desire (we can do but ppl don't want them)

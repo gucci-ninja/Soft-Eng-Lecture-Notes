@@ -874,6 +874,9 @@ P =  0  0.4  0.6  0
 ### Discrete Case 
 - to generate sample given distribution
 
+![](img/cache_miss.png)
+
+
 ## Day 12 - Sept 30, 2019
 
 ### Test 1
