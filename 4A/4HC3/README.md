@@ -808,3 +808,27 @@ midterm: why emptathy tables are important?
 - top -right - things we want
 - top left - things we want but we don't know how to do
 - bottom right - no desire (we can do but ppl don't want them)
+
+## Nov 13, 2019
+
+### Guest Speaker - Chris Feher
+- worked at indellient, boltmade, shopify, google, faire
+- used websockets with go kafka apache server
+- cocoa touch, uikit, foundation are libraries for native ios dev
+    - modern and strict typed
+- swift vs objective-c
+    - obj-c is outdated and used for legacy systems
+    - swift infers types
+- immutability
+    - swift let statements will always contain the type that it is associated with
+- optionals (swift feature)
+    - define values at compile time to be optionsl
+    - lets compiler know a value may be nil
+    - can force unwrap using '!' operator
+    - can force casting usin 'as!'
+- type safety
+    - swift has an any type
+- enums
+    - swift enums have payloads :O
+    - can also implement protocols like codable
+    - can use codable wen getting json data from server
