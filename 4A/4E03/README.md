@@ -1199,6 +1199,9 @@ void cust()
 
     - accurately identify which movie is playing based on video input
 
+## Oct 9, 2019
+- Test Day
+
 ### Tutorial 5 - Oct 11, 2019
 
 ## Oct 11, 2019
@@ -1214,7 +1217,7 @@ void cust()
 - if you add condition that X2 = x then you can calculate it
 - probability that X is less than or equal to x = 1 - Exp(-λ*x)
 
-## Oct 21, 2019
+## Day 17 - Oct 21, 2019
 - last time we talked about exponential distribution and derived some properties (all relied on memoryless)
 - today we woll go over single event expoenentials
 - squence of events: arrials to a systm (called the workload)
@@ -1222,7 +1225,12 @@ void cust()
 - reasonable approximation to reality
 
 #### Counting Process
-- N(t) is a counting process that is nondecreasing and N(t) = ,1,2///
+- N(t) is a counting process that is nondecreasing and N(t) = 1,2,..
 - it counts events basically
 
 #### Independent Increments
+
+#### Poisson Process
+- rate //lambda
+- N(0) = 0
+- independent increments
