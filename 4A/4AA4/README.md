@@ -1627,4 +1627,3 @@ but t1 and t2 deadlines will be missed
 - for f(t) =e^t, Z(f(t)) = sum (e^kT)*z^(-k) = 1/(z-e^T)
 
 ## Day 26 - Nov 7, 2019
-
