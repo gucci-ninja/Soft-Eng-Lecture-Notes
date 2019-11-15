@@ -1627,3 +1627,22 @@ but t1 and t2 deadlines will be missed
 - for f(t) =e^t, Z(f(t)) = sum (e^kT)*z^(-k) = 1/(z-e^T)
 
 ## Day 26 - Nov 7, 2019
+
+## Day 27 - Nov 8, 2019
+
+### Quiz Question
+
+## Nov 12, 2019
+
+### Transfer Function of ZOH
+- what is the transfer function of the D/A and hold + Gp(s)?
+
+#### Time Shift Property
+- review laplace transform
+
+- z-transform
+
+#### Example 1
+- given G(s) of plant, find G(s) and G(z)
+
+### Block Diagram Reduction
