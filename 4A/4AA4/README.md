@@ -1646,3 +1646,34 @@ but t1 and t2 deadlines will be missed
 - given G(s) of plant, find G(s) and G(z)
 
 ### Block Diagram Reduction
+
+## Day ? - Nov 14, 2019
+
+### Quiz
+
+### Z-Plane Stability
+
+#### Mapping Stability Region from s-plane to z-plane
+- left half of s-plane is stable
+- if //alpha is positive then e<sup>//alphaT</sup> > 1
+    - this lies on the positive real axis and outside unit circle
+- if //alpha is negative then e<sup>//alphaT</sup> < 1
+    - lies on negative real axis and inside unit circle
+
+#### Stability of Digital Control System
+- stable - if all poles of closed loop TF are inside unit circle
+- unstable - if any polesoutside unit circle and/or more than 1 pole on unit circle
+- marginally stable - if one pole on unit circle and the rest inside
+
+#### Example
+
+#### Values of Poles when T changes
+- z = (11e<sup>-T</sup> - 10)
+- the system is stable for T <= 0.2
+
+T | z
+---|---
+0 | 1
+0.1 | -0.05
+0.2 | -1
+0.3 | -1.85
