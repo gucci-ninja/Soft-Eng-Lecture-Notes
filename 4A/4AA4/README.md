@@ -1677,3 +1677,19 @@ T | z
 0.1 | -0.05
 0.2 | -1
 0.3 | -1.85
+
+### Root Locus in Z-Plane
+- roots of a closed loop control system as gain (K) varies
+- step to plot poles
+    1. derive open loop function KGH
+    2. factor numerator and denominator, linear and quadratic factors to get open loop zeros and poles
+    3. plot roots of 1 + KGH = 0 as K varies
+
+#### Rules to Plot Root Locus
+1. loci start on the poles and end on the zeros
+2. for K > 0, the real axis loci lie on the left of an odd number of poles and zeros
+3. loci are symmetrical w.r.t. real axis
+4. number of asymptotes = #poles - #zeros
+    - angles of asymptotes are //theta = (2k + 1)//pi/(#poles - #zeros) with k = 0,1,2 ... (#poles - #zeros - 1)
+5. origin of asymptoteson real axis = //sigma = (sum of poles - sum of zeros)/(#poles - #zeros)
+6. breakaway point for the locus between 2 poles OR breakin for locus between 2 zeros is derative of GH = 0
