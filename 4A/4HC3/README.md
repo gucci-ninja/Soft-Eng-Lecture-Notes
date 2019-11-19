@@ -832,3 +832,7 @@ midterm: why emptathy tables are important?
     - swift enums have payloads :O
     - can also implement protocols like codable
     - can use codable wen getting json data from server
+
+## Nov 18, 2019
+- paper prototype
+- submit picture of TA using it?
