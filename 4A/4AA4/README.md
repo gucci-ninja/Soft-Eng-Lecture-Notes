@@ -1693,3 +1693,11 @@ T | z
     - angles of asymptotes are //theta = (2k + 1)//pi/(#poles - #zeros) with k = 0,1,2 ... (#poles - #zeros - 1)
 5. origin of asymptoteson real axis = //sigma = (sum of poles - sum of zeros)/(#poles - #zeros)
 6. breakaway point for the locus between 2 poles OR breakin for locus between 2 zeros is derative of GH = 0
+
+## Day ? - Nov 15, 2019
+
+### System Stability Quiz
+
+- when smaller sampling time is used, the system is more stable
+    - when T = 0.1s, stability range of K is 0 to 20
+    - when T = 1s, stability range of K is 0 to 2.16
