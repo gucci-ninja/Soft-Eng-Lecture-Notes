@@ -1090,7 +1090,10 @@ for (  ) {
 - inc lass
     - given task set t1
 
-## Day 11
+## Sept 26, 2019
+- midterm 1 in class
+
+## Day 11, Sept 27, 2019
 
 ### Lab 4
 - learn how to cerate periodic real time tasks
@@ -1140,7 +1143,9 @@ task 2 will prempt task 1
 1 slot for t2 
 ```
 
-ipad work
+#### RM Example
+
+![](img/rm.png)
 
 #### Diff between CE and RM
 - for the first 2 frames are the same
@@ -1156,7 +1161,7 @@ ipad work
 - may fail to meet deadline of a task only if no other scheduler can make it
 - the term optimal is in terms of schedulability - not in terms of fastest avg respose or shortest avg waiting time
 
-#### Scheudlability TEst for RM (Test 1)
+#### Scheudlability Test for RM (Test 1)
 - consider n periodic task that are all preemptable and idnepdnent
 - assume relative deadline is larger than or equal to period
 - assume tasks are integer multiples of each other
@@ -1197,7 +1202,7 @@ ipad work
 #### General Statement for Test 3
 - (t/pk)*ek <= t for all pi and ei
 
-## Day 12
+## Day 12 - Oct 1, 2019
 
 ```
 assume di = pi
@@ -1212,7 +1217,7 @@ Task i: 0 < t <= Pi
 [t/P1]e1 + [t/P2]e2 + ... + ei <= t
 ```
 
-#### Example for TEst 3
+#### Example for Test 3
 ```
 consider task 1 first
 ei < pi
@@ -1288,7 +1293,6 @@ if using edf: both will miss
 #### Example
 - what relies on what basically
 - t1 takes precedence over t2 and t3 whih preempt t4,t4,t6
-- 
 
 ```
 rm: t3 t3 t3 t2 t2 
@@ -1300,7 +1304,6 @@ edf:  t1 t1 t1 t2 t2 t2 t2 t3 t3 t3 t4 (t=11 t3) t4 t3 t3
 ## Day 14 - Oct 4, 2019
 
 ### Midterm 2 Review
-
 - among CE, RM, DM, EDF, which are static priority schedulers
 - which is optimal schedular for real-time applications
 
@@ -1424,7 +1427,6 @@ but t1 and t2 deadlines will be missed
 - similar in that priority is updated based on resource contention
     - priority of ti is set to be priority ceiling of resource requested
 
-
 #### Comments on PCP
 - priority ceiling of resource is fixed but priroity ceiling of system changes
 - the priority of a task updated when it is blocked
@@ -1453,7 +1455,6 @@ but t1 and t2 deadlines will be missed
 - PCP schedule?
 
 ## Day 16 - Oct 10, 2019
-
 
 #### PIP example
 - t3 acquires r2
@@ -1494,7 +1495,7 @@ but t1 and t2 deadlines will be missed
 - error caused by clock drift
 
 #### Monotonicity
-- 
+- clocks goes in one direction (forward)
 
 ## Day 17 - Oct 11, 2019
 
@@ -1595,9 +1596,44 @@ but t1 and t2 deadlines will be missed
 
 (fig 2)
 
+## Day 21 - Oct 25, 2019
+
+### Final Value Theorem
+- can be used for a stable system to find steady state
+- limit of s -> 0 of s*F(s)
+- if designing control system and need to determine parameters to satify certain parameters, use root locus
+
+#### Example 1
+
+    1/s*(s+2)
+
+- no finite zeroes therefore it must be infinite zeroes
+
+#### Root Locus Review
+- for a unity feedback system  G(s) = 10/s^2 draw the root locus of closed loop poles
+- 2 open loop poles at 0, //sigma<sub>a</sub> = 0, //theta<sub>a</sub> = //pi/2, 3//pi/2
+
+
+![](img/root_locus.png)
+
+#### Example 2
+- G(s)H(s) = K/s*(s+3)(s+2)
+- open loop poles -> 0, -2, -3
+
+```
+3s^2 + 10s + 6 = 0
+//sigmaa = -5/3
+//thetaa = //pi/3, //pi, 5//pi/3
+```
+
+![](img/root_locus2.png)
+
 ## Day ?? - Oct 29, 2019
 
 ### Proportional Control
+
+## Day ? - Oct 31, 2019
+
   
 ## Day ? - Nov 5, 2019
 
