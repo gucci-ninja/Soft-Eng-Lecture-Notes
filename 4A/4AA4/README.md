@@ -1611,7 +1611,7 @@ but t1 and t2 deadlines will be missed
 
 #### Root Locus Review
 - for a unity feedback system  G(s) = 10/s^2 draw the root locus of closed loop poles
-- 2 open loop poles at 0, //sigma<sub>a</sub> = 0, //theta<sub>a</sub> = //pi/2, 3//pi/2
+- 2 open loop poles at 0, σ<sub>a</sub> = 0, θ<sub>a</sub> = π/2, 3π/2
 
 
 ![](img/root_locus.png)
@@ -1622,8 +1622,8 @@ but t1 and t2 deadlines will be missed
 
 ```
 3s^2 + 10s + 6 = 0
-//sigmaa = -5/3
-//thetaa = //pi/3, //pi, 5//pi/3
+σa = -5/3
+θa = π/3, π, 5π/3
 ```
 
 ![](img/root_locus2.png)
@@ -1633,7 +1633,6 @@ but t1 and t2 deadlines will be missed
 ### Proportional Control
 
 ## Day ? - Oct 31, 2019
-
   
 ## Day ? - Nov 5, 2019
 
@@ -1655,7 +1654,7 @@ but t1 and t2 deadlines will be missed
 - then the resolution is M/(2^n)
 
 #### Sampled Data System
-- at kT = r(kT) * //delta(kT)
+- at kT = r(kT) * δ(kT)
 
 #### Example of Sampled Data System
 - can do laplace transform of R*(s)
@@ -1691,9 +1690,9 @@ but t1 and t2 deadlines will be missed
 
 #### Mapping Stability Region from s-plane to z-plane
 - left half of s-plane is stable
-- if //alpha is positive then e<sup>//alphaT</sup> > 1
+- if α is positive then e<sup>αT</sup> > 1
     - this lies on the positive real axis and outside unit circle
-- if //alpha is negative then e<sup>//alphaT</sup> < 1
+- if α is negative then e<sup>αT</sup> < 1
     - lies on negative real axis and inside unit circle
 
 #### Stability of Digital Control System
@@ -1726,8 +1725,8 @@ T | z
 2. for K > 0, the real axis loci lie on the left of an odd number of poles and zeros
 3. loci are symmetrical w.r.t. real axis
 4. number of asymptotes = #poles - #zeros
-    - angles of asymptotes are //theta = (2k + 1)//pi/(#poles - #zeros) with k = 0,1,2 ... (#poles - #zeros - 1)
-5. origin of asymptoteson real axis = //sigma = (sum of poles - sum of zeros)/(#poles - #zeros)
+    - angles of asymptotes are θ = (2k + 1)π/(#poles - #zeros) with k = 0,1,2 ... (#poles - #zeros - 1)
+5. origin of asymptoteson real axis = σ = (sum of poles - sum of zeros)/(#poles - #zeros)
 6. breakaway point for the locus between 2 poles OR breakin for locus between 2 zeros is derative of GH = 0
 
 ## Day ? - Nov 15, 2019
