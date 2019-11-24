@@ -272,7 +272,10 @@ There are principles that people have come up with for this stuff.
     - temporal layout (timeline)
     - makes controls easier to learn
 7. constraints
-
+    - physical
+    - logical - makes sense
+    - semantic - similar to logical
+    - cultural - writing left to right
 
 ### Tutorial Assignment 3
 - 7 points in backup report + presentation for 2 of the points (1 good 1 bad)
