@@ -1674,7 +1674,6 @@ but t1 and t2 deadlines will be missed
 
 #### Time Shift Property
 - review laplace transform
-
 - z-transform
 
 #### Example 1
