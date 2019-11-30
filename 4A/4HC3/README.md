@@ -515,14 +515,22 @@ can be ugly | sleek
 
 #### Ideation
 - don't settle on idea too early
+- get to know user
+- says thinks does feel (empathy map)
+- ask open-ended questions
 
 #### Prototyping
 - low fidelity
 - only way to know product works is by testing so we need to make one
+- don't finalize on an idea too early
+- how might we ___ (do something)
+- add artificial constraints
 
 ### Testing
 - in small groups
-- iterate - test, prototype a coupld of times
+- iterate - test, prototype a couple of times
+- get feedback from 1-5 people
+    - users like/change/question/ideas
 
 ### Activity-Centered Design vs Human Centered
 - activity = when there is more than one customer
