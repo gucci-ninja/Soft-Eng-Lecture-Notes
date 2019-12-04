@@ -472,6 +472,12 @@ world---> perceive---> interpret---> compare --> goal
 - rememebring to do things in the future
 - in design - calendars, alarms, timers, reminders
 
+#### Knowledge in the World vs Head
+- designers use signifiers, mapping and constraints to put knowledge in the world
+    - reflective layer (slow)
+    - constraints example - reduce what needs to be remembered
+- in the head we have conceptual models, analogies
+
 Knowledge in the world | Knowledge in the head
 ---------------------------|----
 perceived | from memory
