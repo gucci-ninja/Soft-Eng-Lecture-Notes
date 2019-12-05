@@ -54,11 +54,11 @@
 
 ## Tutorial 1 - Sept 3, 2019
 
-### Elm Architecture
+#### Elm Architecture
 - kinda works like react
 - interact with the DOM
 
-### Assignment 1
+#### Assignment 1
 - create a button that clears the stopwatch timer app
 - https://github.com/christopheranand/HC3_2019/blob/master/Assignments/Assignment1.elm
 
@@ -72,7 +72,7 @@
     - think: "what does the user need to do"
 - book: The Design of Everyday Things by Don Norman
 
-### Communication
+#### Communication
 - interaction is about communication
 - know what your message is & find out what your user understands
 - simple information is harder to display since there is an expectation to understand the information easily
@@ -85,12 +85,15 @@
 - good to say that you know design thinking :hushed:
 - default project: go find a user who has problems with math
 
-### Elm
+
+### Some Topics We Will Learn
+
+#### Elm
 - compiles into javascript
 - fully functional
 - safe
 
-### Design Thinking
+#### Design Thinking
 - double diamond (insert diagram)
 - there are 2 different kind of processes
 - need a divergent phase where we generate different ideas
@@ -99,7 +102,7 @@
 - need to research 
 - understand things in others POV (empathy)
 
-### Activity Centered Design
+#### Activity Centered Design
 - design for "a person who wants to X"
 - don't add features, add capabilities
 
@@ -121,7 +124,7 @@
 
 ## Day 3 - Sept 9, 2019
 
-### Don Norman
+#### Don Norman
 - helped define what human computer interfaces/interaction is
 - Norman doors - not apparent how to open/close them
 
@@ -138,7 +141,7 @@ The Escape Math Island game uses this philosophy of design. The kids who develoo
 
 Sometimes you will wish you could just get started, if you are close to the deadline. But its almost guaranteed that you will deisgn something that will not work well if you dont iterate and think of many possibilities. It almost never works out the way you thought.
 
-### Interaction Design
+#### Interaction Design
 - what we will learn in this course
 - its how people interact with technology
 - good design makes clear
@@ -146,12 +149,12 @@ Sometimes you will wish you could just get started, if you are close to the dead
     - what is happening
     - what just happened
 
-### Experience Design
+#### Experience Design
 - design focused on total experience
 - measured by value and enjoyment people receive from it (i.e. do they want to experience it)
 
 
-### Counter Example for Good Design
+#### Counter Example for Good Design
 A counter example is CRUD - create read update destroy, a software interface, API operations. Lots of ways a user could get to a point and say 'I don't know what to do now'. It's bad because we're focusing on low-leve tasks, not the high-level tasks that the user needs to accomplish. It means we need to memorize all the commands. For a dev it's straight to the point.
 
 Human entric design is about the experience, if it's easy to do and can we do it. It is highy subective and cannot tell if we are doing it right.
@@ -160,12 +163,12 @@ There are principles that people have come up with for this stuff.
 - the science of how the brain works
 - the double diamond
 
-### Design Vocabulary
+#### Design Vocabulary
 - different languages have different definitions but it is esy to talk about things when there is one agreed upon definition
 - a lot of our vocab will come from Norman
 - he didn't invent these words, except maybe human centric design
 
-#### Affordance
+### Affordance
 - a design vocab term from Norman
 - taking 2 ideas and putting it into one term
 - no one can talk about why something failed when there are 2 reasons
@@ -177,7 +180,7 @@ There are principles that people have come up with for this stuff.
 - relationship between handle and person creates an affordance
 - an affordance doesn't have to be something you have to see, it is a relationship
 
-#### Signifier
+### Signifier
 - comes from philosophy
 - this is what many UI designers think an affordance is
 - eg a sign on a web interface (something visible) is a signifier
@@ -197,14 +200,14 @@ There are principles that people have come up with for this stuff.
     - eg there is a barrier with gaps can be anti-affordances where cars can't go through but people can
     - grayed out button can be anti-affordance (means somtimes there is an affordance but there isn't one now)
 
-#### Mapping
+### Mapping
 - function from one set to another
 - natural mapping 
     - based on spatial relationship
     - means someone can come and look at your controls and not have to memorize them
 - can't always use mapping if it doesn't exist
 
-#### Feedback
+### Feedback
 - tell user what you are doing
 - many users abandon tasks for lack of feedback
 - if you give too much feedback you just overload 
@@ -218,7 +221,7 @@ There are principles that people have come up with for this stuff.
 
 ## Day 5 - Sept 12, 2019 
 
-#### Conceptual Models
+### Conceptual Models
 - example: files, folders, icons
 - good: allows us to guess what will happen if we do something
 - bad: using local storage model for cloud-based storage
@@ -253,7 +256,7 @@ There are principles that people have come up with for this stuff.
     - software
     - designers
 
-### Preview of Design Principles
+### Review of Design Principles
 1. Discoverability
     - if we can see what actions are available
     - perceivable state transitions
@@ -277,7 +280,7 @@ There are principles that people have come up with for this stuff.
     - semantic - similar to logical
     - cultural - writing left to right
 
-### Tutorial Assignment 3
+#### Tutorial Assignment 3
 - 7 points in backup report + presentation for 2 of the points (1 good 1 bad)
 - due monday 
 - feeback, mapping, affordance, signifier
@@ -343,6 +346,7 @@ for first times | skilled behaviour
     - internalized
 
 ### Learned Helplessness
+- people give up because something is too hard right off the bat
 
 ### Positive Psychology
 - make sure your app is giving user a sense of success
