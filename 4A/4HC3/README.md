@@ -368,14 +368,9 @@ for first times | skilled behaviour
     - instinctual response to world around
 
 ### Goal to World
-- diagram
 
-```
-goal----> plan-------> specify-----> perform --> world
-          (refelctive)   (behavioural)   (visceral)
-world---> perceive---> interpret---> compare --> goal
+![](img/stages_of_action.png)
 
-```
 ## Day 9 - Sept 23, 2019
 
 ### Norman's Advice on Failure
