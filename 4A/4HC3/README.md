@@ -1,23 +1,17 @@
 # 4HC3 Human Compute Interaction
 
 ## Table of Contents
-- [Elm Architecture](#elm-architecture)
-- [Assignment 1](#assignment-1)
-- [Communication](#communication)
-- [Elm](#elm)
-- [Design Thinking](#design-thinking)
-- [Activity Centered Design](#activity-centered-design)
+- [Some Topics We Will Learn](#some-topics-we-will-learn)
 - [Marking](#marking)
-- [Don Norman](#don-norman)
 - [Discoverability](#discoverability)
 - [What is Design](#what-is-design)
-- [Interaction Design](#interaction-design)
-- [Experience Design](#experience-design)
-- [Counter Example for Good Design](#counter-example-for-good-design)
-- [Design Vocabulary](#design-vocabulary)
+- [Affordance](#affordance)
+- [Signifier](#signifier)
+- [Mapping](#mapping)
+- [Feedback](#feedback)
+- [Conceptual Models](#conceptual-models)
 - [Paradox of technology](#paradox-of-technology)
-- [Preview of Design Principles](#preview-of-design-principles)
-- [Tutorial Assignment 3](#tutorial-assignment-3)
+- [Review of Design Principles](#review-of-design-principles)
 - [The Psychology of Everyday Actions](#the-psychology-of-everyday-actions)
 - [Human Thought](#human-thought)
 - [Learned Helplessness](#learned-helplessness)
@@ -32,12 +26,7 @@
 - [Design Thinking](#design-thinking)
 - [Double Diamond](#double-diamond)
 - [Design Thinking continued](#design-thinking-continued)
-- [Testing](#testing)
 - [Activity-Centered Design vs Human Centered](#activity-centered-design-vs-human-centered)
-- [Iterative Design](#iterative-design)
-- [Presentation 1](#presentation-1)
-- [Presentation 2](#presentation-2)
-- [Bonus Marks](#bonus-marks)
 - [Design Thinking continued](#design-thinking-continued)
 - [Standardization](#standardization)
 - [Anti-Affordances](#anti-affordances)
@@ -49,8 +38,13 @@
 - [Applying Affordances, Signifiers and Constraints to Everyday Objects continued](#applying-affordances-signifiers-and-constraints-to-everyday-objects-continued)
 - [Forcing Functions](#forcing-functions)
 - [Conventions are Cultural Constraints](#conventions-are-cultural-constraints)
-- [Sound](#sound)
 - [Human Error, No Bad Design](#human-error-no-bad-design)
+- [Human Error, No Bad Design continued](#human-error-no-bad-design-continued)
+- [Types of Slips](#types-of-slips)
+- [Guest Speaker ](#guest-speaker-)
+- [Human Error, No Bad Design contd](#human-error-no-bad-design-contd)
+- [How Might We](#how-might-we)
+- [Guest Speaker - Chris Feher](#guest-speaker---chris-feher)
 
 ## Tutorial 1 - Sept 3, 2019
 
@@ -531,7 +525,7 @@ can be ugly | sleek
 - how might we ___ (do something)
 - add artificial constraints
 
-### Testing
+#### Testing
 - in small groups
 - iterate - test, prototype a couple of times
 - get feedback from 1-5 people
@@ -554,21 +548,21 @@ can be ugly | sleek
 - ipod is a good example for activity design
     - people like the activity of listening to music
 
-### Iterative Design
+#### Iterative Design
 - waterfall is not good for design thinking
 - big companies let you do design thinking
 - better to prototype and find problems early on
 
 ## Day 13 - Oct 2, 2019
 
-### Presentation 1
+#### Presentation 1
 - double diamond
 - designing weed puller for elderly (short) woman
 - empathize, define, ideate, prototype, test
 
 ## Day 14 - Oct 3, 2019
 
-### Presentation 2
+#### Presentation 2
 1. Overview of Challenge
 2. What do we Hope to Learn
 3. Empathy Map
@@ -590,7 +584,7 @@ can be ugly | sleek
 4. Feedback
     - reflection/action
 
-### Bonus Marks
+#### Bonus Marks
 - 1 group use mural 1 doesn't
 - disadvatnage and advantags of using mural
 - what signifiers
@@ -723,7 +717,7 @@ midterm: why emptathy tables are important?
     - can be clockwise
     - can be mirrored (clockwise for cold, ccw for hot) but this sucks for one hand
 
-### Sound
+#### Sound
 - good for feedback for people who can't see
 - in general sound is good feedback, unless you can't hear
 - lots of psychology behind these sounds
@@ -757,7 +751,6 @@ midterm: why emptathy tables are important?
 - memory lapse
     - forgetting a step
 
-
 ### Types of Slips
 - capture clips
     - 2 activities have a common step and you do the wrong one
@@ -777,7 +770,6 @@ midterm: why emptathy tables are important?
 - rule based
     - in imperative programming - ifs and whiles
     - can be caused by faulty rules
-
 
 ## Day ?? - Oct 24, 2019
 
@@ -808,7 +800,7 @@ midterm: why emptathy tables are important?
 - add distancde to commands, controls, shortcuts - don;t put delete beside copy/paste ?
 - minimize consequences for slip
 
-## OCt 30
+## Oct 30, 2019
 
 - signifier good
 - open ended question good
@@ -816,7 +808,7 @@ midterm: why emptathy tables are important?
 - non verbal clues
     - 
 
-## Oct 31
+## Oct 31, 2019
 
 ### How Might We
 
