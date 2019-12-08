@@ -30,6 +30,18 @@
 - [Priority Inversion](#priority-inversion)
 - [Properties of Clock](#properties-of-clock)
 - [Midterm 2 Review](#midterm-2-review)
+- [Control Systems Review](#control-systems-review)
+- [Control Systems Review](#control-systems-review)
+- [Final Value Theorem](#final-value-theorem)
+- [Proportional Control](#proportional-control)
+- [New Slide Set](#new-slide-set)
+- [Quiz Question](#quiz-question)
+- [Transfer Function of ZOH](#transfer-function-of-zoh)
+- [Block Diagram Reduction](#block-diagram-reduction)
+- [Quiz](#quiz)
+- [Z-Plane Stability](#z-plane-stability)
+- [Root Locus in Z-Plane](#root-locus-in-z-plane)
+- [System Stability Quiz](#system-stability-quiz)
 
 ## Day 1 - Sept 3, 2019
 
