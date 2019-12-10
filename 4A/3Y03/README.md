@@ -1150,3 +1150,49 @@ So if X and Y are independent then the covariance of xy is equal to 0
 - so a statistic is an RV
 - it follows that each statistic as an associated distribution called sampling distribution
 - X_bar is a sampling distribution of the mean.
+
+
+## Day ? - Dec 4, 2019
+
+### Review
+
+#### Example 1 - Approximating the P-value for a T-test
+- suppose we want to test the mean of some distribution
+- we take a sample size of 10 and find that the average of x is 18.27, s = 2.5
+
+![](img/dec4_example1.png)
+
+#### Example 2 - Normally Distributed Population
+- suppose some population is distributed N(15, 1/5)
+- find the probability that the sum of all x from the sample is greater than 77
+- the variance of sum = sum of variances + covariance
+    - note: if independent, the covariance = 0
+- so the variance of sum = sum of variances = 5(1/5) = 1
+
+![](img/dec4_example2.png)
+
+#### Example 3 - Normally Distributed Population
+- same setup as previous
+
+![](img/dec4_example3.png)
+
+#### Example 4 - Confidence Interval
+- suppose we are sampling the mean of a population normally distributed with known variance
+- a 99% confidence interval on the mean as a width of 8
+- QUESTION: What is the width of a 90% confidence interval on the mean?
+
+![](img/dec4_example4.png)
+
+#### Example 5 - Probability
+- suppose 70% of population of Canada prefers bananas over apples
+- assume that we take a sample of 1000 people
+- estimate the probability that exactly 700/1000 prefer bananas to apples
+
+![](img/dec4_example5.png)
+
+#### Example 6 - Continuous Random Variable with pdf
+
+![](img/dec4_example6.png)
+
+--------------------
+The end :banana:
