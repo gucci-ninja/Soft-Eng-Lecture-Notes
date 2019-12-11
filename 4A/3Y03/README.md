@@ -31,6 +31,8 @@
 - [Quartiles, Histograms and Box Plots](#quartiles-histograms-and-box-plots)
 - [Probability Plots](#probability-plots)
 - [Chapter 7 - Point Estimation of Parameters](#chapter-7---point-estimation-of-parameters)
+- [ANOVA](#anova)
+- [Adequacy of the Regression Model](#adequacy-of-the-regression-model)
 - [Single Factor Experiments and ANOVA](#single-factor-experiments-and-anova)
 - [Confidence Intervals on Treatment Mean](#confidence-intervals-on-treatment-mean)
 - [Unbalanced Tests](#unbalanced-tests)
@@ -1157,6 +1159,47 @@ So if X and Y are independent then the covariance of xy is equal to 0
 - it follows that each statistic as an associated distribution called sampling distribution
 - X_bar is a sampling distribution of the mean.
 
+## Day 32 - Nov 21, 2019
+
+### ANOVA
+- Analysis of Variance Approach to test significance of regression
+- say we have a two sided test: Ho = β1 = 0, H1 = β1 != 0
+
+![](img/nov21_1.png)
+
+- we do SSR/1 because we are dividing thr mean square with 1 degree of freedom
+- if our null hypothesis is β1 = 0 then our test stat Fo has a F<sub>1, n-2</sub> dsitribution 
+- this is called the F-distribution
+- we reject Ho if the test statistic we calculate is greater than the one found using a given alpha on the f-table (whichever has the alpha and n)
+    - the n will be n-2
+
+![](img/nov21_2.png)
+
+### Adequacy of the Regression Model
+- regression model calls for many assumptions
+- assume a linear relationship between y and x `Y = β0 + βX + ε`
+    - where the error ε is normally distributed
+- we needa way to actually see if ε is normally distributed
+- the error between terms is the actual y - expected y
+- these terms are called **residuals**
+1. Probability Plots
+    - for the error to be normally distributed, the residuals must be uniformly distributed
+    - we order the residuals form smallest to largest
+    - `let ci be such that P(z - ci) = (i - 0.5)/n`
+    - the points {(ei, ci)} should roughly form a straight line
+2. Standardize the residuals
+    - if our assumption stands (ε is normally distributed) with mean 0 and variance σ^2 then the sample of ei can be standardized
+    - `di = ei/^σ^2`
+    - 95% of the di will be within (-2,2) since the probability that your z is within -2,2 is around 0.95
+- one more way to measure adequacy is to compute the coefficient of determination R^2
+    - `R^2 = SSreg/SStotal = 1 - (SSerror/SStotal)`
+    - use equations listed above
+    - the R^2 value will be between 0 and 1
+    - if the R^2 is large, the model is adequate
+    - should use this method with caution
+        - R^2 is susceptible to artificial infection
+        - we might end up "overfitting" the data
+
 ## Day 33 - Nov 25, 2019
 
 ### Single Factor Experiments and ANOVA
@@ -1223,7 +1266,7 @@ So if X and Y are independent then the covariance of xy is equal to 0
 ## Day 35 - Nov 28, 2019
 - lecture cancelled
 
-## Day ? - Dec 2, 2019
+## Day 36 - Dec 2, 2019
 
 ### Review 1
 
@@ -1263,7 +1306,7 @@ y = (1.95)(4) - 0.1535
 
 ![](img/dec2_example3.png)
 
-## Day ? - Dec 4, 2019
+## Day 37 - Dec 4, 2019
 
 ### Review 2
 
