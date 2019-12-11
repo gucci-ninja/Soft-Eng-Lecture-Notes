@@ -31,7 +31,7 @@
 - [Quartiles, Histograms and Box Plots](#quartiles-histograms-and-box-plots)
 - [Probability Plots](#probability-plots)
 - [Chapter 7 - Point Estimation of Parameters](#chapter-7---point-estimation-of-parameters)
-- [ANOVA for Single Factor Experiments](#anova-for-single-factor-experiments)
+- [Single Factor Experiments and ANOVA](#single-factor-experiments-and-anova)
 - [Confidence Intervals on Treatment Mean](#confidence-intervals-on-treatment-mean)
 - [Unbalanced Tests](#unbalanced-tests)
 - [Fishers LSD Test](#fishers-lsd-test)
@@ -1157,11 +1157,33 @@ So if X and Y are independent then the covariance of xy is equal to 0
 - it follows that each statistic as an associated distribution called sampling distribution
 - X_bar is a sampling distribution of the mean.
 
+## Day 33 - Nov 25, 2019
+
+### Single Factor Experiments and ANOVA
+- a factor is a controlled variable that gives more insight on a dependent variable
+- the factor can be partitioned into levels called treatments
+- for example, time for cement to dry can be our dependent variable
+    - temperature is a controlled variable
+    - can have treatments like hot, cold, warm
+- a is the number of treatments
+- each treatment has a random sample of values
+    - {Yi1, Yi2, Yi3} is a sample of 3 for treatment i
+- we assume a linear statistical model
+
+![](img/linear_statistical_model.png)
+
+- the error is assumed to be independent and normally distributed around N(0, σ^2)
+- we assume that all γi are 0 (this is our null hypothesis) because for all the means from the treatments to be the same, the treatment effect needs to be 0 for all treatments
+
+![](img/anova_hypothesis.png)
+
+- the ANOVA table is explained in more detail in the [review](#review-1)
+
 ## Day 34 - Nov 27, 2019
 - exam review notes will not be posted so come to class
 - exam will be 35 MCQ
 
-### ANOVA for Single Factor Experiments
+#### ANOVA for Single Factor Experiments Review
 - we have a given variable (the factor) that takes a few values (the treatments) that the experimentor chooses and fixes
 - there are a-many treatments
 - we assume a model
@@ -1170,10 +1192,15 @@ So if X and Y are independent then the covariance of xy is equal to 0
 
 ![](img/anova.png)
 
+- note that if H1 is true than the F-stat will be greater than 1
+- if significance levels are involved, you would reject the null hypothesis iff your test stat is greater than f at that alpha for a-1 and N-a
+    - note this is one-sided
+
 ### Confidence Intervals on Treatment Mean
 - recall that the treatment means are defined as μi = μ + γi for 1 ≤ i ≤ u
 
 ![](img/anova_ci.png)
+
 ### Unbalanced Tests
 - recall that we assume that for each i = {1,..,a}, the sample size for each treatment is the same
 - if we all the n's to ebe different, we can adjust the ANOVA identity
@@ -1184,11 +1211,12 @@ So if X and Y are independent then the covariance of xy is equal to 0
 ### Fishers LSD Test
 - last topic
 - Least Significant Difference
-- after you perform the ANOVA test and reject the null hypothesis we still don't know which //gammai (treatment effect) is non-zero
-- this test is a method for comparing |//mui = //muj|
+- after you perform the ANOVA test and reject the null hypothesis we still don't know which γi (treatment effect) is non-zero
+- this test is a method for comparing |μi = μj|
 - for each i != j we create a test statistic
 
 ![](img/fishers_lsd.png)
+
 - calculate the difference between the means as well
 - the difference between 2 means is significant if it is greater than the LSD
 
