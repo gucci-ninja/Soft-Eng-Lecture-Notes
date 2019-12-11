@@ -1151,10 +1151,54 @@ So if X and Y are independent then the covariance of xy is equal to 0
 - it follows that each statistic as an associated distribution called sampling distribution
 - X_bar is a sampling distribution of the mean.
 
+## Day 34 - Nov 27, 2019
+
+## Day 35 - Nov 28, 2019
+- lectur4e cancelled
+
+## Day ? - Dec 2, 2019
+
+### Review 1
+
+#### Example 1 - Filling ANOVA table
+- this will definitely be on the final
+- might get ANOVA table with some spots missing
+- note: the first 2 rows of the ANOVA table sum to the last (treatment + error = sum)
+- a is the number of treatments (3 in this case)
+- n is the sample size for each treatment (3 in this case)
+- on the final n will be the same for each treatment
+
+![](img/dec2_example1.png)
+
+#### Example 2 - Regression
+- consider data below
+- it kind of models y = 2x
+- step 1: plot
+- step 2: organize data
+
+x | y
+--|--
+1.2 | 2.5
+2.8 | 4.34
+3.6 | 7.5
+
+![](img/dec2_example2.png)
+
+- knowing this, a question would be to predixr the value of y for x = 4
+
+```
+y = (1.95)(4) - 0.1535
+  = 7.65
+```
+
+#### Example 3 - Coefficient of Determination
+- given the regression model, find the coefficient of determination R^2
+
+![](img/dec2_example3.png)
 
 ## Day ? - Dec 4, 2019
 
-### Review
+### Review 2
 
 #### Example 1 - Approximating the P-value for a T-test
 - suppose we want to test the mean of some distribution
