@@ -31,6 +31,12 @@
 - [Quartiles, Histograms and Box Plots](#quartiles-histograms-and-box-plots)
 - [Probability Plots](#probability-plots)
 - [Chapter 7 - Point Estimation of Parameters](#chapter-7---point-estimation-of-parameters)
+- [ANOVA for Single Factor Experiments](#anova-for-single-factor-experiments)
+- [Confidence Intervals on Treatment Mean](#confidence-intervals-on-treatment-mean)
+- [Unbalanced Tests](#unbalanced-tests)
+- [Fishers LSD Test](#fishers-lsd-test)
+- [Review 1](#review-1)
+- [Review 2](#review-2)
 
 ### What is Probability
 - Statistics is roughly the science and application of collecting and analyzing data and inferring information from possibly incomplete data sets
@@ -1152,9 +1158,42 @@ So if X and Y are independent then the covariance of xy is equal to 0
 - X_bar is a sampling distribution of the mean.
 
 ## Day 34 - Nov 27, 2019
+- exam review notes will not be posted so come to class
+- exam will be 35 MCQ
+
+### ANOVA for Single Factor Experiments
+- we have a given variable (the factor) that takes a few values (the treatments) that the experimentor chooses and fixes
+- there are a-many treatments
+- we assume a model
+- on the exam you'll get an ANOVA table with some values missing
+    - ie you might know the degrees of freedom and be asked for the degrees of freedom of treatment + error
+
+![](img/anova.png)
+
+### Confidence Intervals on Treatment Mean
+- recall that the treatment means are defined as μi = μ + γi for 1 ≤ i ≤ u
+
+![](img/anova_ci.png)
+### Unbalanced Tests
+- recall that we assume that for each i = {1,..,a}, the sample size for each treatment is the same
+- if we all the n's to ebe different, we can adjust the ANOVA identity
+- N is the total sample size
+- pretty intuitive modification to SStotal and SStreat
+- balanced is better because power is maximized and is less sensitive to slightly varying variances
+
+### Fishers LSD Test
+- last topic
+- Least Significant Difference
+- after you perform the ANOVA test and reject the null hypothesis we still don't know which //gammai (treatment effect) is non-zero
+- this test is a method for comparing |//mui = //muj|
+- for each i != j we create a test statistic
+
+![](img/fishers_lsd.png)
+- calculate the difference between the means as well
+- the difference between 2 means is significant if it is greater than the LSD
 
 ## Day 35 - Nov 28, 2019
-- lectur4e cancelled
+- lecture cancelled
 
 ## Day ? - Dec 2, 2019
 
