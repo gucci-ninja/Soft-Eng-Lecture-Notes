@@ -1158,6 +1158,40 @@ So if X and Y are independent then the covariance of xy is equal to 0
 - so a statistic is an RV
 - it follows that each statistic as an associated distribution called sampling distribution
 - X_bar is a sampling distribution of the mean.
+## Day 30 - Nov 18, 2019
+
+### Simple Linear Regression
+- 2 RV's X and Y
+- assume linear relationship
+- given data set, we want to find expected slope and intercept
+1. plot the data as a scatter plot
+2. minimize sum of squares error by computing 2 equations
+    - //deltaF///delta//beta1 = 0
+    - //deltaF///delta//beta0 = 0
+    - 2 equations for 2 unknowns
+- these equations are of the form:
+
+![](img/simple_linear_regression.png)
+
+#### Error in Regression Model
+- can be computed pretty straightforward
+- it's the difference between the actual value and the predicted value
+
+## Day 31 - Nov 20, 2019
+- last time we looked at regression models that we assume to have a linear relationship
+- `Y = //beta1X + //beta0 + //epsilon`
+- //epsilon is the error that we assume to be normally distributed about a mean of 0 and variance //sigma^2
+- for a set of x, y points we can compute estimators for //beta1 and //beta0, they are denoted with a hat ^ symbol
+
+### Tests in Simple Linear Regression
+- set up a two-sided (or one-sided test)
+    - Ho: //beta1 = //beta<sub>1,0</sub>, H1: //beta1 != //beta<sub>1,0</sub>
+
+![](img.nov20_1.png)
+
+- assuming Ho, To has a t-dsitribution with n-2 degrees of freedom, To = t<sub>n-2</sub>
+- given a significance level //alpha, we can do a t-test and reject Ho if the calcualte test stat is greater than t<sub>//alpha/2,n-2</sub>
+- we can do the same thing for //beta0
 
 ## Day 32 - Nov 21, 2019
 
