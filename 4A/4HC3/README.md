@@ -79,7 +79,6 @@
 - good to say that you know design thinking :hushed:
 - default project: go find a user who has problems with math
 
-
 ### Some Topics We Will Learn
 
 #### Elm
@@ -321,10 +320,10 @@ There are principles that people have come up with for this stuff.
     - short term
         - cpu with 7 registers
 
-## Sept 18, 2019
+## Day 7 - Sept 18, 2019
 - Class cancelled
 
-## Day 7 - Sept 19, 2019
+## Day 8 - Sept 19, 2019
 
 conscious | unconscious
 ----------|-------------
@@ -348,8 +347,6 @@ for first times | skilled behaviour
 - people learn from their mistakes
 - turn failure into learning experience
     - IDEO: design company, slogan is fail often, fail fast
-
-## Day 8 - Sept 19, 2019
 
 ### Three Layers of Cognition
 - reflective
@@ -482,9 +479,6 @@ can be ugly | sleek
 #### Memory in Multiple Heads
 - collective knowledge can enhance team output
 - in design - crowdsourcing
-
-#### Natural Mapping
-
 
 ## Day 11 - Sept 26, 2019
 
@@ -729,11 +723,19 @@ midterm: why emptathy tables are important?
 ## Day 17 - Oct 10, 2019
 
 ### Human Error, No Bad Design
+- mistakes happen in the plan and compare stages
+    - when you literally learned the wrong way of doing something
+    - rule-based
+    - knowledge based
+- slips are in the specify, perform, interpret, perceive stages
+    - when you mess something up by accident even though you know how to properly do it
+    - memory lapse
+    - eg mix up instructions
 
-## Oct 21, 2019
+## Day 18 - Oct 21, 2019
 - midterm day
 
-## Day 18 - Oct 23, 2019
+## Day 19 - Oct 23, 2019
 
 ### Human Error, No Bad Design continued
 
@@ -771,7 +773,7 @@ midterm: why emptathy tables are important?
     - in imperative programming - ifs and whiles
     - can be caused by faulty rules
 
-## Day ?? - Oct 24, 2019
+## Day 20 - Oct 24, 2019
 
 ### Guest Speaker 
 - lesson 1: internet is the most popular OS :|
@@ -783,7 +785,7 @@ midterm: why emptathy tables are important?
     - figure out if you should take on a challenge
 - leson 5: team building
 
-## Day ?? - Oct 28
+## Day 21 - Oct 28, 2019
 
 ### Human Error, No Bad Design contd
 - memory lapse mistakes
@@ -800,7 +802,7 @@ midterm: why emptathy tables are important?
 - add distancde to commands, controls, shortcuts - don;t put delete beside copy/paste ?
 - minimize consequences for slip
 
-## Oct 30, 2019
+## Day 22 - Oct 30, 2019
 
 - signifier good
 - open ended question good
@@ -808,7 +810,7 @@ midterm: why emptathy tables are important?
 - non verbal clues
     - 
 
-## Oct 31, 2019
+## Day 23 - Oct 31, 2019
 
 ### How Might We
 
@@ -817,7 +819,19 @@ midterm: why emptathy tables are important?
 - top left - things we want but we don't know how to do
 - bottom right - no desire (we can do but ppl don't want them)
 
-## Nov 13, 2019
+## Day 24 - Nov 4, 2019
+- no class?
+
+## Day 25 - Nov 6, 2019
+- no class?
+
+## Day 26 - Nov 7, 2019
+- no class?
+
+## Day 27 - Nov 11, 2019
+- definition ideation
+
+## Day 28 - Nov 13, 2019
 
 ### Guest Speaker - Chris Feher
 - worked at indellient, boltmade, shopify, google, faire
@@ -841,6 +855,9 @@ midterm: why emptathy tables are important?
     - can also implement protocols like codable
     - can use codable wen getting json data from server
 
-## Nov 18, 2019
+## Day 29 - Nov 14, 2019
+- no class
+
+## Day 30 - Nov 18, 2019
 - paper prototype
 - submit picture of TA using it?
