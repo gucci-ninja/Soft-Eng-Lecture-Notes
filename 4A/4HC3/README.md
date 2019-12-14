@@ -861,3 +861,68 @@ midterm: why emptathy tables are important?
 ## Day 30 - Nov 18, 2019
 - paper prototype
 - submit picture of TA using it?
+
+### Exam Prep
+
+#### Normans 7 Design Principles
+1. Discoverability
+2. Feedback
+3. Conceptual Model
+4. Mapping
+5. Affordances
+6. Signifiers
+7. Constraints
+
+#### Iceberg
+
+conscious | unconscious
+----------|-------------
+slow | fast
+controlled | automatic
+7 registers | multiple resources
+for first times | skilled behaviour
+
+#### Knowledge in the World vs Head
+
+Knowledge in the world | Knowledge in the head
+---------------------------|----
+perceived | from memory
+interpreted | learned
+slow | fast
+for beginners | for pros
+can be ugly | sleek
+
+#### Stages of Action
+
+![](img/stages_of_action.png)
+
+#### Constraint Types
+- physical
+- semantic
+- logical
+cultural
+
+#### Constraint Implementations
+- forcing functions
+- interlock
+- lockins
+- lockouts
+
+#### Double Diamond
+
+![](img/double_diamond.png)
+
+#### Some key concepts to throw in to jazz up essay
+- positive psychology
+- learned helplessness
+- ignorance of law
+- stadardization
+
+#### Ideation
+- feasibility vs desirability graph
+
+#### Empathy Maps
+- do
+- say
+- think
+- feel
