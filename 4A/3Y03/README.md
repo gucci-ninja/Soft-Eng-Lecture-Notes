@@ -40,6 +40,11 @@
 - [Review 1](#review-1)
 - [Review 2](#review-2)
 
+## Day 1 - Sept 4, 2019
+- assignments due Thursdays midnight
+- Test 1 - Mon Sept 30
+- https://www.childsmath.ca/childsa/forms/3yStuff/student_admin.php
+
 ### What is Probability
 - Statistics is roughly the science and application of collecting and analyzing data and inferring information from possibly incomplete data sets
 - Probability is the mathematics of random events
@@ -989,10 +994,36 @@ P(X >= x) = P(X >= x-0.5)
 - note p = 1/5, 1-p = 4/5 so np = 60/5 > 5, 60*(4/5) > 5
 - e[X] = 60*(1/5) = 12
 - v(x) = 9.6
-- p(8.5 <= X <= 20.5) ~ p(8.5-12/SQWRT(9.6) <= Z <= 20.5-12/SQRT(9.6))
+- p(8.5 <= X <= 20.5) ~ p(8.5-12/SQRT(9.6) <= Z <= 20.5-12/SQRT(9.6))
 = ~0.788
 
-## Day idk fuck statssssssss - Oct 3, 2019
+## Day 13 - Oct 2, 2019
+
+### Exponential Distribution
+- consider an interval from 0 to x
+- suppose an event occurs randomly at some point during the interval
+- average occurence is //lambda times/unit
+- it is distributed as a Poisson Random Variable
+- P(X <= x) = 1 = e<sup>-//lambdax</sup>
+
+#### Mean of Exponential Distribution
+- E[x] = 1///lambda
+
+#### ariance of Exponential Distribution
+- V(x) = 1///lambda^2
+
+### Joint Probability Distributions
+- only working with continuous domain
+- the joing probability density function of random variables X and Y is a function f<sub>xy</sub>(x,y) with a couple of properties
+    1. f<sub>xy</sub>(x,y) >= 0 for all x,y
+    2. the double integral of f<sub>xy</sub>(x,y) = 1
+    3. for any region, P((x,y)) is the double integral of f<sub>xy</sub>(x,y) with bounds of region R
+
+
+![](img/joint_probability_function.png)
+
+
+## Day 14 - Oct 3, 2019
 
 #### Example
 - first step: sketch the domain
