@@ -1002,15 +1002,15 @@ P(X >= x) = P(X >= x-0.5)
 ### Exponential Distribution
 - consider an interval from 0 to x
 - suppose an event occurs randomly at some point during the interval
-- average occurence is //lambda times/unit
+- average occurence is λ times/unit
 - it is distributed as a Poisson Random Variable
-- P(X <= x) = 1 = e<sup>-//lambdax</sup>
+- P(X <= x) = 1 = e<sup>-λx</sup>
 
 #### Mean of Exponential Distribution
-- E[x] = 1///lambda
+- E[x] = 1/λ
 
 #### ariance of Exponential Distribution
-- V(x) = 1///lambda^2
+- V(x) = 1/λ^2
 
 ### Joint Probability Distributions
 - only working with continuous domain
@@ -1197,8 +1197,8 @@ So if X and Y are independent then the covariance of xy is equal to 0
 - given data set, we want to find expected slope and intercept
 1. plot the data as a scatter plot
 2. minimize sum of squares error by computing 2 equations
-    - //deltaF///delta//beta1 = 0
-    - //deltaF///delta//beta0 = 0
+    - δF/δβ1 = 0
+    - δF/δβ0 = 0
     - 2 equations for 2 unknowns
 - these equations are of the form:
 
@@ -1210,19 +1210,19 @@ So if X and Y are independent then the covariance of xy is equal to 0
 
 ## Day 31 - Nov 20, 2019
 - last time we looked at regression models that we assume to have a linear relationship
-- `Y = //beta1X + //beta0 + //epsilon`
-- //epsilon is the error that we assume to be normally distributed about a mean of 0 and variance //sigma^2
-- for a set of x, y points we can compute estimators for //beta1 and //beta0, they are denoted with a hat ^ symbol
+- `Y = β1X + β0 + ε`
+- ε is the error that we assume to be normally distributed about a mean of 0 and variance σ^2
+- for a set of x, y points we can compute estimators for β1 and β0, they are denoted with a hat ^ symbol
 
 ### Tests in Simple Linear Regression
 - set up a two-sided (or one-sided test)
-    - Ho: //beta1 = //beta<sub>1,0</sub>, H1: //beta1 != //beta<sub>1,0</sub>
+    - Ho: β1 = β<sub>1,0</sub>, H1: β1 != β<sub>1,0</sub>
 
 ![](img.nov20_1.png)
 
 - assuming Ho, To has a t-dsitribution with n-2 degrees of freedom, To = t<sub>n-2</sub>
-- given a significance level //alpha, we can do a t-test and reject Ho if the calcualte test stat is greater than t<sub>//alpha/2,n-2</sub>
-- we can do the same thing for //beta0
+- given a significance level α, we can do a t-test and reject Ho if the calcualte test stat is greater than t<sub>α/2,n-2</sub>
+- we can do the same thing for β0
 
 ## Day 32 - Nov 21, 2019
 
