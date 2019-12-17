@@ -1189,6 +1189,71 @@ So if X and Y are independent then the covariance of xy is equal to 0
 - so a statistic is an RV
 - it follows that each statistic as an associated distribution called sampling distribution
 - X_bar is a sampling distribution of the mean.
+
+## Day 26 - Nov 7, 2019
+
+### Two Sided Hypothesis Testing
+- p-value is a measure of risk of making the wrong decision by rejecting Ho
+- if we take our test statistic and the pvalue is really high, it means we are at high risk of a type I error if we reject Ho
+
+![](img/twosided.png)
+
+#### Executing the test
+- fix a significance level of //alpha
+- if observed value is on the critical region (middle area) then the pvalue is less than //alpha
+    - in this case we reject Ho, else accept
+
+### Relationship between CIs and Hypothesis Testing
+- relation between hypothesis test for parameter //theta and CI //theta
+- given that [L,U] is a confidence interval 100(1-//alpha)% for //theta
+    - our hypothesis test would be the following
+
+```
+Ho : //theta = //theta0, H1 : //theta ///= //theta0
+we know it's two sided because H1 is the case when //theta is less than or greater than //theta0
+
+```
+
+#### Evaluating hypothesis test
+- for the above, if //theta0 lies outside of the confidence interval, we would reject Ho
+
+### 9.2 Tests on the mean of a normal distribution, variance known
+- sample size n
+- variance //sigma^2
+- normal distribution
+- make a null hypothesis
+    - Ho: //mu = //mu0
+- there are 3 possible cases
+    1. H1: //mu ///= //mu0
+    2. H1: //mu //>= //mu0
+    3. H1: //mu //<= //mu0
+- next step is to standardize to std normal so we can take the test stat
+
+```
+        x̄ - //muo
+Zo = -------------------
+        //sigma///sqrtn
+```
+
+- if Ho is true, then Zo = N(0,1)
+
+#### Z-Test Structure for Significance Level //alpha
+1. compute  zo using equation above
+2. find p-value for test with zo
+3. reject Ho if p-value of zo //<= //alpha (3 cases)
+
+##### Case I
+
+![](img/twosided_case1.png)
+
+##### Case II
+
+![](img/twosided_case2.png)
+
+##### Case III
+
+![](img/twosided_case3.png)
+
 ## Day 30 - Nov 18, 2019
 
 ### Simple Linear Regression
