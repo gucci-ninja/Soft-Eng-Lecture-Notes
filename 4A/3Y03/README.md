@@ -1190,6 +1190,59 @@ So if X and Y are independent then the covariance of xy is equal to 0
 - it follows that each statistic as an associated distribution called sampling distribution
 - X_bar is a sampling distribution of the mean.
 
+## Day 25 - Nov 6, 2019
+
+### Hypothesis Testing
+- Ho is a null hypothesis
+- H1 is an alternate hypothesis
+- we define critical regions using test statistics that let us determine whether we should reject or accept Ho
+
+
+. | Ho true | H1 true
+----|--------|------
+accept Ho | "heavy_check_mark: | type II error
+reject Ho | type I error  | :heavy_check_mark:
+
+#### Example 1
+- n = 35
+- normal distribution N(μ, 10^2)
+- Ho : μ = 50
+- H1 : μ ≠ 50 (two-sided)
+- if the critical region is x̄ ≥ 52 and x̄ ≤ 48, find α
+- α is the significance of the test (p-value of type I error)
+- β is the power of the test (p-value of type II error) 
+
+```
+α = P(type I error)
+  = P(reject Ho but Ho is true)
+  = P([x̄ ≥ 52 and x̄ ≤ 48] and μ = 50)
+  = P([x̄ ≥ 52 and μ = 50] and [x̄ ≤ 48 and μ = 50])
+  = P( (x̄ - 50)/(10/√35 ≥  (52 - 50)/(10/√35 + P( (x̄ - 50)/(10/√35 ≤  (48 - 50)/(10/√35
+  = P(z ≥ 2/(10/√35)) + P(z ≤ -2/(10/√35))
+  = 0.238
+
+Suppose μ = 53, then
+β = P(accept Ho, μ = 53)
+  = P(48 <= x̄ <= 52, μ = 53)
+  = P( (48 - 53)/(10/√35) ≤ z ≤  (52 - 53)/(10/√35) )
+  = 0.274
+          
+```
+
+#### Example 2
+- same setup as previous example
+- α = 0.05, find the critical region
+- critical region is of the form [50 - a, 50 + a]
+
+```
+0.05 = P(reject Ho but Ho is true)
+     = P(z ≥ (50 - a - 50)/(10/√35)) + P(z ≤ (50 + a - 50)/(10/√35))
+     = 2P(z ≤ -a/(10/√35))
+     = using z table we get -1.96 = φ (0.05/2) = φ (-a/(10/√35))
+     => a = 3.313
+
+```
+
 ## Day 26 - Nov 7, 2019
 
 ### Two Sided Hypothesis Testing
@@ -1199,48 +1252,48 @@ So if X and Y are independent then the covariance of xy is equal to 0
 ![](img/twosided.png)
 
 #### Executing the test
-- fix a significance level of //alpha
-- if observed value is on the critical region (middle area) then the pvalue is less than //alpha
+- fix a significance level of α
+- if observed value is on the critical region (middle area) then the pvalue is less than α
     - in this case we reject Ho, else accept
 
 ### Relationship between CIs and Hypothesis Testing
-- relation between hypothesis test for parameter //theta and CI //theta
-- given that [L,U] is a confidence interval 100(1-//alpha)% for //theta
+- relation between hypothesis test for parameter θ and CI θ
+- given that [L,U] is a confidence interval 100(1-α)% for θ
     - our hypothesis test would be the following
 
 ```
-Ho : //theta = //theta0, H1 : //theta ///= //theta0
-we know it's two sided because H1 is the case when //theta is less than or greater than //theta0
+Ho : θ = θ0, H1 : θ ≠ θ0
+we know it's two sided because H1 is the case when θ is less than or greater than θ0
 
 ```
 
 #### Evaluating hypothesis test
-- for the above, if //theta0 lies outside of the confidence interval, we would reject Ho
+- for the above, if θ0 lies outside of the confidence interval, we would reject Ho
 
 ### 9.2 Tests on the mean of a normal distribution, variance known
 - sample size n
-- variance //sigma^2
+- variance σ^2
 - normal distribution
 - make a null hypothesis
-    - Ho: //mu = //mu0
+    - Ho: μ = μ0
 - there are 3 possible cases
-    1. H1: //mu ///= //mu0
-    2. H1: //mu //>= //mu0
-    3. H1: //mu //<= //mu0
+    1. H1: μ ≠ μ0
+    2. H1: μ ≥ μ0
+    3. H1: μ ≤ μ0
 - next step is to standardize to std normal so we can take the test stat
 
 ```
-        x̄ - //muo
+        x̄ - μo
 Zo = -------------------
-        //sigma///sqrtn
+        σ/√n
 ```
 
 - if Ho is true, then Zo = N(0,1)
 
-#### Z-Test Structure for Significance Level //alpha
+#### Z-Test Structure for Significance Level α
 1. compute  zo using equation above
 2. find p-value for test with zo
-3. reject Ho if p-value of zo //<= //alpha (3 cases)
+3. reject Ho if p-value of zo ≤ α (3 cases)
 
 ##### Case I
 
