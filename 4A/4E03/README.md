@@ -1240,3 +1240,53 @@ void cust()
 ![](img/nov6.png)
 
 ![](img/nov6_part2.png)
+
+## Day ? - Nov 8, 2019
+
+![](img/nov8_1.jpg)
+
+![](img/nov8_2.jpg)
+
+![](img/nov8_3.jpg)
+
+![](img/nov8_4.jpg)
+
+## Day ? - Nov 11, 2019
+
+![](img/nov11_1.jpg)
+
+![](img/nov11_2.jpg)
+
+![](img/nov11_3.jpg)
+
+![](img/nov11_4.jpg)
+
+## Day ? - Nov 13, 2019
+
+![](img/nov13_1.jpg)
+
+![](img/nov13_2.jpg)
+
+![](img/nov13_3.jpg)
+
+### Tutorial - Nov 15, 2019
+
+![](img/nov15_tut_1.jpg)
+
+![](img/nov15_tut_2.jpg)
+
+![](img/nov15_tut_3.jpg)
+
+![](img/nov15_tut_4.jpg)
+
+![](img/nov15_tut_5.jpg)
+
+## Day ? - Nov 15, 2019
+
+![](img/nov15_1.jpg)
+
+![](img/nov15_2.jpg)
+
+![](img/nov15_3.jpg)
+
+![](img/nov15_4.jpg)
