@@ -1234,3 +1234,9 @@ void cust()
 - rate //lambda
 - N(0) = 0
 - independent increments
+
+## Day ? - Nov 6, 2019
+
+![](img/nov6.png)
+
+![](img/nov6_part2.png)
