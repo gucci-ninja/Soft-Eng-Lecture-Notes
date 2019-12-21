@@ -1315,3 +1315,18 @@ void cust()
 ![](img/nov25_1.png)
 
 ![](img/nov25_2.png)
+
+## Day 33 - Nov 27, 2019
+
+## Day 34 - Nov 29, 2019
+
+## Day 35 - Dec 2, 2019
+- moore.cas.mcmaster.ca
+- `csim.gcc closed.c` --> `closed.o`
+- queuing models/networks cannot handle synchronization
+- can use simulation using ctmc
+
+#### Stuff that won't be on the final but is fun (not really)
+- make critical sections
+- make them as small as possible
+- you end up with a discrete acyclic graph
