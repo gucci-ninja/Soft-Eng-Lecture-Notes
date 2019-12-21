@@ -1231,17 +1231,29 @@ void cust()
 #### Independent Increments
 
 #### Poisson Process
-- rate //lambda
+- rate λ
 - N(0) = 0
 - independent increments
 
-## Day ? - Nov 6, 2019
+## Day 18 - Oct 23
+
+## Day 19 - Oct 25
+
+## Day 20 - Oct 28
+
+## Day 21 - Oct 30
+
+## Day 22 - Nov 1, 2019
+
+## Day 23 - Nov 4, 2019
+
+## Day 24 - Nov 6, 2019
 
 ![](img/nov6.png)
 
 ![](img/nov6_part2.png)
 
-## Day ? - Nov 8, 2019
+## Day 25 - Nov 8, 2019
 
 ![](img/nov8_1.jpg)
 
@@ -1251,7 +1263,7 @@ void cust()
 
 ![](img/nov8_4.jpg)
 
-## Day ? - Nov 11, 2019
+## Day 26 - Nov 11, 2019
 
 ![](img/nov11_1.jpg)
 
@@ -1261,7 +1273,7 @@ void cust()
 
 ![](img/nov11_4.jpg)
 
-## Day ? - Nov 13, 2019
+## Day 27 - Nov 13, 2019
 
 ![](img/nov13_1.jpg)
 
@@ -1281,7 +1293,7 @@ void cust()
 
 ![](img/nov15_tut_5.jpg)
 
-## Day ? - Nov 15, 2019
+## Day 28 - Nov 15, 2019
 
 ![](img/nov15_1.jpg)
 
@@ -1290,3 +1302,16 @@ void cust()
 ![](img/nov15_3.jpg)
 
 ![](img/nov15_4.jpg)
+
+## Day 29 - Nov 18, 2019
+
+## Day 30 - Nov 20, 2019
+
+## Day 31 - Nov 22, 2019
+
+## Day 32 - Nov 25, 2019
+- based on NASA article reading
+
+![](img/nov25_1.png)
+
+![](img/nov25_2.png)
