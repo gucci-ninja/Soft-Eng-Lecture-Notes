@@ -50,3 +50,83 @@ Prelude > :t ($) # tells us type of $
 ($) :: (a ->) -> a -> b
 Prelude > :quit
 ```
+
+## Day 3 - Jan 10, 2020
+
+### Assignment 1
+- part 1
+    - go through a list of elements and return all occurences of first element
+    - eg given 5 [5,3,5,-2] return [5,5]
+    - given 0 and [] return []
+    - given 3 and [] return [3]
+- part 2
+    - define function elem
+    - to redefine it put `import Prelude hdiing sum, product, elem`
+- marks of assignment
+    - code - 40%
+    - tests - 40%
+    - comments - 20%
+- pos 5 -> [0,2] for input [5,3,5,-2]
+- tripleNeg1 [-1,0,2,-5,-11] -> [-3,0,2,-15,33]
+    - will have o do this using recursion as well
+- we'll learn all this by thursday
+- q4: magic
+    - function of 2 arguments (point and list), needs to be written recursively
+    - reverse engineer so that sum product and concat are all one-liners
+    - product of no elements is 1
+    - concat is also called flatten
+- q5 create a new data type
+    - will be using the `either` type
+- q6: ternary trees
+    - mirror takes a tree and flips it
+    - flatten takes data at leaves and spits them out as list
+        - leftmost deepest to the right
+    - bonus: magic function for ternary trees
+- submission
+    - single .hs file 
+    - document when you use stackoverflow or ask a friend
+
+
+### Learning Haskell
+- learned about popd and pushd
+    - internal memory stack of directories so you can switch between them without doing cd ../.. or whatever
+- ghc - compiler
+- ghci - interpreter
+
+```bash
+Prelude > :t 3
+3 :: Num p => p # 3 is a type Num p which can become p??
+```
+
+#### Defining Functions
+```haskell
+square n = n * n
+--------
+square 6 gives 36
+-- can't do square -6, you get a bad error message
+-- this is because - (unary minus) is parsed badly in Haskell
+-- it interprets square -6 as performing the function - on 6
+-- will work if you do (-6) or square $ -6
+---------
+let cube n = n * n * n -- the let doesn't really mean anything
+
+```
+#### Keboard shortcuts
+- up arrow previous cmd
+- down arrow forward cmd
+- ctrl + a goes to beginning of line
+- ctrl + e goes to end of line
+- tab completes cmd
+
+#### Terminology
+- \t is lambda?
+
+```haskell
+double = \t -> 2*t
+double' t -> 2*t
+--------
+foo x = cube $ double x
+
+bar = cube . double
+```
+- a . b means it executes b first then a
