@@ -147,3 +147,155 @@
 - in tdm we split the time dedicated to transmiting data
     - for time slot 1 you transmit data for host A
     - if the size of the slot is too big then the users will feel a long delay so the trick is to make the time slots as small as possible
+
+## Day 3 - Jan 9, 2020
+
+### Packet Switching vs Circuit Switching
+- packet is for internet
+- circuit is more for telephonic
+- packet switching prod
+    - good for bursty data because you can change up your path
+
+### Internet Strcuture
+- bigger companies like GOogle have their own dedicated connections to the backbone
+
+### Four sources of packet delay
+1. processing delay
+    - if the contents of the packet were succesffuly received
+2. queueing delay   
+    - depends on hw much work the node has to do
+    - error checking
+    - traffic
+    - similar to processing delay
+    - if there the buffer gets filled the packet gets dropped
+3. transmission delay
+    - L/R
+4. propagation delay
+    - depends on lenght of link (wire length)
+- the network of routers and switches is designed so that there is as less overhead and delay as possible
+- basic principle
+    - routers and switches keep on fowarding packages and if something doesn't work out the package is dropped
+
+#### Queuing Delay in more detail
+- R: link bandwidth (bps)
+- L: packet lenggth (bits)
+- a: average packet arrival rate
+- La/R ~ 0: avg queing delay is really small
+- if La = R then the the avg queuing delay is large
+- if La/R > 1 then more work arriving than can be serviced
+
+#### Packet Loss
+- finite capcity buffer
+- packet arriving to full queue is lost
+- routers and switches have buffers for incoming and outgoing queues
+    - every link has a queue
+    - every router has more than one link and every link has more than 1 queue
+- if the incoming queue is full then the packet is dropped
+- the sending host then somehow realizes that the package was dropped and resends the packet
+- internet provides 'best effort' service
+- there are protocols that can be implemented to guarantee packet delivery
+
+#### Throughput
+- rate (bits/time unit) at which bits are transferred between sender/reciever
+- throughput can be calculated for a single link or between sender/reciever
+- throughput would be equivalent to transmission rate if there is no delay/loss of data
+- if there are multiple hops with different transmission rates, the end to end throughput from sending host to recieving host changes
+- the throughput can not be more than the throughput of the bottleneck
+
+#### Throughput: Internet Scenrario
+- all servers have a capcity Rs and clients have a capcity Rc
+- 10 connections sharing the links
+- it is possible that we can fairly share and get a equal bandwidth R/10
+
+### Protocol Layers
+- network is comprised of
+    - hosts
+    - routers
+    - links (switches)
+    - different applciations
+    - audio/text/video --> bits gets transmitted
+    - protocols (decides a formt for 2 devices to communicate)
+    - hardware
+    - software
+- basic approach: sender initializes msg, converted to bits, signal to router, router signals sm else..
+- idea of layering is to breakdown the process into smaller tasks an execute as steps
+    - combination of protocols that pass info forward
+- 2 layering models
+    1. ISO/OSI model
+
+#### ISO/OSI reference model
+- job should be plit into 7 steps
+- there isn't a separate protocol for every activity
+- evolved to 5 layer model
+1. applciation layer
+    - communication initiaites from application by sender host
+2. presentation
+    - physical layer recieves the message and passes it upstream
+3. session
+4. 
+
+#### Internet Protocol Stack
+- evolution of ISO/OSI
+- 5 layers
+1. application layere protocols
+    - FTP, SMTP, HTTP
+    - this is a guideline
+    - the software implemenents these guidelines
+2. transport
+    - TCP, UDP
+    - TCP is more common
+    - message creaed byg applciation layer is passd to one of the abvoe protocols
+    - TCP/UDP are APIs implemented by your OS
+    - need to make a system call to use TCP or UDP
+3. network
+    - IP, routing protocols
+    - also OS driven
+    - once your host app has produced a msg using HTTP and passes it using TCP, it is in control of your OS
+4. link layer
+    - also OS driven
+    - slightly hardware dependent
+    - in order to have hardware compatibility across manufacturers we have protocols (called standards) laid out by IEEE
+        - Ethernet, 802.11 (WiFi standard)
+5. physical layer
+    - the actual wire
+    - receieves msg from Ip laye via link layer
+    - converts it to a suitable format for the node
+    - the jobs of this aye is to transmit the bits
+    - half ofthe job of the link layer is perofrmed b ynetowrk inteface card
+    - some component of link layer is iplmened by OS
+- when wiriting an app, we only have to worry about implementing the application layer
+- merges some parts of OSI ISO ref model
+    - the acitivities of the omited layers are grouped together
+- layers are numbered bottom up so physical is 1
+- if you hear layer 2.5 protocol it means there are some tasks from layer 2 and some from 3
+- each layer resturctures information based on its rules
+- on the receiver end, the reverse proces is performed
+    - end receiver msg goes from physical and back up to the application layer
+
+#### Encapsulation
+- transport layer adds a header to the message sent by the application layer
+- when referring to transport layer protocols, we refer to the message + header as a TCP segment or UDP segment
+- network layer does the same thing and calls the msg + header + another header as datagram
+- link calls it a frame???
+- basically every layer adds some more information to the original message so the end receiver knows how to unpackage it
+- switches
+    - have 2 layers
+        1. link
+        2. physical
+    - so you can't send raw messags to the switch bc it won't be able to decode it
+- router
+    - has 3 layers
+        1. network
+        2. link
+        3. physical
+    - so it can decode the datagram
+    - routers provide security so your data can't be sniffed
+- ISPs have a layer for security that lets them see what users are doign
+    - these can look into the data you're sending
+- https guarantees the applciation layer is encrypting your message
+    - so if there is a layer that can open it, it still won't be able to read it
+
+### Network Security
+- denial of service attack (DoS)
+    - a lot of attackers send useless traffic
+    - s

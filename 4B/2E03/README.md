@@ -126,3 +126,57 @@
     - useds spectroscopy
 - we know a little bit about magnetic fields
 - 8,9,10 are hard to measure so we don't know much about this.
+
+## Day 3 - Jan 9, 2020
+- shape and velocity of the orbit tells us a lot about planets
+- orbits can be circular, eliptic but if they are hperbolic then they are unbound
+- hyperbolic systems have higher energy since they are unbound
+    - higher escape speed from solar system
+- there are planets in interstellar space that have been kicked out of their place
+
+### Notes on Solar System Bodies
+
+#### Mass
+- how to we measure a planet's mass?
+    - we look at the moons and use kepler's third law
+- to use kepler's law for a small body you jus need the mass of one body
+- if there are no observable moons, we loo at perturbations
+- if it doens't have a circular orbit that means there may be another pkanet perturbing it (tidal/graviational forces)
+- we also have voyager missions whose flybys tell us the mass of planets they go by
+
+#### Temperatures
+- the radiation from a star (such as the sun) heats the surface of a planet
+    - called irrradiation
+    - this is how terrestrial planets are heated
+- when the earth as formed it was super hot
+- the temperature of the surface of earth is a combination of the atmosphere of earth + irradiation
+- the surface of Venus temperature is 37 K and eath's is around 288 K
+    - caused by CO2 greenhouse effect
+
+#### Atmospheres
+
+. | Composition | Pressure
+-----|------|------
+Venus | CO2 | 90 bars
+Earth | N2 (78%), O2 (21%) | 1 bar
+Mars | tenuous CO2 | like standing on peak of Mt Everest
+Titan and Pluto | N2 | ??
+
+- it's hard to send a lander to venus because it'll melt and aso be crushed
+- the reason VEnus and Earth are different even though they were formed similarly and have similar mass is because there is water on earth
+- water allows the calcium carbonate (limestone) on our planet to not be gassified
+
+### Exoplanets
+- the first key aspect is the semi major axis which is measured in astronomical units (earth's is 1) - i think it's a distance?
+- there are 4000 known planets but still thousands of candidates
+- diagram of mass vs semi-major axis has plotted all known planets
+- in order to see jupiter we can look at the sun and see its reflection?
+    - need to cancel out the light from the sun itself by using some specal technique that shifts the wavelength up and down so they cancel out and you can see jupiter or jupiter-like planets on the sun or stars
+- second key aspect of a planet is its radius
+    - transit method - block out light or sm??
+    - fit he planet has a doppler effect on a star you can get the mass
+    - if you take sm with the density of rock and mix it with iron it has a charactersitic density and you'd make an object of certain  size
+- a number of planets lie on the 'earth-like' line
+    - water worlds which are mostly ocean
+- by knowing density (mass and radius) then you can predict the planet;s properties
+    - we can come up with a possible structure for the planet
