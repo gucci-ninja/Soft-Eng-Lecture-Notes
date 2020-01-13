@@ -180,3 +180,83 @@ Titan and Pluto | N2 | ??
     - water worlds which are mostly ocean
 - by knowing density (mass and radius) then you can predict the planet;s properties
     - we can come up with a possible structure for the planet
+
+## Day 4 - Jan 13, 2020
+
+### Quesion
+0rock isnt compressioible, rocky planets hve a density simlar to earths
+- the relationship we find is that mass is proportional to radius^3
+1. density = M/V
+2. V(Sphere) = 4pi/3R^3 which is R^3
+- so density = M/R^3
+- so radius is proportional to M^1/3
+
+### 1.3 Planet Formation
+- each dish is aout 12 metres in size
+- made in part by canada
+- 55 telescopes can be hooked up electronically
+    - just spread them out and sync them up with phase
+- this tech fist became available around 30 years ago
+- this scale allos us to see maybe 20 astronomical units
+- disks of gas around stars that are just forming (nebulae)
+
+
+### 1.4 Life on Other Worlds
+- earth 2.0
+- orbiting at 1 astronomical unit in a solar system around sm like our sun
+- 1 candidate - the trappist
+    - solar system iwth star 84x jupiter
+
+### Chapter 2: Gravity and Angular Momentum
+- history lesson of how gravity was discovered and plantary dyanmics
+- basic newtonian/keplerian dynamics
+- advanced concept: energetics
+- brief explanation of modern solar system
+    - how satellites work
+
+#### History
+- greek history
+    - Aristachus of Samos (310-230 BC) develops correct heliocentric model (minus neptune/uranus)
+    - other peopl favoured ideas that put earth in the center (geocentric)
+    - ptolemy (~100AD) 
+- orbit
+    - kepler speed Vk is sqrt(GM<sub>Q</sub>/r)
+    - the problem of the heliocentric model was that it was hard to explain that mars' orbit is slower than earths (retograde motion)
+    - ptolemy's model put earth in the centre and mars orbiting earth
+        - but assumed mars has its ownepicycle (it's orbiting around something while orbiting around earth)
+        - each planet got its own epiycle
+        - also became ingrained in society and religion (christian theology)
+- middle ages realized he simplest explanation is probably the most correct one
+
+#### The First Golden Age of Astronomy
+- dark ages
+- italian renaissance reopened greek thinking
+- copernicus (church canon?) visits italy from north poland since he was sent as a bishop
+    - was sent there about 10 years
+    - he picks up on heliocentric model and proves it in a life's work
+    - gathered data
+    - observations were kinda bad tho
+- tycho brahe gives good observations on planetary motion
+- galileo observes jupiters moons
+- kepler is the first to device the modern solar system
+- newton's laws on gravity give a good explanation
+- 1500-1700
+    - things going on in society
+    - europe is in turmoil?
+    - colombus discovered new land
+    - shakespeare was also doing his art thing
+    - davinci was doing his engineering and art thing
+
+#### Copernican Revolution
+- copernicus gets the order, size of planets correct but couldnt get rid of idea of epicycles
+- copernicus wrote a book but didn't wanna publish it so some german scholar published it when coperniuc died
+
+#### Tycho Brahe
+- nobleman
+- built an astronoimcal observatory
+- good at naked eye observatory
+    - accuracy - 1 arc minute
+- hybrid model
+- gets into a fight where his nose is cut off (replaced with gold/silver nose)
+- goes to Prague
+- hires Kepler as imperial mathematician

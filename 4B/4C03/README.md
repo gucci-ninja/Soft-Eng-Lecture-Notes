@@ -298,4 +298,110 @@
 ### Network Security
 - denial of service attack (DoS)
     - a lot of attackers send useless traffic
-    - s
+
+## Day 4 - Jan 13, 2020
+
+### Creating network app
+- write programs that run on different end systems
+- just focus on application layer
+- if the application inteacts with some third-party hosts then you need some extra protocols?
+- we will be workng on generic structure application layer programs
+- network core devices don't run user apps
+    - each layer provides a generic interface to the neighbouring layer (in API form)
+- 2 variations
+    - client-server
+    - P2P
+
+### Client Server
+- one node requests for a service and the other provides a service
+- communication is inititated by client
+- server has a permanent IP address
+- if a huge number of nodes are being serviced, need multiple copies of server node (data centers)
+- clint has dynamic IP addresses
+
+### P2P architecture
+- no fixed role
+- both devices are switching roles (either can initiate and either can respond to requests)
+- usually there is a server which holds a list of nodes which can participate in communication
+    - each 'peer' needs to register itself to the server to be added to the list
+- there is no 'always-on' servicing node
+- useful for file-sharing, content-sharing
+
+### Interprocess communication
+- network communication is communcation between a process running on ne machine and a process running on another
+- dealt with by OS
+
+#### Socket
+- the communcation point through which communciation layer sends messages to transport layer
+- usually every socket is bound to some port
+- OS provides multiple sockets to communicate with trasnport layer
+- circuit programming
+    - process controlled by app developer
+
+#### Addressing Processes
+- every app is identified by 2 things
+    1. IP addres (host)
+    2. port number (connection between trasnort and applicatio layer)
+- when using client-server, the server needs a fixed address so clients can easily access the service
+- also need to fix port number
+- for HTTP servers the default port number is 80
+    - for SMTP servers its 25
+
+#### App-layer protocol
+- defines what messages will be sent (their contents) and sequence of messages (response)
+- error handling is also done at this layer
+- can add variations that allow you to bypass layers (eg go straight from app layer to network layer)
+
+
+#### Transport Layer
+- udp or tcp
+- qualities of a good trasport layer
+    - data integrity 
+    - want to make sure data is securely and successfully transferred
+    - timing
+    - throughput
+- different requirements for different types of applications
+
+#### TCP service vs UDP service
+- guarantees that data will reach the other end
+    - udp doesn't do that
+    - app deveoper can decide which protocol to use and use the interface provided by the OS for that protocol
+- tcp
+    - reliability
+    - congestion control
+- throughput and timing are not guaranteed by either protocol
+    - solution: app dev has to add those additional features
+- for video streaming apps, there is additional code that gaurantees min throughput and min delay
+    - buffering: start to download data but don't service it until there is enough data to service
+- tcp is connection oriented
+    - before data is transferred, you need to establish connection between host and end-user 
+- udp does not require connection setup
+    - good solution for a "no frills attached" app
+- if you want to send a huge amount of data as quickly as possible and not care about congestion then UDP is your best bet
+    - will only work if there is not a lot of traffic
+- most apps use TCP (mail, remote access, web, file tranfer) and some use either (streaming, video/online call)
+
+#### Securing TCP
+- tcp and udp have no encryption
+- SSL sits between app layer and transport layer
+    - takes info from HTTP and secuely sends it to tcp layer
+    - encrypts data
+    - denoted by lock sign in browser window (HTTPS = HTTP + SSL)
+
+### Web and HTTP
+- web is a network of computers with specialzed web service available
+- http is the protocol that makes this service possible (defines rules for www)
+- webpage consists of objects
+    - html file, jpeg, java applets, audio files..
+    - webpage is identified by URL (server host + path to obejct)
+
+#### HTTP overview
+- communication is initated by client who sends HTTP request (requesting document they wanna open)
+- request reaches server and server responds with contents
+- http request is FOooOrrr an html page
+- THe Google.com gets a TCP connection on port 80 from some client and accepts the TCP connection 
+- http is stateless
+    - servers don't store info on requests made
+- if you want the server/client to maintain state you can add code for that
+    - common technique is saving cookies on client-side
+    - client can say they dont want to store cookies
