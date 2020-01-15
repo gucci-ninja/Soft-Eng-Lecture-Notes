@@ -130,3 +130,73 @@ foo x = cube $ double x
 bar = cube . double
 ```
 - a . b means it executes b first then a
+
+## Day 4 - Jan 14, 2019
+- two argument functions -> arg \`func` arg
+- Craft3e-0.1.1.1
+    - PictureSVG.hs
+    - Pictures.hs
+    - refresh.html
+
+### Type
+- syntactic static classifier of values
+    - static - without running (at compile time)
+- all classifying commands?
+    - values
+    - type
+    - kind - type of types
+    - sort (will prob never see this one)
+- haskell is turing complete because it can use arbitrary types
+
+```haskell
+id x = x
+:t id
+id :: p -> p
+```
+
+### QuickCheck
+- import Test.QuickCheck in ghci
+- properties are mini-specifications
+
+```
+cabal install cabal-test-quickcheck
+stack ghci --package QuickCheck
+```
+
+`:m Test.QuickCheck`
+
+- usually runs 100 tests
+    - can change this
+- given a function tiny we can define prop_tiny
+
+`prop_tiny x = tiny x = x`
+
+- then run `quickCHeck prop_tiny`
+- it passes
+- if we try prop_bad = tiny x = -x 
+it fails after 2 tests
+
+```
+zzz = repeat 0
+take 20 zzz
+prop_zzz = n = sum (take n zzz) == 0
+quickCheck prop_zzz
+```
+
+### How to write tests
+- first write trivial tests and make sure they work
+- then move on to more cplicated ones
+
+```haskell
+d1 n = 2 * n
+d2 n = n + n
+-- :module + Data.Bits in ghci
+d3 n = n `shiftL` 1
+d3 50
+quickCheck (\n -> d2 n == d3 n)
+-- passes all tests
+d3 (-6) gives -12
+
+--- reverse function test
+quickCheck (\s -> reverse (reverse s) == s)
+```
