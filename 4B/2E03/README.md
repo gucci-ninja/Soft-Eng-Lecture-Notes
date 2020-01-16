@@ -260,3 +260,78 @@ Titan and Pluto | N2 | ??
 - gets into a fight where his nose is cut off (replaced with gold/silver nose)
 - goes to Prague
 - hires Kepler as imperial mathematician
+
+## Day 5 - Jan 15, 2020
+
+### Tycho Brahe's Arc Minute
+- a circle is 360 degrees
+    - 1 degree is 60' (1 arc min)
+    - 1 arcminute is 60 arc seconds
+- moons diameter in the sky is about .5 to 1 degree
+    - so the moon'sangular size is about 1 degree (60 arc-minutes)
+
+### A Good Telescope
+- average seeing -> 1'' (arc seconds)
+- twinkling - due to turbulence in atmosphere when obseving stars through telescope
+    - a solution would be to place telescope on high mountaintop so the air is drier and most of the atmosphere is beneath you
+    - example: Mauma Kea volcano on big island in Hawaii (about 14000 feet high up)
+    - alps, himalayas is a bad solution
+    - anything close to the ocean is good, so the andes in chile would be a good site for making observations
+        - will bring the accuracy to 0.2 arc seconds
+
+#### Hubble Space Telescope
+- built above atmosphere so we're only limited by the specs of our optics (diffraction limit)
+- operates at "diffraction limit of instrument"
+- can achieve 1/20 of arc second (0.05'')
+- tycho brahe - 60 arc-seconds
+- can do even better with radial telescopes
+- though tof in 1970 and became a thing in 1990s
+
+#### 30 metre optical telesope
+- canada was involved in designing this
+- uses adaptive optics
+- the air changes its qualities so the wavefronts become distorted
+- if you put like a primary and secondary mirror in the telescope and deform the mirror at the rate the wavefront is deformed, we can cancel out the twinkling distortion
+    - the mirror transforms adaptively
+- is not built yet
+- will probably be done in late 2020s
+
+#### 4 metre Canada Frama Hawaii Telescope
+- used for planet-hunting
+
+### Radial Telescopes
+- have a bunch of 12m telescopes that are in an array
+- they take in radio waves (which are pretty big) and encounter phase lags
+- if you account for the phase lags with a correlator then you can put all the telescopes together to make a big one
+- Very Large Array (VLA)
+- angular reolsution theta is wavelength/diameter
+
+### Galileo
+- 1564 - 1642 (from when shakespeare was alive to when newton was born) - Italy
+- did experiments for intertia and motion
+- 1609 - the first telescope appeared as a toy
+    - galileo got one and modified it a little
+    - saw moons revolving around jupiter
+    - shattered non-helioscentric models
+    - found sun spots
+    - phases of venus
+    - and more stars
+- because of protestant reolvution, the church felt threatened by galileos suggestions
+- some guy named bruno was burned at the stake for saying space was boundless and for being an advocate of copernicus model
+- was put under house arrest so he wouldn't get burnt at the stake until he passed away
+
+### Kepler
+- hired as mathematician by brahe
+- created a model
+- 5 regular polyhedra from greek stuff
+    - but instead of circles he saw ellipses
+- against his intuition (believing greek history stuff) he does a lot of math to derive accurate model
+- comes up with principles/laws of planetary motion
+1. orbits are ellipses
+2. a planet's orbit sweeps out equal areas in equal
+
+### Newton
+- laws of dynamics
+- came from reasonably well off family
+- cambridge uni
+- when plague broke out he went back to his family's farm and did a lot of math

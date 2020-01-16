@@ -405,3 +405,133 @@
 - if you want the server/client to maintain state you can add code for that
     - common technique is saving cookies on client-side
     - client can say they dont want to store cookies
+
+## Day 5 - Jan 15, 2020
+
+#### HTTP Overview cont'd
+- websites provide content through webserver
+- the port numbers through which service is provided is known
+    - i.e HTTP uses port 80
+    - TCP socket connection on port
+
+### Types of HTTP
+
+#### Non-Persistant HTTP
+- when you requeest a new document, a new TCP connection is made
+- all audio/video/image files are independent objects
+- separate requests are made for each object
+- new TCP connection for each object
+
+#### Persistent HTTP
+- keeps TCP connection open
+- multiple objects can be sent over one TCP connection
+- this is the default in the current model of HTTP
+
+#### Response Time
+- RTT 
+    - time for a small packet to travel from client to server and back (round trip time)
+    - can never be preciely measured because factors such as network congestion affects the value
+- RTT = time from TCP request initiation to file request
+- RTT = time from file request to when the file is received
+- the two steps above are assumed to have the same RTT
+- depending on file size, the RTT will vary
+- 2RTT + file transmission time = non-persistant HTTP response time
+    - 2RTT means more overhead
+
+### HTTP Status Codes
+- 1st line in server-to-client response message
+- 200 - OK
+- 301 - moved permanently
+    - new location specified later in msg
+    - sometimes do automatic redirection
+- 400 - bad request
+- 404 - not found
+
+#### Trying out HTTP
+1. Telnet
+    - command prompt utility (network based)
+    - allows remote connection to machines
+    - `telnet url port_number`
+    - one of the default original services of internet
+2. type in a GET HTTP request
+    - `GET /page HTTP/1.1 Host: base_url`
+
+### Cookies
+- small text-based pieces of info stored on the client side in a small file
+- server sends client a message saying they want to store cookies
+- the browser checks to see if client has cookies enabled
+- if yes then some information is stored in some text file locally
+- next time you visit the same url the browser will look for a cookie file
+
+### Web Caches (Proxy Server)
+- doesn't have anything to do with web service
+- proxy server is any server working behind the scene for some service (FTP, mail, web, etc)
+    - works to satisfy client request without using origin server
+- most browsers maintain their own web cache
+- browser sends request to cache, if it finds it, the contents are returned else it goes to the origin server
+- used to immeditwly service user through local means
+- most of the time we're not able to tell the difference since generic websites don't usually have big changes
+    - if you refresh this forces the HTTP request to go to the origin server
+    - if that doesn't work, clear cache
+- proxy servers fetch new copies behind the scenes so the content is updated
+    - more frequent for ISP caches
+    - not that frequent for local
+- hitting refresh adds an extra parameter in the header to specify tha the user wants a fresh copy
+- pros
+    - reduces response time
+    - reduces traffic to origin server
+- cons
+    - if you're trying to access a website in which the content frequently updates, web caching is not that useful
+- application can add a refresh rate to ensure the user is getting a fresh copy every time
+
+#### Caching Example
+- assumptions
+    - avg object = 100Kb
+    - avg reqest rate = 15/s
+    - avg data rate = 1.5 Mbps (15 * 100)
+    - RTT = 2 sec
+    - access link rate = 1.54 Mbps
+- consequences
+    - if all the requests are forwarded to origin server, there will be 1.5 Mbps traffic (99% usage)
+    - can improve if you change access link rate to 154 Mbps but that might be expensive
+    - another solution would be local web caching
+        - 40% requests can be serviced though cache
+        - 60% need to go to the origin service
+        - therefore data rate to browser over access link = 0.6\*1.5 Mbps = 0.9
+        - so utilixation = .9/1.54 = 0.8
+        - total delay = ?
+
+### Electronic Mail
+- SMTP, POP3, IMAP
+- when you want to send a message to another user
+- 3 major components
+    1. user agents 
+        - email clients like browser, Outlook, email apps
+        - produce and receive
+    2. mail servers
+        - receive or send emails
+    3. simple mail transfer protocol
+        - smtp and others
+
+#### User Agents
+- mail-reader
+- smtp
+    - client uses TCP to send mail to mail server (ie McMaster)
+    - mail server then uses smtp protocol to send mail to recipeient mail server (ie GMAIL)
+    - tcp uses port 25
+- tcp is the only protocol that guarantees your message will be sent
+
+#### Mail Servers
+- mailbox
+- has a msg queue of outgoing messages to be sent
+
+#### SMTP [RFC 2821]
+- 3 phases of transfer
+    - handshaking (greeting)
+    - trasnfer of messages
+    - closure
+- kind of like a chat between your mail server and recipient mail server?
+- commands - ASCII
+- response - status code + phrase
+- msgs must be in 7-bit ASCII
+- need another protocol to actually pull the email form recipeient sever to recipient user agent
