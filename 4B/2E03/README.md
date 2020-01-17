@@ -335,3 +335,74 @@ Titan and Pluto | N2 | ??
 - came from reasonably well off family
 - cambridge uni
 - when plague broke out he went back to his family's farm and did a lot of math
+
+## Day 6 - Jan 16, 2020
+- assignments will be given out mondays and due the following monday
+
+### Newton cont'd
+- rivarly between Newton and Linus
+- not a good dude
+- developed calculus, laws of gravity (but not written up yet) 
+- invented a reflecting telescope
+    - bottom of tray has a concave mirror
+- optical work
+- became a prof at Cambridge in 1669
+- some comet Edmund Halley is working on appears every 76 years 
+    - Halley goes to Newton to try to explain the comet's motion
+    - Newton's work predicted that gracity ~ 1/r^2 
+    - says 1/r^2 forces would explain the elliptical orbit but there isn't any proof
+
+### Newton's Dynamics
+- applied to circular motion
+1. inertia: velocity vector is constant when force is 0
+2. F = m*a
+3. action/reaction: force of A on B = - force of B on A
+- a = v^2/r
+
+### Gravity
+
+    F = GMmm/r^2
+
+- precession of Mercury
+    - Mercury's eliptical orbit propagates across space by a little
+    - Newton's law doesn't give right answer, Einstein's does
+
+#### Kepler's 3rd Law
+- force vector pointing towawrd sun
+- we don't know v so we can take the circumference and divide by T, the period
+```
+F = ma
+gravity = dynamics
+GMm/r^2 = m(v^2/r)
+cancel out m
+GM/r^2 = v^2/r
+(big M is mass of sun)
+substitute 2πr/T for v
+GM/r^2 = 4π^2*r^2/T^2*r
+GM/r^3 = 4π^2/T^2
+```
+
+- T^2/(r^3*(AU)) = 1
+- Jupiter is 5 AU, Mars is around 1.5
+- period of Jupiter = around 12 years (sqrt(5^3)) - 11.2 years
+- T^2/r^3(AU) = 1
+
+#### Galilean Moons
+- substitute Jupiter's mass for big M
+- if we want to measure r in AU and T in years
+    - you would have to scale the ratio of the masses
+
+```
+T^2 = 4π^2/GM*r^3*M/Mj
+```
+- Msun/Mj ~ 1000
+
+Given 10^-3 AU, 10^-1 AU, 10AU, 10^3 AU
+- should choose 10^-1 AU for Mercury?
+
+### Ellipse
+- radius + angle of departure to describe motion (both are dynamic)
+- but the semi-major axis is fixed (from the focus point to the centre of ellipse) - denoted by ae
+- a is the distance form centre of ellipse to the long end
+- Halley's comet was on an elliptical orbit
+    - tail lightsup near sun and dies down as it recedes

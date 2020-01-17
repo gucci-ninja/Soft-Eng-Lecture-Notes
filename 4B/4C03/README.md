@@ -535,3 +535,89 @@
 - response - status code + phrase
 - msgs must be in 7-bit ASCII
 - need another protocol to actually pull the email form recipeient sever to recipient user agent
+
+## Day 6 - Jan 16, 2020
+
+### Electronic Mail servers
+- client sends a request and server responds
+
+#### Mail Access Protocols
+- SMTP
+- mail access protocol
+    - IMAP
+    - POP
+    - HTTP (browser email - gmail, Hotmail)
+- tunneling
+    - messages of one protocol can be sent through another protocol
+
+#### POP3
+- pull new mail messages every 10 seconds
+
+#### IMAP
+- allows user folders 
+- can split and organize emails
+
+#### Browser Based (HTTP)
+- allows splitting and roganizng too
+
+### DNS
+- domain name system
+- port number is fixed
+- IP address of servers is also fixed
+- internet hosts and routers convert word urls to the IP address
+- before TCP connectionis created, the domain name getsresolved into IP address
+    - happens before message is sent
+- gmail gay
+- yahoo good
+
+#### Hierarchial Database
+- each url ending has its own DNS server (.com, .org, .ca)
+- then each root url has its own DNS server (yahoo.com, amazon.com, pbs.org)
+
+#### Top Level Domain Servers
+- all top-levl country domains
+
+#### Authoritative DNS server
+- ??
+
+#### Local DNS nameserver
+- doesn't belond to hierarchy
+- each ISP has one
+- also can be called a proxy DNS server
+- works like a cache for DNS servers to reduce traffic to root DNS servers
+
+#### DNS name resolution example
+- 2 ways
+    1. iterative query
+    2. recursive query
+        - not good for load balancing since it sends more traffic to root and TLD servers
+
+#### DNS Caching, Uploading Records
+- records
+- tuple of 4 values (name, value, type, ttl)
+- type can have 4 values
+    - A
+        - direct mapping between host name and IP address
+    - NS
+        - domain name that is mapped to another domain name
+        - ie if you type www.google.com it might actually be www.abc.google.com
+        - split into multiple subdomain names
+        - this info is stored in the authoritative name server, not the root or TLD server
+    - CNAME
+        - name is alias for real name
+        - ie ib.com is really servereat.backup2.ibm.com
+    - MX
+        - sm to do with mailservers
+
+#### DNS protocol, messages
+- width is always 4 bytes, 32 bits
+- message header includs identification (2 bytes) + flags (2 bytes)
+- have to set the bit to specify if you want to do an iterative or recrusive query in the flags
+
+#### How to register your domain name
+- ICAN holds authority over all domain names
+- godaddy, domain.com commericialize the domain names on behalf of ICAN
+- first they ask if you have a name server
+- if you're a big or small company
+- if you have a name server, you have to give them your IP address
+- if you're a small business you need to buy hosting from godaddy or whatever

@@ -200,3 +200,25 @@ d3 (-6) gives -12
 --- reverse function test
 quickCheck (\s -> reverse (reverse s) == s)
 ```
+
+## Day 5 - Jan 16, 2020
+
+### QuickSort Implementation
+- refer to code in Assignments
+- inefficient because the implementation uses linked lists 
+
+#### Factorial
+- product [1..3] = 6
+- product [1..(-1)] = 1
+- can also do ['a'..'z']
+- ['a'..'Z'] is empty because capitals come first
+
+### Weird Languages
+- Malbolge (8th circle of hell???)
+
+#### Memoizing
+
+```haskell
+facs = scanl (*) 1 [1..]
+facs !! n 
+```
