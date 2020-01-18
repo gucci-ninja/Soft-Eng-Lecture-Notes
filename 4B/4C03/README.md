@@ -298,6 +298,7 @@
 ### Network Security
 - denial of service attack (DoS)
     - a lot of attackers send useless traffic
+    - server cannot handle all the traffic and can't serve actual users
 
 ## Day 4 - Jan 13, 2020
 

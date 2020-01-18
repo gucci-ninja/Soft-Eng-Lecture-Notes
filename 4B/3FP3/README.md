@@ -222,3 +222,30 @@ quickCheck (\s -> reverse (reverse s) == s)
 facs = scanl (*) 1 [1..]
 facs !! n 
 ```
+
+## Day 6 - Jan 17, 2020
+- making executable: `ghc Main` 
+- `:load ___`
+- `:reload`
+- `:type (Expression)`
+- `:info (thing)`
+- `:browse (Module)`
+
+### Syntax
+- can use curly braces and semi-colons but its rarely used
+- if it starts with a lowercase it's probably a function
+- can also use quotations and underscores and numbers for function names
+
+#### Either
+- like a union operator
+- even_odd $ take 20 [1..]
+- bad_rev: quadratic, to concat the x at the end you need to iterate through whole lists
+- rev []
+    - doit [] [] = []
+- rev [x]
+    - doit [x] []
+    - doit [] (x:[]) = [x]
+- rev [x,y]
+    - doit [x,y] []
+    - doit [y] (x : [])
+    - doit [] (y:x:[]) = y:x:[] = [y,x]
