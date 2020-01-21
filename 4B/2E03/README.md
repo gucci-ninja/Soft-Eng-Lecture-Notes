@@ -406,3 +406,49 @@ Given 10^-3 AU, 10^-1 AU, 10AU, 10^3 AU
 - a is the distance form centre of ellipse to the long end
 - Halley's comet was on an elliptical orbit
     - tail lightsup near sun and dies down as it recedes
+
+## Day 7 - Jan 20, 2020
+
+### Elliptical Motion
+- a and eccentricity e are constant
+- r and θ change 
+- e lies between 0 and 1, 0 meaning the orbit is circular
+- r = a(1-e^2)/(1+ecosθ)
+
+### Kepler's First Law
+- orbits around the sun have elliptical shapes, with the sun being a focus of the ellipse
+
+#### Perihelion Question
+- given e = 0.3
+- cosθ = 1 (semi major axis?)
+- when θ = 0, we get the perihelion
+- when θ = 180, we get the aphelion
+- r = a(1-e^2)/(1+e)
+- factor out 1 + e
+- r = a(1-e) = 1(1-0.3) = 0.7
+- and for the aphelion: factor out 1-e)
+- (mars) so cold i think im done with ice BRR
+
+### Keplers Second Law
+- a radius vector sweeps equal areas in equal times
+- total amount of area swept is the same (dependent on the radius and circumference being SWEPT)
+- area of an ellopse = π a b = π a^2 (1 - e^2)^1/2
+- area/period = constant
+
+#### Angular Momentum
+- gravity is a central force
+- gravity rly do be actin on everything
+- angular momentum of a circle is the highest possible angular momentum (set e to 0)
+- the cross product of 2 vectors that are the same is 0 -.-
+
+### Energetics
+- circular orbits speed
+- shpeed
+shpeeeed
+fast _as_ fuk bois.jpg
+- proportional to the sqruit of GM/r
+
+#### Eenergy Conservation
+- E = K + U
+- E = 1/2mv^2 - GMm/r
+- rate of change of energy = 0 (an thats on PEIROD)

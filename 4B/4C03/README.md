@@ -622,3 +622,59 @@
 - if you're a big or small company
 - if you have a name server, you have to give them your IP address
 - if you're a small business you need to buy hosting from godaddy or whatever
+
+## Day 7 - Jan 20, 2020
+
+### Client Server vs P2P
+
+#### File Distribution Time: Client Server
+- server transmission = size of file x number of copies being sent / upload speed u
+    - NF/u
+- client - F/dmin where dmin is the minimum client download rate
+- bottleneck will either be the client's download rate or the smallest client's download rate
+
+#### File Distribution TIme: P2P
+- server transmission - F/u
+- client - F/dmin
+- clients also contribute file content
+- therefore, the max upload rate is us + sum of all u from other clients
+
+#### P2P BitTOrrent
+- file divided into 256Kb chunks
+- cant set priorities of what peer you want to download from
+    - only want file from peers who have complete file
+
+#### Mulitmedia - Video
+- one single second consists of 25-30 still images
+- the images are then shown to us at a constant rate
+- for every pixel, store the pixel number + colour values
+- 1 second content = 25 Mb if each image takes 1 Mb
+- to save space and time, usually store changing pixels (temporal coding example)
+- another method is to send a pattern (i.e 42 black pixels, followed by n #???? pixels) but it's not as efficient
+
+#### Content Distribution Networks
+- storing multiple datas
+
+#### Socket Programming
+- lets you communicate with TCP or UDP
+- A2 - basic socket python API
+
+### Chapter 3 - Transport Layer
+
+#### Transport services and protocols
+- all OS by default implement UDP and TCP code provided by RFCs
+- just like the app layer, the trasport layer assumes that we're connected directly
+- sgement = app messages broken down into smaller parts that gets passed to netwrok layer after doing some processing
+- one segment goes into 1 netwrok layer message
+
+#### Transport vs network layer
+- network layer takes care of logical communication between hosts
+
+#### Internet transport layer protocols
+- tcp or udp
+
+#### Multiplexing/demultiplexing
+- mulitplexing at sender: handle data from ultiple sockets, add transport header
+- one entitiy, provide multiple doors (sockets) to handle mulitple inputs
+- demultiplexing at receiver: user header to deilver recieved segments
+- also sends port number of client in the msg so server can reply back
