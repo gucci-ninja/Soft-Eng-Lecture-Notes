@@ -249,3 +249,20 @@ facs !! n
     - doit [x,y] []
     - doit [y] (x : [])
     - doit [] (y:x:[]) = y:x:[] = [y,x]
+
+## Day 7 - Jan 21, 2020
+
+### Enumerated types
+- look at Jan21 module
+
+### Tuples
+- comma separated value enclosed in ()
+- fst, snd
+- int vs integer - diff between precision
+
+### Lists
+- can do [3.1..7.0] and it'll go up tp 7.1
+- [10,9..1] to descend
+- ['a'..'n'] returns a string since strings are lsits of chars
+- can combine strings and lists using ++ 
+- read "5" Int turns 5 into integer type
