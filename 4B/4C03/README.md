@@ -678,3 +678,27 @@
 - one entitiy, provide multiple doors (sockets) to handle mulitple inputs
 - demultiplexing at receiver: user header to deilver recieved segments
 - also sends port number of client in the msg so server can reply back
+
+## Day 8 - Jan 22, 2020
+
+### Sequence of Execution
+- run proxy server
+    - check if it's accepting connections on some port
+- run client
+- enter command at client: `ftp ftp.cdc.gov`
+    - harcode proxy server port
+
+#### Commands to implement
+- list is given
+    - USER, PASS, PWD, CWD, HELP
+
+### Tunnel Vision
+- encapsultion ftp commands inside http
+
+###  UDP Segment Header
+- checksum (16 bit number) based on content of msg
+- during deliverry, if a certain bit is flipped, the checksum computed will be different
+- reciever can recover from this 
+
+### Principles of Reliable Data Transfer
+- network layer provides no reliability

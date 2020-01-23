@@ -452,3 +452,25 @@ fast _as_ fuk bois.jpg
 - E = K + U
 - E = 1/2mv^2 - GMm/r
 - rate of change of energy = 0 (an thats on PEIROD)
+
+## Day 8 - Jan 22, 2020
+
+### Gravitational Potential Energy
+- GMm/r^2
+
+#### Energy Conservation
+- proof that generally dE/dt = 0
+- lookn through camera roll for proof (or ask shab)
+- also written notes
+
+#### Cases
+- E > 0
+    - unbound
+- E < 0
+    - bound
+- E = 0
+    - condition for escape 
+    - E = 0 = 1/2 mv<sub>escape</sub>^2 - GMm/R = 0
+    - escape speed v^2 = 2GM/R
+    - escape speed v = sqrt(2GM/R) 
+        - similar to kepler speed except it has a factor of 2
