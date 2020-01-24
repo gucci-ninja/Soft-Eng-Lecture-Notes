@@ -287,3 +287,6 @@ facs !! n
     - take values
 - intension -> syntax (newtype)
 - extension -> semantics (data)
+
+## Day 9 - Jan 24, 2020
+- module Jan24
