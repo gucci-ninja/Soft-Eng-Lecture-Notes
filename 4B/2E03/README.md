@@ -474,3 +474,62 @@ fast _as_ fuk bois.jpg
     - escape speed v^2 = 2GM/R
     - escape speed v = sqrt(2GM/R) 
         - similar to kepler speed except it has a factor of 2
+
+## Day 9 - Jan 23, 2020
+
+- under mutual ravitational force of sun and jupiter, each body pulls on the other
+- solution for motion of 2 bodies in a system (jupiter and the sun)
+- how does a 2 body system behave?
+    - can be reduced to a modified 1 body system
+- we will go over how to deduce that a 2 body system can be solved as a 1 body problem
+- 3 body problem in general is unsolveable (unless you do computer simulation) but we can do a reduced 3 body problem
+- many body problem (all bodies are influenced by gravity of all other bodies) - n-body simulations
+    - highly nonlinear
+    - relevent sci-fi book: three body problem
+
+### Two Body Problem
+- jupiter and sun
+- 2 mutually gravitating bodies
+- derived in written notes
+
+### Reduction to 1 body problem
+- period of both bodies is the same
+- we wont have to derive this
+
+### Applications
+- spacecraft voyages through solar system
+- gravitational slignshot effect
+- as the spacecraft enters gravitational field of another planet
+- if its energy wrt planet is sufficient, it wont be captured in orbit but itll just pass by closely enough
+- rn we have a satellite flaoting through kuiper belt
+- ot make the energy of spacecraft sufficinet, it needs a boost
+- elastic collision is a gravitational encounter
+    - redraw in pont of view of planet
+    - body appraches at speed v(in)
+    - then it movies away at speed v(out)
+    - the mass of the body is smaller than planet
+
+
+### Satellitle speed in terms of v_in and V
+- v-out = v_in + 2V
+- diagram in notes (satellite speed v_out)
+
+#### Cassini vvejga
+- satellite gets a 'kick' everytime it's near a planet because of its gravitational pull
+- don't need big rockets because gravitational encounters give a boost
+- cassini spacecract loaunched oct 1997 and reached saturn orbit july 2004 (7 years total)
+    - it got 4 gravitational boosts
+    - gets slower as it goes further away from sun
+    - got caught in saturns orbit
+
+
+### Topic 3 - Dynamics
+- resonances
+- three bodies
+- tides
+- moon is continuosly pulling away from earth due to tidal effect
+
+#### Resonances
+
+##### Asteroid History
+- biggest one was 1% mass of moon (that's pretty big?)

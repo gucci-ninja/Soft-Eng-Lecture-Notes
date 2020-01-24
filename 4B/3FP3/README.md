@@ -266,3 +266,24 @@ facs !! n
 - ['a'..'n'] returns a string since strings are lsits of chars
 - can combine strings and lists using ++ 
 - read "5" Int turns 5 into integer type
+
+## Day 8 - Jan 23, 2020
+- quickcheck ternary tree quickcheck on discord
+
+### Keywords
+- type
+    - allows you to create a synonymn for something that already exists
+    - need to start with capital
+    - transparent
+        - representation of alias is completly seeable
+- newtype
+    - wrapper for a type
+    - intensional infomation
+    - opaque
+        - need to unwrap it before you can see what it really is
+- data
+    - for creating entirely new types
+    - transparent since you get to see all of the details of implementaion
+    - take values
+- intension -> syntax (newtype)
+- extension -> semantics (data)

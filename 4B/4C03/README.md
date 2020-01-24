@@ -702,3 +702,62 @@
 
 ### Principles of Reliable Data Transfer
 - network layer provides no reliability
+
+## Day 9 - Jan 23, 2020
+
+### rdt2.0 fatal flaw
+- the next packet is delivered upon acknowledgement that the packet before was successfully delivered
+- if it's not delivered the sender gets a negative acknowledgement and you try sending the packet again
+- if the ack/nak is corrupted you can retransmit current packet
+- to know if its a duplicate you need to send a sequence number with the packet
+- if you get a duplicate then resend acknowledgement and drop duplicate
+- 2 sequence numbers are sufficient (2 bits) because you're only dealing with 1 packet at a time
+- max bits for internet protocols is generally 16 bits
+- when the data packet is receieved there are 3 possibilities
+    - it's corrupt so u send the nak
+    - it's not corrupt so u send an ack
+    - you get a duplicate by checking sequence number (most likely due to lost acknowledgement) 
+        - action: resend ack
+        - sequence number is either 0 or 1 (stop and wait)
+
+#### Parts of the Message
+- checksum verified bit error
+- sequence number is to check for duplicate
+- acknowledgemt = confirmation
+- retransmission is to see if we have to resend
+
+#### Channels with errors and loss
+- need to wait reasonable amount of time to wait for ACK
+- negative ackonwledgement - when you get a sequence number you were't expecting
+
+### Pipeline Protocols
+- used to save overhead time from RTT
+- allow you to send multiple packets
+- allows time L/R to account for multiplr packets
+- each packet needs unique sequence numbers so we can't use 0 and 1 anymore
+    - number of sequence numbers for both depends on N
+
+#### Go-back-N
+- receiver only sends cumuative acknowledgements
+- sender has timer for oldest unacked packet
+- it sends N packets (each takes L/R time) 
+    - timer is only started for the first packet
+- receiver has to put out of sequene packets in a buffer and keep track of how many packets have been recieved
+- sender has to track how many packets are out there
+- less overhead but more retrasnmissions
+
+##### Sender
+- how many bits is N? - 2^k?? 
+- once the window is completely transmitted (N packets in buffer) you send the cumulative acknowledgement
+- send-bae = smallest sequence number
+- nextseqnum = next packet that has not yet been transmitted
+
+##### Receiver
+- send one acknowledgment for the highest in-order sequence numbers successfully received
+
+#### Selective Repeat
+- sender can have up to N unacked packets in pipeline
+- sender sends individual acknowledgements
+- have the ability to selectively repeat packets
+- timer for every packet
+- less retransmissions and more overhead
