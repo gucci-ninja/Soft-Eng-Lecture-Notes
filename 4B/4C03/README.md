@@ -761,3 +761,80 @@
 - have the ability to selectively repeat packets
 - timer for every packet
 - less retransmissions and more overhead
+
+## Day 10 - Jan 27, 2020
+
+### COntinuation of reliable data transfer
+
+#### GNB or whatver
+- no buffer to store discarded packets
+- when acks for packet 0 and 1 are recieved, new packets 
+
+#### Selective repeat: sneder, reciever, windows
+- yellow are transmitted
+- blue have yet to be transmitted
+- when the packet in gray on the left (first one after dotted line) is recieved, it skips 3
+- basically, the window slides to the next gay packet
+
+#### Selective Repeat Sender
+- if n is the smallest unacknowledged packet, slide window to next unacknowledges sequence number
+
+#### Selective Reapeat Reciever
+- because of bit error, the sequence number can be unexpected
+    - in this case, the packet is discarded
+
+#### Sequence Example iwth 4 packets
+- when sender recieves ack3, it marks (records) it
+- reciever moves the winodw and delivers packet 2,3,4,5
+
+#### Selective repeat dillema example
+- we are sing 4 different sequene numbrs 0 1 2 3 (range is 4)
+- size of window is 3
+- note difference between range and window size^
+- packet 1 is delivered, packet 2 has no acknowledgment, packet 3 is lost and then packet 0 is transmitted
+- 0, 1, 2 si trasnmitted but acks for all are lost
+- sender will retransmit all 3 since they all hit timeout
+- reciever successfully recieves all 3 packets so it slies the window
+- so the reciever is expected new packets starting fom 0 1 2 while the sender is still trying to send the old 0 1 2
+- cant distinguish between old and new zero
+    - solution: make a reasonable gap
+    - thus size of window and range should be different
+- what is the optimal difference
+- want to add more numbers between 3 and 0 so 0 and 1 dont enter into the window
+- the problem can be avoided by adding 
+    - if we had 4 or 5 it'll be sufficient
+    - size of window should be half of sequence number range so you can distinguish betwen old and new and they dont overlap
+
+### TCP Overview
+- tcp uses a smilar approach to selective repeat
+    - it waits a bit and fills up the buffer to send packets in order
+- full duplex - data travels in both directions
+    - so far all the algirhtms we discussed have a snder and reciver (sender transmits msg and reciever sends acknowledgement)
+    - TCP is like 2 parallel copies of the algorithm because it's bidrectional (sender transmits and also sends acnowledgements, vice versa)
+- before startig to transmit data, it establishes connection and decides on some basic variables
+- flow controlled
+    - the rate at which data is coming through is fixd
+- congestion control 
+    - when tcp observes congestion it slows down speed
+
+#### TCP segment structure
+- similar to udp
+- every segment has source port number and destination port number
+- squence number is 32 bits
+- so max sequence number would be 2^32 -1
+- since its a sliding protocol, size of window should be half of the sequence number
+- also has acknowlegdement number
+- all tcp segments have the same header
+    - the difference is in the acknowledgemnt number
+- when you create a string of bits, there's no way to distinguis empty bits because 0000.. is a valid number
+- no length field like udp but it has a header length field (which udp doesnt have)
+- this means n udp the size of segment is variable but the size of the header is fixed
+- in tcp the size is based on the link layer
+- the tcp segment is picked in a way that a tcp segment can be fitted in the link layer
+- tcp identifies whcih link the data will be transmitted through (wifi, wired network)
+- both link layers have different size
+- this means the same msg sent over wifi vs wired network will have a different number of tcp segments
+- we dont have a length field because its based on link layer
+
+### TCP seq numbers, ACKS
+- zoned out

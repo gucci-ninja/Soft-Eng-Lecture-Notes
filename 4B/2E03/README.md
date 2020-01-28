@@ -533,3 +533,7 @@ fast _as_ fuk bois.jpg
 
 ##### Asteroid History
 - biggest one was 1% mass of moon (that's pretty big?)
+
+## Day 10 - Jan 27, 2020
+
+#### Gaps in Asteroid Distribution
