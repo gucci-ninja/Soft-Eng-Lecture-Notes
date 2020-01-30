@@ -537,3 +537,58 @@ fast _as_ fuk bois.jpg
 ## Day 10 - Jan 27, 2020
 
 #### Gaps in Asteroid Distribution
+
+## Day 11 - Jan 29, 2020
+- semi-major axis 
+- asteroidP = 2*jupiterP/3 
+- P^2 = a^3
+
+#### Vesta Asteroid
+- big boi
+
+
+#### Chicxulub Impact
+- 65 milly years
+- froze over he earth
+- maybe caused the dino death
+- hit gulf of mexico
+
+### Dynamics - 3 Body Problem
+- one mass orbiting another can be solved using Kepler and Newton's laws (2 body problem)
+- however, solar system has many objects with differnt gravitational fields
+    - ie sun + planet + asteroid
+- are their motions predictable?
+- 3 body problem has no known accurate solution
+
+#### History of Dynamics (Laplace's demon 1814)
+- newton - mid 1700s
+- a century later, it was thought in principle:
+    - if you could get position and velocity of all particles - the future can be determined
+- but that was wrong becasue quantum mechanics makes this impossible since you cant get particle info instantaneously (at the same time)
+- also chaos theory nullifies this principle
+    - small differences in initial conditions grows exponentially over time (butterfly effect)
+- Henon and Hoiles computer simulation on particles in 1973 looks at stars in an assymetric galactic gravitational potential
+    - this led to discovery of chaotic orbits
+
+#### 3 body problem broken down
+- an example is when you consider hubble as a body
+    - want to put wst (hubble 2.0) a bit farther from earth's orbit so that they are more stable
+- you can park bodies and they will be stable
+
+#### x y coordinate system
+- m1 , m2 and test particle
+- particle oeprated under effect of both m1 and m2 gravitational fields
+- need to add centrifugal force
+
+#### Centrifugal Force
+- angular velocity ω = v/r = 2π/P (points outward?)
+- tension of string (points inward)
+- gravity pulls in, centrifugal force pulls outward
+- ω = v^2/r
+- v = ω*r = 2π/P\*r
+- so //omegs = v^2/r = ω^2\*r^2/r
+    - = ω^2\*r
+
+#### Coriolis Force
+- hurricane matthew 
+- effect of potential is //phi_eff = 

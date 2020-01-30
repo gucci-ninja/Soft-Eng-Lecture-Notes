@@ -838,3 +838,8 @@
 
 ### TCP seq numbers, ACKS
 - zoned out
+
+## Day 11 - Jan 29, 2020
+
+### 
+- sequence number + bit = 43
