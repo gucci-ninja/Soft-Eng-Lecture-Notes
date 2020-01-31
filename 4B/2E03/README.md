@@ -592,3 +592,6 @@ fast _as_ fuk bois.jpg
 #### Coriolis Force
 - hurricane matthew 
 - effect of potential is //phi_eff = 
+
+## Day 12 - Jan 30, 2020
+- skipped

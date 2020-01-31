@@ -843,3 +843,40 @@
 
 ### 
 - sequence number + bit = 43
+
+## Day 12 - Jan 30, 2020
+
+### Connection Management
+- handshake
+    - agree on parameters (sequence numbers and value of recipient buffer)
+- issues
+    - first request is successfully recueved but the client side reaches timeout
+    - if retransmitted request is really delayed, the client will stop waiting for it
+
+#### TCP 3 way handshake
+- synbit -> denotes if packet to establish connection has been sent
+- syn recvd -> denotes if packet to establish connection has been recieved
+
+
+#### Closing a tcp connection
+- fin_wait
+- fin_bit
+    - 1 or 0
+    - if the packet to close connection has been sent
+
+#### Congestion Control
+- initiated by reciever side basd on reciever window
+- in 1 RTT, 1 data segment is sent
+- additive increase
+    - if it is successfully sent, it doubles the size of cwnd by 1 MSS (
+        - MSS = frame size - data link layer header - more headers
+        - max bound is reciever window thingy
+        - cwnd is current window
+- multiplicative decrease
+
+#### Slow Start
+
+#### Slow Start to CA
+- in order to accomodate/avoid congestion, it slows down speed (as soon as cwindow touches ssthreth)
+- linear congestion instead of exponential
+- if there is a timeout error, the congestion window segments goes down to 1 in the next RTT
