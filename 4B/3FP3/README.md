@@ -290,3 +290,12 @@ facs !! n
 
 ## Day 9 - Jan 24, 2020
 - module Jan24
+
+## Day 10 - Jan 28, 2020
+- module
+
+## Day 11 - Jan 30, 2020
+- skipped
+
+## Day 12 - Jan 31, 2020
+- skiiped
