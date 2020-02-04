@@ -299,3 +299,49 @@ facs !! n
 
 ## Day 12 - Jan 31, 2020
 - skiiped
+
+## Day 13 - Feb 4, 2020
+
+### Assignment 2 Overview
+- programs
+- literate programming (.lhs)
+- question 1
+    - for all routine
+    - take a list and a predicate (p: a-> bool) 
+        - if x is in the list then p(x) holds true and the run on the rest (xs)
+    - prove range split by induction
+    - if list is concatenation of two lists then running function on both lists should yield same result
+- question 2
+    - given mstery function, provide implementation
+    - figure out type as well
+        - tTUeplEs?
+- question 3 - fold
+    - express primitve functions of list using fold
+    - calculate how reverse can be expressed as fold
+    - reverse = fold + some params f and e
+- question 4
+    - mirror for trees
+    - posdt goes right and pre goes left? (double mirror)
+    - prove they work by induction
+    - everything is by induction
+- question 5 - unzip
+    - can commute unxip with pair and map
+    - pair = apply f to both parts of a pair
+    - prove by induction
+    - counter example for
+        - pair of list and list of pairs is not the same in unzip
+- question 6
+    - tree'
+    - show that data in leaves vs data in branches is equivalent
+    - quickcheck for first pair
+- bonus: extra proofs, comments, quickcheck, extra clever solutions
+
+### Literate Programming
+- 2 ways
+    1. latex style
+        - put beginning/end
+        - this is the one we'll be using
+    2. bird style
+        - put prompt > 
+- intero
+    - `stack build intero --copy-compiler-tool`
