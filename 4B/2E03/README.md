@@ -595,3 +595,14 @@ fast _as_ fuk bois.jpg
 
 ## Day 12 - Jan 30, 2020
 - skipped
+
+## Day 13 - Feb 3, 2020 
+
+### Assignment 1 solutions
+- question 1: 
+    - i) smallest object that can be resolved on mars
+        - - 54500 m (taking average distance)
+    - ii) 65.2 ly is the max radius
+- question 2
+    - earths speed assuming circular orbit using d/t
+- easy to work with distance in au and period in years

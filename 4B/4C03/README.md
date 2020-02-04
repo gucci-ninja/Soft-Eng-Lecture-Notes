@@ -880,3 +880,34 @@
 - in order to accomodate/avoid congestion, it slows down speed (as soon as cwindow touches ssthreth)
 - linear congestion instead of exponential
 - if there is a timeout error, the congestion window segments goes down to 1 in the next RTT
+
+## Day 13 - Feb 3, 2020
+
+### Quiz Overview
+- 10-12 questions, 21 marks
+- ch 1 - ch 2.2
+- ignore security section in chapter 1
+
+### Chapter 4 The Network Layer - Data Plane
+
+#### NEtwork layer
+- packets are called datagrams
+- router examines header fields of every datagram passing through
+
+#### Major Functions
+1. forwarding
+    - moves packets from router's input to appropriate output ports
+2. routing
+    - router decides wheich port a packet should be sent to
+- router has at least 2 ports (incoming and outgoing)
+- all ports work as incoming and outgoing (bidirectional)
+
+#### Data Plane
+- where actoins are performed
+- determines how datagram is forwarded
+
+#### Control Plane
+- where router runs algorithms to decided mapping
+
+#### Router Architecture Overview
+- 
