@@ -6,7 +6,6 @@
 
 - [2E03 Plantary Astronomy](4B/2E03/README.md)
 - [3FP3 Functional Programming](4B/3FP3/README.md)
-- [4X03 Scientific Computation](4B/4X03/README.md)
 - [4C03 Computer Networks and Security](4B/4C03/README.md)
 
 ### Year 4 Semester 1
