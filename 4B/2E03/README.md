@@ -606,3 +606,74 @@ fast _as_ fuk bois.jpg
 - question 2
     - earths speed assuming circular orbit using d/t
 - easy to work with distance in au and period in years
+
+## Day 14 - Feb 5, 2020
+- guest lecturer?
+
+- small orbits are tadpoles, if it gets bigger it's a horseshoe
+    - stable due to corilioles forces
+- by keplers third law, the tadpole orbits bottom side is always leading because it;s slightly faster
+
+#### Horseshow orbit
+- discovered early 80s
+- 2 small moons of Saturn - Janus and ?
+- orbital radii are less than 50 km apart but they never collide
+
+#### Diagram 1
+- tracing of parts of orbit of Janus and Eputhmesusu
+- J are Janus, E are the other one
+- bd of keplers law, the inside orbit is faster than the outer one
+- breifly they are side b y side
+- epemsueusus pulls ahead at one point and they switch orbits
+- they are like 60km wide and 50km apart so why don't they collide?
+
+#### Diagram 2
+- epemetheuus on inside 
+- orbits are 2/3 of an earth day
+- 4 yr period to swap orbits
+- like 3 body problem with 2 small bodies + one big (saturn)
+
+#### Diagram 3
+- janus is blue
+- epipen is the red line
+- takes 4is years forw epimoose to go to the inner orbit
+- both orbits are elliptical
+- variations for epemethicc are larger than janus
+- janus is pulling epipen forward
+- when a body feels a forward pull, its total energy is changing
+- if you add energy to something, the orbit increases
+- total energy is negative
+- they swap because of an energy tradeoff
+- jans is 4 times heavier so the distance they move is different
+
+#### Diagram 4 (the one with big black circle for staurn)
+- M2 in this case is the centre of mass of both moons
+
+#### The Hill Square
+- region bounded by L1 and L2
+- lagrange point
+- Hill spehere equation for approx radius of hill sphere
+    - wont have to memorize or derive
+    - M = M1 + M2
+    - m = M2
+- inside hill sphere obj belogns to M2, outside, M1
+- roche limit - where solid object can hold itself and not be torn parat by gravitationl opull
+    - rings are inside the roche limit because theyve 
+
+![](img/hill_sphere_equation.jpg)
+
+#### Bar chart
+- we don't care about hill sphers of mercury and venus because they don't have moons
+- for earth, the hill sphere radius well over 1 million km
+- if things are at around half that radius, they are stable (moon is 400k km)
+    - so it can't be disturbed
+- neptune's hill sphere radius is much higher than jupiter's because it's further from the sun
+- they mass ratio of the planet is not that siginfiicant because it only counts at ratio 1/3 (power)
+
+#### Irregular Satellites of Saturn
+- lots of asteroid captured in orbit but they will probably go away soon after the hill sphere
+
+#### Tides on Earth
+- high tides come twice a day
+
+## Day 15 
