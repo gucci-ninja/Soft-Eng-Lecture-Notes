@@ -1,5 +1,10 @@
 # 4C03 Computer Networks and Security
 
+## Table of Contents
+- [1.1 What is the Internet](#11-what-is-the-internet)
+- [1.2 The Network Edge](#12-the-network-edge)
+- [1.3 Network core](#13-network-core)
+
 ## Day 1 - Jan 6, 2020
 - biweekly labs
 - mark breakdown
@@ -9,7 +14,7 @@
 - do assignments at home and demo during lab time
 - textbook: [Computer Networking : A top down Approach](https://github.com/QSCTech/zju-icicles/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E6%95%99%E6%9D%90/Computer%20Networking%20-%20A%20Top%20Down%20Approach%2C%207th%2C%20converted.pdf)
 
-### What is the Internet
+### 1.1 What is the Internet
 
 #### Nuts and Bolt View (Hardware)
 - billions of connected computing devices
@@ -55,39 +60,66 @@
 - where the end-systems sit
 - includes desktops, servers, mobile devices, IoT stuff
 - also referred to as hosts because they run applications
+    - hosts can be clients or servers
 
 #### Network Structure
 - client and server, client requests, server provides
+- servers usually in data centers
+
+#### Access Networks
+- the closest connection to edge of system - first router
+    - aka edge router
+- wired and wireless
 
 #### Read at Home
 - access networks
-    - DSL cable network
+    - home access connections: DSL, cable, FTTH, dial-up, satellite
+    - 2 most prevalent for broadband residential access
+        1. Digital Subscriber Line (DSL)
+            - built on existing telephone line
+            - dedicated line
+            - < 2.5 Mbps upload (typocally < 1)
+            - < 24 Mbps download (typically < 10)
+            - different transmission rates set by DSL standards to make it assymetric (non-interfering)
+            - max rate limited by gauge of twisty wire, distance from home to central office, congestion, cheap plan
+        2. Cable
+            - built on existing cable television infra
+            - since both fibre optic and coaxial are used, it's called hybrid fiber coax (HFC)
+                - assymetric
+                - 30 Mbps download
+                - 2 Mbps upload
+            - shared not dedicated
     - shared vs dedicated access
     - DSL is thinner than coaxial
         - coaxial has more bandwidth
     - tv can be transmitted over DSL
 - frequency division multiplexing
-    - send signals with diff frequency through same wire and they wont's interfere as long as there is a considerable difference between the signal frequencies
+    - send signals with diff frequency through same wire and they wont interfere as long as there is a considerable difference between the signal frequencies
 
 ## Day 2 - Jan 8, 2020
 
-### Accessing Networks
-- digital subscriber line (DSL)
+#### Access Networks: Home Network cont'd
+- digital subscriber line (DSL) or cable hybrid fiber coaxial (HFC)
 - older cable network was a shared service whereas these days they're not shared (dedicated) services
-- the term shared/dedidcated can be for the srvice or the channel
+- the term shared/dedidcated can be for the service or the channel
+- consists of a bunch of devices, access point, wired ethernet, router + firewall, connect to cable/DSL and then ISPs central office
+- router connects the cable/DSL modem and access point
 
-### Enterprise access networks
+#### Enterprise access networks
 - additional switches on site for a huge number of ndoes
-- need to split them into smaller groups to manswtage
+- need to split them into smaller groups to manage using ethernet switches
+- ethernet uses twisted-pair copper wire
 - we can't have a single device connecting to the network
 - have different transmission rates availble
 
-### Wireless access networks
-- in wireless access we have to frther banches
-    - small cale wireless networ
-        - home wifi/router since range is smaller
+#### Wireless access networks
+- shared wireless access network connects user to router from a base station (access point)
+- in wireless access we have
+    - small scale wireless networ
+        - home wifi/router since range is smaller (must be within 10-30 metres depending on enterprise vs home)
     - wide area wireless netowrk
-        - smartphones belong here since the range is greater
+        - smartphones belong here since the range is greater (10km)
+        - 3G/4G/LTE/5G
 - the data which is sent to transmit internet vs telephonic vs mobile has the same udnerlying technology
     - the way this information is converted depends
 - example
@@ -96,31 +128,62 @@
 - signal processing
     - convert data into numbers, then send numbers over the network as numbers
 
-### Host and Data
+#### Host and Data
 - host sends packets of data
-- host machine takes application message, breaks it into chunks called packets, thre is an upper limit on the size but based on the task the size of packets differs
+- host machine takes application message, breaks it into chunks called packets, thre is an upper limit on the size but based on the task the size of packets differs, packet size is length L in bits
     - if you have more data it gets split to multiple packets
-- transmition rate (sometimes bandwidth) is importnat here
+- transmition rate (sometimes bandwidth) is denoted by R
+    - range of frequencies you can transmit over a medium
     - the medium (wireless or wired) has a range of frequency it can travel
     - the wireless medium has no upper limit for max frequency
     - copper wire has a range
         - this is the bandwidth (min and max frequency that can be transmitted)
     - wireless transmission rates are usually in gigahertz
-- transmission rate: range of frequencies you can transmit over a medium
-- to increase the capcity of wired mediums you can make the wire thicccccer
+- to increase the capcity of wired mediums you can make the wire thicccccer (coaxial is thiccccer than DSL)
 - transmission rate is about producing the signal, the second part is sending the signal across the wire
 - the second part is called propagation (when the signal is travelling towards its destination)
-- packet transmission delay = L/R where L is the bits and R is the bits/second
+- packet transmission delay = L/R where L is the bits and R is the bits/second -= the time needed to transmit L-bit packet into link
 
-### Physical Media
-- in wireless the signals propagate in any direction
+#### Physical Media
+- bit - propagates between transmitter and receiver pairs
 - when the frequency is higher, the waves can reflect from physical medium (maybe)
-- guided
-- unguided
-- unidrectional
-- duplex
+- physical link - what lies between transmittr and receiver
+- guided media - signals propagate in solid media (copper, fiber, coaxial)
+- unguided media - (in wireless) the signals propagate in any direction, also radio
+- twister pair
+    - two insulated copper wires
 
-### Network core
+##### Coax, Fiber
+- coaxial 
+    - 2 concentric copper conductors
+    - bidrectional
+    - used for cable TV snd cable internet
+    - can achieve higher transmission rate than twised wire (10s of megabits/s)
+    - guided
+    - shared
+- fiber optic cable
+    - glass fiber carrying light pulses, each pulse is a bit
+    - high speed (10-100 gigabits/s)
+    - low error since repeaters are far apart
+    - immune to electromagnetic noise, hard to tap, low attenuation signal up to 100km
+    - good for overseas/long distance calls
+    - standard link speeds range = 51.8mbps to 39.8gbps
+- unidrectional (half duplex)
+- bidirectional (full duplex)
+
+##### Radio
+- exclusively use electromagentic spectrume
+- no wire
+- bidirectional
+- can go through walls
+- signal depends on propagation environment
+- radio link types
+    - terrestrial micorwave (45 mbps)
+    - LAN (WiFi) - 54 mbps
+    - wide-area (cellular) - 10 mbps for 4G
+    - satellite - kbps to 45 mbps + delay
+
+### 1.3 Network core
 - mesh of interconnected routers
 - special purpose devices (switch and router)
     - one common job they both do is packet switching
