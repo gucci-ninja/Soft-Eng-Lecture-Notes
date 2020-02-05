@@ -10,14 +10,19 @@
 - textbook: [Computer Networking : A top down Approach](https://github.com/QSCTech/zju-icicles/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E6%95%99%E6%9D%90/Computer%20Networking%20-%20A%20Top%20Down%20Approach%2C%207th%2C%20converted.pdf)
 
 ### What is the Internet
+
+#### Nuts and Bolt View (Hardware)
 - billions of connected computing devices
-    - hosts running network apps
-- communication links
-    - fiber
-    - copper
-    - radio
-    - satellite
-- packet switches
+    - hosts/end systems running network apps
+- communication links - connect end systems together
+    - physical media
+        - coaxial cable
+        - optical fiber
+        - copper wire
+        - radio spectrum
+        - satellite
+    - different links transmit data at different rates (bits/s)
+- packet switches - connect end systems together
     - forward packets of data
     - routers
     - switches
@@ -33,8 +38,23 @@
     - IEEE
     - more strict because physical constraints are resrictive
 
+#### Service View
+- internet as an infrastructure that provides services to (distributed) applications
+    - web
+    - VoIP
+    - email
+    - games
+- distributed apps because they involve multiple systems exchanging data
+
 #### What is a protocol
-- specific messages sent, specific actions taken when messages are received 
+- define format, order of messages sent and received among network entities and actions taken on message transmission/receipt
+- example between client and server
+- client initiates TCP connection request, server gives ok response, client sends get request for webpage, server responds with contents
+
+### 1.2 The Network Edge
+- where the end-systems sit
+- includes desktops, servers, mobile devices, IoT stuff
+- also referred to as hosts because they run applications
 
 #### Network Structure
 - client and server, client requests, server provides
