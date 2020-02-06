@@ -4,6 +4,32 @@
 - [1.1 What is the Internet](#11-what-is-the-internet)
 - [1.2 The Network Edge](#12-the-network-edge)
 - [1.3 Network core](#13-network-core)
+- [Alternative Core - Circuit Switching](#alternative-core---circuit-switching)
+- [Delay, Loss, Throughput in Packet Switched Networks](#delay-loss-throughput-in-packet-switched-networks)
+- [1.5 Protocol Layers](#15-protocol-layers)
+- [2.1 Principles of Network Applications](#21-principles-of-network-applications)
+- [Processing COmmunicating](#processing-communicating)
+- [2.2 Web and HTTP](#22-web-and-http)
+- [HTTP Status Codes](#http-status-codes)
+- [Web Caches (Proxy Server)](#web-caches-proxy-server)
+- [Electronic Mail](#electronic-mail)
+- [DNS](#dns)
+- [Client Server vs P2P](#client-server-vs-p2p)
+- [Chapter 3 - Transport Layer](#chapter-3---transport-layer)
+- [Sequence of Execution](#sequence-of-execution)
+- [Tunnel Vision](#tunnel-vision)
+- [ UDP Segment Header](#-udp-segment-header)
+- [Principles of Reliable Data Transfer](#principles-of-reliable-data-transfer)
+- [rdt2.0 fatal flaw](#rdt20-fatal-flaw)
+- [Pipeline Protocols](#pipeline-protocols)
+- [COntinuation of reliable data transfer](#continuation-of-reliable-data-transfer)
+- [TCP Overview](#tcp-overview)
+- [TCP seq numbers, ACKS](#tcp-seq-numbers-acks)
+- [](#)
+- [Connection Management](#connection-management)
+- [Quiz Overview](#quiz-overview)
+- [Chapter 4 The Network Layer - Data Plane](#chapter-4-the-network-layer---data-plane)
+- [How IP Addressing Works](#how-ip-addressing-works)
 
 ## Day 1 - Jan 6, 2020
 - biweekly labs
@@ -184,77 +210,137 @@
     - satellite - kbps to 45 mbps + delay
 
 ### 1.3 Network core
-- mesh of interconnected routers
-- special purpose devices (switch and router)
+- mesh of interconnected routers (packet switches + links)
+- packet switching - hosts break app-layer msgs into packets and forward them from one router to the next
+- special purpose devices (linklayer switch and router)
     - one common job they both do is packet switching
     - they recieve the packets and forward them using a certain algorithm
     - they take decision based on the content of the packet
     - if there are 10 packes being transmitted between A and B, they will all be considered independently
-- in circuit swtiching the decision is based on ??
-- the devices in the mesh have to decide which path to take
+- the devices in the mesh have to decide which path/route to take
     - swtiching time is based on which path is taken
+- packets are transmitted over link at rate = full transmission of link
+
+#### Packet Switching - store and forward
+- when a packets bits are received, the packet switch will collect the complete packet (store) and then transmit it on the next hop (forward)
+- a hop is a step
+- another fundamental principle is that the devices in the middle (routers) perform a store and forward
+- they also verify that the content is correct
+- a router has many links and its job is to take packet from input link and send it to the appropriate output link
+- if you have N hops the end to end delay is NL/R
+    - here we ignore propagation delay
+- given it takes L/R to transmit packet to the store, it will take another L/R to forward it
+- so the total delay is 2L/R
+- if there was no store, it would just be L/R delay but we kinda need to store
+
+##### Example of Packet Switching
+
+```
+Length = 7.5 mb
+Rate = 1.5 mbps
+1 hop transmission delay = L/R = 7.5/1.5 - 5 sec
+```
+
+#### Packet Switching - queuing and delay
+- a packet switch has an output buffer for every attached link (since links are bidirectional every link has this)
+- if arrival rate to link exceeds transmission rate of link for a period of time
+    - packets will queueu and wait to be transmitted by link
+    - useful if the link is busy tranmitting another packet
+    - packets can be dropped if memory buffer fill ups (either the arriving one or an already queued one)
+- so apart from transmission delay, there is also a queuing delay
+
+#### Two Key Network Core Functions
+- routing - determine source-destination route of packets
+    - if the destination of packet is X then it should be transmitted on links 1, 2, 3 for example
+- forwarding
+    - move packet from routers input to appropriate output
+- forwarding tables that use IP addresses
+    - each router has its own forwarfing table
+    - based on packet destination value, the router will pass onto adjacent router based on that IP
+    - maps destination address to router's outbound links
+    - forwarding tables are set based on routing protocols
+
+### Alternative Core - Circuit Switching
+- end to end resources allocated between source and destination
+- kind of like restaurant that takes reservations only
+- in circuit switching there is no delay except the constraints provided by bandwidth
 - circuit switching says the decision should be based on the end source
     - the path of packets is the same
         - dedicated resources
 - packet swtiching says that the swtiching decision will be independent since they are all in chunks
+- common for traditional telephone
+- circuit segment is idle if it is not used by call (no sharing)
+- when network establishes circuit, the transmission rate is also reserved and is guaranteed
+- first, end-to-end connection must be established (reservation)
+- if you have 4 circuit switches each able to have 4 simultaneous circuits, the transmission rate would be 1/4th of the link's total transmission
 
-
-### Packet Switching - store and forward
-- when a packet is received, the device will collect the compelte package and then transmit it on the next hop
-- a hop is a step
-- another fundamental principle is that the devices in the middle perform a store and forward
-- they also verify that the content is correct
-- if you have N hops the end to end delay is NL/R
-
-### Packet Switching - queuing and delay
-- id arrival rate to link exceeds transmission rate of link for a period of time
-    - packets will queueu and wait to be transmitted by link
-    - packets can be dropped if memory buffer fill ups
-- follows store and forward principle, if multiple packets arriving t a rate grater than transmission rate then packets are either queueued or dropped
-- once memory buffer fills up the packet is ALWAYS dropped
-
-### Two key network core functions
-- routing
-    - if the destination of packet is X then it should be transmitted on links 1, 2, 3 for example
-- forwarding
-    - move packet from routers input to appropriate output
-
-### Alternativ core - circuit switching
-- end to end resources allocated between source and destination
-- in circuit switching there is no delay except the constraints provided by bandwidth
-
-
-### Circuit Switching- fdm vs tdm
+#### Circuit Switching- FDM vs TDM
+- also possible in packet switching
 - in fdm there are 4 signals with 4 different frequencies
     - all hosts don't get a lot of bandwidth
+    - horizontal split 
 - in tdm we split the time dedicated to transmiting data
     - for time slot 1 you transmit data for host A
-    - if the size of the slot is too big then the users will feel a long delay so the trick is to make the time slots as small as possible
+    - if the size of the slot is too big then the users will feel a long delay so the trick is to make the time slots as small as possible (like in millisecs)
+    - vertical split
 
 ## Day 3 - Jan 9, 2020
 
-### Packet Switching vs Circuit Switching
+#### Packet Switching vs Circuit Switching
 - packet is for internet
+    - allows more users
+    - eg 1mbps means each user gets 100kbs when active (probabilistically active 10% of the time)
 - circuit is more for telephonic
-- packet switching prod
+- packet switching pros
     - good for bursty data because you can change up your path
+    - simpler since there is no setup
+- packet switching cons
+    - excssive congestion possible (leads to delay/packet loss)
 
-### Internet Strcuture
-- bigger companies like GOogle have their own dedicated connections to the backbone
+#### 1.3.3 A Network of Network
+- internet users connect to the internet using ISPs
+- we want ISPs to be interconnected so packets can be sent across
+- this is a very complex structure
+- option 1: 
+    - connecting each ISP to every ISP would be O(N^2)
+- option 2: Network Structure 1
+    - conecting each ISP to one global transmit ISP would allow customer and provider to have economic agreement
+    - user pays customer ISP and customer ISP pays provider - global transit ISP
+    - con: if one company can make a global ISP then others will too
+- option 3: Network Structure 2
+    - multiple global ISPs that interconnect
+    - two tier hierarchy with global trnsit providers at top tier and access ISPs at bottom tier
+- option 4: Network Strcture 3
+    - multi-tier hierarchy
+    - access ISP pays regonal ISP pays teir-1 ISP
+    - there are internet exchange points that connect tier-1 ISPs as well as peering links
+    - points of presence exists in all lvls of hierarchy except lowest level
+        - group of routers where customer ISPs connecy
+- bigger companies like GOogle have their own dedicated connections to the backbone so they run their own network to bring content closer to users
+    - act as tier 1 ISPs in hierarchy
 
-### Four sources of packet delay
+### Delay, Loss, Throughput in Packet Switched Networks
+
+#### How does delay occur?
+- packes queue in buffers when arrival rate to link exceeds output link capacity
+
+#### Four sources of packet delay
 1. processing delay
     - if the contents of the packet were succesffuly received
+    - check bit errors
+    - determine output link - < a couple ms
 2. queueing delay   
     - depends on hw much work the node has to do
-    - error checking
-    - traffic
+    - time waiting at output link
+    - error checking?
+    - depends traffic
     - similar to processing delay
     - if there the buffer gets filled the packet gets dropped
 3. transmission delay
     - L/R
 4. propagation delay
     - depends on lenght of link (wire length)
+    - based on speed of light (2-3 x10^8 m/s)
 - the network of routers and switches is designed so that there is as less overhead and delay as possible
 - basic principle
     - routers and switches keep on fowarding packages and if something doesn't work out the package is dropped
@@ -266,9 +352,17 @@
 - La/R ~ 0: avg queing delay is really small
 - if La = R then the the avg queuing delay is large
 - if La/R > 1 then more work arriving than can be serviced
+- this ratio is called traffic intensity
+
+#### Real Internet Delays and Routes
+- traceroute for delay measurement from source to router
+- send 3 packets to each router 
+- router returns packets to sender
+- for N-1 routers, the end-to-end delay is N(d_proc + d_trans + d_prop) for uncongested network
+- when you get \*** from traceroute it means the probe was lost and router stopped replying
 
 #### Packet Loss
-- finite capcity buffer
+- finite capcity buffers
 - packet arriving to full queue is lost
 - routers and switches have buffers for incoming and outgoing queues
     - every link has a queue
@@ -280,17 +374,20 @@
 
 #### Throughput
 - rate (bits/time unit) at which bits are transferred between sender/reciever
+- instantaneous - rate at a single point
+- average - rate over period of time
 - throughput can be calculated for a single link or between sender/reciever
 - throughput would be equivalent to transmission rate if there is no delay/loss of data
 - if there are multiple hops with different transmission rates, the end to end throughput from sending host to recieving host changes
 - the throughput can not be more than the throughput of the bottleneck
+    - bottleneck link = path that constrains the end-to-end throughput
 
 #### Throughput: Internet Scenrario
 - all servers have a capcity Rs and clients have a capcity Rc
 - 10 connections sharing the links
 - it is possible that we can fairly share and get a equal bandwidth R/10
 
-### Protocol Layers
+### 1.5 Protocol Layers
 - network is comprised of
     - hosts
     - routers
@@ -305,47 +402,60 @@
     - combination of protocols that pass info forward
 - 2 layering models
     1. ISO/OSI model
+    2. internet protocol stack
 
 #### ISO/OSI reference model
 - job should be plit into 7 steps
 - there isn't a separate protocol for every activity
-- evolved to 5 layer model
+- evolved to 5 layer model because presentation and session can be implemented in application layer
 1. applciation layer
     - communication initiaites from application by sender host
 2. presentation
-    - physical layer recieves the message and passes it upstream
+    - allow apps to interpret and understand data by encryption/decryption/compression
 3. session
-4. 
+    - synchronization checkpoint
+    - recovery of data exchange
+4. transport
+5. network
+6. link
+7. physical
 
 #### Internet Protocol Stack
 - evolution of ISO/OSI
 - 5 layers
-1. application layere protocols
+1. application layer protocols
     - FTP, SMTP, HTTP
     - this is a guideline
     - the software implemenents these guidelines
+    - where dns gets IP from domain
+    - packet of information is a message
 2. transport
+    - transports messages between app endpoints
     - TCP, UDP
     - TCP is more common
-    - message creaed byg applciation layer is passd to one of the abvoe protocols
+    - message created by applciation layer is passed to one of the above protocols
     - TCP/UDP are APIs implemented by your OS
     - need to make a system call to use TCP or UDP
+    - process-process data transfer
+    - transport layer packet = segment
 3. network
     - IP, routing protocols
     - also OS driven
     - once your host app has produced a msg using HTTP and passes it using TCP, it is in control of your OS
+    - sends datagrams from source to destination
 4. link layer
     - also OS driven
     - slightly hardware dependent
     - in order to have hardware compatibility across manufacturers we have protocols (called standards) laid out by IEEE
         - Ethernet, 802.11 (WiFi standard)
+    - at each node, network layer relies on this layer to deliver the datagram to next route
 5. physical layer
     - the actual wire
     - receieves msg from Ip laye via link layer
     - converts it to a suitable format for the node
-    - the jobs of this aye is to transmit the bits
+    - the jobs of this layer is to transmit the bits
     - half ofthe job of the link layer is perofrmed b ynetowrk inteface card
-    - some component of link layer is iplmened by OS
+    - eg ethernet physical layer -> twisted pair or coaxial or fiber
 - when wiriting an app, we only have to worry about implementing the application layer
 - merges some parts of OSI ISO ref model
     - the acitivities of the omited layers are grouped together
@@ -378,32 +488,34 @@
 - https guarantees the applciation layer is encrypting your message
     - so if there is a layer that can open it, it still won't be able to read it
 
-### Network Security
+#### 1.6 Network Security
 - denial of service attack (DoS)
     - a lot of attackers send useless traffic
     - server cannot handle all the traffic and can't serve actual users
 
 ## Day 4 - Jan 13, 2020
 
-### Creating network app
+### 2.1 Principles of Network Applications
+
+#### Creating network app
 - write programs that run on different end systems
 - just focus on application layer
 - if the application inteacts with some third-party hosts then you need some extra protocols?
 - we will be workng on generic structure application layer programs
 - network core devices don't run user apps
     - each layer provides a generic interface to the neighbouring layer (in API form)
-- 2 variations
+- 2 architectures
     - client-server
     - P2P
 
-### Client Server
+#### Client Server
 - one node requests for a service and the other provides a service
 - communication is inititated by client
 - server has a permanent IP address
 - if a huge number of nodes are being serviced, need multiple copies of server node (data centers)
-- clint has dynamic IP addresses
+- client has dynamic IP addresses and do not talk to each other
 
-### P2P architecture
+#### P2P architecture
 - no fixed role
 - both devices are switching roles (either can initiate and either can respond to requests)
 - usually there is a server which holds a list of nodes which can participate in communication
@@ -411,12 +523,17 @@
 - there is no 'always-on' servicing node
 - useful for file-sharing, content-sharing
 
-### Interprocess communication
-- network communication is communcation between a process running on ne machine and a process running on another
+### Processing COmmunicating
+- process: program running on a host machine
+- process comuncation between same host uses OS defined interprocess communcation (not what we are interested in)
+- network communication is communcation between a process running on one machine and a process running on another
+    - these processes communicate by exchanging messages
 - dealt with by OS
+- both architectures have client process (initiator) and server (waiter)
 
 #### Socket
-- the communcation point through which communciation layer sends messages to transport layer
+- the communcation point through which communciation(app?) layer sends messages to transport layer
+- a socket is a software interface that allows processes to send and recieve messages
 - usually every socket is bound to some port
 - OS provides multiple sockets to communicate with trasnport layer
 - circuit programming
@@ -424,7 +541,7 @@
 
 #### Addressing Processes
 - every app is identified by 2 things
-    1. IP addres (host)
+    1. IP address (destination host)
     2. port number (connection between trasnort and applicatio layer)
 - when using client-server, the server needs a fixed address so clients can easily access the service
 - also need to fix port number
@@ -436,33 +553,34 @@
 - error handling is also done at this layer
 - can add variations that allow you to bypass layers (eg go straight from app layer to network layer)
 
-
 #### Transport Layer
 - udp or tcp
 - qualities of a good trasport layer
-    - data integrity 
-    - want to make sure data is securely and successfully transferred
-    - timing
-    - throughput
+    - data integrity (need 100% for file transfer but not audio)
+    - security - want to make sure data is securely and successfully transferred
+    - timing - delay constraints
+    - throughput - min rate for effectiveness bandwidth sensitivity) vs best effort (elastic apps)
 - different requirements for different types of applications
 
 #### TCP service vs UDP service
-- guarantees that data will reach the other end
-    - udp doesn't do that
-    - app deveoper can decide which protocol to use and use the interface provided by the OS for that protocol
-- tcp
-    - reliability
-    - congestion control
-- throughput and timing are not guaranteed by either protocol
-    - solution: app dev has to add those additional features
-- for video streaming apps, there is additional code that gaurantees min throughput and min delay
+- TCP
+    - connection oriented
+    - for reliable data transfer
+    - establish connection before exchanging information (handshake)
+    - includes congestion control and flow control
+    - guarantees that data will reach the other end
+        - udp doesn't do that
     - buffering: start to download data but don't service it until there is enough data to service
-- tcp is connection oriented
-    - before data is transferred, you need to establish connection between host and end-user 
-- udp does not require connection setup
+- UDP
+    - unreliable data trasnfer (no guarantees)
+    - does not require connection setup
     - good solution for a "no frills attached" app
-- if you want to send a huge amount of data as quickly as possible and not care about congestion then UDP is your best bet
+    - no flow/congestion control
+    - if you want to send a huge amount of data as quickly as possible and not care about congestion then UDP is your best bet
     - will only work if there is not a lot of traffic
+- neither protocol provides min throughput, timing, security
+    - solutionL appp dev has to add additional sources
+    - for video streaming apps, there is additional code that guarantees min throughput and min delay
 - most apps use TCP (mail, remote access, web, file tranfer) and some use either (streaming, video/online call)
 
 #### Securing TCP
@@ -471,8 +589,9 @@
     - takes info from HTTP and secuely sends it to tcp layer
     - encrypts data
     - denoted by lock sign in browser window (HTTPS = HTTP + SSL)
+    - ssl socket API encrypts pwasswords to be sent
 
-### Web and HTTP
+### 2.2 Web and HTTP
 - web is a network of computers with specialzed web service available
 - http is the protocol that makes this service possible (defines rules for www)
 - webpage consists of objects
@@ -480,6 +599,8 @@
     - webpage is identified by URL (server host + path to obejct)
 
 #### HTTP overview
+- hyppertext transfer protocol
+- client - browser requesting onjects, server respsonds with objects
 - communication is initated by client who sends HTTP request (requesting document they wanna open)
 - request reaches server and server responds with contents
 - http request is FOooOrrr an html page
@@ -498,21 +619,21 @@
     - i.e HTTP uses port 80
     - TCP socket connection on port
 
-### Types of HTTP
+#### Types of HTTP
 
-#### Non-Persistant HTTP
+##### Non-Persistant HTTP
 - when you requeest a new document, a new TCP connection is made
 - all audio/video/image files are independent objects
 - separate requests are made for each object
 - new TCP connection for each object
 
-#### Persistent HTTP
+##### Persistent HTTP
 - keeps TCP connection open
 - multiple objects can be sent over one TCP connection
-- this is the default in the current model of HTTP
+- this is the default in the current model of HTTP but canconfigure to use non-persistent
 
-#### Response Time
-- RTT 
+#### Response Time for Non-persistent HTTP
+- RTT (round tripe time)
     - time for a small packet to travel from client to server and back (round trip time)
     - can never be preciely measured because factors such as network congestion affects the value
 - RTT = time from TCP request initiation to file request
@@ -521,6 +642,65 @@
 - depending on file size, the RTT will vary
 - 2RTT + file transmission time = non-persistant HTTP response time
     - 2RTT means more overhead
+- 2RTT would be fo every object
+
+#### Persistent vs Non-persistent
+- persistent is obviously better because you have an open connection and the client can send requests as soon as it encounters referenced objects
+    - as little as 1 RTT for all referenced objects
+
+#### HTTP request message
+- two types
+    - request (written in ASCII text)
+    - response
+- \r\n is after every line, it is the carriage return and linefeed to indicate where header lines start and end
+    - 2 at once = message end
+- format is request line + header lines
+- if connection type is close then it means you don't want to keep the connection open (you want non-persistent)
+
+```
+GET /index.html HTTP/1.1\r\n (method path protocol)
+Host: host_url\r\n
+User-Agent: browser\r\n
+Accept: text/html,...\r\n
+Accept-Language: en-us\r\n
+Accept-ENcoding: gzip\r\n
+Accept-Charset: utf-8\r\n
+Keep-Alive: ##\r\n <----- how long you want to try before just dropping packet
+Connection: keep-alive\r\n
+
+\r\n
+```
+
+#### General Format
+- method path version cr lf
+- header field name: value cr lf
+    - can have multiple of this or none
+- cr lf (blank line)
+- entitiy body (for post requests)
+
+#### Form Input
+- post method
+    - input uploaded to server
+- url/get
+    - input in path field of request line
+
+#### Method Types
+- HTTP/1.0
+    - get
+    - post
+    - head (used for debugging, leaves object out of resposne)
+- HTTP/1.1
+    - get
+    - post
+    - head
+    - put (uploads file to path specified)
+    - delete
+
+#### HTTP Response MEssage
+- status line has protocol, status code and status phrase
+- bunch of header lines (date,server, last modified), content-length, keep-alive, content-type
+- blank line
+- data you requested (HTML file maybe)
 
 ### HTTP Status Codes
 - 1st line in server-to-client response message
@@ -530,6 +710,9 @@
     - sometimes do automatic redirection
 - 400 - bad request
 - 404 - not found
+- 505 - HTTP version not supported
+- 304 not modified
+- 418 - i'm a teapot :tea:
 
 #### Trying out HTTP
 1. Telnet
@@ -540,12 +723,19 @@
 2. type in a GET HTTP request
     - `GET /page HTTP/1.1 Host: base_url`
 
-### Cookies
+#### Cookies
 - small text-based pieces of info stored on the client side in a small file
 - server sends client a message saying they want to store cookies
 - the browser checks to see if client has cookies enabled
 - if yes then some information is stored in some text file locally
 - next time you visit the same url the browser will look for a cookie file
+- 4 parts
+    1. cookie header line in HTTP response (true/false?)
+    2. cookie header line in next HTTP request (cookie file/say yes/no)
+    3. cookie file on user side managed by browser
+    4. backend database access to return appropriate data based on cookie file
+- line in header = Set-cookie: user_id which creates the file
+- subsequent requests will have a header cookie: user_id 
 
 ### Web Caches (Proxy Server)
 - doesn't have anything to do with web service
@@ -596,6 +786,11 @@
         - receive or send emails
     3. simple mail transfer protocol
         - smtp and others
+- uses TCP on port 25
+- 3 phases
+    1. handshake
+    2. transfer msg
+    3. closure
 
 #### User Agents
 - mail-reader
@@ -622,20 +817,31 @@
 
 ## Day 6 - Jan 16, 2020
 
-### Electronic Mail servers
+#### Electronic Mail servers
 - client sends a request and server responds
+- message format has a 'to:' 'from:' and 'subject:' followed by a blank line and then the body (ASCII only)
+- this is different from SMTP MAIL FROM, RCPT TO:
 
 #### Mail Access Protocols
 - SMTP
 - mail access protocol
-    - IMAP
-    - POP
+    - IMAP (INternet Mail Access Protocol to manipulate stored messages on server)
+    - POP (Post office Protocol for authorization and downloadin)
     - HTTP (browser email - gmail, Hotmail)
 - tunneling
     - messages of one protocol can be sent through another protocol
 
 #### POP3
 - pull new mail messages every 10 seconds
+- authorization
+    - asks for username and password
+    - server responds with ok or err
+- transaction
+    - list - list message numbers
+    - retr - retrieve message b ynumber
+    - dele - delete
+    - quit
+- stateless
 
 #### IMAP
 - allows user folders 
@@ -994,3 +1200,61 @@
 
 #### Router Architecture Overview
 - 
+
+## Day 14 - Feb 5, 2020
+
+#### Internet Network Layer
+- when the packet is forwarded from transport layer to application layer, IP address is coming from the DNS server 
+- at application layer - we have our domain name (google.com)
+- transport layer ensures the IP address is available before transporting packets
+- forwarding table
+- IP protcol
+    - governs how packet should be constructed (header + data)
+- ICMP protocol - its job is to report errors
+- IP protocols are impemented at routers but every host as its own lil forwarding table that forwards packets to gateway router
+- a couple protocols that IP protocol requires help from (between IP and link layer)
+
+#### IP Datagram Format
+- 32 bits length for each row
+- ip protocol version number (4 or 6)
+- min IP header lenght = 20 bits
+- length = total datgram length + data
+- 16 bit identifier - sequence number (unique and random)
+- time to live - after a certain number of hops, the datagram will be dropped
+    - helps in terms of routing
+    - if there is a loop in routing table then the datagram might keep travelling forever
+    - if the router sees a 0 in this one, it'll automatically be dropped
+- checksun - if the checksum doesn't match up, datagram is dropped (no acknowledgment will be provided)
+- source and destination ip address (both 32 bit)
+- 20 bytes of TCP
+    - desination + source port number
+- 20 bytes of IP header
+- therefore 20 + 20 = 40 bytes of overhead + extra overhead
+
+#### IP Fragmentation
+- one datagram cant fit into one segment/fragment
+- the datagram is split into fragments
+- when an IP datagram goes to an ATM router, it is split into smaller fragments and theyll be encapsulated by the ATM datagram
+- eg length 4000 and id x is split into 3 each with length 1500(1480), 1500(1480), 1040, each with id x 
+    - the fragments will have an offset and all but the last one will have a fragflag indicating there are more fragments after this
+- the offset is in bytes/8 (so the first has 1480/8) so 185 and the next will be 185 + 1480/8 = 370
+- offset in bytes/8 because we don't have enough space to store it in bytes, so length has to be 
+- each fragment is whatever bytes + 20 bytes?
+- tcp header is only in the first fragment? <--- 
+
+### How IP Addressing Works
+- fixed and dynamic
+- 32 bit number split into 4 8 bit numbers
+- every link of a router will have its own IP address
+- ethernet switch in the middle between devices and router
+- higher order bits is the subnet part and then the host poart (lower order bits) identifies the device itself
+- so every device in a network requires unique IP address (only in subnet)
+- bigger enterprise system is divided into multiple subnets
+
+#### How addressing is assigned
+- in the beginning they were distinuished by classes (A, B, C)
+- class A had 8 bits in the subnet part and the rest for host, B had 16 bits for subnet and rest for host (depended on devices in network)
+    - rigid system
+- modern appraoch
+    - classless interdomain routing (CIDR)
+        - any number of bits for subnet (23 bits for subnet and the rest 9 for host part)
