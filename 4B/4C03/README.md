@@ -207,8 +207,8 @@
 - if you have N hops the end to end delay is NL/R
 
 ### Packet Switching - queuing and delay
-- id arrival rate to link exceeds transmission rate of link for a period of time
-    - packets will queueu and wait to be transmitted by link
+- if arrival rate to link exceeds transmission rate of link for a period of time
+    - packets will queue and wait to be transmitted by link
     - packets can be dropped if memory buffer fill ups
 - follows store and forward principle, if multiple packets arriving t a rate grater than transmission rate then packets are either queueued or dropped
 - once memory buffer fills up the packet is ALWAYS dropped
@@ -219,12 +219,12 @@
 - forwarding
     - move packet from routers input to appropriate output
 
-### Alternativ core - circuit switching
+### Alternative core - circuit switching
 - end to end resources allocated between source and destination
 - in circuit switching there is no delay except the constraints provided by bandwidth
 
 
-### Circuit Switching- fdm vs tdm
+### Circuit Switching - fdm vs tdm
 - in fdm there are 4 signals with 4 different frequencies
     - all hosts don't get a lot of bandwidth
 - in tdm we split the time dedicated to transmiting data
