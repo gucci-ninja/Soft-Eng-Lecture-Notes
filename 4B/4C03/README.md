@@ -224,7 +224,7 @@
 #### Packet Switching - store and forward
 - when a packets bits are received, the packet switch will collect the complete packet (store) and then transmit it on the next hop (forward)
 - a hop is a step
-- another fundamental principle is that the devices in the middle (routers) perform a store and forward
+- another fundamental principle is that thedevices in the middle (routers) perform a store and forward
 - they also verify that the content is correct
 - a router has many links and its job is to take packet from input link and send it to the appropriate output link
 - if you have N hops the end to end delay is NL/R
