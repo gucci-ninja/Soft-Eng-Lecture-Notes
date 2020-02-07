@@ -345,3 +345,187 @@ facs !! n
         - put prompt > 
 - intero
     - `stack build intero --copy-compiler-tool`
+
+## Day 14 - Feb 6, 2020
+
+- lhstotex
+- midterm will be up to everything we do today
+- ghci -Wall Feb6
+
+#### Proof by Induction
+- bonus marks to type it in latex
+- 2 lists for length (xs ++ ys) ->
+    1. induction on xs? (doing induction on this one is enough)
+    2. " " ys?
+    3. " " both?
+- induct
+    - length (xs ++ ys)
+
+```
+base
+    length ([] ++ ys)
+        ≡ < ++ .1 >
+    length (ys)
+        ≡ < arith >
+    0 + length ys
+        ≡ <length.1>
+    length [] + length ys
+
+
+length ((x.xs ++ 1 ys))
+    ≡ < *+.2 >
+lengh(x: (xs ++ ys))
+    ≡ <length.2>
+1 + length(xs ++ ys)
+    ≡ < ind hypothesis >
+1 + length xs + length ys
+    ≡ <>
+1 + length xs + length ys
+    ≡ < length.2 >
+length(x,xs) + 1 ys
+```
+
+#### Proof for reverse
+
+```
+base
+    reverse ([] ++ ys)
+        ≡ ++.1
+    reverse ys
+        ≡ < lemma >
+    reverse ys ++ []
+        ≡ {reverse 1}
+    reverse yz ++ reverse []
+
+lemma -> ∀ l , l ++ [] ≡ l
+```
+
+#### Induction for the other one :(
+
+```
+reverse ( (x:xs) ++ ys)
+    ≡ < ++, 2 >
+reverse( x : (xs ++ ys))
+    ≡ < rev 2 >
+reverse (xs ++ ys) ++ [x]
+    ≡ < induction hypothesis >
+(reverse ys ++ reverse xs) + [x]
+
+    ≡ < ++ is associative > (this would need a lemma, either given or need to prove)
+
+reverse ys ++ (reverse xs ++ [x])
+    ≡ < rev 2 >
+reverse ys ++ reverse(x:xs)
+```
+
+## Day 15 - Feb 7, 2020
+- went over proofs (written)
+
+### Tutorial 4 - Feb 7, 2020
+
+<strong>Proposition 1. P(xs) := xs ++ [] == xs</strong>
+
+----------------------------------------
+
+```
+Base Case : P([]) := [] ++ [] == []
+
+=> (left) := [] ++ []
+    //equiv < by ++ >
+=> [] (stop)
+
+=> (right) := [] (stop)
+
+(left) = (right) [ - ]
+```
+
+----------------------------------------------
+
+```
+Induction Hypothesis (IH) P(xs) := xs ++ [] = xs
+Induction Step P(x:xs) := (x:xs) ++ [] = (x:xs)
+
+=> (left) := (x:xs) ++ []
+    //equiv < by ++ >
+=> x : (xs ++[])
+    //equiv < by IH >
+=> x:xs (stop)
+
+=> (right) := xs
+
+(left) = (right)
+```
+
+- if you append empty list to list it'll be list itself
+    - PrP 1: xs ++ [] = xs
+- reverse 2 list and append to each other
+    - PrP : reverse (xs ++ ys) == reverse (ys) ++ reverse (xs)
+
+
+<strong>Proposition 3: P(xs) := sum (xs ++ ys) == sum xs + sum ys</strong>
+
+-----------------------------------
+
+```
+Base Case: P([]) := sum  ([] ++ ys) == sum [] + sum ys
+
+=> (left) := sum ([] ++ ys)
+    //equiv < by prp 1 >
+=> sum ys
+
+(left) = (right)
+
+=> (right) := sum [] + sum ys
+    //equiv < by sum >
+=> 0 + sum ys
+```
+
+```
+Induction Hypothesis P(xs) := sum (xs ++ ys) == sum xs + sum ys
+Induction Step P(x:xs) := sum ((x:xs) ++ ys) = sum (x:xs) + sum ys
+
+=> (left) := sum ((x:xs) ++ ys)
+    //equiv < by ++ >
+=> sum (x : (xs ++ ys))
+    //equiv < by  sum>
+=> x + sum(xs ++ ys)
+    //equiv < by IH >
+=> x + sum(xs) + sum(ys) 
+
+=> (right) := sum (x:xs) + sum ys
+    //equiv < by  sum>
+=> x + sum xs + sum ys
+```
+
+<strong>Proposition 4: P(xs) := sum (reserse xs) == sum xs</strong>
+
+```
+Base case : P([]) := sum (reverse []) = sum []
+
+LEFT SIDE
+sum (reverse [])
+    by reverse
+sum []
+
+RIGHT SIDE
+sum []
+
+LHS = RHS
+```
+
+```
+Induction Hypothesis P(xs) := sum (reverse xs) == sum xs
+Induction Step P(x:xs) := sum (reverse (x:xs)) == sum x:xs
+
+LEFT SIDE
+sum (reserse (x:xs))
+    by reverse
+sum (xs ++ [x])
+    by < prp 3 >
+sum (reverse xs) + sum [x]
+    by HI
+
+
+RIGHT SIDE
+sum x:xs
+```
