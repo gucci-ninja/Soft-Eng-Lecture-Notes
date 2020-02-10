@@ -676,4 +676,35 @@ fast _as_ fuk bois.jpg
 #### Tides on Earth
 - high tides come twice a day
 
-## Day 15 
+## Day 15 - Feb 6, 2020 
+- skipped
+
+## Day 16 - Feb 10, 2020
+
+### Larry Niven's Neutron Star
+- have very large gravitational force
+- 8 times the mass of the sun
+- very compact
+- small radius (~10km)
+- composed of packed neutrons
+- gravitational acceleration ratio 
+
+#### Gravitational Acceleration of Neutron Star vs Earth
+- ratio of gravitataional acceleration 
+- g = G(M/R^2)
+- 10^11 (100 billion)
+
+#### Tidal Acceleration
+- g<sub>tidal</sub> = G(M/R^2) * (h/r)
+- h = 0.002km/10km (0.002 = avg human height)
+- R = 10^-4
+- at 3000km
+
+#### Tidal Locking
+- total angular momentum of system = spin + orbit
+- if the spin of earth decreases, the angular momentum goes into orbit of moon, thereby increasing its orbital radius and the moon moves outward
+- moon tugs on leading earth bulge
+- wtf is a bulge
+- as more angular momentum is dragged out, the moon moves further away
+- end state = having the same orbital period
+    - this would tal 50 billion years asuming nothing disturbs system
