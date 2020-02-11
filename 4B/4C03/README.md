@@ -1258,3 +1258,317 @@ Connection: keep-alive\r\n
 - modern appraoch
     - classless interdomain routing (CIDR)
         - any number of bits for subnet (23 bits for subnet and the rest 9 for host part)
+
+### Midterm Glossary - Keywords and Definitions
+
+#### 1.1 What is the Internet
+
+##### 1.1.1 - nuts and bolts
+- hosts/end systems
+    - end users that are internet users, invluces PCs,laptops, smartphones, tablets, TVs, home appliances, smart watches, etc
+- communication links
+    - physical method through which data is transmitted
+    - coaxial cable, copper wire, optic fiber, radio spectrum
+- transmission rate
+     - rate at which data ins transmitted
+     - measured in bits/s
+- packets
+    - packages of information, segments of data with header bytes which are sent through the network to the destination and reassembled into original data
+- packet switches
+    - takes packet arriving from incoming communication link and forwards it to outgoing communication link
+    - two types, router and link-layer switches 
+- routers
+    - forward packets to ultimate destination
+    - typically for network core
+    - route = ssequence of links and switches router takes to send data
+- link-layer switches
+    - forward packets to destination
+    - typically for access networks
+    - path = sequence of links and switches link-layer switch takes to send data
+- Internet Service Providers (ISP)
+    - how end systems access internt
+    - is a network of packet switches and communication links
+    - provide residential broadband access (cable modem/DSL), high-speed LAN access, mobile wireless access
+    - ISPs are also interconnected
+- Transmission Control Protocol (TCP)
+- Internet Protocol (IP)
+    - specifies format of packets sent and received among routers and end systems
+- Internet Standards
+    - agreement on what each protocol does
+    - developed by Internet Engineering Task Force
+- Request for comments (RFC)
+    - standard documents written up by IETF
+    - technical and detailed
+    - define protocols TCP, IP, HTTP, SMTP
+    - currently 7000 RFCs
+- IEEE 802 LAN/MAN standards committee
+    - define standards for Ethernet and WiFi
+
+##### 1.1.2 - services description
+- distributed application
+    - applications that involve multiple systems exhacning data
+- socket interface
+    - specifies how program running on one end system will ask internet infrastructure to deliver data to destination
+    - programming interface for hooks so apps can send and recieve using connection to internet
+
+#### 1.2 Network Edge
+- client
+    - a type of end-system/host
+    - tend to be desktops and moble PCs
+- server
+    - type of end-system/host
+    - tend to be more powerful machines that store and distribute web pages, stream video, relay email
+- data centers
+    - where most servers reside and dstribute web pages, email, videos
+    - google has 50-100, 15 of them with more than 100k servers
+
+##### 1.2.1 Access Networks
+- digital subscriber line (DSL)
+    - type of broadband residential access
+    - usually obtained from same company that does wired local phone
+    - when DSL is used, ISP = telco
+    - uses existing phone line (twisted-pair copper wire) to exchange data with digital access subscriber line acess multiplexor (DSLAM)
+    - DSL modem on user end takes digital data and transates it to high frequency tones for transmission over telephone wire
+    - go from analog signal at house to digital format at DSLAM
+    - line can carry both data and phone signal simultaneously because of different frequency encoding
+        - 0-4kHz band for phone (ordinary channel)
+            - this is why phone is bad quality (big wavelength - lose data)
+        - 4-50kHz band for upload (medium speed)
+        - 50 kHz to 1MHz band for download (high speed)
+- cable internet access
+    - type of residential network access
+    - makes use of cable televisoin company's existing infrastructure
+    - fiber optics connect cable head end (cable modem termination system - CMTS) to neighbourhood junction (500-5000 homes), then coaxial cable connects homes to everything
+    - since both fibre optic and coaxial are used, it's called hybrid fiber coax (HFC)
+    - requires modem like DSL, but connects home PC through Ethernet port
+    - CMTS is similar to DSLAM, turning analog signal from modem to digital
+    - shared broadcase medium - every packet sent by head travels downstream on every link to every home 
+    - so if multiple users are downloading same video, actual rate will be lower than aggregate cable downstream rate
+    - upload is also shared so a distributd multiple access protocol is needed to avoid collisions
+    - avg speed is 42.8 mbps down and 30.7 mbps up
+- fiber to home (FTTH)
+    - type of residential broadband access gaining popularity
+    - provides higher speeds than DSL and cable
+    - provides optical fiber path from CO directly to home
+    - one fiber from CO to home (actually CO to homes but fibre splits)
+    - two competing network architectures that do the splitting
+        1. active optical networks (swithes ethernet)
+        2. passive optical networks
+    - each home has an ONT - optical network terminator, connected by optical fiber to neighbourhood splitter
+    - fibre then goes from optical splitter to OLT (optical line terminator) - which provides conversion between optical and electric signals
+    - average download is 20 mbps and 13 mbps up
+- dial-up/satellite link
+    - also residential
+    - for rural areas - around 1mbps
+    - dial-up = dsl but slower
+- Internet of Things
+    - devices that connect to internet wirelessly
+    - in enterprise network, they transmit/receive packets to/from access point that is connected to wired ethernet, making it a wireless LAN setting
+- 3G/LTE
+    - for wide area access
+    - mobile phones
+
+##### 1.2.2 Phyical Media
+- bit
+    - propagates between transmiter/receiver pairs
+- physical link
+    - transmitter/receiver pairs
+- guided media
+    - signals propagate in solid media (copper, fiber, coaxial)
+- unguided media
+    - signals propagate freely
+- unshielded twisted pair (UTP)
+    - for LANs, frequently used for computer networks in a building
+    - data rate depends on thiccness and distance between transmitter/reciever
+- shared medium
+    - number of end-systems connected to cable with each end system recieving whatever is sent
+- geostationary satellites
+
+- low-earth orbiting satellites
+
+#### 1.3 Network Core
+
+##### 1.3.1 Packet Switching
+- messages - information in the form of data/ control function
+- packet switches
+- routers
+- link-layer switches
+- store-and-forward transmission
+    - packet switch waits for entire packet to be transmitted, stores it until its done and then forwards
+- output buffer/queue
+- queuing delays
+- packet loss
+- forwarding table
+- routing protocols
+    - what sts the forwarding table values (automatically)
+    - determines shortest path from each router destination 
+
+##### 1.3.2 Circuit Switching
+- circuit switching
+- packet switching
+- circuit
+- end-to-end connection
+- frequency-division multiplexing (FDM)
+- time-division multiplexing (TDM)
+- bandwidth
+- silent periods
+- customer
+- provider
+- regional ISP
+- tier-1 ISPs
+- PoP
+- multi-home
+- peer
+- Internet Exchange Point (IXP)
+- content-provider networks
+
+- network archiecture - 5 layer model (fixed)
+
+#### Chapter 2 - APplication Layer
+- application architecture
+    - dictates how application is structured over end system
+- client-server architecture
+    - always-on host called server with fixed address which services requests from clients
+- P2P architecture
+    - minimal or no reliance on servers
+    - clients act as both server and client
+    - hosts intermittently connected 'peers'
+    - good for traffic intensive
+- process
+    - prgram running within end system
+- client
+    - process that initiates communication
+- server
+    - waits to be contacted to begin session
+- socket
+    - interface for processes to send and receive messages
+- IP address
+    - 32 bit number that is sent as part of process identifier
+- port number
+    - number to identify rocess running on host machine
+    - also part of process identifier
+- reliable data trasnfer
+    - something that TCP does, UDP does not
+- loss-tolerant applications
+    - audio/video
+    - not file sharing
+- bandwdith sensitive apps
+    - multimedia aps
+    - telephone apps (32-36 kbps)
+- elastic apps
+    - not bandwidth sensitive
+    - file sharing
+    - email
+    - messages?
+    - web trasnfers 
+- timing, throughput, security, data integrity = good protocol
+- application layer protcol
+    - defines how app's processs communicate
+
+#### 2.2 Web and HTTP
+- webpage
+    - consists of object
+- object
+    - a file (html ,jpeg)
+- base HTML file
+    - primary page with references to other objects
+- web browsers
+    - implement client side of HTTP
+- web server
+    - implement server side of HTTP
+    - apache, nginx
+- stateless protocol
+    - HTTP
+- non-persistent connection
+- persistent connection
+- round trip time (RTT)
+    - time for small packet to travel from client to server and abck to client
+- request line
+    - first line of HTTP request msg
+- header lines
+    - subsequent lines of HTTP request/response msg
+- status line
+    - first line of HTTP response msg
+- entity body
+    - contains requested object or post 
+- cookie
+    1. cookie header line in response from server
+    2. cookie header line in request
+    3. file containing cookie
+    4. backend connection to db
+- web cache/proxy server
+    - satisfies HTTP requests on behalf of origin server
+    - 40% hit this
+- Content Dsitribution NEtworks (CDNs)
+    - make it easier to use caches on internet and localize traffic
+- conditional get
+    - look at if-modified-since header line and only refresh cached copy is the last-modified date is more recent
+    - else 304 not modified
+
+#### 2.3 Electronic Mail
+- user agent
+    - allow users to ead, reply, forward, save, compose emails
+- mail server
+    - where messages go to be sent (queue)
+- Simple Mail Transfer Protocol (SMTP)
+    - application layer protocol for email
+    - uses tcp
+- mailbox
+    - spot dedicated for each user agent in mail server
+- message queue
+    - where emails get put before they can be sent off
+- pull protocol
+    - HTTP, users pull info from server
+- push protocol
+    - primarily SMTP - mail server pushes mail to user agent (initiation by side who wants to send, not receive)
+- Post Office Protocol Version 3 (POP3)
+    - short and readable protocol that begins when user agent opens a TCP connection to mail server
+    - does authorization, transactions (list, retr, dele, quit) and updates
+- Internal Mail Access Protocol (IMAP)
+    - associates each message with a folder
+    - allows users to move messages around, delete them
+    - keeps state
+
+## Feb 6, 2020
+- midterm
+
+## Day 15 - Feb 10, 2020
+
+### IP Addressing
+- every end of a router is considered as a independent network
+- IP address has 2 portions: network (LHS) and host (RHS)
+- depends on how big the subnet is going to be
+    - host portion depends on how many computers will be on that network (8 bits = 2^8 computers)
+    - first few bits for those computers will be common (subnet address)
+    - address of network itself = subnet address + all 0s
+    - all 1s = broadcat address
+    - therefore with 8 bits you can really only have 2^8 - 2
+
+#### Subnets
+- 
+- /24 = 255.255.255.0 (first 24 are 1s)
+- 23 bits: 255.255.254.0 (11111111 11111111 11111110 00000000)
+
+##### CIDR
+- classless interdomain routing
+- class A - first 8 bits fixed
+- class B - first 16 bits fixed
+- 192.168 (class b reserved ranfe) and 10.x.x.x (class a reserved range)
+
+#### DHCP
+- dynamic host configuration protocol
+- messages transmitted using UDP
+- UDP is used by DNS and DHCP (discovery services)
+    - because tcp requires connection establishment but to do that you need sufficient information
+- goal: allow host to dynamically obtain its IP address from network server when it joins network
+
+#### DHCP client server scenario
+- temporary ientification for client
+- permanent identification for server
+- must know which port to reply to
+    - 68 ?
+- mac address = 48 bit
+- ip address = 32 bit
+- all 0s = unknown or network address
+- how does network get subnet part of ip?
+    - allocatd portion from ISP address space
