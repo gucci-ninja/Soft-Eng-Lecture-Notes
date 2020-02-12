@@ -529,3 +529,6 @@ sum (reverse xs) + sum [x]
 RIGHT SIDE
 sum x:xs
 ```
+
+## Day 16 - Feb 11, 2020
+- in class midterm
