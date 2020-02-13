@@ -708,3 +708,27 @@ fast _as_ fuk bois.jpg
 - as more angular momentum is dragged out, the moon moves further away
 - end state = having the same orbital period
     - this would tal 50 billion years asuming nothing disturbs system
+
+## Day 17 - Feb 12, 2020
+
+### Moon Planet Orbit
+- prograde orbt
+    - mars and phobos
+        - both small bodies but haven't reached a synchronous orbit
+    - moon moves inwards
+- retrograde orbit
+    - neptune and triton
+    - the 2 have opposing orbits
+
+### Tidal Heating
+- not all eneryg goes into orbit
+- some of it becomes heat and warms the system
+- Jupiter's moons
+    - can see the big ones (io, europa) with binoculars
+    - europa has an ice shell (means there's water)
+    - are not subject to kirkwood gaps because unlike asteroids, the moons are deformable bodies and get tidally locked (so they don't get kicked out)
+- io and europa are not tidally locked due to perturbations 
+- tidal heating drives volcansim in io
+
+#### Blackbody Radiation
+- electromagentic radiation emitted by a body depends on the temperature of the emitting body

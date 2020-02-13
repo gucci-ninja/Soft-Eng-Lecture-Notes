@@ -1571,4 +1571,29 @@ Connection: keep-alive\r\n
 - ip address = 32 bit
 - all 0s = unknown or network address
 - how does network get subnet part of ip?
-    - allocatd portion from ISP address space
+    - allocatd portion from ISP address spaces
+
+## Day 17 - Feb 12, 2020
+
+#### NAT Routers
+
+### IPv6
+- inreased range of IP addresses (128 bit)
+- datagrams havea fixed length
+- no optional fields
+- no checksum since the transport layer does a checksum calculation
+- in IPv4 routers, ipv6 datagrams are treated as the payload (tunneling)
+
+
+#### Tunneling
+
+Popular apprach that allows system to support multiple protocols.
+
+### 4.4 Generalized Forward and SDN
+- how a routing table is computed
+- common apprach: router computes based on pre-programmed table set up by ISP
+- new approach: centralized administrative authority that has the network topology and pushes the routing tables to the router
+    - less work for router
+
+#### OpenFlow data plane abstraction
+- 
