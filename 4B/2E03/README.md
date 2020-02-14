@@ -732,3 +732,21 @@ fast _as_ fuk bois.jpg
 
 #### Blackbody Radiation
 - electromagentic radiation emitted by a body depends on the temperature of the emitting body
+
+## Day 18 - Feb 13, 2020
+
+#### Synchronous Orbital Period around Moon
+- about a month
+
+#### Important formula
+- L  = FA (flux)
+- L = //sigmaT^4 * 4//piR^2
+
+#### Using the Spectrum to get Composition of a Body
+- temperature tells us a lot about the composition
+- hotter object -> peak shifts to shorter wavelengths
+- radiation from sun of earth ??
+    - solar constant = Luminosity of sun/4piR^2
+    - solar constant = 1362 W/m^2 at Earth
+    - radius cancels out2
+- blackbody = bodies that re-emit everything they see
