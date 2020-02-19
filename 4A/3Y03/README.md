@@ -1200,7 +1200,7 @@ So if X and Y are independent then the covariance of xy is equal to 0
 
 . | Ho true | H1 true
 ----|--------|------
-accept Ho | "heavy_check_mark: | type II error
+accept Ho | :heavy_check_mark: | type II error
 reject Ho | type I error  | :heavy_check_mark:
 
 #### Example 1
