@@ -591,7 +591,7 @@ fast _as_ fuk bois.jpg
 
 #### Coriolis Force
 - hurricane matthew 
-- effect of potential is //phi_eff = 
+- effect of potential is φ_eff = 
 
 ## Day 12 - Jan 30, 2020
 - skipped
@@ -740,7 +740,7 @@ fast _as_ fuk bois.jpg
 
 #### Important formula
 - L  = FA (flux)
-- L = //sigmaT^4 * 4//piR^2
+- L = σT^4 * 4πR^2
 
 #### Using the Spectrum to get Composition of a Body
 - temperature tells us a lot about the composition
@@ -750,3 +750,56 @@ fast _as_ fuk bois.jpg
     - solar constant = 1362 W/m^2 at Earth
     - radius cancels out2
 - blackbody = bodies that re-emit everything they see
+
+## Day 19 - Feb 24, 2020
+
+#### Characterisitics of Terrestrial Planets
+- Venus- very little atmosphere
+    - higher temperature because they are closer to the usun
+- mercury doesn't have much of an atmosphere at all
+- mars has very little atmosphere as well
+
+#### Mechanisms for heating
+- solar radiation
+- radioactivity
+- tidal heating
+- gravitational infall
+
+In equilibrium you balance the heating and cooling
+
+#### Cooling time
+- For terrestrial planets, the mass to cool is R^3
+- rate of heating is the area (4piR^2)
+- cooling time = (total heat energy)/(heat of emission) = R^3/R^2 = R
+- so larger objects for a same amount of heat will tak a longer time to cool off since thye only radiate through surface
+
+#### Radioactive Decay Heating
+- apart from rocky material there are alo other elements - Potassium and stuff
+- radioactive elements have a half life
+- after that time, that source of heat is gone and the planet becomes inactive
+- since radioactive heating is resposnbile for molten interior and drives plate tectonics
+- mars has the biggest nonactive volcano of our solar system, it used to be activ but since mars is small the volcano died out
+- radio active heating is proportional to volume
+- mars became inactive in 3 billion years
+- 3 bill proportional to volume
+- volume is 3/4pi r ^3
+
+### Chapter 5 - Greenhouse Effect
+- for a planet with no atmosphere, we have:
+
+```
+ T = [(1-A)Lsun]
+    ------------
+       16πσa^2
+```
+
+#### Simple Model of Planet with Single Layer of Atmosphere
+- atmosphere absorbs all IR
+- surface has 2 sources of radiation
+    - heating
+    - blackbody radiation rate cooling (σT^4)
+- set heating = cooling and balance
+- at equilibrium
+    - S0(1-A)
+    - σT<sub>S</sub>^4 = 2σT<sub>A</sub>^4
+    - in the end the tmperature is 1.19 times higher than with no atmospere
