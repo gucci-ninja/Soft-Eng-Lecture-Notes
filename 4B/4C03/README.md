@@ -850,7 +850,12 @@ Connection: keep-alive\r\n
 #### Browser Based (HTTP)
 - allows splitting and roganizng too
 
-### DNS
+### DNS - The Internet's Directory Service
+
+Internet hosts can be identified with their hostname, such as google.com but these names don't hold much information on the location of the host. So hosts are defined by IP addresses. 
+
+THe port number and IP address of a server is fixed. The IP address consists of 4 bytes where each byte can be expressed in decimal from 0 to 255
+
 - domain name system
 - port number is fixed
 - IP address of servers is also fixed
@@ -1596,4 +1601,3 @@ Popular apprach that allows system to support multiple protocols.
     - less work for router
 
 #### OpenFlow data plane abstraction
-- 

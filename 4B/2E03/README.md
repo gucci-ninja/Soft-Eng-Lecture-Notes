@@ -185,10 +185,10 @@ Titan and Pluto | N2 | ??
 
 ### Quesion
 0rock isnt compressioible, rocky planets hve a density simlar to earths
-- the relationship we find is that mass is proportional to radius^3
+- the relationship we find is that mass is proportional to radius<sup>3</sup>
 1. density = M/V
-2. V(Sphere) = 4pi/3R^3 which is R^3
-- so density = M/R^3
+2. V(Sphere) = 4pi/3R<sup>3</sup> which is R<sup>3</sup>
+- so density = M/R<sup>3</sup>
 - so radius is proportional to M^1/3
 
 ### 1.3 Planet Formation
@@ -673,8 +673,17 @@ fast _as_ fuk bois.jpg
 #### Irregular Satellites of Saturn
 - lots of asteroid captured in orbit but they will probably go away soon after the hill sphere
 
+### Chapter 3 - Dynamics - Tides
+
+#### Back in the day
+
+Records show that 79 million years ago, the day was 32 minutes shorter and the Moon was twice as close to Earth (so a month was around 10 days). But the numbers might be wrong lmao
+
+The Moon gets further away at a rate of around 4cm/yr
+
 #### Tides on Earth
-- high tides come twice a day
+
+High tide comes twice daily and affect our oceans and coastlines
 
 ## Day 15 - Feb 6, 2020 
 - skipped
@@ -816,31 +825,33 @@ In equilibrium:
 ## Day 19 - Feb 24, 2020
 
 #### Characterisitics of Terrestrial Planets
-- Venus- very little atmosphere
-    - higher temperature because they are closer to the usun
-- mercury doesn't have much of an atmosphere at all
-- mars has very little atmosphere as well
 
-#### Mechanisms for heating
+Venus has a big atmosphere and shows higher temperatures since it is closer to the Sun. Mercury and Mars barely have an atmosphere and so their temperature calculated without atmosphere considerations is very close to the observed one.
+
+#### Mechanisms for Heating
 - solar radiation
 - radioactivity
 - tidal heating
-- gravitational infall
+- gravitational infall (prevalent during formation)
 
 In equilibrium you balance the heating and cooling
 
-#### Cooling time
-- For terrestrial planets, the mass to cool is R^3
-- rate of heating is the area (4piR^2)
-- cooling time = (total heat energy)/(heat of emission) = R^3/R^2 = R
-- so larger objects for a same amount of heat will tak a longer time to cool off since thye only radiate through surface
+#### Mechanisms for Cooling
+
+This is primarily done through radiation from the surface since the Earth loses its heat.
+
+#### Cooling Time
+
+Under the assumption that there are no sources of heat introduced to the planet, it will eventually cool off and reach a **geological death**.
+
+The total heat energy is proportional to the mass and as we know, mass is relational to volume. And since heat is radiated through the surface, we can say it is proportional to the surface area of a body. Given the relation to volume and surface area, we can see that cooling time is proportional to R<sup>3</sup>/R<sup>2</sup> which is just R.
 
 #### Radioactive Decay Heating
-- apart from rocky material there are alo other elements - Potassium and stuff
+- apart from rocky material there are also other elements - Potassium and stuff
 - radioactive elements have a half life
 - after that time, that source of heat is gone and the planet becomes inactive
 - since radioactive heating is resposnbile for molten interior and drives plate tectonics
-- mars has the biggest nonactive volcano of our solar system, it used to be activ but since mars is small the volcano died out
+- mars has the biggest nonactive volcano of our solar system, it used to be active but since mars is small the volcano died out
 - radio active heating is proportional to volume
 - mars became inactive in 3 billion years
 - 3 bill proportional to volume
@@ -962,7 +973,7 @@ The radiation at Eath's surface is highest when it is in the infrared section, b
 
 #### Difference Between Earth and Venus Atmosphere
 
-H2O and CO2 are greenhouse gases. On Earth,, they come in the form of oceans and rocks. If you increase the temperature by a little, the water evaporates into atmosphere and exposes more rock, which releases CO2. The temperature goes up as more water and carbon diozide are released. This process has run to completion on Venus and is called the **runaway greenhouse effect**.
+H2O and CO2 are greenhouse gases. On Earth, they come in the form of oceans and rocks. If you increase the temperature by a little, the water evaporates into atmosphere and exposes more rock, which releases CO2. The temperature goes up as more water and carbon diozide are released. This process has run to completion on Venus and is called the **runaway greenhouse effect**.
 
 Earth is slightly different because it's far enough from the Sun that the atmosphere, ocean and rock interior is connected by the **carbon-silicate cycle**, keeping us at equilibrium.
 
