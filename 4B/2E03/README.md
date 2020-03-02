@@ -784,22 +784,177 @@ In equilibrium you balance the heating and cooling
 - 3 bill proportional to volume
 - volume is 3/4pi r ^3
 
-### Chapter 5 - Greenhouse Effect
-- for a planet with no atmosphere, we have:
+### Chapter 4 - Heating and Cooling Processes B
 
-```
- T = [(1-A)Lsun]
-    ------------
-       16πσa^2
-```
+#### The Greenhouse Effect
+
+> The greenhouse effect is a naturally occuring process that makes the surface of the Earth warmer. Once it reaches our atmosphere, some of the Sun's energy is reflected back and rest is absorbed and re-radiated by greenhouse gases. These gases trap the Sun's heat, making the Earth much warmer.
+
+A planet with no atmosphere has a temperature 
+
+![](img/temperature.png)
+
+Solar flux is the energy radiated in a given area, it is measured in W/m<sup>2</sup> and denoted with S<sub>0</sub>. The sunlight absorbed at the surface of the Earth can then be calculated, treating the Earth has a flat disk with radius R. Finally, we can calculate the energy absorbed per unit area since the energy is distributed across the earth's entire area.
+
+![](img/energy_absorbed.png)
 
 #### Simple Model of Planet with Single Layer of Atmosphere
-- atmosphere absorbs all IR
-- surface has 2 sources of radiation
-    - heating
-    - blackbody radiation rate cooling (σT^4)
-- set heating = cooling and balance
-- at equilibrium
-    - S0(1-A)
-    - σT<sub>S</sub>^4 = 2σT<sub>A</sub>^4
-    - in the end the tmperature is 1.19 times higher than with no atmospere
+
+![](img/simple_model.png)
+
+There are two sources of radiation on the Earth's surface.
+- heating
+- blackbody radiation from cooling
+
+To solve for temperature at surface Ts, we have the following equations.
+
+1. In equilibrium, we set total heating rate = total cooling rate.
+
+![](img/equilibrium.png)
+
+2. Balance of energy for atmosphere
+
+![](img/atmosphere_equilibrium.png)
+
+Finally, 
+
+![](img/surface_temp.png)
+
+At equilbrium, given the equations above, the temperature of the Earth's surface is 1.19 or 2<sup>1/4</sup> times higher than no atmosphere.
+
+![](img/ts_calc.png)
+
+## Day 20 - Feb 26, 2020
+
+### Midterm Details
+
+The midterm will be on Monday March 2, 2020 during class time at UH 213. It will cover everything to the end of Chapter 4B Heating and Cooling. To study, review lecture notes, slides and Tophat questions. There will not be a formula sheet provided but we will have constants available. The midterm will have around 4 or 5 questions.
+
+#### Surface Temperature vs Atmosphereic Temperature
+
+Previously we found that the Earth's surface temperature is around 1.19 times warmer than the temperature of the atmosphere. We can show this mathematically.
+
+![](img/cancellation.png)
+
+
+The incoming energy is equal to the outgoing energy. Specifically, `the incoming optical energy = reflected optical + infrared radiation`
+
+![](img/in_n_out.png)
+
+#### Adding More Layers
+
+If we add one more layer to our simple model, we get a temperature at layer 2 and one at layer 1. At the surface, we have:
+
+![](img/surface_layer.png)d
+
+and at layer 1:
+
+![](img/layer1.png)
+
+and at layer 2:
+
+![](img/layer2.png)
+
+If we isolate Ts in these equations, we get:
+
+![](img/surface_temp_2layers.png)
+
+If we generalize to n layers, we get Ts = 
+
+![](img/surface_temp_nlayers.png)
+
+#### Temperature of Mars
+
+If we calculate the temperature at Mars surface assuming 0 layers of atmosphere, we get Ts = -58 C. The actual mean is near -63 C, which means Mars almost has no atmosphere.
+
+#### Venus's Atmosphere
+- very heavy cloud deck
+- 70% of radiation is scattered out
+- more than twice the albedo of earth
+- flux is almost the same as Earths (So = 2614) since the distance is similar
+
+Given a solar flux of 2614 W/m^2 and albedo of 0.67
+
+```
+n = 0   -  Ts = 248 K
+n = 1   -  Ts = 295 K
+ ...          ...
+n = 78  - Ts = 737 K (near actual mean)
+```
+
+Venus has almost 80 layers of gas so there is a big greenhouse effect. Its atmosphere is 94x more massive than Earth's
+
+#### Peak of Earth's Radiation
+
+The radiation at Eath's surface is highest when it is in the infrared section, being transmitted up
+
+![](img/radiation_peak.png)
+
+## Day 21 - Feb 27, 2020
+
+### Assignment 2 Answers
+
+![](img/ass2.png)
+
+### Heating and Cooling cont'd
+
+#### Difference Between Earth and Venus Atmosphere
+
+H2O and CO2 are greenhouse gases. On Earth,, they come in the form of oceans and rocks. If you increase the temperature by a little, the water evaporates into atmosphere and exposes more rock, which releases CO2. The temperature goes up as more water and carbon diozide are released. This process has run to completion on Venus and is called the **runaway greenhouse effect**.
+
+Earth is slightly different because it's far enough from the Sun that the atmosphere, ocean and rock interior is connected by the **carbon-silicate cycle**, keeping us at equilibrium.
+
+_However_, too much CO2 in the atmosphere will break the equilibrium and the Earth will also have a runaway greenhouse effect.
+
+![](img/carbon_silicate.png)
+
+### Radioactive Heating
+
+When rocks decay, they release energy. The amount depends on some factors.
+1. amount of the isotope
+2. half-life of the isotope
+
+When the Earth is forming, the short-lived isotopes are important, like Aluminum.
+
+4 important isotopes **today**
+1. <sup>235</sup>uranium - 0.7 billion years
+2. <sup>40</sup>potassium - 1.28 billy
+3. <sup>238</sup>uranium - 4.47 billy
+4. <sup>232</sup>thalium 14 billy
+
+#### Tidal Heating
+
+This is important for the satelites of Jupiter and Saturn.
+
+When there is a tidal pull on a satellite, it gets 'squeezed' and 'flexed' by the planet. If it's in an elliptical orbit. Io has a similar size and distance to our Moon. Its orbital period is small and it is highly volcanic due to steady input of heat from Jupiter's gravitational field.
+
+Europa is a similar size but has an icy surface with suspected ocean underneath.
+
+#### Gravitational Infall
+
+Meteors and sometimes comets/asteroids collide with planets from time to time, which creates kintetic energy but large collisions don't happen anymore (sadface)
+
+Back in the day (4-4.5 billion years ago) there were a bunch of collisions that turned planets/moons into what they are today.
+
+The total gravitational potential energy of a final spherical planet is:
+
+![](img/e_grav.png)
+
+where M is the mass of the spherical body and R is its radius. And G is the gravitational constant
+
+The rest of the energy is dissipated as heat. Heat capacity, C, is the energy required to heat a unit of mass by a temperature change.
+
+_For example, it takes 4.2 J/g to heat water by 1 degree K_
+
+If all of the potential energy from a spehre is converted to heat, then it would result in the following formula:
+
+![](img/heat_object.png)
+
+In reality, not all of the gravitational potential energy is converted to heat and stored. **Half** of it goes into **pressure** and the rest is radiated away from surface.
+
+#### Virial Theorem
+
+Internal Kinetic Energy = (1/2) Gravitational Potential Energy
+
+Basically you half the equation above so instead of 3/5 it is 3/10
+
