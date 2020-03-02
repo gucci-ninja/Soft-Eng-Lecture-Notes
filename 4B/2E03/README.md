@@ -730,26 +730,88 @@ fast _as_ fuk bois.jpg
 - io and europa are not tidally locked due to perturbations 
 - tidal heating drives volcansim in io
 
-#### Blackbody Radiation
-- electromagentic radiation emitted by a body depends on the temperature of the emitting body
-
 ## Day 18 - Feb 13, 2020
 
-#### Synchronous Orbital Period around Moon
+#### TopHat Q - Synchronous Orbital Period around Moon
 - about a month
 
-#### Important formula
-- L  = FA (flux)
-- L = σT^4 * 4πR^2
+### Chapter 4 Heating and Cooling A
 
-#### Using the Spectrum to get Composition of a Body
-- temperature tells us a lot about the composition
-- hotter object -> peak shifts to shorter wavelengths
-- radiation from sun of earth ??
-    - solar constant = Luminosity of sun/4piR^2
-    - solar constant = 1362 W/m^2 at Earth
-    - radius cancels out2
-- blackbody = bodies that re-emit everything they see
+#### Blackbody Radiation
+
+The colour black absorbs all the colours of light. In physics, a blackbody absorbs all wavelengths and radiates at all wavelengths. 
+
+Electromagentic radiation emitted by a body depends on the temperature of the emitting body. Hotter objects are more luminous. Visible light has a high intensity and small wavelength
+
+In 1900, Planck proposed the existence of a photon, which was then re-proposed by Einstein in 1905. In 1921, the **photoelectric effect** was published, with the given energy per photon to be **E = hf = hc/\\λ**.
+
+These photons' energy levels are quantized. The probability of having a higher energy photon at a high temperature is rare.
+
+The blackbody curve is the relation between wavelength and energy flux. It is calculated using the Planck function.
+
+![](img/planck_function.png)
+
+In units energy per unit time per unit wavelength per unit solid angle.
+
+#### Wien's Law
+
+The wavelength that gives the maximum energy flux. Also known as λpeak.
+
+![](https://www.researchgate.net/publication/253256140/figure/fig1/AS:393500957921281@1470829347041/Spectral-solar-radiation-energy-flux-at-the-Suns-surface-black-solid-line-and-that-at.png)
+
+The formula for the peak is pretty simple
+
+```
+λpeak = .29/T in cm/K
+```
+
+#### Stefan's Law
+
+Total power output integrated over all wavelengths.
+
+The flux (energy radiated per unit time)
+
+```
+f = σT^4 where = 5.67e-8 W/m^2/K^4
+```
+
+#### Blackbody Curve Peak for Human
+
+Using Wien's law and the average temperature of a human, we can calculate the peak to be 0.29/310 = 9.55 μm
+
+#### Radiation Absorbed from Sun
+
+Luminosity is a measure of energy emitted per second. It is emitted in all directions pointing out from a body, at a radius `a`, encompassed in a sphere of surface area 4πr<sup>2</sup>.
+
+The luminosity of the Sun is 3.86 x 10<sup>26</sup> W.
+
+#### Solar Constant
+
+The solar constant So is the radiation absorbed from the Sun at a body that is _a_ metres away from the Sun.
+
+```
+So = Lsun/4πr^2 = 1362 W/m^2 
+```
+
+If we look at the direct sunlight hitting the Earth, we can treat the earth as a disk. The sunlight directly hits an area of πr^2, yeilding the energy incoming to be:
+
+![](img/e_in.png)
+
+But a fraction of this is actually absorbed due to cloud cover and such atmospheric conditions so the energy absorbed is:
+
+![](img/e_absorbed.png)
+
+The energy absorbed warms the surface of our planet to T<sub>s</sub>. The surface in turn radiates the heat in all directions.
+
+The energy radiated per unit area is given by Stefan's law (σT^4)
+
+![](img/e_emitted.png)
+
+The reason it is 4pi is because we assume that the planet rotates and this creates a uniformly distibuted temperature.
+
+In equilibrium:
+
+![](img/temperature.png)
 
 ## Day 19 - Feb 24, 2020
 
@@ -845,7 +907,7 @@ The incoming energy is equal to the outgoing energy. Specifically, `the incoming
 
 If we add one more layer to our simple model, we get a temperature at layer 2 and one at layer 1. At the surface, we have:
 
-![](img/surface_layer.png)d
+![](img/surface_layer.png)
 
 and at layer 1:
 
@@ -958,3 +1020,6 @@ Internal Kinetic Energy = (1/2) Gravitational Potential Energy
 
 Basically you half the equation above so instead of 3/5 it is 3/10
 
+#### Last Notes on the chapter
+
+Bodies with greater mass have a greater internal temperature and take longer to cool!
