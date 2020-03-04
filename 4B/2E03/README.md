@@ -1034,3 +1034,59 @@ Basically you half the equation above so instead of 3/5 it is 3/10
 #### Last Notes on the chapter
 
 Bodies with greater mass have a greater internal temperature and take longer to cool!
+
+## Day (21.5) Mar 2, 2020
+- midterm
+
+## Day 22 Mar 4, 2020
+
+### Chapter 5 Planetary Atmospheres
+(went up to slide 13)
+
+Planet | Mars | Venus | Earth
+-------|------|-------|-------
+atmosphere | very thin, CO2, some N2, Ar, wind | very thick, CO2, some N2, sulfuric acid | mostly N2, O2, some H2O, water clouds
+
+Molecular substances that are volttaile (low vaporization temp) such as H2O, CO2, CH4, NH3 are common. For the formation of planets, the surface temperature must be around 150K if the planet is 4-5AU away. This allows gases to turn solid/liquid.
+
+### Pressure and Density Structure
+
+In this section we will discuss how pressure and density vary with atmospheric temperature. We assume **hydrostatic equilibrium** - the gravity at each layer of the atmosphere is balanced by the pressure gradient force. Pressure depends on the gas and its chemical composition - at low pressures we can use the **ideal gas law**. 
+
+![](img/hydrostatic_balance.png)
+
+![](img/ideal_gas_law.png)
+
+Putting the above two together, we can come up with the Barotropic law that uses Scale height to quantize pressure at different layers of the atmosphere.
+
+![](https://lh3.googleusercontent.com/proxy/8qso3R9jdzNhAj4of5725_TuDrhRgLQYUrgIUHrxfgIoI7cEIrXJqhBaGnMnxe9f_IKnXt5RDBiL-kYafB18V45oxL-uhMXwf_zuESYXI8I)
+
+and scale height is:
+
+![](img/scale_height.png)
+
+From lecture:
+
+![](img/barotropic_law.png)
+
+#### Some Values for Reference
+
+. | Venus | Earth | Mars | Titan
+---|------|-------|------|-------
+T<sub>eq</sub> | 232 | 255 | 209 | 84
+T<sub>surf</sub> | 735 | 288 | 215 | 94
+P<sub>surf</sub> bars | 92 | 1.1013 | 0.006 | 1.467
+//rho<sub>surf</sub> kg/m^3 | 65 | 1.2 | 0.017 | 5.4
+H (km) | 15.7 | 8.3 | 11 | 20.6
+M<sub>atm</sub> | 5.3e20 | 4.8e19 | 2.6e16 | 9.2e15  
+
+#### Physical Structure
+- as we go up in altitude, the pressure decreases - that's why we get lightheaded on a big mountain :smirk:
+- density also goes down, since there are less molecules
+
+It's valuable to know some of the molecular weights of popular molecules as well as their ratios for the terrestrial planets.
+
+- Earth - 78% N2, 22% O2
+- Venus - 96.5% CO2, 3.5%N2
+- Mars - 95.3% CO2, 2.7% N2, 1.6% Ar
+- Titan - 98.4% N2, 1.6% CH4
