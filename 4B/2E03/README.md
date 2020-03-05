@@ -1090,3 +1090,29 @@ It's valuable to know some of the molecular weights of popular molecules as well
 - Venus - 96.5% CO2, 3.5%N2
 - Mars - 95.3% CO2, 2.7% N2, 1.6% Ar
 - Titan - 98.4% N2, 1.6% CH4
+
+## Day 23 Mar 5, 2020
+(went up to slide 19?)
+
+### Thermal Structure Temperature Profile of Earth
+
+Heating on Earth comes from the ground and from solar flux. Convection from troposphere, conduction from upper part of atmosphere and radiation from the middle layers. Earth's lower atmosphere is opaque in the infrared spectrum.
+
+**Troposphere** is where temperature decreases with altitude. A good chunk of the heat moes around here. **Convection** occurs in this layer - circulation of air cells transports heat and forms clouds. This convection stops at the top of the troposphere, where we see clouds (condension endpoint).
+
+**Stratosphere** is where temperature starts to increase with height. The presense of ozone in this layer absorbs UV. There is an equilibrium here in which there are gamma particles and O2 which collide and separate the O:O bond. If the wavelength is less than 240nm (UV spectrum) then a lone oxygen will bond with an O2. The cycle continues since the gamma particles also collides with O3.
+
+Ozone basically absorbs energy and heats atmosphere and is found around 50 km into atmosphere
+
+The wavelengths seen here are between 200 and 310 nm, which is what allows gamma particles to do their thing. Ozone can be depleted by pollution - this is why we had the Montreal Protocol in 1989.
+
+**Mesosphere** is where temperature decreases with altitude due to CO2 cooling. There is no UV absorption since there is no ozone.
+
+**Thermosphere** is where temperature increases with altitude due to O2 absorbing UV from the Sun and lack of atoms letting the heat from the Sun in. During the day, T=1200K and 800K at night. There is O and NO in this layer but they don't have a lot of emmision/absorption bands.
+
+#### Convection
+As we mentioned before, this happens in the troposphere. There is a **temperature gradient** in which air gets cooler as we go upward. Warm air begins to rise and since the pressure decreases, the air begins to expand. If this air becomes cool enough, it goes back down. Or it can continue to rise. The change in temperature can be related to pressure through the following relation.
+
+![](img/convection.png)
+
+Convection is dependent on something called the **lapse rate**, wich is the change in temperature with altitude.  A value of 9 K/km is for dry air on Earth's surface. For vapour, there is a wet adiabatic lapse rate.
