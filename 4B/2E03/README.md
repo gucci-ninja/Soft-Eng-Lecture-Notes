@@ -1116,3 +1116,6 @@ As we mentioned before, this happens in the troposphere. There is a **temperatur
 ![](img/convection.png)
 
 Convection is dependent on something called the **lapse rate**, wich is the change in temperature with altitude.  A value of 9 K/km is for dry air on Earth's surface. For vapour, there is a wet adiabatic lapse rate.
+
+## Day 24 Mar 9, 2020
+- went over midterm answers
