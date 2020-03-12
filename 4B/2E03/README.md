@@ -1194,3 +1194,70 @@ The Coriolis effect on Earth divides each hemisphere into 3 cells.
 1. hadley cell with air ascending/descending at equator at 30 deg latitude
 2. ferrel cell with air descending 30 deg and ascending at 60 deg latitude
 3. polar cell with air ascending at 60 deg latitude and descending at pole
+
+## Day 26 - Mar 12, 2020
+- watched a video on Huygen's descent to Titan
+
+### Atmospheric Escape
+Atmospheres on planets leak away into space over time. Moleculaes that have a high enough escape velocity will be yeeted into space :basketball:
+
+**Escape Velocity** - 
+
+From the equation modelling the motion of a molecule E = 1/2mv^2 - GMm/R = 0
+
+![](https://i.pinimg.com/564x/49/97/44/499744c10dabe9c9ab672adbec616d55.jpg)
+
+where R is the distance from the center of a planet with mass M.
+
+For reference, Earth's escape velcity at its surface is 11.2km/s.
+
+We shoot our spacecrafts in the east direction and nearest to equator because the Earth is rotating the fastest there. So the escape velocity gets some help.
+
+**Temperature**
+
+Given a gas at some temperature, the average random motion of that particle is (3/2)kT.
+
+Boltzmann re-introduced the idea of atoms in science. The idea was originally from the Greek. He proposed that we had individual atoms with range of velocities.
+
+We can model the distribution of speeds of particles using the Maxwell-Boltzmann distribution. 
+
+![](img/maxwell-boltzmann.png)
+
+![](https://lh3.googleusercontent.com/proxy/ciYfn2cK1oz1YQ7xxqijPj5cFR73vA0eq72_l80znMO2nZiG7elSm12NeCucpZjteKlbHLruNCa64QsutcglhnjWlRzU8y1fwbU1Gb5Gjcack5h3rfnxz9O1Bg)
+
+If we assume the average particle is at its escape velocity, we would equate 3/2kT = 0.5mv_avg^2. This would give us the following relation:
+
+![](https://lh3.googleusercontent.com/proxy/VinJfO2WCJg_bZqOOSnw6aYN9LWZvy5h4oEqnNZoHnMW_MZMheRXECJ6QmyRPODp4YSUJhidVVXeSz0zBfDkPSwfB6vB8sk8qu4JUD1J8dMyqtMJT5ORDX6vKFFizsH9QMFUPg)
+
+We can easily forgo the k constant and having to convert our molecule mass by simple doing //sqrt(3RT/m) where m is in kg/mol and R is the gas constant, 8.314.
+
+#### Examples for Earth
+- escape speed of Earth is 11.2 km/s
+- using the surface temperature of 290K we can find the average escape velocity of particles such as CO2, H2
+- we get 0.4km/s for CO2 and 1.9km/s for H2
+
+This suggests that Earth can hold both the particles, though they sometimes escape. How is this possible?
+
+This is because the bulk of particles are trapped but some are at escape speed, since we calculated the average. The ones at escape speed will (over time) leak away.
+
+#### Jeans Escape Process
+
+At the very top, we have the **exosphere**, which allows for particles to escape without collisions. The lower boundary of this layer is called the **exobase**. There's a place in the atmosphere where we have a thin layer of atmosphere, where the mean free path is equal to one scale height, At the exosphere it is unlikely that particles will collide, so thermodynamic equilibrium will be harder to maintain since particles collide and share their energy at the exobase.
+
+**Mean free path** is avergae distance a particle can go without colliding with something else. 
+
+In an engineering perspective, if you are within the exobase you need to worry about air drag and make things aerodynamic. At the exosphere, however, things can look like whatever.
+
+#### Mean Free Path
+
+Effective collision area is A = πd^2 where d is the diameter of the particle
+
+Over time, the particle traverses a certain distance within its collision area, which is a cylindrical path.
+
+In a time t, the volume sweeped out is V = πd^2vt.
+
+In this volume there are nV other molecules so taking the average distance we get:
+
+![](https://www.brainkart.com/media/extra3/oCovaIf.jpg)
+
+After plugging in values, this is 0.14e-6m or 42 x spacing
