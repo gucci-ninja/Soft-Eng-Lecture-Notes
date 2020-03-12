@@ -1119,3 +1119,78 @@ Convection is dependent on something called the **lapse rate**, wich is the chan
 
 ## Day 24 Mar 9, 2020
 - went over midterm answers
+
+## Day 25 Mar 11, 2020
+
+### Comparative Atmospheres
+
+#### Mars
+- thin atmosphere
+- clear CO2 air
+- 3 K/km lapse rate
+    - if it were greater than 5, convection would start (this is the **adiabatic lapse rate**)
+- not enough oxygen to form ozone layer
+- lots of dust storms
+- in 1 mars year, a third of the CO2 freezes then **sublimes** (solid to gas)
+    - possible due to low pressure
+
+#### Venus
+- toxic atmosphere
+- thick CO2 air
+- lapse rate and adiabatic lapse rate of 8 K/km
+    - able to perform convection
+- ALL troposphere
+
+#### Exploration of Venus
+This is hard to accomplish since the clouds are opauqe and it has no moons. So we use landing probes to find out more. But since the surface temperature is 740K and surface pressure is 92 atm, the probes either melt or get crushed.
+
+The Venera 13 and 14 were able to get images of the surface and observed rocky terrain and a dim reddish light since only 2.5% of the sunlight at Venus actually reaches the surface. The temperature across is pretty uniform due to slow circulation.
+
+#### Titan
+- largest moon of Saturn
+- nitrogen filled atmosphere and liquid on surface - like Earth
+- Cassini spacecraft dropped the Huygen probe, which landed into atmosphere
+
+#### Atmospheric Profile
+- N2 rich
+- little greenhouse effect
+- cold surface temp(since it's 9.2 AU)
+- lots of hydrocarbons
+
+#### Tophat Question 5.5
+If one moves 3 scale height up a planet, by what factor does the pressure change? The equation for P is given below by the barotropic law.
+
+![](https://lh3.googleusercontent.com/proxy/8qso3R9jdzNhAj4of5725_TuDrhRgLQYUrgIUHrxfgIoI7cEIrXJqhBaGnMnxe9f_IKnXt5RDBiL-kYafB18V45oxL-uhMXwf_zuESYXI8I)
+
+and scale height is:
+
+![](img/scale_height.png)
+
+Using this relation replace the numerator of equation 1 with -3H. We get e^(-3) as the factor it changes by.
+
+### Meteorology
+Hot air rises up and cool air sinks. This creates an equator to pole motion called Hadley's cell. Due to Venus' slow rotation, this circulation does not occur.
+
+![](https://www.seas.harvard.edu/climate/eli/research/equable/images/extended%20hadley%20cell.png)
+
+The concept of Hadley's cell does not explain Earth's chaotic temperature because of a phenomenon called **Corolis force**.
+
+### Coriolis Forces
+
+Fictitious forces that explain the chaotic weather we see on Earth (such as hurricanes). Acceleration caused by a rotating body's reference frame. The faster the Earth rotates, the more acceleration is applied to projectile deflected on Earth. 
+
+If v is the velocity of of the projectile and ω is the angular speed of the planet's rotation.
+
+THe acceleration caused by Coriolis force takes the form = a<sub>Cor</sub> = -2v x ω
+
+![](img/coriolis.png)
+
+The crossproduct creates a circular motion, creating things like hurricanes. The radius of the circular motion (vortex) depends on how fast particles are moving. Air cells moving from the pole to equator end up **circulating**.
+
+Venus does not have a big Coriolis force because it rotates at 0.06 degrees/hr whereas Earth rotates at 360deg/24hr = 15 degrees/hr
+
+The Coriolis effect on Earth divides each hemisphere into 3 cells.
+
+1. hadley cell with air ascending/descending at equator at 30 deg latitude
+2. ferrel cell with air descending 30 deg and ascending at 60 deg latitude
+3. polar cell with air ascending at 60 deg latitude and descending at pole
