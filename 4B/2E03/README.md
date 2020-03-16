@@ -1261,3 +1261,80 @@ In this volume there are nV other molecules so taking the average distance we ge
 ![](https://www.brainkart.com/media/extra3/oCovaIf.jpg)
 
 After plugging in values, this is 0.14e-6m or 42 x spacing
+
+## Day 27 - Mar 16, 2020 
+- first online lecture
+
+### Escape Speed contd
+The temperature at the **surface** is around **25 degrees** and as we go higher into the **troposphere**, the temperature drops. It gets a little higher in the **stratosphere** due to heating from the ozone layer. Then in the **mesosphere** the temperature **drops by a lot** as we lose our ozone. Then the temperature  just gets **super high** in the **thermosphere**. This high temperature at the exobase is what we are looking to plug into our escape formula (1000-1500K for Earth)
+
+The criterion for escape is compared to be 5 times average speed. Average speed is given by the following:
+
+![](https://lh3.googleusercontent.com/proxy/VinJfO2WCJg_bZqOOSnw6aYN9LWZvy5h4oEqnNZoHnMW_MZMheRXECJ6QmyRPODp4YSUJhidVVXeSz0zBfDkPSwfB6vB8sk8qu4JUD1J8dMyqtMJT5ORDX6vKFFizsH9QMFUPg)
+
+where m = μm<sub>H</sub>
+
+We can rewrite the relation of escape velcity as: 
+
+![](img/escape_velocity.png)
+
+and compare with the proper formula,
+
+![](https://i.pinimg.com/564x/49/97/44/499744c10dabe9c9ab672adbec616d55.jpg)
+
+
+Generally, Helium and Hydrogen are able to escpae from Earth, Mars, even Titan while H2O and CO2 stay trapped. Neptune traps pretty much all of them.
+
+UV breaks up H2O so the escape increases even more since they will be H2 and O. 
+
+The dry riverbeds on Mars suggests that early Mars probably had water and was much warmer. Now, the atmosphere is very low density - not warm enough to have liquid water.
+
+Water has 3 phases - solid, liquid, vapor and a unique spot called a triple point, in which we can have all 3 phases. There were probably higher pressures for this to happen (much denser atmosphere).
+
+#### Proving Method 1 - Nitrogen
+We can check our prediction by proving the escape of molecules like water. We can look at Nitrogen isotopes. It's harder for heavier molecules to escape. We can calculate the ratio of Nitrogen 14 and 15's escape speed to prove this, which is 1.04.
+
+```
+v14/v15 = //sqrt(3kT/14)///sqrt(3kT/15)
+        = //sqrt(15/14)
+        = 1.04 
+```
+
+We have found evidence that there is more N15 than N14 on Mars, indicating that it loses the N14 more easily. Which means Mars used to have more pressure?
+
+#### Proving Method 2 - C-N
+- asssume C and N ratio started out same as Earths
+
+#### Proving Method 3 - Heavy Water
+- deuterium vs hydrogen measurement
+
+All the measurement methods tell us that Mars used to have a heaver atmosphere and warmer temperature. 
+
+#### Tophat Question
+Mars today has a temperature of 209K with no atmosphere. For it to be warm like ours - 288K, how many layers would its atmosphere need?
+
+```
+Ta = Ts*(n + 1)^(1/4)
+288 = 209(n+1)^(1/4)
+n = 2.6
+n = 3
+```
+
+### The Giant Planets: Jupiter, Saturn, Uranus, Neptune
+- the higher cloud layers show us surface features like the spots on jupiter
+- one residual ring around uranus
+
+#### Atmospheres of the Giants
+- Uranus has a bit of temperature inversion due to the molecules on it
+- Neptune, Saturn, Jupiter have a typical atmosphere
+- Jupiter has zones (lighter regions with warm material rising) and belts (dark areas with cool material sinking)
+- east-west motions on jupiter caused by stronger coriolis force with belts and zones going opposite ways
+- Uranus and Neptune have a blue color mecause of methane
+
+### Summary of Chapter 5 Atmospheres
+1. how high is the sky?
+2. tmperatures
+3. circulation and hadley cells
+4. atmosphere particle escape
+5. primary and secondary atmospheres
+6. giant planets atmospheres
