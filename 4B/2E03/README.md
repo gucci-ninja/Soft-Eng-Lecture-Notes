@@ -1338,3 +1338,70 @@ n = 3
 4. atmosphere particle escape
 5. primary and secondary atmospheres
 6. giant planets atmospheres
+
+## Day 28 - Mar 18, 2020
+
+### Chapter 6A Interior of Earth
+
+#### Plate Techtonics
+
+This theory of plate techtonics was proposed in 1915 by Alfred Wegener but was not accepted until 1960. Today, we are well aware of plate techtonics and continental plates. The idea of continental drift is due to heat in earth's interior. There are 2 reasons for this.
+
+1. leftover heat from formation
+2. radioactivity caused by rocks in mantle/core
+
+From a diagram of the plates, we can see that the pacific plate pushes on the North american plate due to **subduction** and that the Indian plate moved upwards to form the Himalayas. In the region where the plates border, there are many chances of earthquakes and collisions. This also explains the existence of many mountain ranges like the Rocky Mountains.
+
+collisions = energy
+
+#### Subduction
+Motion of a plate moving as a denser plate overrides it. The plate being overridden dissolves between the mantle layer and the overriding plate tilts upwards 
+
+#### Internal Structure of Earth
+
+This structure is deduced from seismology.
+
+![](img/seismology.png)
+
+#### Composition of Earth
+- **crust** composed of silicates, thin layer
+- **mantle** composed of Mg, Fe, Al, Si, O (pyrolite) - main contributor to the composition
+    - this material is brought up to the surface by volcanic activity
+- **outer core** composed of heavy material like Fe, S
+- **inner core** also composed of Fe
+
+#### Magnetic Fields
+It shields us from solar wind and indicates that we have a molten, rapidly rotating _metallic_ core -- **dynamo effect**.
+
+#### Role of Seismology
+
+Vibrations send sound waves through interior. There are two kinds, **pressure waves** (P-waves) and **shear waves** (S-waves).
+
+When we are going through a liquid region, there is no propagation of shear waves (zero velocity), only propagates through solid material.
+
+Pressure waves travel faster through solids and slower in liquid.
+
+Pressure waves are faster in general.
+
+#### Shadow Zone
+The **shadow zone** is where no P or S waves are detected. We have recording stations all around. They can detect speeds and types of waves. The speed of wave tells us the material it moved through.
+
+In data collected by recording stations, we see some stations record both S and P waves, some with none. If there are no shear waves but pressure waves, we know that they have been blocked by a fluid.
+
+The earthquake epicentre is the northern tip and at the southern tip, there is no propagation of S waves. Around that area, there is a slight P-wave shadow zone as well where neither P or S waves can reach.
+
+![](https://schoolworkhelper.net/wp-content/uploads/2010/06/shadow-zones.jpg)
+
+#### Explanation for no P or S waves
+We see that once they move into the fluid, pressure pulses are deflected and refracted so much that there is no more propagation.
+
+The mantle can be divided into 2 parts
+
+1. upper - which is divided into 2 more parts
+    - **lithosphere** - top of upper mantle
+    - **asthenosphere** - plastic layer of upper mantle
+2. lower mantle
+
+The crust can be oceanic or continental.
+
+![](img/layers.png)
