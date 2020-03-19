@@ -1405,3 +1405,52 @@ The mantle can be divided into 2 parts
 The crust can be oceanic or continental.
 
 ![](img/layers.png)
+
+## Day 29 - Mar 19, 2020
+
+### Interiors A Earth contd
+
+#### Study of Seismology
+So there are S waves, which don't propagate in fluid and P waves, which trfavel thropugh liquid and rock at different velocities - faster in solid material.
+
+Since S waves are only detected on just about half the Earth's surface, we can say that an inner, molten core exists.
+
+#### Layer of Earth
+- mantle is mostly plastics, Mg, Fe, Al, Si, O
+
+![](https://eesc.columbia.edu/courses/v1011/topic3/games/images/earthlayers.gif)
+
+#### Tophat Question
+Seismic waves from earthquake found originating from northern Alaska end up on the Southern tip of Chile. What kind of waves are they? - P waves for sure, no S waves because the liquid core gets in the way. There is a shadow zone that prevents S-waves that we saw earlier.
+
+#### Heat Transport of Earth
+Internal heat is transported first through the core by **convection**, when hot rock rises up and cools. Second, through **conduction**, after the convection process, when the heat is carried through the heat and thirdly, through **radiation** at the surface into space. 
+
+### Chapter 6 Interiors B Terrestrial Planets
+
+The basic relation we need to know is density, calculated as ρ = 3M/4πR^3, which gives us the average composition.
+
+Firstly, we need mass. We can use Kepler's third law since most planets have moons which we can observe. If we know the moon's radius and orbital period, we can employ following formula and solve for M.
+
+![](https://d2jmvrsizmvf4x.cloudfront.net/w9uCqCd1Q6q2CJKrxyII_kep3+%281%29.gif)
+
+#### Densities of common rocky material
+- carbonaceous chondrites (meterorites) have a denisty of 2.5 g/cm<sup>3</sup>
+- liquid water is 1 g/cm<sup>3</sup>
+    - ice is a bit lower at 0.94 g/cm<sup>3</sup>
+- iron is 7.9 g/cm<sup>3</sup>
+
+#### Simple Model knowing low mass planet properties
+Generalization that low mass planets have constant density. Then the mass-radius relation would be M -> R<sup>3</sup>. This seems to work for planets a little over 2 Earth masses.
+
+#### Tophat Question
+If R is proportional to M<sup>1/2</sup>, density is proportional to R<sup>?</sup>. The exponent would be -1, work shown below.
+
+```
+R ~ M^1/2
+R^2 ~ M
+
+ρ = M/(4/3πR^3)
+  ~ R^2/R^3
+  ~ R^-1
+```
