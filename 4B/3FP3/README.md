@@ -532,3 +532,44 @@ sum x:xs
 
 ## Day 16 - Feb 11, 2020
 - in class midterm
+
+
+## Day ? - Feb 28, 2020
+
+#### Assignment 3
+- question 1 parser
+    - "1 (+ 5)"
+    - create functor for parser and prove it works
+    - make big parsers out of little parsers
+- q2 atomic parsers
+    - one prser that fails one that succeeds
+- q3
+    - sequencing parsers
+    - satisfy particular identity law
+- or else parser q4
+    - if the first one works, great, else try the right one (whichever works)
+    - lefti-biased relation because or-else is left biased
+- q5
+    - ??
+- q7 - bonus
+- linatic/lematic parsers? standard way in haskell
+
+
+## Day - online lecutre march 19
+
+### Midterm
+q1 - type and functors
+
+q2 - typs, functors ELIMINATORS
+
+q3 - simulating what a strangely writtenquestion does, eplxain what it does and write a saner version of function
+
+q4 - proof /calculation (no induction) - relatively straightfotard
+
+q5 - folds
+
+either is the elimator for
+given datatype write the eliminator for it
+
+proofs/monads 
+put code in textfile

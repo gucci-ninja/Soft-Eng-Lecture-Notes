@@ -1454,3 +1454,71 @@ R^2 ~ M
   ~ R^2/R^3
   ~ R^-1
 ```
+
+## Day 30 - Mar 23, 2020
+
+#### Recap of last lecture
+We looked at terrestrial planets in a 2 part model
+
+### Moment of Inertia
+Moment of intertia tells us a lot about the planet. It is a measure of how malleable an object is. It is given by the following:
+
+**I = k M R^2**
+
+It depends a lot on the constant k, which is different for each object. 
+Would just be 0.4 for a homogeneous (one density) sphere, 0.67 for a hollow shell and just 0 for a point mass. Check slide 12 for values of k.
+
+We will be discussing the kind of exterior experiments we can perform to learn about the interor of a planet.
+
+#### Flattening by Rotation
+Venus rotates really slowly and is almost in tidal lock with the Sun.
+
+Earth is very slighly flattened (1/300). It is flattened by a distance of 21km.
+
+The moment of intertia can tell us about the interior mass distribution if we integrate the intertia equation with respect to r<sub>perp</sub>
+
+There are two moments of intertia, C and A.
+
+1. **C** - calculation measures with respect to rotation axis
+2. **A** - measured perpendicular to rotation axis (centre axis to equator)
+
+C > A unless it's an exact sphere and C - A is determined from flattening. below is the equation for the gravitational field of a satellite/planet + terms that account for deformities (latitude-wise).
+
+![](img/gr_field.png)
+
+φ is latitude.
+
+#### Tophat question
+The moment of intertia when calculated from the centre of mass to the pole is less than that calculated from the centre to the equator because the first calculation is the A calculation and the second is C. Ra < Rc by 21km for Earth. 
+
+#### Moment of Inertia Factor
+A uniform sphere's inertia factor I/MR^2 = 2/5 = 0.4.
+
+Earth's deviation is 0.3307. It can be deduced that small things are closer to perfect spheres.
+
+**First order flattening of the earth** dependent on angular momentum - J2 = (C - A)/MR^2 = 1.08e-3
+
+The Earth's pressure is extremely high - at the core the pressure is much higher because the density of iron is higher, since it gets compressed.
+
+#### Some Densities and Properties
+
+Planet | Radius (km) | Density (kg/m<sup>3</sup>) | Uncompressed | Central P (GPa) | Central T
+-------|-------------|-----------------|--------------|--------------|------
+Mercury | 2440 | 5427 | 5300 | ~40 | ~2000
+Venus | 6052 | 5204 | 4300 | ~300 | ~5000
+Earth | 6378 | 5515 | 4400 | 360 | 6000
+Moon | 1738 | 3340 | 3300 | 4.5 | ~1800
+Mars | 3396 | 3933 | 3740 | ~40 | ~2000
+
+#### Calculation of Interior Pressure
+Apply the equation of hydrostatic balance to the interior to find internal pressure. Assume constant density. First we have pressure with respect to radius:
+
+![](img/pressure.png)
+
+And pressure at r=0:
+
+![](img/internal_pressure.png)
+
+In the case of terrestrial planets we can ignore the pressure being contributed by the atmosphere but later on, when we look at exoplanets that are considered superearths, we would have to make adjustments to the radius since they have a large contributing atmosphere.
+
+Not important: there is a way to find how compressible a metal is by using the Bulk Modulus relation, where you take the change in volume as pressure is applied.
