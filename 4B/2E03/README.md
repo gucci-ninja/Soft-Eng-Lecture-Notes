@@ -1522,3 +1522,51 @@ And pressure at r=0:
 In the case of terrestrial planets we can ignore the pressure being contributed by the atmosphere but later on, when we look at exoplanets that are considered superearths, we would have to make adjustments to the radius since they have a large contributing atmosphere.
 
 Not important: there is a way to find how compressible a metal is by using the Bulk Modulus relation, where you take the change in volume as pressure is applied.
+
+## Day 31 - Mar 25, 2020
+
+### Chapter 6 C Interiors of Giant Planets
+
+#### Densities of Giants
+- Jupiter - 1.33 g/cm<sup>3</sup>
+- Saturn - 0.69 g/cm<sup>3</sup>
+- **indicates gaseous material**
+
+The gas composition of Jupiter is because it's mass went up to around 10 earth masses, which gave it enough gravitational force to attract gaseous material from the protoplanetary disk.
+
+If we have a uniform density and we add more layers, we gain more mass. Because of the uniformity, our radius would increase at a proportional rate of R ~ M^(1/3) - from density formula.
+
+However, you can't just keep adding more mass and expect radius to increase. In the case of iron, adding enough will increase the pressure and the body will actually start to be compressed. 
+
+When we start looking at giants, the total gravity will cause the planets composition to reconfigure to something more dense. 
+
+Gases are very compressible (ie. a soda drink) so we will see this a lot for gas giants.
+
+If we add how compressible a gas is in the hydrostatic balance equation we will get something more accurate (we will not be learning that in this course).
+
+A body made of pure zero-temperature hydrogen has a maximum radius, after which it compresses due to gravity - becoming denser but smaller. Therefore, we need both the radius and mass to measure density.
+
+#### Mass vs Radius for polytropic sphere
+- polytropic means that the pressure is dependent on the density
+- there was a study done that shows how spheres of different gases behave at T=0 when more mass is added
+- Hydrogen has the highest peak, it reaches a large radius at one point and starts to go down
+- when plotted, Jupiter lies just under the Hydrogen line - indicating its composition is most likely Hydrogen with some others (Helium)
+- there was also a peak for a sphere of 75% H 25% He, where Saturn lies
+- Helium, C, Mg, Fe follow in decreasing order
+
+This model shows that if you add as much mass as the Sun, the radius would go to zero. This is because the study was done at T=0, when there is no fusion or anything happening (which is what pumps heat for the Sun).
+
+#### Sizes for reference
+- earth is 1 earth mass (duh)
+- Jupiter's core may be about 10 earth masses
+- a brown dwarf is about 15 jupiter masses
+- a typical star is called a low mass star, about 1/10th of our star
+- stars produce energy through fusion, planets do not (brown dwarfs turn into stars as they currently burn deuterium)
+
+#### Hydrogen
+- at high pressures, can come in 2 forms
+    1. solid metallic (low T, high P)
+    2. liquid metallic (high T, high P)
+- this is due to electrons being free to move and having conductive properties
+
+After constructing a phase diagram of hydrogen wrt pressure and temperature, we can draw Jupiter's adiabat. An **adiabat** is a line of connecting solution in which we relate the pressure and temperature of a model.
