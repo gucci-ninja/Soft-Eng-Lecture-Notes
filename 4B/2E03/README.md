@@ -1570,3 +1570,56 @@ This model shows that if you add as much mass as the Sun, the radius would go to
 - this is due to electrons being free to move and having conductive properties
 
 After constructing a phase diagram of hydrogen wrt pressure and temperature, we can draw Jupiter's adiabat. An **adiabat** is a line of connecting solution in which we relate the pressure and temperature of a model.
+
+## Day 32 - Mar 26, 2020
+
+### Interior of Giant Planets contd
+
+![](https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/1095/2016/11/03155646/OSC_Astro_11_02_Internal.jpg)
+
+There is a lot of high pressure in the larger planets, with more chances of having metallic hydrogen.
+
+#### How to map the interior of a planet using satellites
+The Juno orbital satellite gathered data on the interior of the planet.
+
+With this data, we can model the gravity of the spacecraft as a function of Jupiter's gravitational potential. 
+
+```
+U(r, θ, φ) = -GM/r { 1 + distortion sums }
+```
+
+The first order effect is due to the planet being a sphere (GM/r term) and we account for deviations from the planet by adding other terms such as θ. They are angular dependent cosine polynomials. There are also latitude and longitude dependent terms. The simplest case of this equation is when l=2 (l being the number of nodes). This would indicate an 'oblate' planet. We are not expected to memorize/apply this equation.
+
+#### Satellites monitoring Earth
+These are used to map gravitational anomalies on Earth. A lot more deviation around poles. The equation from the previous chapter can be applied here with l=2.
+
+![](img/gravitational_anomalies.png)
+
+If we used l=6 then we woiuld have a J6 term and a more sphere-fitting model.
+
+The crust in North America, mostly Canada has been depressed from the weight of the ice meltiing fro massive glaciers.
+
+#### Juno Mission
+The Juno's orbot goes from pole to pole, making it easier to observe lateral anomalies. The Juno measured J4 and J6 values and were comapred to the theoretical model. The Juno made a lot of measurements on gravity, atmosphere, wind etc. Using this data we are able to confirm that Jupiter has a core that is a minimum of 6 Earth masses. This backs the theory that a rocky interior core is needed to attract gasses that make up a Jovian planet.
+
+We can also come up with a relation between pressure and temperature using the Juno's results.
+
+#### Internal Heating of Planets
+- earth basically emits what is absorbs (same ratio) - emission is mostly from radioisotope decay
+- Jupiter and Saturn both emit more than twice as much as they absorb
+    - Jupiter because of its ongoing contraction
+    - Saturn isn't massive enough to be contracting, it just has helium rain
+- Uranus does not emit as much
+- Neptune emits almost 3 times as much as it absorbs
+
+These values tell us a lot about the interiors of these planets
+
+#### Tophat question
+Why is Uranus different from giant planets in how much energy it releases. - due to its chemical composition or something that prevents convection from flowing from the center of Uranus (heat trapped in the core)
+
+#### Helium
+To explain why helium rain is making Saturn emit all this energy, we have to go back to the formation of our solar system. It is safe to assume that when our solar system was forming, there was an equal ratio of Helium - that means that Jupiter and Saturn both had Helium relative to the Sun.
+
+Saturn is colder at all pressures, because it's further from the Sun but because of it's chemical composition. Helium at cooler temperatures with Hydrogen is like water and oil. So it separates as little droplets - thus the ongoing helium rain. This process is called **differentiation** - when a material condenses and rains out. In the earth's core this happened with iron.
+
+So in reality, Saturn's excess emission is due to gravitation infall due to helium depletion. The droplets go into the mass, causing more gravitational potential.
