@@ -1623,3 +1623,76 @@ To explain why helium rain is making Saturn emit all this energy, we have to go 
 Saturn is colder at all pressures, because it's further from the Sun but because of it's chemical composition. Helium at cooler temperatures with Hydrogen is like water and oil. So it separates as little droplets - thus the ongoing helium rain. This process is called **differentiation** - when a material condenses and rains out. In the earth's core this happened with iron.
 
 So in reality, Saturn's excess emission is due to gravitation infall due to helium depletion. The droplets go into the mass, causing more gravitational potential.
+
+## Day 33 - Mar 30, 2020
+
+### Chapter 7A Exoplanet Detection Methods
+
+#### Radial Velocity Method
+This method works by observing a star (source of light) and monitoring the changes in the spectrum. This change in frequency of the wave causes a Doppler effect, allowing us to calculate radial velocity.
+
+#### The Transit Method
+Change in luminosity due to a body crossing a star. All wavelengths of the optical spectrum are blocked due to this body crossing a star.
+
+We can also deduce the spectrum of the planet with this technique. We observe one setting where the planet and star spectrum is noted and a while later, when the planet goes behind the star. This lets us isolate the planet's spectrum by subtracting the second observation from the first. This is due to the planet's emission. Similarly, when we observe a planet + star duo transit, the planet might transmit radiation so we would subtract the first observation from the second (I think).
+
+![](https://i.ytimg.com/vi/xNeRqbw18Jk/maxresdefault.jpg)
+
+#### Direct Imaging
+Direct imagees, only really works for really bright 'young' Jupiters. You can cancel out the light of its star and if we're lucky, be left with little dots around the image that indicate planets. You just take the spectrum of the individual planets
+
+![](img/direct_imaging.png)
+
+#### Gravitational Microlensing
+- relatively new technology
+- based on Einstein's theory of relativity
+- the idea that gravitational fields bend light travelling through, thereby letting us see more light coming from a distant star
+
+![](img/microlensing.png)
+
+We can extend this theory, what if the faint star that causes light to bend has a planet orbiting it? 
+Then the planet orbiting the faint star has a microlensing effect of its own and will amplify the light coming from the distant star for the observer, Earth.
+
+From the amplification of light, we can estimate the mass of the planet.
+
+We won't be asked to calculate anything from this but we should be able to explain nd argue how the method works
+
+#### History of Detections
+- started out in 1995
+- since then, radial velocity was the predominant method until the Kepler observatory in 2009
+- then there were a lot more transit observation, with over 800 made using transit method in 2014
+
+#### Radial Velocities - the Doppler Shift
+- change in motion around common centre of mass
+- v<sub>observed</sub> = vsin(i)
+
+If we look at a model with a star M and a planet m, we can derive a relation between the two based on their centre of mass.
+
+`Ma1 = ma2`
+
+We directly measure the orbital speed of the star and that period of the orbit (same between star and planet)
+
+![](img/radial_velocity.png)
+
+We can use this relation to calculate the velocity of the star (which by the way is the only thing we can observe). We use the basic equation F = ma. The left hand side if the gravitational force acting between the star and the planet and the right hand side is from the acceleration due to the star.
+
+![](img/mass_relation.png)
+
+This is without eccentricity.
+
+Using the above derivation, we can isolate V to get the following:
+
+![](img/velocity_relation.png)
+
+A lot of the times the observed velocity is denoted by K. A lot of the times we are given observations in which the mass of the  star is given in solar masses and the planet is given in Jupiter masses. To make life easier, here is a useful way of calculating V (or K):
+
+![](img/kepler_equation.png)
+
+#### Method Biases
+- RV method is really good for big planets close to their star
+- there is a limit for how many m/s we can measure with a telescope (right now it's 1 m/s)
+- we can only see 'edge-on' orbits (when angle of inclination is around 90 degrees)
+
+#### Detecting Multiple Planets
+- we can use the same methods but instead of one sinusoid we would get a combination in which you have one overarching sinusoid that has individual dips
+- this needs lots of datapoints
