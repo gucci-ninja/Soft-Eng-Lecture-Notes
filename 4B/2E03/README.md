@@ -1696,3 +1696,62 @@ A lot of the times the observed velocity is denoted by K. A lot of the times we 
 #### Detecting Multiple Planets
 - we can use the same methods but instead of one sinusoid we would get a combination in which you have one overarching sinusoid that has individual dips
 - this needs lots of datapoints
+
+## Day 34 Apr 1, 2020
+
+In this lecture we will be discussing the transit method. 
+
+### Finding Exoplanets through the Transit Method
+
+There is a fractional change of luminosity due to bodies crossing each other. The mathematical correlation is given below.
+
+![](https://www.cfa.harvard.edu/~avanderb/tutorial/rprs.png)
+
+The length of the transit relies mainly on the radius of the star: 2Rstar/2πa = ΔtP
+
+We can apply this strategy to Venus. The radius of Venus is 6051km and the Sun's is 695500km. This gives a fraction of 0.000076 decrease.
+
+When a body crosses the Sun, we see a dark spot on the Sun, thereby decreasing luminosity. 
+
+#### How these measurements are made
+
+The Kepler spacecraft mission has made some successful measurements. A satellite stares at a field of stars continuously for over 4 years. It monitors the detectable light. Solar array is a mechanism that keeps the satellite going. Thuryst module lets it get into orbiot. High gain antenna to transmit information back to earth. It was launched around 2009. Its search space was around 3000 light years away from us.
+
+![](img/kepler_spacecraft,png)
+
+The spacecraft's strategy is to look for sun-like stars and earth-like planets so it could be monitored on a periodic/yearly basis - so the planet candidates were dismissed if their period was more than 4/3 year since we need 3 transits oberserved to make any actual measurements.
+
+#### Tophat question
+An astronomer finds that the largest planet in our solar system is transitting the sun. Find the fractional decrease in the Sun's luminosity.
+
+```
+sun r = 695500
+jupiter = 69911 km
+the decrease in luminosity = (Rj/Rs)^2
+= 0.0101
+```
+#### Some Constraints on Measurements
+Detection bias includes:
+- big planets
+- planets with a shorter period
+- angle of inclination is 90 degress (requirement)
+
+### Combining Results
+
+We can use transit data and radial velocity data together. If we know the period P and mass M p of the star, and predict the eccentricity, we can obtain the mass of the planet. In the case of transits, the angle of inclination is 90 degrees so V<sub>obs</sub> = Vsin(i). The mathematical relation is shown below:
+
+![](img/vsini.png)
+
+From transit data, we can find the planet's radius and by putting it all together, we can calculate the planet's density.
+
+#### TopHat Question
+We find the Sun's period to be 11.9 years. We know it's mass, as well.
+
+There is a convenient formula to solve this. 
+
+```
+V = (2πG/P)^(1/3) * msin(i)/M^(2/3) * 1/sqrt(1-e^2)
+  = 203 * (P in days)^(-1/3) * (# solar masses)^(-2/3) * (# Jupiter masses)sini
+  = 203 * (11.9 * 365)^(-1/3) * 1^(-2/3) * 1
+  = 12.44 m/s
+```
