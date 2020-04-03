@@ -1755,3 +1755,103 @@ V = (2πG/P)^(1/3) * msin(i)/M^(2/3) * 1/sqrt(1-e^2)
   = 203 * (11.9 * 365)^(-1/3) * 1^(-2/3) * 1
   = 12.44 m/s
 ```
+
+## Day 35 Apr 2, 2020
+
+### Feedback for Assignment 3
+
+#### Question 7 - Titan's atmosphere
+- for earth, optical radiation heats our surface
+- infrared on the other hand, is absorbed by the higher levels of the atmospher
+- UV is captured by ozone and increases temperature of stratosphere, which is above troposphere
+- troposphere is heated by convection not conduction
+
+### Chapter 7B Exoplanetary Populations
+
+### Mass vs Semi-major axis diagram
+
+![](img/m_a_diagram.png)
+
+The data suggests that SuperEarths, exoplanets with a mass of 1-10 times the mass of Earth, are most common. Hot Jupiters are those which have an orbit similar to Mercury's and Warm Jupiter's orbit is 1AU. 
+
+There also exists an exoplanet (Keplet 16B) that is orbiting 2 stars (binary-star system). Both stars are smaller than our Sun and the period is 0.63 years. Also called a circumbinary planet.
+
+### Orbital Eccentricity
+
+The two things we need to know about a planet's orbit are its **semi-major axis** and **eccentricity**. Giant orbit planets are more eccentric in their orbits.
+
+#### Tophat Point and Click Question
+- find Jupiter on M-a diagram
+- Jupiter mass = 318xM<sub>E</sub>
+- Jupiter semi-major axis = 5 AU
+
+### Exoplanetary Systems
+- earlier we learned about orbital resonance in our solar system, especially in the asteriod belt which causes the Kirkwood gaps
+- there are a number of planetary systems at a 2:1 resonance
+- data indicates that there are jumps corresponding to resonance
+- we have seen that there are Jupiter-like exoplanets at around Mercury's orbit, which is impossible due to how hot it would be
+
+Looking back at the mass vs semi-major axis diagram, we can say that giant planets formed further away but migrated closer to their orbiting star. This process was very strong while the planets were still forming because they likely got angular momentum through exchange with their gaseous disk. The gas moves outward as the planet moved inward.
+
+The exchange of gas is usualyl so good that the eccentricity of the planet is not affected. Planets will keep moving around until they are in resonance with each other but usually, their orbit stays pretty circular.
+
+To explain why the eccentricities are so high, we have to consider the idea that the gas froom the system is completely driven out in 3-10 million years. Now, planets start perturbing one another, thereby going to more eccentric orbits (or getting kicked out). This is especially for giant planets.
+
+Takeaway: high eccentricity = lots of perturbation
+
+#### Formation Model Summary
+1. Planets move in disks - we know this
+2. Gas circularizes/circulates in the planet
+3. The planet has resonance due to gas
+4. Gas goes away
+5. No more damping process from gas so planets interact a lot gravitationally
+6. Planet systems reorganize (move to larger radii or get booted) and we're left with planets with a high eccentricity orbit
+
+#### Theoretical Work on Seperation of Planet Pairs in Unstable Simulation
+High mass planets with adjacent period ratios follow Kepler observations quite closely. Going back to when we learned about Hill radii, the separation between planets eventually settles down to reflect a mutual Hill radius.
+
+#### System Architecture
+We have observed that 42% of sun-like stars have almost fully co-planar systems with 7 or more planets. So our solar system is quite typical. The most densly packed system is Kepler 11 with 6 planets around 2-13 times the mass of Earth and orbits less than that of Venus. Almost a third of these solar systems are densly packed and their existence can be explained by their near-resonant behaviour.
+
+#### Going back to our own solar system
+After the gas is gone, there are still things floating around in space - small objects to Mars sized objects. These objects help form the terrestrial planets, which continue to form 100 million years after the gas is gone and the massive planets are done forming. 
+
+#### Nice model
+Ratio of Jupiter, Saturn, Uranus, Neptune is 9:6:4:3 before instability. After interacting with small bodies in the solar system, Jupiter moves around a bit, Saturn a little bit while Neptune and Uranus move very far away. Look at below diagram to see what happens to these planets. The Nice model has its own predictions on where the 4 planets were before instability
+
+![](img/nice_model.png)
+
+### Completeness
+There is a slight observation bias in the models we discussed due to the radial velocity imaging method
+- RV method cannot detect a lot if an exoplanet is small and further away
+- RV method cannot detect a lot if the planet is very small and has a period larger than 50 days 
+
+Graph below shows the completeness scale associated with measurements - how likely planets in a region are to be detected. Yellow dot is Earth.
+
+![](img/completeness.png)
+
+### Assignment 4 Help Session
+
+#### Question 1
+- find minimum mass needed of a planet so that moledular hydrogen is found right down to its very centre. any higher and it would turn to metallic
+- need to get rid of radius in solution (clue in part b)
+
+#### Question 2
+- explore eccentricity on exoplanets.org
+- to find out if a planets orbital radii is within another planet, check which orbits are in apehlion you calculated
+
+#### Question 3
+- assume a circular orbit
+- for part b, use formula developed in slides
+    - given mass of both things, velocity, solve for a1 and then a2
+
+#### Question 4
+- look for similar size planet and cite it
+- for reference: an m type is a dwarf star that is 10th to 2/10ths of typical star
+- look at graph of mass vs semi-major axis discussed earlier
+- poke around for data on exoplanet site to find what the radius for such a planet might be
+
+#### Question 5
+- assume the period of both bodies is identical (only way to do this problem)
+    - not possible in our solar system
+- no atmosphere = no greenhouse effect so choose small albedo
