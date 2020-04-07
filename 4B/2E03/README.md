@@ -45,7 +45,6 @@
 - [Chapter 4 Heating and Cooling A](#chapter-4-heating-and-cooling-a)
 - [Chapter 4 - Heating and Cooling Processes B](#chapter-4---heating-and-cooling-processes-b)
 - [Midterm Details](#midterm-details)
-- [Assignment 2 Answers](#assignment-2-answers)
 - [Heating and Cooling cont'd](#heating-and-cooling-contd)
 - [Radioactive Heating](#radioactive-heating)
 - [Chapter 5 Planetary Atmospheres](#chapter-5-planetary-atmospheres)
@@ -67,13 +66,11 @@
 - [Chapter 7A Exoplanet Detection Methods](#chapter-7a-exoplanet-detection-methods)
 - [Finding Exoplanets through the Transit Method](#finding-exoplanets-through-the-transit-method)
 - [Combining Results](#combining-results)
-- [Feedback for Assignment 3](#feedback-for-assignment-3)
 - [Chapter 7B Exoplanetary Populations](#chapter-7b-exoplanetary-populations)
 - [Mass vs Semi-major axis diagram](#mass-vs-semi-major-axis-diagram)
 - [Orbital Eccentricity](#orbital-eccentricity)
 - [Exoplanetary Systems](#exoplanetary-systems)
 - [Completeness](#completeness)
-- [Assignment 4 Help Session](#assignment-4-help-session)
 - [Exoplanetary Atmospheres](#exoplanetary-atmospheres)
 - [Mass-Radius Relations for Planets Observed in Transit](#mass-radius-relations-for-planets-observed-in-transit)
 - [Habitable Planets](#habitable-planets)
@@ -677,7 +674,7 @@ fast _as_ fuk bois.jpg
 
 ## Day 13 - Feb 3, 2020 
 
-### Assignment 1 solutions
+#### Assignment 1 solutions
 - question 1: 
     - i) smallest object that can be resolved on mars
         - - 54500 m (taking average distance)
@@ -752,6 +749,8 @@ fast _as_ fuk bois.jpg
 #### Irregular Satellites of Saturn
 - lots of asteroid captured in orbit but they will probably go away soon after the hill sphere
 
+## Day 15 - Feb 6, 2020 
+
 ### Chapter 3 - Dynamics - Tides
 
 #### Back in the day
@@ -764,8 +763,9 @@ The Moon gets further away at a rate of around 4cm/yr
 
 High tide comes twice daily and affect our oceans and coastlines
 
-## Day 15 - Feb 6, 2020 
-- skipped
+There are two forces, F1 and F2, F1 is caused by the 'moon' wrt planet when it is closer to the planet. F2 is when the moon is a bit further. The resulting equation becomes F2 = F1 + (dF/dr)dr where F1 = GmM/r^2.
+
+Taking the differential of this, we get -2GmM/r^3 dr, which is the **tidal force**. This results in the Earth being flexed and stretched two have 2 bulges (two high tides), 2 every 25 hours. One bulge is always facing the moon. Since the Earth is moving forward, it drags the bulges ahead. There is almost a net cancellation since, as teh Earth drags the bulge ahead, the Moon slows it down. Between the two, there is an exhcange of angular momentum. In the end, the Earth's rotation is slowed down a bit and the Moon gains some orbital speed (making it go further from the earth).
 
 ## Day 16 - Feb 10, 2020
 
@@ -1044,7 +1044,7 @@ The radiation at Eath's surface is highest when it is in the infrared section, b
 
 ## Day 21 - Feb 27, 2020
 
-### Assignment 2 Answers
+#### Assignment 2 Answers
 
 ![](img/ass2.png)
 
@@ -1837,7 +1837,7 @@ V = (2πG/P)^(1/3) * msin(i)/M^(2/3) * 1/sqrt(1-e^2)
 
 ## Day 35 Apr 2, 2020
 
-### Feedback for Assignment 3
+#### Feedback for Assignment 3
 
 #### Question 7 - Titan's atmosphere
 - for earth, optical radiation heats our surface
@@ -1909,28 +1909,28 @@ Graph below shows the completeness scale associated with measurements - how like
 
 ![](img/completeness.png)
 
-### Assignment 4 Help Session
+#### Assignment 4 Help Session
 
-#### Question 1
+##### Question 1
 - find minimum mass needed of a planet so that moledular hydrogen is found right down to its very centre. any higher and it would turn to metallic
 - need to get rid of radius in solution (clue in part b)
 
-#### Question 2
+##### Question 2
 - explore eccentricity on exoplanets.org
 - to find out if a planets orbital radii is within another planet, check which orbits are in apehlion you calculated
 
-#### Question 3
+##### Question 3
 - assume a circular orbit
 - for part b, use formula developed in slides
     - given mass of both things, velocity, solve for a1 and then a2
 
-#### Question 4
+##### Question 4
 - look for similar size planet and cite it
 - for reference: an m type is a dwarf star that is 10th to 2/10ths of typical star
 - look at graph of mass vs semi-major axis discussed earlier
 - poke around for data on exoplanet site to find what the radius for such a planet might be
 
-#### Question 5
+##### Question 5
 - assume the period of both bodies is identical (only way to do this problem)
     - not possible in our solar system
 - no atmosphere = no greenhouse effect so choose small albedo
