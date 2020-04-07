@@ -15,7 +15,7 @@
 - [Quesion](#quesion)
 - [1.3 Planet Formation](#13-planet-formation)
 - [1.4 Life on Other Worlds](#14-life-on-other-worlds)
-- [Chapter 2: Gravity and Angular Momentum](#chapter-2:-gravity-and-angular-momentum)
+- [Chapter 2: Gravity and Angular Momentum](#chapter-2-gravity-and-angular-momentum)
 - [Tycho Brahe's Arc Minute](#tycho-brahes-arc-minute)
 - [A Good Telescope](#a-good-telescope)
 - [Radial Telescopes](#radial-telescopes)
