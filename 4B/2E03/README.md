@@ -1855,3 +1855,51 @@ Graph below shows the completeness scale associated with measurements - how like
 - assume the period of both bodies is identical (only way to do this problem)
     - not possible in our solar system
 - no atmosphere = no greenhouse effect so choose small albedo
+
+## Day 36 - Apr 6, 2020
+
+#### How many earth like planets are out there
+Based on existing data, we can extrapolate the trendline to say that there are many earth like planets out there. Data suggests that 6% of sun-like stars might have an earth-like planet.
+
+### Exoplanetary Atmospheres
+- 3 types 
+    1. cyan line is an irradiated planet
+    2. red line is highly irradiated
+    3. gray is poorly irradiated
+
+#### Water and Methane Abundance
+Methane molecules on the curve show that as the planet mass increases, the amount of methane decreases.
+
+Many of these observations are made by transmission. However, these measurements, from the Hubble spacecraft, have big error bars.
+
+#### Tophat Question
+What is a transmission spectrum? - The spectrum of a planetary spectrum when star light passes through it
+
+### Mass-Radius Relations for Planets Observed in Transit
+There is a lot of data that suggests rocky super-earths behave much differently than Jupiter-like models. This comes from infrarerd (by Spitzer) and optical (by Hubble) observations.
+
+Planets up to 2 Earth masses have a rocky composition and their radius is approximately M^(1/3).
+
+### Habitable Planets
+Plotting the planet's mass and stellar flux can tell us more than the semi-major axis. This is the condition for water to remain liquid. There aren't a lot of planets residing in that zone.
+
+#### Tophat Question
+- Solar flux of Venus / solar flux of Earth = 1/0.723^2 = 1.91
+
+That is why Venus is not habitable, it's too hot.
+
+There is a third slideset that we can look at but it will not be testable.
+
+Important point on formation of planets: In order to understand the m-a diagram, we must assume that planets have migrated from formation.
+
+### Final Exam (Instructions and Review)
+
+#### Instructions
+- the exam is on Apr 8, 2020 at 10am to 12:30pm (2.5 hours long)
+- it will be made available on Avenue under Contents -> Final Exam Download at 9:55am
+- the format is a .docx file you can print and write on OR write numbered answers to on a blank sheet of paper (in pen!)
+- the exam is open-book
+- we will get 20 minutes after 12:30 to upload a pdf of our answers to Avenue under Assignments -> Exam Submission
+- Use an app like CamScan to take a scan of your paper
+- the exam will be 60% after-midterm content
+- exam will include conceptual questions and quantitative problems
