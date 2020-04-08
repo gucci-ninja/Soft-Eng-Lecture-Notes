@@ -614,6 +614,14 @@ fast _as_ fuk bois.jpg
 
 #### Gaps in Asteroid Distribution
 
+Gaps found in asteroid belt that we call Kirkwood gaps. Caused primarily by orbital resonance from Jupiter. **Mean motion resonance** occurs when two bodies have periods that are small-integer multiples of one another.
+
+#### Example
+
+If an asteroid has a 2:1 orbital resonance with Jupiter this means its period is 1/2 of Jupiter's period. Every second time the asteroid orbits the Sun, it will encounter Jupiter at the same spot. This consistent pull from Jupiter gives it more orbital eccentricity. Due to this higher eccentricity, the asteroid will eventually bump into something else and either get shattered or shatter something. So if something is in orbital resonance with Jupiter, it won't stay there for long.
+
+When we look at data, the biggest Kirkwood gap is exactly where asteroids with 1/2 Jupiter's period would be (3.28 AU). Also at 1/3P<sub>jup</sub> and at 5:2 and 7:3.
+
 ## Day 11 - Jan 29, 2020
 - semi-major axis 
 - asteroidP = 2*jupiterP/3 
@@ -621,7 +629,6 @@ fast _as_ fuk bois.jpg
 
 #### Vesta Asteroid
 - big boi
-
 
 #### Chicxulub Impact
 - 65 milly years
