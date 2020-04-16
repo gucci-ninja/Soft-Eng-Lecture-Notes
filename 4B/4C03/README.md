@@ -1601,3 +1601,374 @@ Popular apprach that allows system to support multiple protocols.
     - less work for router
 
 #### OpenFlow data plane abstraction
+
+
+### Chapter 8 Security in Computer Networks
+
+There are many types of attacks that can result on the Internet.
+
+- malware
+- denial of service
+- sniffing (eavesdropping)
+- source masquerading/impersonation
+- message modification and deletion
+
+We will be studying how to secure communication on the internet using the example of Alice and Bob, which is a popular example for security.
+
+In the first part of the chapter we will go through cryptography techniques that allow encryption, authentication and the second part will be about using these crypto principles to create secure networking protocols.
+
+### 8.1 What is Network Security
+
+We will start by outlining some desireable properties of secure communication.
+
+- confidentiality
+- message integrity
+- end-point authentication
+- availability
+    - operational security (firewalls and stuff)
+
+### 8.2 Principles of Cryptography
+
+This section will focus on the use of cryptography algorithms for confidentiality. A sender writes their message in **plaintext** or **cleartext**. It gets encrypted using an **encryption algorithmn** into **ciphertext**.
+
+Alice has a **key**, K<sub>A</sub>, which is given as an input to the encrption algorithm. K<sub>A</sub>(m) is the ciphertext. Bob has a key too, K<sub>B</sub>, which will be provided to the decryption algorithm, so that he can compute m = K<sub>B</sub>(K<sub>A</sub>(m)). 
+
+There are two key systems: 
+- **symmetric key** in which the keys are identical and secret
+- **public key** in which there is a public and private key
+
+Usually, keys are 128 bits so they are hard to hack.
+ 
+### 8.2.1 Symmetric Key Cryptography
+
+A very old symmetric key algoithm is the **Caesar cipher**, each letter is shifted k letter over, wrapping z to a. k is a key.
+
+An improvement to this would be the **monoalphabetic cipher**, which switches up letters of the alphabet, yuleding 10^26 possibe pairings since a letter can be any letter. (a maps to m, b maps to x..). But this is not a that hard to decrypty using statistical analysis.
+
+This can lead to 3 different scenarios
+- ciphertext-only attack
+- known-plaintext attack
+- chosen-plaintext attack
+
+Ancient techniques improved on monoalphabetic encryption by coming up with **polyalphabetic encryption** , which pairs different encodings.
+
+Today, there are two big symmetric encyrption techniques
+1. **stream ciphers**
+2. **block ciphers**
+
+Block ciphers are commonly used in internet protocols, like PGP for emil, SSL for TCP, and IPsec. 
+
+#### How Block Cipher Works
+
+The message is split into blocks of k bits. There is a one to one mapping for each sequence of k bits. For example, a 3 bit block with contents 000 can be enctyrypted as 111, 100, .. with a total of (2^3)! possibilities. Larger block means it is harder to brute force an attack.
+
+Block ciphers use functions that compute randomized tables instead of actually storing them. The key is the number of permutation tables that are generated.
+
+Popular block cipher algorithms
+- DES - 64 bit block with 56 bit key
+    - can be brute-forced in less than a day
+- 3DES - 3 time encyrption with 3 different kets
+- AES - 128 bit blocks with 128, 192, 256 bit keys
+    - if DES brute forcing was 1 second, this one would be 149 trillion years
+
+
+#### Cipher Block Chaining
+
+If m(i) is the ith plaintext block, and c(i) is the ith ciphertext block, this method adds a random k-bit number r(i) and performs m(i) XOR r(i) for the block before encyrpting it with the key. This ensures that the same plaintext does not have an identical ciphertext encyrption. Ie. "Suhavi" will not always have the same ecnrypted value.
+
+The receiver would get the c(i) and r(i) but already has the key so he/she is able to decipher the message. 
+
+However, this means the sender has to transmit twice as much data. To combat this, block ciphers use **Cipher Block Chaining**, where you send 1 random value at the beginning of a message and the rest gets computed.
+
+1. sender generates random k-bit string called the **Initialization Vector**. This is c(0). This is sent in cleartext.
+2. For the first block, the sender sends c(1) = Ks(m(1) XOR c(0))
+3. For the ith block, the sender does c(i) = Ks(m(i) XOR c(i-1))
+
+### 8.2.2 Public Key Encryption
+A message is encoded using a person's public key (KB+) and they can decode it using their private key (KB-).
+
+When sending a message to Bob, Alice comes up with c = KB+(m) and Bob is able to decrypt using m = KB-(c).
+
+Requirements for Public Key System
+1. KB-(KB+(m)) = m
+2. The private key cannot be computed from the public key
+
+Anyone can thus, send Bob a message using his public key. So public key systems use a digital signature to bind a sender to a message.
+
+#### RSA Algorithm
+
+Named after its founders, Rivest, Shamir and Adelson, this popular encryption algorithm uses the modulo-n arithmetic operation. The message we send is comprised of bits which can be uniquely represented by an integer. By performing some operations on this 'number', we get a new number. The number is computed by doing a mod d a bunch of times. It is hard to break this because we would need to find the factors p and q of a big number. This is why RSA requires more computation and is thus, slower.
+
+In practice, both assymetric and symmetric key encryption are used in combination. First you use public key cryptography to share symmetric key. After which you can simply use symmetric key cryptography.
+
+###  8.3 Message Integrity and Digital Signatures
+
+**Authentication** is the act of proving your identity. Simply saying who you are, even with proof of your IP adress isn't enough as an attacker can use spoofing to have the same IP. Even if you have a secret password to confirm, an attacker can find out that password through playback and impersonate you.
+
+In order to avoid this type of attack, we can use a nonce value, a number R that is used to prove Alice's identity. Bob sends Alice the nonce and Alice must return R with an encryption. If Alice sends KA-(R) and Bob is able to decipher it using R = KA+(KA-(R)) then we have succeeded in using nonce + public key cyrptography to authenticate Alice.
+
+This approach is still susceptible to man-in-the-middle attacks.
+
+#### Digital Signatures
+
+Another use case for cryptography, to maintain confidentiality and integrity of a message. A recipient wants to verify if the sender of a message is genuine.
+
+Due to the secrecy of the private key, if Bob encrypts something with his private key, the only way to decipher the message is using the public key. If the message is deciphered then Bob's identity must be true. This process is just for authenticating Bob because anyone would be able to decipher the message since you just need his public key.
+
+#### Message Digests
+
+Uses hash functions to convert a large message into a smaller hash code - making it imposible to get back the original message. A use case would be like a checksum. The output from a hash function is a fixed size message digest and it is computationally impossible to find m given the message digest x, computed from H(m).
+
+The checksum method we learned is a bad hash function since it can easily be the same for different messages. That is, given a hash value, it is easy to find another message with the same hash value.
+
+Message digests can be used for digital signatures. Message gets hashed and then the ditgital signature encrypts it. Checks if hash of message is same on both sides. - H(m) = KB+(KB-(H(m)))
+
+#### Popular Hash Functions
+- MD5 
+    - computes 128 bit msg digest in 4 steps
+- SHA-1
+    - 160 bit msg digest
+
+
+#### Public Key Certification
+
+The next topic in this section falls under digital signatures. If Bob wants to be authenticated and uses his private key to encrypt a message, it can only be decrypted by his public key. But what if Trudy posing as Bob encrypts a message using HER private key and it is encrypted using HER public key. We would need a way to confirm whether the public key is indeed Bob's or some fake. Public key certification is used in SSL and IPsec.
+
+Binding public keys to entitities is done by a **Certification Authority**, who verifies identities and creates a **certificate**. You might be familiar with an SSL certificate for your website.
+
+### 8.4 Securing Email
+Alice wants to send an email to Bob. She uses a symmetric priavte key to encrypt the message and sends it to Bob. However, Bob needs the symmetric private key as well. In order to send this, Alice encrypts it using Bob's public key, knowing it will only be decrypted by Bob's private key. This method uses both assymetric and symmetric key systems.
+
+Bob verifies Alice's identity through her digital signature. She signs a message by computing a hash of it and encrypting it using her private key. KA-(H(m)) and m are sent. Bob gets the 2 and computes a hash of the message and also computes KA+(KA-(H(m))) to check if they are the same.
+
+Putting the two scenarios together, we get sender authentication, message integrity and confidentiality. Alice uses 3 keys in the end, her private key, Bob's public key and the symmetric key.
+
+#### PGP
+Stands for **Pretty GOod Privacy** and it's an email encryption scheme, basically implements what we have talked about.
+
+### 8.5 Securing TCP connections: SSL
+
+SSL stands for Secure Sockets Layer. It's a popular security protocol that allows billions of dollars to be handled across the world. A variation is TLS - transport layer security. 
+
+Provides the 3 requirements
+1. confidentiality
+2. integrity
+3. authentication
+
+SSL is a layer added between the application and TCP. It provides an API that can be implemented in C or Java. It was originally designed by Netscape. 
+
+3 phases of SSL
+1. handshake
+2. key derivation
+3. data transfer
+
+Alice (server - such as an e-commerce site) has a public key, private key as well as a CA certificate binding her identity.
+
+#### Handshake
+- Bob establishes TCP connection with Alice
+    - Bob sends TCP SYN
+    - Alice sends TCP SYNACK
+    - Bob sends TCP ACK
+- verifies that Alice is who she claims to be
+    - Bob sends SSL hello
+    - Alice replies with certificate
+- sends Alice a master secret key to be used as symmetric key
+    - Bob sends encyrpted master secret EMS = KA+(MS)
+    - Alice decrypts using KA-
+
+#### Key Derivation
+The shared secret is used to derive a set of keys, for integrity checking (message authentication code - MAC) as well as encryption since it's bad practice to use the same. 
+
+4 keys generated:
+- EB - session encryption key for Bob to Alice
+- MB - session MAC key for Bob to Alice
+- EA - session encryption key for Alice to Bob
+- MA - session MAC key for Alice to Bob
+
+#### Data Transfer
+Data is transferred is broken into chunks (records), with each data having the MAC appended to it to check for integrity. This is done so we can check integrity as we go, not just at the end of the data stream. The MAC is created by taking the data and MAC key and throwing it into a hash function. Then the record + MAC are encrypted using the encryption key.
+
+#### Connection Closure
+Finally at some point the message to securely close the connection is sent out.
+
+We can make use of sequence numbers for the MAC to avoid an attacker's attempt to capture and replay/reorder records.
+
+We can use a none to avoid an attacker's attempt to replay all records.
+
+To avoid a truncation attack, have different record types to indicate when there is a closure and compare with the TCP FIN.
+
+Message will then consist of length, type, data and MAC. This will get encrypted and sent over the TCP channel. Type 0 can indicate a regular back and forth and type 1 indicates closure.
+
+#### SSL in more detail
+In reality, the handshake consists of many more steps
+
+1. the client sends a list of all the crypto algorithms it supports + a nonce
+2. server chooses a symmetric algorithm, a public key algorithm and a MAC algorithm + CA certificate + nonce
+    - these 3 algorithms make up a **cipher suite**
+3. client verifies certificate, gets server's public key using certificate and CA public key and sends an encrypted "pre-master secert" (PMS)
+4. the 4 keys mentioned before are derived from the MS (which you get from the PMS + nonces) + initialization vectors for the cipher algorithm
+5. client sends a MAC of all handshake msgs
+6. server sends a MAC of all handshake msgs
+
+If there is an inconsistency between 5 and 6, the server can terminate the connection. This protects from man-in-the-middle attacks, in case some Trudy deletes strong algorithms from the list.
+
+The nonce values are required so that the same records are not sent at a later time, they are always unique.
+
+#### SSL record protocol
+The standard for the SSL protocol contains the following
+- record header
+    - content type (1 byte)
+    - version (2 bytes)
+    - length (3 bytes)
+- MAC
+    - sequence number 
+    - MAC key Mx
+- fragment
+    - 2^14 bytes or 16 Kbytes
+
+Past the handshake, everything is encrypted.
+
+![](img/ssl.png)
+
+### 8.6 Network Layer Security: IPsec
+
+The IP security protocol provides security at the network layer. Between two components in a network, it encrypts the datagram payload (TCP/UDP/ICMP/OSPF) - providing **blanket coverage**.
+
+Many organizations use IPsec to create VPNs for security reasons. Private networks in general are expensive to implement due to separate routers and links so companies turn to VPN, which run over the existing public Internet. In VPNs, traffic within the office is sent over public internet, which requires it to be encrypted.
+
+VPN works by sending around datagrams with traditional IPv4 headers as well as IPsec header and a secure payload that requires decryption.
+
+IPsec provides **data integrity**, **origin authentication**, **replay attack prevention** and **confidentiality**. It can be implemented through 2 different models:
+
+The **Authentication Header (AH)** protocol and the **Encapsulated Security Payload (ESP)** protocol, which are used to send secure datagrams. AH provides source authentication and data integrity but _not_ confidentiality. ESP prvides source authenticatio, data integrity _and_ confidentiality. So it makes sense that ESP is more frequently used. 
+
+In order to sened IPsec datagrams, first, a **security association** needs to be established between 2 entities. It is a simplex logical connection (unidirectioanl). For bidirectionaly, 2 SAs would need to be made in either direction. An SA has the following
+
+- a 32 bit identifier called the **Security Parameter Index (SPI)**
+- a source and a desination interface
+- the type of encryption (DES?)
+- the encryption key
+- the type of integrity check (MD5?)
+- authentication key
+
+The state information for IPsec entities is stored in a Security Association Database (all 2 + 2n SAs), where they are indexed by their SPI.
+
+The datagram can come in 2 forms, **tunnel mode** and **transport mode**. Tunnel mode is better suited for VPN.
+
+You can have one of the 4 combos
+1. host mode with AH
+2. host mode with ESP
+3. tunnel mode with AH
+4. tunnel mode with ESP (**most common**)
+
+#### IPsec fields
+- ESP trailer field appended to the back of original IPv4 datagram
+    - padding (to make it a block for ciphers)
+    - pad length (to know how much padding to remove)
+    - next header (type of data - UDP/TCP/etc)
+- result is encyrpted using algorithm and key from SA
+- ESP header appended to the front, package is called 'enchilada'
+    - SPI (to know which SA)
+    - sequence number (to defend against replay attacks) - initialized to 0 at first, incremented by sender
+- authentication MAC is created over whole enchilada using algo and key from SA
+- payload = enchilada + MAC
+- new IP header with IPv4 header foelds appended before payload
+
+![](img/enchilada.png)
+
+The protocol field in the left-most IP header = 50 indicates that ESP is being used. To unpackage a datagram, the SPI is used to find which SA it belongs to. Then it calculates the MAC of the enchilada to verify it is the same as the ESP MAC field. 
+
+To know which datagrams should be constructed as IPsecs, the IPsec entity maintains a **Security Policy Database (SPD)** which indicates what datagrams should be IPsec processed and which SA to use.
+
+SPD - what to do with datagram
+
+SAD - how to do it
+
+#### Summary on IPsec
+Using this service, an intruder would not be able to view the contents of a datagram sent from R1 to R2 since the protocol number and IPs are all hidden. If sent over an SA, an intruder can figure out that the datagram originated at some host in the IP subnet and is destined to a host within another subnet. If the bits are tampered with (flipped/modified) then that datagram will fail its integrity check using the MAC.
+
+#### IKE Internet Key Exchange
+It is infeasible to manually enter SA information into the SADs at endpoints so there needs to be some automated mechanism. IPsec does this via the IKE protocol. It is similar to the handshake performed for SSL but it has two entities exchange certificates and negotiate algorithms. Unlike SSL, IKE does this in 2 phases.
+
+##### Example of an SA
+```
+SPI: 12345
+Source IP:
+Dest IP:
+Protocol: ESP
+Encryption Alg: 3DES-cbc
+HMAC algo: MD5
+Encryption key: 0x39e3ue2
+HMAC key: 0x38e43u2
+```
+
+To prove who you are, authentication is performed with either a pre-shared secret (PSK) or a public/private key certificate (PKI). For PSK, both sides have the secret and run IKE to authenticate each other and generate SAs + keys. In PKI, both sides start with public/private key pair and run IKE to authenticate each other (similar to SSL handshake).
+
+IKE itself has 2 phases.
+
+1. establish bidreictional IKE SA (not the same as IPsec SA)
+2. ISAKMP is used to negotiate IPsec SA pairs
+
+Phase 1 can either be aggressive mode or main mode. Aggresive mode has less messages and main mode provides identity protection and flexibility
+
+Overall, IKE is used to negotiate algos, set up keys and SAs. Then, AH or ESP or both are used. 
+
+We see this being used for 2 end systems, 2 routers/firewalls, router/firweall and end system.
+
+### 8.8 Operational Security: Firewalls and IDS
+
+A **firewall** isolates an organization's internal net from the public internet, allowing some packets to pass and blocking others
+
+They are necessary for a number of reasons.
+- preventing denial of service attacks
+- preventing illegal access/modification to internal data
+- allowing only authorized people
+
+There are 3 types of firewalls
+1. stateless packet filters
+2. stateful packet filters
+3. application gateways
+
+#### Stateless packet filtering
+- router firewall filters packet by packet
+- forwarding/dropping is based on
+    - source/dest IP
+    - TCP/UDP source/dest port numbers
+    - ICMP msg type
+    - TCP SYN and ACK bits
+
+
+Different policies can be implemented with differentn firewall settings
+
+**Access Control Lists** let you apply rules, from top to bottom, to incoming packets. The format is as follows
+
+action | source address | dst address | protocol | source port | dest port | flag bit
+-----|-----|-----|-----|-----|-----|------
+allow | 222.22/16 | outside 222.22/16 | TCP | > 1023 | 80 | any
+
+#### Stateful packet filtering
+- stateless can allow packets that don't make sense
+- stateful keeps track of status of every TCP connection
+- track SYN, FIN 
+- if connection is inactive, times them out
+- extra column from stateless - **check connection**
+
+#### Application gateways
+- filters packets based on application data as well as IP/TCP/UDP fields
+- eg only some users can connect to telnet
+- need access to speicific gateway
+
+#### Limitations of firewalls and gateways
+- IP spoofing
+- multiple apps needing special treatment = multiple gateways
+- need to know how to contact gateway (with proxy)
+- degree of communication with outside world limited
+
+#### Intrusion Detection Systems
+- packet filtering operates on TCP/IP only
+- IDS does deep packet inspection, looking at contents
+- examines correlation among packets
+    - port scanning
+    - network mapping
+    - DoS attack
+- multiple sensors perform the detection at multiple locations

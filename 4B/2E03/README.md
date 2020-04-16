@@ -1803,7 +1803,7 @@ When a body crosses the Sun, we see a dark spot on the Sun, thereby decreasing l
 
 The Kepler spacecraft mission has made some successful measurements. A satellite stares at a field of stars continuously for over 4 years. It monitors the detectable light. Solar array is a mechanism that keeps the satellite going. Thuryst module lets it get into orbiot. High gain antenna to transmit information back to earth. It was launched around 2009. Its search space was around 3000 light years away from us.
 
-![](img/kepler_spacecraft,png)
+![](img/kepler_spacecraft.png)
 
 The spacecraft's strategy is to look for sun-like stars and earth-like planets so it could be monitored on a periodic/yearly basis - so the planet candidates were dismissed if their period was more than 4/3 year since we need 3 transits oberserved to make any actual measurements.
 
