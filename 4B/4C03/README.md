@@ -1602,6 +1602,332 @@ Popular apprach that allows system to support multiple protocols.
 
 #### OpenFlow data plane abstraction
 
+### Chapter 4 Network Layer
+The network layer is divided into 2 parts - data plane and control plane. Data plane takes care of forwarding and control plane takes care of network logic and routing.
+
+#### Forwarding and Routing
+**Forwarding** is the act of taking a packet at a router's input link and moving it to the appropriate output link. **Routing** is when the network determines the route or path that will be taken by packets as they flow through. Forwarding is router-local and routing is network-wide.
+
+A **forwarding table** is what tells us which output link to forward a packet to. Traditionally, the approach is to have a routing function in every router. There is another approach, **software-defined networking (SDN)**, in which a remote controller computes and distributed the forwarding tables. 
+
+Next, let's discuss the **network service model**, which defines the characteristics of the end-to-end delivery of packets. A good network layer can provide guaranteed delivery, with or without bounded delay, in order paket delivery, guaranteed minimal bandwidth and security.
+
+The Internet's network service layer provides a **best effort service**, which doesn't really guarantee anything.
+
+### 4.3 The Internet Protocol: IPv4, Addressing, IPv6
+
+Here is an IPv4 datagram format:
+
+![](img/ipv4.png)
+
+- version number - 4 bits for IP protocol
+- header length - determine where the the payload is
+- type of service - IP, FTP, etc
+- datagram length - the entire length, header + data
+    - measured in bytes
+    - 16 bits long so 2^16 bytes
+    - though rarely larger than 1500 bytes since that is ethernet frame
+- identifier
+- flags
+- fragmentation offset (which IPv6 does not allow)
+- time to live (decremented until 0, then dropped)
+- protocol - 6 = TCP, 17 = UDP
+- header checksum, computed by adding 2 byte sequences and doing 1s complement
+    - recomputed at each router since fields change (TTL, options?)
+- source and dest IPs
+- data
+
+Normally, IP datagram has 20 bytes of header + 20 bytes of TCP header + data (assuming no options)
+
+
+Next we'll move on to fragmentation , which is based on the **maximum transmission unit (MTU)**. 1500 bytes is for Ethernet but some wide area access frames can only do 576 bytes. Identification of fragments is the same to denote they are the same packet. Flag denotes which one is last, with its flag being set to 0 and the rest 1. The fragmentation offset then denotes how much over the next fragment should go when put back together.
+
+Moving on to addressing, we know that an IP address is 32 bits long written in dotted decimal. A subnet has x many bits the same on the left. A subnet mask is denoted with a /x, which means x bits are the subnet address. Each interface (host or router) have an IP. This assignment strategy is called **Classless Interdomain Routing (CIDR)** where a.b.c.d/x means x bits re fixed. This is the network **prefix**. We used to have **classful addressing**, the subnets could only be fixed at 8, 16 or 24 bits (class A, B, C), which meant you either have 2^8 - 2 or 2^16 - 2, no in between.
+
+An important IP is the broadcast address, 255.255.255.255. When a host sends a datagram with this address, the message is delivered to all hosts on the subet.
+
+Next we will look at how to obtain a block of addresses. IP address blockas are managed by the Internet Corporation for Assigned Names and Numbers (ICANN). They also manage DNS root servers. Note that to actually go about obtaining these IPs, you would go to your ISP, who would go to ICANN. 
+
+One you have these addresses, they are manually configured by a system administrator. They can also be configurd through the **dynamic host configuration protocol (DHCP)**. Automatically, the host gets either the same IP or a **temporary IP address**. DHCP is sometimes called **plug and play** or **zeroconf** because of its easy setup. It is a client server protocol and in ach subnet, there is usually one DHCP server, or at least a DHCP relay agent.
+
+Here are the 4 steps when you are a new host to a network.
+
+1. DHCP server discovery - via DHCP disover message, sent using UDP to port 67 with broadcast address 255.255.255.255 and source IP od 0.0.0.0. The link layer broadcasts this messae to all nodes on subnet.
+2. DHCP server offer(s) - DHCP server broadcasts back with a transaction ID, proposed IP network mask and IP **address lease time**. Might be multiple offers if there are multiple DHCP servers in subnet
+3. DHCP request - the client chooses from the offers and responds with DHCP request message (echoing config params)
+4. DHCP ACK - server responds by confirming requested params
+
+The DHCP server also lets client renew IP.
+
+### NAT Network Address Translation
+Devices within a network can have the address space 10.0.0.0/24 with 10.0.0.0/8 reserved for a private network. Devices within this network can send packets to each other using that address but not to the outside internet. So addressing is handled using a NAT table where there is a WAN side corresponding to the LAN side. To the public internet, the home internet is 1 IP (single device). Once a packet reaches the router, the NAT table tells us which specific host to send it to. This is possible because the NAT table has port mappings as well. The host can be some port and the NAT will have it map to some other port that is not currently in use (there are 2^16 options).
+
+Since port numbers are not meant for addresing hosts but for processes, this can cause an issue. It is solved by **NAT traversal** tools.
+
+### IPv6 
+The initiative for this was because the 32 bit address space was being used up.
+
+Following is the format of an IPv6 datagram.
+
+![](img/ipv6.png)
+
+- expanded addressing capabilities (32 to 128 bit)
+    - **anycast** address, which allows datagram to be dlivered to any host group
+- a streamlined 40 byte header - fixed length unlike IPv4
+- flow labeling
+- version (=6)
+- traffic class - gives priority to some datagrams (8 bits)
+- flow label - 20 bits to identify 1 flow of datagrams
+- payload length - 16 bits, unsigned int gving number of bytes following 40 byte header
+- next header - protocol to be delivered to
+- hop limit - decremented by 1 each time
+- source/dest adddresses
+- data - payload
+
+There is no fragmentation. If the packet is too big, an ICMP msg is sent back and packet is dropped. No checksum since TCP and UDP do this and it was too expensive to compute each time.
+
+The method of transitioning IPv4 to IPv6 is **tunneling**. if the protocol number in a IPv4 datagram is 41 it means that the IPv4 payload is an IPv6 datagram.
+
+### Chapter 5 The Network Layer's Control Plane
+
+The control plane is responsible for the routing function, which is defined through algorithms. 
+
+Thinking of a network as an undirected graph of routers, an edge may be the physical distance of the link, the link speed or the cost of passing through it. There are 2 types of algorithms to get the **least-cost path**, a **centralized** algo that has the topology of the network. This is a **link-state algorithm**. A **decentralized** routing algorithm is iterative and distributed among routers. Each node only knows its neighbours and its neighbours know its neighbours. This is a **distance vector algorithm**.
+
+Another way to classify is static vs dynamic routing algorithms - based on how quick they respond to changes in topology. A third way to classify is according to **load sensitivity**, which is when costs change dynamically to reflect congestion on a link. Today's algos don't do this.
+
+### Link State Routing Algorithm
+All nodes have node information by broadcasting link-state packets to all other nodes. This algo is known as Dijkstra's.
+
+D(v) = cost of least path
+
+p(v) = previous node along current least cost path
+
+N' = subset of notes, v is in N' if its leas-cost path is known
+
+Following is the pseudocode
+
+```python
+Initialization:
+N’ = {u}
+for all nodes v
+    if v is a neighbor of u
+        then D(v) = c(u, v)
+    else D(v) = ∞
+
+Loop
+find w not in N’ such that D(w) is a minimum
+add w to N’
+update D(v) for each neighbor v of w and not in N’:
+D(v) = min(D(v), D(w)+ c(w, v) )
+/* new cost to v is either old cost to v or known
+least path cost to w plus cost from w to v */
+until N’= N
+```
+
+The table stores, fof every destination, the next link you should take to move closer.
+
+The total number of iterations is n(n+1)/2 = O(n^2)
+
+### Distance Vector Routing Algorithm
+Aynchronous, distributed and iterative algorithm using Bellman-Ford equation
+
+d<sub>x</sub>(y) = min<sub>v</sub>{c(x,v), d<sub>v</sub>(y)}
+
+### Intra-AS Routing in the Internet
+- aka interior gateway protocols (IGP)
+- ospf
+- RIP: routing info protocol
+- IGRP
+
+Routers are orgnized into autonomous systems and each independent system has a routing algo called an intra-autonomous system routing protocol.
+
+OSPF - open shortest path first - it provides security, multiple same-cost paths, unicast and multicast, hierarch within AS
+
+BGP - border gateway protocol - inter-AS
+
+eBGP - subnet reachibility from neighbours
+
+iBGP - propagate reachability to other networks
+
+allowd getting prefixes fom neighbour ASs and determine best routes to them
+
+messages: OPEN, UPDATE, KEEPALIVE, NOTIFICATION
+
+
+### Chapter 6 The Link Layer and LANS
+
+Two main types of link-layer channels to transmit frames over a single link - broadcast and point-to-point.
+
+### 6.1 Intro to the Link Layer
+- **node** - any device that runs a link layer protocol
+    - hosts, routers, switches, access points
+- **links** - communication channels that connect nodes along path
+- **lnk-layer frame** - this is what a node encapsulates a datagram in
+
+#### 6.1.1 Services Provided by Link Layer
+-**framing** - encapsumlating datagrams into a frame, which consists of a data field and some header fields. Specific structure of frame is alaid out by the protocol
+- **link access** - a medium access control (MAC) protocol that  lays down rules for when a frame can be transmitted across a link
+    - for point-to-point links wit single node at each end this is simple, the link is available whenever it is idle
+    - tricky when it comes to broadcast links since there are multiple nodes
+- **reliability** - just like TCP, there are acknowledgements and retransmissions to ensure the frame is transmitted succssfully
+    - this service is not that necessary for low bit-error links like fiber, coax and twisted pair, it's mostly for wireless links since they are prone to error
+- **error detection and correction** - to combat bit errors caused by signal attenuation and electromagentic noise, the link layer does something imilar to a checksum to detect errors
+- **flow control** - related to link access
+- half-duplex vs full duplex
+    - in half, nodes at both ends cannot transmit at the same time
+
+#### 6.1.2 Where is the Link Layer Implemented
+- in every host and router
+- implemented in a **network adaptor**, aka **network interface card**
+    - adaptor has a link-layer controller implemented in the chip that provides all the services we mentioned earlier
+    - much of this functionality is hardware
+    - ethernet card, 802.11 car and ethernet chipset implement link, physical layer
+- on the host side, the computer has a controller that can access the CPU/memory and send it onto a transmission link
+    - sending side: encapsulate datagram into frame, do some error checking
+    - receiving side: look for errors, extract datagram and pass to upper layer
+    - this part is hardware + software
+
+### 6.3 Multiple Access Links and Protocols
+
+We mentioned earlier that there are two types of links, point to point and broadcast.
+
+For point to point there is a single sender at the end of a link and a single reciever at the other end. The protocols for this are the point to point protocol (PPP) and the high-level data link control protocol (HDLC).
+
+For broadcast you ca have multiple sending and receiving nodes on the same channel. When a node transmits a frame, all other nodes get a copy. First we will tackle the **multiple access problem** before discussing protocols.
+
+Broadcast channels are found in LANs, geographcally concentrated networks or like a university campus.
+
+When nodes broadcast at the same time, there can be collisions of the frames, which makes the signal get tangled and hard to distinguish. The multiple access protocol tries to avoid this. A MAC protcol can belong to 1 of 3 categories.
+
+1. **channel partitioning protocol**
+2. **random access protocol**
+3. **taking-turns protocols**
+
+Before discussing each protocol, the following are characteristics of a good one, assuming a broadcast channel of R bits/s
+
+1. when only one node is sending, its throughput should be R bps
+2. when M nodes have data to send, their throughput is R/M bps on average
+3. decentralized - no master node
+4. simple to implement (inexpensive)
+
+#### Channel Partitioning Protocols
+
+Recall time/frequency division mulitplexing (TDM/FDM). These techniques can be applied to partition bandwidth among nodes on a broadcast channel. 
+
+TDM divides time into **time frames** and each time frame into N **time slots**. Each time slot is assigned to one of the N nodes. When a node wants to transmit, it can do so during its time slot. A slot size is usually big enough for 1 packet. This eliminates the chance of collisions and each node gets R/N bps. HOWEVER, it doesn't satisfy our first requirement - when only one node wants to send it should get all the throughput, in fact, it would have to wait its turn in the sequence.
+
+![](img/tdm.png)
+
+FDM divides the channel into different freuqncies, each with a bandwidth of R/N and assigns them to one of the N nodes. This has the same advantages and disadvantages of TDM
+
+![](img/fdm.png)
+
+A third channel partitioning protocol is **code division multiple access (CDMA)**, CDMA assigns a different code to each node. Each node encodes its bits using its unique code. This allows simultaneous transmission.
+
+#### Random Access Protocols
+
+When a node has packets to send, it transmits them at rate R. In the event of a colliion, each node involved retransmits its frame (packet) until it gets through without a collision. Instad of retransmitting right away it wait s a randome delay. Each node involved in the collision chooses a random delay and we just hope for the best.
+
+The most common random access protocols are the ALOHA protocols and the carrier sense multiple access protocols (CSMA).
+
+#### Slotted ALOHA
+- some assumptions are made
+    - all frames consist of L bits
+    - time is divided into slots of L/R seconds (slot = time to transmit 1 frame)
+    - nodes transmit at the beginning of slots
+    - nodes are synchronized so they are aware of where slots begin
+    - if 2 or more frams collide in 1 slot, all nodes detect this collision before the slot ends
+
+When a node has a frame to send, it waits until the beginning of the next slot and transmits the entire frame in 1 slot. If no collision, then we are done. If there is a collision, the node detects it and retransmits the fram in the next frame with probability p between 0 and , which basically says whether to retransmit in the next frame or not (this is our delay).
+
+This apprach allows a single active node to transmit at full capacity, is highly centralized and detects collisions. But, in the presence of multiple nodes, it's not super efficient since the slots that have colliions are wasted and there will be empty slots if the probabilities of both frames say to not send in the next slot. 
+
+The **efficiency** is calculated based on the number of successful frames (not empty or collision). If we assume the probability of a fresh frame transmitting in the next frame is also p, the probability of a node having success is then p(1-p)^(N-1). Probability of any node being successful is Np(1-p)^(N-1). Max efficiency is the limit as N goes to infinity = 1/e = 37%
+
+#### Pure Unslotted ALOHA
+This one does not require the nodes to be synchronized to the beginning of the slot. As soon as a node has a frame to transmit it does so on the broadcast channel. If there is a collision then the frame gets retransmitted with probability p. The probability of no other node transmitting is (1-p)^(N-1) and the probility that no other node begins transmission while node i is transmitting is also (1-p)^(N-1). Thus, the total probability of success is p(1-p)^2(N-1). This gives an efficiency of 1/(2e) = 18%, even lower than slotted.
+
+#### Carrier Sense Multiple Access (CSMA)
+- adds two important rules that ALOHA does not
+    1. listen before speaking, **carrier sensing**, if a node is currently being transmitted, wait for it to finish
+    2. if someone else begins talking at the same time, stop talking - **collision detection**
+
+#### Carrier Sense Multiple Access with Collision Detection
+When a node performs collision detection and senses a collision, it will stop transmitting. This ensures that a damaged fram is not fully transmitted. So the frame will be transmitted when it setect no signal energy and if it starts to detect signal energy from the channel, it wil abort and retransmit after a random amount of time.
+
+We want an interval of time to be short when the number of colliding nodes is small but large when there are more collisons .
+
+The **binary exponential backoff** algorithm used in Ethernet solves this problem. It counts the number of nodes involved in the collision (n) and chooses a K value from {0,1,2...2^n-1} to come up with the interval. The actual amoun of time waited is K*(amount of time for 512 bits). The more collisions that occur the higher your n becomes, with n being capped at 10.
+
+The efficiency is the long-run fraction of time during which framed are transmited without collision. In order to present a closed-form approximation, dprop is the max time for singal to propagate between 2 adaptors. dtrans is the  time to transmit a max-size frame. The efficiency = 1/1 + 5dprop/dtrans
+
+Yields better performance than ALOHA and it is decentalized
+
+#### Taking-Turns Protocols
+In channel partitioning we found that the bandwidth is fairly allocated even when there is only 1 active node. In random access we found that high loads cause a lot of collision overhead. Taking turns takes the good points of both.
+
+It uses polling by having a master node invite slave nodes to transmit. But polling has latency and overhead and a single point of failure.
+
+Token passing has a control token that goes sequentially from node to node but again, has overhead, latency issues and a a single node failing will cause the entire system to fail.
+
+#### DOCSIS The Link Layer Protocol for Cable Internet Access
+The Data-Over-Cable Service Interface Specifications specifies the cable data network architecture and protocols. It uses FDM to divide upstream and downstream segments. 
+
+- downstream broadcast channels - 6 MHz wide and 40Mbps throughput
+- upstream broadcast channels - 6.4 MHz wide and 30Mbps throughput
+
+Upstream has a multiple access problem because many channels send up (all residential) to CMTS cable head end.
+
+TDM for upstream, some slots assigned, some have contentsion. The CMTS grants permission to transmit based on a control message called MAP which is sent downsteam.
+
+### 6.4 Switched Local Area Networks
+
+#### MAC Addresses
+Hosts amd routers don't have link layer addresses, there adaptors do. An adaptor is the interface by which the network communicates. An actual link layer switch is just to transport the datagram so it doesn't have a link layer address. A link layer address can be called a **LAN address**, a **physical address** or more commonly, a **MAC address**. For most LANs it is 6 bytes, yileding 2^(48) possibilities. It's denoted in hex, with each byte being a hex number. They can be changed via software but we will assume they are fixed.
+
+No 2 adaptors have the same MAC address because the IEEE manages the MAC address space. Companies manufacturing adaptors buy chunks of addresses around 2^24 for a fee. The first 24 bits are fixed and the rest can be uniquely assigned.
+
+The MAC address doesn't change no matter where the device goes. An adaptor checks the destination MAC address of framed being received and if it is not its own MAC address, it will discard the frame. UNLESS the MAC address is a special broadcast address (FF-FF-FF-FF-FF-FF).
+
+#### Address Resolution Protocol (ARP)
+This protocol translates between IP addresses and MAC addresses. It allows sending hosts to resolve the detination host's MAC address. This works like DNS but it can onlu resolve IP addresses for hosts and routers on the same subnet. The mappings of an ARP table are stored in a router/host. Each mapping has a TTL value indicating when the mapping will be deleted from the table. A typical expiry is 20 minutes from placement.
+
+First, an ARP packet is contructed with several fields - including the src/dest IP and MAC addresses. The ARP message is sent as a broadcat but the response is sent as a standard frame. ARP is between network and link layer, not fitting into either.
+
+When the destination is not in the same subnet, the sender sends the packet addressed to the MAC address of its first hop router using an ARP, which then uses a forwarding table to forward it to the correct IP. Once it's in the right subnet, the ARP is once again used to bring the packet from the router on subnet to the destination.
+
+#### Ethernet 
+- the dominant wired LAN technology
+- single chip, multiple speeds
+- simple
+- cheap
+- keeps up with speed (10 Mbps - 10Gbps)
+- physical topology
+    - bus - same collision domain
+    - star - newer, switch in centre, hosts connected around, no collisions
+
+##### Ethernet Frame Structure
+- preamble - 8 bytes total
+    - 7 bytes with 101010 pattern followed by 1 byte with pattern 10101011
+    - for synchronizing receiver and sender clock rates
+- destination address
+    - 6 bytes
+- source address
+    - 6 bytes
+- type - indicates higher layer protocol such as IP (2bytes)
+- data (payload) - 46 to 1500 bytes, beyond that it needs fragmenting
+- CRC - cyclic redundancy check (4 bytes)
+
+Ethernet, generally, is known to be unreliable since the NIC doesn't send acks or nacks so dropped data is essentially lost. It is connectionless since no handshaking is required between 2 entities. It uses an unslottedr CSMA/CD with binary backoff.
+
+The naming standard for ethernet is the sped, followed by BASE for baseband ethernet, and then the physical medium: 10BASE-T is 10 Mbps baseband over twisted-pair copper wires. Fiber is FX, SX or BX.
+
+#### Link-Layer Switches
+- focus on sending frames
+- rate of forwarding can sometimes exceed link rate so we have buffers
+
+#### VLANs
 
 ### Chapter 8 Security in Computer Networks
 
