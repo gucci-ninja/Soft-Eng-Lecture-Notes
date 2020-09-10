@@ -1,3 +1,5 @@
+# Formal Methods of Software Design
+
 Date | Segments | Subsections | Exercises | Test
 -----|----------|-------------|-----------|-----
 Tuesday September 15 | **Segments 0 and 1** | Subsection 1.0.1 | 0, 2, 14, and 17 | No
@@ -23,3 +25,55 @@ Friday November 27 | **Segment 28** | Section 8.0 | 435 | No
 Tuesday December 1 | **Segment 29** | end of Chapter 8 | 444 | No
 Friday December 4 | <s>Segments 30, 31, and 32</s> **Segment 33** | You should review the course | 256; course evaluation questionnaire | No
 December 10-23 | | | | Final Exam
+
+## Segment 0
+programs are:
+- commands to a computer
+    - execution
+- mathematical expressions
+    - theory of programming
+
+why theory?
+- proof, calculation, precision, understanding
+- theory = formalism + rules of proof, calculation, manipulation
+
+formal != careful, detailed
+formal = formulas (mathematical expressions)
+
+informal != sloppy, sketchy
+informal = using natural language (English)
+
+Project:
+- always starts informal (with discussion)
+- always ends formal (with program)
+
+testing:
+how do you know if program if working
+what about the inputs you didn't test
+
+proof tells whether program is correct for all inputs
+
+program development, with proof at each step
+program modification, with proof
+
+### Other Theories
+Hoare triples
+- first
+Model checking
+- used the most in industry
+- exhaustive automated testing
+- up to 10^60 states ~~ 2^200 states = 200 bits ~~ 6 variables
+    - not very special
+- abstraction, proof if state space is too large
+
+### Our Theory
+- simplier
+    - just binary (boolean) expressions
+- more general
+    - includes terminating and nonterminating computation
+    - includes sequential and parallel computation
+    - inclues stand-alone and interactive computation
+    - inclues time and space bounds and real time
+    - includes probabilistic computations
+- prerequisite
+    - language with assignment and if statement
