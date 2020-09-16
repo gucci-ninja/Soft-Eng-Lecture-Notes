@@ -211,3 +211,123 @@ www.distancetomars.com
 - Aestroid belt
   - between Mars and Jupiter
 - Drawf Planets can be found in the belts
+
+## Lecture 4
+
+### Dwarf Planets
+
+- Beyond Neptune, in the Kuiper belt, there are a Kuiper Belt Objects
+  - 2005 new KBO bigger than Pluto
+    - Pluto no longer a planet
+  - This object with several other objects as big as Pluto are called dwarf planets
+- To find KBO, we take photos over a time frame and the distance travelled over the timeframe will show what it is
+  - fast: asteroid
+  - medium: KBO
+  - slow: star
+  - unmoving: galaxy?
+- Definition:
+  - is in orbit around the Sun
+  - is close to round in shape
+    - big enough objects in space will be round due to gravity
+  - intersect with other dwarf planet/planet orbits.
+    - has not "cleared the neighborhood"
+  - is not a satellite
+- small solar object: non-round objects orbitting the sun
+
+### Sun
+
+- center of our solar system
+- giant gas ball
+  - relative to planets
+  - 99.8% of the mass in our solar system
+- prominence are common
+- transit
+  - shadow of planets across star's surface
+- middle aged
+  - gets bigger and brighter as it ages
+
+| Gas Giant          | Terrestrial Planet    |
+| ------------------ | --------------------- |
+| no solid surface   | solid (rocky) surface |
+| solid/liquid cores | may have atmosphere   |
+
+### Belts
+
+- Between Mars and Jupiter is Asteroid Belt
+- Beyond Neptune is the Kuiper Belt
+  - Largest Objects in Kuiper Belt are called Dwarf Planets
+
+### Interstellar space
+
+- a million times larger than interplanetary space
+- a million times smaller than intergalactic space
+
+## Lecture 5
+
+### interstellar space
+
+- space between stars
+
+  - usually thin gaseous material
+  - giant interstellar gas clouds collapse due to gravity and becomes a star
+
+- best way measure distance of nearby star: parallax star
+
+  - in 6 month difference, see how much a star moves relative to background stars
+  - closer the star, the bigger the movement of the star.
+  - done since the 1800
+  - easier for bigger orbits
+
+- parsec or lightyear is used to measure far objects
+
+  - parsec is around 3.3 lightyears
+  - 1.3 parsec is around 4 lightyears (closest star)
+
+- milky way has two satallite galaxies
+- gaia space mission measures 1.7 billion stars
+
+### intergalactic space
+
+- million times larger than interstellar distances
+- use Megaparsecs (million parsec) => millions of lightyears
+
+- spiral galaxy
+
+  - typical spiral galaxy has around 100 billion stars
+    - has arms coming from the center
+    - many new stars form along the arms
+  - shaped like a frisbee, rotating
+  - can be tens of thousands of lightyears across
+  - density of stars decrease as we go closer to the edge
+  - face on vs edge on are different angles to view galaxies
+  - center has a bulge, flat at the edge
+
+- eliptical galaxy
+
+  - a lot less structure
+    - bright center and fade towards the edge
+  - not a disc like spiral galaxy
+  - swarm of bees
+  - very little gas
+
+- galaxy zoo
+  - crowdsource galaxy names
+
+### galaxy collections
+
+- galaxy groups: at least 3 galaxies affected by one another
+- compact galaxy group
+
+  - distances between galaxies are within each other's edge
+
+- galaxy clusters: thousands of member galaxies
+  - largest galaxies in the universe usually center of galaxy clusters
+    - 1 trillion stars
+  - clusters have different context when used to describe galaxy clusters vs star clusters
+
+### Lookback Time
+
+- light requires time to travel
+- if light from far away travels to us, it takes longer than if the source was close by
+- we are therefore always looking at the object in the past.
+- used in galaxy evolution field.
