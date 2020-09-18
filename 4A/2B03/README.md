@@ -20,11 +20,14 @@ concept base
 - black hole
 - ...
 
-**Introductions due on September 24**
+~~Introductions due on September 24~~
 
 ---
 
-_2 mathematical equations will be mentioned in the course_
+### _2 mathematical equations will be mentioned in the course_
+
+- V = H \* d
+- E=mc<sup>2</sup>
 
 ---
 
@@ -159,11 +162,11 @@ Quiz is embedded in videos.(5%)
 
 ### Quiz 1
 
-**Why does Moon have more craters on its surface than the Earth**
+#### **Why does Moon have more craters on its surface than the Earth**
 
 - No geologic activity or weathering on the Moon
 
-**The distance between the Sun and Earth is smaller than the distance between the MilkyWay and Andromada by approximately how much?**
+#### **The distance between the Sun and Earth is smaller than the distance between the MilkyWay and Andromada by approximately how much?**
 
 - 1 million (AU)
 
@@ -331,3 +334,52 @@ www.distancetomars.com
 - if light from far away travels to us, it takes longer than if the source was close by
 - we are therefore always looking at the object in the past.
 - used in galaxy evolution field.
+
+## Lecture 6
+
+### simulation
+
+- how galaxys interact with nearby galaxies
+  - giant gravity throws stars
+  - colours change over time
+    - blue: newer stars formations
+    - red: merged galaxies
+  - spiral galaxies merge to become eliptical galaxy
+
+### cosmology
+
+- study of origin and evolution of universe
+- discovered in 1930 galaxies are getting farther away
+
+  - implies universe is expanding (exponentially)
+
+- distance to galaxies
+
+  - can't use parallax
+  - we compare with conventional knowledge (standard candle effect)
+    - some objects has the same brightness always (supernova)
+    - we take the amount of light coming from these objects to see how far they are
+    - not precise and too slow
+  - velocity of galaxy (Doppler shift)
+    - light waves will stretch and squish as galaxies move
+    - galaxies moving away shifts towards infrared (**redshift**)
+    - galaxies moving towards shifts towards ultraviolet (**blueshift**)
+    - to find if the lights are shifting
+      - we find the spectrum lines of the elements making up the object giving off the light
+      - if the spectrum lines are slightly more red or blue, it has shifted
+    - every galaxy has a unique spectrum line
+    - can measure distance and speed very percisely
+      - larger distance, the faster it is moving away
+      - almost all galaxies are redshifted
+    - discovered by Edwin Hubble
+      - Hubble's Law
+      - Hubble-Lemaitre Law
+        - Speed is porportional to distance
+        - V = (Hubble's constant) \* distance
+        - **V = H \* d**
+
+- Expanding Universe
+  - rather than galaxies moving
+  - space is expanding between galaxies
+  - raisin bread analogy
+    - distance between raisins gets larger when bread rises
