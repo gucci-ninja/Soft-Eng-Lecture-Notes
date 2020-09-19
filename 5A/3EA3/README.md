@@ -30,39 +30,39 @@
 
 ## Symbols
 
-| Symbol | Definition                  |
-| ------ | --------------------------- |
-| ⊥      | Antitheorem (False, Bottom) |
-| ⊤      | Theorem (True, Top)         |
-| ¬      | Negation (not)              |
-| ∧      | Conjuction (and)            |
-| ∨      | Disjuction (or)             |
-| ⇒      | implies                     |
-| ⇐      | implied by                  |
-| ⧧      | unequal                     |
-| ×      | multiply                    |
-| ‘      | intersection(bunch)         |
-| ¢      | size, cardinality(bunch)    |
-| \$     | size, cardinality(set)      |
-| ϟ      | power(set)                  |
-| ∪      |                             |
-| ∩      |                             |
-| ⊇      |                             |
-| ⊆      |                             |
-| ↔      |                             |
-| ⊲      |                             |
-| ⊳      |                             |
-| 〈     |                             |
-| 〉     |                             |
-| →      |                             |
-| ☐      |                             |
-| ∀      |                             |
-| ∃      |                             |
-| Σ      |                             |
-| ∏      |                             |
-| σ      |                             |
-| ʹ      |                             |
-| ⦂      |                             |
+| Symbol | Definition                    | <!--shortcut (dev only)--> |
+| ------ | ----------------------------- | -------------------------- |
+| ⊥      | Antitheorem (False, Bottom)   | <!-- /T -->                |
+| ⊤      | Theorem (True, Top)           | <!-- /F -->                |
+| ¬      | Negation (not)                | <!-- /not  -->             |
+| ∧      | Conjuction (and)              | <!-- /and  -->             |
+| ∨      | Disjuction (or)               | <!-- /or  -->              |
+| ⇒      | implies                       | <!-- /implies  -->         |
+| ⇐      | implied by                    | <!-- /implied  -->         |
+| ⧧      | unequal                       | <!-- /unqual  -->          |
+| ×      | multiply                      | <!-- /times  -->           |
+| ‘      | intersection(bunch)           | <!-- /inter  -->           |
+| ¢      | size, cardinality(bunch)      | <!-- /cent  -->            |
+| \$     | size, cardinality(set)        | <!--$-->                    |
+| ϟ      | power(set)                    | <!-- /sPower  -->          |
+| ∪      | union                         | <!-- /  -->                |
+| ∩      | intersect                     | <!-- /  -->                |
+| ⊇      |                               | <!-- /  -->                |
+| ⊆      |                               | <!-- /  -->                |
+| ↔      | string length                 | <!-- /sLen  -->            |
+| ⊲      | string modifier (old string)  | <!-- /sModL  -->           |
+| ⊳      | string modifier (new element) | <!-- /sModR  -->           |
+| 〈     |                               | <!-- / -->                 |
+| 〉     |                               | <!-- / -->                 |
+| →      | listMod (mapping)             | <!-- /lMod  -->            |
+| ☐      |                               | <!-- /  -->                |
+| ∀      |                               | <!-- /  -->                |
+| ∃      |                               | <!-- /  -->                |
+| Σ      |                               | <!-- /  -->                |
+| ∏      |                               | <!-- /  -->                |
+| σ      |                               | <!-- /  -->                |
+| ʹ      |                               | <!-- /  -->                |
+| ⦂      |                               | <!-- /  -->                |
 
 ---
 
@@ -303,7 +303,7 @@ Hoare triples
 
 | Monotonicity                                               | Antimonotonicity                                           |
 | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| x &le; y ⇒ f(x) &le; f(y)                                  | x &le; y ⇒ f(x) &ge; f(y)                                    |
+| x &le; y ⇒ f(x) &le; f(y)                                  | x &le; y ⇒ f(x) &ge; f(y)                                  |
 | x ⇒ y <span style="font-size:larger;">⇒</span> f(x) ⇒ f(y) | x ⇒ y <span style="font-size:larger;">⇒</span> f(x) ⇐ f(y) |
 
 - for binary equations, instead of x &le; y, we use **x ⇒ y**
@@ -357,7 +357,7 @@ Hoare triples
 | string | ⊥        | ⊤       |
 | list   | ⊤        | ⊤       |
 
-#### Bunches
+### Bunches
 
 - can be used represent collections
   - simplest
@@ -402,15 +402,147 @@ Hoare triples
   - null + 10 = null
   - ¢ of sum of two bunch is at most the × of ¢ of both bunch
 
-#### Set Theory
+### Set Theory
 
 - operators
-- **{A}** set formation operator
-  - performed on a bunch
-  - {_null_} empty set (informal)
-- **~S** contents of S
-  - undos a set into a bunch
-  - ~{1,2,3} = 1,2,3
-- **\$** size cardinality
-- **ϟ** returns a bunch containing power set
-  - ϟ{1,2} = {null}, {1}, {2}, {1,2}
+  - **{A}** set formation operator
+    - performed on a bunch
+    - {_null_} empty set (informal)
+  - **~S** contents of S
+    - undos a set into a bunch
+    - ~{1,2,3} = 1,2,3
+  - **\$** size cardinality
+  - **ϟ** returns a bunch containing power set
+    - ϟ{1,2} = {null}, {1}, {2}, {1,2}
+
+## Segment 4
+
+### String Theory
+
+- indexed sequences
+- any object is a one item string
+- operator
+  - _nil_ is empty string
+  - **;** join
+  - **↔** string length
+    - can be placed on string measure ruler
+    - indexes go between letters
+  - **(S)<sub>i</sub>** is the ith index of string S
+    - 0 indexed
+    - at index **n**
+      - the number of items processed is n
+      - next item is item n
+    - if i is a string, we get a string of results
+      - (0;1;2;3;4;5)<sub>3;5</sub> = 3;5
+  - **\*** is a repetition operator
+    - 3\*(4;2) = 4;2;4;2;4;2
+    - if left is empty, means any number of repititions
+      - \*2 = _nil_, 2, 2;2, ...
+  - **⊲ i ⊳** modification operator
+    - change left element at i to right string
+- special ordering of strings
+  - lexicographical order
+  - 3;6;4;1 < 3;7;12
+  - 3;6;4 < 3;6;4;1
+  - x;..y means **x to y** for x &le; y
+  - ↔(x;..y) = y-x
+  - (x;..y) ; (y;..z) = x;..z
+- string joins distributes over bunch unions
+  - string of bunches = bunch of strings
+
+#### Text
+
+- text is displayed within **""**
+  - """Hello"", said Sushi"
+  - double quotes require repeated "" within the text
+  - can also join all the characters with separate text
+- can perform string operators
+  - takng an index of string with a string becomes a subtext
+    - "01234"<sub>2;..4</sub> = "23"
+
+#### Zero
+
+- invented after
+  - natural numbers
+  - negative numbers
+  - rational numbers
+  - irrational numbers
+- widely used arouind 1000 years ago
+- still not used very well
+  - "there are **a number** of things to discuss"
+    - meaning non-zero
+  - taxes and other documentations sometimes requires writing _nil_ instead of 0
+  - keyboards and telephones have zero after 9
+  - Time differences sometimes have **N/A** or **0** instead of 0
+    - or they have to explain zero
+- Measuring must start at 0. Counting is measuring
+  - octave is an interval of 8, 2 octaves is an interval of 15
+    - it starts counting at 1 so its always off by 1
+  - AD started counting at year 1, so the difference between year after AD and before BC is off by 1
+  - Fortran 1955 loop requires at least once
+  - Pascal arrays must have at least 1 element
+    - brought back data structure algebra
+- first: preceding all others in time, order, importance
+  - associated with 1 (1st)
+- last: following all others in time, order, importance
+- second: following first
+- avoid third onwards as they are really associated with the number before
+
+### Lists
+
+- string in a package
+  - not unlike set is a bunch in a package
+- operators
+  - **[A]** list formation operator
+    - also distributes over union of bunches
+      - list of bunches = bunch of lists
+  - **~[A]** contents of a list
+  - **#[A]** length of a list
+  - **[A] i** index of a list
+    - **[A] [i]** composition of a list
+      - returns a new list with elements corresponding to list [i]
+  - **[A] ;; [B]** join
+  - elements of A followed by elements of B in a string
+  - folows lexicographic order **<, >**
+  - **i → e | [A]** modification
+    - change ith element of A with e
+    - 2 → 4 | [10;..15] = [10;11;4;13;14]
+    - can have multiple modifications at once
+      - done right to left
+      - when modifying while referencing self, it is referencing pre-changes
+      - Example
+        - L = [10;..15]
+        - 2 → L3 | 3 → L2 | L &nbsp;&nbsp;&nbsp;&nbsp; // technically referencing L, not itself
+        - = 2 → 13 | 3 → 12 | [10;11;12;13;14] &nbsp;&nbsp;&nbsp;&nbsp; // replace references with literal
+        - = 2 → 13 | [10;11;12;12;14]
+        - = [10;11;13;12;14]
+- when indexing a list or string the returning object is equal to the object of the index
+
+| Index                    | Result                                                                        |
+| ------------------------ | ----------------------------------------------------------------------------- |
+| S<sub>n,m</sub>          | S<sub>n</sub>,S<sub>m</sub>                                                   |
+| S<sub>{n,m}</sub>        | {S<sub>n</sub>,S<sub>m</sub>}                                                 |
+| S<sub>n;m</sub>          | S<sub>n</sub>;S<sub>m</sub>                                                   |
+| S<sub>[n;m]</sub>        | [S<sub>n</sub>;S<sub>m</sub>]                                                 |
+| Ln,m                     | Ln,Lm                                                                         |
+| L{n,m}                   | {Ln,Lm}                                                                       |
+| L(n;m)                   | Ln;Lm                                                                         |
+| L[n;m]                   | [Ln;Lm]                                                                       |
+| ---                      | ---                                                                           |
+| S<sub>0,{1,[2;1];0</sub> | S<sub>0</sub>, {S<sub>1</sub>, [S<sub>2</sub>; S<sub>1</sub>]; S<sub>0</sub>} |
+| L(0,{1,[2;1];0)          | L0,{L1,[L2;L1];L0}                                                            |
+
+#### Multidimensional structures
+
+- Array is a multidimensional list
+  - we want to index using list operators
+  - A i j...
+    - i will give content at index i (usually a list)
+    - j will give content of i at index j
+    - etc.
+  - if A was 2 dimensions
+    - i will give a list
+    - j would give an element
+  - if we use bunch notation
+    - A (i,j) = A i, A j = 2 lists
+    - A [i,j] = [A i, A j] = a new array
