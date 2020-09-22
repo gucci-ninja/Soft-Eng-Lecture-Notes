@@ -32,37 +32,37 @@
 
 | Symbol | Definition                    | <!--shortcut (dev only)--> |
 | ------ | ----------------------------- | -------------------------- |
-| ⊥      | Antitheorem (False, Bottom)   | <!-- /T -->                |
-| ⊤      | Theorem (True, Top)           | <!-- /F -->                |
-| ¬      | Negation (not)                | <!-- /not  -->             |
-| ∧      | Conjuction (and)              | <!-- /and  -->             |
-| ∨      | Disjuction (or)               | <!-- /or  -->              |
-| ⇒      | implies                       | <!-- /implies  -->         |
-| ⇐      | implied by                    | <!-- /implied  -->         |
-| ⧧      | unequal                       | <!-- /unqual  -->          |
-| ×      | multiply                      | <!-- /times  -->           |
-| ‘      | intersection(bunch)           | <!-- /inter  -->           |
-| ¢      | size, cardinality(bunch)      | <!-- /cent  -->            |
-| \$     | size, cardinality(set)        | <!--$-->                    |
-| ϟ      | power(set)                    | <!-- /sPower  -->          |
-| ∪      | union                         | <!-- /  -->                |
-| ∩      | intersect                     | <!-- /  -->                |
-| ⊇      |                               | <!-- /  -->                |
-| ⊆      |                               | <!-- /  -->                |
-| ↔      | string length                 | <!-- /sLen  -->            |
-| ⊲      | string modifier (old string)  | <!-- /sModL  -->           |
-| ⊳      | string modifier (new element) | <!-- /sModR  -->           |
-| 〈     |                               | <!-- / -->                 |
-| 〉     |                               | <!-- / -->                 |
-| →      | listMod (mapping)             | <!-- /lMod  -->            |
-| ☐      |                               | <!-- /  -->                |
-| ∀      |                               | <!-- /  -->                |
-| ∃      |                               | <!-- /  -->                |
-| Σ      |                               | <!-- /  -->                |
-| ∏      |                               | <!-- /  -->                |
-| σ      |                               | <!-- /  -->                |
-| ʹ      |                               | <!-- /  -->                |
-| ⦂      |                               | <!-- /  -->                |
+| ⊥      | Antitheorem (False, Bottom)   | <!-- T -->                 |
+| ⊤      | Theorem (True, Top)           | <!-- F -->                 |
+| ¬      | Negation (not)                | <!-- not  -->              |
+| ∧      | Conjuction (and)              | <!-- and  -->              |
+| ∨      | Disjuction (or)               | <!-- or  -->               |
+| ⇒      | implies                       | <!-- implies  -->          |
+| ⇐      | implied by                    | <!-- implied  -->          |
+| ⧧      | unequal                       | <!-- unqual  -->           |
+| ×      | multiply                      | <!-- times  -->            |
+| ‘      | intersection(bunch)           | <!-- inter  -->            |
+| ¢      | size, cardinality(bunch)      | <!-- cent  -->             |
+| \$     | size, cardinality(set)        | <!--$-->                   |
+| ϟ      | power(set)                    | <!-- sPower  -->           |
+| ∪      | union                         | <!--   -->                 |
+| ∩      | intersect                     | <!--   -->                 |
+| ⊇      |                               | <!--   -->                 |
+| ⊆      |                               | <!--   -->                 |
+| ↔      | string length                 | <!-- sLen  -->             |
+| ⊲      | string modifier (old string)  | <!-- sModL  -->            |
+| ⊳      | string modifier (new element) | <!-- sModR  -->            |
+| 〈     |                               | <!-- -->                   |
+| 〉     |                               | <!-- -->                   |
+| →      | listMod (mapping)             | <!-- lMod  -->             |
+| ☐      |                               | <!--   -->                 |
+| ∀      |                               | <!--   -->                 |
+| ∃      |                               | <!--   -->                 |
+| Σ      |                               | <!--   -->                 |
+| ∏      |                               | <!--   -->                 |
+| σ      |                               | <!--   -->                 |
+| ʹ      |                               | <!--   -->                 |
+| ⦂      |                               | <!--   -->                 |
 
 ---
 
@@ -546,3 +546,53 @@ Hoare triples
   - if we use bunch notation
     - A (i,j) = A i, A j = 2 lists
     - A [i,j] = [A i, A j] = a new array
+
+## Segment 5
+
+### Functions
+
+- **〈_v:D → b_〉**
+  - "map *v* in *D* to *b*"
+  - _v_ variable name
+  - _D_ domain,type (a bunch)
+  - _b_ body (may use *v*)
+    - what is returned
+  - _v:D_ is a local axiom within _b_
+- operators
+  - **〈〉** function scopes
+    - renaming just requires equal to same function with different variable name
+  - **☐** returns _D_ of function
+  - **_f x_** function _f_ applied to _x_
+    - f of x
+    - can be (f) x or f (x) but in isolation, wouldn't matter
+    - substitute _v_ in _f_ to _x_
+  - **f|g** selective union of functions _f_ and _g_
+    - ☐(f|g) = ☐ f, ☐ g
+    - (f|g) x = if x: ☐ f then f x else g x fi
+- 2 variable functions
+  - f = 〈*x:D →* 〈*y:D → x &le; y*〉〉
+  - f 3 = 〈*y:D → 3 &le; y*〉
+  - f 3 5 = 3 &le; 5
+  - f (3,5) = f 3, f 5
+    - since function distributes over bunch
+- predicate
+  - function returns binary (⊤,⊥)
+- relation
+  - function returns predicate
+- abbreviated function notations
+  - 〈*x:D →* 〈*y:D → x &le; y*〉〉= 〈*x,y:D → x &le; y*〉
+    - multiple variables
+  - 〈*n:nat → n+1*〉 = 〈*n: → n+1*〉
+    - only use when domain is known or doesn't matter
+  - 〈*n: 2 → 3*〉 = *2 → 3*
+    - constant function
+    - scope brackets used with variables
+
+#### Scope and Substitution
+
+- local
+  - bound, hidden, private
+  - introduced in expression (formal)
+- non-local
+  - global, free, visible, public
+  - introduced outside expression (formal or informal)
