@@ -344,3 +344,52 @@ Ideally, members of experimental and control groups are very similar, so that th
 - Can backfire if the CS is not paired with US
 - Drug can often create Compensatory Response
   - withdrawl symptoms when presented similar situation to drug delivery (syringe) but no US (drug)
+
+## Lecture 2
+
+### Learning
+
+- Pavlov
+- reflexive responses associate with cues
+  - predict events that will occur
+- Watson
+- Skinner
+  - Prediction and control of behaviour
+  - instrumental conditioning
+
+### Non-associative learning: info about one external stimulus
+
+- habituation:
+  - decrease in behavioural responding to repeated stimulus
+  - important as body is cautious about new environment
+    - just wearing clothes can feel the touch of clothes
+- Sensitization
+  - increase in behavioral responding to repeated stimulus
+  - Watching horror movies, and someone pokes
+
+### Non-associative learning: how two or more pieces of info are relatev
+
+- Classical conditioningL learning that two stimuli go together
+- Operant conditioning: learn that a behavior leads to a particular outcome
+- long term ...
+
+### Drug addiction
+
+- 20% addiction rate in war vets
+  - general population had 0.3%
+- detox stations were used to curb
+  - generally would relapse 20%
+  - soldiers relapse rate is 5%
+- what causes enigmatic opiate overdose?
+  - body becomes tolerant of drugs over multiple use
+  - but some days the body gets weaker, so the dose they regularly can take can overdose them.
+- drug aren't administered in isolation
+  - tradition
+  - rolling a joint, etc.
+  - leads to addiction 
+
+### Homeostasis
+
+- UCS -> CNS -> UCR
+  - unconditional
+- CS -> CR
