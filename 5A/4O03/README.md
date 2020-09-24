@@ -6,13 +6,13 @@ input is linearly scaled with output
 F(x) = y
 F(2x) = 2y
 
-http://www.cas.mcmaster.ca/~deza/secs34O03_20.html
+<http://www.cas.mcmaster.ca/~deza/secs34O03_20.html>
 
 Carlos Suarez - teaches all tutorial
 
 ## Lecture 1
 
-### Example
+Example
 
 A = { a1,a2,a3,... an }  
 ai : integer, ai > 0 for all i  
@@ -65,7 +65,7 @@ Sum(xi \* ai) >= 0.5 \* Sum(ai)
 
 to linearize functions, we can set up a set of linear functions.
 
-#### Example
+Example
 
 - x^2 + y^2 = 1
 
@@ -79,6 +79,7 @@ we can approximate this circle with:
 Thus linearizing the circle
 
 ## Lecture 3
+
 <!-- Will write later -->
 
 ## Tutorial 1
