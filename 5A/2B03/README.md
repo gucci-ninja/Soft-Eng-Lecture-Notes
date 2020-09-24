@@ -383,3 +383,74 @@ www.distancetomars.com
   - space is expanding between galaxies
   - raisin bread analogy
     - distance between raisins gets larger when bread rises
+
+## Lecture 7
+
+- **Hubble-Lemaitre Law**
+  - relation between motion of a galaxy and its distance from us:
+    - Speed: measured from amount of Doppler shift
+      - towards infrared: moving farther
+      - towards ultraviolet: moving closer
+    - Distance: measured with standard candle technique
+      - fainter = further
+  - further away, the faster the speed
+  - V = H \* d
+- galaxies are not moving, rather the universe is expanding, and the space between galaxies are expanding
+
+### Hubble's Law
+
+- overall appearance of the universe should be changing with time
+  - long ago, they are closer together
+  - we can see this by looking farther
+    - the father the object, the longer it takes the light to reach us
+- universe may have a beginning
+  - v = H \* d
+    - speed = constant \* distance
+  - d = v \* 1/H
+    - distance = speed \* time
+    - 1/H is a time
+      - is time since expansion began
+      - around **13 billion years** (13.8)
+      - assumes rate of expansion is constant
+  - to check
+    - is the expansion the same in all directions
+      - yes
+    - measure galaxies in many different directions and find that 1/H is around the same
+- what is the universe spanding into
+- if universe is finite, what is beyond the universe
+- will we reach a time where space was just dark and empty
+
+## Lecture 8
+
+- 2 ways to collect data:
+  1. Imaging=Pictures
+  2. Spectroscopy=Spectrum
+
+### Imaging
+
+- take pictures in Red, Green, Blue and combine them
+  - pictures are taken greyscale with rgb filter
+    - shows how much red, green, blue exist
+  - cam take photos beyond visible spectrum
+  - computer adds colour and combines the 3 pictures
+- pretty
+
+### Spectroscopy
+
+- measure how much light at every wavelength
+- specific wavelengths have extra light
+  - plot in a graph
+- can find out what objects in universe are made of
+
+### Atmospheric Opacity
+
+- astronomers can't view everything from the surface on the earth
+- many times, we need to send telescopes into space
+- Ultraviolet and shorter is blocked
+- visible light is visible with little distortion
+- visible spectrum is absorbed
+- radiowave is observable
+- longer wavelength is blocked
+- Sound is not a electromagnetic radiation
+  - it is a pressure wave
+  - cannot travel through space
