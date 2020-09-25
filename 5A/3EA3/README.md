@@ -52,10 +52,10 @@
 | ↔      | string length                 | <!-- sLen  -->             |
 | ⊲      | string modifier (old string)  | <!-- sModL  -->            |
 | ⊳      | string modifier (new element) | <!-- sModR  -->            |
-| 〈     |                               | <!-- -->                   |
-| 〉     |                               | <!-- -->                   |
-| →      | listMod (mapping)             | <!-- lMod  -->             |
-| ☐      |                               | <!--   -->                 |
+| 〈     | function scope (start)        | <!-- fs-->                 |
+| 〉     | function scope (end)          | <!-- fe-->                 |
+| →      | list modifier/mapping         | <!-- map  -->              |
+| ☐      | function domain               | <!-- fDom  -->             |
 | ∀      | for all (quantifier)          | <!-- forall  -->           |
 | ∃      | there exists (quantifier)     | <!--  exists -->           |
 | Σ      | sum (quantifier)              | <!--  sum -->              |
@@ -358,7 +358,7 @@ Hoare triples
 | string | ⊥        | ⊤       |
 | list   | ⊤        | ⊤       |
 
-### Bunches
+### Bunch Theory
 
 - can be used represent collections
   - simplest
@@ -489,7 +489,7 @@ Hoare triples
 - second: following first
 - avoid third onwards as they are really associated with the number before
 
-### Lists
+### List Theory
 
 - string in a package
   - not unlike set is a bunch in a package
@@ -562,8 +562,8 @@ Hoare triples
 - operators
   - **〈〉** function scopes
     - renaming just requires equal to same function with different variable name
-  - **☐** returns _D_ of function
-  - **_f x_** function _f_ applied to _x_
+  - **☐** returns domain of function
+  - **_f x_** applying function _f_ to _x_
     - f of x
     - can be (f) x or f (x) but in isolation, wouldn't matter
     - substitute _v_ in _f_ to _x_
@@ -631,9 +631,7 @@ Hoare triples
 - → replaced by •
   - ∀*r:rat • r>0 ∨ r=0 ∨ r<0*
   - Σ*n:nat+1 • 1/2<sup>n</sup>*
-
----
-
+    <br/><br/>
 - group variables with the same domain together into a bunch
   - ∀*x,y:rat • x=y+1 ⇒ x>y* **=** ∀*x:rat •* ∀*y:rat • x=y+1 ⇒ x>y*
   - Σ*n,m:0,..10 • n×m* **=** Σ*x:rat •* Σ*m:0,..10 • n×m*
@@ -671,3 +669,143 @@ Hoare triples
 - "_x_ is an even natural"
   - there exists n in natural domain where _2×n_ = x
   - can only be true if x is an even natural, so that is what it is trying to define.
+
+## Segment 7
+
+### Function Fine Points
+
+- functions can be defined as
+  - **partial**: doesn't have to return result (for domain elements)
+  - **total**: always at least one result (for domain elements)
+    <br/><br/>
+  - **deterministic**: always at most one result
+  - **nondeterministic**: sometimes more than one result
+- Example
+  - 〈_n:nat → n,n+1_〉
+    - total and nondeterministic
+    - 〈_n:nat → n,n+1_〉3 = 3,4
+
+#### distribution
+
+- applying a bunch of functions to an element equals a bunch of results
+  - (_f, g_) x = _f x, g x_
+- applying a function to a bunch of elemtents equals a bunch of results
+  - _f_ (_x, y_) = _f x, f y_
+- cannot substitute parameter in function with non-elementary bunch
+  - double = 〈_n:nat → n+n_〉
+  - double 2 = 4
+  - double (2,3) = double 2, double 3 = 4,6
+  - double (2,3) ⧧ (2,3) + (2,3) = 4,5,6
+
+#### inclusion
+
+- _f:g_ = ☐*g:* ☐*f* ∧ ∀*x:* ☐*g • f x:g x*
+  - function f is included in g if
+    - domain of g is a subset of domain of f
+    - with variable x in g domain, f x is a subset of g x
+- example
+  - _A → B_ = 〈_a:A → B_〉
+    - constant function
+    - _A → B_ is a function whose domain is A and whose result is
+  - _f:A → B_ **=** _A:_ ☐*f ∧ ∀a: A • f a:B*
+    - _A → B_ is all functions whose domain is at least A and whose results is at most B
+  - therefore _A → B_ is antimonotonic in A and monotonic in B
+    - as A gets bigger, the fewer possible domains f can have
+    - as B gets bigger, the more results f can have
+- more literal example
+  - _suc_ =〈_n:nat → n+1_〉(successor function)
+  - _suc_:_nat → nat_
+  - = _nat:_ ☐*suc ∧ ∀n:nat • suc n:nat*
+  - = _nat:nat ∧ ∀n:nat • n+1:nat_
+  - ⊤
+
+#### equality
+
+- _f=g_ **=** ☐*g=* ☐*f* ∧ ∀*x:* ☐*g • f x=g x*
+
+#### higher order function
+
+- functions with functions as domain and parameter
+- _g_:_A → B_
+- 〈_f: (A→B)→ ... f ..._〉_g_
+  - applies a function to _g_
+
+#### composition
+
+- occurs when applying two functions one after the other where the functions are not included in other's domain
+  - _g f_
+    - ¬*f:* ☐*g*
+    - _g_ is not a higher order function that is applied to _f_
+    - it is instead a new function that applies _f_ then _g_
+  - (_g f_) _x_ = _g_ (_f x_)
+  - ☐(_g f_) = §_x:_ ☐*f • f x:* ☐*g*
+    - _x_ is a bunch of everything that can be applied to _f_ and then applied to _g_
+  - example
+    - ☐(_even suc_)
+    - = §_x:_ ☐*suc • suc x:* ☐*even*
+    - = §_x:nat • x+1: int_
+    - = _nat_
+- can compose operators with functions too
+  - (-_suc_) 5 = -(_suc_ 5) = -6
+  - (¬*even*) 4 = ¬(_even_ 4) = ¬⊤ = ⊥
+- polish notation
+  - remove brackets and the results can sort itself out though composition axiom
+  - x,y: int
+  - f,g: int → int
+  - h: int → int → int
+    <br></br>
+  - h f x g y
+  - = (((h f) x) g) y
+  - = ((h (f x)) g) y
+  - = (h (f x)) (g y)
+  - = h (f x) (g y) &nbsp;&nbsp;&nbsp;&nbsp; not due to composition, its just useless
+
+#### list as a function
+
+- if _m:0,..#L_ (_L_ represents a list)
+  - 〈_n:0,..#L → L n_〉= L m
+  - this function serves same purpose as indexing list _L_
+  - function composition can be used with list composition
+    - -[2;4;5] = [-2;-4;-5]
+    - suc[2;5;6] = [3;6;7]
+- list map operator can be thought of in terms of a selective operator (|) applied to 2 functions
+  - 1 → 21 | [10;11;12] = [10;21;12]
+- quantifiers can be applied to lists too
+  - Σ*L* = Σ*n:0,..#L • L n*
+
+#### limits
+
+- **_LIM_**: quantifier applied to function
+- _f:nat → rat_
+- f 0; f 1; f 2; ... is a sequence of rationals
+  - _LIM f_ finds the limit of the sequence
+  - (_MAX m • MIN n • f_ (_m+n_)) &le; (_LIM f_) &le; (_MIN m • MAX n • f_(_m+n_))
+    - the domain is _nat_ in this example
+    - lower bound of _LIM f_ is the maximum of the minimum of all starting points of f
+      - find minimum n of f (m+n)
+      - then find maximum m of f(m+n)
+    - upper bound of _LIM f_ is the minimum of the maximum of all starting points of f
+      - find maximum n of f (m+n)
+      - then find minimum m of f (m+n)
+  - doesn't tell us what the min/max of sequence of f are, just that it lies between the two
+  - the two bounds can be equal
+    - 0 &le; (_LIM n • 1/_(_n+1_)) &le; 0
+    - _LIM_ of the function can only be 0
+  - in general,
+    - (_MIN f_) &le; (_LIM f_) &le; (_MAX f_)
+    - if f is monotonic
+      - _LIM f_ = _MAX f_
+    - if f is antimonotonic
+      - _LIM f_ - _MIN f_
+- extended real numbers can be defined:
+  - xreal = _LIM_(_nat → rat_)
+- _p:nat → bin_
+- p 0; p 1; p 2; ... is a sequence of binary values
+  - ∃*m •* ∀*n • p*(_m+n_) ⇒ _LIM p_ ⇒ ∀*m •* ∃*n • p*(_m+n_)
+    - ∃ is the same as _MAX_
+    - ∀ is the same as _MIN_
+    - &le; is the same as ⇒
+  - ∃*m •* ∀*i • i&ge;m ⇒ p i* **⇒** _LIM p_
+    - if the statement becomes ⊤ and stays ⊤, the limit is ⊤
+  - ∃*m •* ∀*i • i&ge;m ⇒ p i* **⇒** _LIM p_
+    - if the statement becomes ⊥ and stays ⊥, the limit is ⊥
