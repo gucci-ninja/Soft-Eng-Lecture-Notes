@@ -56,10 +56,11 @@
 | 〉     |                               | <!-- -->                   |
 | →      | listMod (mapping)             | <!-- lMod  -->             |
 | ☐      |                               | <!--   -->                 |
-| ∀      |                               | <!--   -->                 |
-| ∃      |                               | <!--   -->                 |
-| Σ      |                               | <!--   -->                 |
-| ∏      |                               | <!--   -->                 |
+| ∀      | for all (quantifier)          | <!-- forall  -->           |
+| ∃      | there exists (quantifier)     | <!--  exists -->           |
+| Σ      | sum (quantifier)              | <!--  sum -->              |
+| ∏      | product (quantifier)          | <!-- product  -->          |
+| §      | solution (quantifier)         | <!--  sol -->              |
 | σ      |                               | <!--   -->                 |
 | ʹ      |                               | <!--   -->                 |
 | ⦂      |                               | <!--   -->                 |
@@ -552,10 +553,10 @@ Hoare triples
 ### Functions
 
 - **〈_v:D → b_〉**
-  - "map *v* in *D* to *b*"
+  - "map _v_ in _D_ to _b_"
   - _v_ variable name
   - _D_ domain,type (a bunch)
-  - _b_ body (may use *v*)
+  - _b_ body (may use _v_)
     - what is returned
   - _v:D_ is a local axiom within _b_
 - operators
@@ -570,8 +571,8 @@ Hoare triples
     - ☐(f|g) = ☐ f, ☐ g
     - (f|g) x = if x: ☐ f then f x else g x fi
 - 2 variable functions
-  - f = 〈*x:D →* 〈*y:D → x &le; y*〉〉
-  - f 3 = 〈*y:D → 3 &le; y*〉
+  - f = 〈_x:D →_ 〈_y:D → x &le; y_〉〉
+  - f 3 = 〈_y:D → 3 &le; y_〉
   - f 3 5 = 3 &le; 5
   - f (3,5) = f 3, f 5
     - since function distributes over bunch
@@ -580,11 +581,11 @@ Hoare triples
 - relation
   - function returns predicate
 - abbreviated function notations
-  - 〈*x:D →* 〈*y:D → x &le; y*〉〉= 〈*x,y:D → x &le; y*〉
+  - 〈_x:D →_ 〈_y:D → x &le; y_〉〉= 〈_x,y:D → x &le; y_〉
     - multiple variables
-  - 〈*n:nat → n+1*〉 = 〈*n: → n+1*〉
+  - 〈_n:nat → n+1_〉 = 〈_n: → n+1_〉
     - only use when domain is known or doesn't matter
-  - 〈*n: 2 → 3*〉 = *2 → 3*
+  - 〈_n: 2 → 3_〉 = _2 → 3_
     - constant function
     - scope brackets used with variables
 
@@ -596,3 +597,77 @@ Hoare triples
 - non-local
   - global, free, visible, public
   - introduced outside expression (formal or informal)
+
+## Segment 6
+
+### Quantifiers
+
+- operator that applies to a funct ion
+  - defined from a two-operand symmetric associative operator
+  - **∀** for all
+    - binary result
+    - defined from ∧
+    - ∀〈_r:rat → r>0 ∨ r=0 ∨ r<0_〉
+      - every number r in rational domain is less than 0, equal to or greater than 0
+  - **∃** there exists
+    - binary result
+    - defined from ∨
+    - ∃〈_n: nat → n=0_〉
+      - there exists a number n in natural domain equal to 0
+  - **Σ** sum of
+    - numerical result
+    - defined from +
+    - Σ〈_n:nat+1 → 1/2<sup>n</sup>_〉
+      - 1/2+1/4+1/8+...=1
+  - **∏** product of
+    - numerical result
+    - defined from ×
+      - ∏〈_n:nat+1 → (4×n<sup>2</sup>)/(4×n<sup>2</sup>-1)_〉
+        - 4/3×16/15×36/35×...=π/2
+
+#### abbreviations
+
+- no scope operators (〈〉)
+- → replaced by •
+  - ∀*r:rat • r>0 ∨ r=0 ∨ r<0*
+  - Σ*n:nat+1 • 1/2<sup>n</sup>*
+
+---
+
+- group variables with the same domain together into a bunch
+  - ∀*x,y:rat • x=y+1 ⇒ x>y* **=** ∀*x:rat •* ∀*y:rat • x=y+1 ⇒ x>y*
+  - Σ*n,m:0,..10 • n×m* **=** Σ*x:rat •* Σ*m:0,..10 • n×m*
+
+### Defining own quantifier
+
+- need to define the axioms for
+  - empty domain
+  - single domain
+  - union domain
+- example, **_MAX_**
+  - _MAX x:rat • 4timesx-x<sup>2</sup>_ = 4
+  - _MAX v:null • n_ = -∞
+    - or most negative number possible in context
+  - _MAX v:x • n_ = 〈_v:x → n_〉 x
+  - _MAX v:A,B • n_ = _max (MAX v:A • n) (MAX v:B • n)_
+
+### Solution Quantifier
+
+- **§** is the solution (bunch) of predicate
+  - solves for the variable
+  - examples
+    - §_i:int • i<sup>2</sup>=4_ = -2,2
+    - §_n:nat • n<5_ = 0,..5
+  - default as bunch equations
+  - applying set operators ({}) gives set equations
+    - {§_i:int • i<sup>2</sup>=4_} = {-2,2}
+  - can remove quantifier (abbreviation)
+
+### Expression talks about its nonlocal variables
+
+- if there is a variable that isn't defined by the function
+- ∃〈_n:nat → x = 2×n_〉
+- says
+- "_x_ is an even natural"
+  - there exists n in natural domain where _2×n_ = x
+  - can only be true if x is an even natural, so that is what it is trying to define.

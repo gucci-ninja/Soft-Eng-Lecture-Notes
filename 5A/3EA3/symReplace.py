@@ -31,14 +31,16 @@ mathSyms = mathDict({
     "/fe" : "〉" ,
     "/map" : "→" ,
     "/fDom" : "☐" ,
-    "" : "∀" ,
-    "" : "∃" ,
-    "" : "Σ" ,
-    "" : "∏" ,
+    "/forall" : "∀" ,
+    "/exists" : "∃" ,
+    "/sum" : "Σ" ,
+    "/product" : "∏" ,
+    "/sol" : "§" ,
     "" : "σ" ,
     "" : "ʹ" ,
     "" : "⦂" ,
-    "/tab": "&nbsp;&nbsp;&nbsp;&nbsp;"
+    "/tab": "&nbsp;&nbsp;&nbsp;&nbsp;",
+    "/dot": "•"
 })
 
 change = lambda o,n,span: o[:span[0]] + n + o[span[1]:]
