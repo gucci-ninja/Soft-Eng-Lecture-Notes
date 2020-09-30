@@ -86,3 +86,18 @@
 - how to change system from **take make waste** to
   - circular systems
 - Sustainability goals
+
+## Zoom
+
+Carbon to value inititive
+- startup stuff?
+- three year program
+- attract startups to bridge gap between market and research
+- technologies to capture and convert c20 into valueables/services
+- 6 trillion dollar market opportunity
+
+### panel
+- David Elenowitz
+- Pat Sapinsley
+- Ryo Okumura
+- Apoorv Sinha
