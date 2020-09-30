@@ -454,3 +454,155 @@ www.distancetomars.com
 - Sound is not a electromagnetic radiation
   - it is a pressure wave
   - cannot travel through space
+
+## Lecture 9
+
+### Basic Physics
+
+#### Space and distance
+
+- meter (m)
+
+| object                | size (~m)            |
+| --------------------- | -------------------- |
+| you                   | 2                    |
+| distance to the sun   | 10<sup>11</sup>      |
+| to the nearest galaxy | 2 \* 10<sup>22</sup> |
+| size of atom          | 10<sup>-10</sup>     |
+
+- 1960 the meter was defined in context of atomic physics
+  - certain colour wavelengths from krypton (kr) isotope
+
+#### Time
+
+- second (s)
+
+| object   | age (~s)             |
+| -------- | -------------------- |
+| you      | 6 \* 10<sup>8</sup>  |
+| universe | 4 \* 10<sup>17</sup> |
+
+- defined to be a certain number of vibrations of cesium atom (Cs)
+  - standardized
+
+#### Mass
+
+- kilogram (kg)
+- measure of "inertia"
+  - the greater the mass, the greater
+- defined in terms of Planck constant
+
+#### Speed
+
+- distance travelled over time it takes to get there
+- meters per second (m/s)
+- all electromagnetic radiation travels at the same speed (c)
+  - ~300000000 m/s
+  - the fastest anything in the universe can travel at
+- distance travelled can be calculated
+  - d = v \* t
+    - d = distance travelled
+    - v = velocity
+    - t = time
+  - some distances are used frequently to be used as constants
+    - light year: time it takes light to travel in a year
+      - d = c \* t
+      - d ~ 10<sup>16</sup>
+
+#### Prefix
+
+- can use prefix for different orders of magnitudes
+
+### Fundamental Forces
+
+#### Gravity
+
+- attraction of one mass on another
+- scales with mass and distance
+- the balance of gravity and kinetic energy from the motions of stars are balanced in a galaxy to keep it from collapsing or dispersing
+  - too little kinetic energy, the galaxy would collapse
+  - too much kinetic energy, the galaxy would disperse into a new equilibrium
+- strength of 10<sup>-38</sup>
+
+#### Strong force
+
+- holds atom nucli together
+- very short range
+- strength of 1
+- strongest force
+
+#### Electromagnetic force
+
+- holds atoms together
+- infinite range
+- strength of 0.01
+
+#### Weak force
+
+- causes nuclear decay
+- very short range
+- strength of 0.00001
+
+#### Gravitational force
+
+- between two objects
+- depends on
+  - mass
+  - distance between the objects *r* (from the center of the object)
+  - gravitational constant *G*
+- *F* = *G* * (*M<sub>1</sub> * M<sub>2</sub>*)/*r<sup>2</sup>*
+
+## Lecture 10
+
+- 4 fundamental forces
+  - strong force
+    - short range
+    - strength 1
+  - electromagnetic force
+    - infinite range
+    - strength 0.01
+  - weak force
+    - very short range
+    - 0.00001
+  - gravity
+    - infinite range
+    - 10<sup>-38</sup>
+
+### Why is gravity so much weaker
+
+- much weaker than other forces
+  - gravitational constant G is much smaller than other fundamental force constants
+- Theory is we live in a **3+1 dimension**
+  - we talk about
+    - left and right
+    - back and forth
+    - up and down
+  - 3 space dimensions  (3D)
+  - 1 temporal dimension (time)
+  - allows us to uniqely define any event in the universe
+    - where and when it occurs
+  - maybe gravity is similar strength in other dimensions that we can't observe
+  - quantum gravity
+    - string theory
+
+#### Weight
+
+- force of gravity on an object
+- mass is a constant
+
+#### Balance of forces
+
+- person sitting in a chair doesn't fall through
+  - due to electromagnetic forces
+  - electrons in body repel electrons in chair
+
+#### 2013 Ig Nobel Physics
+
+- Humans are physically capable of running across the surface of a pond if on the moon
+
+#### Relativity (modern gravity)
+
+- Relative motion
+  - why does javelin thrower run with javelin
+  - javelin speed is run speed + throw speed
+  - javelin is faster relative to ground
