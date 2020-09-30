@@ -310,7 +310,7 @@ Ideally, members of experimental and control groups are very similar, so that th
 - we can use extinction to lower the bell curve of the standard deviation over times so the level of the response is smaller.
 - if the extinction is used at a specific stimuli, the nearby stimuli can also lower in a bell curve
   - specific stimuli (CS-) is not paired with US. (absence of US)
-  - can be more precise if parallel to it, CS (CS+) is paired with US (presense of US)
+  - can be more precise if parallel to it, CS (CS+) is paired with US (presence of US)
 
 ### Phobias
 
@@ -386,10 +386,225 @@ Ideally, members of experimental and control groups are very similar, so that th
 - drug aren't administered in isolation
   - tradition
   - rolling a joint, etc.
-  - leads to addiction 
+  - leads to addiction
 
 ### Homeostasis
 
 - UCS -> CNS -> UCR
   - unconditional
 - CS -> CR
+
+## Module 4
+
+### Instrumental Conditioning
+
+- How does an action lead to consequences
+- aka Operant Conditioning
+- Puzzle Box
+  - small chamber that can be opened by doing a small thing
+  - reward is visible outside the box
+  - cat starts by random behaviour, eventually doing the action
+- the random behaviours that don't lead to escape doesn't happen as often in later trials
+  - little conscience
+- stamping in: behaviour maintained
+- stamping out: behaviour lost
+- eventually learns contingency with puzzle and escape/food
+
+#### Law of Effect
+
+- Behaviours with positive consequences are stamped in
+- Behaviours with negative consequences are stamped out
+
+### Different types of Instrumental Conditioning
+
+| Increase in behaviour | **_Presentation_** of **positive** reinforcer | **_Removal_** of a **negative** reinforcer |
+| :-------------------: | --------------------------------------------- | ------------------------------------------ |
+| Decrease in behaviour | **_Presentation_** of **negative** reinforcer | **_Removal_** of a **positive** reinforcer |
+
+#### Reward Training
+
+- presenting a positive reinforcer to encourage a specific behaviour
+
+#### Punishment Training
+
+- presenting a negative reinforcer to discourage a specific behaviour
+- contraversial as a contingency can be formed between the figure presenting negative reinforcer and punishment
+  - child feeling fear when seeing parents
+
+#### Omission Training
+
+- removing a positive reinforcer to discourage a behaviour
+- "Time outs" in school
+- not equal to punishment
+
+#### Escape Training
+
+- removing a negative reinforcer to encourage a behaviour
+- escaping a negative environment
+- rat avoids floor with electric shock
+
+### Aquisition and Shaping
+
+- instrumental conditioning, a subject learns the contingency between response and consequence
+
+#### Cumulative Recorders
+
+- records the response rate of behaviour
+- originally, pen and paper, now a computer system
+- graph shows
+  - line with each upwards slope a response being made
+
+#### AutoShaping
+
+- learning without direct guidance
+- pigeon pecking a hole to get food
+- can be recorded easily
+
+#### Shaping
+
+- Shaping is used for behaviours too complex
+- training dophins to backflip for food
+- breakdown complex behaviour into smaller more simple behaviours
+- BF Skinner
+  - pigeons pecking balls to each other
+  - starts with pecking table
+  - move to pecking to the other side of table
+  - becomes stricter to get food as more complex behaviours are trained.
+
+---
+
+- Contingencies are not always valid
+
+### Discriminative Stimulus
+
+- SD
+  - when the response will predict the reinforcement
+  - when child eats vegetables at home and gets dessert
+- Sδ
+  - S-
+  - when the response will not predict the reinforcement
+  - when child eats vegetables at grandparents home and doesn't get dessert
+- Discriminative Stimulus can be generalized for a varied response rate
+  - generalization stimulus
+  - subject may respond to stimulus similar to SD and may not respond to stimulus similar to Sδ
+- psychologists can manipulate
+  - SD
+  - Sδ
+  - reinforcement
+  - lack of reinforcement
+- Extinction can be used to alter Generalization Gradient
+  - similar stimulus to SD can be presented with a lack of reinforcement, which extincts the stimulus.
+  - becomes a Sδ
+- CS is not SD
+  - CS is involuntary paired with CR
+  - SD is voluntary paired with reinforcement
+    - The subject knows they can get the reinforcement, but they have a choice to perform the response to get reinforcement.
+
+### Schedules of Reinforcement
+
+- continuous reinforcement
+  - correct reinforcement or lack of occurs in every trail
+  - very rare in real life
+  - usually partial reinforcement schedule
+
+#### Partial Reinforcement
+
+- Ratio Schedule
+  - [F|V]R-x
+  - reinforcement occurs every x amount of times response is performed
+    - FR-10 every 10 pecks
+- Interval Schedule
+  - [F|V]R-i
+  - reinforcement occurs every i time(minutes) after last reward
+    - FR-1 every 1 minute
+- Fixed Schedule
+  - consistent reoccurence of reinforcements
+- Variable Schedule
+  - on average, reinforcements occur consistently, but not consecutively
+  - VR-3
+    - rewards given every 1,2,3,4,2,5,6 responses
+    - averages to around 3 responses per reward
+
+| ---      | Fixed | Variable |
+| -------- | ----- | -------- |
+| Ratio    | FR-#  | VR-#     |
+| Interval | FI-#  | VI-#     |
+
+#### Fixed Ratio
+
+- ineffective if the ratio of behaviour to rewards is too high
+- follows "pause and run" pattern for behavourial responses
+  - after reinforcement, there is a pause before another run of job
+
+#### Variable Ratio
+
+- Example is slot machine
+  - gives rewards once enough plays
+  - players can easily get invested on one machine
+- can support a high response rate of behaviour
+- slope of VR schedule tells average number of responses before reinforcement
+  - higher reinforcement rate, higher response rate
+  - higher reinforcement rate, larger slope
+
+#### Fixed Interval
+
+- example is a quiz every x weeks
+  - student may study more as quiz approaches
+- shows scallop pattern
+  - lull period right after reinforcement
+  - most intense right before reinforcement
+
+#### Variable Interval
+
+- shows "straight" line
+- higher reinforcement rate, larger slope
+
+---
+
+- Learning is more robust on a partial learning schedule than a continuous one
+- Lower reinforcement rate would mean that extinction is less likely
+  - intuitively, in lower reinforcement rate, subject is less likely to notice that reinforcement is not occuring than when the rate is very often.
+
+## Lecture 3
+
+### Classical Conditioning as a child
+
+- Jaws sets up shark attack with music
+  - associating jaws music with sharks
+
+#### We learn effects of behavior through Operant Conditioning
+
+### Instrumental Conditioning in the world
+
+- Steve Woz
+  - created jamming device
+- Speeding on the highway
+  - Try to maintain speed with other drivers rather than follow the exact speed limit
+  - SD is someone monitoring speed
+  - SR is punishment in speeding ticket
+- Training to study
+  - give positive rewards
+    - allowing social media
+  - omission of social media
+  - set up environment for wanting to study
+
+### Reinforcers in Behavior MOdifications
+
+- Primary Reinforcers
+  - biological neets
+    - food
+    - sleep
+    - sex
+- Secondary Reinforcers
+  - established through classical conditioning
+    - money
+
+### Dopamine
+
+- nucleus accumbens is where dopamine activity occurs
+
+### Biological predisposition
+
+- learn through modeling behavior
+- opening and closing mouth to new born, baby will follow
+- humans are able to learn
