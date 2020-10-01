@@ -548,9 +548,9 @@ www.distancetomars.com
 - between two objects
 - depends on
   - mass
-  - distance between the objects *r* (from the center of the object)
-  - gravitational constant *G*
-- *F* = *G* * (*M<sub>1</sub> * M<sub>2</sub>*)/*r<sup>2</sup>*
+  - distance between the objects _r_ (from the center of the object)
+  - gravitational constant _G_
+- _F_ = _G_ * (*M<sub>1</sub> _ M<sub>2</sub>_)/_r<sup>2</sup>_
 
 ## Lecture 10
 
@@ -577,7 +577,7 @@ www.distancetomars.com
     - left and right
     - back and forth
     - up and down
-  - 3 space dimensions  (3D)
+  - 3 space dimensions (3D)
   - 1 temporal dimension (time)
   - allows us to uniqely define any event in the universe
     - where and when it occurs
@@ -606,3 +606,54 @@ www.distancetomars.com
   - why does javelin thrower run with javelin
   - javelin speed is run speed + throw speed
   - javelin is faster relative to ground
+
+## Lecture 11
+
+- Javelin throwers run before they throw
+  - javelin will be faster as its total speed is running speed + throwing speed
+
+### Special Relativity
+
+- 1905
+  - Einstein published special theory of relativity
+  - believed that light is same speed for every frame of reference
+- example
+  - two people
+    - one is on earth
+    - one is moving 1 000 000 m/s relative to first person
+  - they see light moving towards them
+    - what is the speed of the light
+    - both are the **same**
+- example
+  - two rocket ships
+    - both moving 1 000 000 m/s
+    - one throws a teddy bear 250m/s
+      - teddy bear is moving 1 000 250 m/s relative to stationary observer
+    - one flashes light
+      - light is moving at speed of light (no changes)
+- nothing can move faster than speed of light
+  - objects moving at the speed of light must have 0 mass
+- every frame of reference measures speed of light as c
+- nothing can move faster than speed of light
+- anything with mass moves slower than c
+- only massless objects can move at speed of light
+
+#### Relativity of Simultaneity
+
+- events which are simultaneous in one frame may not be in another
+- each observer of the event is correct with their interpretation of the event
+  - each observer is in their own frame of reference
+
+#### Consequences of Special Relativity
+
+- 2 observers moving .99c relative to each other
+  - their ideas of time and distance will be muddled.
+- Time
+  - time taken for light to travel to mirror and back from source
+  - d = v * t
+  - t = d/c = 2*x/c
+    x = distance to mirror from source
+  - if observer was moving relative to light
+    - distance(d) travel will be farther
+    - time taken(t) will be larger
+  - moving clocks run slowly
