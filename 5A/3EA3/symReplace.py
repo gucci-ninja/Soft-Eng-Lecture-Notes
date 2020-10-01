@@ -36,8 +36,8 @@ mathSyms = mathDict({
     "/sum" : "Σ" ,
     "/product" : "∏" ,
     "/sol" : "§" ,
-    "" : "σ" ,
-    "" : "ʹ" ,
+    "/preS" : "σ" ,
+    "/postS" : "σʹ" ,
     "" : "⦂" ,
     "/tab": "&nbsp;&nbsp;&nbsp;&nbsp;",
     "/dot": "•"
@@ -46,6 +46,7 @@ mathSyms = mathDict({
 change = lambda o,n,span: o[:span[0]] + n + o[span[1]:]
 regKeys = re.compile("(?<![a-zA-Z\<])\/[a-zA-Z]+(?!\>)") # find keys in mathSyms
 regScript = re.compile("\/([\_^])<(.*?)\/>") # find subscript/superscript
+regPrime = re.compile("\/'") # find prime
 symC = 1
 
 with open("README.md", encoding='utf8', mode="r") as f:
@@ -63,6 +64,11 @@ with open("README.md", encoding='utf8', mode="r") as f:
             scriptType = "b" if c[1] == "_" else "p"
             replaceText = "<su{}>{}</su{}>".format(scriptType,c[2],scriptType)
             lines = change(lines,replaceText,c[0])
+
+        # find and replace superscript/subscript shortcut
+        csP = [(x.span(),"ʹ") for x in regPrime.finditer(lines)][::-1]
+        for c in csP:
+            lines = change(lines,c[1],c[0])
     
 
 with open("README.md", encoding='utf8', mode='w') as f:

@@ -61,8 +61,9 @@
 | Σ      | sum (quantifier)              | <!--  sum -->              |
 | ∏      | product (quantifier)          | <!-- product  -->          |
 | §      | solution (quantifier)         | <!--  sol -->              |
-| σ      |                               | <!--   -->                 |
-| ʹ      |                               | <!--   -->                 |
+| σ      | prestate                      | <!-- preS  -->             |
+| σʹ     | poststate                     | <!-- postS  -->            |
+| ʹ      | final value (x')              | <!-- p  -->                |
 | ⦂      |                               | <!--   -->                 |
 
 ---
@@ -809,3 +810,157 @@ Hoare triples
     - if the statement becomes ⊤ and stays ⊤, the limit is ⊤
   - ∃*m •* ∀*i • i&ge;m ⇒ p i* **⇒** _LIM p_
     - if the statement becomes ⊥ and stays ⊥, the limit is ⊥
+
+## Segment 8
+
+- Requirements Engineering
+  - creates specifications for projects
+  - long binary expressions
+- We are specifying computer behaviour when executing program
+
+### Specification
+
+- state space
+  - memory
+  - int; (0,..20); char; rat
+- state
+  - memory constants
+  - -2; 14; "A"; 3.42
+- prestate
+  - initial state
+  - **σ** = σ<sub>0</sub>;σ<sub>1</sub>;σ<sub>2</sub>;σ<sub>3</sub>;
+- poststate
+  - final state
+  - **σʹ** = σʹ<sub>0</sub>;σʹ<sub>1</sub>;σʹ<sub>2</sub>;σʹ<sub>3</sub>;
+- address
+  - low level
+  - assuming 4 addresses
+  - 0, 1, 2, 3
+- state variables
+  - high level
+  - replaces address index
+  - _i, n, c, x_
+  - initial values = _i, n, c, x_
+  - final values = _iʹ, nʹ, cʹ, xʹ_
+- For now
+  - prestate, poststate
+- Later
+  - time, space, interaction, communication
+  - time
+    - termination = finite
+    - nontermination = infinite
+
+#### Low Level
+
+- Specification of computer behaviour: binary expression
+  - in variables σ and σʹ
+- provide prestate as input
+- computation satisfies specification by computing a satisfactory poststate as output
+- prestate and poststate must make the specification true
+
+#### Higher Level
+
+- Specification of computer behaviour: binary expression
+
+  - in initial values x, y, ... and final values xʹ, yʹ, ... of some state variables
+
+- provide initial values as input
+- computation satisfies specification by computing a satisfactory final values as output
+- given initial values and computed final values must make the specification true
+
+---
+
+- Specification S
+  - **unsatisfiable** for prestate σ: ¢(§σʹ • _S_) < 1
+  - **satisfiable** for prestate σ: ¢(§σʹ • _S_) &ge; 1
+    - ∃σʹ • _S_
+    - S can be satisfiable for one initial state but not for another
+  - **deterministic** for prestate σ: ¢(§σʹ • _S_) &le; 1
+  - **nondeterministic** for prestate σ: ¢(§σʹ • _S_) > 1
+  - **implementable** for prestate σ: ∀σ • ∃σʹ • _S_
+    - for each input there must be a satisfiable output
+
+#### Examples of Specifications
+
+- domain is _int_ for the following examples
+- xʹ = x+1 ∧ yʹ = y
+  - increase x by 1 and leave y the same
+  - implementable, deterministic
+- xʹ = x
+  - increase x
+  - any yʹ can be returned
+  - implementable, nondeterministic
+    - many different xʹ and yʹ
+- ⊤
+  - all inputs and outputs are valid
+  - implementable, extremely nondeterministic
+    - most easily implementable specification possible
+- ⊥
+  - no inputs are valid
+  - unimplementable, overly deterministic
+- x &ge; 0 ∧ yʹ=0
+  - x has to be greater or equal to 0
+  - y can be any value
+  - unimplementable, overly deterministic
+- x &ge; 0 ⇒ yʹ=0
+  - same as above
+    - works for x values less than 0
+  - implementable, nondeterministic
+- _ok_ **=** σʹ=σ **=** xʹ=x ∧ yʹ=y ∧ ...
+  - don't change anything
+- x := e **=** σʹ ⊲ _address "x"_ ⊳ e **=** xʹ=e ∧ yʹ=y ∧ ...
+  - x is assigned e
+  - x gets e
+  - all other variables are unchanged
+- x := x+1
+  - x is assigned to x+1
+- if x=y then x:=x+1 elses xʹ+yʹ=3 fi
+  - if x and y are initially equal, xʹ=x+1
+  - otherwise the sum of xʹ and yʹ must equal 3
+  - nondeterministic
+
+### dependent composition
+
+- S. R ∃ xʹʹ,yʹʹ,... (substitute xʹʹ,yʹʹ,... for xʹ,yʹ in S) ∧ (substitute xʹʹ,yʹʹ,... for x,y,... in R)
+- Example
+  - xʹ=x ∨ xʹ=x+1 . xʹ=x ∨ xʹ=x+1
+  - **=** ∃xʹʹ • (xʹʹ=x ∨ xʹʹ=x+1) ∧ (xʹ=xʹʹ ∨ xʹ=xʹʹ+1)
+  - **=** ∃xʹʹ • (xʹʹ=x ∧ xʹ=xʹʹ) ∨ (xʹʹ=x+1 ∧ xʹ=xʹʹ) ∨ (xʹʹ=x ∧ xʹ=xʹʹ) ∨ (xʹʹ=x+1 ∧ xʹ=xʹʹ+1)
+  - **=** (∃xʹʹ • xʹʹ=x ∧ xʹ=xʹʹ) ∨ (∃xʹʹ • xʹʹ=x+1 ∧ xʹ=xʹʹ) ∨ (∃xʹʹ • xʹʹ=x ∧ xʹ=xʹʹ) ∨ (∃xʹʹ • xʹʹ=x+1 ∧ xʹ=xʹʹ+1) &nbsp;&nbsp;&nbsp;&nbsp; (one point law 4 times)
+  - **=** xʹ=x ∨ xʹ=x+1 ∨ xʹ=x+2
+- Substitution Law
+  - x:=e . P = (substitute x for e in P)
+  - a lot simpler than normal dependent composition
+  - examples
+    - x:=y+1 . yʹ>xʹ
+      - **=** yʹ>xʹ
+      - substitution doesn't change anything as x isn't in the second specification
+    - x:=x+1 . yʹ>x ∧ xʹ>x
+      - **=** yʹ>x+1 ∧ xʹ>x+1
+    - x:=y+1 . yʹ=2 × x
+      - **=** yʹ= 2 × (y+1)
+      - maintain precedence with brackets when needed
+    - x:=1 . x&ge;1 ⇒ ∃ x • yʹ=2×x
+      - **=** 1 &ge; 1 ⇒ ∃ x • yʹ=2×x **=** _even_ yʹ
+      - don't substitue local variables of functions and quantifiers
+    - x:=y . x&ge;1 ⇒ ∃ y • yʹ=x×y
+      - **=** x:=y . x&ge;1 ⇒ ∃ k • yʹ=x×k
+      - **=** y&ge;1 ⇒ ∃ k • yʹ=y×k
+      - change local variables so it doesn't clash with substitutions
+    - x:=1 . _ok_
+      - **=** x:=1 . xʹ=x ∧ yʹ=y ∧ ...
+      - **=** xʹ=1 ∧ yʹ=y ∧ ...
+    - x:=1 . y:=2
+      - **=** x:=1 . xʹ=x ∧ yʹ=2 ∧ ...
+      - **=** xʹ=1 ∧ yʹ=2 ∧ ...
+    - x:=1 . y:=2 . x:=x+y
+      - **=** x:=1 . y:=2 . xʹ=x+y ∧ yʹ=y
+      - **=** x:=1 . xʹ=x+2 ∧ yʹ=2
+      - **=** xʹ=1+2 ∧ yʹ=2
+      - do substitution from right to left
+    - x:=1 . xʹ>x . xʹ=x+1
+      - **=** xʹ>1 . xʹ=x+1
+      - **=** ∃xʹʹ • (xʹʹ>1) ∧ (xʹ=xʹʹ+1)
+      - **=** ∃xʹʹ • (xʹʹ>1) ∧ (xʹʹ=xʹ-1)
+      - **=** xʹ-1>1
+      - **=** xʹ>2
