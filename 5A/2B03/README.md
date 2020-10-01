@@ -550,7 +550,7 @@ www.distancetomars.com
   - mass
   - distance between the objects _r_ (from the center of the object)
   - gravitational constant _G_
-- _F_ = _G_ * (*M<sub>1</sub> _ M<sub>2</sub>_)/_r<sup>2</sup>_
+- _F_ = _G_ \* (_M<sub>1</sub>M<sub>2</sub>_)/_r<sup>2</sup>_
 
 ## Lecture 10
 
@@ -644,16 +644,68 @@ www.distancetomars.com
 - each observer of the event is correct with their interpretation of the event
   - each observer is in their own frame of reference
 
-#### Consequences of Special Relativity
+#### Consequences of Special Relativity (time)
 
 - 2 observers moving .99c relative to each other
   - their ideas of time and distance will be muddled.
 - Time
   - time taken for light to travel to mirror and back from source
-  - d = v * t
-  - t = d/c = 2*x/c
+  - d = v \* t
+  - t = d/c = 2\*x/c
     x = distance to mirror from source
   - if observer was moving relative to light
     - distance(d) travel will be farther
     - time taken(t) will be larger
   - moving clocks run slowly
+
+## Lecture 12
+
+### Time Dialation
+
+- moving clocks run slowly
+- Time = distance/speed of light
+- Box with light bouncing between two mirrors
+  - observing same frame of reference
+    - light is traveling the length of the mirrors
+  - observing in a different frame of reference
+    - light is travelling a longer distance between mirrors
+    - the faster the light is travelling from our frame of reference, the farther the light travels
+      - the longer it takes for light to move.
+- every frame of reference is still and other frames of reference is always moving relative to it.
+- time is slower depending on speed v
+  - slower by factor γ
+  - γ = 1/(1-v<sup>2</sup>/c<sup>2</sup>)<sup>1/2</sup>
+  - isn't significant (measurable) until v=0.5c
+
+### Length Contraction
+
+- objects seen in a different(moving) reference frames appear shorter along the direction of motion
+- c = d/t
+  - if time changes when viewing from different frames of reference, distance must as well
+  - time increases
+  - therefore distance decreases
+
+### Consequences Special Relativity
+
+- time dialation
+- length contraction
+- no absolute simultaneity
+- all measurements are relative to observer
+- Special Relativity in everyday life
+  - GPS
+  - particle accelerators
+  - heavy elements
+    - electrons of heavy elements are affected by relativity
+
+### Einstein's famous equation
+
+- E = mc<sup>2</sup>
+- E: energy
+- m: mass
+- c: speed of light
+- mass and energy is the same thing
+- very hard to convert mass to energy
+- moving mass is larger than still mass
+  - m = γm<sub>0</sub>
+  - m<sub>0</sub>: mass at rest
+  - mass of an object would be infinite if it is moving at c
