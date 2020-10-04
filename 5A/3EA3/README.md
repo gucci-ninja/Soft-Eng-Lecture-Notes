@@ -964,3 +964,51 @@ Hoare triples
       - **=** ∃xʹʹ • (xʹʹ>1) ∧ (xʹʹ=xʹ-1)
       - **=** xʹ-1>1
       - **=** xʹ>2
+
+## Segment 9
+
+### Refinement
+
+- Specification _P_ is **refined** by specification _S_
+  - _P_ is satisfied when _S_ is satisfied.
+  - ∀ σ, σʹ • _P ⇐ S_
+    - when implementing _P_, you can implement equal or stronger specification _S_
+- xʹ>x ⇐ xʹ=x+1 ∧ yʹ=y **=** x:=x+1
+  - xʹ=x+1 ∧ yʹ=y is stronger than xʹ>x
+  - x:=x+1 is even stronger
+    - equality implies implication
+
+#### Condition
+
+- specification that refers to (at most) one state
+- **initial condition, precondition**
+  - refers to (at most) the initial state (presetate)
+- **final condition, postcondition**
+  - referes to (at most) the final state (poststate)
+- **exact precondition** for _P_ to be refined by _S_
+  - ∀ σʹ • P ⇐ S
+- **exact postcondition** for _P_ to be refined by _S_
+  - ∀ σ • P ⇐ S
+- sufficient _C_ ⇒ exact _C_ ⇒ necessary _C_
+- (exact precondition for xʹ>5 to be refined by x:=x+1)
+  - **=** ∀ xʹ • xʹ>5 ⇐ (x:=x+1)
+  - **=** ∀ xʹ • xʹ>5 ⇐ xʹ=x+1 &nbsp;&nbsp;&nbsp;&nbsp; One Point Law (universal)
+  - **=** x+1 > 5
+  - **=** x > 4
+  - basically, xʹ>5 is not refined by x:=x+1
+  - two things can be done
+    - change right side to be true
+    - **weaken left side to be true**
+      - x>4 ⇒ xʹ>5 **⇐** x:=x+1
+        - if x starts out bigger than 4, then xʹ will be greater than 5
+- (exact postcondition for x>4 to be refined by x:=x+1)
+  - impossible for computer to decide prestate
+  - **=** ∀ x • x>4 ⇐ (x:=x+1)
+  - **=** ∀ x • x>4 ⇐ (x:=x+1)
+  - **=** ∀ x • x>4 ⇐ (x:=x+1) &nbsp;&nbsp;&nbsp;&nbsp; One Point Law
+  - **=** xʹ-1 > 4
+  - **=** xʹ > 5
+  - weaken left side
+    - xʹ>5 ⇒ x>4 **⇐** x:=x+1 &nbsp;&nbsp;&nbsp;&nbsp; contrapositive
+    - **=** x&le;4 ⇒ x&le;5 ⇐ x:=x+1
+      - if x starts out less or equal to 4 then, xʹ will be less or equal to 5
