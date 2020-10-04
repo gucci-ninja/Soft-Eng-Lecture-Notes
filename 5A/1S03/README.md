@@ -209,7 +209,87 @@ Carbon to value inititive
 - breaks down waste
 - provides shelter
 - etc
-- worth $33 trillion/year (1997)
-  - ~$4500/inhabitant (not accounting for inflation)
-- GDP/capita (2018) ~$11 700
-  - roughly a third of gdp not captured  
+- worth \$33 trillion/year (1997)
+  - ~\$4500/inhabitant (not accounting for inflation)
+- GDP/capita (2018) ~\$11 700
+  - roughly a third of gdp not captured
+
+## Lecture 3
+
+- Natural capitalism
+  - Radical Resource Productivity
+    - maximize the use of all our resource
+    - be hyper efficient with resources
+  - Biomimicry
+    - use nature as a guide and find systems that are whole
+    - closed loop systems and apply it to our world
+    - flora fauna cycles
+    - eliminate waste in general
+  - Services and Flow Economy
+    - Think about the services our products provides
+    - not everyone needs vehicles, but everyone needs to move from a to b
+  - Investing in Natural Capital
+    - Similar to Biomimicry
+
+### Environmental Burden
+
+- EB=P\*T\*A
+- P: Population
+- T: Technology
+  - some argue that technology may help with environmental burden
+- A: Affluance
+  - amount of consumption
+  - wealth
+  - habits
+
+### Industrial Ecology
+
+- reducting impact on an industrial scale
+- one industry's waste is the raw resource of another
+- link industrial design and processes to surrounding environment
+- link economic system to the environment
+  - optimize resources, energy, capital
+- redesign industrial systems to mimic ecological systems
+
+#### Cradle to Cradle
+
+- two cycles
+  - biological
+  - technical
+- we don't interrupt biological cycle too much
+- what we do take out, we keep the product in a technical cycle
+  - recycling the product
+
+#### Down-cycling vs UpCycling
+
+- **Down-cycling**
+  - Natural material is used for industrial process and transformed
+  - transformed process is recycled for less use
+    - economically and technically
+  - material eventually can't be recycles and disposed
+- **Up-cycling**
+  - Natural material is used for industrial process and transformed
+  - transformed process is recycled for more use
+    - economically and technically
+  - Material/process has societal, environmental and economic benefit
+
+#### Industrial Parks
+
+- a bunch of exchanges between industries near each other
+  - by-products of industries are up-cycled into a new product in another industry
+- Sweden needs waste as they burn waste for energy/heat
+
+#### Policy Consideration (economic drivers)
+
+- charging companies for emissions (tax)
+- rewarding companies for dealing with emissions internally
+- the reward companies recieve must be bigger than the tax they pay for emissions
+
+#### Sustainable Design
+
+- Focus is beyond environment - incorporation of social impact and community health
+- **Opposing arguments**
+  - Decouple Environment from Economy
+  - Decouple Environment from Social Issues
+    - just solve the problem of environment
+    - ignore other issues
