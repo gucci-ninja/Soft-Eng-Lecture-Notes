@@ -608,3 +608,209 @@ Ideally, members of experimental and control groups are very similar, so that th
 - learn through modeling behavior
 - opening and closing mouth to new born, baby will follow
 - humans are able to learn
+
+## Module 5
+
+### Intelligence
+
+- psychologists generally have 2 categories
+  - ability to do cognitive tasks
+  - capacity to learn from past experiences and adapt
+- cognitive ability of an individual to learn from experience, reason well, remember important information, and cope with the demands of daily living
+- not everyone can agree how intelligence should be defined
+
+#### Problem Solving
+
+- reliable indicator of intelligence
+- 2 forms of reasoning
+  - **Deductive Reasoning**
+    - works from Ideas/General Information
+    - works to Specific Conclusions
+  - **Inductive Reasoning**
+    - works from Specific Facts
+    - works to General Idea
+- In Scientific Method
+  - Take theory
+  - use Deductive Reasoning to make Hypothesis
+  - Gather Facts(data) in experiments
+  - Use Inductive Reasoning to Interprete Data
+- Insight Problems
+  - require thinking outside the box
+
+### Intelligence Testing
+
+- Qualities of a Test
+  - Reliability
+    - produces same result if one person takes it mulitiple times
+    - especially important for intelligence test as intelligence is assumed to be a static trait
+  - Validity
+    - valid tests actually measures the trait it is supposed to be measuring
+
+#### Galton's intelligence test
+
+- reaction time to sensory motion
+- faster reaction time implies higher reaction
+
+#### Binet
+
+- first intelligence scale
+- used reasoning to test children about intelligence
+- Lewis Terman, psychologist at Stanford revised the test to **Standford-Binet**
+
+#### Spearman
+
+- believed single intelligence reflected overall performance
+  - math, language, music, etc
+- single intelligence measured with _g_
+- believed that minimum _g_ required to vote and reproduce
+
+#### Gardner
+
+- different/distinct intelligence
+  - Verbal (linguistic)
+  - Mathematical (logical)
+  - Musical (rythmic)
+  - Spatial (visual)
+  - Kinesthetic (bodily)
+  - Interpersonal
+  - Intrapersonal
+  - Naturalistic
+- popular with media
+- critics point out that some intelligence in one correlate with another, so it is likely connected
+- often romantic ideas are used haphazardly before scientific proof is fully revealed
+
+#### Weschler
+
+- Most popular intelligence tests today
+  - often uses patterns and puzzles
+- Weschler Adult Intelligence Scale (WAIS)
+- Weschler Intelligence Scale for Children (WISC)
+- IQ are perfectly normally distributed
+  - 100 is mean
+  - standard deviation of 15
+  - one person's IQ is relative to population
+
+#### Genetic and Environmental Contribution
+
+- does Genes or Environment contribute more to IQ
+  - does differences in IQ result from differences in Genes or Environment
+- studies with Genetic/Fraternal Twins show that Genes seem to have an impact
+  - but environment also show impact comparing Fraternal Twins with strangers
+  - Genetic Twins raised in different environments also show correlation with Genes being a strong contributer to IQ
+  - Impossible to conclude necessarily as correlation does not mean causation
+
+#### Flynn Effect
+
+- observations that raw IQ scores are on the rise since 1932
+  - scores that result in 100 has been going higher
+- Flynn thinks quality of school
+  - also nutrition and health increase
+  - increase of access to information
+
+### Piaget and Intelligence Development
+
+- Jean Piaget credited intellecual development to active learning in childhood
+- **Schema**
+  - A mental framework for interpreting the world around us
+  - child doesn't have fully developed schema
+- **Assimilation**
+  - Incorporation new information into existing schemas
+- **Accomodation**
+  - Modify existing schemas to fit incompatible information
+  - done when assimilation does not work
+
+#### Sequential Stages of Cognitive Development
+
+- must be done in this order
+- each stage may be done in different rates
+
+#### Sensorimotor
+
+- 0-2 years old
+- child recognize he can affect environment
+- **Object Permanence**
+  - objects continue to exist when no longer visible
+
+#### Preoperational
+
+- 2-7 years old
+- mastered object permanence but has few limitations
+  - **Egocentrism**
+    - difficulty understanding world other than itself
+  - **Seriation**
+    - logically order series of objects
+  - **Reversable Relationships**
+    - difficulty understanding themselves in the relationship with others
+      - daughter with no sisters may not realize her mother has a daughter
+  - **Conservation**
+    - difficulty understanding that properties are conserved after physical transformation
+      - glass of water poured into a different shaped glass may seem like more or less water to a child
+
+#### Concrete Operational
+
+- 7-12 years old
+- has problem with more abstract ideas
+
+#### Formal Operational
+
+- has adult cognitive ability
+- usually enjoys more fantasy/role playing subjects
+  - video games, books, etc.
+
+#### Flaws
+
+- Some children develop skills in different order to piaget's order
+- language translations may have different meanings
+
+### Decisions and Bias
+
+- flip A and 7
+  - if 7 has vowel behind, then it proves hypothesis false
+  - flipping 4 doesn't prove anything
+  - flipping A to make sure hypothesis is true
+- **Confirmation Bias**
+  - tendency to seek out information to support hypothesis
+  - can occur in diagnosis when asking follow up questions
+- **Availability Heuristic**
+  - tendency to make decisions based on information most quickly avaiable to us
+  - allows us to quickly make decisions without needing much thought
+    - good for easy simple decisions
+    - media and advertisements can greatly impact our decisions due to this
+- **Representative Heuristic**
+  - tendency to assume that what we are seeing is representative of the larger category we have in our mind
+  - we have a model of a archetype, even if its not very common relative to the population
+    - we associate the traits of the archetype to that archetype even if its unlikely.
+  - we also may assume that sequence of independent random events may lead to better odds of a specific result
+    - gamblers are prone to this
+      - gambler's fallacy
+
+## Lecture 4
+
+- 302 neurons is enough for problem solving
+- intelligence is impossible to measure directly
+  - indirectly measured
+  - hypothetical construct
+- behaviourism, on the other hand, is directly measureable
+- we need to define it, but very confidential
+
+### tests of intelligence
+
+- Functional fixedness
+  - cognitive bias limiting a person to use an object
+- Reason well
+- Louisiana Literacy test
+
+### Do humans behave reliability
+
+- **anchoring** set ceiling for highest price you will pay
+
+  - makes cheaper but expensive wine more affordable
+
+#### Bazerman and moore (2013)
+
+- define problem
+- identify criteria necessary to judge
+- weigh the criteria
+- generate alternatives
+- rate each alternative
+- compute optimal decision
