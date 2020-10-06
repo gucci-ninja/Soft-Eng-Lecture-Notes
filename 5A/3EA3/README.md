@@ -1012,3 +1012,143 @@ Hoare triples
     - xʹ>5 ⇒ x>4 **⇐** x:=x+1 &nbsp;&nbsp;&nbsp;&nbsp; contrapositive
     - **=** x&le;4 ⇒ x&le;5 ⇐ x:=x+1
       - if x starts out less or equal to 4 then, xʹ will be less or equal to 5
+
+## Segment 10
+
+- programs are not behaviour
+  - they are specifications
+  - not every specification is a program
+- computer behaviour is what runs the programs
+
+### Program
+
+- implemented specification
+- need a couple notations
+  - _ok_
+  - _x:=e_
+  - binary values, numbers, characters
+  - bunches, sets, strings, lists
+  - **NOT** functions, quantifiers
+  - if _b_ then _P_ else _Q_ fi
+    - _b_ is binary expression
+    - _P_ and _Q_ are programs (specifications)
+    - **if** always with **else**
+      - else case is often forgotten
+      - if not used, use "else ok"
+  - _P.Q_
+    - _P_ and _Q_ are programs
+- an implemented specification that is refined by a program is a program
+- Recursion is allowed
+  - x&ge;0 ⇒ xʹ=0
+    - not a program
+  - x&ge;0 ⇒ xʹ=0 **⇐** **if** x:=0 **then** _ok_ **else** x:=x-1 . x&ge;0 ⇒ xʹ=0 **fi**
+    - **if then else fi** is a program
+    - x:=0 is a program
+    - dependent composition is a program
+    - x&ge;0 ⇒ xʹ=0 is used recursively, so it is allowed to be part of the program
+    - the whole right side is a program
+      - recursive loop
+      - if x=0, then _ok_
+      - else x=x-1 and start from top
+
+#### refinement by steps
+
+- refine A into a program
+- A ⇐ **if** b **then** C **else** D **fi**
+  - if C and D are not programs
+  - we can refine C and D separately and replace them in the original refinement
+- if A ⇐ **if** b **then** C **else** D **fi** and C ⇐ E and D ⇐ F
+  - then A ⇐ **if** b **then** E **else** F **fi**
+- if A ⇐ B.C and B ⇐ D and C ⇐ E
+  - then A ⇐ D.E
+- if A implied B and B ⇐ C
+  - then A ⇐ C
+
+#### refinement by parts
+
+- if A ⇐ **if** b **then** C **else** D **fi** and E ⇐ **if** b **then** F **else** G **fi**
+  - then A∧E ⇐ **if** b **then** C∧F **else** D∧G **fi**
+  - conjunction of the two can be refined by the conjunctions of the if statement if the binary expression b is equal
+- if A ⇐ B.C and D ⇐ E.F
+  - then A∧D ⇐ B∧E.C∧F
+- if A ⇐ B and C ⇐ D
+  - then A∧C ⇐ B∧D
+
+#### refinement by cases
+
+- P ⇐ **if** b **then** Q **else** R **fi**
+- if and only if P ⇐ b∧Q and P ⇐ ¬b∧R
+
+### Application
+
+#### List Summation
+
+- L is a list of numbers
+- s is state variable (number)
+- sʹ = ΣL
+- add initial states
+- sʹ = ΣL **⇐** s:=0 . n:=0
+  - n is natural number state variable
+- add whats left to be done
+  - at any time during computation
+- sʹ = ΣL **⇐** s:=0 . n:=0 . sʹ = s + ΣL[n;..#L]
+  - sʹ = s + ΣL[n;..#L] is not yet a program
+  - need refinement
+- sʹ = s + ΣL[n;..#L] **⇐**
+  - **if** n=#L **then** n=#L ⇒ sʹ = s + ΣL[n;..#L]
+  - **else** n⧧#L ⇒ sʹ = s + ΣL[n;..#L] **fi**
+- the then and else statements are weaker (therefore easier to implement)
+- n=#L ⇒ sʹ = s + ΣL[n;..#L] **⇐** _ok_
+- n=#L ⇒ sʹ = s + ΣL[n;..#L] **⇐** s:=s+Ln . n:=n+1 . sʹ = s + ΣL[n;..#L]
+  - s:=s+Ln . n:=n+1 . sʹ = s + ΣL[n;..#L]
+  - **=** sʹ=s+Ln + ΣL[n+1;..#L]
+  - **=** sʹ = s + ΣL[n;..#L]
+- we can look at this as a collection of theorems (proofs)
+- we can also view it as a compiler
+- **Compiler List Summation**
+  - non-program parts are identifiers
+    - A **⇐** s:=0. n:=0. B
+    - B **⇐** **if** n=#L **then** C **else** D **fi**
+    - C **⇐** _ok_
+    - D **⇐** s:=s+Ln. n:=n+1. B
+  - Refinement by Steps = in-line macro-expansion
+    - B **⇐** **if** n=#L **then** _ok_ **else** s:=s+Ln. n:=n+1. B **fi**
+    - replaces C and D in B by what its refined by
+    - B can even be refined, and some compilers may do it
+      - called unrolling the loop
+      - tiny bit faster
+  - **Translation**
+    - s=0; n=0;
+    - B: if (n==sizeof(L)/sizeo`f(L[0])); else {s+=L[n]; n++}
+
+#### Binary Exponentiation
+
+- given natural variables x and y, write program for yʹ=2<sup>x</sup>
+- we can start by testing if x=0
+  - yʹ=2<sup>x</sup> **⇐** **if** x=0 **then** x=0 ⇒ yʹ=2<sup>x</sup> **else** x>0 ⇒ yʹ=2<sup>x</sup> **fi**
+    - need to refine **then** and **else**
+  - x=0 ⇒ yʹ=2<sup>x</sup> **⇐** y:=1. x:=3
+    - xʹ isn't defined in specification so we can assign it any value
+  - x>0 ⇒ yʹ=2<sup>x</sup> **⇐** x>0 ⇒ yʹ=2<sup>x-1</sup>. yʹ=2×y
+    - creates 2 new problems to refine
+      - yʹ=2×y
+      - x>0 ⇒ yʹ=2<sup>x-1</sup>
+  - yʹ=2×y **⇐** y:=2×y. x=45
+  - x>0 ⇒ yʹ=2<sup>x-1</sup> **⇐** xʹ=x-1.yʹ=2<sup>x</sup>
+    - creates 1 new problem to solve
+    - xʹ=x-1
+  - xʹ=x-1 **⇐** x:=x-1. y=3
+- **Compiler List Summation**
+  - creating identifiers
+    - A **⇐** **if** x=0 **then** B **else** C **fi**
+    - B **⇐** y:=1. x:=3
+    - C **⇐** D. E
+    - D **⇐** F. A
+    - E **⇐** y:=2×y. x:= 45
+    - F **⇐** x:=x-1. y:=3
+  - Refinement by Steps
+    - A **⇐** **if** x=0 **then** y:=1. x:=3 **else** x:=x-1. y:=3. A. y:=2×y. x:= 45 **fi**
+
+---
+
+- Usually translated code is very hard to read. We know the code will work because we can prove the theorems.

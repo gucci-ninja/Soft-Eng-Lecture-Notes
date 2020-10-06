@@ -44,7 +44,7 @@ mathSyms = mathDict({
 })
 
 change = lambda o,n,span: o[:span[0]] + n + o[span[1]:]
-regKeys = re.compile("(?<![a-zA-Z\<])\/[a-zA-Z]+(?!\>)") # find keys in mathSyms
+regKeys = re.compile("(?<![a-zA-Z\<)])\/[a-zA-Z]+(?!\>)") # find keys in mathSyms
 regScript = re.compile("\/([\_^])<(.*?)\/>") # find subscript/superscript
 regPrime = re.compile("\/'") # find prime
 symC = 1
