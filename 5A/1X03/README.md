@@ -514,7 +514,7 @@ Ideally, members of experimental and control groups are very similar, so that th
   - reinforcement occurs every x amount of times response is performed
     - FR-10 every 10 pecks
 - Interval Schedule
-  - [F|V]R-i
+  - [F|V]I-i
   - reinforcement occurs every i time(minutes) after last reward
     - FR-1 every 1 minute
 - Fixed Schedule
@@ -588,7 +588,7 @@ Ideally, members of experimental and control groups are very similar, so that th
   - omission of social media
   - set up environment for wanting to study
 
-### Reinforcers in Behavior MOdifications
+### Reinforcers in Behavior Modifications
 
 - Primary Reinforcers
   - biological neets
@@ -694,7 +694,7 @@ Ideally, members of experimental and control groups are very similar, so that th
 
 - does Genes or Environment contribute more to IQ
   - does differences in IQ result from differences in Genes or Environment
-- studies with Genetic/Fraternal Twins show that Genes seem to have an impact
+- studies with Identical/Fraternal Twins show that Genes seem to have an impact
   - but environment also show impact comparing Fraternal Twins with strangers
   - Genetic Twins raised in different environments also show correlation with Genes being a strong contributer to IQ
   - Impossible to conclude necessarily as correlation does not mean causation
