@@ -709,3 +709,63 @@ www.distancetomars.com
   - m = γm<sub>0</sub>
   - m<sub>0</sub>: mass at rest
   - mass of an object would be infinite if it is moving at c
+
+## Lecture 14
+
+### 3D SpaceTime Diagram
+
+- Light Cone represents light moving away from us or towards us
+
+### Quantum World-Light
+
+- what is light?
+  - behaves as a wave
+- speed: **c**
+- frequency: **f**
+  - same as pitch
+  - Hz
+  - how many times per second does wave repeat
+    - number of wavelengths per second
+- wavelength **λ**
+  - distance before wave repeats itself
+  - distance between tops/bottoms
+- speed = frequency\*wavelength
+  - speed is always constant
+  - f bigger λ smaller
+  - f smaller λ bigger
+- in order of increasing frequency (and therefore energy)
+  - radio
+  - infrared
+  - visible (red-violet)
+  - ultraviolet
+  - X ray
+  - gamma rays
+- running towards light
+  - blueshift
+  - more waves per unit time
+  - higher frequency
+- running away from light
+  - redshift
+  - less waves per unit time
+  - lower frequency
+
+#### Quantum Weirdness
+
+- everyday experience doesn't prepare for what happens at high speeds (relativity)
+- it also doesn't help us with very small objects (quantum mechanics)
+
+### Quantum Physics
+
+- Quantum Mechanics (1926)
+  - Newton's laws break down when applied to distances comparable to the size of an atom
+- 1899
+  - attempting to understand "blackbody" radiation
+  - hot objects glow with a spectrum of colours depending only on temperature, not chemical compositions
+    - stars are really good blackbodies
+  - hotter temperature is "bluer"
+  - cooler temperature is "redder"
+- 1900
+  - Max Planck explained black body radiation
+  - light came in small "chunks" or quanta
+  - Nobel Prize for Physics 1918
+  
