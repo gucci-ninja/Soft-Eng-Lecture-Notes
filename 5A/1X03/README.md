@@ -814,3 +814,209 @@ Ideally, members of experimental and control groups are very similar, so that th
 - generate alternatives
 - rate each alternative
 - compute optimal decision
+
+## Module 6
+
+### Language
+
+- most complex form of communication
+- language is regular
+  - governed by rules and grammer
+  - sentences can be reordered and keep its meaning
+- language is arbitrary
+  - the specific sound meant to represent an object/concept is completely arbitrary
+  - the word "cat" doesn't say anything to reference a furry whiskered animal
+- language is productive
+  - almost limitless ways to describe objects, situation and actions
+  - particularly evident in native language development in infants
+    - experiment novel words and sound combinations that haven't been explicitly taught
+
+#### How does Language develop
+
+- **Whorf-Sapir Hypothesis**: Language influences our thoughts and the way we preceive and experience the world
+  - we think in our native language, even though we don't need to
+  - Tribe in Brazil
+    - only three counting words
+      - 1, 2, many
+    - when asked to group objects into 1, 2 or many
+      - performed well only with 1, 2
+      - suggests that fine numerical observation is lacking
+        - supports Whorf-Saphir
+  - Wyoming Arapahoe use single word to describe senior male relative
+    - older brother, father, uncle, grandfather, etc
+    - They still understand differences between relatives and how they relate.
+      - counters Whorf-Sapir
+    - English is similar
+      - Asian languages like Mandarin and Korean have even more specific words for uncle on the mother or father's side
+      - despite this, english speakers don't have trouble understanding if an uncle is on the mother or father's side
+- key question is can one have abstract thought without language?
+
+#### Structure of Language
+
+- Morpheme
+  - smallest unit of sound that contains information
+  - often a word contains multiple morphemes
+  - Table is a morpheme
+  - tablecloth is a word that contains 2 morphemes
+    - table
+    - cloth
+  - Tables has 2 morphemes
+    - table
+    - s
+      - indicates multiple
+  - -ing and -ed are morphemes
+  - Phonemes are the smallest unit of sounds in a word
+    - makes up the morphemes
+    - dog
+      - /d/ /o/ /g/
+    - /ch/ /ai/ /r/
+    - /k/ /v/ /t/
+      - doesn't work
+- syntax
+  - rules that govern how words in a sentence are put together
+  - grammer
+  - French adds grammatical gender to words
+  - English does not
+  - not easy to define
+- semantics
+  - meaning in the words
+
+#### Infants Developing Language
+
+- Babbling
+  - drawn-out sounds made of a combinations of vowels and consonants
+  - may sound like a real sentence/question because of use of inflection and rhythm in the production of the babble
+  - Combinations progress to become real words
+- 1.5-6 years old
+  - Language "explodes"
+- segmenting individual words is difficult in speech of a foreign language
+  - unfamiliar language sounds very fast
+  - hard to indentify specific words
+- infants were testsed to see if they can segment a familiarized word from the speech stream
+  - given a target word
+  - used in speech stream
+  - when turned 2
+    - strong positive correlation of segmentation ability with expressive vocabulary
+
+#### Universal Phonemes Sensitivity
+
+- infants can distinguish more phonemes than adults
+- ability of infants to discriminate between any sounds they're tested on
+- includes sounds from non-native languages
+- head turn procedure
+  - 2 speakers
+  - play a phoneme in both alternating
+    - reward given when one's head turns towards both
+  - keep playing same phoneme until the testee loses interest
+  - when new phoneme plays repeat
+- children loses this ability within the first year
+
+#### Theories of Language Development
+
+- social learning theory
+  - the environment one grew up in dictates how language is used
+- overextension
+  - categorize objects too broadly
+    - every 4 leg animal is doggie
+  - use -ed to run
+- underextension
+  - catergorize objects too specifically
+    - only one's dog is doggie
+- Language Acquisition Device
+  - innate mechanism
+    - only in humans that helps language develop rapidly according to universal rules
+- Congenitally deaf children develop universal sign language without formally learning it
+
+#### Animal Communication
+
+- Honey Bees
+  - Waggle dance to communicate location of food
+    - waggle phase
+      - direction and distance
+      - distance of waggle -> distance of food
+      - angle of waggle -> direction of food
+- Birds
+  - songs for communication and competition
+- Washoe
+  - taught to use American Sign Language
+  - can use to communicate simple request
+  - not yet language
+    - doesn't use grammer
+- Sarah
+  - use symbols to communicate
+  - used large vocabulary
+  - could not generate new sentences
+- Kanzi
+  - use lexigrams to communicate
+  - used full immersion instead of classical conditioning
+  - could communicate novel request
+  - limited grammer
+
+## Lecture 5
+
+- communications between humans are easy
+  - if both are good at same language
+- different languages are harder
+  - lost in translation
+- English in Foreign Countries
+  - sometimes not properly translated
+- getting chinese/japanese words tattoed
+  - often mistranlated
+- english by itself don't make sense
+  - makes it hard to learn
+
+### creating new languages
+
+- need 2 rules
+  - Grammer
+  - Lexicon
+    - vocabulary
+
+### Changing cultural value
+
+- give, get
+- can see how cultures will react to things through language
+
+### Why do we swear
+
+- why do people get upset by certain words
+- why do we use certain words to get people upset
+- Basal Ganglia and Limbic System
+  - Right hemisphere
+  - Basal Ganglia
+  - Amygdala
+- Swearing as a weapon
+  - easy to use to trigger
+    - compare to fighting
+  - lazy
+- different languages usually focus on 1-2 contents of swearing
+  - french
+    - supernatural
+  - english
+    - body/sexuality
+
+#### Contents of swearing
+
+- Supernatural
+- Body effluvia and organs
+  - ass, etc
+- Disease, death and sickness
+  - a pox on you
+- Sexuality
+
+---
+
+- Euphimism
+- Dysphemism
+- Emphatic swearing
+- Cathartic Swearing
+  - Rage-circuit theory
+    - Mammels injured or confined
+    - emit sudden angry noises
+
+### Conclusions
+
+- All species communicate but language is special
+- It's important to get a second optinion before getting a tattoo
+- Developing a language is a full-time job
+- Humans are guided by emotions
