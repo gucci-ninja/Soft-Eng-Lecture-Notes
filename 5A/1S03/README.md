@@ -104,7 +104,7 @@ Carbon to value inititive
 - Ryo Okumura
 - Apoorv Sinha
 
-## Lecture 2
+## Lecture 2-1
 
 ### Pillars of Sustainability
 
@@ -214,7 +214,7 @@ Carbon to value inititive
 - GDP/capita (2018) ~\$11 700
   - roughly a third of gdp not captured
 
-## Lecture 3
+## Lecture 2-2
 
 - Natural capitalism
   - Radical Resource Productivity
@@ -293,3 +293,159 @@ Carbon to value inititive
   - Decouple Environment from Social Issues
     - just solve the problem of environment
     - ignore other issues
+
+## Lecture 3-1
+
+### Policy in Sustainability
+
+- what is policy
+  - principles of actions
+  - Government, corporations, individuals have a set of "principles of action"
+  - Who establishes policy?
+    - government (public)
+      - Federal, provincial, municipal, region (Halton)
+    - education (institutional)
+      - Mcmaster
+      - how grades are calculated
+      - how students are accepted
+    - corporations (private industry)
+      - how they run business
+
+#### Public Policy
+
+- legally established policies of a government
+- density of populations
+  - provincial
+- regional governments
+  - can take policies to allow certain services to be shared between multiple regions
+    - more efficient and less wasteful
+- who influences changes in public policy
+  - lower levels of government
+    - Provincial Government
+    - Regional Government
+    - Municipal Government
+  - International Organizations
+    - UN
+    - WTO
+    - Other country governments
+  - private interesets
+    - Business
+    - Associations
+    - Unions
+    - NGO
+      - non-government organizations
+    - Individuals
+- examples
+  - healthcare system
+  - renewable energy
+  - engineering co-op
+    - allows students to gain experiences
+    - employers are subsidized
+- sanction-based
+  - incentive or restriction
+    - financial or permit based
+    - tax credits
+    - grant/low-interest loans
+- free trade
+  - allows companies to move goods between borders
+    - some arguements agains free market is moving to areas with less strict ethical policies.
+- speed of policy
+  - changes in market moves much faster than policy
+    - uber/airbnb
+      - no policies were made to regulate these markets
+      - can't protect the users
+    - doesn't want to slow down innovations
+  - political will
+    - action that may be in the face of controversy, against majority public opinion, or even in contradiction to political ideology
+    - opposite
+      - nimtoo
+        - not in my term of office
+        - make no changes
+
+#### Examples in Ontario  
+
+- coal-fire power plants
+  - Coal Phase-Out
+  - 1991 start
+  - became election issue in 2003
+- Montreal Protocal
+  - CFC in atmosphere 1973
+    - break down stratospheric ozone
+  - human health impact
+
+## Lecture 3-2
+
+### Corporate Policy
+
+- hiring policy, compensation policy, health & safety policy, etc
+- every corporation has a missson statement
+- Missions, VIsions, Ambitions, and Goals
+
+#### Industry Associations
+
+- Industry associations are focused on communicating an industry position for the benefits of its members
+  - some against blatant regard for public opinion (tobacco)
+- Evolved to become more complex
+  - lobbying still important aspect of associations
+  - Consultations with regulators
+    - sellers of products may have a representative consult to regulators
+  - Opportunity for engagement for smaller business
+  - every industy may have different best practices
+- Sustainability aspect
+  - Develop industry-wide standards/protocols
+  - Conducting research
+  - Publishing sustainability reports
+
+#### Non-Governmental Organizations
+
+- most prevalent in environmental and social welfare space
+  - eNGOs: environmental NGO
+- NGO have worked with Land Owners to rehabilitate space to become protected ecosystem
+
+#### Standards Associations
+
+- Prescribe specific set of principles
+- Standardize approaches or design methodologies
+  - ISO
+    - multiple environmental standars exists in ISO 14000 family
+    - ISO 14064: Greenhouse gases quantification
+  - FSC
+    - formed in Toronto 1993
+    - addresses unsustainable logging and clearing practices
+  - LEED
+    - incentivises best practices when building houses
+    - One step above minimum requirements
+
+### Corporate Social Responsibility (CSR)
+
+- role of private enterprise
+  - classically, maximize shareholder value
+    - profits
+
+#### CSR and Globalization
+
+- dynamic between companies and governments changes.
+- Companies can be larger than countries in
+  - Finances
+  - Maturity of organization
+  - number of citizens/employees
+- APPLE (2019 Revenue): 260b
+  - Czech Republic
+  - Portugal
+- Walmart: 524b
+  - 25th largest economy in the world (if walmart is a country)
+  - 2.3 million employees in 28 countries
+- if companies are so big, why bother with CSR
+  - social conscious consumer (environmentally or socially driven)
+  - social media
+  - employee attraction/retention
+  - "having a seat at the table"
+    - leading discussion in new policies
+  - New generations of leaders
+- What does CSR look like
+  - "Local Management, Global Standards"
+  - leaders want to establish responsible operating conditions in the event of government failure or lack of capacity.
+
+#### CSR and Sustainability
+
+- in mature organizations, CSR and Sustainabiltiy are synonmous
