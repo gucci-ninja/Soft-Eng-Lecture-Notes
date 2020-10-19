@@ -1152,3 +1152,149 @@ Hoare triples
 ---
 
 - Usually translated code is very hard to read. We know the code will work because we can prove the theorems.
+
+## Segment 11
+
+### Time
+
+- considers how long a computation takes
+- introduce time variable
+- independent of memory variables
+- σ = _t_; _x_; _y_; ...
+- state = time variable; memory variables
+- _t_ = time at which execution starts
+- _tʹ_ = time at which execution ends
+  - if computation never ends, _tʹ_ = ∞
+- extended natural or extended nonnegative real
+  - depends on the context
+- changes **implementable** S
+  - S is implementable if and only if
+    - ∀ σ • ∃ σʹ • S ∧ _tʹ_&ge;_t_
+    - added the fact that time cannot move backward
+
+#### real time
+
+- uses extended nonnegative real variable
+  - represents how time moves in clocks
+  - excution time
+  - heart pacemaker
+- t:=t+(time takes to evaluate and store _e_). x:=_e_
+  - can be after
+  - doesn't add extra execution time
+- t:=t+(time takes to evaluate _b_ and branch). if _b_ then P else Q fi
+- t:=t+(time for call and return). P
+- tʹ=t + f σ
+  - f σ is a function on the state
+    - is the execution time
+- tʹ&le;t + f σ
+  - the upper bound of execution time
+  - the computation time takes at most f σ
+- tʹ&ge;t + f σ
+  - the lower bound of execution time
+  - the computation time takes at least f σ
+- time can't be put in specification until compiler tells user how long each section takes
+- P **⇐** **if** x=0 **then** _ok_ **else** x:=x-1. P **fi**
+  - assume testing and branching requires time 1
+    - _ok_ takes no time
+- P **⇐** t:=t+1 **if** x=0 **then** _ok_ **else** t:=t+1. x:=x-1. t:=t+1. P **fi**
+  - is a theorem when
+  - P = xʹ=0
+  - P = **if** x&ge;0 **then** t:=t+ 3×x+1 **else** tʹ=∞ **fi**
+  - P = **if** x&ge;0 **then** t:=t+ 3×x+1 ∧ xʹ=0 **else** tʹ=∞ **fi**
+    - most correct
+  - P = xʹ=0 ∧ **if** x&ge;0 **then** t:=t+ 3×x+1 **else** tʹ=∞ **fi**
+    - easiest to prove
+    - generally pick easist to prove and avoid final variables of finitiy
+
+#### recursive time
+
+- each recursive call costs time 1
+- all else is free
+- P **⇐** **if** x=0 **then** _ok_ **else** x:=x-1. t:=t+1. P **fi**
+  - is a theorem when
+  - P **=** xʹ=0
+  - P **=** **if** x&ge;0 **then** t:=t+x **else** tʹ=∞ **fi**
+  - P **=** **if** x&ge;0 **then** t:=t+x ∧ xʹ=0 **else** tʹ=∞ **fi**
+    - most correct
+  - P = xʹ=0 ∧ **if** x&ge;0 **then** t:=t+x **else** tʹ=∞**fi**
+- recursion can be direct or indirect
+  - the example above is direct
+- every loop call has to add 1 to time
+- R **⇐** **if** x=1 **then** _ok_ **else** x:=_div_ x 2. t:=t+1. R **fi**
+- where
+- R **=** xʹ=1 ∧ **if** x&ge;1 **then** tʹ&le;t + _log_ x **else** tʹ=∞ **fi**
+  - **=** xʹ=1 ∧ (x&ge;1 ⇒ tʹ&le;t + _log_ x) ∧ (x<1 ⇒ tʹ=∞)
+- using Refinement by Parts; prove
+- xʹ=1
+  - ⇐ **if** x=1 **then** _ok_ **else** x:=_div_ x 2. t:=t+1. xʹ=1 **fi**
+    - using Refinement by Cases
+    - ⇐ x=1 ∧ _ok_
+      - ⇐ x=1 ∧ xʹ=x ∧ tʹ=t &nbsp;&nbsp;&nbsp;&nbsp; Transitivity, Specialization
+    - ⇐ x⧧1 ∧ (x:=_div_ x 2. t:=t+1. xʹ=1)
+      - ⇐ x⧧1 ∧ xʹ=1 &nbsp;&nbsp;&nbsp;&nbsp; Specialization
+- x&ge;1 ⇒ tʹ&le;t + _log_ x
+  - ⇐ **if** x=1 **then** _ok_ **else** x:=_div_ x 2. t:=t+1. x&ge;1 ⇒ tʹ&le;t + _log_ x **fi**
+    - ⇐ x=1 ∧ _ok_
+      - ⇐ x=1 ∧ xʹ=x ∧ tʹ=t
+      - x&ge;1 ⇒ tʹ&le;t + _log_ x **⇐** x=1 ∧ xʹ=x ∧ tʹ=t &nbsp;&nbsp;&nbsp;&nbsp; context x=1 and tʹ=t
+      - **=** 1&ge;1 ⇒ t&le;t + _log_ x **⇐** x=1 ∧ xʹ=x ∧ tʹ=t &nbsp;&nbsp;&nbsp;&nbsp; compute
+      - **=** ⊤ ⇐ x=1 ∧ xʹ=x ∧ tʹ=t &nbsp;&nbsp;&nbsp;&nbsp; base law
+      - **=** ⊤
+    - ⇐ x⧧1 ∧ (x:=_div_ x 2. t:=t+1. x&ge;1 ⇒ tʹ&le;t + _log_ x)
+      - ⇐ x⧧1 ∧ (_div_ x 2&ge;1 ⇒ tʹ&le;t+1 + _log_(_div_ x 2))
+      - x&ge;1 ⇒ tʹ&le;t + _log_ x **⇐** x⧧1 ∧ (_div_ x 2&ge;1 ⇒ tʹ&le;t+1 + _log_(_div_ x 2)) &nbsp;&nbsp;&nbsp;&nbsp; Portation
+        - ((b ⇒ c) ⇐ a)
+      - **=** x&ge;1 ∧ x⧧1 ∧ (_div_ x 2&ge;1 ⇒ tʹ&le;t+1 + _log_(_div_ x 2)) ⇒ tʹ&le;t + _log_ x &nbsp;&nbsp;&nbsp;&nbsp; simplify
+      - **=** x>1 ∧ (x>1 ⇒ tʹ&le;t+1 + _log_(_div_ x 2)) ⇒ tʹ&le;t + _log_ x &nbsp;&nbsp;&nbsp;&nbsp; Discharge
+      - **=** x>1 ∧ tʹ&le;t+1 + _log_(_div_ x 2) ⇒ tʹ&le;t + _log_ x &nbsp;&nbsp;&nbsp;&nbsp; Portation
+      - **=** x>1 ⇒ tʹ&le;t+1 + _log_(_div_ x 2) ⇒ tʹ&le;t + _log_ x &nbsp;&nbsp;&nbsp;&nbsp; Portation
+      - **=** x>1 ⇒ tʹ&le;t+1 + _log_(_div_ x 2) ⇒ tʹ&le;t + _log_ x &nbsp;&nbsp;&nbsp;&nbsp; Connection Law
+        - tʹ&le;a ⇒ tʹ&le;b **⇐** a&le;b
+      - **⇐** x>1 ⇒ t+1 + _log_(_div_ x 2) &le; t + _log_ x &nbsp;&nbsp;&nbsp;&nbsp; subtract t+1 from both sides of inequality
+      - **=** x>1 ⇒ _log_(_div_ x 2) &le; _log_ x - 1 &nbsp;&nbsp;&nbsp;&nbsp; property of _log_
+      - **=** x>1 ⇒ _log_(_div_ x 2) &le; _log_ (x/2) &nbsp;&nbsp;&nbsp;&nbsp; _log_ is monotonic for x>0
+      - **⇐** _div_ x 2 &le; x/2 &nbsp;&nbsp;&nbsp;&nbsp; _log_ is monotonic for x>0
+      - **=** ⊤
+- x<1 ⇒ tʹ=∞
+  - ⇐ **if** x=1 **then** _ok_ **else** x:=_div_ x 2. t:=t+1. x<1 ⇒ tʹ=∞ **fi**
+    - ⇐ x=1 ∧ _ok_
+      - ⇐ x=1 ∧ xʹ=x ∧ tʹ=t
+      - x<1 ⇒ tʹ=∞ **⇐** x=1 ∧ xʹ=x ∧ tʹ=t &nbsp;&nbsp;&nbsp;&nbsp; Portation
+      - x<1 ∧ x=1 ∧ xʹ=x ∧ tʹ=t ⇒ tʹ=∞ &nbsp;&nbsp;&nbsp;&nbsp; Exclusivity
+      - ⊥ ∧ xʹ=x ∧ tʹ=t ⇒ tʹ=∞ &nbsp;&nbsp;&nbsp;&nbsp; Base
+      - ⊥ ⇒ tʹ=∞ &nbsp;&nbsp;&nbsp;&nbsp; Base
+      - ⊤
+    - ⇐ x⧧1 ∧ (x:=_div_ x 2. t:=t+1. x<1 ⇒ tʹ=∞)
+      - ⇐ x⧧1 ∧ (_div_ x 2<1 ⇒ tʹ=∞)
+      - x<1 ⇒ tʹ=∞ **⇐** x⧧1 ∧ (_div_ x 2<1 ⇒ tʹ=∞) &nbsp;&nbsp;&nbsp;&nbsp; Portation
+      - x<1 ∧ x⧧1 ∧ (_div_ x 2<1 ⇒ tʹ=∞) ⇒ tʹ=∞ &nbsp;&nbsp;&nbsp;&nbsp; simplify, Discharge
+      - x<1 ∧ tʹ=∞ ⇒ tʹ=∞ &nbsp;&nbsp;&nbsp;&nbsp; Specialization
+      - ⊤
+
+### Termination
+
+- xʹ=2 **⇐** x:=2
+  - theres an even simpler specifiction we can use to refine
+  - xʹ=2 **⇐** xʹ=2
+    - or xʹ=2**⇐** t:=t+1. xʹ=2
+    - implication is reflexive (theorem)
+  - **=** ⊤
+  - calling itself means infinite loop
+  - tʹ=∞
+  - customer cannot complain unless xʹ⧧2
+- xʹ=2 ∧ tʹ<∞
+  - unimplementable
+  - t isn't guaranteed to start at finite time.
+    - (infinite loop). xʹ=2 ∧ tʹ<∞
+    - when program reaches xʹ=2, t=∞
+  - if t starts at ∞, then t would need to move backwards in order to satisfy constraint tʹ<∞
+    - impossible
+- xʹ=2 ∧ (t<∞ ⇒ tʹ<∞)
+  - xʹ=2 ∧ (t<∞ ⇒ tʹ<∞) **⇐** t:=t+1. xʹ=2 ∧ (t<∞ ⇒ tʹ<∞)
+  - can be refined by a loop since no upper bound of time is specified
+  - customer cannot complain unless xʹ⧧2 ∨ t⧧∞ ∧ tʹ=∞
+- xʹ=2 ∧ tʹ&le;t+1
+  - xʹ=2 ∧ tʹ&le;t+1 **⇐** x:=2
+  - cannot be refined by loop as not a therom
+  - wants termination within one loop/unit of time
+- moral is termination only really matters when we put a finite upper bound on time.
