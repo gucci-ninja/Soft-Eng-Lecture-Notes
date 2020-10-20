@@ -1298,3 +1298,81 @@ Hoare triples
   - cannot be refined by loop as not a therom
   - wants termination within one loop/unit of time
 - moral is termination only really matters when we put a finite upper bound on time.
+
+## Segment 12
+
+### Linear Search
+
+- find the first occurrence of item _x_ in list _L_
+- execution time must be linear in _#L_
+- _hʹ_ represents position of _x_
+- ¬ _x: L_ (_0,..h_) ∧ (_Lhʹ=x ∨ hʹ=#L_)
+  - **⇐** _h:=0. h&le;#L_ ⇒ ¬ _x: L_ (_h,..h_) ∧ (_Lhʹ=x ∨ hʹ=#L_)
+- _h&le;#L_ ⇒ ¬ _x: L_ (_h,..h_) ∧ (_Lhʹ=x ∨ hʹ=#L_)
+  - **⇐** **if** _h_=_#L_ **then** _ok_ **else** _h < #L_ ⇒ ¬ _x: L_ (_h,..h_) ∧ (_Lhʹ=x ∨ hʹ=#L_) **fi**
+- h < #L ⇒ ¬ _x: L_ (_h,..h_) ∧ (_Lhʹ=x ∨ hʹ=#L_)
+  - **⇐** **if** _Lh_=_x_ **then** _ok_ **else** _h_:=_h+1_. _h&le;#L_ ⇒ ¬ _x: L_ (_h,..h_) ∧ (_Lhʹ=x ∨ hʹ=#L_) **fi**
+
+#### Timing for Linear Search
+
+- _tʹ &le; t+#L_ **⇐** _h:=0. h&le;#L_ ⇒ _tʹ &le; t+#L-h_
+- _h&le;#L_ ⇒ _tʹ &le; t+#L-h_
+  - **⇐** **if** _h_=_#L_ **then** _ok_ **else** _h<#L_ ⇒ _tʹ &le; t+#L-h_ **fi**
+- _h<#L_ ⇒ _tʹ &le; t+#L-h_
+  - **⇐** **if** _Lh_=_x_ **then** _ok_ **else** _h:=h+1. t:=t+1. h&le;#L_ ⇒ _tʹ &le; t+#L-h_ **fi**
+- if the specification wants non-empty list
+  - initial refinement would have h<#L rather than h&le;#L which is proved already too
+
+### Binary Search
+
+- find any occurrence of item _x_ in nonempty sorted list _L_
+- execution time must be logarithmic in _#L_
+- _pʹ_ represents whether there is _x_ in list (binary)
+- _hʹ_ represents position of _x_ (lower bound)
+- _jʹ_ represents another position variable (upper bound)
+- _iʹ_ represents another position variable (midpoint)
+- x: L(0,..#L) = pʹ **⇒** Lhʹ = x
+  - **⇐** h:=0. j:=#L. h<j ⇒ R
+    - R = x: L(h,..#L) = pʹ **⇒** Lhʹ = x
+- h<j ⇒ R
+  - **⇐** **if** j-h=1 **then** p:=Lh=x **else** j-h&ge;2 ⇒ R **fi**
+- j-h&ge;2 ⇒ R
+  - **⇐** j-h&ge;2 ⇒ hʹ=h<iʹ<j=jʹ. **if** Li&le;x **then** h:=i **else** j:=i **fi**. h<j ⇒ R
+    - (**hʹ=h<iʹ<j=jʹ** means define i between h and j)
+- j-h&ge;2 ⇒ hʹ=h<iʹ<j=jʹ
+  - **⇐** i:=_div_ (h+j) 2
+- usually, we want to have minimize average time rather than worst tim.
+- worst case may never happen or happen little enough for it to matter.
+- binary search may not be the best search in every case
+  - case when items are less searched the further back the list, linear search is better
+- should we check the middle item if it's _x_?
+  - Li=x
+  - recursive time doesn't matter
+  - real time requires an extra check so it is a lot slower
+
+#### Timing for Binary Search
+
+- we split the specification into 3 parts
+- T **⇐** h:=0. j:=#L. U
+- U **⇐** **if** j-h=1 **then** p:=Lh=x **else** V **fi**
+- V **⇐** i:=_div_ (h+j) 2. **if** Li&le;x **then** h:=i **else** j:=i **fi**. t:=t+1. U
+- time(recursive) increases Logarithmically as #L increases
+- T **=** tʹ &le; t + _ceil_ (_log_ (#L))
+- U **=** h<j ⇒ tʹ &le; t + _ceil_ (_log_ (j-h))
+- V **=** j-h&ge;2 ⇒ tʹ &le; t + ceil (_log_ (j-h))
+
+### Three Levels of Care
+
+- Lowest
+  - don't bother with specifications
+  - don't bother with refinements
+  - just write code
+  - most common
+- Middle
+  - write all specifications
+  - don't formally prove refinements
+    - (argued informally)
+- Highest
+  - write all specifications
+  - prove all refinements
+    - often using automated theorem prover
