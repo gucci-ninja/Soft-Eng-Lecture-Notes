@@ -3,50 +3,50 @@ import re
 class mathDict(dict):
     def __missing__(self, key):
         print (key)
-        return key[1:]
+        return key[2:]
 
 mathSyms = mathDict({
-    "/F" : "⊥" ,
-    "/T" : "⊤" ,
-    "/not" : "¬" ,
-    "/and" : "∧" ,
-    "/or" : "∨" ,
-    "/implies" : "⇒" ,
-    "/implied" : "⇐" ,
-    "/unequal" : "⧧" ,
-    "/times" : "×" ,
-    "/inter" : "‘" ,
-    "/cent" : "¢",
-    "/sPower" : "ϟ",
-    "/inf" : "∞",
+    "//F" : "⊥" ,
+    "//T" : "⊤" ,
+    "//not" : "¬" ,
+    "//and" : "∧" ,
+    "//or" : "∨" ,
+    "//implies" : "⇒" ,
+    "//implied" : "⇐" ,
+    "//unequal" : "⧧" ,
+    "//times" : "×" ,
+    "//inter" : "‘" ,
+    "//cent" : "¢",
+    "//sPower" : "ϟ",
+    "//inf" : "∞",
     "" : "∈" ,
     "" : "∪" ,
     "" : "∩" ,
     "" : "⊇" ,
     "" : "⊆" ,
-    "/sLen" : "↔" ,
-    "/sModL" : "⊲" ,
-    "/sModR" : "⊳" ,
-    "/fs" : "〈" ,
-    "/fe" : "〉" ,
-    "/map" : "→" ,
-    "/fDom" : "☐" ,
-    "/forall" : "∀" ,
-    "/exists" : "∃" ,
-    "/sum" : "Σ" ,
-    "/product" : "∏" ,
-    "/sol" : "§" ,
-    "/preS" : "σ" ,
-    "/postS" : "σʹ" ,
+    "//sLen" : "↔" ,
+    "//sModL" : "⊲" ,
+    "//sModR" : "⊳" ,
+    "//fs" : "〈" ,
+    "//fe" : "〉" ,
+    "//map" : "→" ,
+    "//fDom" : "☐" ,
+    "//forall" : "∀" ,
+    "//exists" : "∃" ,
+    "//sum" : "Σ" ,
+    "//product" : "∏" ,
+    "//sol" : "§" ,
+    "//preS" : "σ" ,
+    "//postS" : "σʹ" ,
     "" : "⦂" ,
-    "/tab": "&nbsp;&nbsp;&nbsp;&nbsp;",
-    "/dot": "•"
+    "//tab": "&nbsp;&nbsp;&nbsp;&nbsp;",
+    "//dot": "•"
 })
 
 change = lambda o,n,span: o[:span[0]] + n + o[span[1]:]
-regKeys = re.compile("(?<![a-zA-Z\<)])\/[a-zA-Z]+(?!\>)") # find keys in mathSyms
-regScript = re.compile("\/([\_^])<(.*?)\/>") # find subscript/superscript
-regPrime = re.compile("\/'") # find prime
+regKeys = re.compile("\/\/[a-zA-Z]+(?!\>)") # find keys in mathSyms
+regScript = re.compile("\/\/([\_^])<(.*?)\/>") # find subscript/superscript
+regPrime = re.compile("\/\/'") # find prime
 symC = 1
 
 with open("README.md", encoding='utf8', mode="r") as f:

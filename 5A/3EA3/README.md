@@ -1376,3 +1376,104 @@ Hoare triples
   - write all specifications
   - prove all refinements
     - often using automated theorem prover
+
+## Segment 13
+
+### Fast Exponentiation
+
+- Given rational variables _x_ and _z_ and natural variable _y_, write a program for _zʹ_ = _x<sup>y</sup>_
+  - runs fast without using exponentiation operator
+- zʹ = x<sup>y</sup> **⇐** z:=1. z×x<sup>y</sup>
+- z:=0. z×x<sup>y</sup> **⇐** **if** y=0 **then** _ok_ **else** y>0 ⇒ zʹ=z×x<sup>y</sup> **fi**
+  - y=0 ∧ _ok_
+  - **=** y=0 ∧ xʹ=x ∧ yʹ=y ∧ zʹ=z &nbsp;&nbsp;&nbsp;&nbsp; Specialize, Identify of ×
+  - **⇐** y=0 ∧ zʹ=z×1 &nbsp;&nbsp;&nbsp;&nbsp; x<sup>0</sup> = 1
+  - **=** y=0 ∧ zʹ=z×x<sup>0</sup> &nbsp;&nbsp;&nbsp;&nbsp; Context y=0, Specialize
+  - **⇐** zʹ=z×x<sup>y</sup>
+- y>0 ⇒ zʹ=z×x<sup>y</sup> **⇐** z:=z×x. y:=y-1. zʹ=z×x<sup>y</sup>
+  - y>0 ⇒ zʹ=z×x<sup>y</sup> **⇐** z:=z×x. y:=y-1. zʹ=z×x<sup>y</sup> &nbsp;&nbsp;&nbsp;&nbsp; Portation
+  - (z:=z×x. y:=y-1. zʹ=z×x<sup>y</sup>) ∧ y>0 ⇒ zʹ=z×x<sup>y</sup> &nbsp;&nbsp;&nbsp;&nbsp; Substitution twice
+  - zʹ=z×x×x<sup>y-1</sup> ∧ y>0 ⇒ zʹ=z×x<sup>y</sup> &nbsp;&nbsp;&nbsp;&nbsp; Law of Exponents
+  - zʹ=z×x<sup>y</sup> ∧ y>0 ⇒ zʹ=z×x<sup>y</sup> Specialize
+  - ⊤
+- Can be faster if we check if _y_ is even
+- change the last refinement to
+- y>0 ⇒ zʹ=z×x<sup>y</sup> **⇐** **if** _even_ y **then** _even_ y ∧ y>0 ⇒ zʹ=z×x<sup>y</sup> **else** _odd_ y ⇒ zʹ=z×x<sup>y</sup> **fi**
+- _even_ y ∧ y>0 ⇒ zʹ=z×x<sup>y</sup> **⇐** x:=x×x. y:=y/2. zʹ=z×x<sup>y</sup>
+  - _even_ y ∧ y>0 ⇒ zʹ=z×x<sup>y</sup> **⇐** x:=x×x. y:=y/2. zʹ=z×x<sup>y</sup> &nbsp;&nbsp;&nbsp;&nbsp; Portation
+  - **=** _even_ y ∧ y>0 ∧ (x:=x×x. y:=y/2. zʹ=z×x<sup>y</sup>) ⇒ zʹ=z×x<sup>y</sup> &nbsp;&nbsp;&nbsp;&nbsp; Substitution twice
+  - **=** _even_ y ∧ y>0 ∧ zʹ=z×x×x<sup>y/2</sup> ⇒ zʹ=z×x<sup>y</sup> &nbsp;&nbsp;&nbsp;&nbsp; Law of Exponents
+  - **=** _even_ y ∧ y>0 ∧ zʹ=z×x<sup>y</sup> ⇒ zʹ=z×x<sup>y</sup> &nbsp;&nbsp;&nbsp;&nbsp; Specialization
+  - **=** ⊤
+- _odd_ y ⇒ zʹ=z×x<sup>y</sup> **⇐** z:=z×x. y:=y-1. zʹ=z×x<sup>y</sup>
+  - already proven z:=z×x. y:=y-1. zʹ=z×x<sup>y</sup>
+- Can be faster if we make some adjustments
+- _even_ y ∧ y>0 ⇒ zʹ=z×x<sup>y</sup> **⇐** x:=x×x. y:=y/2. zʹ=z×x<sup>y</sup>
+  - y/2 can never be zero, so we can just loop back to y>0 ⇒ zʹ=z×x<sup>y</sup> instead
+- _even_ y ∧ y>0 ⇒ zʹ=z×x<sup>y</sup> **⇐** x:=x×x. y:=y/2. y>0 ⇒ zʹ=z×x<sup>y</sup>
+- _odd_ y ⇒ zʹ=z×x<sup>y</sup> **⇐** z:=z×x. y:=y-1. zʹ=z×x<sup>y</sup>
+  - y:=y-1 means yʹ will always be even, so we can use a new refinement
+- _odd_ y ⇒ zʹ=z×x<sup>y</sup> **⇐** z:=z×x. y:=y-1. _even_ ⇒ zʹ=z×x<sup>y</sup>>
+- _even_ ⇒ zʹ=z×x<sup>y</sup> **⇐** **if** y=0 **then** _ok_ **else** _even_ y ∧ y>0 ⇒ zʹ=z×x<sup>y</sup> **fi**
+- z:=0. z×x<sup>y</sup> **⇐** **if** y=0 **then** _ok_ **else** y>0 ⇒ zʹ=z×x<sup>y</sup> **fi**
+  - it is very unlikely that y is zero, so we can refine it with another specification that has better distribution
+- z:=0. z×x<sup>y</sup> **⇐** **if** _even_ y **then** _even_ y ⇒ zʹ=z×x<sup>y</sup> **else** _odd_ y ⇒ zʹ=z×x<sup>y</sup> **fi**
+
+#### Time Fast Exponentiation
+
+- **if** t=0 **then** tʹ=t **else** tʹ = t + _floor_ (_log_ y) **fi**
+  - this is harder to prove
+- **if** t=0 **then** tʹ=t **else** tʹ &le; t + _log_ y **fi**
+
+### Fibonacci Numbers
+
+#### Exponential Time _fib_
+
+- defined as sum of previous two numbers
+  - _fib_ 0 = 0
+  - _fib_ 1 = 1
+  - _fib_ (n+2) = _fib_ n + _fib_ (n+1)
+- or
+  - _fib_ = 0 → 0 | 1 → 1 | 〈_n: nat+2_ → _fib(n-2) + fib(n-1)_〉
+- or
+  - _fib_ = 〈_n: nat_ → **if** _n<2_ **then** _n_ **else** tʹ &le; _fib(n-2) + fib(n-1)_ **fi**〉
+
+#### Linear Time _fib_
+
+- xʹ=_fib_ n **⇐** xʹ=_fib_ n ∧ yʹ=_fib_ (n+1)
+  - save = we find the current and next fibonacci number
+  - P **=** xʹ=_fib_ n ∧ yʹ=_fib_ (n+1)
+- P **⇐** **if** n=0 **then** x:=0. y:=1 **else** n:=n-1. P. xʹ=y ∧ yʹ=x+y **fi**
+- xʹ=y ∧ yʹ=x+y **⇐** n:=x. x:=y. y:=n+y
+- tʹ=t+n **if** n=0 **then** x:=0. y:=1 **else** n:=n-1. t:=t+1. tʹ=t+n. tʹ=t **fi**
+- tʹ=t **⇐** n:=x. x:=y. y:=n+y
+
+#### Logarithmic Time _fib_
+
+- _fib_ (2×k+1) = (_fib_ k)<sup>2</sup> +(_fib_ (k+1))<sup>2</sup>
+- _fib_ (2×k+2) = 2 × _fib_ k × _fib_ (k+1) + (_fib_ (k+1))<sup>2</sup>
+- P **⇐** **if** n=0 **then** x:=0. y:=1
+  - **else if** _even_ n **then** _even_ n ∧ n>0 ⇒ P
+  - **else** _odd_ n ⇒ P **fi fi**
+- _odd_ n ⇒ P **⇐** n:=(n-1)/2. P. xʹ=x<sup>2</sup> + y<sup>2</sup> ∧ yʹ=2 × x × y + y<sup>2</sup>
+  - we know n=2×k+1
+  - n:=(n-1)/2 **=** n:=k
+  - P **=** x=_fib_ k ∧ y=_fib_ (k+1)
+  - xʹ=x<sup>2</sup> + y<sup>2</sup> **=** xʹ=_fib_ (2×k+1)
+  - yʹ=2 × x × y + y<sup>2</sup> **=** yʹ=_fib_ (2×k+2)
+- _even_ n ∧ n>0 ⇒ P **⇐** n:=n/2-1. P. xʹ=2 × x × y + y<sup>2</sup> ∧ yʹ=x<sup>2</sup> + y<sup>2</sup> + xʹ
+  - we know n=2×k+2
+  - n:=n/2-1 **=** n:=k
+  - P **=** x=_fib_ k ∧ y=_fib_ (k+1)
+  - xʹ=2 × x × y + y<sup>2</sup> **=** xʹ=_fib_ (2×k+2)
+  - yʹ=x<sup>2</sup> + y<sup>2</sup> + xʹ **=** yʹ=_fib_ (2×k+3) **=** yʹ=_fib_ (2×k+1) + _fib_ (2×k+2)
+- xʹ=x<sup>2</sup> + y<sup>2</sup> ∧ yʹ=2 × x × y + y<sup>2</sup> **⇐** n:=x. x:=x<sup>2</sup> + y<sup>2</sup> ∧ yʹ=2 × n × y + y<sup>2</sup>
+- xʹ=2 × x × y + y<sup>2</sup> ∧ yʹ=x<sup>2</sup> + y<sup>2</sup> + xʹ **⇐** n:=x. xʹ=2 × x × y + y<sup>2</sup>. yʹ=n<sup>2</sup> + y<sup>2</sup> + xʹ
+- T **=** tʹ &le; t + log(n+1)
+- T **⇐** **if** n=0 **then** x:=0. y:=1
+  - **else if** _even_ n **then** _even_ n ∧ n>0 ⇒ T
+  - **else** _odd_ n ⇒ T **fi fi**
+- _odd_ n ⇒ T **⇐** n:=(n-1)/2. t:=t+1. T. tʹ=t
+- _even_ n ∧ n>0 ⇒ T **⇐** n:=n/2-1. T. tʹ=t
+- tʹ=t **⇐** n:=x. x:=x<sup>2</sup> + y<sup>2</sup> ∧ yʹ=2 × n × y + y<sup>2</sup>
+- tʹ=t **⇐** n:=x. xʹ=2 × x × y + y<sup>2</sup>. yʹ=n<sup>2</sup> + y<sup>2</sup> + xʹ
