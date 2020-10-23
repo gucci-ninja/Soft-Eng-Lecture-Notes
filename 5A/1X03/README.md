@@ -820,13 +820,13 @@ Ideally, members of experimental and control groups are very similar, so that th
 ### Language
 
 - most complex form of communication
-- language is regular
+- language is **regular**
   - governed by rules and grammer
   - sentences can be reordered and keep its meaning
-- language is arbitrary
+- language is **arbitrary**
   - the specific sound meant to represent an object/concept is completely arbitrary
   - the word "cat" doesn't say anything to reference a furry whiskered animal
-- language is productive
+- language is **productive**
   - almost limitless ways to describe objects, situation and actions
   - particularly evident in native language development in infants
     - experiment novel words and sound combinations that haven't been explicitly taught
@@ -892,7 +892,7 @@ Ideally, members of experimental and control groups are very similar, so that th
 - segmenting individual words is difficult in speech of a foreign language
   - unfamiliar language sounds very fast
   - hard to indentify specific words
-- infants were testsed to see if they can segment a familiarized word from the speech stream
+- infants were tested to see if they can segment a familiarized word from the speech stream
   - given a target word
   - used in speech stream
   - when turned 2
@@ -913,7 +913,7 @@ Ideally, members of experimental and control groups are very similar, so that th
 
 #### Theories of Language Development
 
-- social learning theory
+- **social learning theory**
   - the environment one grew up in dictates how language is used
 - overextension
   - categorize objects too broadly
@@ -922,7 +922,7 @@ Ideally, members of experimental and control groups are very similar, so that th
 - underextension
   - catergorize objects too specifically
     - only one's dog is doggie
-- Language Acquisition Device
+- **Language Acquisition Device**
   - innate mechanism
     - only in humans that helps language develop rapidly according to universal rules
 - Congenitally deaf children develop universal sign language without formally learning it
