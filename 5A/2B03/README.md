@@ -768,4 +768,58 @@ www.distancetomars.com
   - Max Planck explained black body radiation
   - light came in small "chunks" or quanta
   - Nobel Prize for Physics 1918
-  
+
+## Lecture 15
+
+- Normal (classical) physics
+- if you want to knock something around, you need momentum
+- momentum = mass \* speed
+  - p=mv
+
+### Light Particle
+
+- Planck's ideas began the study of very small objects
+- Einstein's Nobel Prize was for the photoelectric effect, not relativity
+  - when light is shone on metal
+  - electric current comes out of the metal
+  - disagrees with current model of physics
+    - light consists of particles
+    - photons
+- to knock out object, light needs mass
+- but doesn't have any mass
+- light has momentum but no mass
+- photon is a particle of light
+  - packet of energy
+    - quanta
+  - behaves like both waves and particle
+    - duality
+- energy of a photon depend of frequency
+  - E = h f
+  - h is Planck's constant
+- receding stars therefore have less energetic light
+  - red-shifted light = less frequency
+- De Broglie guessed that some particles can act like waves.
+  - associated with all particles is a wavelength
+  - smaller the momentum, the longer tha wavelength
+    - electrons are good to use for wavelength experiments
+
+### Quantum Tunneling
+
+- allows nuclear fusion
+- Electronics (diodes, transistors, flash memory)
+- given enough time
+  - a particle can get past a "hill"/barrier
+    - due to uncertainty principle + wave like property
+- Scanning Tunneling Microscopes
+  - measuring electronic properties at atomic scales
+
+### Double Slit Experiment
+
+- source eject quantum particle towards a wall
+  - there are 2 slit in the wall
+  - there is another wall that measures where the particle lands
+- instead of two collections of electrons behind each slits (classical particle)
+  - interference pattern shows up (waves)
+  - where the electrons show up in a wave like pattern
+- if you try to observe the electron as it goes through the slits, it changes the experiment
+  - acts like a classical particle
