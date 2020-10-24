@@ -362,7 +362,7 @@ Carbon to value inititive
         - not in my term of office
         - make no changes
 
-#### Examples in Ontario  
+#### Examples in Ontario
 
 - coal-fire power plants
   - Coal Phase-Out
@@ -449,3 +449,102 @@ Carbon to value inititive
 #### CSR and Sustainability
 
 - in mature organizations, CSR and Sustainabiltiy are synonmous
+
+## Lecture 4
+
+### Measuring Sustainability
+
+- Triple Bottom Line
+  - Economy
+  - Environment
+  - Society
+- Measurement Types
+  - Specific
+  - Absolute
+  - Performance
+  - Impact
+
+#### Specific/Absolute
+
+- Greenhouse gas emissions
+  - Specific
+    - Intensity Based Measurements
+    - total millions of tonnes of CO<sub>2</sub> per person and per GDP, Canada
+    - Time doesn't have to be the only denominator
+  - Absolute measurement
+    - Full Measurements
+    - total millions of tonnes of CO<sub>2</sub>
+
+#### Performance
+
+- Nitrogen Oxide
+  - thousands of tonnes
+
+#### Impact
+
+- measurement of resultant effect
+- Suspended Particulate (TSP)
+
+#### How they relate
+
+- Specific and Absolute
+  - multiply/divide
+
+#### Specific Performance
+
+- Private Sector
+  - most often used to represent output relative to unit of product
+- Public Sector
+  - most often used to represent impact per capita or per household
+
+#### Absolute Performance
+
+- Private
+  - most often used to highlight overall positive performance
+  - often data can be misleading if not seeing the whole report
+- Public
+  - most often used to highlight overall positive performace
+
+#### Assessment of impact
+
+- individual air dispersion modelling can capture the impact of a single company/industry
+- Cumlative impact assessment captures the impact of many inputs into the same system (but not as simple as the summation of all inputs)
+- Standards
+- Regulations
+- Goals
+- Ambitions
+- Risk Analysis
+- ...
+- Good Science
+
+### Private Sector Approach
+
+- ISO
+  - 14001
+- Pirelli
+  - tire company
+  - majority of their environmental impact is during use phase of their tires
+- Severity/Likelihood (internal)
+  - 3 Zones
+    - Unacceptable
+      - high severity
+      - high likelihood
+    - Acceptable
+      - low severity
+      - low likelihood
+    - Acceptable with Mitigations
+      - equal severity and likelihood
+  - not exclusive to any area of focus
+  - highly visual for prioritization
+  - transferrable to other assessment
+- Materiality Review (internal/external)
+  - Impact on company internally
+  - Increasing concern to stakeholders
+- Global Reporting Initiative (external)
+  - Office of Sustainabiltiy
+  - World Business Council for Sustainable Developement
+  - connecting companies to standard reports
+- IKEA
+- Unilever
+- LafargeHolcim
+- IP&L
