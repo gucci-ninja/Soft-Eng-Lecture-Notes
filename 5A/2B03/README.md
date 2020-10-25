@@ -823,3 +823,53 @@ www.distancetomars.com
   - where the electrons show up in a wave like pattern
 - if you try to observe the electron as it goes through the slits, it changes the experiment
   - acts like a classical particle
+
+## Lecture 16
+
+### Heisenberg's Uncertainty Principle
+
+- the best way to measure object positions is to bounce something off it
+  - for very small objects, even light has momentum
+  - when bouncing something off it, you move it
+  - position would move
+  - therefore we **cannot measure position and momentum precisely**
+- Δx Δp > h/4π
+  - x: position
+  - p: momentum
+  - Δ: uncertainty of
+  - h: planck constant
+- ΔE Δt > h/4π
+  - E: energy of system
+  - t: time
+- only relevant in small scale
+- if one makes a precise measurement of the position, the momentum will be uncertain
+  - Δx small -> Δp large
+- vice versa
+- for double slit experiment, it is uncertain which slit the particle uses
+  - both, first, second
+- 1926
+  - Physical predictions are inherently probablistic
+
+#### First Quantum Weirdness
+
+- Quantum particles can behave like particles (photoelectric effect) or waves (two-slit)
+- the observer can affect the outcome of the experiment
+- Quantum physics is inherently probabilistic
+
+### Creation of Mass
+
+- E=mc<sup>2</sup>
+- Given some energy, I can create mass
+  - creates a particle and antiparticle
+    - matter and antimatter
+    - electron and positron
+    - proton and antiproton
+- uncertainty principle allows creation of matter in some Δt
+  - ΔE Δt > h/4π
+  - allows one to "borrow" energy ΔE for some time
+  - create matter using E=mc<sup>2</sup>
+  - in a time Δt, energy has to be given back
+    - (3 * 10<sup>-22</sup>) particles annihilate (disappear).
+  - We believe that particles are constantly being created and destroyed out of "nothing" (vacuum)
+    - vacuum is not truely empty
+    - Casimir effect
