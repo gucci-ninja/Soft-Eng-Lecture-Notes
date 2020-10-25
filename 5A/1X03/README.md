@@ -772,7 +772,7 @@ Ideally, members of experimental and control groups are very similar, so that th
   - tendency to seek out information to support hypothesis
   - can occur in diagnosis when asking follow up questions
 - **Availability Heuristic**
-  - tendency to make decisions based on information most quickly avaiable to us
+  - tendency to make decisions based on information most quickly available to us
   - allows us to quickly make decisions without needing much thought
     - good for easy simple decisions
     - media and advertisements can greatly impact our decisions due to this
@@ -803,7 +803,6 @@ Ideally, members of experimental and control groups are very similar, so that th
 ### Do humans behave reliability
 
 - **anchoring** set ceiling for highest price you will pay
-
   - makes cheaper but expensive wine more affordable
 
 #### Bazerman and moore (2013)
@@ -833,7 +832,7 @@ Ideally, members of experimental and control groups are very similar, so that th
 
 #### How does Language develop
 
-- **Whorf-Sapir Hypothesis**: Language influences our thoughts and the way we preceive and experience the world
+- **Whorf-Sapir Hypothesis**: Language influences our thoughts and the way we perceive and experience the world
   - we think in our native language, even though we don't need to
   - Tribe in Brazil
     - only three counting words
@@ -915,17 +914,23 @@ Ideally, members of experimental and control groups are very similar, so that th
 
 - **social learning theory**
   - the environment one grew up in dictates how language is used
-- overextension
-  - categorize objects too broadly
-    - every 4 leg animal is doggie
-  - use -ed to run
-- underextension
-  - catergorize objects too specifically
-    - only one's dog is doggie
+  - children learn through operant conditioning and imitation
+- children cannot learn purely through social learning theory
+  - learn too quickly and many novel mistakes that are never made by adults
+  - overextension
+    - categorize objects too broadly
+      - every 4 leg animal is doggie
+    - use -ed to run
+  - underextension
+    - catergorize objects too specifically
+      - only one's dog is doggie
 - **Language Acquisition Device**
+  - all languages have universal fundamental rules
   - innate mechanism
     - only in humans that helps language develop rapidly according to universal rules
-- Congenitally deaf children develop universal sign language without formally learning it
+  - Congenitally deaf children develop universal sign language without formally learning it
+  - Infants show response to the first language they are exposed to
+    - prefer listening to speech rather than non-speech sound
 
 #### Animal Communication
 
