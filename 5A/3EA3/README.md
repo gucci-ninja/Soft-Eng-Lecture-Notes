@@ -1537,7 +1537,7 @@ Hoare triples
   - s:=s+1 means recursive call begins by pushing return address on a stack (s:=s+1)
   - s:=s-1 means recursive call ends by popping return address off the stack (s:=s-1)
 
-#### Tower of Hanoi Maximum Space Refinement
+#### Tower of Hanoi Maximum Space
 
 - m&ge;s ⇒ (m:=_max_ m (s+n)) **⇐**
   - **if** n=0 **then** _ok_
@@ -1546,13 +1546,13 @@ Hoare triples
     - _ok_
     - s:=s+1. m:=_max_ m s. m&ge;s ⇒ (m:=_max_ m (s+n)). s:=s-1
     - n:=n+1 **fi**
-- we want ending **m** to be _n_ as it is the number of disks
+- we want ending **m** to be at least _n_ as it is the number of disks
 - _s_ isn't always going to be 0 at the start of the program (recursion)
-- _m_ could start out larger than _s+n_, then we need to keep _m_ instead of turning it into _n_
+- _m_ could start out larger than _s+n_, then its already maximum size required
   - m:=_max_ m (s+n)
 - how much memory we need
 
-#### Tower of Hanoi Average Space Refinement
+#### Tower of Hanoi Average Space
 
 - take **space time product** and divide by time difference
   - space time product is the area under the graph of s over time
@@ -1638,7 +1638,7 @@ Hoare triples
   - **=** P ∧ yʹ=y ∧ zʹ=z
 - x:=e **=** **frame** x• xʹ=e
   - assignments can be rewritten
-- _ok_ **=** **frame** T
+- _ok_ **=** **frame** • T
   - _ok_ redefined as empty frame
 - s:=ΣL **⇐** **frame** s• **var** n: _nat_• sʹ=ΣL
   - we don't want to change any other variables other than **s** when summing list **L**
@@ -1692,19 +1692,19 @@ Hoare triples
 - in Pascal, Turing, etc.
 - in **Java**, special type of class
 - in **C**, Structure
-  - *struct*
+  - _struct_
 - like an array
-  - elements are called *fields*
+  - elements are called _fields_
   - elements can be different types
   - indexed by identifier, not number
-- *person*
-  - = "name" → *text*
-  - | "age" → *nat*
-- *person* can be a variable type
-- **var** p: *person*
-  - variable declaration **p** of type *person*
+- _person_
+  - = "name" → _text_
+  - | "age" → _nat_
+- _person_ can be a variable type
+- **var** p: _person_
+  - variable declaration **p** of type _person_
 - p:= "name" → "John" | "age" → 16
-  - assigns a *person* to **p**
+  - assigns a _person_ to **p**
   - doesn't cause any problems
 - all languages with Records have a way to assign single field
 - p "age" := 18
