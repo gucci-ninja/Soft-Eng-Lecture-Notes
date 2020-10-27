@@ -1025,3 +1025,113 @@ Ideally, members of experimental and control groups are very similar, so that th
 - It's important to get a second optinion before getting a tattoo
 - Developing a language is a full-time job
 - Humans are guided by emotions
+
+## Module 7
+
+### Science of Learning
+
+- cramming is not efficient nor is it good for remembering
+- **Where**
+  - why you should be mindful of distractions in your environment and proactively suppress them
+- **When**
+  - why it's more efficient to distribute your studying over time and across multiple sessions
+- **How**
+  - why practice testing and self-explanation are better than rereading, highlighting or copying notes verbatim
+- **Desirable Difficulties**
+  - why strategies that initially slow down learning can actually be most efficient in the long run
+
+#### Multi-tasking
+
+- task switching
+- less efficient to switch between studying and social media
+  - even if it
+- driving
+  - talking on a cellphone with or without handheld is as detrimental as drunk driving
+- Pomodoro
+  1. set timer for a time
+  - ex: ~20 min
+  2. after timer rings, allow for short break
+  - ex: ~5-10 min
+  3. repeat 1-2 multiple times
+  - ex: 3-4x
+  4. take a longer break
+  - ex: ~30 min
+- cultivate an environment where you can proactively suppress distractions
+  - block social media
+  - make phone silent
+  - set aside time where you should study
+
+#### When to study
+
+- Cramming is generally bad due to
+  - little time for clarification
+- Hermann Ebbinghaus
+  - pioneer memory researcher
+  - Did a test on himself
+    - memorize 12 random syllable
+    - cramming all the studying in one day required 68 restudy attempts
+    - distributing studying required 38 attempts
+    - **Spacing Effect**
+- another experiment
+  - study a stack of flash cards
+  - cramming case studied 8 times the day before the test
+  - spacing case studied 2 times over 4 days before the test
+  - spacing case retained about 20% more
+- Spacing Effect doesn't have to be memorization
+  - hobbies
+    - video games
+    - sports
+
+#### How to Study
+
+- studying is never really taught to students
+- repeated exposure
+  - examples
+    - rereading
+    - highlighting
+    - underlining
+  - only inputs data
+    - doesn't really work
+    - "one way street"
+  - 84% of students use it in a study
+    - 54% of this group rate it first
+  - why is it popular?
+    - rapid short-term learning
+    - intuitive & endorsed
+    - Effect of fluency
+- we should really be outputting knowledge along with the input of knowledge
+  - practice testing
+    - an experiment done on nursing students
+      - 15% increase in marks on average
+    - **retrieval practice effect**
+  - self-explanation
+- retrieval practice effect can be combined with spacing effect
+  - Initially, don't stop until you can recall information 3 separate times in session
+  - Later prace retrieving same material three more times, in 3 sessions, 1 week apart
+    - retrieve once per session
+  - this is the most efficient learning
+- can further increase learning by mixing topics
+  - have all the study topics and quiz materials open at the start rather than locking the quiz materials after each study topic is taught
+    - mixed topic outperformed by 20% when given a novel questions.
+  - when studying, mix questions from every unit
+
+#### Desirable Difficulty
+
+- slow down learning, but most efficient and long lasting
+
+## Lecture 6
+
+- Durable Learning is the long game of academics
+- Spreading learning is more efficient.
+  - no need to relearn later
+- understand the goal and tools
+- be proactive rather than reactive
+- Make restoration part of the workflow
+- education is a marathon
+- actively plan each day
+  - what tasks should get done today
+  - how much time is required
+- input and output information
+- successive relearning
+  - test 3 times after learning
+- overwhelmed mind tends to wander
