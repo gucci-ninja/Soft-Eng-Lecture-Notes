@@ -1477,3 +1477,238 @@ Hoare triples
 - _even_ n ∧ n>0 ⇒ T **⇐** n:=n/2-1. T. tʹ=t
 - tʹ=t **⇐** n:=x. x:=x<sup>2</sup> + y<sup>2</sup> ∧ yʹ=2 × n × y + y<sup>2</sup>
 - tʹ=t **⇐** n:=x. xʹ=2 × x × y + y<sup>2</sup>. yʹ=n<sup>2</sup> + y<sup>2</sup> + xʹ
+
+## Segment 14
+
+### Tower of Hanoi
+
+- 3 towers
+- n disks
+  - starts in a pile
+  - has hole in center
+- can only move one disk at a time
+- cannot move a larger disk onto a smaller disk
+- move pile to another pile
+- Want to create Program
+  - _MovePile from to using_
+    - moves _n_ disks from _from_ pile to _to_ pile
+    - _from_ is the pile we're moving the disks from
+    - _to_ is the pile we're moving the disks to
+    - _using_ is the pile that acts as temporary storage
+  - _MoveDisk from to_
+    - moves 1 disk from _from_ pile to _to_ pile
+
+#### Tower of Hanoi Refinement-simple
+
+- _Move Pile from to using_ **⇐**
+  - **if** n=0 **then** _ok_
+  - **else** n:=n-1.
+    - _MovePile from using to_.
+    - _MoveDisk from to_.
+    - _MovePile using to from_.
+    - n:=n+1 **fi**
+
+#### Tower of Hanoi Time Refinement
+
+- t:=t+2<sup>n</sup>-1 **⇐**
+  - **if** n=0 **then** _ok_
+  - **else** n:=n-1.
+    - t:=t+2<sup>n</sup>-1
+    - t:=t+1
+    - t:=t+2<sup>n</sup>-1
+    - n:=n+1 **fi**
+- n:=n-1. nʹ=n+1 ∧ tʹ=t+2<sup>n</sup>-1 + 1 + 2<sup>n</sup>-1
+  - **=** n:=n-1. nʹ=n+1 ∧ tʹ=t+2<sup>n+1</sup>-1
+  - **=** nʹ=n ∧ tʹ=t+2<sup>n</sup>-1
+
+#### Tower of Hanoi Space Refinement
+
+- sʹ=s
+  - **if** n=0 **then** _ok_
+  - **else** n:=n-1.
+    - s:=s+1. sʹ=s. s:=s-1
+    - _ok_
+    - s:=s+1. sʹ=s. s:=s-1
+    - n:=n+1 **fi**
+- sʹ=s
+  - means that the end space is equal to start space
+  - no space (memory) leaks
+- s:=s+1. sʹ=s. s:=s-1
+  - s:=s+1 means recursive call begins by pushing return address on a stack (s:=s+1)
+  - s:=s-1 means recursive call ends by popping return address off the stack (s:=s-1)
+
+#### Tower of Hanoi Maximum Space Refinement
+
+- m&ge;s ⇒ (m:=_max_ m (s+n)) **⇐**
+  - **if** n=0 **then** _ok_
+  - **else** n:=n-1.
+    - s:=s+1. m:=_max_ m s. m&ge;s ⇒ (m:=_max_ m (s+n)). s:=s-1
+    - _ok_
+    - s:=s+1. m:=_max_ m s. m&ge;s ⇒ (m:=_max_ m (s+n)). s:=s-1
+    - n:=n+1 **fi**
+- we want ending **m** to be _n_ as it is the number of disks
+- _s_ isn't always going to be 0 at the start of the program (recursion)
+- _m_ could start out larger than _s+n_, then we need to keep _m_ instead of turning it into _n_
+  - m:=_max_ m (s+n)
+- how much memory we need
+
+#### Tower of Hanoi Average Space Refinement
+
+- take **space time product** and divide by time difference
+  - space time product is the area under the graph of s over time
+  - integral of _s_
+  - we use **p**
+- p:=p + s×(2<sup>n</sup>-1) + (n-2)×2<sup>n</sup> + 2 **⇐**
+  - **if** n=0 **then** _ok_
+  - **else** n:=n-1.
+    - s:=s+1. p:=p + s×(2<sup>n</sup>-1) + (n-2)×2<sup>n</sup> + 2. s:=s-1
+    - p:=p + s
+    - s:=s+1. p:=p + s×(2<sup>n</sup>-1) + (n-2)×2<sup>n</sup> + 2. s:=s-1
+    - n:=n+1 **fi**
+- average space = ((n-2)×2<sup>n</sup> + 2)/(2<sup>n</sup> - 1)
+  - = n + n/(2<sup>n</sup> - 1) - 2
+- Easier: pʹ &le; p + (s+n)×(2<sup>n</sup>-1)
+  - average space &le; n
+  - find upper bound of p
+- better definition of space cost with parallel processors
+
+#### Tower of Hanoi Final Refinement
+
+- combining everything using refinement by parts
+- _MovePile_ **⇐**
+  - **if** n=0 **then** _ok_
+  - **else** n:=n-1.
+    - s:=s+1. m:=_max_ m s. _MovePile_. s:=s-1
+    - t:=t+1. p:=p+s. _ok_
+    - s:=s+1. m:=_max_ m s. _MovePile_. s:=s-1
+    - n:=n+1 **fi**
+- _MovePole_ **=** nʹ=n
+  - ∧ tʹ=t + 2<sup>n</sup>
+  - ∧ sʹ=s
+  - ∧ (m&ge;s ⇒ _nax_ m (s+n))
+  - ∧ (pʹ=p + s×(2<sup>n</sup>-1) + (n-2)×2<sup>n</sup> + 2)
+
+## Segment 15
+
+- our language is very simple. It would be nice to have a **few** more features
+- languages like Java are often bloated with features that it is very difficult to impossible to have a formal understanding of every feature
+  - programming becomes like shopping
+  - one goes looking for right feature for their problem but cannot find it for whatever reason
+  - they then settle for another feature that gets them close to the solution at hand
+    - that other feature was programmed by someone else
+
+### Useful Features in Programming Languages
+
+#### Local Variable Declaration
+
+- all decent languages have this feature
+- **var** x: T• P
+  - declare local variable **x** with type **T** and scope **P**
+  - **P** doesn't have to be a program
+    - can also be a specification that hasn't been refined yet
+- variable declaration is really just ∃x,xʹ: T• P
+- **var** x: _int_• x:=2. y:=x+z
+  - **=** ∃x,xʹ: _int_• xʹ=2 ∧ yʹ=2+z. zʹ=z &nbsp;&nbsp;&nbsp;&nbsp; One-Point Law for xʹ and Idempodent for x
+  - **=** yʹ=2+z. zʹ=z
+- **var** x: _int_• y:=x
+  - **=** ∃x,xʹ: _int_• xʹ=x ∧ yʹ=x. zʹ=z &nbsp;&nbsp;&nbsp;&nbsp; One-Point Law for xʹ and x
+    - (xʹ=x ∧ x=yʹ ∧ zʹ=z)
+  - **=** zʹ=z
+- x initial value is arbitrary and unknown
+  - likely to be garbage from previous use
+- **var** x: _int_• y:=x-x
+  - **=** yʹ=0 ∧ zʹ=z
+- some languages have local variables already defined as _undefined_
+  - we can implement this by creating a new type _undefined_
+  - it is called _undefined_ because we don't create any axioms for it so we cannot prove any specifications with it.
+- **var** x: T• P
+  - **=** ∃x: _undefined_• ∃xʹ: _undefined_• P
+- some languages have initializing values that exists in variable declaration
+- **var** x: T:=e• P
+  - **=** ∃x: e• ∃xʹ: T• P
+
+#### Variable Suspension
+
+- initializing local variables will always add to the number of variables in the scope
+  - local + non-local variables exists in the scope
+- suppose the state consists of variables **w**, **x**, **y**, and **z**.
+- **frame** w, x• P
+  - reduces state variables to just **w** and **x** in **P**
+  - within **P**, **y** and **z** are constants (no **yʹ** nor **zʹ**)
+  - **=** P ∧ yʹ=y ∧ zʹ=z
+- x:=e **=** **frame** x• xʹ=e
+  - assignments can be rewritten
+- _ok_ **=** **frame** T
+  - _ok_ redefined as empty frame
+- s:=ΣL **⇐** **frame** s• **var** n: _nat_• sʹ=ΣL
+  - we don't want to change any other variables other than **s** when summing list **L**
+  - creates a new variable inside the frame so variables outside will not be touched
+
+#### Array
+
+- collection of state variables
+- allows assignents to an index
+- _Ai_:=e
+  - some languages uses _A(i)_:=e or _A[i]_:=e
+  - we are already using these brackets for specific things so we leave it out
+  - **=** Aʹi=e ∧ (∀j• j⧧i ⇒ Aʹ j=Aj) ∧ xʹ=x ∧ yʹ=y ∧ ...
+- problem with Arrays is that it breaks substitution law
+- A2:=2. i:=2. Ai:=4. Ai=A2 &nbsp;&nbsp;&nbsp;&nbsp; Substitution Law (wrong as Ai:=4 is array assignment and not regular assignment)
+  - **=** A2:=2. i:=2. 4=A2 &nbsp;&nbsp;&nbsp;&nbsp; Substitution Law (okay)
+  - **=** A2:=2. 4=A2 &nbsp;&nbsp;&nbsp;&nbsp; Substitution Law (wrong)
+  - **=** 4=2
+  - **=** ⊥ &nbsp;&nbsp;&nbsp;&nbsp; answer should be ⊤
+- A2:=2. A(A2):=3. A2=2 &nbsp;&nbsp;&nbsp;&nbsp; Substitution Law (wrong)
+  - A2:=2. A2=2 &nbsp;&nbsp;&nbsp;&nbsp; Substitution Law (wrong)
+  - 2=2
+  - ⊤ &nbsp;&nbsp;&nbsp;&nbsp; answer should be ⊥
+- instead, we can redefine assignment
+- _Ai_:=e **=** Aʹi=e ∧ (∀j• j⧧i ⇒ Aʹ j=Aj) ∧ xʹ=x ∧ yʹ=y ∧ ...
+  - **=** Aʹ=i→e | A ∧ ∧ xʹ=x ∧ yʹ=y ∧ ...
+  - **=** A:=i→e | A
+- A2:=2. i:=2. Ai:=4. Ai=A2
+  - **=** A:=2→2 | A. i:=2. A:=i→4 | A. Ai=A2 &nbsp;&nbsp;&nbsp;&nbsp; Substitution Law
+  - **=** A:=2→2 | A. i:=2. (i→4 | A)i=(i→4)2 &nbsp;&nbsp;&nbsp;&nbsp; Substitution Law
+  - **=** A:=2→2 | A. (2→4 | A)2=(i→4 | A)2 &nbsp;&nbsp;&nbsp;&nbsp; Reflexive
+  - **=** A:=2→2 | A. ⊤ &nbsp;&nbsp;&nbsp;&nbsp; Substitution Law
+  - **=** ⊤
+- A2:=2. A(A2):=3. A2=2
+  - **=** A:=2→2 | A. A:=A2→3 | A. A2=2 &nbsp;&nbsp;&nbsp;&nbsp; Substitution Law
+  - **=** A:=2→2 | A. (A2→3 | A)2=2 &nbsp;&nbsp;&nbsp;&nbsp; Substitution Lawa
+  - **=** (**(2→2 | A)2**→3 | 2→2 | A)2=2 &nbsp;&nbsp;&nbsp;&nbsp; Simplify
+  - **=** **(2→3 | 2→2 | A)2**=2 &nbsp;&nbsp;&nbsp;&nbsp; Simplify
+  - **=** 3=2
+  - **=** ⊥
+
+##### Multidimensional Array Assignments
+
+- Ai:=e **becomes** A:=i→e | A
+  - one dimensional array
+- Aij:=e **becomes** A:=(i;j)→e | A
+  - two dimensional array
+
+#### Record
+
+- in Pascal, Turing, etc.
+- in **Java**, special type of class
+- in **C**, Structure
+  - *struct*
+- like an array
+  - elements are called *fields*
+  - elements can be different types
+  - indexed by identifier, not number
+- *person*
+  - = "name" → *text*
+  - | "age" → *nat*
+- *person* can be a variable type
+- **var** p: *person*
+  - variable declaration **p** of type *person*
+- p:= "name" → "John" | "age" → 16
+  - assigns a *person* to **p**
+  - doesn't cause any problems
+- all languages with Records have a way to assign single field
+- p "age" := 18
+  - this breaks Substitution Law
+  - can be fixed with
+- p:= "age" → 18 | p
+  - same as Array
