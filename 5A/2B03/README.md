@@ -873,3 +873,63 @@ www.distancetomars.com
   - We believe that particles are constantly being created and destroyed out of "nothing" (vacuum)
     - vacuum is not truely empty
     - Casimir effect
+
+## Lecture 17
+
+### Quantum in Everyday Life
+
+- Lasers
+- Transistors
+- Accuracy of atomic clocks (quantum noise)
+- quantum cryptography
+
+### Schrödinger's Cat
+
+- put cat in a box with a 50% chance of killing it
+- when the cat is in box, it is both dead **and** alive
+- only when opened, it is dead **or** alive
+
+---
+
+- Another clue (1910) came from understanding of the spectrum of light emitted when electrical current is passed through a gas
+- every element has a unique set of spectrum lines
+- combinations of elements can identify what elements are coming from the light
+- Neils Bohr explains colours emitted by Hydrogens
+  - electrons change energy levels
+  - photons with specific energy are absorbed(higher) or emitted(lower)
+
+### Summerize
+
+- light
+  - wave and particle properties
+    - duality
+  - no mass but has energy and momentum
+    - E=hf
+    - h is Planck's constant
+- particles
+  - also have wave properties
+- moving observer or moving source of light can change the colour of the light
+  - redshift/blueshift
+- E=Mc<sup>2</sup>
+  - empty space isn't truly empty
+- General Relativity (1916)
+  - all laws of nature are the same for observers moving in an **ARBITRARY** way relative to one another
+  - makes the curvature of space a physical variable, describing gravity
+    - not a fundamental force
+
+#### Acceleration and Gravitation
+
+- Thought Experiment
+  - rocket ship in space with negligible gravitational force
+  - constant acceleration
+  - astronaut lets go of a ball
+    - he sees that the ball falls due to "gravity"
+    - from the ball's perspective, the rocket accelerates up to the ball
+- **Principle of Equivalence**
+  - Einstein: "No experiment performed in one place can distinguish a gravitational field from an accelerated reference frame."
+- Thought Experiment
+  - astronaut shines light perpendicular to acceleration direction
+    - from frame of reference outside spaceship, one would see that the light is bending since the rocket is accelerating up towards the light
+    - due to Principle of Equivalence, this means that a gravitational field must also be bending the light in the astronaut's frame of reference
+- for 10m, light would take ~30ns
+  - light would bend 5 * 10<sup>-15</sup>
