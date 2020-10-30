@@ -548,3 +548,137 @@ Carbon to value inititive
 - Unilever
 - LafargeHolcim
 - IP&L
+
+## Lecture 5
+
+### Social Impact
+
+- Third pillar of sustainability impact
+- Three Sectors
+  - Private
+    - corporations
+    - Limited Partnerships
+    - Sole Proprietorship
+    - Publicly Traded or Privately Held
+    - Brings something to consumer
+  - Public
+    - Education
+    - Health Care
+    - Energy (?)
+      - can also be privately sold
+    - Government Operation/Oversight
+    - may depend on juristiction
+  - Third
+    - Charities
+    - Not-for-Profit Organizations
+    - Co-operatives
+    - fills the gap between public and private sectors
+    - variety of operations
+
+#### Charities
+
+- Habitat for Humanity
+  - builds homes for families that may not be able to afford one
+  - private sector point of view
+    - no customer
+  - public sector point of view
+    - building a single home for one family isn't efficient enough
+      - homeless shelter
+
+#### Not-for-Profit
+
+- private schools
+  - invests profits into core operations/missions
+  - doesn't have shareholder
+
+#### Co-operatives
+
+- Individuals or organizations use collective power for the benefit of the group
+
+#### Social Firms
+
+- create opportunities for employment for people who may not be able to find jobs otherwise
+  - training, opportunities
+  - people that lack social skills, health, etc.
+    - prison
+    - mental health
+
+### Social Entrepreneurship
+
+1. Theory of change
+2. Impact as a major driver
+3. **Viable business**
+4. Systemic Change
+
+- can be for-profit or not-for-profit
+- need to financially and economically sustain people
+- The Big Issue
+  - UK based
+  - current affairs magazine
+  - sell through homeless people
+    - first stack is free
+    - every other stack if half off
+  - not charity (selling product)
+
+### Metric
+
+- Social Progress Index
+  - Human needs
+  - Foundation of wellbeing
+  - Opportunity
+- Human Development Index
+- GNH
+  - Gross National happiness
+  - Bhutan
+    - 70% land is forested
+  - 9 Domains of GNH
+    1. Living Standard
+    2. Health
+    3. Education
+    4. Time Use
+    5. Good Governance
+    6. Ecological Diversity & Resilience
+    7. Psychological Well-being
+    8. Community Vitality
+    9. Culture Diversity & Resilience
+
+### Communication
+
+- Shareholders vs Stakeholders
+  - Shareholders
+    - owner of shares in company
+  - Stakholder
+    - person with interest or concern in something
+    - one who is involved in or affected by a course of action
+- Social Licence to Operate
+  - held by community
+  - ongoing
+    - more of a relationship maintained by trust
+  - the public, private or third sector are affected
+- Public Consultation
+  - Involvement of the commmunity from early stages of a project
+    - terms of reference in an Environmental Assessment
+  - Establishment of dialogue directly with the stakeholdrs
+  - Opportunity to discuss science
+    - important role for technical experts
+  - Opportunity ot address questions/concerns/fear
+  - Opportunity to put a face to a project
+  - Becoming a norm
+    - arguably became a norm
+  - Perception is reality
+- Transparency is no longer an option (at least not with information)
+  - many information is available whether the organization is sharing it or not
+- Media
+  - ideally: provide facts
+  - realistically: provide specific viewpoint that grabs attention, creates controversy, causes reaction
+    - Consensus rarely makes the front page
+      - "if it bleeds, it leads"
+  - Traditional media is only one source
+  - Social media also plays a significant role in public opinion
+  - Managing both traditional and social media are critical
+  - **Technical experts need to be engaged in managing communication channels**
+    - **Those that can speak on technical issues in non-technical terms are successful**
+- Documentary
+  - what one should question if they didn't know the difference
+  - some terms like "As many of you may know..." sets people up to not question
+  - some news sources may be sowing doubt rather than proving facts
