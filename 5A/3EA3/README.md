@@ -603,7 +603,7 @@ Hoare triples
 
 ### Quantifiers
 
-- operator that applies to a funct ion
+- operator that applies to a function
   - defined from a two-operand symmetric associative operator
   - **∀** for all
     - binary result
@@ -1712,3 +1712,177 @@ Hoare triples
   - can be fixed with
 - p:= "age" → 18 | p
   - same as Array
+
+## Segment 16
+
+### While Loop
+
+- W **⇐** **while** _b_ **do** _P_ **od**
+  - _b_ is a binary expression
+  - _P_ is any specification
+    - doesn't have to be a program
+  - look at what specifications refines
+- means
+  - W **⇐** **if** _b_ **then** _P_. W **else** _ok_ **fi**
+- **while** n⧧#L **do** s:=s+Ln. n:=n+1. t:=t+1 **od**
+  - sums a list
+  - refines
+    - sʹ=s+ΣL[n;..#L] ∧ tʹ=t+#L-n
+      - sum is the current sum plus the rest of the list
+      - time is current time plus time until end of list
+  - to prove, we prove
+    - **if** n⧧#L
+      - **then** s:=s+Ln. n:=n+1. t:=t+1. sʹ=s+ΣL[n;..#L] ∧ tʹ=t+#L-n
+      - **else** _ok_ **fi**
+
+### Exit Loop
+
+- **break** in python, c
+- L **⇐** **do** A. **exit when** b. C **od**
+- means
+  - L **⇐** A. **if** _b_ **then** _ok_ **else** C. L **fi**
+- L **⇐**
+  - **do** A.
+    - **do** B.
+    - **exit** 2 **when** c.
+    - D **od**.
+  - E **od**
+  - **exit** 2 **when** c
+    - exits 2 layers from nested loop
+- means
+  - P **⇐** A.Q
+  - Q **⇐** B.**if** _c_ **then** _ok_ **else** D. Q **fi**
+  - E is never run as inner loop doesn't have 1 level exit
+
+#### Deep Exit
+
+- P **⇐**
+  - **do** A.
+  - **exit** 1 **when** b.
+  - C.
+    - **do** D.
+    - **exit** 2 **when** e.
+    - F.
+    - **exit** 1 **when** g.
+    - H. **od**.
+  - I **od**
+- means
+  - P **⇐** A. **if** _b_ **then** _ok_ **else** C. Q **fi**
+  - Q **⇐** D. **if** _e_ **then** _ok_ **else**
+    - F. **if** _g_ **then** I. P **else** H. Q **fi** **fi**
+
+### Two-Dimensional Search
+
+- P **=** **if** x: A(0,..n)(0,..m) **then** x=Aiʹjʹ **else** iʹ=n ∧ jʹ=m **fi**
+  - A,n,m are constants
+- Q **=** **if** x: A(i,..n)(0,..m) **then** x=Aiʹjʹ **else** iʹ=n ∧ jʹ=m **fi**
+  - x isn't in the first i rows
+- R **=** **if** x: A(i+1,..n)(0,..m), Ai(j,..m) **then** x=Aiʹjʹ **else** iʹ=n ∧ jʹ=m **fi**
+  - x isn't in the first i-1 row, or ith row column j
+- P **⇐** i:=0. i&le;n ⇒ Q
+- i&le;n ⇒ Q **⇐** **if** i=n **then** j:=m **else** i<n ⇒ Q **fi**
+- i<n ⇒ Q **⇐** j:=0. i<n ∧ j&le;m ⇒ R
+- i<n ∧ j&le;, ⇒ R **⇐** **if** j=m **then** i:=i+1 **else** i<n ∧ j<m ⇒ R **fi**
+- i<n ∧ j<m ⇒ R **⇐** if Aij **then** _ok_ **else** j:=j+1. i<n ∧ j&le;m ⇒ R **fi**
+
+#### Two-Dimensional Search Time
+
+- upper bounded by n×m
+- tʹ &le; t + n×m **⇐** i:=0. i&le;n ⇒ tʹ &le; t + (n-i)×m
+- i&le;n ⇒ tʹ &le; t + (n-i)×m **⇐** **if** i=n **then** j:=m **else** i<n ⇒ tʹ &le; t + (n-i)×m **fi**
+- i<n ⇒ tʹ &le; t + (n-i)×m **⇐** j:=0. i<n ∧ j&le;m ⇒ tʹ &le; t + (n-i)×m - j
+- i<n ∧ j&le;, ⇒ tʹ &le; t + (n-i)×m - j **⇐** **if** j=m **then** i:=i+1 **else** i<n ∧ j<m ⇒ tʹ &le; t + (n-i)×m - j **fi**
+- i<n ∧ j<m ⇒ R **⇐** if Aij **then** _ok_ **else** j:=j+1. i<n ∧ j&le;m ⇒ tʹ &le; t + (n-i)×m - j **fi**
+
+### For Loop
+
+- **for** _i_:=_m_,.._n_ **do** _P_ **od**
+  - _i_ is a local constant (fresh name)
+  - _m_ and _n_ are integer expressions
+    - _m_ &le; _n_
+    - the number of iterations is _n_-_m_
+  - P is a specification
+    - doesn't have to be a program
+- to refine,
+  - two parameters are required
+  - F m n **⇐** **for** _i_:=_m_,.._n_ **do** _P_ **od**
+  - means
+    - F i i **⇐** m&le;i&le;n ∧ _ok_
+      - no iterations
+    - F i (i+1) **⇐** m&le;i<n ∧ P
+      - one iteration
+    - F i k **⇐** m&le;i<j<k<n ∧ (Fij. Fik)
+      - more than one iteration
+      - split the iteration into two
+
+#### For Loop example
+
+- xʹ=2<sup>n</sup>
+- F = 〈i,j: *nat* → xʹ=x×2<sup>j-i</sup>〉
+- xʹ=2<sup>n</sup> ⇐ x:=1. F 0 n
+  - x:=1. F 0 n &nbsp;&nbsp;&nbsp;&nbsp; expand F
+  - **=** x:=1. xʹ=x×2<sup>n-0</sup> &nbsp;&nbsp;&nbsp;&nbsp; simplify and Substitution Law
+  - xʹ=2<sup>n</sup>
+- F 0 n ⇐ **for** i:=0,..n **do** x:=2×x **od**
+- F i i
+  - **=** xʹ=x×2<sup>i-i</sup> &nbsp;&nbsp;&nbsp;&nbsp; Law of Exponents and simplify
+  - **=** xʹ=x
+  - **=** _ok_
+- F i (i+1)
+  - **=** xʹ=x×2<sup>(i+1)-i</sup> &nbsp;&nbsp;&nbsp;&nbsp; simplify and Identity
+  - **⇐** x:=x×2
+- F i j. F j k
+  - **=** xʹ=x×2<sup>j-i</sup>. xʹ=x×2<sup>k-j</sup> &nbsp;&nbsp;&nbsp;&nbsp; dependent composition
+  - **=** xʹ=x×2<sup>j-i</sup>×2<sup>k-j</sup> &nbsp;&nbsp;&nbsp;&nbsp; Law of Exponents
+  - **=** xʹ=x×2<sup>j-i+k-j</sup> &nbsp;&nbsp;&nbsp;&nbsp; simplify
+  - **=** xʹ=x×2<sup>k-i</sup>
+  - F i k
+
+#### For Loop timing
+
+- time is the sum of time taken each loop
+  - tʹ=t + Σi:m,..n • fi **⇐** **for** i:=m,..n **do** tʹ=t+fi **od**
+- sometimes the each iteration can be constant
+- fi=c, then
+  - tʹ=t+(n-m)×c **⇐** **for** i:=m,..n **do** tʹ=t+fi **od**
+
+#### Add 1 item to each for loop
+
+- #Lʹ=#L ∧ ∀i:0,..#L • Lʹi=Li+1
+- F i k describes an arbitrary segment of iterations
+- F i k **=** #Lʹ=#L
+  - ∧ (∀j:i,..k • Lʹj=Lʹj+1)
+  - ∧ (∀j:(0,..i), (k,..#L) • Lʹj=Lj)
+- F 0 #L **⇐** **for** i:=0,..#L **do** Lʹ=i→Li+1 | L **od**
+  - need to prove
+    - F i i
+    - F i (i+1)
+    - F i k
+
+#### invariant
+
+- I m ⇒ Iʹ n **⇐** **for** i:=m;..n **do** m&le;i<n ∧ I i ⇒ Iʹ (i+1) **od**
+- nice because there's no need to prove the loops
+- I i ⇒ Iʹ i **⇐** m&le;i&le;n ∧ _ok_
+- I i ⇒ Iʹ (i+1) **⇐** m&le;i<n ∧ (m&le;i<n ∧ I i ⇒ Iʹ (i+1)) &nbsp;&nbsp;&nbsp;&nbsp; Discharge
+- I i ⇒ Iʹ k **⇐** m&le;i<j<k<n ∧ (I i ⇒ Iʹ j. I j ⇒ Iʹ k) &nbsp;&nbsp;&nbsp;&nbsp; Transitivity
+
+#### invariant example
+
+- not every loop can become an invariant
+- an example that can is exponentiation
+- xʹ=2<sup>n</sup>
+- I = 〈i: *nat* • xʹ=x×2<sup>i</sup>〉
+- xʹ=2n **⇐** x:= 1. I0⇒Iʹn
+- I0⇒Iʹn **⇐** **for** i:= 0;..n **do** Ii⇒Iʹ(i+1) **od**
+- Ii⇒Iʹ(i+1) **⇐** x:= 2×x
+
+### Minimum Sum Segment
+
+- sʹ = *MIN* i,j • ΣL [i;..j]
+- I k **=** s = (*MIN* i:0,..k+1 • *MIN* j:i,..k+1 • ΣL [i;..j])
+  - ∧ c = (*MIN* i:0,..k+1 • ΣL [i;..k])
+- sʹ = *MIN* i,j • ΣL [i;..j] **⇐** s:=0. c:=0. I 0 ⇒ Iʹ #L
+- I 0 ⇒ Iʹ #L **⇐** **for** k:=0,..#L **do** I k ⇒ Iʹ (k+1) **od**
+- I k ⇒ Iʹ (k+1) **⇐** c:=*min* (c + Lk) 0. s:=*min* s c
+- linear time program
