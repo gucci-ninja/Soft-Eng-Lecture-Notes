@@ -1135,3 +1135,119 @@ Ideally, members of experimental and control groups are very similar, so that th
 - successive relearning
   - test 3 times after learning
 - overwhelmed mind tends to wander
+
+## Module 8
+
+### Categories & Concepts
+
+- everyday decisions rely on quick categorization abilities
+  - attention
+  - memory
+- without the ability to categorize, every decision becomes overwhelming
+  - every experience would be unique
+- ever-occurring and often intuitive
+
+#### Functions of Categorization
+
+- Classification
+  - ability to classify dissimilar objects together in the same group
+- Understanding
+  - ability to evaluate a situation and act appropriately based on prior experiences
+- Communication
+  - ability to describe complex ideas or objects using a single label
+
+#### Illusion of the Expert
+
+- the feeling that a task must be simple for everyone because it is simple for oneself
+
+### Rules
+
+- is there a set of rules that let us define objects in a category
+  - can we use this set of rules to identify new members of a category
+- passable for specific and simple categories like
+  - dog, cat, tree, bottle, etc.
+  - people assume that if it is easy to categorize, it must have a simple rule
+    - illusion of the expert
+- very hard to make a set of simple rules for complex categories
+  - fruit, furniture, beauty, justice
+
+### Prototype Theory
+
+- we categorize objects by comparing them to an internal "best" representation of a given object
+  - can be an average representation
+  - fruit: apple
+  - bird: robin
+- new objects are compared to the prototype
+- classic study
+  - time till reponse
+  - "robin is a bird"
+    - very fast
+  - "penguin is a bird"
+    - significantly slower
+- can't explain all findings
+  - prototypes should be stable over time
+  - we can often change our preception of an object over time
+    - new representations are less likely to shift prototypes, especially with more and more members in the category
+- better for simple categorizations
+
+### Exemplar Theory
+
+- we categorize objects by comparing them to every previously stored experience (exemplar) in a given category
+- new members can join by being similar enough to at least one previous experience
+- explains why we respond quicker to more familiar birds
+  - much more likely to remember a familiar bird than atypical bird since there are so many more experiences with a familiar bird
+- Diagnoses are influenced by Exemplar Theory
+  - dermatologists are asked to diagnose a set of skin diseases and again 2 weeks later
+  - 20% more accurate second time
+  - prototype theory would predict that viewing more sets of skin diseases wouldn't change a diagnoses accuracy
+  - exemplar theory would predict that viewing more sets of skin diseases would allow better accuracy in the future
+- better for complex categorizations
+
+|                                                                     | Prototype Theory                      | Exemplar Theory       |
+| ------------------------------------------------------------------- | ------------------------------------- | --------------------- |
+| Categorizes by comparing object to                                  | internal average                      | past, similar objects |
+| Can explain why a sinlge encounter changes categorization patterns? | no                                    | yes                   |
+| Can explain why we respond faster to more representative objects?   | **yes**                               | **yes**               |
+| Other                                                               | explains simple categorization better | -                     |
+
+### Development of Categorizations
+
+- Children as young as 3 can understand and generalize categories
+- they can have a deeper understanding of categorization
+  - hypothetical categorizations
+  - innate properties of a category
+    - machine nature can be changed
+    - animal nature canot be changed
+- understanding of categorization in children is limited
+  - only have what children can and cannot do at particular ages
+
+### Animal Categorization
+
+- baboons can be taught to classify with high accuracy
+  - instrumental conditioning
+    - food vs non-food
+      - 90% accuracy
+    - same vs different
+      - ~90% accuracy
+- animal categorization may not necessary demonstrate language ability
+
+### Conclusion
+
+- Categorization explains social phenomenon of stereotyping
+  - assumes a social group of people share the same characteristics, traits, and behaviors
+  - encountering new member of the group will conform to prototype
+
+## Lecture 7
+
+- Expert illusion
+- prototyped theory
+- basic is the most abstract level at which objects have similar shapes
+  - can catergorized stuff a more specific things
+    - animals
+    - organisms
+- superordinate
+  - general
+- basic level
+- subordinate
+  - very specific
+- catergorizing is a form of human
