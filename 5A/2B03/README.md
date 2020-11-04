@@ -869,7 +869,7 @@ www.distancetomars.com
   - allows one to "borrow" energy ΔE for some time
   - create matter using E=mc<sup>2</sup>
   - in a time Δt, energy has to be given back
-    - (3 * 10<sup>-22</sup>) particles annihilate (disappear).
+    - (3 \* 10<sup>-22</sup>) particles annihilate (disappear).
   - We believe that particles are constantly being created and destroyed out of "nothing" (vacuum)
     - vacuum is not truely empty
     - Casimir effect
@@ -932,4 +932,68 @@ www.distancetomars.com
     - from frame of reference outside spaceship, one would see that the light is bending since the rocket is accelerating up towards the light
     - due to Principle of Equivalence, this means that a gravitational field must also be bending the light in the astronaut's frame of reference
 - for 10m, light would take ~30ns
-  - light would bend 5 * 10<sup>-15</sup>
+  - light would bend 5 \* 10<sup>-15</sup>
+
+## Lecture 18
+
+- light bend when passing large massive object
+- to test it
+  - try to find a star that is behind our sun
+  - when a solar eclipse occurs we can see the stars during daytime
+  - we found that the light has been bent by the sun's gravity
+- solar eclipse
+  - moon blocks the sun
+  - there is a shadow on part of the Earth
+- lunar eclipse
+  - earth blocks sunlight from hitting the moon, shadows the moon
+- we cannot tell the difference between gravity and acceleration
+
+### Gravitational Redshift
+
+- light leaving a gravitational field is "red-shifted"
+  - frequency is lowered
+  - energy is lowered
+  - light needs energy to escape a gravitational field
+  - E = h f
+    - as E decreases, f decreases
+- what happens if gravity is very strong
+  - energy of light goes to zero and light doesn't escape
+  - Black Holes
+
+### Black Holes
+
+- if a gravitational field is strong enough, light doesn't escape
+- time appears to run very slowly
+- But at a given distance, the black hole will have the same gravitational strength as a normal star with the same mass
+- "black holes don't suck"
+
+### Spacetime
+
+- time moves more slowly when in a strong gravitational field
+- Einstein believed that matter and energy are the same
+- space-time can be thought of as a grid or "fabric" where one mreasures distances by rulers and measures time by clocks
+  - points in space-time are represented as points on a grid
+  - the grid can stretch
+  - the grid can also be distorted, "warped"
+  - Large mass distords "the fabric of space"
+    - the warping is called gravity
+    - free falling objects follow the most direct path in this curved space-time
+      - satellite
+      - starlight
+      - rocks
+- gravity is the manifestation of the distortion of space
+- light isn't being bent
+  - it it following the curvature of space
+
+### Gravitational Lensing
+
+- galaxies emit light and reaches a massive object like a galaxy cluster
+  - light follows the curvature of the space around the massive object
+  - the galaxies then look very distorted
+
+### Gravitational Waves
+
+- final prediction of General Relativity to be verified
+- disturbances, such as a supernova or collisions of stars should produce gravitational waves which are ripples in spacetime
+  - These ripples should be moving outwards
+    - Measured in 2015 LIGO
