@@ -1818,7 +1818,7 @@ Hoare triples
 #### For Loop example
 
 - xʹ=2<sup>n</sup>
-- F = 〈i,j: *nat* → xʹ=x×2<sup>j-i</sup>〉
+- F = 〈i,j: _nat_ → xʹ=x×2<sup>j-i</sup>〉
 - xʹ=2<sup>n</sup> ⇐ x:=1. F 0 n
   - x:=1. F 0 n &nbsp;&nbsp;&nbsp;&nbsp; expand F
   - **=** x:=1. xʹ=x×2<sup>n-0</sup> &nbsp;&nbsp;&nbsp;&nbsp; simplify and Substitution Law
@@ -1872,17 +1872,17 @@ Hoare triples
 - not every loop can become an invariant
 - an example that can is exponentiation
 - xʹ=2<sup>n</sup>
-- I = 〈i: *nat* • xʹ=x×2<sup>i</sup>〉
+- I = 〈i: _nat_ • xʹ=x×2<sup>i</sup>〉
 - xʹ=2n **⇐** x:= 1. I0⇒Iʹn
 - I0⇒Iʹn **⇐** **for** i:= 0;..n **do** Ii⇒Iʹ(i+1) **od**
 - Ii⇒Iʹ(i+1) **⇐** x:= 2×x
 
 ### Minimum Sum Segment
 
-- sʹ = *MIN* i,j • ΣL [i;..j]
-- I k **=** s = (*MIN* i:0,..k+1 • *MIN* j:i,..k+1 • ΣL [i;..j])
-  - ∧ c = (*MIN* i:0,..k+1 • ΣL [i;..k])
-- sʹ = *MIN* i,j • ΣL [i;..j] **⇐** s:=0. c:=0. I 0 ⇒ Iʹ #L
+- sʹ = _MIN_ i,j • ΣL [i;..j]
+- I k **=** s = (_MIN_ i:0,..k+1 • _MIN_ j:i,..k+1 • ΣL [i;..j])
+  - ∧ c = (_MIN_ i:0,..k+1 • ΣL [i;..k])
+- sʹ = _MIN_ i,j • ΣL [i;..j] **⇐** s:=0. c:=0. I 0 ⇒ Iʹ #L
 - I 0 ⇒ Iʹ #L **⇐** **for** k:=0,..#L **do** I k ⇒ Iʹ (k+1) **od**
-- I k ⇒ Iʹ (k+1) **⇐** c:=*min* (c + Lk) 0. s:=*min* s c
+- I k ⇒ Iʹ (k+1) **⇐** c:=_min_ (c + Lk) 0. s:=_min_ s c
 - linear time program
