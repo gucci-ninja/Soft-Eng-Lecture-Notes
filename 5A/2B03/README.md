@@ -997,3 +997,44 @@ www.distancetomars.com
 - disturbances, such as a supernova or collisions of stars should produce gravitational waves which are ripples in spacetime
   - These ripples should be moving outwards
     - Measured in 2015 LIGO
+
+## Lecture 19
+
+- Newton vs General Relativity
+  - Gravitational time dilation
+  - Gravitational lensing
+  - Gravitational redshift
+  - Implies the existence of black hole
+  - Gravitational waves
+- Speed of Gravity
+  - prediction
+    - travels at the speed of light
+    - can't measure light from black holes as no light from black holes
+    - measured merging neutron stars
+      - light and gravitational wave arrived at the ~same time.
+
+### how does General Relativity match up with Quantum Physics
+
+- very big and the very small
+- GR
+  - stars, galaxies, black holes, and whole universe
+- QP
+  - smallest structures, electrons, nuclei, quarks
+- **Quantum Gravity**
+  - centre of a black hole
+  - Universe at the instant of the big bang
+- two theories are incompatible at very small distances
+  - 10<sup>-35</sup> m
+  - quantum jitter introduced by the uncertainty principle is so big that space-time fluctuates violently
+  - each particle exerts a gravitational pull on other particles
+  - when particles overlap then the meaning of gravity breaks down
+- Physicists have postulated that there is a basic very small object called **String**, which can vibrate just like a musical string
+  - different vibrations give different elementary particle
+  - for string theory to work, it works in 10 space-time dimensions
+  - string interactions don't occur at one point
+- All valid theories have extra dimensions
+
+---
+
+- masses tell spacetime how to curve
+- spacetime tells matter and light how to move
