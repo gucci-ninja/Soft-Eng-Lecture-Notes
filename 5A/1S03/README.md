@@ -682,3 +682,143 @@ Carbon to value inititive
   - what one should question if they didn't know the difference
   - some terms like "As many of you may know..." sets people up to not question
   - some news sources may be sowing doubt rather than proving facts
+
+## Lecture 6
+
+### Global Warming
+
+- What we know
+  - greenhouse gas effect is not bad
+    - creates atmosphere
+    - human made greenhouse gas effect is causing issues
+  - most abundant greenhouse in our atmostphere
+    - water vapour
+    - not CO<sub>2<sub/>
+
+### Greenhouse Effect
+
+- greenhouse gases keeps some infrared radiation from escaping into space
+- IPCC 2018
+  - we can measure global surface temperature
+    - ocean surface temperature
+    - land surface temperature
+- Keeling Curve
+  - carbon dioxide concentration
+  - overall increasing
+  - nature also creates a lot of change
+  - measurements before 1958 are from ice core samples
+
+#### Carbon Cycle
+
+- fossil fuels, cement, and land-use change releases 9 gigaton and doesn't absorb
+  - beef production, cars, lumber, etc.
+  - not balanced compared to other cycles
+  - relatively small
+- oceans are not absorbing more carbon than releasing
+  - ocean acidification
+- trees are absorbing more
+- net 4 gigaton is released
+
+---
+
+- Global Warming Potential (GWP)
+  - all different gases are normalized to carbon dioxide
+    - carbon dioxide
+    - methane
+    - Nitrous Oxide
+  - 100 year horizon
+- Cooling Factors
+  - snow and ice
+    - reflects energy
+  - aerosols (sulphates)
+    - burning coal and oil
+    - forest fires
+    - volcanic eruptions
+- World Greenhouse Gas Emissions in 2016
+  - Transportation, Electricity and Heat are the biggest CO<sub>2</sub>
+  - China and India are 35%
+    - China uses coal and oil powered electricity
+  - Canada is 2%
+    - North America uses a lot of oil powered electricity
+      - mostly United States
+  - limestone releases CO<sub>2</sub> to make cement
+    - second most used resource in the world
+
+#### Carbon Levers
+
+- Mitigation
+  - Decarbonize
+  - extended use
+    - Projects have been started to use biogas to substitute natural gas
+      - sewege, leftover food
+  - eliminate need
+    - should be focused on this step
+    - eliminate source of human made greenhouse gas
+  - efficieny
+    - has been the tactic we have been using from the start
+    - slows down greenhouse gas effect, but does not stop or reverse greenhouse gas
+- Sequestration
+  - Carbon Capture and Utilization
+    - use the carbon, can be storage
+    - currently using it in oil wells
+  - Carbon Captrue and Storage
+    - doesn't leak into the atmostphere again
+  - Afforestation
+    - opposite of deforestation
+    - planting more trees
+    - increases carbon cycle
+- Geoengineering
+  - manipulating Earth's climate
+  - using cooling factors purposely
+  - can have potential side effects
+- Adaptation
+  - need to change infrastructure, habitat, etc.
+  - don't put people at risk due to effects of global warming
+
+---
+
+- Earth Overshoot Days
+  - measures how biocapacity of the earth/countries
+  - how much humans consume
+  - if everybody lived like a Canadian, by March 18, we would consume a year's worth of earth's resources
+
+#### Complexity of climate change
+
+- Melting Ice/Pethane in Permafrost
+  - additional releasing
+  - exponential warming
+- Black Carbon
+  - can be a cooling factor or warming factor
+    - depends on circumstances
+
+### Canadian Context
+
+- not good at climate commitments
+  - missed Rio, Kyoto
+  - projected to miss Paris
+- Provincial Carbon Pricing
+  - Federal Government started a plan to have provinces price the carbon
+    - carbon tax
+    - carbon levy system
+    - pay federal carbon tax
+- Cap and Trade System
+  - there is a cap to the amount of carbon one can release
+  - going above, one has to buy credits
+  - going below, one can sell their credits
+  - cap goes down every year
+  - encourages innovation
+- Transportation
+  - mindful of consumer behavior
+- Electricity
+  - 80% of electricity is CO<sub>2</sub> free
+    - use a lot more hydro than other countries
+    - fairly green energy source
+    - nuclear is also popular
+      - doesn't produce carbon dioxide
+      - does product waste in its lifecycle
+- Energy Storage
+  - hydro pumps water back up
+  - saves energy
+- Carbon Stretching
+  - capture and reuse in energy production again
+  - growing algae for energy production etc.
