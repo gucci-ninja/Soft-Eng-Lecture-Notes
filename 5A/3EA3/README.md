@@ -1886,3 +1886,199 @@ Hoare triples
 - I 0 ⇒ Iʹ #L **⇐** **for** k:=0,..#L **do** I k ⇒ Iʹ (k+1) **od**
 - I k ⇒ Iʹ (k+1) **⇐** c:=_min_ (c + Lk) 0. s:=_min_ s c
 - linear time program
+
+## Segment 22
+
+### Recursive Data Definition
+
+- defining infinite bunches using construction and induction
+
+#### some terms
+
+- philosophical induction
+  - guessing the general case from special cases
+- philisophical deduction
+  - proving, using the rules of logic
+- mathematical induction
+  - an axiom (sometimes presented in proof rule)
+  - part of philisophical deduction
+- engineering induction:
+  - if it works for n=1,2,3 it is good enough
+- military induction
+- tax deduction
+
+#### Natural number Definition
+
+- _nat_
+  - can be constructed by starting with 0 and repeatedly adding 1
+- construction axiom
+  - 0: _nat_
+  - _nat_+1: _nat_
+- ⊤ &nbsp;&nbsp;&nbsp;&nbsp; by the axiom, 0:_nat_
+  - ⇒ 0:_nat_ &nbsp;&nbsp;&nbsp;&nbsp; add 1 to each side
+  - ⇒ 0+1:_nat_+1 &nbsp;&nbsp;&nbsp;&nbsp; 0+1=1; by the axiom, _nat_+1:_nat_
+  - ⇒ 1:_nat_ &nbsp;&nbsp;&nbsp;&nbsp; add 1 to each side
+  - ⇒ 1+1:_nat_+1 &nbsp;&nbsp;&nbsp;&nbsp; 1+1=2; by the axiom, _nat_+1:_nat_
+  - ⇒ 2:_nat_ &nbsp;&nbsp;&nbsp;&nbsp; and so on
+- this construction by themselves don't define _nat_
+  - all numbers from this construction can also represent _int_, _real_, _rational_, etc.
+- induction axiom
+  - 0: B ∧ B+1: B ⇒ _nat_: B
+  - _nat_ is the smallest bunch that from the construction axiom
+- rewriting them
+  - construction axiom
+    - 0, _nat_+1: _nat_
+  - induction axiom
+    - 0, B+1: B ⇒ _nat_:B
+- in terms of predicates
+  - construction axiom
+    - P0 ∧ ∀n:_nat_ • Pn⇒P(n+1) **⇐** ∀n:_nat_ • Pn
+  - induction axiom
+    - P0 ∧ ∀n:_nat_ • Pn⇒P(n+1) **⇒** ∀n:_nat_ • Pn
+
+#### Integer Definition
+
+- Define
+  - _int_ = _nat_,-_nat_
+- or
+  - 0, _int_-1, _int_+1: _int_
+  - 0, B+1, B-1: B ⇒ _int_:B
+- or
+  - P0 ∧ (∀i:_int_ • Pi⇒ P(i+1)) ∧ (∀i:_int_ • Pi⇒ P(i-1)) **=** ∀i: _int_ • Pi
+
+#### Powers of Two Definition
+
+- Define
+  - _pow_ = 2<sup>nat</sup>
+- or
+  - _pow_ = §p:_nat_ • ∃m:_nat_ • p=2<sup>m</sup>
+- or
+  - 1, 2×//_pow_:_pow_
+  - 1, 2×B:B ⇒ _pow_:B
+- or
+  - P1 ∧ ∀p:_pow_ • Pp ⇒ P(2×p) = ∀p:_pow_ • Pp
+
+### Least Fixed-Points
+
+- _nat_ construction
+  - 0, _nat_+1: _nat_
+- _nat_ induction
+  - 0, B+1: B ⇒ _nat_:B
+- _nat_ fixed-point construction:
+  - _nat_ = 0, nat+1
+    - stronger
+- _nat_ fixed-point induction:
+  - B = 0, B+1 ⇒ _nat_ B
+    - weaker
+    - the least fixed-point induction
+- overall the same strength
+- x os a fixed-point of _f_ if
+  - x = _f_ x
+- _name_ = (expressions involving _name_)
+
+#### Steps for Least Fixed-Point
+
+- Construct
+  - name<sub>0</sub> = _null_
+    - we don't know anything involving the instructor
+  - name<sub>n+1</sub> = (expression involving name<sub>n</sub>)
+- Guess (general case)
+  - name<sub>n</sub>
+    - philisophical induction
+- Substitute ∞ for n
+  - name<sub>∞</sub> = (expression involving neither n nor _name_)
+- Test fixed-point
+  - name<sub>∞</sub> = (expression involving name<sub>inf</sub>)
+- Test least fixed point
+  - B = (expression involving B) ⇒ name<sub>∞</sub>: B
+- Example: _pow_
+  - Construct
+    - _pow_<sub>0</sub> = _null_
+    - _pow_<sub>1</sub> = 1, 2×*pow*<sub>0</sub> = 1, 2×*null* = 1, null = 1
+    - _pow_<sub>2</sub> = 1, 2×*pow*<sub>1</sub> = 1, 2×1 = 1, 2
+    - _pow_<sub>3</sub> = 1, 2×*pow*<sub>2</sub> = 1, 2×(1, 2) = 1, 2, 4
+    - name<sub>n+1</sub> = (expression involving name<sub>n</sub>)
+  - Guess (general case)
+    - _pow_<sub>n</sub> = 2<sup>0,..n</sup>
+  - Substitute ∞ for n
+    - _pow_<sub>∞</sub> = 2<sup>0,..∞</sup> = 2<sup>_nat_</sup>
+  - Test fixed-point
+    - 2<sup>_nat_</sup> = 1,2×2<sup>_nat_</sup>
+    - **=** 2<sup>_nat_</sup> = 2<sup>0</sup>, 2<sup>1</sup>×2<sup>_nat_</sup>
+    - **=** 2<sup>_nat_</sup> = 2<sup>0</sup>, 2<sup>1+_nat_</sup>
+    - **=** 2<sup>_nat_</sup> = 2<sup>0, 1+_nat_</sup>
+    - **⇐** _nat_ = 0, 1+_nat_
+    - **=** ⊤
+  - Test least fixed point
+    - 2<sup>_nat_</sup>: B
+    - **=** ∀n: _nat_ • 2<sup>n</sup>: B &nbsp;&nbsp;&nbsp;&nbsp; _nat_ induction with Pn = 2<sup>n</sup>: B
+    - **⇐** 2<sup>0</sup>: B ∧ ∀n: _nat_ • 2<sup>n</sup>: B ⇒ 2<sup>n+1</sup>: B &nbsp;&nbsp;&nbsp;&nbsp; change variable
+    - **=** 1: B ∧ ∀m: 2<sup>_nat_</sup> • m: B ⇒ 2×m: B &nbsp;&nbsp;&nbsp;&nbsp; increase domain
+    - **⇐** 1: B ∧ ∀m: _nat_ • m: B ⇒ 2×m: B &nbsp;&nbsp;&nbsp;&nbsp; domain change law
+    - **=** 1: B ∧ ∀m: _nat_‘B • 2×m: B &nbsp;&nbsp;&nbsp;&nbsp; increase domain
+    - **=** 1: B ∧ ∀m: B • 2×m: B
+    - **⇐** B = 1, 2×B
+- alternative step 0
+  - instead of _null_ use
+  - _name_<sub>0</sub> = _whatever_
+- alternative step 2
+  - instead of _name_<sub>∞</sub>
+  - §x • _LIM_ n • x: name<sub>n</sub>
+    - usually the same as _name_<sub>∞</sub>
+
+## Segment 23
+
+### Recursive Specification Definition
+
+- zap **=** **if** x=0 **then** y:=0 **else** x:=x-1. t:=t+1. zap **fi**
+  - is a fixed point axiom
+- zap construction
+  - tʹ&ge;t ⇐ zap
+  - **if** x=0 **then** y:=0 **else** x:=x-1. t:=t+1. zap **fi** ⇐ zap
+  - or
+  - tʹ&ge;t ∧ **if** x=0 **then** y:=0 **else** x:=x-1. t:=t+1. zap **fi** ⇐ zap
+- zap induction
+  - ∀ σ, σʹ • tʹ&ge;t ∧ **if** x=0 **then** y:=0 **else** x:=x-1. t:=t+1. P **fi** ⇐ P
+  - **⇒** ∀ σ, σʹ • zap ⇐ P
+    - for all specification that satisfy the construction axiom, zap is the weakest
+- _nat_ construction
+  - 0: _nat_
+  - _nat_+1: _nat_
+  - or
+  - 0, _nat_+1: _nat_
+- _nat_ induction
+  - 0, B+1: B ⇒ _nat_: B
+
+#### Fixed-Point Specification Definition
+
+- zap fixed-point construction
+  - zap = tʹ&ge;t ∧ **if** x=0 **then** y:=0 **else** x:=x-1. t:=t+1. zap **fi**
+- zap fixed-point induction
+  - ∀ σ, σʹ • (P = tʹ&ge;t ∧ **if** x=0 **then** y:=0 **else** x:=x-1. t:=t+1. P **fi**)
+  - **⇒** ∀ σ, σʹ • zap ⇐ P
+- Construction
+  - zap **=** **if** x=0 **then** y:=0 **else** x:=x-1. t:=t+1. zap **fi**
+  - zap<sub>0</sub> **=** ⊤
+  - zap<sub>1</sub> **=** **if** x=0 **then** y:=0 **else** x:=x-1. t:=t+1. zap<sub>0</sub> **fi**
+    - **=** x=0 ⇒ xʹ=yʹ=0 ∧ tʹ=t
+  - zap<sub>1</sub> **=** **if** x=0 **then** y:=0 **else** x:=x-1. t:=t+1. zap<sub>1</sub> **fi**
+    - **=** 0&le;x&le;1 ⇒ xʹ=yʹ=0 ∧ tʹ=t+x
+  - zap<sub>n</sub> **=** 0&le;x&le;n ⇒ xʹ=yʹ=0 ∧ tʹ=t+x
+  - zap<sub>∞</sub> **=** 0&le;x&le;∞ ⇒ xʹ=yʹ=0 ∧ tʹ=t+x
+- alternative step 0: instead of ⊤ use
+  - _name_//\_<0/> = whatever
+- alternative step 2: instead of _name_//\_<∞/> use
+  - _LIM_ n • _name_//\_<0/>
+
+### Loop Definition
+
+- **while**-loop construction
+  - tʹ&ge;t ∧ **if** b **then** P. t:=t+1. **while** b **do** P **od** **else** *ok* **fi** **⇐** **while** b **do** P **od**
+- **while**-loop induction
+  - ∀ σ, σʹ • tʹ&ge;t ∧ **if** b **then** P. t:=t+1. W **else** *ok* **fi** ⇐ W
+  - **⇒** ∀ σ, σʹ • **while** b **do** P **od** ⇐ W
+- **while**-loop fixed-point construction
+  - **while** b **do** P **od** **=** t//'&ge;t //and **if** b **then** P. t:=t+1. **while** b **do** P **od** **else** *ok* **fi**
+- **while**-loop fixed-point induction
+  - ∀ σ, σʹ • (P **=** tʹ&ge;t ∧ **if** b **then** P. t:=t+1. W **else** *ok* **fi**)
+  - **⇒** ∀ σ, σʹ • **while** b **do** P **od** ⇐ W
