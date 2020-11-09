@@ -1038,3 +1038,440 @@ www.distancetomars.com
 
 - masses tell spacetime how to curve
 - spacetime tells matter and light how to move
+
+## Lecture 20
+
+### Extrasolar Planet
+
+- IAU "working" definition
+  - planets that orbit stars outside our solar system
+  - objects with true masses below the limiting mass for thermonuclear fusion of deuterium(~13 Jupiter mass) that orbit stars are "planets". THe minimum mass/size required for an extrasolar object to be considered a planet should be the same as that used in our solar system.
+    - a star is big enough to have a nuclear reactor as a core, whereas planets are not
+  - Substellar objects with true masses for thermonuclear fusion of deuterium are "brown dwarfs", no matter how they formed nor where they are located
+    - 3 kinds of objects
+      - planets (smallest)
+      - brown dwarfs (middle)
+        - don't burn hydrogen, instead deuterium (hydrogen isotope)
+      - stars (largest)
+  - Free-floating objects in young star clusters with masses below limiting mass for thermonuclear fusion of deuterium are not "planets", but are "sub-brown dwarfs" (or whatever name is most appropriate)
+    - planets-like objects that aren't orbiting stars
+    - formed near star but kicked out
+  - Basically
+    - Need to be in orbit around a star
+    - Can't have nuclear burning like stars do
+    - regular planet qualities
+      - round-like
+      - clear its orbit
+
+#### Searching for extrasolar planets
+
+- transit
+  - measuring star's brightness over time
+  - when a planet partially eclipses the star, brightness drops
+  - we can measure if this behavior is consistent
+  - inconsistent
+    - planet needs to pass in front of star in our perspective
+    - planets that have long orbits are less likely to be considered planets
+- Doppler/velocity/wobble
+  - use a spectrum of the star to measure its speed of motion towards or away from us. This will change cyclically as its planet orbits around it.
+  - star has a small doppler blue/red shift when orbitting around a center of mass
+    - the center of mass doesn't have to be in the star (like our sun)
+    - planet is large enough to pull on star
+  - plots into a sin wave
+    - wavelength is one orbit around center of mass for planet and star
+  - the plot depends on the size/distance of planet to the star
+    - bigger orbit -> slower cycle (wavelength) and smaller effect on star (amplitude)
+    - bigger planet -> larger velocity change (amplitude)
+    - combine to get mass and orbit size of planet
+  - multiple planets will be a sum of sin waves
+    - can z-transform into different components
+- we have found >600 extrasolar systems with up to 8 stars
+
+## Lecture 21
+
+- Transit Method
+  - measures difference in brightness of star over time
+  - the difference in brightness is the size of planet moving in front of star
+- Doppler/Velocity/Wobble Method
+  - find orbit of planet using doppler effect
+    - sin wave
+  - the wavelength is orbit period of star and planet
+  - the amplitude is planet size/orbit size
+- we can find mass (doppler) and volume (transit)
+  - can find density of planet
+    - gas giant
+    - rocky planet
+- can study the atmosphere of planets using transit method
+
+### Third Method
+
+- Direct Imaging
+  - seeing planet directly from special satellite observatories
+  - light reflects off planet from stars
+  - stars are usually so bright, it overwhelms the reflected light
+  - filter out direct light from stars (dim star)
+    - coronagraph
+- can attempt to look for signs of life/atmosphere
+- can find planets farther away than other methods
+
+### Habitable Zone
+
+- region of space where conditions are favourable for life (or at least life like we know it!)
+- region around a star where liquid water could exist
+  - can extend a little
+- Gliese 581g is the first planet found in habitable zone
+  - Gliese 581 is a star, with the planets named -a to -g
+- most plants are bigger than Earth, smaller than Neptune
+  - "super-earth"
+- Criticism of habitable zone
+  - Life elsewhere could be different than life on Earth
+  - Other circumstances can make more distant planets habitable
+    - volcanic activities
+    - oceans
+  - Planet migration
+    - planets can move/change orbits over time
+    - large planets are more likely to move towards star
+      - maybe started in habitable zone, and survive the transition towards/away planet
+
+## Lecture 22
+
+### _Why_ is there life on Earth
+
+- Earth is the only location of life that we know of
+  - what conditions have permitted life to arise, _and survive_ on our planet
+  - many astronomical conditions to be met
+    - we are here because of our connections with the outside universe
+
+### Reasons for Life
+
+- location (habitable zone)
+  - liquid water can exist
+  - godilocks principle
+    - perfect distance
+    - not too hot
+    - not too cold
+- Timing
+  - took Earth 4 billion years for a diverse array of multicelled living things to develop
+    - simple life forms developed in first billion year
+  - Need Star that lasted at least a couple billion years
+    - Sun's lifetime is ~9-10 billion years
+  - More Massive stars don't last long
+    - not long enough for (complex) life to develop
+  - Less massive stars have smaller habitable zone
+- Atmosphere
+  - Greenhouse gasses in atmosphere (carbon dioxide, water, nitrogen to some extent) hold some heat from Sunlight, act as "insulation blanket" and moderate temperature
+  - too little atmosphere
+    - Mars
+    - huge swings in surface temperature during day
+  - too much atmosphere
+    - Venus
+    - too much "insulation"
+    - too much heat is trapped from Sunglight and held in and builds up
+      - "runaway" greenhouse effect
+- Water
+  - medium for biochemical reaction
+  - too much water
+    - continental shelves are thought to be important for rapid development of life
+  - theory of water origins
+    - early heavy bombardment stage (4.5-4.0 billion years ago)
+      - brought most/all ocean water from comets
+- Global Climate Issues
+  - Catastrophic changes in climate are possible
+    - Snowball Earth
+      - 500 million years ago
+      - entire earth is covered in ice
+      - ice reflects energy away
+        - further cooling
+        - runaway effect
+      - widespread glaciation
+      - reverses if more active volcanism
+- Is the solar system a safe place to live
+  - Mass extinctions of life have occurred a few times on the Earth in the past
+  - Cretaceous era extinction of dinosaurs
+    - thought to be earth-crossing asteroid
+    - earth-crossing asteroid is asteroid that passes really close to earth
+    - if the asteroid is big enough and
+      - hits water
+        - water vapour goes into the ski
+        - runaway greenhouse gas effect
+      - hits land
+        - dust fills the sky
+        - reflects sunlight back
+        - disrupts food chain on earth/ocean
+        - global firestorm
+    - thought to be 10km in size
+  - Earth orbit is very large so it is really rare to hit asteroid
+  - thought that Jupiter excites asteroids in asteroid belt into inner orbit
+  - Aestroids
+    - not usually 1 solid piece
+    - 100 meters or less
+      - earth encouters many times a century
+      - breaks up in Earth's atmosphere
+    - a few kilometers
+      - once every few thousand years
+      - major damage on continent-size scales
+    - 10-100 kilometers
+      - once every 100 million years
+      - very threatening to biosphere
+    - Jupiter sends the aestroids but also absorbs lots of comets
+- Death from the stars
+  - supernova (explosion of massive star at end of its life)
+    - Destruction of our ozone layer
+    - exposure to much increased radiation
+  - average rate is 1 per century in our galaxy
+    - usually too far to affect Earth
+  - maybe one every 300 million years within 30 lightyears of Sun
+    - will destroy life on Earth
+
+---
+
+- Species diversity decreases drastically during a mass extinction
+- recovery can be rapid and leads to increased diversity
+  - new ecological niches need to be filled anew
+- How many Earthlike planets have experienced total wipeout
+
+## Lecture 23
+
+### Life in the Solar System
+
+- Mars
+- Europa (moon of Jupiter)
+- Titan (moon of Saturn)
+- Enceladus (moon of Saturn)
+
+#### Life on Mars
+
+- Water
+  - frozen in the poles
+  - sometimes flows on surface
+- Currently looking for evidence of past or present life
+  - planned sample return missions
+- Mars-like places on Earth (Mars simulation lab)
+  - See how astronauts might live out their lives on Mars
+
+#### Life on Europa
+
+- liquid water possibly exists beneath the moon's icy surface
+- HST recentyl observed plumes of water as Europa transited in front of Jupiter
+  - water ejects through the cracks of ice
+
+#### Life on Titan
+
+- been described as having conditions similar to those of early Earth
+  - atmosphere rich in organic molecules
+- liquid lakes on its surface
+  - probably ethane/methane
+  - maybe able to sustain life
+- may also have water beneath the surface
+
+##### Missions to Europa or Titan
+
+- Short-term: Orbiter mission to Europa planned with lots of instruments to map the surface (~2024)
+- Long-term: Land on Europa, drill down through the ice
+- Long-term: Land on Titan, test the lakes
+
+#### Enceladus
+
+- shown to have plumes of water similar to europa
+- likely to have lots of water beneath surface
+
+### ingredients for life
+
+- Liquid water
+  - facilitates chemical reactions necessary for life
+- Organic molecules
+  - critical for biological processes
+- A source of energy that could be used by living things
+  - star light
+
+#### Extremophiles
+
+- organisms that live in environments where life isn't usually habitable
+  - sea vents
+    - extreme heat
+    - no sunlight
+  - Yellowstone Hotsprings
+    - extreme ph level
+  - Antartica Subglacial Lakes
+    - thick ice
+    - extremely cold
+  - Atacama Desert
+    - very low humidity/water
+  - tardigrade
+    - able to survive in space
+
+### Life in Universe
+
+- Oxygen in the air
+  - built up from organisms that developed on earth
+  - can be a signal of life developing on another planet
+- Water
+- Intelligent Signals?
+
+#### Life on Extra-Solar Planets
+
+- study for atmospheres and look for 'biosignatures'
+  - gas that exist due to life
+  - Oxygen and Methane mass produced by bacteria
+- very difficult observations
+  - planets are very small and faint compared to big bright stars
+  - need very long exposures and good instruments
+- Mass-Radius Diagram
+  - Radius vs Mass of planets found
+    - radius from transit method
+    - mass from doppler shift
+  - lots of uncertainty
+    - especially mass
+  - lines draw constant density as mass/radius increases
+    - we want to focus on specific density similar to Earth
+    - earth is also very inconsistent in density
+- James Webb Telescope
+  - will be able to measure spectra for extrasolar planets and search for "biosignitures"
+  - 6.8m mirror
+    - able to collect more data.
+  - near-infrared
+    - planets emit infrared energy
+      - brighter than optical
+  - not able to be fixed once launched
+
+#### Signs of Intelligent Signals
+
+- SETI
+  - the search for extraterrestrial intelligence
+  - Pheonix project
+    - searches for radio signals from extraterrestrials
+    - stared at 800 stars
+      - failed to find any evidence of extraterrestrial signals
+- look for repeating patterns of signals
+  - narrow signals (very small frequency) are much more likely to be artificial
+  - need to rule out Earth signals
+  - Stars give out very little radio signal
+- radio and optical
+- lasers
+  - light amplification by stimulated emission of radiation
+  - not possible in nature
+  - excited a bunch of atoms (electrons are in higher energy levels)
+  - when atoms relax, they emit photons of specific energy (bunch of ligth with the same wavelength)
+  - have this happen between 2 mirrors
+    - bounce around and become coherent
+  - open a hole at one end of the mirrored box and a narrow beam of light at 1 wavelength is emitted
+- Breakthrough Listen
+  - 100 million dollars over 10 years
+  - search for life in 1 million stars in Milky way
+  - 100 nearest galaxies
+
+## Lecture 24
+
+- Statistics of life in the universe
+  - Drake equation
+    - estimate the number of extraterrestrial civilizations in our galaxy with which we might come in contact
+    - main purpose is to quantify the uncertainty factors which determine the number of such extraterrestrial civilizations
+    - _N = R<sup>\*</sup>×f<sub>p</sub>×n<sub>e</sub>×f<sub>l</sub>×f<sub>i</sub>×f<sub>c</sub>×L_
+      - _N_: numer of civilizations in our galaxy with which communication might be possible
+      - _R<sup>\*</sup>_: average rate of star formation in our galaxy
+      - _f<sub>p</sub>_: fraction of those stars have planets
+      - _n<sub>e</sub>_: average number of planets that can potentially support life per star that has planets
+      - _f<sub>l</sub>_: fraction of above that actually go on to develop life at some point
+      - _f<sub>i</sub>_: fraction of above that actually go on to develop intelligent life
+      - _f<sub>c</sub>_: fraction of civilizations that develop a technology that releases detectable signs of their existence into space
+      - _L_: length of the time such civilizations release detectable signals into space
+    - we have a good idea of R<sup>\*</sup> and f<sub>p</sub>
+    - we potentially know f<sub>p</sub>
+  - Revised Drake Equation
+    - developed by Sara Seager
+    - _N = N<sub>\*</sub>F<sub>Q</sub>F<sub>HZ</sub>F<sub>O</sub>F<sub>L</sub>F<sub>S</sub>_
+      - _N_: number of planets with detectable biosignature gases
+      - _N<sub>\*</sub>_: number of stars within the sample
+      - _F<sub>Q</sub>_: fraction of quiet stars
+      - _F<sub>HZ</sub>_: frction with rocky planets in the HZ
+      - _F<sub>O</sub>_: fraction of observable systems
+      - _F<sub>L</sub>_: fraction with life
+      - _F<sub>S</sub>_: fraction with detectable spectroscopic signatures
+    - best estimates on the numbers above
+      - expect ~2 with James Webb Signature Telescope
+
+### Sending Messages to space
+
+- Arecibo message
+  - sent encoded messages to space
+- Voyager Golden Record
+  - Voyager 1 and Voyager 2
+  - engraved on these record are information about human knowledge
+    - atoms
+    - humans
+    - solar systems
+  - on the records
+    - greetings in many languages
+    - music from many cultures
+    - animal and nature sounds
+  - audio contents are released
+- Should we be sending messages?
+  - Stephen Hawking and others think not
+  - aliens can potentially be hostile
+- People can pay to send signals to space
+- Could other Civilizations see us?
+  - only if they are close
+  - biosignatures have been present on Earth for billions of years but organized, intelligent signals are relatively new:
+    - earlist TV broadcasts have reached several thousand stars
+    - signal is very weak and would require very large antenna.
+
+### Fermi Paradox
+
+- plausible arguments (Drake Equation) suggest that civilizations should be common.
+  - 1 in 1 million stars gets a civilization at some time => 100,000 civilizations
+  - 1 in 1 billion stars gets a civilization at some time => 100 civilizations
+- why haven't we detected them?
+- why haven't they visited us?
+- Solutions
+  - Maybe extraterrestrial life is more rare than we think
+  - Intersteller travel is really ahrd
+  - Civilizations destroy themselves before achieving interstellar travel?
+  - Advanced communication technology doesn't exist elsewhere?
+    - we don't know how to listen property
+  - Everyone is listening, but no one is transmitting
+  - hard to satisfy the factors for life
+
+### Formation of our Solar System
+
+- solar nebula
+  - solar medium (gas and dust) collapse
+- contracts into rotating disk- star forms in centre
+  - big ball of mostly hydrogen, little bit of helium
+- cooling causing condensing into tiny (dust sized) solid particles
+- collisions between these form larger bodies
+- these accrete to form planets
+  - terrestrial planets form close in, gas giants further out
+  - other solar systems with gas giants close to star must mean gas giants migrate towards the star
+
+#### Comets form in outer portion of the disk around the young star
+
+- same area as gas giants
+- icy bodies
+- get flung by big planets out of the solar system
+- most of the Comets live in Oort Cloud
+  - 50000 AU
+- nearby passing star preturb comets and move it
+  - tail is from solar radiation chipping away at the comet when moving by the Sun
+- why should we care about comets and Kuiper Belt Objects
+  - Kuiper Belt and Oort CLoud are relatively pristine remnants of the nebula from which the entire solar system was formed
+  - compositions and distribution places important constraints on models of early evolutions of the solar system
+    - knowing the compositions of these objects can allow us to better simulate how solar systems are formed
+
+---
+
+### Objects in Solar System
+
+- Asteroids
+  - rocky objects, mostly live in a belt between Mars and Jupiter, some asteroids do cross the path of the Earth
+- Comets
+  - 'Dirty Snowballs'
+  - icy objects, mostly live in the Oort Cloud
+  - Only see the tail when it starts to melt
+- Oort Cloud
+  - spherical cloud of comets ~50,000 times further away from the Sun than Earth
+- Kuiper Belt Objects
+  - mostly icy objects living just past the orbit of Neptune
+- Meteors
+  - "shooting stars"
+  - streaks of light caused when pieces of asteroids or comets hit the Earth's atmoshere(if pieces survive intact, called meteorites)
+  - any thing that burns in atmosphere and leaves a track
