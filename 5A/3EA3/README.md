@@ -2241,7 +2241,7 @@ Hoare triples
 - _root_ = 〈t:_tree_ → t 1〉
 - to conserve memory in the tree, we can have the 0 and 2 index be pointers to addresses of lists rather than lists
   - good method for data structures with unpredictable sizes
-  - **pointers** are to *data* what **gotos** are to *program*
+  - **pointers** are to _data_ what **gotos** are to _program_
 
 ---
 
