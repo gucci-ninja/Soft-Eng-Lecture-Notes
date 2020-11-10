@@ -2073,12 +2073,183 @@ Hoare triples
 ### Loop Definition
 
 - **while**-loop construction
-  - tʹ&ge;t ∧ **if** b **then** P. t:=t+1. **while** b **do** P **od** **else** *ok* **fi** **⇐** **while** b **do** P **od**
+  - tʹ&ge;t ∧ **if** b **then** P. t:=t+1. **while** b **do** P **od** **else** _ok_ **fi** **⇐** **while** b **do** P **od**
 - **while**-loop induction
-  - ∀ σ, σʹ • tʹ&ge;t ∧ **if** b **then** P. t:=t+1. W **else** *ok* **fi** ⇐ W
+  - ∀ σ, σʹ • tʹ&ge;t ∧ **if** b **then** P. t:=t+1. W **else** _ok_ **fi** ⇐ W
   - **⇒** ∀ σ, σʹ • **while** b **do** P **od** ⇐ W
 - **while**-loop fixed-point construction
-  - **while** b **do** P **od** **=** t//'&ge;t //and **if** b **then** P. t:=t+1. **while** b **do** P **od** **else** *ok* **fi**
+  - **while** b **do** P **od** **=** tʹ&ge;t ∧ **if** b **then** P. t:=t+1. **while** b **do** P **od** **else** _ok_ **fi**
 - **while**-loop fixed-point induction
-  - ∀ σ, σʹ • (P **=** tʹ&ge;t ∧ **if** b **then** P. t:=t+1. W **else** *ok* **fi**)
+  - ∀ σ, σʹ • (P **=** tʹ&ge;t ∧ **if** b **then** P. t:=t+1. W **else** _ok_ **fi**)
   - **⇒** ∀ σ, σʹ • **while** b **do** P **od** ⇐ W
+
+## Segment 24
+
+- programmers are theory users
+  - also use features of the programming languages
+  - designers and implementors of new theories
+- **stacks, queues, trees** as a case study
+  - defining axioms for them
+- programs weren't considered to be mathematical expressions
+  - functions were
+  - push, pop were defined not as math expressions, rather than functions
+  - now we can formalize programs as expressions and prove them
+
+### Data-Stack Theory
+
+- _stack_
+  - all stacks of items of type _X_
+- _empty_
+  - a stack containing no items
+- _push_
+  - a function that takes a stack and an item and gives back another stack
+- _pop_
+  - a function that takes a stack and gives back another stack
+- _top_
+  - a function that takes a stack and gives back an item
+
+#### Stack Axioms
+
+- _empty_: _stack_
+  - not usually used
+  - can be replicated by pushing a special value that when _top_ returns this value, we know it is empty
+  - _stack_ ⧧ _null_
+- _push_: *stack*→*X*→*stack*
+- _pop_: *stack*→*stack*
+  - _pop_: *empty*→*stack*
+  - should really get rid of this
+  - have an error message instead for this particular case
+- _top_: *stack*→*X*
+  - _top_: *empty*→*X*
+  - should really get rid of this
+  - have an error message instead for this particular case
+- _push_ s x ⧧ _empty_
+  - pushing to a stack cannot return _empty_
+  - not needed for if we don't need _empty_
+- _push_ s x = _push_ t y **=** s=t ∧ x=y
+  - two _push_ can't return same stacks unless same stack and item
+  - pushing always makes different stacks
+  - not really required
+- _empty_, _push stack X_: _stack_
+  - contstruction axiom
+- _empty_, _push B X_: _B_ ⇒ _stack_: _B_
+  - induction axiom
+  - not required if we're not proving every stack
+- P _empty_ ∧ ∀s: _stack_ • ∀x: _X_ • P s ⇒ P (_push_ s x) **=** ∀s: _stack_ • P s
+  - proving P _empty_ and P s allows the proof of P (_push_ s x), you have proven P s
+  - repetition of previous 2
+- _pop_ (_push_ s x) = s
+- _top_ (_push_ s x) = x
+
+---
+
+- software engineers want the least amount of axioms
+- mathematicians want the most
+
+---
+
+- final axioms
+  - _stack_ ⧧ _null_
+  - _push_: *stack*→*X*→*stack*
+  - _pop_ (_push_ s x) = s
+  - _top_ (_push_ s x) = x
+
+#### Stack Implementations
+
+- _stack_ = [\**int*]
+  - all lists of integers
+- _empty_ = [*nil*]
+- _push_ = 〈s:_stack_ → 〈x:_int_ → s;;[x]〉〉
+- _pop_ = 〈s:_stack_ → **if** s=_empty_ **then** _empty_ **else** s[0;..#s-1] **fi**〉
+- _top_ = 〈s:_stack_ → **if** s=_empty_ **then** 0 **else** s (#s-1) **fi**〉
+- proof
+  - axioms of theory are satisfied by the definitions of the implementation
+  - (axioms) ⇐ (definitions of the implementation)
+    - really proving implementations satisfy axioms
+
+#### Stack Usage
+
+- **var** a, b: _stack_
+- a:=_empty_. b:=_push_ a 2
+- consistent?
+  - yes, we implemented it
+  - logicians
+    - call it models
+    - set theory
+- complete?
+  - no, these binary expressions are unclassified
+    - _pop empty_ = _empty_
+    - _top empty_ = 0
+  - implementation right now is more specific than theory
+  - Proof
+    - implement twice
+
+### Theory as Firewall
+
+| user                      |        | implementor              |
+| ------------------------- | ------ | ------------------------ |
+| user ensures that         |        | implementor ensures that |
+| **only** stack properties | theory | **all** stack properties |
+| are relied upon           |        | are provided             |
+
+### Data-Queue Theory
+
+- _emptyq_: _queue_
+- _join_: *queue*→*X*→*queue*
+  - _join_ q x: _queue_
+- _join_ q x ⧧ _emptyq_
+- _join_ q x = _join_ r y **=** q=r ∧ x=y
+- _leave_: *queue*→\*_queue_
+  - q⧧*emptyq* ⇒ _leave_ q:_queue_
+- _front_: *queue*→*X*
+  - q⧧*emptyq* ⇒ _front_ q:_X_
+- _emptyq_, _join B X_: _B_ ⇒ _queue_: _B_
+- _leave_ (_join emptyq_ x) = _emptyq_
+- q⧧*emptyq* ⇒ _leave_ (_join_ q x) = _join_ (_leave_ q) x
+- _front_ (_join emptyq_ x) = x
+- q⧧*emptyq* ⇒ _front_ (_join_ q x) = _front_ q
+
+### Data-Tree Theory
+
+#### Strong Data-Tree Axioms
+
+- _emptree_: _tree_
+- _graft_: *tree*→*X*→*tree*→*tree*
+  - join left and right subtree under _X_
+- _emptree_, _graft B X B_: _B_ ⇒ _tree_: _B_
+- _graft_ t x u ⧧ _emptree_
+- _graft_ t x u = _graft_ v y w **=** t = v ∧ x = y ∧ u = w
+- _left_ (_graft_ t x u) = t
+- _root_ (_graft_ t x u) = x
+- _right_ (_graft_ t x u) = u
+
+#### Weak Data-Tree Axioms
+
+- *tree*⧧\*null
+- _graft_ t x u: _tree_
+- _left_ (_graft_ t x u) = t
+- _root_ (_graft_ t x u) = x
+- _right_ (_graft_ t x u) = u
+
+#### Data-Tree Implementation
+
+- _tree_ = _emptree_, _graft tree int tree_
+- _emptree_ = [*nil*]
+- _graft_ = 〈t:_tree_ → 〈x: _int_ → 〈u:_tree_ → [t;x;u]〉〉〉
+- _left_ = 〈t:_tree_ → t 0〉
+- _right_ = 〈t:_tree_ → t 2〉
+- _root_ = 〈t:_tree_ → t 1〉
+- to conserve memory in the tree, we can have the 0 and 2 index be pointers to addresses of lists rather than lists
+  - good method for data structures with unpredictable sizes
+  - **pointers** are to *data* what **gotos** are to *program*
+
+---
+
+- _tree_ = _emptree_, _graft tree int tree_
+- _emptree_ = 0
+- _graft_ = 〈t:_tree_ → 〈x: _int_ → 〈u:_tree_ → "left"→t|"root"→x|"right→u〉〉〉
+- _left_ = 〈t:_tree_ → t "left"〉
+- _right_ = 〈t:_tree_ → t "right"〉
+- _root_ = 〈t:_tree_ → t "root"〉
+- looks more like a table of contents
+  - which is also an example of a tree
