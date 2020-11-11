@@ -1251,3 +1251,186 @@ Ideally, members of experimental and control groups are very similar, so that th
 - subordinate
   - very specific
 - catergorizing is a form of human
+
+## Module 9
+
+### Attention
+
+- navigates you through your surroundings
+- operational definitions are necessary for testing cognitive models
+  - Phenomenon -> Model -> Hypothesis
+- William James
+  - Selection
+    - act of attending to an object to select it apart from the unattended objects
+- is an active process
+- when irrelevant information overwhelms us, we get distracted
+
+### Automatic and Controlled Attention
+
+- Automatic Processes
+  - Involuntary "capture"
+    - blinking lights, loud noise
+  - fast, efficient
+- Controlled Processes
+  - Conscious attention
+  - slow, effortful
+- Driving requires some controlled processes
+  - Lane Changes
+  - Change Speed
+  - Conversations
+  - Radio Tuning
+- additional resources are limited and must be controlled carefully
+  - turning down radio when conversing
+  - otherwise everything suffers
+    - potentially crash
+- Salient information automatically captures our attention
+- Consciously effortful tasks can become automatic through practice
+
+### Spotlight Method
+
+- conscious visual attention focuses like a spotlight
+- objects within spotlight
+  - preferred
+  - faster reaction time
+  - higher accuracy
+- example
+  - two boxes that potentially show "*"
+  - when a box flashes, we react faster when * shows up in that box
+  - if * appears in other box, we react slower
+    - appears to show attention shifts faster than our eyes
+- attention doesn't immediately rely on sight
+  - once difference is spotted, we can't see two photos as same anymore
+
+### Filter Model
+
+- we use auditory cues to filter target sounds from background noise
+- cocktail party effect
+  - two messages played from same speaker
+  - shadowing task
+    - repeat one message
+  - depends on gender, direction, pitch, speed
+- Spotlights enhance the stimulus, wheras filters suppress the noise
+  - Information -> filter -> further processing
+- we ignore background noise
+- Broadbent
+  - **Single Filter Model**
+  - Single Filter Model of attention is based on the physical characteristics of stimuli
+    - Sensory information that doesn't pass this filter is eliminated, and won't be further processed
+  - Dichotic Listening Experiment
+    - Shadow intended message
+      - repeat it out loud
+      - answer questions about it
+    - unable to process any information from unintended ear
+      - changing languages
+      - playing message backwards
+- Von Right (and colleagues)
+  - classical condition a word with electric shock
+  - Dichotic Listening Experiment
+    - when similar sound/meaning to conditioned word in intended or unintended ear
+      - conditioned response
+    - suggests some sound/meaning passes through filter
+- Breakthrough
+  - Participants remember unattended information
+  - especially highly relevant information
+    - someone say one's name when they're in another conversation
+- Treisman
+  - **Dual Filter Model**
+    - adds semantic filter for meaningful stimuli after physical filter
+    - physical filter adds weights to each stimuli (not necessarily eliminates)
+    - semantic filter looks for deeper meaning/relevance in the stimuli
+      - discards irrelevant information
+  - explains cocktail party and breakthrough
+- Broadbent revised his Single Filter Model
+
+### The Stroop Task
+
+- very popular
+- pushes our attention skills to the limit
+- given words, say out loud the colours of the font
+  - the given words are names of colours
+  - Congruent
+    - "Red" in red font
+  - Incongruent
+    - "Red" in blue font
+- stroop effect
+  - performance is much faster for congruent words
+  - demonstrates attention is facilitated by stimulus relevance (reading the word)
+  - **Proportion Congruent Manipulation**
+    - Change the ratio of congruent to incongruent trials
+      - higher congruent to incongruent
+        - Increase Stroop effect
+      - higher incongruent to congruent
+        - Decrease Stroop effect
+  - high congruency tests bias attention to task-irrelevant information
+    - we start using the task-irrelevant information as what we are looking for
+      - reading facilitates congruent words
+      - reading impedes incongruent words
+    - as a result very slow at identifying incongruent words, but very fast at identifying congruent words
+  - low congruency tests bias attention to task-relevant information
+    - consciously surpress task-irrelevant information
+    - as a result, slightly slower at identifying every word
+- Stroop task shows that automatic process can be consciously controlled
+  - Automatic (word reading)
+    - Word reading influences performance even when the word is to be ignored
+  - Controlled (identify colours)
+    - People can adopt consciously controlled word reading strategies that modulate the Stroop effect
+
+### Visual Search
+
+- model everyday tasks
+  - everyday attention
+- Set Size
+  - number of items to search through
+- Set Size Effect
+  - Increase in difficulty as set size increases
+- Single Feature search tasks are relatively easy
+- Colour features really stand out
+- Pop-out Effect
+  - when the object of a visual search is easily found, regardless of set size
+  - easily induced by colour
+- Conjunction Searches uses two or more features to create a more difficult search
+  - when searching for one feature of the object, other objects with that feature is distracting
+- Despite the complexity of features, visual searches everyday is easy
+  - due to effects such as **Contextual Cueing**
+
+### Attention Conclusion
+
+- critical role of Attention is often taken for granted
+- attention allows us to select and filter specific information from a sea of noise
+- attention errors can be annoyances
+- chronic attention errors can be a symptom of psychological issues
+  - ADHD
+  - anxiety
+  - insomnia
+  - depression
+  - OCD
+
+## Lecture 8
+
+- Stop
+  - jargon and explain new terms
+  - talking fast
+- Start
+  - mini-review of last week's lecture
+  - poll question at the start of the class
+
+### Review
+
+- concepted is represented by a prototypical item which has central tendency
+  - new exemplar is classified by its similarity to the prototype
+
+### Attention Lecture
+
+- many things compete for one's attention
+- we only pay attention to a limited set of information in the environment
+- Alertness Arousal
+  - we can select our focus on target in all the objects in the alertness arousal
+  - vigilance
+- Attention captures a portion of the external world to the internal mind
+- Attention is a dialogue between bottom-up and top-down processing
+- Focus attention: Participants are told to attend to one stimulus and ignore another
+  - informs about process of selection
+  - what happens to unattended stimuli
+- Divided attention: Participants attend to all stimuli
+  - informs about processing limitiations
+- cost of not paying attention
