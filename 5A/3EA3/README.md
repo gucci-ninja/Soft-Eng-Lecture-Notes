@@ -2087,7 +2087,7 @@ Hoare triples
 
 - programmers are theory users
   - also use features of the programming languages
-  - designers and implementors of new theories
+  - designers and implementers of new theories
 - **stacks, queues, trees** as a case study
   - defining axioms for them
 - programs weren't considered to be mathematical expressions
@@ -2186,9 +2186,9 @@ Hoare triples
 
 ### Theory as Firewall
 
-| user                      |        | implementor              |
+| user                      |        | implementer              |
 | ------------------------- | ------ | ------------------------ |
-| user ensures that         |        | implementor ensures that |
+| user ensures that         |        | implementer ensures that |
 | **only** stack properties | theory | **all** stack properties |
 | are relied upon           |        | are provided             |
 
@@ -2253,3 +2253,113 @@ Hoare triples
 - _root_ = 〈t:_tree_ → t "root"〉
 - looks more like a table of contents
   - which is also an example of a tree
+
+## Segment 25
+
+### Theory Design
+
+- data theory
+  - data structuire designs
+  - can assign to variables
+    - s := _push_ s x
+  - is larger and more expensive
+- program theory
+  - _push_ x
+    - doesn't need to specify which stack
+  - user's variable, implementer's variables
+    - stack structure is implementer's variable
+      - user cannot make arbitrary changes to stack
+
+### Program-Stack Theory
+
+#### Program-Stack Syntax
+
+- _push_
+  - procedure with parameter of type _X_
+- _pop_
+  - a program
+- _top_
+  - expression of type _X_
+
+#### Program-Stack Axiom
+
+- topʹ=x **⇐** _push_ x
+- _ok_ **⇐** _push_ x. _pop_
+
+#### Program-Stack Implementation
+
+- **var** s: [\**X*]
+  - implementer's variable
+- _push_ **=** 〈x:_X_ → s:=s;;[x]〉
+- _pop_ **=** s:=s[0;..#s-1]
+- _top_ **=** s (#s-1)
+- consistent? ⊤
+  - it is implemented with function theory and list theory
+- complete? ⊥
+  - hard to prove anything if we start with _pop_
+
+### Fancy Program-Stack Thoery
+
+- *top*ʹ ∧ ¬*isempty*ʹ **⇐** _push_ x
+- _ok_ **⇐** _push_ x. _pop_
+- *isempty*ʹ **⇐** _mkempty_
+  - _mkempty_ makes stack empty
+
+### Weak Program-Stack Thoery
+
+- *top*ʹ=x **⇐** _push_ x
+- *top*ʹ=_top_ **⇐** _balance_
+- _balance_ **⇐** _ok_
+- _balance_ **⇐** _push_ x. balance. pop
+- any number of balanced _push_ and _pop_ puts *top*ʹ equal to _top_
+  - rather than putting entire stack to be equal to before
+- we don't need to implement _balance_
+- can be extended with a counter
+- *count*ʹ = 0 **⇐** _start_
+- *count*ʹ = _count_+1 **⇐** _push_ x
+- *count*ʹ = _count_+1 **⇐** _pop_
+- weaker theories can be extended in more ways than a strong theory
+
+### Program-Queue Theory
+
+- *isemptyq*ʹ **⇐** _mkemptyq_
+- _isemptyq_ ⇒ *front*ʹ=x ∧ ¬*isemptyq*ʹ **⇐** _join_ x
+- ¬*isemptyq* ⇒ *front*ʹ=front ∧ ¬*isemptyq*ʹ **⇐** _join_ x
+- _isemptyq_ ⇒ (_join_ x. _leave_ **=** _mkemptyq_)
+- ¬*isemptyq* ⇒ (_join_ x. _leave_ **=** _leave_. _join_ x)
+- we have to think of all relevent situation
+  - find the value of each expression after every operation
+  - sometimes we don't want to know
+    - _mkemptyq_. _leave_
+
+### Program-Tree Theory
+
+- unusual tree
+  - infinite sized tree
+  - going down will never reach leaves
+  - going up will never reach root
+  - can be implemented
+    - finite sized traversal in finite time
+    - can be built as the user traverses tree
+    - conceptually infinite
+- _node_ is value of item where you are
+  - _node_ := 3
+- _aim_ tells direction you are facing
+  - _aim_ := _up_
+  - _aim_ := _left_
+  - _aim_ := _right_
+- _go_ moves to the next node you are facing
+  - turns you facing back the way you came.
+- Auxiliary specification _work_ is required for axioms
+  - do anything but
+  - don't _go_ from this node (_node_ value doesn't change)
+  - in this direction (_aim_ value doesn't change)
+
+#### Program-Tree Axioms
+
+- (_aim_=_up_) = (*aim*ʹ⧧*up*) **⇐** go
+- *node*ʹ=_node_ ∧ *aim*ʹ=_aim_ **⇐** _go_. _work_. _go_
+- _work_ **⇐** _ok_
+- _work_ **⇐** _node_:=x
+- _work_ **⇐** a=*aim*⧧b ∧ (_aim_:=b. _go_. _work_. _go_. _aim_:=a)
+- _work_ **⇐** _work_. _work_
