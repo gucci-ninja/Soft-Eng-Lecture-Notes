@@ -2363,3 +2363,115 @@ Hoare triples
 - _work_ **⇐** _node_:=x
 - _work_ **⇐** a=*aim*⧧b ∧ (_aim_:=b. _go_. _work_. _go_. _aim_:=a)
 - _work_ **⇐** _work_. _work_
+
+## Segment 26
+
+### Data Transformation
+
+- Specified Data Structure and operations as program theory
+  - User and Implementor Variables
+  - Stack
+    - implementor variables defined as a list where we add and remove from one end
+    - we don't necessarily need to have it implemented as a list
+      - just need to be consistent with specification
+      - we can also change the implementation from a list to another data structure
+- user's variables _u_
+- implementer's variables _v_
+- new implementer's variables _w_
+- **data transformer** _D_
+  - relates _v_ and _w_ such that ∀*w* • ∃*v* • _D_
+  - for every state _w_, there exists a state _v_ that is related through _D_
+- specification _S_ is transformed to
+  - ∀*v* • _D_ ⇒ ∃*v*ʹ • *D*ʹ ∧ _S_
+    - _D_ relates _v_ and _w_
+    - *D*ʹ relates *v*ʹ and *w*ʹ
+    - ∀*v* • _D_ ⇒ ∃*v*ʹ • *D*ʹ ∧ _S_ relates _w_ and *w*ʹ
+
+#### Transform _Nat_ to _Bin_
+
+- user's variable _u_: _bin_
+- implementer's variable _v_: _nat_
+- operation
+  - _zero_ = _v_:=0
+  - _increase_ = _v_:=_v_+1
+  - _inquire_ = _u_:=_even v_
+- new implementer's variable _w_: _bin_
+- data transformer _w_=_even v_
+- implementation
+  - ∀*v* • _D_ ⇒ ∃*v*ʹ • *D*ʹ ∧ _zero_
+    - **=** ∀*v* • _w_=_even v_ ⇒ ∃*v*ʹ • *w*ʹ=*even v*ʹ ∧ (_v_:=0)
+    - **=** ∀*v* • _w_=_even v_ ⇒ ∃*v*ʹ • *w*ʹ=*even v*ʹ ∧ *v*ʹ=0 ∧ uʹ=u &nbsp;&nbsp;&nbsp;&nbsp; one point
+    - **=** ∀*v* • _w_=_even v_ ⇒ *w*ʹ=_even_ 0 ∧ uʹ=u &nbsp;&nbsp;&nbsp;&nbsp; change variable
+      - ∀r:f D· b = ∀v:f D· (substitute r for f v)
+    - **=** ∀*r*:_even nat_ • _w_=_r_ ⇒ *w*ʹ=⊤ ∧ uʹ=u &nbsp;&nbsp;&nbsp;&nbsp; one point
+    - **=** *w*ʹ=T ∧ uʹ=u
+    - **=** _w_:=⊤
+  - ∀*v* • _D_ ⇒ ∃*v*ʹ • *D*ʹ ∧ _increase_
+    - **=** ∀*v* • _w_=_even v_ ⇒ ∃*v*ʹ • *w*ʹ=*even v*ʹ ∧ (_v_:=v+1)
+    - **=** ∀*v* • _w_=_even v_ ⇒ ∃*v*ʹ • *w*ʹ=*even v*ʹ ∧ *v*ʹ=v+1 ∧ uʹ=u &nbsp;&nbsp;&nbsp;&nbsp; one point
+    - **=** ∀*v* • _w_=_even v_ ⇒ *w*ʹ=_even_ (_v_+1) ∧ uʹ=u &nbsp;&nbsp;&nbsp;&nbsp; change variable
+    - **=** ∀*r*:_even nat_ • _w_=_r_ ⇒ *w*ʹ=¬*r* ∧ uʹ=u &nbsp;&nbsp;&nbsp;&nbsp; one point
+    - **=** *w*ʹ=¬*w* ∧ uʹ=u
+    - **=** _w_:=¬*w*
+  - ∀*v* • _D_ ⇒ ∃*v*ʹ • *D*ʹ ∧ _inquire_
+    - **=** ∀*v* • _w_=_even v_ ⇒ ∃*v*ʹ • *w*ʹ=*even v*ʹ ∧ (_u_:=_even v_)
+    - **=** ∀*v* • _w_=_even v_ ⇒ ∃*v*ʹ • *w*ʹ=*even v*ʹ ∧ *u*ʹ=_even v_ ∧ vʹ=v &nbsp;&nbsp;&nbsp;&nbsp; one point
+    - **=** ∀*v* • _w_=_even v_ ⇒ *w*ʹ=_even v_ ∧ *u*ʹ=_even v_ &nbsp;&nbsp;&nbsp;&nbsp; change variable
+    - ∀*r*:_even nat_ • _w_=_r_ ⇒ *w*ʹ=_r_ ∧ uʹ=_r_ &nbsp;&nbsp;&nbsp;&nbsp; one point
+    - *w*ʹ=_w_ ∧ *u*ʹ=_w_
+    - *u*ʹ=_w_
+
+### Transform _Bin_ to _Nat_
+
+- going the opposite direction
+- user's variable _u_: _bin_
+- implementer's variable _v_: _bin_
+- operation
+  - _set_ = _v_:=⊤
+  - _flip_ = _v_:=¬*v*
+  - _ask_ = _u_:=_v_
+- new implementer's variable _w_: _nat_
+- data transformer _v_=_even w_
+- implementation
+  - ∀*v* • _D_ ⇒ ∃*v*ʹ • *D*ʹ ∧ _set_
+    - **=** ∀*v* • _v_=_even w_ ⇒ ∃*v*ʹ • *v*ʹ=*even w*ʹ ∧ (_v:=⊤_)
+    - **=** *even w*ʹ ∧ *u*ʹ=u
+    - **⇐** w:=0
+      - doesn't have to be zero, just have to make sure it is even
+  - ∀*v* • _D_ ⇒ ∃*v*ʹ • *D*ʹ ∧ _flip_
+    - **=** ∀*v* • _v_=_even w_ ⇒ ∃*v*ʹ • *v*ʹ=*even w*ʹ ∧ (_v_:=¬*v*)
+    - **=** *even w*ʹ⧧*even w* ∧ uʹ=u
+    - **⇐** _w_:=_w_+1
+  - ∀*v* • _D_ ⇒ ∃*v*ʹ • *D*ʹ ∧ _ask_
+    - **=** ∀*v* • _v_=_even w_ ⇒ ∃*v*ʹ • *v*ʹ=*even w*ʹ ∧ (_u_:=_v_)
+    - **=** *even w*ʹ=_even w_=*u*ʹ
+    - **⇐** uʹ=_even w_
+
+#### Security Switch
+
+- User Variables
+  - a: bin
+  - b: bin
+  - c: bin
+- Implementer Variables
+  - A: bin
+  - B: bin
+- c changes when both a and b have changed
+- a and b can change at any time
+- A recored state of a at last output change
+- B recored state of b at last output change
+- operations
+  - a:=¬a **if** a⧧A ∧ b⧧B **then** c:=¬c. A:=a. B:=b **else** _ok_ **fi**
+  - b:=¬b **if** a⧧A ∧ b⧧B **then** c:=¬c. A:=a. B:=b **else** _ok_ **fi**
+- we can replace old implemeter's variables A and B with nothing
+- Data Transformer
+  - A=B=c
+- proof
+  - ∃A,B • A=B=c &nbsp;&nbsp;&nbsp;&nbsp; generalization
+  - **⇐** ⊤
+- implementation
+  - ∀A,B • A=B=c ⇒ ∃Aʹ,Bʹ • Aʹ=Bʹ=cʹ ∧ **if** a⧧A ∧ b⧧B **then** c:=¬c. A:=a. B:=b **else** _ok_ **fi** &nbsp;&nbsp;&nbsp;&nbsp; expand assignments, dependent compositions, and ok
+    - **=** ∀A,B • A=B=c ⇒ ∃Aʹ,Bʹ • Aʹ=Bʹ=cʹ ∧ **if** a⧧A ∧ b⧧B **then** aʹ=a ∧ bʹ=b cʹ=¬c ∧ Aʹ=a ∧ Bʹ=b **else** aʹ=a ∧ bʹ=b ∧ cʹ=c ∧ Aʹ=A ∧ Bʹ=B **fi** &nbsp;&nbsp;&nbsp;&nbsp; one point law for A, B and Aʹ, Bʹ
+    - **=** **if** a⧧c ∧ b⧧c **then** aʹ=a ∧ bʹ=b cʹ=¬c ∧ cʹ=a ∧ cʹ=b **else** aʹ=a ∧ bʹ=b ∧ cʹ=c ∧ cʹ=c ∧ cʹ=c **fi** &nbsp;&nbsp;&nbsp;&nbsp; context a⧧c and b⧧c in **then**
+    - **=** **if** a⧧c ∧ b⧧c **then** c:=//not//c **else** _ok_ **fi**
+    - **=** c:=(a⧧c ∧ b⧧c) //unequal c
