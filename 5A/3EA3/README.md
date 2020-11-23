@@ -2473,5 +2473,75 @@ Hoare triples
   - ∀A,B • A=B=c ⇒ ∃Aʹ,Bʹ • Aʹ=Bʹ=cʹ ∧ **if** a⧧A ∧ b⧧B **then** c:=¬c. A:=a. B:=b **else** _ok_ **fi** &nbsp;&nbsp;&nbsp;&nbsp; expand assignments, dependent compositions, and ok
     - **=** ∀A,B • A=B=c ⇒ ∃Aʹ,Bʹ • Aʹ=Bʹ=cʹ ∧ **if** a⧧A ∧ b⧧B **then** aʹ=a ∧ bʹ=b cʹ=¬c ∧ Aʹ=a ∧ Bʹ=b **else** aʹ=a ∧ bʹ=b ∧ cʹ=c ∧ Aʹ=A ∧ Bʹ=B **fi** &nbsp;&nbsp;&nbsp;&nbsp; one point law for A, B and Aʹ, Bʹ
     - **=** **if** a⧧c ∧ b⧧c **then** aʹ=a ∧ bʹ=b cʹ=¬c ∧ cʹ=a ∧ cʹ=b **else** aʹ=a ∧ bʹ=b ∧ cʹ=c ∧ cʹ=c ∧ cʹ=c **fi** &nbsp;&nbsp;&nbsp;&nbsp; context a⧧c and b⧧c in **then**
-    - **=** **if** a⧧c ∧ b⧧c **then** c:=//not//c **else** _ok_ **fi**
-    - **=** c:=(a⧧c ∧ b⧧c) //unequal c
+    - **=** **if** a⧧c ∧ b⧧c **then** c:=¬c **else** _ok_ **fi**
+    - **=** c:=(a⧧c ∧ b⧧c) ⧧ c
+
+## Segment 27
+
+### Limited Queue
+
+- good example of data transformation
+- holds at most n values in queue
+- user's variables
+  - _c_: _bin_
+  - _x_: _X_
+- old implementer's variable
+  - _Q_: [_n\*X_]
+  - _p_: _nat_
+- operations
+  - _mkemptyq_ **=** _p_:=0
+  - _isemptyq_ **=** _c_:=_p_=0
+  - _isfullq_ **=** _c_:=_p_=_n_
+  - _join_ **=** _Q p_:=_x_. _p_:=_p_+1
+    - only works if _Q_ isn't full
+  - _leave_ **=** **for** i:=1;.._p_ **do** _Q_ (i-1):=_Q_ i **od**. _p_:=_p_-1
+  - _front_ **=** Z*:=*Q\* 0
+- new implementer's variable
+  - _R_: [*n\*X*]
+  - _f_,_b_: 0,.._n_
+    - items are between _f_ and _b_
+    - shifts to the right by one everytime leave is called
+      - when b reaches n, the next join is at index 0
+- data transformer
+  - _D_ **=** 0&le;_p_ = _b_-_f_ < _n_ ∧ _Q_[0;..*p*] = _R_[*f*,..*b*]
+    - ∨ 0 < _p_ = _n_-_f_+_b_ &le; _n_ ∧ _Q_[0;..*p*] = _R_[(*f*;..*n*);(0,..*b*)]
+- transformations
+  - ∀*Q*,_p_ • _D_ ⇒ ∃*Q*ʹ,*p*ʹ • *D*ʹ ∧ _mkemptyq_
+    - **=** ∀*Q*,_p_ • _D_ ⇒ ∃*Q*ʹ,*p*ʹ • *D*ʹ ∧ (_p_:=0)
+    - **=** ∀*Q*,_p_ • _D_ ⇒ ∃*Q*ʹ,*p*ʹ • *D*ʹ ∧ *p*ʹ=0 ∧ *Q*ʹ=_Q_ ∧ *c*ʹ=_c_ ∧ *x*ʹ=_x_
+    - **=** *f*ʹ=*b*ʹ ∧ *c*ʹ=_c_ ∧ *x*ʹ=_x_
+    - **⇐** _f_:=0. _b_:=0
+  - ∀*Q*,_p_ • _D_ ⇒ ∃*Q*ʹ,*p*ʹ • *D*ʹ ∧ _isemptyq_
+    - **=** ∀*Q*,_p_ • _D_ ⇒ ∃*Q*ʹ,*p*ʹ • *D*ʹ ∧ (c:=_p_=0)
+    - **=** ∀*Q*,_p_ • _D_ ⇒ ∃*Q*ʹ,*p*ʹ • *D*ʹ ∧ *c*ʹ=_p_=0 ∧ *Q*ʹ=_Q_ ∧ *p*ʹ=_p_ ∧ *x*ʹ=_x_
+    - **=** _f_<_b_ ∧ *f*ʹ<*b*ʹ ∧ _b_–_f_ = *b*ʹ–*f*ʹ ∧ _R_[*f*;..*b*] = *R*ʹ[*f*ʹ;..*b*ʹ] ∧ ¬*c*ʹ
+      - ∨ _f_<_b_ ∧ *f*ʹ>*b*ʹ ∧ _b_–_f_ = _n_+*b*ʹ–*f*ʹ ∧ _R_[*f*;..*b*] = *R*ʹ[(*f*ʹ;..*n*); (0;..*b*ʹ)] ∧ ¬*c*ʹ
+      - ∨ _f_>_b_ ∧ *f*ʹ<*b*ʹ ∧ _n_+_b_–_f_ = *b*ʹ–*f*ʹ ∧ _R_[(*f*;..*n*); (0;..*b*)] = *R*ʹ[*f*ʹ;..*b*ʹ] ∧ ¬*c*ʹ
+      - ∨ _f_>_b_ ∧ *f*ʹ>*b*ʹ ∧ _b_–_f_ = *b*ʹ–*f*ʹ ∧ _R_[(*f*;..*n*); (0;..*b*)] = *R*ʹ[(*f*ʹ;..*n*); (0;..*b*ʹ)] ∧ ¬*c*ʹ
+- missing _f_=_b_ case, so is therefore unimplementable
+  - this is because _f_=_b_ occurs when the queue is empty or when the queue is full
+  - introduce a new variable _m_: _bin_ that determines which configuration the queue is is
+- data transformer
+  - _D_ **=** _m_ ∧ 0&le;_p_ = _b_-_f_ < _n_ ∧ _Q_[0;..*p*] = _R_[*f*,..*b*]
+    - ∨ ¬*m* ∧ 0 < _p_ = _n_-_f_+_b_ &le; _n_ ∧ _Q_[0;..*p*] = _R_[(*f*;..*n*);(0,..*b*)]
+- transformations
+  - ∀*Q*,_p_ • _D_ ⇒ ∃*Q*ʹ,*p*ʹ • *D*ʹ ∧ _mkemptyq_
+    - **=** *m*ʹ ∧ *f*ʹ=*b*ʹ ∧ *c*ʹ=_c_ ∧ *x*ʹ=_x_
+    - **⇐** _m_:=⊤. _f_:=0. _b_:=0
+  - ∀*Q*,_p_ • _D_ ⇒ ∃*Q*ʹ,*p*ʹ • *D*ʹ ∧ _isemptyq_
+    - **=** _m_ ∧ _f_<_b_ ∧ *m*ʹ ∧ *f*ʹ<*b*ʹ ∧ _b_–_f_ = *b*ʹ–*f*ʹ ∧ _R_[*f*;..*b*] = *R*ʹ[*f*ʹ;..*b*ʹ] ∧ ¬*c*ʹ
+      - ∨ _m_ ∧ _f_<_b_ ∧ ¬*m*ʹ ∧ *f*ʹ>*b*ʹ ∧ _b_–_f_ = _n_+*b*ʹ–*f*ʹ ∧ _R_[*f*;..*b*] = *R*ʹ[(*f*ʹ;..*n*); (0;..*b*ʹ)] ∧ ¬*c*ʹ
+      - ∨ ¬*m* ∧ _f_>_b_ ∧ *m*ʹ *f*ʹ<*b*ʹ ∧ _n_+_b_–_f_ = *b*ʹ–*f*ʹ ∧ _R_[(*f*;..*n*); (0;..*b*)] = *R*ʹ[*f*ʹ;..*b*ʹ] ∧ ¬*c*ʹ
+      - ∨ ¬*m* ∧ _f_>_b_ ∧ ¬*m*ʹ *f*ʹ>*b*ʹ ∧ _b_–_f_ = *b*ʹ–*f*ʹ ∧ _R_[(*f*;..*n*); (0;..*b*)] = *R*ʹ[(*f*ʹ;..*n*); (0;..*b*ʹ)] ∧ ¬*c*ʹ
+      - ∨ _m_ ∧ _f_=_b_ ∧ *m*ʹ *f*ʹ=*b*ʹ ∧ *c*ʹ
+      - ∨ ¬*m* ∧ _f_=_b_ ∧ ¬*m*ʹ ∧ *f*ʹ=*b*ʹ ∧ _R_[(*f*;..*n*); (0;..*b*)] = *R*ʹ[(*f*ʹ;..*n*); (0;..*b*ʹ)] ∧ ¬*c*ʹ
+    - **⇐** *c*ʹ = (_m_ ∧ _f_=_b_) ∧ *f*ʹ=_f_ ∧ *b*ʹ=_b_ ∧ *R*ʹ=_R_
+    - **=** _c_:= _m_ ∧ _f_=_b_
+  - ∀*Q*,_p_ • _D_ ⇒ ∃*Q*ʹ,*p*ʹ • *D*ʹ ∧ _isfullq_
+    - **⇐** _c_:= ¬*m* ∧ _f_=_b_
+  - ∀*Q*,_p_ • _D_ ⇒ ∃*Q*ʹ,*p*ʹ • *D*ʹ ∧ _join_
+    - **⇐** _R b_:=_x_. **if** _b_+1=_n_ **then** _b_:=0. _m_:= ⊥ **else** _b_:=_b_+1 **fi**
+  - ∀*Q*,_p_ • _D_ ⇒ ∃*Q*ʹ,*p*ʹ • *D*ʹ ∧ _leave_
+    - **⇐** **if** _f_+1=n **then** _f_:=0. _m_:=⊤ **else** _f_:= _f_+1 **fi**
+  - ∀*Q*,_p_ • _D_ ⇒ ∃*Q*ʹ,*p*ʹ • *D*ʹ ∧ _front_
+    - **⇐** _R f_
