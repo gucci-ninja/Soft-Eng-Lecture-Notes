@@ -270,22 +270,16 @@ www.distancetomars.com
 ### interstellar space
 
 - space between stars
-
   - usually thin gaseous material
   - giant interstellar gas clouds collapse due to gravity and becomes a star
-
 - best way measure distance of nearby star: parallax star
-
   - in 6 month difference, see how much a star moves relative to background stars
   - closer the star, the bigger the movement of the star.
   - done since the 1800
   - easier for bigger orbits
-
 - parsec or lightyear is used to measure far objects
-
   - parsec is around 3.3 lightyears
   - 1.3 parsec is around 4 lightyears (closest star)
-
 - milky way has two satallite galaxies
 - gaia space mission measures 1.7 billion stars
 
@@ -293,9 +287,7 @@ www.distancetomars.com
 
 - million times larger than interstellar distances
 - use Megaparsecs (million parsec) => millions of lightyears
-
 - spiral galaxy
-
   - typical spiral galaxy has around 100 billion stars
     - has arms coming from the center
     - many new stars form along the arms
@@ -304,15 +296,12 @@ www.distancetomars.com
   - density of stars decrease as we go closer to the edge
   - face on vs edge on are different angles to view galaxies
   - center has a bulge, flat at the edge
-
 - eliptical galaxy
-
   - a lot less structure
     - bright center and fade towards the edge
   - not a disc like spiral galaxy
   - swarm of bees
   - very little gas
-
 - galaxy zoo
   - crowdsource galaxy names
 
@@ -320,9 +309,7 @@ www.distancetomars.com
 
 - galaxy groups: at least 3 galaxies affected by one another
 - compact galaxy group
-
   - distances between galaxies are within each other's edge
-
 - galaxy clusters: thousands of member galaxies
   - largest galaxies in the universe usually center of galaxy clusters
     - 1 trillion stars
@@ -350,11 +337,8 @@ www.distancetomars.com
 
 - study of origin and evolution of universe
 - discovered in 1930 galaxies are getting farther away
-
   - implies universe is expanding (exponentially)
-
 - distance to galaxies
-
   - can't use parallax
   - we compare with conventional knowledge (standard candle effect)
     - some objects has the same brightness always (supernova)
@@ -377,6 +361,8 @@ www.distancetomars.com
         - Speed is porportional to distance
         - V = (Hubble's constant) \* distance
         - **V = H \* d**
+
+---
 
 - Expanding Universe
   - rather than galaxies moving
@@ -1475,3 +1461,79 @@ www.distancetomars.com
   - "shooting stars"
   - streaks of light caused when pieces of asteroids or comets hit the Earth's atmoshere(if pieces survive intact, called meteorites)
   - any thing that burns in atmosphere and leaves a track
+
+## Lecture 25
+
+- Learning more about stars
+
+### Our Sun
+
+- "low mass" star
+- how long will the Sun last
+  - our sun lasts around 10 billion years
+  - ~5.5 billion left
+- what's goning to happen to the Sun
+  - grow and get hotter (red giant)
+  - Shed off atmosphere (planetary nebula)
+  - Core remains for ~trillion years (white dwarf)
+
+#### Stellar longevity
+
+- A star "dies" when it runs out of fuel to burn
+  - depends on **MASS** and **LUMINOSITY**
+- **MASS** related to the amount of fuel available
+- **LUMINOSITY** related to the rate at which fuel is used up
+  - how fast nuclear fusion is occurring
+- lifetime is porportional to
+  - **MASS**/**LUMINOSITY**
+- low mass stars live much longer
+  - high mass stars are way more luminous (exponentially?)
+- how old is the Sun?
+  - we build models of stars that show how they will evolve for a given mass and "luminosity"
+    - ~4.5 billion years age for our sun
+  - we also use radioactive dating to see how old the sun is
+    - nothing is older than ~4.5 billion years old
+
+#### Nuclear Reactions
+
+- 2 particles
+  - a, x
+- "wall" of electric repulsion
+  - a and x are same charge
+- can be bypassed by quantum tunnelling
+  - become glued by STRONG force -> NUCLEAR FUSION
+- Stars have so many hydrogen atoms in its core that it happens consistently
+- 1 kg H -> 0.993 kg He
+  - difference in mass is converted to energy
+    - E = mc<sup>2</sup>
+- fusion can generate energy up to iron
+  - fission also generates energy up to iron
+- What happens as sun burns hydrogen into helium?
+  - Main Sequence
+  - "Proton-proton chain" (p-p chain)
+    - builds up helium in star's centre
+    - The star gradually gets bigger and brighter
+    - 4 Hydrogen atoms -> 1 Helium atom
+  - Sun burns 4.3 million tons of hydrogen into helium every second
+    - 3.8 \* 10<sup>26</sup> Joules
+    - roughly 1 million times the amount of energy humans consume in one year
+- what happens as the star uses up its fuel?
+  - Hydrogen burns in a shell surrounding Helium ash
+  - Helium core will gradually shrink
+    - due to gravity
+    - become hotter
+  - ~100 million degrees
+    - helium nuclei are slamming into each other with enough force to fuse
+    - creates Carbon (and Oxygen)
+- nuclear fusion exerts pressure outwards toward the surface
+  - in equilibrium with gravity pushing inwards toward the core
+- final stages of a low-mass star
+  - star becomes big and bright ("Red Giant")
+    - toasts Earth
+    - engulfs earth
+  - star loses mass gently
+    - planetary nebula
+      - outer layers of material are ejected into interstellar medium
+      - 10's of thousands of years
+    - white dwarf
+      - white hot core left behind
