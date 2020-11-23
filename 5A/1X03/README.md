@@ -1019,7 +1019,7 @@ Ideally, members of experimental and control groups are very similar, so that th
     - Mammels injured or confined
     - emit sudden angry noises
 
-### Conclusions
+### Language Conclusion
 
 - All species communicate but language is special
 - It's important to get a second optinion before getting a tattoo
@@ -1231,7 +1231,7 @@ Ideally, members of experimental and control groups are very similar, so that th
       - ~90% accuracy
 - animal categorization may not necessary demonstrate language ability
 
-### Conclusion
+### Categories Conclusion
 
 - Categorization explains social phenomenon of stereotyping
   - assumes a social group of people share the same characteristics, traits, and behaviors
@@ -1294,9 +1294,9 @@ Ideally, members of experimental and control groups are very similar, so that th
   - faster reaction time
   - higher accuracy
 - example
-  - two boxes that potentially show "*"
-  - when a box flashes, we react faster when * shows up in that box
-  - if * appears in other box, we react slower
+  - two boxes that potentially show "\*"
+  - when a box flashes, we react faster when \* shows up in that box
+  - if \* appears in other box, we react slower
     - appears to show attention shifts faster than our eyes
 - attention doesn't immediately rely on sight
   - once difference is spotted, we can't see two photos as same anymore
@@ -1434,3 +1434,241 @@ Ideally, members of experimental and control groups are very similar, so that th
 - Divided attention: Participants attend to all stimuli
   - informs about processing limitiations
 - cost of not paying attention
+
+## Module 10
+
+### Memory
+
+- complex and serves many functions
+- Deese Roediger Mcdermitt (DRM) Paradigm
+  - memorize several words
+    - given words are bug related
+  - try to see if certain words were given to be memorized
+    - animal, sky, spider
+  - a lot of people mistake a certain word to be in original list
+- Commonsense analogies fall short because memory is reconstructive
+  - memory doesn't work like files in cabinet/computer
+  - memory can change and mutate over time
+
+#### Memory Terminology
+
+- Studying memory requires precise use of terminology
+- **Encoding**
+  - information when it is first being learned
+- **Storage**
+  - what information is being stored in the brain and how
+- **Retrival**
+  - how we access previous experiences and make use of them in the present
+
+---
+
+- Memory experiments usually contain an ecoding phase and retrieval phase
+  - Encoding phase
+    - Study
+    - Group 1
+      - bizarre imagery for each word
+    - Group 2
+      - read silently
+  - Storage
+    - Retention Interval
+  - Retrieval Phase
+    - Test
+- Retrival Cue
+  - any information that can access other information in memory
+- Two common ways to test memory
+  - free recall
+    - try to remember as many items from encoding phase as possible with no additional help
+  - recognition
+    - try to remember if words presented are from encoding phase
+- Precise terminology allows us to convey nuanced ideas about memory
+
+### Multi-Store Model
+
+- much of what we know abuot memory comes from studies on amnesiacs
+  - brain damage or other abnormalities
+- Patient H.M.
+  - removed large portions of Hippocampus on both lobes due to seizures
+  - mark reduction in seizure
+  - severe amnesia
+    - every experience from that surgery was new
+    - won't remember stuff like
+      - his age
+      - his dinner
+      - his address
+  - normal iq
+  - had short term memory for conversations
+  - can learn complex new motor skills
+    - draw reflections from mirrors
+- Multi-Store Model suggests memory has temporary and permanent storage
+  - Atkinson and Schiffrin in 1968
+  - Short Term and Long Term Memory
+  - Stimuli/Input enters Short Term Memory
+    - acts like RAM in computers
+  - can be transferred into Long Term Memory if properly sufficiently
+- Short-term memory storage has a capacity of 7+/-2 items
+- Organizing items into meaningful chunks expands capacity of short-term memory
+  - acrynoms, words, chess formations
+  - Chunking
+- Models of memory can be tested through simple but clever experiments
+  - how well it explains current findings
+
+#### Testing Multi-Store Model
+
+- Given a list of words to remember
+- Memory is strongest for items at the beginning and end of a list
+  - Serial Position Curve
+- Primacy Effect
+  - Increased rehearsal of early items over later ones
+- Recency Effect
+  - Encoded Information is stored in Short Term Memory
+  - after 7+/-2 words are stored, each subsequent word replaces the oldest word in short term memory
+    - oldest word is placed into Long Term memory
+- Increasing presentation time between items affect primacy effect
+  - Increasing time between item presentations
+    - amount of times each item can be repeated
+    - probability of item being stored in long term memory
+    - performance recalling first few items on the list
+- Disrupting short-term memory buffer affects the Recency Effect
+  - perform a filler task immediately after encoding phase
+  - can be tested with 2 other groups
+    - control group
+    - recall after 30s silent interval
+  - only filler task resulted in worse performace of last few words
+    - silent interval doesn't wipe short term memory
+- multi-store model is still foundational to the field of memory
+  - boundary between short term and long term memory can be fuzzy
+
+### General Principles of Memory
+
+- Information is encoded at different levelse of processing
+  - Shallow level
+    - encodes physical characteristics
+    - encoding requires little effort
+    - poor memory performance
+  - Deeper level
+    - encodes semantic characteristics
+    - encoding requires significant effort
+    - better memory performance
+- experiment
+  - Craik and Lockhart made participants remember a word
+    - first group memorized physical attributes
+      - is the word in capital letters
+    - second group memorized acoustic attributes
+      - does the word rhyme with fog
+    - third group memorized semantic attributes
+      - how does this word fit into a sentence
+  - suprised recall test was given after
+    - best result is third group and worst result is first group
+- criticism
+  - hard to scale tests from a single word to complex learning tasks
+    - "deep" encoding is ambiguous when it comes to studying a course
+  - doesn't pinpoint why one particular study strategy is worse than another
+    - only that better memorizing techniques are "deeper" than others
+- Levels of Processing Principle
+  - the more we try to organize and understanding the material, the better we remember it
+
+#### Environmental Cues
+
+- encoded together with memories for items and events
+  - remembering the setting for first kiss
+  - encoding specificity
+    - using environmental cues to influence recalling memory
+    - recalling the context of the memory to help recall the main point
+- preserving encoding context improves subsequent recall of a memory
+  - being in the same environment when trying to recall a memory may help with the retrieval process
+- experiment
+  - Godden and Baddeley asked scuba divers to remember a list of words on land and in water
+    - when asked to recall the words, having the same environmental context as the encoding phase had a better performance than mismatched ones.
+  - Studying after smoking marijuana, one would recall better if they are put under marijuana again.
+  - Hermann Ebbinghaus did a self test
+    - memorized random gibberish word
+      - each gibberish acted as an encoding context for the next and previous word
+        - similar to a pearl necklace
+
+---
+
+- Researchers are still searching for general laws of memory
+
+### Forgetting
+
+- what determines whether information is remembered or forgotten
+- ability to recall recently encoded information decreases rapidly over time
+  - Ebbinghause tested himself
+    - best recall right after encoding
+    - exponentially decrease until zero
+      - negatively accelerating
+- **Decay** models suggest that forgetting occurs based on the passive flow of time
+  - especially relevant to short term memory
+- **Interference** suggests inability to recall information due to similar information fighting for attention
+  - competition between the similar sources of information for retrieval
+  - explains why people forget details about certain games when they play more and sit out less
+    - each game is more similar so they interfere with one another
+- Forgetting should be viewed as a loss of access rather than passive decay
+  - forgotten memory is really just rendered inaccessible unless very specific cues given
+
+### Memory Illusions and Fluency
+
+- memories are prone to error
+- our susceptibility to false memories indicate that memory is a reconstructive process
+- experiment
+  - Loftus interviewed people about childhood memories, where one of them is fake
+    - First day, everyone identified the false memory
+    - Third day, 20% of people remembered the false memory as a real one
+- common experiences are more likely to be falsely remembered than uncommon ones
+  - however uncommon experiences can also be falsely remembered
+- Memory is reconstructive and constantly open to re-interpretation
+  - retelling a story may have some details swapped out
+- we experience familiarity in many occasions
+  - seeing a familiar face and not knowing who it is can be because of
+    - friend/family
+    - celebrity
+    - genuine mistake
+- Fluency
+  - The ease with which an experience is processed, some experiences are easier (more fluent) than others
+- Attribution
+  - Judgement tying together causes with effect
+    - make an attribution of familiarity with a stranger on a bus with the reasons above
+      - can also be because they are unconventional, unusual
+- Becoming Famous Overnight
+  - participants are required to pronounce list of generic names out loud
+    - one group then immediately identified a second list of names by how famous they are
+      - correctly identify everyone as famous or not famous
+    - second group waited 24 hours before doing the same task
+      - mistook the names in first list as more famous than new generic names
+      - the names in the first list has more processing fluency, so more likely that they may be famous
+- act of remembering is reconstructive
+  - can fail and lead to false memory
+  - mesh and combine different memories when given the right context
+
+### Memory Conclusion
+
+- memory is a large collection of building blocks assembled by preception and experience
+- each event is multiple building blocks
+  - stimuli
+  - internal state
+  - external state
+- recalling may have issues due to
+  - blocks are not accessible (forgotten)
+  - blocks are wrongly assembled (false memory)
+- memory is an inference
+- understanding how memory is processed can improve our memory performance
+
+## Lecture 9
+
+- Attention is the gateway to memory
+- processes have to select certain stuff to focus on
+- encoding specificity
+  - context where encoding occurs means a lot
+  - you encode the environment around the memory
+    - passively encoded
+- Building a better lineup for eyewitness confirmation of a suspect
+  - non-suspects should fit the eyewitness' description of the suspect
+- encoding interacts with attention to select items for memory
+  - converted for storage
+- storage doesn't have upper limit
+- recalling relevant information used in social environment
+- Attention
+- Deeper level processing
+  - encoding semantic of the information
+  - more effort, more robust
+  - semantic cues retrieved
