@@ -1672,3 +1672,165 @@ Ideally, members of experimental and control groups are very similar, so that th
   - encoding semantic of the information
   - more effort, more robust
   - semantic cues retrieved
+
+## Module 11
+
+### Forming Impressions
+
+- people are already experts at forming impressions of others
+- for every observed behaviour, there are many possible motivating factors
+  - impossible to see a reason for the reason someone is doing something
+
+### Attribution Theories
+
+- we quickly and automatically form impressions based on observed behaviour
+- Dispositional or Situational
+
+#### Covariation Theory
+
+- Consistency
+  - Does the individual usually behave this way in this situation
+    - if Yes, continue to seek explanation for this behvaiour
+- Distinctiveness
+  - Does the individual behave differently in different situations
+    - if Yes, Situational
+    - if No, Dispositional
+- Consenseus
+  - Do others behave similarly in same situation?
+    - if Yes, Situational
+    - if No, Disposition
+
+---
+
+- Adding context to attribution theories
+  - can the behaviour be attributed to
+    - external factors (situational) or
+    - internal factors (dispositional)
+
+#### Correspondent Inference Theory
+
+- people are already experts in assessing behaviour through forming impressions
+- focus on the motivation behind one's behaviour
+- actively analyse a person's behaviour to make inferences based on 3 variables
+  - Degree of Choice
+    - amount of freedom the actor had in choosing their opinion or behaviour
+    - consider to what degree a person had a choice in acting the way they did
+  - Expectiation
+    - the occurance of a particular behaviour for a specific actor
+    - consider whether an observed behaviour is typical or uncommon
+      - uncommon gives way more information
+  - Intended Consequences
+    - goals and motivations of an actor underlying their behaviour
+    - consider the intentions and motives behind a particular behaviour
+
+---
+
+- attribution theories can help you undersand the judgements you make
+
+### Fundamental Attribution Error
+
+- we rely more on dispositional factors than situational factors for interpreting behaviour
+- Tendency to over-value dispositional factors for the observed behaviours of others while under-valueing situational factors
+- more susceptible to fundamental attribution error for others' behaviour
+- Actor Observer Effect
+  - Considers the situational factors of your own behaviour
+- Study
+  - explain one's own and friend's bad driving
+    - often describes themselves with situational behaviour
+      - pressured, in a hurry
+    - often describes friends with personal factors
+      - showing off, having fun
+- not universal across all cultures
+  - american 8 and 11 year olds attributed behaviours to personal and situational equally
+  - american adults tended to attribute behaviours to personal factors more often than situational
+  - Both indian 11 year olds and adults have a tendency to make more situatinoal than personal attributions
+- diminished in collectivist societies
+- gold medal winners
+  - in america attribute talent and hard work
+  - in japan attribute coaching staff and organization
+- Self Serving Bias
+  - Above Average Effect
+    - self-attribute dispositional factors to success and situational factors to failures
+  - we are biased to believing we are above average on things that matter to us
+    - attractiveness, studies, humour, etc
+
+### Cognitive Heuristics
+
+- accelerate the processing of social situations
+- Represnetative heuristics consider how well a behaviour fits with a certain prototype
+  - discount probability in favour of a representative prototype
+- Availability heuristics consider the experiences most readily available in memory
+  - availability of flaws in memory influences our perception of an experience
+    - needing to talk about few flaws is easy
+      - can lower opinion on the experience
+    - needing to talk about many flaws is hard
+      - can increase opinion on the experience
+- cognitive heuristics provide useful shortcuts in processing social cues
+
+### Relationships
+
+- Attractiveness is governed by several key factors
+  - Proximity
+    - we are more attracted to people who are close in proximity to use
+      - more attracted to those who we live and work closely with
+      - more about functional distance than physical distance
+        - how often people interact
+        - tend to like people that we anticipate interacting with
+  - Familiarity
+    - Mere Exposure Effect
+      - tendency to percieve previous stimuli as more favourable
+      - more positive towards familiar than unfamiliar stimuli
+    - Study
+      - given a list of words, participants are more likely to rate a word more positively if it appeared more often in the list
+    - we rate faces as being more attractive the more familiar they are to us
+      - we see celebrities often, so they are often attractive
+      - we find mirror images of ourselves to be more attractive
+        - friends and family see non mirrored images as better
+  - Physical Attractiveness
+    - indicator of personal characteristics
+      - kinder, warm, intelligent, sensitive, outgoing
+    - attractive children are rated as more intelligent than unattractive children
+      - Clifford and Hartfield study
+    - Halo Effect
+      - tendency to attribute more positive characteristics to individuals that make a positive impression
+      - there is a high correlation between positive impression and positive characteristics
+    - we fill in the stuff we don't know by infering from the little amount we do know
+  - Peer Opinions
+    - we like those who like us back
+      - especially low self-esteem
+      - women who had their self-esteem lowered rated the face of an individual who asked them out more attractive
+        - Walster study
+    - previous impressions of likeability influence novel impressions of likeability
+      - when opposite of initial impression, the new impression is strongly influential
+
+### Conclusion
+
+- We are all at least somewhat bias when forming impressions of others
+
+## Lecture 10
+
+- in and out
+  - what characteristic does this person have
+  - why did they decide to go to this university
+    - mcmaster/western
+- in-group
+  - positive attitudes
+  - heterogeneity
+- out-group
+  - negative attitudes
+  - homogeneity
+- intergroup bias spans cognition, affect and behaviour
+- stereotypes (cognition): beliefs about attributes that are thought to be characteristic of members of a particular group
+- prejudice (affect): a negative attitude of affective response toward a certain group and its individual members
+- discrimination (behaviour): negative behaviour towards members of a particular group based on their membership in that group
+- dispositional judgement
+- situational judgement
+- preception of the world is guided by biases
+- Schemas simplify our interactions with the world
+  - formed from direct experience and second hand experiment
+  - guide categorization and memory
+- conventions guide behaviours in the social world
+- categorization allows us to make predictions about group members
+- invoking a stereotype can impact performance and decrease interest
+- implicit association task reveals natural associations
+- amygdala
