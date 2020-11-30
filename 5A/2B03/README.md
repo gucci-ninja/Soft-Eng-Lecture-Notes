@@ -1537,3 +1537,269 @@ www.distancetomars.com
       - 10's of thousands of years
     - white dwarf
       - white hot core left behind
+
+## Lecture 26
+
+- Life Cycle of the Sun
+  - right now we are in a relatively stable phase
+  - eventually it will become a red gaint
+    - will undergo planetary nebula
+      - outer portions blow off through wind
+    - becomes a white dwarf
+      - dead
+
+### White Dwarf
+
+- Burnt out core
+  - about the size of the earth
+  - still comparable in mass to the present sun
+- faintly luminous
+  - initially hot but no more nuclear burning
+    - 100 000 K
+- fate of our sun ~5 billion years from now
+  - 97% of the stars will end up as a white dwarf
+- teaspoon of a typical white dwarf's matter would weigh 5.5 tons
+  - mass of an elephant
+- gravitationally stable because pressure from packing atoms so tightly
+  - degeneracy pressure
+- Fusion stops in low mass stars because the core temperature never gets hot enough to fuse heavier elements
+- white dwarf is basically a bunch of carbon and oxygen atoms packed super tightly together
+- White dwarfs start out hot and spend the rest of eternity getting cooler and cooler
+- Seed the interstellar medium with fresh material
+  - carbon, nitrogen, and oxygen
+  - material for new stars
+
+### High-Mass Star
+
+- 8 times heavier than the Sun
+- live fast, die young
+- evolution is determined by the relationship between gravity, pressure, and luminosity (rate of nuclear burning)
+- life time of a star
+  - ~mass/luminosity
+  - more mass
+  - -> stronger gravity
+  - -> higher pressure
+  - -> faster nuclear reaction rates
+  - -> greater luminosity
+
+#### Nuclear Burning in high-mass stars
+
+- Higher temperature means that additional nuclear reactions can happen
+- Carbon-Nitrogen-Oxygen Cycle burns hydrogen in massive stars
+  - CNO cycle
+- more efficient at burning hydrogen than the PP chain
+  - proton-proton chain
+  - carbon is a catalyst for 4H -> He
+    - \+ some neutrinos and gamma rays
+- Centre: Hydrogen burning followed by helium burning
+  - once helium is exhausted, core collapses, heats up and starts burning carbon
+  - carbon burning makes sodium, neon, and magnesium, etc.
+  - high mass means enough pressure and heat
+- onion structure of a high mass star
+  - more and more layers as high mass stars age
+    - heavier elements are inside
+  - ends at iron
+- each time burning new elements, new equilibrium needs to be reached
+- at iron, no more pressure will be exerted
+  - gravity wins
+  - star implodes
+- final days in the life
+  - hydrogen burning: 10 million years
+  - helium burning: 1 million years
+  - carbon burning: 1000 years
+  - oxygen burning: 1 year
+  - silicon burning: a few days
+  - iron burning: no burning
+
+#### After Nuclear Burning
+
+- Supernova Explosion
+  - standard brightness (like a candle)
+  - as bright as a galaxy
+- can monitor remnants for years after
+- iron core collapses on itself
+  - reaching speed of 70 000 km / second
+- collapsing core bounces back outward
+  - supernova
+- 1987a
+  - observed supernova
+  - large magellanic cloud
+  - closest supernova that occured
+- 10 000 times more enegy is carried away by neutrinos
+
+#### Star Lifetimes
+
+| star mass (solar masses) | time (years)    |
+| ------------------------ | --------------- |
+| 60                       | 3 million       |
+| 30                       | 11 million      |
+| 10                       | 32 million      |
+| 3                        | 370 million     |
+| 1.5                      | 3 billion       |
+| 1                        | 10 billion      |
+| 0.1                      | 1000's billions |
+
+## Lecture 27
+
+- legecy of supernova
+  - distributes heavy elements in the ISM
+  - blast may compress nearby clouds, triggering the formation of generations of stars
+
+### what is left behind in a supernova
+
+- if the mass of the collapsing supernova core
+- &le; 3 solar masses
+  - neutrons are squeezed tightly together in the core
+  - "Neutron-degenerate" core
+    - Neutron Star
+    - more dense than white dwarfs
+    - 1 solar mass in an area of 10km radius
+    - earth's mass fit into a football stadium
+    - sugar lump would weigh 400 billion tons
+- \> 3 solar masses
+  - black hole
+
+### What are Black Holes
+
+- Earth's escape velocity at suface
+  - as is: 40000 km/hr
+  - squeezed into 1cm radius: > speed of light
+    - black hole
+- Squeezing Sun down to a radius of 3km
+- Human squeezed to a billionth of a proton's radius
+- objects with gravity so intense that light cannot escape them
+- Gravity vs Pressure
+  - Normal star
+    - gravity is balanced by pressure from nuclear fusion
+  - White dwarf
+    - gravity balanced from pressure from not being able to pack carbonand oxygen atoms any tighter
+    - degeneracy pressure
+  - Neutron star
+    - gravity balanced by pressure from not being able to pack neutrons together any tighter
+  - Black hole
+    - gravity not balanced, total collapse
+
+#### Event Horizon
+
+- we consider the size of black hole by its event horizon
+  - the radius at which the escape velocity is equal to the speed of light
+- every object has a critical size below which it becomes a black hole
+  - Schwarzschild radius
+    - larger the mass, larger the critical radius
+- information barrier, not a physical surface
+  - impossible to know what happens inside a black hole, as nothing can escape once entered
+
+#### Escape Velocity
+
+| Object       | Escape Velocity |
+| ------------ | --------------- |
+| White Dwarf  | ~5000 km/s      |
+| Neutron Star | ~100 000 km/s   |
+| Black Hole   | ~300 000 km/s   |
+
+- high escape velocity = high spacetime curvature
+- centre of black hole: infinite spacetime curvature
+  - hole in the grid
+- can one cross the event horizon and survive
+  - small black hole (< 100 AU)
+    - force of gravity at feet is a trillion times stronger than at your head
+  - large blacj hole (> 100 000 AU)
+    - OK
+    - just can't escape again
+- watch from a safe distance
+  - person would run more slowly as the event horizon is approached, and stop once there
+    - they take an infinite time to fall in
+  - friend would look redder and redder until horizon is reached
+    - photons are gravitationally redshifted to _infinite_ wavelengths (zero energy)
+
+#### Beyond Event Horizon
+
+- General realtivity: point of infinite density
+- Law of physics break down
+- Need theory of quantum gravity to understand better
+  - under construction
+
+#### Observing Black Holes
+
+- Can't see them directly
+- look for gravitational effects on surroundings
+- Candidates:
+  - Two-star systems
+    - massive stars are more likely to form in a binary system or triplet system
+    - the more massive star collapses first
+    - the other star expands to a red supergiant
+    - black hole can steal matter from the outer layer
+    - material will orbit into the black hole. Glows in X-Ray as it orbits really fast
+    - Cygnus X-1
+  - Centre of galaxies
+    - Supermassive Black holes in the Centre of Galaxies
+    - look at stars near the galactic centre
+    - Measure speed as they orbit the centre
+    - from the speeds, calculate the mass of the central orbit
+    - can infer if it is a black hole
+    - Milky Way:
+      - 3 million solar masses
+      - 20 light years across
+      - no light given off
+
+## Lecture 28
+
+- gravitational force is related to mass/radius<sup>2</sup>
+- in black hole, the surface radius is way smaller than a star of the same mass
+- far enough away, can treat the two as point source masses
+- How to find black holes
+  - x-ray binaries
+    - stellar mass black holes
+  - orbits of stars in the middle of our galaxy
+    - supermassive black holes
+- material falling into a black hole spins, forming a disk around the black hole as its orbit speeds up.
+  - also gets hotter
+- some material will get ejected from a black hole
+  - jets
+  - only supermassive black holes
+- black holes are common in galaxy evolution
+- forms gravitational waves
+
+### EHT
+
+- larger the telescope, the better the resolution
+- interferometer
+  - combine data from different telescopes
+  - acts as a huge telescope
+    - called baseline
+- EHT
+  - combine data from different interferometers
+  - forms a baseline as large as the Earth
+  - ALMA + EHT forms the biggest telescope
+
+---
+
+- Two kinds of Black Holes
+  - Stellar Mass (from supernovae)
+  - Supermassive (in the center of galaxies)
+- how are supermassive blackholes made?
+  - still a big question
+  - how much is the mass from matter falling in vs there initially
+
+### Hertzsprung-Russell diagram
+
+- or Colour-Magnitude diagram
+- stars are great black bodies
+- brighter stars are higher frequency wavelengths (bluer)
+- most stars lie on the main sequence line in the graph
+- neutron stars are very faint
+- within 5pc of our Sun, majority of stars are low mass
+- brightest stars in our skies are mostly super luminous stars
+- Hipparcos (1989)
+  - measures accurate distances out to 200pc
+- Gaia (2015)
+  - measures accurate distances out to 25 000pc
+- globular cluster
+  - millions of stars
+  - shows the lifetime of a star in a cluster
+  - a cutoff would occur in the main sequence
+    - can show the age of a population of a cluster of stars
+  - as stars evolve, they move from the main sequence to the giant branch
+  - big stars do it faster
+  - length of main sequence tell its age
+    - shorter -> older
