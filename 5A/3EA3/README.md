@@ -1216,7 +1216,7 @@ Hoare triples
   - P **=** **if** x&ge;0 **then** t:=t+x **else** tʹ=∞ **fi**
   - P **=** **if** x&ge;0 **then** t:=t+x ∧ xʹ=0 **else** tʹ=∞ **fi**
     - most correct
-  - P = xʹ=0 ∧ **if** x&ge;0 **then** t:=t+x **else** tʹ=∞**fi**
+  - P = xʹ=0 ∧ **if** x&ge;0 **then** t:=t+x **else** tʹ=∞ **fi**
 - recursion can be direct or indirect
   - the example above is direct
 - every loop call has to add 1 to time
@@ -1953,7 +1953,7 @@ Hoare triples
 - or
   - _pow_ = §p:_nat_ • ∃m:_nat_ • p=2<sup>m</sup>
 - or
-  - 1, 2×//_pow_:_pow_
+  - 1, 2×*pow*i:_pow_
   - 1, 2×B:B ⇒ _pow_:B
 - or
   - P1 ∧ ∀p:_pow_ • Pp ⇒ P(2×p) = ∀p:_pow_ • Pp
@@ -1968,11 +1968,11 @@ Hoare triples
   - _nat_ = 0, nat+1
     - stronger
 - _nat_ fixed-point induction:
-  - B = 0, B+1 ⇒ _nat_ B
+  - B = 0, B+1 ⇒ _nat_: B
     - weaker
     - the least fixed-point induction
 - overall the same strength
-- x os a fixed-point of _f_ if
+- x is a fixed-point of _f_ if
   - x = _f_ x
 - _name_ = (expressions involving _name_)
 
@@ -2545,3 +2545,73 @@ Hoare triples
     - **⇐** **if** _f_+1=n **then** _f_:=0. _m_:=⊤ **else** _f_:= _f_+1 **fi**
   - ∀*Q*,_p_ • _D_ ⇒ ∃*Q*ʹ,*p*ʹ • *D*ʹ ∧ _front_
     - **⇐** _R f_
+
+## Segment 28
+
+### Independent Composition
+
+- Dependent Composition
+  - P.Q
+  - P and Q must have exactly the same state variables
+- Independent Composition
+  - P||Q
+  - P and Q must have completely different and disjoint state variables
+    - the two specifications do not affect one another
+  - state variables of the composition are those of both P and Q
+    - overall program state variables include both P and Q state variables
+- ignoring space and time
+  - P||Q = P∧Q
+- example
+  - integer variables x, y, z
+  - x:=x+1||y:=y+2 &nbsp;&nbsp;&nbsp;&nbsp; partition variables:
+    - x in left partition, y and z in right partition
+      - z can be in either left or right partition
+  - **=** xʹ=x+1 || yʹ=y+2 ∧ zʹ=z
+  - **=** xʹ=x+1 ∧ yʹ=y+2 ∧ zʹ=z
+- reasonable partition rule
+  - if either xʹ or x:= appears in a process specification, x belongs to that process
+    - neither xʹ nor x:= can appear in the other process specification
+  - if neither xʹ nor x:= appears at all, then x can be placed on either side of the partition
+- example
+  - variables x, y, z
+  - x:=y||y:=x &nbsp;&nbsp;&nbsp;&nbsp; parition variables:
+    - x in left partition, y in right partition, z in either partition
+    - x is a constant in right partition and y is a constant in left partition
+  - **=** xʹ=y ∧ yʹ=x ∧ zʹ=z
+    - swaps x and y
+    - in private implementation, a private copy of initial value of a variable belonging to the other process is made if the other process contains an assignment to that variable
+- example
+  - binary variable b, integer variable x
+  - b := x=x || x:=x+1 &nbsp;&nbsp;&nbsp;&nbsp; replace x=x by ⊤
+  - **=** b:=⊤ || x:=x+1
+- example
+  - integer variables x, y
+  - (x:=x+1. x:=x-1) || y:=x
+  - **=** _ok_ || y:=x
+  - **=** y:=x
+- (x:=x+y. x:=x×y) || (y:=x-y. y:=x/y)
+  - we want the second specification in each dependent composition to use the updated value
+  - we don't need to use sychronized shared variables
+  - just rewrite the specification
+  - (x:=x+y || x:=x×y). (y:=x-y || y:=x/y)
+- Independent Composition with Time
+  - P||Q = ∃ tP,tQ •
+    - (substitute tP for tʹ in P)
+    - ∧ (substitute tQ for tʹ in Q)
+    - ∧ tʹ=_max_ tP tQ
+- Substitution Law
+  - (x:=e||y:=f). P = (for x substitute e and independently for y substitute f in P)
+
+### List Concurrency
+
+- L i:=e **=** Lʹ i=e ∧ (∀j:0,..#L • j⧧i ⇒ Lʹ j=Lʹj) ∧ xʹ=x ∧ yʹ=y ∧ ...
+- L i:=e **=** Lʹ i=e ∧ (∀j:(this part) • j⧧i ⇒ Lʹ j=Lʹj) ∧ xʹ=x ∧ yʹ=y ∧ ...
+- example
+  - find maximum item in a nonempty list
+  - _findmax_ 0 #L where
+  - _findmax_ = 〈i,j → i<j ⇒ Lʹ i=MAX L [i;..j]〉
+  - _findmax_ i j **⇐**
+    - **if** j-i=1 **then** _ok_
+    - **else** (_findmax_ i (_div_ (i+j) 2) || _findmax_ (_div_ (i+j) 2) j).
+      - L i:=_max_ (L i) (L (div (i+j) 2)) **fi**
+  - recursive time = ceil (log (j-i))
