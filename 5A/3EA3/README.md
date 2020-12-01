@@ -2615,3 +2615,75 @@ Hoare triples
     - **else** (_findmax_ i (_div_ (i+j) 2) || _findmax_ (_div_ (i+j) 2) j).
       - L i:=_max_ (L i) (L (div (i+j) 2)) **fi**
   - recursive time = ceil (log (j-i))
+
+## Segment 29
+
+### Seqential to Parallel Transformation
+
+- Concurrency can be introduced automatically
+- x:=y. x:=x+1. z:=y
+  - can be transformed to
+  - x:=y. (x:=x+1 || z:=y)
+  - (x:=y. x:=x+1) || z:=y
+- whenever two programs occur in sequence,
+  - and neither assigns to a variable appearing in the other,
+  - they can be placed in parallel
+  - x:=z. y:=z becomes x:=z||y:=z
+- or more general
+- whenever two programs occur in sequence,
+  - and neither assigns to a variable assigned in the otehr,
+  - and no variable assigned in the first appears in the second,
+  - they can be placed in parallel
+  - x:=y. y:=z becomes x:=y||y:=z
+- secretly, a copy must be made of the initial value of any variable appearing in the first and assigneed in the second
+  - x:=y. y:=z becomes c:=y. (x:=c||y:=z)
+
+#### Buffer (1)
+
+- _produce_ = ...b:=e...
+- _consume_ = ...x:=b...
+- _control_ = _produce_. _consume_. _control_
+- to turn into a parallel specification
+  - _control_ = _produce_. _newcontrol_
+  - _newcontrol_ = c:=b. (_consume_||_produce_). _newcontrol_
+
+#### Buffer (∞)
+
+- _produce_ = ...b w:=e. w:=w+1...
+- _consume_ = ...x:=b r. r:=r+1...
+- _control_ = w:=0. r:=0. _newcontrol_
+- _newcontrol_ = _produce_. _consume_. _newcontrol_
+
+#### Buffer (n)
+
+- _produce_ = ...b w:=e. w:= _mod_ (w+1) n...
+- _consume_ = ...x:=b r. r:= _mod_ (r+1) n...
+- _control_ = w:=0. r:=0. _newcontrol_
+- _newcontrol_ = _produce_. _consume_. _newcontrol_
+
+---
+
+- large buffers are only really useful when both consume and produce are the same speed on average with slight deviationa. Otherwise, size 1 buffer has the same performance
+
+#### Insertion Sort
+
+- _sort_ = 〈n→∀i,j:0,..n • i&le;j ⇒ L i &le; L j〉
+- *sort*ʹ (#L) **⇐** _sort_ 0 ⇒ *sort*ʹ (#L)
+- _sort_ 0 ⇒ *sort*ʹ (#L) **⇐** **for** n:=0;..#L **do** _sort_ n ⇒ _sort_ (n+1) **od**
+- _sort_ n ⇒ *sort*ʹ (n+1) **⇐**
+  - **if** n=0 **then** _ok_
+  - **else if** L (n-1) &le; L n **then** _ok_
+  - **else** _swap_ (n-1) n. _sort_ (n-1) ⇒ *sort*ʹ n **fi fi**
+- sequentially n<sup>2</sup>/2
+- parallel 2×n
+
+#### Dining Philosophers
+
+- _life_ = (_P_ 0 ∨ _P_ 1 ∨ _P_ 2 ∨ _P_ 3 ∨ _P_ 4). _life_
+- _P_ i = _up_ i. _up_ (i+1). _eat_ i. _down_ i. _down_ (i+1)
+- _up_ i = _chopstick_ i:=⊤
+- _down_ i = _chopstick_ i:=⊥
+- _eat_ i = ..._chopstick_ i..._chopstick_ (i+1)...
+- it is wrong to just put every philosopher in parallel
+  - _life_ = _P_ 0||_P_ 1||_P_ 2||_P_ 3||_P_ 4
+  - _P_ i = (_up_ i || _up_ (i+1)). _eat_ i. (_down_ i || _down_ (i+1)). _P_ i
