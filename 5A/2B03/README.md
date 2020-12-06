@@ -1883,3 +1883,58 @@ www.distancetomars.com
   - maybe a tiny bit of Lithium
 - 98% of helium present in Universe was made in nucleosynthesis
 - after the next half hour (lithium 7 was created), Universe cooled and expanded to point where fusion of heavier elements was impossible
+
+## Lecture 30
+
+### Viewing the Big Bang
+
+- beginning of universe was so hot, no bodies in space could exist
+- we can't see the Big Bang
+  - free electrons are very effective at interacting with light
+  - photons gets deflected and scattered
+  - foggy at large distances
+  - light from that far back has been scattered and blurred out of recognition
+- after nuclear fusion
+  - hot gas gets cooler and more spread-out
+  - eventually electrons latch on to nuclei (protons)
+  - 3000 degrees Kelvin
+- becomes neutral atomic gas, where electrons are combined with nuclei
+  - only photons with specific wavelength can interact with neutral gas
+  - "Mean free path" of the light is now much larger
+  - transition happened about 380 000 (400 000) years after the start of the Big Bang
+  - key turning point
+  - races can be seen in the CBR light
+  - Surface of last scattering
+  - we can't see beyond this time
+- mostly measure the effects of Big Bang rather than the Big Bang itself
+- what did the universe look like
+  - "baby picture"
+  - has a little bit of structure
+    - tiny place-to-place differences in the CBR temperature
+      - few parts per million
+    - ever so slightly differences in temperature and different densities
+  - WMAP (wilkinson Microwave Anisotrophy Probe)
+  - projection of an inside of a sphere
+
+### Time Line of Big Bang
+
+| T                   |                                                               |
+| ------------------- | ------------------------------------------------------------- |
+| 0                   | Big Bang                                                      |
+| few seconds-minutes | Nucleosynthesis (helium produce, universe is totally ionized) |
+| ~300 000 - 400 000  | Cosmic Microwave Background                                   |
+
+---
+
+- spectrum graph of stars show the elements of star
+- almost all stars have
+  - ~90% hydrogen
+  - ~10% helium
+  - ~1% everything else
+- very similar of ratio with elements created in early universe
+- consistent picture is starting to emerge
+  - first rapid phase of Big Bang produces hot gas with very simple atomic composition
+    - hydrogen and little helium
+  - this gas starts to form into stars soon after
+    - few hundred million years
+    - galaxies build up as more star form, gas clouds collect together into bigger assemblies
