@@ -1938,3 +1938,70 @@ www.distancetomars.com
   - this gas starts to form into stars soon after
     - few hundred million years
     - galaxies build up as more star form, gas clouds collect together into bigger assemblies
+
+## Lecture 31
+
+- how old are the oldest stars?
+  - SUn is 4.6 billion years old
+  - there are both younger and older stars to be found
+  - Orion Nebula are only few million years old
+  - globular cluster are near 13 billion years old
+    - similar to "Hubble Time"
+    - universe has to be at least this old
+  - nothing older has been found
+- Evidence for Big Bang
+  - Cosmic Background Radiation
+  - Big Bang Nucleosynthesis
+  - Hubble Expansion
+  - Homogeneity of universe (homogeneous = same)
+  - Age of stars
+    - indirect tests of cosmology is to determine the age of the Universe from the oldest objects in the Universe
+- Big Bang is not about an explosion
+  - it is a rapid expansion and cooling
+  - "Hot Dense Early Universe"
+
+### Big Crunch
+
+- universe is currently expanding
+  - it might expand forever
+  - it might collapse and make a new big bang
+    - Big Crunch
+  - depends of the balance between the expansion rate and gravity
+- Detailed map of te CBR temperature contains a lot more information
+  - a suggestion about whether the universe is going to expand forever
+- Gravity continually tries to stop the expansion.
+  - will it succeed?
+  - if so, when?
+- if there is more mass,
+  - the blobs in the CBR will be bigger
+  - the CBR map will look patchy with bigger blobs on it (magnified in size)
+- if there is less mass,
+  - the CBR map will look smoother with smaller featers on ti
+  - the actual degree of the patchiness if tge CBR suggest which option is correct
+    - the typical size of the patches is the key
+- most microwave radiation is blocked by atmosphere
+  - thats why satellite is ideal
+  - a cheaper option is to build a balloon to be in the atmosphere
+    - BOOMERanG experiment
+    - can't see the entire sky
+- the actual degree of patchiness has been measured in detail and compared predictions from calculations
+  - There isn't enough matter in space to stop the expansion
+  - it will continue to expand indefinitely
+    - unless there are complications
+- the denser regions in CBR is where stars, galaxies, planets form
+
+### What happened in the first fraction of a second
+
+- how did the expansion begin
+- Inflation Era
+- add-on to the basic Big Bang cosmology
+- more speculative
+- time after t=1 second is based on "safe physics
+- 1 millionth of a second after the Big Bang
+  - all matter dissolved into "quark plasma"
+    - electron
+    - neutrino
+    - quark
+    - photons
+  - leads into nucleosynthesis
+- 10<sup>-37</sup> seconds
