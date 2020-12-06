@@ -1803,3 +1803,83 @@ www.distancetomars.com
   - big stars do it faster
   - length of main sequence tell its age
     - shorter -> older
+
+## Lecture 29
+
+### Introduction to Cosmology
+
+- most of physics consists of things that can be measured and tested in lab experiments (even things like relativistic time dilation and quantum mechanical effects).
+- Cosmology is a bit differen
+  - not an experimental science
+  - observational science
+    - can't study the objects in a lab or run controlled experiments on them
+    - objects are (mostly) out of reach
+
+#### Cosmic Background Radiation
+
+- 1965:
+  - Penzias & Wilson
+    - testing a new type of microwave antenna
+    - whole sky is filled with cold, low energy radio waves
+      - microwaves
+    - white noise on analog television
+  - further measurements showed that this radiation was coming from every direction in the sky, at the same intensity
+  - not associated with any particular object
+  - Conclusion
+    - radiation fills all of space
+    - Cosmic Background Radiation (CBR)
+      - Cosmic Microwave Background Radiation (CMBR)
+      - Cosmic Microwave Background (CMB)
+      - CMB=CBR=CMBR
+
+---
+
+- all evidence so far
+  - Universe is expanding (Hubble's Law)
+  - beginning time of 13-14 billion years ago
+  - filled with cool, low-energy microwave radiation
+- earlier times, CBR was shorter wavelength, more closely packed
+  - space was filled with hotter radiation
+  - 2.7 degrees above absolute zero
+  - no limit to how "cold" or "hot" the CBR can get
+
+### Early Universe Introduction
+
+- Goals:
+  - Understand the hot early universe (post big bang)
+  - Understand formation of elements (nucleosynthesis)
+  - Understand where CBR comes from
+- further in the past you go
+  - sea of elementary particles, radiation
+  - hot, dense
+- Heirarchical growth
+  - Sub-atomic particles
+  - atoms
+  - stars
+  - galaxies
+  - clusters of galaxies
+- more and more complexity develops in the universe as time goes on
+
+#### Big Bang
+
+- 13.8 billion years ago
+- big bang model refers to a hot early universe
+  - universe evolved from an extremely hot and dense early state
+- Looking at the conditions a few seconds later:
+  - space is uniformly filled with hot radiation and subatomic particles
+    - 100 million degrees or so
+    - ~inside of a star
+  - everything is expanding rapidly
+  - only electrons, protons, neutrons, and photons
+  - hot enough for nuclear fusion to take place
+    - Big-Bang nucleosynthesis
+  - this state lasts a few minutes
+- after Big-Bang nucleosynthesis
+  - hydrogen (9 ions out of 10)
+    - 75% by mass
+  - helium (1 ion out of 10)
+    - 25% by mass
+  - radiation (photons)
+  - maybe a tiny bit of Lithium
+- 98% of helium present in Universe was made in nucleosynthesis
+- after the next half hour (lithium 7 was created), Universe cooled and expanded to point where fusion of heavier elements was impossible
