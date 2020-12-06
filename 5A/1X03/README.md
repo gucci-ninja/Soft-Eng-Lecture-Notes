@@ -1803,7 +1803,7 @@ Ideally, members of experimental and control groups are very similar, so that th
     - previous impressions of likeability influence novel impressions of likeability
       - when opposite of initial impression, the new impression is strongly influential
 
-### Conclusion
+### Forming Impressions Conclusion
 
 - We are all at least somewhat bias when forming impressions of others
 
@@ -1834,3 +1834,234 @@ Ideally, members of experimental and control groups are very similar, so that th
 - invoking a stereotype can impact performance and decrease interest
 - implicit association task reveals natural associations
 - amygdala
+
+## Module 12
+
+### Influence of Others 1
+
+- Behaviours performed in a group are different from behaviours performed individually
+- Norman Triplett
+  - noted that people perform better when being observed
+    - when performing alongside
+    - when being watched by audience
+    - Co-Actors
+      - Another individual performing the same task
+    - Audience
+      - A group of people watching an individual perform a task
+    - Social Facilitation
+      - Increased performance that occurs in the presence of co-actors or an audience
+- in some cases, presence of others can sometimes hinder, rather than help
+- Zajonc
+  - offered solution to the problem of Social Facilitation
+  - presence of others hightens arousal
+    - simple/well-practiced tasks improve performance
+    - complex tasks decrease performance
+
+### Social Learning Theory
+
+- We learn appropriate behaviours by modeling and imitating the behaviour of others
+- Bobo Doll Experiment
+  - Bandura
+  - children acquired behaviours through observation; **without reinforcement**
+- Children mimic observed behaviours, even when afflicting harm to other people
+
+### Conformity
+
+- conformity has powerful control over our behaviour
+- the autokinetic effect causes us to imagine movement that never occurred
+- presence of others artificially influences perceived autokinetic movement
+  - Norm Formation
+  - leads to convergence, even in presence of outliers
+- example
+  - watching a stationary light in a room of darkness
+  - eventually everybody's report will be relatively equal after many trials
+- Asch
+  - investigated why people so easily converge toward a norm
+  - 75% of participants conformed at least once
+  - 37% of all responses conformed
+- Normative Function
+  - the role of others in a setting standards for our conduct based on a fear of rejection
+  - Conforming due to fear of rejection
+    - Avoiding ridicule
+- Comparative Function
+  - the role of others in providing information about an ambiguous situation
+  - Conforming due to not knowing how to act
+    - Gaining information
+- Participants doubt their own perceptions when it conflicts with that of others
+- Conformity is a result of the Normative and Comparative Functions
+
+### Group Dynamics
+
+- James Stoner
+  - it was believed that groups make more cautious decisions than individuals
+  - The Risky Shift
+    - Group decisions were typically riskier than the mean of the prior individual decisions
+    - Can sometimes be more cautious
+- Group Polarization
+  - decision making strengthens original inclination of the individual group members
+  - explain various attitudes, decisions, and popular opinions
+- Groupthink
+  - group decision making environment that occurs when group cohesiveness becomes so strong it overrides realistic appraisals of reality and alternative opinions
+  - mob mentality
+  - powerfully influences the group's perception of themselves in the world
+  - to prevent this
+    - be impartial
+    - critical evaluation
+      - devil's advocate
+    - subdivide the group
+    - provide second chance
+
+### Bystander Effect
+
+- 1960s
+  - Kitty Genovese
+  - 38 people saw the murder of Kitty Genovese and didn't do anything
+  - presence of other witnesses led to a diffusion of responsibility to act
+    - everyone thought another has done something
+      - people determine whether the situation is an emergency
+      - people determine whether they should be the one to act
+- the more people present, the less likely a single person is to notice an emergency
+- Collective Ignorance
+  - when each individual in a group see nobody responding in a given situation
+  - they conclude that the situation is not an emergency
+- the more people present, the less likely a single person is to respond to an emergency
+- Diffusion of Responsibility
+  - in deciding whether we have to act, we determine that someone else in the group is more qualified
+- Being direct about asking for help avoids the bystander effect
+  - single out individuals and put responsibility on them
+- seeing helpful behaviour increases behaviour of helping others in the future
+- Social Loafing
+  - Individuals are less motivated when working in a group than when working alone
+  - participants pulled rope 18% less than when pulling alone in an experiment
+  - larger perceived group sizes, people unknowingly make less noise than when alone
+
+### Influence of Others 1 Conclusion
+
+- our actions and beliefs are heavily influenced by those of other people
+
+## Module 13
+
+### Influence of Others 2
+
+- Do we have absolute control over our own actions?
+  - during wartime, soldiers excuse their actions by saying it was orders
+
+### Obedience
+
+- Stanley Milgram
+  - experiment involved teaching a participant to use shock punishment for learning
+  - Teacher, Learner, Experimenter
+  - Participants are the Teacher
+    - Learner is part of the experiment (confederate)
+  - Teacher is told Learner has heart condition
+  - Learner is hooked to a shock device
+  - Teacher must give progressively higher shocks for incorrect responses from Learner
+  - 65% of participants continue giving shocks until the end of the experiment
+    - despite learner non-responsive with heart conditions
+- People display strong obedience, even to minimally powerful figures of authority
+- we are terrible judges at predicting our own behaviour
+- ethics behind Milgram's experiment are highly controversial
+
+#### Variables in Obedience
+
+- prestige of an institution influences the level of obedience in participants
+  - student vs professor
+- proximity between Teacher and Learner influences obedience levels in participants
+  - in other room
+    - least obedient
+  - in same room
+  - touching
+    - most obedient
+- proximity between Teacher and Experimenter
+  - In person
+  - Over the phone
+    - 25% obeyed
+
+---
+
+- 95% of nurse participants applied fake drug to patient from unknown doctor
+  - 5% of nurses disagreed to applying fake drug
+
+### Cognitive Dissonance
+
+- Our attitudes aren't always accurately reflected in our behaviours
+- Does incentive of pay for a false opinion affect our true opinion of an experience
+  - Festinger and Carlsmith
+  - After doing a boring experiment, asked to lie for 1$ or 20$
+    - participants who were paid less had greater dissonance between attitude and behaviour
+  - We can change our attitude or behaviour to match otherwise we experience dissonance
+    - with high dissonance, we would change our attitude about the experiment so we get less dissonance
+    - with more money, our attitude changes to that of doing it for the money rather than about the experiment
+    - we need insufficient justification
+- Overjustification Effect
+  - The resolution of cognitive dissonance as conflict in behavior and attitude are justified by some external means
+- Attitudes are less likely to change when external motivations overjustify the behavior
+  - getting paid for doing a chore might not result in a lasting habit
+- Overjustification can trick people to discontinue their behaviours
+
+### Stanford Prison Experiment
+
+- Zimbardo's experiment
+  - 2 weeks
+  - 24 participants
+    - passed criminal backgroud
+    - passed psychopathology screen
+    - passed anti-social behaviour screen
+- Participants were mock arrested and sent to a mock prison, supervised by mock guards
+- experiment ended early due to the sadistic behaviour of the assigned guards
+- guards displayed dehumanizing behaviours toward their prisoners
+  - never missed shifts
+  - refer prisoners by their numbers
+  - hid the prisoners faces with masks
+  - parade the prisoners naked randomly
+- Zimbardo's experiment depicts shocking power of assigned roles (and circumstances) on behaviour
+- Deindividuation
+  - in a group situation, the loss of a sense of personal responsibility and restraint
+  - guards lose their personal sense of responsibility and restraint
+- prominence of vandalism
+  - deinvidividuation occurs more often in a city
+
+### Persuasion
+
+- most persuasive communicators have high credibility
+- most persuasive communicators are both attractive and relatable to their audience
+- Similarity is more persuasive for Lifestyle Choices
+  - perfume, videogames
+- Credibility is more persuasive for Objective Facts
+  - dental advice, cleaning brand
+- A straightforward and concise speech style can make you sound more persuasive
+  - eye contact, concise speech, speech speed
+- Choosing to frame your message a certain way can also affect your persuasiveness
+  - One-sided argument is more effective when the audience initially agrees with your opinion
+  - Two-sided argument is more effective when the audience initially disagrees with your opinion
+- Central Appeal
+  - Well reasoned, factual, two-sided arguments
+  - Effective for academic audiences
+- Peripheral Appeal
+  - Well presented, easy to understand messages
+  - Effective for non-academic audiences
+
+### Techniques for Persuasion
+
+- Officer Scott
+  - assumed identity of an authority figure
+  - established credibility using police jargon
+  - used gradual escalation of demands to increase compliance
+- The Foot in the Door Effect
+  - asking for a small request made participants agree to a larger, typically denied request
+  - every request is considered in relation to the previous request rather than the greater context
+- Low-Ball Technique
+  - an escalation of the term of an agreement after someone has already agreed to comply
+- agreeing to an experiment makes participants more likely to attend them
+  - 24% of people showed when told about the time when asked to participate
+  - 53% of people showed up when told about the time after agreeing to the experiment
+
+### Influence of Others 2 Conclusion
+
+- We all have a strong influence over each other's thoughts and behaviours
+
+## Lecture 11
+
+- overview effect
+- sunk cost fallacy
+- bystander effect
