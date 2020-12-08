@@ -2081,4 +2081,112 @@ www.distancetomars.com
   - Dark Energy ~70%
   - Dark Matter ~25%
   - Neutrinos <1%
-  - Hydrogen/Helium 
+  - Hydrogen/Helium
+
+## Lecture 33
+
+### Dark Universe
+
+- two biggest portions of the universe is dark matter/dark energy
+  - dark energy is causing universe expansion to accelerate
+
+### Dark Matter
+
+- Evidence
+  - motions of galaxies in clusters
+  - spiral galaxy rotation curves
+  - gravitational lensing
+- Objects with mass that does not interact with light
+
+#### Fritz Zwicky
+
+- 1933
+  - made first estimates of the masses of clusters of galaxies
+  - without extra extra mass, the galaxies would have velocities too high to stay in the cluster
+- what did he do?
+  - measure the speeds of galaxies in cluster
+  - calculate the mass of galaxy cluster from the speeds
+    - faster -> more mass
+  - calculate how much mass is in the luminous galaxies
+    - add up mass of stars and gas
+  - find that mass in galaxies is way less than mass of the cluster
+  - dark matter
+- what did he find
+  - (total mass)/(mass in stars + gas) = ~few hundred
+  - today we repeat Zwicky's measurement to find the exact ratio of dark matter to luminous matter
+
+#### Vera Rubin
+
+- 1928
+  - Spiral Galaxies
+  - measure rotation speed of the stars along the spiral
+    - dopplar shift
+    - speed of rotation depends on the amount of mass inside the orbit
+      - more mass -> larger speed
+    - v<sup>2</sup> = GM/R
+      - G is gravitational constant
+      - M is mass
+      - R is radius
+  - Galaxy Rotation Curves
+- velocity is roughly constant with radius
+  - without dark matter, velocity should decline with radius
+    - seen in our solar system
+  - there had to be extra mass to compensate for loss of luminousity
+
+#### Einstein Ring Gravitational Lensing
+
+- the amount of lensing is based on the total mass of eliptical galaxy
+  - the amount of luminous mass would not be able to cause the amount of lensing
+- there is a Dark Matter Halo that is a big sphere around a galaxy
+  - a cloud of gas where the galaxy is embedded in
+  - we only see the stars and gas in the center (luminous)
+  - it is so much bigger than galaxy because the galaxy started at that size before compressing into present size
+    - due to giving off light
+
+---
+
+- mass we see is way less than the mass implied by gravity
+- 90% of mass in galaxies clusters etc. is dark matter
+
+#### What is Dark Matter
+
+- rocks, planets, small-mass stars, black holes, neutron stars, white dwarfs
+  - not enough of them, no way to have so many so far from the centre of the galaxy
+- Neutrinos
+  - fill space in huge numbers, but too light to add up the mass
+- Something else?
+  - must not interact (emit or absorb) with light or we would have found it by now
+- WIMPs vs MACHOs
+  - particles vs macroscopic things
+  - Weakly Interacting Massive Particles vs MAssive Compact Halo Objects
+- cannot be MACHOs
+  - would have broken Big Bang nucleosynthesis theory
+  - we found very little
+    - using microlensing
+- cannot be neutrinos
+  - not mass enough
+  - moves at almost the speed of light
+  - would break the idea of structures forming hierarchically if Dark Matter was neutrinos
+- potential
+  - new sub-atomic particle that has not yet been discovered
+    - have to be a LOT of them and have to be dark
+  - Lots of possibilities
+- Future for dark matter
+  - Particle Physics
+    - create and observe dark matter particles in the LHC
+      - large hadron collider
+    - detect particles through very rare collisons
+  - Direct Detection
+    - very rarely, a particle will bump into a WIMP
+      - doesn't necessarily have to be a WIMP that collide with
+
+#### Final word
+
+- 2 ways to study
+  - Astronomy
+    - look for dark matter on large scales (galaxies, galaxy clusters)
+    - can learn how much total dark matter there is in the universe and how it is distributed (halows)
+  - Particle Physics
+    - Look for possible dark matter particles (WIMPS) with lab experiments on Earth
+    - Nothing found yet, there are reason for optimism
+    - Dark matter may be more complicated than we thought - more than one particle?
