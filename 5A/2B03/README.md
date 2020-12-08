@@ -2005,3 +2005,80 @@ www.distancetomars.com
     - photons
   - leads into nucleosynthesis
 - 10<sup>-37</sup> seconds
+
+## Lecture 32
+
+- history after t=1 is "safe" physics
+  - well understood atomic and nuclear physics, tested in the laboratory
+
+### Inflation era
+
+- ~10<sup>-37</sup> seconds
+- suggested about 40 years ago
+- going back before the quark-plasma era
+  - density and temperature increase more
+
+#### False Vacuum
+
+- Current "grand unified theories" of particle physics predict that under these extremes
+  - everything (all particles, light and 4 fundamental forces) will merge or dissolve into a condition called **false vacuum**
+- in false vacuum
+  - no object
+  - nothing to see
+  - no light
+  - nothing to see with
+- can be thought of as an empty space but packed with a huge amount of energy
+  - space in this condition has an inbuilt "springiness" which causes it to expand extremely rapidly
+  - this expansion can happen at a rate faster than the speed of light
+    - any object are restricted to moving through space at speeds no larger than c
+    - the spacetime grid itself isn't restricted in this way
+- a bit later, a "bubble" in this false-vacuum state will change into normal space plus particles, antiparticles, and light
+  - energy in false vacuum makes all material through E=mc<sup>2</sup>
+  - bubble is not our universe at its early "normal" stage
+  - it now continues to exand in normal way (Hubble's law)
+
+#### Universe under False Vacuum
+
+- Observable Universe
+  - defined a sphere from which light has had time to reach us
+  - nothing to do with technology
+  - every position has its own observable universe
+  - the edge of the Observable Universe is called the **Horizon**
+- our visible universe may be a tiny portion of our whole finite universe
+- false vacuum may still exist
+  - our universe is a bubble that exists in the false vacuum
+- sequence of events
+  - tiny bit of false vacuum will eventually "transform" into our universe
+  - original "seed" (~millimeters in size) rapidly inflate itself into a bubble billions or trillions of lightyears in size this way
+  - false-vacuum energy in this bubble converts itself spontaneously into all the matter and light in our universe
+- Inflationary model would be 50 orders of magnitude smaller than hubble's exansion at time=10<sup>-45</sup>
+
+#### Why Inflation?
+
+- answers a few 'problems' with standard big bang
+  - positive curve, negative curve, flat
+  - iotrophy, flatness, monopole
+- our universe model is "flat"
+  - very unlikely from pure big bang model
+- our universe can be larger than 13.8 billion light years in size because it all expanded at super-light speed during inflation era
+- all the parts of our greater universe should have the same models of physics
+- in principle, inflation can occur multiple times
+  - there can be many universes out there, far beyond ours
+
+#### Is inflation testable/falsifiable
+
+- answers problem with Big Bang -> WMAP shows the universe is very flat (key prediction of inflation)
+- CBR fluctuations agree with expectations from inflation
+- Current generation CBR (Planck) are starting to really test inflation!
+
+#### Inflation Theory Conclusion
+
+- Theory developed as an add-on to Big Bang Theory
+- Inflation describes the rapid expansion of the universe in VERY early times
+- helps cosmologists answer a number of questions, like, why the universe is so 'smooth'?
+- suggests that there could be many universes!
+- Dark Universe
+  - Dark Energy ~70%
+  - Dark Matter ~25%
+  - Neutrinos <1%
+  - Hydrogen/Helium 
