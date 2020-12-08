@@ -83,3 +83,19 @@ Thus linearizing the circle
 <!-- Will write later -->
 
 ## Tutorial 1
+
+## Final Lecture
+
+- Q1
+  - Shortest Path
+- Q2
+  - Dynamic Programming
+    - not necessarily knapsack
+    - greedy
+- Q3
+  - Knapsack
+- Q4
+  - True/False
+  - prove if true/false
+- Q5
+  - Max Flow
