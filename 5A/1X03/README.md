@@ -2065,3 +2065,28 @@ Ideally, members of experimental and control groups are very similar, so that th
 - overview effect
 - sunk cost fallacy
 - bystander effect
+
+## Lecture 12
+
+- Review Lecture
+- practice questions
+  - Subjects in an experiment are presented with a list of words and asked a specific question after each word is presented. Who will perform best on a surprise recall task?
+    - D: Asked if target word is used appropriately in a given sentence
+  - which of the folling scenarios is least likely to proceed to a groupthink decision
+    - A: juror persistently comes up with hypothetical scenarios which challenges the jury's consensus
+  - which is a characteristic of the conditioned response during spontaneous recovery  
+    - C: The conditioned response occurs in a reduced strength when the conditioned stimulus is presed alone.
+  - which example of a cognitive shortcut best represents an application of the availability heuristic while forming impressions?
+    - B: Everytime Sam visits, Lisa's room is a big mess; he concludes Lisa must be too busy to complete chores
+  - which of the following scenarios best outlines deductive reasoning?
+    - C: Jen believes driving on a stormy night puts her at risk so she decides to slow down to avoid an accident
+  - a new manager makes 2 changes:
+    - Cancels the longstanding free donuts after noticing that many workers are spending time online shopping.
+    - All workers who complete assignments on time can skip the unpopular regular office chores.
+    - What are the two training procedures used?
+    - D: Omission training; Escape Training
+  - Which of the following outlines a key difference between Broadbent's and Triesman's models of attention?
+    - B: Broadbent's model possesses one filter of attention, whereas Triesman's model contains two filters each responsible for attenuation of the unattended signals
+  - You are completing the Stroop task with words in an unfamiliar language. Which best describes how performance will change relative to a usual Stroop task with your native language?
+    - C: performance will be faster and more accurate than usual
+- humans make choices (for better and worse) and psychology helps us to understnad why
