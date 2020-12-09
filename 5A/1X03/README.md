@@ -1715,7 +1715,7 @@ Ideally, members of experimental and control groups are very similar, so that th
   - Degree of Choice
     - amount of freedom the actor had in choosing their opinion or behaviour
     - consider to what degree a person had a choice in acting the way they did
-  - Expectiation
+  - Expectation
     - the occurance of a particular behaviour for a specific actor
     - consider whether an observed behaviour is typical or uncommon
       - uncommon gives way more information
@@ -1743,7 +1743,7 @@ Ideally, members of experimental and control groups are very similar, so that th
 - not universal across all cultures
   - american 8 and 11 year olds attributed behaviours to personal and situational equally
   - american adults tended to attribute behaviours to personal factors more often than situational
-  - Both indian 11 year olds and adults have a tendency to make more situatinoal than personal attributions
+  - Both indian 11 year olds and adults have a tendency to make more situational than personal attributions
 - diminished in collectivist societies
 - gold medal winners
   - in america attribute talent and hard work
