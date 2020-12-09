@@ -2190,3 +2190,83 @@ www.distancetomars.com
     - Look for possible dark matter particles (WIMPS) with lab experiments on Earth
     - Nothing found yet, there are reason for optimism
     - Dark matter may be more complicated than we thought - more than one particle?
+
+## Lecture 37
+
+- what do we know about Dark Matter
+  - 90% mass of galaxies and clusters
+  - extends well beyond the visible part of galaxies
+  - something that does not interact with light (at any wavelength)
+    - No emission or absorption of lights
+  - DM cannot be like "normal matter"
+    - baryons
+
+### Dark Energy
+
+- 70% of the Universe is made of Dark Energy
+- Dark Matter is any mass that does not interact with light
+  - detectable through its galaxy
+  - several possible kinds of objects in this category
+  - many times as much mass in "dark" form as in luminous stars and gas
+- Dark Energy is pure enrrgy
+  - does not produce gravity (not clumpy)
+  - even harder to detect evidence for it
+
+#### Supernovae as Standard Candles
+
+- Some persuasive new evidence for this effect has come from recent experiments to measure distances to remote galaxies from their supernovae
+- we can see supernovae for a few weeks (~10 billion light years)
+- brightness of the supernova at its peak is a known number
+  - standard candle
+  - we can use peak brightness to measure the distance to that galaxy (D<sub>1</sub>)
+- thousands of galaxies have been measured
+- from Hubble's Law, you get another estimate of this distance
+  - v = HD<sub>2</sub>
+- comparing the supernova distance to Hubble's Law distance
+  - D<sub>1</sub> >> D<sub>2</sub> the farther away than the galaxy is
+    - the only to reconcile this measurement, Hubble's constant isn't correct
+    - the universe's expansion rate is speeding up
+    - the effect behaves exactly as if space has some extra energy built into it
+      - origin of Dark Energy
+- discovered of the year 1998
+- people speculate that dark energy and inflation are related
+
+#### Counterintuitive
+
+- gravity from all the galaxies and dark matter causes the expansion to slow down over time
+- energy in space itself cause the acceleration to speed up with time
+- at early time, gravity was more important (low volume, high mass)
+- as volume increases, dark energy acceleration will dominate
+  - expansion was decreasing at first due to gravity, dark energy eventually starts taking over and expansion accelerates.
+- expansion acceleration began about 5 billion years ago
+- observable universe will become boring
+  - much darker
+  - other universes will accerelate out of our observable universe
+
+#### Evidence for Dark Energy
+
+- using Supernovae (standard candle) to measure expansion rate
+- using CBR map
+- gravitational lensing
+- distribution of matter in the universe
+- what it could be
+  - Cosmological Constant (Einstein's idea which he later discarded and called his "biggest blunder")
+  - Something else
+    - lots of possibilities
+    - not enough constraints yet to differentiate a cosmological constant from an evolving model
+  - any fundamental thoery combining quantum mechanics and gravity (like string theory) must explain dark energy
+
+#### Future of Cosmology
+
+- dark matter still needs to be found
+- dark energy requires new physics
+- both dark matter and dark energy must work in a theory of quantum gravity like string theory
+- observational efforts
+  - is it really constant?
+    - if variable, brand new physics
+  - South Pole Telescope
+  - ESA - Euclid Telscope
+  - NASA WFIRST
+- we know very little other than
+  - it spread uniformly throughout space, and keeps an approximately constant density as the universe expands
+  - it must be (nearly) uniform throughout space, since otherwise it would clump towards galaxies and clusters and affect local motions just as dark matter does
