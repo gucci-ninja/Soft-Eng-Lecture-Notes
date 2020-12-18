@@ -322,9 +322,9 @@ Ideally, members of experimental and control groups are very similar, so that th
 #### Therapies
 
 - Implosive Therapy
-
   - force the subject to confront their phobia with an absence of the US
-
+  - extinction trail
+    - presenting CS without US
 - Systematic Desensitation
   - gradual exposure
   - uses generalization gradient
@@ -535,6 +535,8 @@ Ideally, members of experimental and control groups are very similar, so that th
 - ineffective if the ratio of behaviour to rewards is too high
 - follows "pause and run" pattern for behavourial responses
   - after reinforcement, there is a pause before another run of job
+- Ratio Strain
+  - when schedules are too stingy, subject may stop responding.
 
 #### Variable Ratio
 
@@ -2074,7 +2076,7 @@ Ideally, members of experimental and control groups are very similar, so that th
     - D: Asked if target word is used appropriately in a given sentence
   - which of the folling scenarios is least likely to proceed to a groupthink decision
     - A: juror persistently comes up with hypothetical scenarios which challenges the jury's consensus
-  - which is a characteristic of the conditioned response during spontaneous recovery  
+  - which is a characteristic of the conditioned response during spontaneous recovery
     - C: The conditioned response occurs in a reduced strength when the conditioned stimulus is presed alone.
   - which example of a cognitive shortcut best represents an application of the availability heuristic while forming impressions?
     - B: Everytime Sam visits, Lisa's room is a big mess; he concludes Lisa must be too busy to complete chores
