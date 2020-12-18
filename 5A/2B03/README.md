@@ -2191,7 +2191,7 @@ www.distancetomars.com
     - Nothing found yet, there are reason for optimism
     - Dark matter may be more complicated than we thought - more than one particle?
 
-## Lecture 37
+## Lecture 34
 
 - what do we know about Dark Matter
   - 90% mass of galaxies and clusters
@@ -2270,3 +2270,71 @@ www.distancetomars.com
 - we know very little other than
   - it spread uniformly throughout space, and keeps an approximately constant density as the universe expands
   - it must be (nearly) uniform throughout space, since otherwise it would clump towards galaxies and clusters and affect local motions just as dark matter does
+
+## Lecture 35
+
+### Final Lecture
+
+#### Discovery of the year 1998
+
+- discovery of the accelerating universe
+- Einstein added a term into General Relativity to make the universe 'static' (not expanding or contracting).
+  - After Hubble Expansion was observed, apparently said the term was his "biggest blunder"
+  - term was resurrected with discovery of accelerating universe
+    - with a different value, we can have accelerating universe rather than static universe
+- at some time in universe, dark energy is more important than all the matter in the universe
+  - matter dilutes in the universe
+  - stop being able to see other galaxies
+  - in the far future, dark energy will make up majority of the cosmological pie.
+
+#### Top questions in science
+
+- what is the universe made of?
+  - what is the universe made of?
+    - cosmological pie
+  - can the laws of physics be unified?
+    - hope is yes, no testable theory
+    - string theory?
+  - are we alone in the universe?
+    - looking at biosignitures in other planets
+      - earthlike planets
+  - how and where did life on earth arise?
+    - looking at whether life was purely from planets or from a comet
+
+##### Is Life Rare?
+
+- very unlikely
+  - given the (almost certainly) large number of Earth-like planets
+- we have no evidence of life outside of our own Earth
+  - Fermi Paradox
+- is life common?
+  - Life may be a natural process and part of the universe
+  - the universe may be full of life
+  - Early is likely not "special"
+- is life rare?
+  - Origin of life a rare event, perhaps a singular event
+    - despite the abundance of planets
+  - Earth is "special"
+- if "they" are actually out there, then why aren't they already also HERE
+  - in our galaxy, near us
+  - Intestellar travel times are long, but the key is that there is LOTS of time to work with
+  - at speed v=0.01 c (very fast)
+    - reach 10 lightyears over 1000 years
+    - resettle on new planet and repeat
+  - after 1 000 000 years one can cover a large part of the galaxy
+
+### Cosmology Big Answers
+
+- Universe started with a 'big bang'
+  - initially was very hot and dense
+  - Big Bang Nucleosynthesis
+  - Cosmic Background Radiation
+- Universe appears to be filled with Dark Matter and Dark Energy
+  - expansion of the universe is accelerating
+
+### Cosmology Big Questions
+
+- What is dark matter? Will we detect it in the lab?
+- What was before the Big Bang? What started the Big Bang?
+- Did inflation really happen? How can we test this theory?
+- What the heck is dark energy? New physics?
