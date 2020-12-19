@@ -1903,7 +1903,7 @@ www.distancetomars.com
   - "Mean free path" of the light is now much larger
   - transition happened about 380 000 (400 000) years after the start of the Big Bang
   - key turning point
-  - races can be seen in the CBR light
+  - traces can be seen in the CBR light
   - Surface of last scattering
   - we can't see beyond this time
 - mostly measure the effects of Big Bang rather than the Big Bang itself
